@@ -1,0 +1,81 @@
+needs_food_at_all = {
+	or = {
+		is_machine_empire = no
+		owner = { has_civic = civic_machine_servitor }
+		owner = { has_civic = civic_machine_assimilator }
+	}
+	or = {
+		is_lithoid_empire = no
+		years_passed > 30
+		resource_income_compare = {
+			resource = food
+			value < 20
+		}
+	}
+}
+
+basic_needs_fulfilled = {
+	and = {
+		resource_income_compare = {
+			resource = minerals
+			value > 50
+		}
+		resource_income_compare = {
+			resource = alloys
+			value > 30
+		}
+		resource_income_compare = {
+			resource = exotic_gases
+			value > 0
+		}
+		resource_income_compare = {
+			resource = volatile_motes
+			value > 0
+		}
+		resource_income_compare = {
+			resource = rare_crystals
+			value > 0
+		}
+
+
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 500
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 2500
+		}
+	}
+}
+#other entries of this file are generated, for explanation and the intention see rawresource_old_legacy
+#it's usually simpler to regenerate the code instead of fixing the old.
+
+#acceptable will mean that food+minerals+energy > 50
+#fine will mean that food+minerals+energy > 150
+#good will mean that food+minerals+energy > 300
+
+#regarding needs_energy and really_needs_energy explanation will be slightly contrived
+
+#incomes of
+#(energy,minerals,food) = (0,50,0); (20, 80, 20), (40,110,40),(60,140,60),(80,170,80)
+#are considered balanced
+
+#needs_energy = yes you need energy to lag behind respective balanced point by 5 points
+#assuming minerals and food can be turned into each other
+#so if energy < 0 and minerals+food>50 then needs_energy=yes
+#same holds if energy< 20 and minerals+food>50
+
+#Note that if (and only if) incomes are around the balanced point then needs_X = yes for all X
+#if incomes are far from balanced point at most two different resources trigger "needs"
+
+#Trigger for "really_needs" is different, really_needs happens
+#if a resource lags 20 units behind the balance point, so
+
+#if energy<-20, minerals>50, food>0 ---> really_needs_energy = yes
+
+#Note that "needs" assumes the other two resources can be freely converted and "really_needs"
+#doesn't
+
+
+#UPDATE: MOVED TO EVENTS

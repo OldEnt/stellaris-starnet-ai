@@ -1,0 +1,141 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+rare_crystals_expenditure_ships = {
+	resource = rare_crystals
+	type = expenditure
+	category = ships
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 50
+	}
+}
+
+rare_crystals_expenditure_trade = {
+	resource = rare_crystals
+	type = expenditure
+	category = trade
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+rare_crystals_expenditure_planets = {
+	resource = rare_crystals
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 500
+	}
+}
+
+rare_crystals_upkeep_planets = {
+	resource = rare_crystals
+	type = upkeep
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+rare_crystals_upgrade_ships = {
+	resource = rare_crystals
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+rare_crystals_expenditure_edicts = {
+	resource = rare_crystals
+	type = expenditure
+	category = edicts
+
+	potential = {
+		resource_income_compare = {
+			resource = rare_crystals
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+
+rare_crystals_expenditure_rareedicts = {
+	resource = rare_crystals
+	type = expenditure
+	category = rare_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = rare_crystals
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+
+rare_crystals_expenditure_shipedicts = {
+	resource = rare_crystals
+	type = expenditure
+	category = ship_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = rare_crystals
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 1000
+			is_at_war = yes
+		}
+	}
+}

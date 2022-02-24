@@ -1,0 +1,335 @@
+
+# CWTools will flag "value $operator$ $num$" as an error, it is not, this is a known flaw of CWTools.
+@IGNORE_VALUE_OPERATOR_NUM_ERRORS_ITS_A_CWTOOLS_BUG = 1
+#	above is because Irony doesn't show comments but does show local defines
+
+#	Statements in additional IF blocks are simply those that are in the potential portion of the original district
+#	This allows for accurate enumeration of the number of districts and number of free districts
+#	If your district has special conditions outside of district_set then the IF statement will be required
+# The IF statements existing in this file are compacted down but yours does not need to be
+
+# str_num_districts_city = { operator = >=< num = ### }
+str_num_districts_city = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { num_districts = { type = district_arcology_housing value $operator$ $num$ } }
+		habitat = { num_districts = { type = district_hab_housing value $operator$ $num$ } }
+		standard = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }	#city districts are weird
+					num_districts = { type = district_city value $operator$ $num$ }					#not ideal but only real way to do this
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_districts = { type = district_nexus value $operator$ $num$ } } }
+		hive_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_districts = { type = district_nexus value $operator$ $num$ } } }
+		machine_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_districts = { type = district_nexus value $operator$ $num$ } } }
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_districts = { type = district_nexus value $operator$ $num$ } } }
+		ring_world = {	IF = { limit = { exists = owner owner = { is_regular_empire = yes } }	#different districts from above blocks
+					num_districts = { type = district_rw_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_districts = { type = district_rw_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_districts = { type = district_rw_nexus value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_trade = { operator = >=< num = ### }
+str_num_districts_trade = {
+	switch = {
+		trigger = uses_district_set
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_districts = { type = district_srw_commercial value $operator$ $num$ } } }
+		habitat = { IF = { limit = { exists = owner owner = { is_gestalt = no } }
+					num_districts = { type = district_hab_commercial value $operator$ $num$ } } }
+		ring_world = { IF = { limit = { exists = owner owner = { is_gestalt = no is_fallen_empire = no } }
+					num_districts = { type = district_rw_commercial value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_leisure = { operator = >=< num = ### }
+str_num_districts_leisure = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_districts = { type = district_arcology_leisure value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_milindustry = { operator = >=< num = ### }
+str_num_districts_milindustry = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { num_districts = { type = district_arcology_arms_industry value $operator$ $num$ } }
+		standard = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		machine_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		shattered_ring_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		ring_world = { num_districts = { type = district_rw_industrial value $operator$ $num$ } }
+		habitat = { num_districts = { type = district_hab_industrial value $operator$ $num$ } }
+	}
+}
+
+# str_num_districts_civindustry = { operator = >=< num = ### }
+str_num_districts_civindustry = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		machine_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		shattered_ring_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		ring_world = { num_districts = { type = district_rw_industrial value $operator$ $num$ } }
+		habitat = { num_districts = { type = district_hab_industrial value $operator$ $num$ } }
+		city_world = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = no has_valid_civic = civic_machine_servitor } } }
+					num_districts = { type = district_arcology_civilian_industry value $operator$ $num$ } } }
+	}
+}
+
+
+str_num_districts_allindustry = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		machine_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		shattered_ring_world = { num_districts = { type = district_industrial value $operator$ $num$ } }
+		ring_world = { num_districts = { type = district_rw_industrial value $operator$ $num$ } }
+		habitat = { num_districts = { type = district_hab_industrial value $operator$ $num$ } }
+		city_world = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = no has_valid_civic = civic_machine_servitor } } }
+					or = { 
+						num_districts = { type = district_arcology_civilian_industry value $operator$ $num$ } 
+						num_districts = { type = district_arcology_arms_industry value $operator$ $num$ } 
+					} 
+		} }
+	}
+}
+
+# str_num_districts_unity = { operator = >=< num = ### }
+str_num_districts_unity = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { IF = { limit = { exists = owner owner = { has_valid_civic = civic_machine_servitor } }
+					num_districts = { type = district_arcology_organic_housing value $operator$ $num$ } } }
+		habitat = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = no has_valid_civic = civic_machine_servitor } } }
+					num_districts = { type = district_hab_cultural value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_science = { operator = >=< num = ### }
+str_num_districts_science = {
+	switch = {
+		trigger = uses_district_set
+		ring_world = { num_districts = { type = district_rw_science value $operator$ $num$ } }
+		habitat = { IF = { limit = { has_planet_flag = research_habitat }
+					num_districts = { type = district_hab_science value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_generator = { operator = >=< num = ### }
+str_num_districts_generator = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_districts = { type = district_generator value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_generator_uncapped value $operator$ $num$ } }
+		machine_world = { num_districts = { type = district_generator_uncapped value $operator$ $num$ } }
+		habitat = { IF = { limit = { OR = { has_planet_flag = energy_habitat AND = { exists = owner owner = { is_gestalt = yes } } } }
+					num_districts = { type = district_hab_energy value $operator$ $num$ } } }
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = yes is_fallen_empire = yes } } }
+					num_districts = { type = district_generator_uncapped value $operator$ $num$ } } }
+		ring_world = { IF = { limit = { exists = owner owner = { is_gestalt = yes } }
+					num_districts = { type = district_rw_generator value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_mining = { operator = >=< num = ### }
+str_num_districts_mining = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_districts = { type = district_mining value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		machine_world = { num_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		shattered_ring_world = { num_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		habitat = { IF = { limit = { has_planet_flag = mining_habitat }
+					num_districts = { type = district_hab_mining value $operator$ $num$ } } }
+	}
+}
+
+# str_num_districts_farming = { operator = >=< num = ### }
+str_num_districts_farming = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_districts = { type = district_farming value $operator$ $num$ } }
+		hive_world = { num_districts = { type = district_farming_uncapped value $operator$ $num$ } }
+		shattered_ring_world = { num_districts = { type = district_farming_uncapped value $operator$ $num$ } }
+		ring_world = { num_districts = { type = district_rw_farming value $operator$ $num$ } }
+	}
+}
+
+
+
+#################################################
+#	These are identical, just calling the num_free_districts function instead
+
+# str_num_free_districts_city = { operator = >=< num = ### }
+str_num_free_districts_city = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { num_free_districts = { type = district_arcology_housing value $operator$ $num$ } }
+		habitat = { num_free_districts = { type = district_hab_housing value $operator$ $num$ } }
+		standard = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }	#city districts are weird
+					num_free_districts = { type = district_city value $operator$ $num$ }					#not ideal but only real way to do this
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_free_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_free_districts = { type = district_nexus value $operator$ $num$ } } }
+		hive_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_free_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_free_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_free_districts = { type = district_nexus value $operator$ $num$ } } }
+		machine_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_free_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_free_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_free_districts = { type = district_nexus value $operator$ $num$ } } }
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_free_districts = { type = district_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_free_districts = { type = district_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_free_districts = { type = district_nexus value $operator$ $num$ } } }
+		ring_world = {	IF = { limit = { exists = owner owner = { is_regular_empire = yes } }	#different districts from above blocks
+					num_free_districts = { type = district_rw_city value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_hive_empire = yes } }
+					num_free_districts = { type = district_rw_hive value $operator$ $num$ }
+				} ELSE_IF = { limit = { exists = owner owner = { is_machine_empire = yes } }
+					num_free_districts = { type = district_rw_nexus value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_trade = { operator = >=< num = ### }
+str_num_free_districts_trade = {
+	switch = {
+		trigger = uses_district_set
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_free_districts = { type = district_srw_commercial value $operator$ $num$ } } }
+		habitat = { IF = { limit = { exists = owner owner = { is_gestalt = no } }
+					num_free_districts = { type = district_hab_commercial value $operator$ $num$ } } }
+		ring_world = { IF = { limit = { exists = owner owner = { is_gestalt = no is_fallen_empire = no } }
+					num_free_districts = { type = district_rw_commercial value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_leisure = { operator = >=< num = ### }
+str_num_free_districts_leisure = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { IF = { limit = { exists = owner owner = { is_regular_empire = yes } }
+					num_free_districts = { type = district_arcology_leisure value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_milindustry = { operator = >=< num = ### }
+str_num_free_districts_milindustry = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { num_free_districts = { type = district_arcology_arms_industry value $operator$ $num$ } }
+		standard = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		hive_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		machine_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		shattered_ring_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		ring_world = { num_free_districts = { type = district_rw_industrial value $operator$ $num$ } }
+		habitat = { num_free_districts = { type = district_hab_industrial value $operator$ $num$ } }
+	}
+}
+
+# str_num_free_districts_civindustry = { operator = >=< num = ### }
+str_num_free_districts_civindustry = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		hive_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		machine_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		shattered_ring_world = { num_free_districts = { type = district_industrial value $operator$ $num$ } }
+		ring_world = { num_free_districts = { type = district_rw_industrial value $operator$ $num$ } }
+		habitat = { num_free_districts = { type = district_hab_industrial value $operator$ $num$ } }
+		city_world = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = no has_valid_civic = civic_machine_servitor } } }
+					num_free_districts = { type = district_arcology_civilian_industry value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_unity = { operator = >=< num = ### }
+str_num_free_districts_unity = {
+	switch = {
+		trigger = uses_district_set
+		city_world = { IF = { limit = { exists = owner owner = { has_valid_civic = civic_machine_servitor } }
+					num_free_districts = { type = district_arcology_organic_housing value $operator$ $num$ } } }
+		habitat = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = no has_valid_civic = civic_machine_servitor } } }
+					num_free_districts = { type = district_hab_cultural value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_science = { operator = >=< num = ### }
+str_num_free_districts_science = {
+	switch = {
+		trigger = uses_district_set
+		ring_world = { num_free_districts = { type = district_rw_science value $operator$ $num$ } }
+		habitat = { IF = { limit = { has_planet_flag = research_habitat }
+					num_free_districts = { type = district_hab_science value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_generator = { operator = >=< num = ### }
+str_num_free_districts_generator = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_free_districts = { type = district_generator value $operator$ $num$ } }
+		hive_world = { num_free_districts = { type = district_generator_uncapped value $operator$ $num$ } }
+		machine_world = { num_free_districts = { type = district_generator_uncapped value $operator$ $num$ } }
+		habitat = { IF = { limit = { OR = { has_planet_flag = energy_habitat AND = { exists = owner owner = { is_gestalt = yes } } } }
+					num_free_districts = { type = district_hab_energy value $operator$ $num$ } } }
+		shattered_ring_world = { IF = { limit = { exists = owner owner = { OR = { is_gestalt = yes is_fallen_empire = yes } } }
+					num_free_districts = { type = district_generator_uncapped value $operator$ $num$ } } }
+		ring_world = { IF = { limit = { exists = owner owner = { is_gestalt = yes } }
+					num_free_districts = { type = district_rw_generator value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_mining = { operator = >=< num = ### }
+str_num_free_districts_mining = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_free_districts = { type = district_mining value $operator$ $num$ } }
+		hive_world = { num_free_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		machine_world = { num_free_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		shattered_ring_world = { num_free_districts = { type = district_mining_uncapped value $operator$ $num$ } }
+		habitat = { IF = { limit = { has_planet_flag = mining_habitat }
+					num_free_districts = { type = district_hab_mining value $operator$ $num$ } } }
+	}
+}
+
+# str_num_free_districts_farming = { operator = >=< num = ### }
+str_num_free_districts_farming = {
+	switch = {
+		trigger = uses_district_set
+		standard = { num_free_districts = { type = district_farming value $operator$ $num$ } }
+		hive_world = { num_free_districts = { type = district_farming_uncapped value $operator$ $num$ } }
+		shattered_ring_world = { num_free_districts = { type = district_farming_uncapped value $operator$ $num$ } }
+		ring_world = { num_free_districts = { type = district_rw_farming value $operator$ $num$ } }
+	}
+}

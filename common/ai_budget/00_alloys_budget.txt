@@ -1,0 +1,752 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+alloys_expenditure_buffer = { # Buffer, will not be spent
+	resource = alloys
+	type = expenditure
+	category = buffer
+
+	potential = {
+		always = no
+	}
+
+	fraction = {
+		weight = 0
+	}
+}
+
+alloys_expenditure_trade = {
+	resource = alloys
+	type = expenditure
+	category = trade
+
+	potential = {
+		years_passed > 15
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 500
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value < 300
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -10
+				}
+			years_passed > 20
+		}
+		modifier = {
+			add = 2000
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 2000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value < 300
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -100
+			}
+			years_passed > 40
+		}
+	}
+}
+
+alloys_expenditure_ships_rush ={
+	resource = alloys
+	type = expenditure
+	category = ships
+	potential = {
+		has_country_flag = ferocious_rusher
+		any_neighbor_country = {
+			is_country_type = default
+			not = {
+				has_truce = prev
+			}
+		}
+	}
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 500
+	}
+}
+
+alloys_expenditure_earlyships ={
+	resource = alloys
+	type = expenditure
+	category = ships
+	potential = {
+		years_passed < 10
+		or = {
+			years_passed > 3
+			has_country_flag = str_disable_corvettes
+		}
+	}
+	fraction = {
+		weight = 0.4
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 100
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 160
+			}
+			has_ai_expansion_plan = no
+			ai_colonize_plans < 1
+		}
+	}
+}
+
+alloys_expenditure_ships = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		can_you_please_stop_building_ships = no
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+
+	static_min = {
+		base = 0
+		modifier = {
+			add = 140
+			years_passed > 15
+			used_naval_capacity_percent < 0.4
+			ai_colonize_plans < 1
+		}
+		modifier = {
+			add = 200
+			used_naval_capacity_percent < 0.5
+			years_passed > 17
+			ai_colonize_plans < 1
+		}
+		modifier = {
+			add = 400
+			used_naval_capacity_percent < 0.4
+			resource_stockpile_compare = {
+				resource = influence
+				value > 250
+			}
+			has_ai_expansion_plan = no
+			ai_colonize_plans < 1
+			any_neighbor_country = {
+				is_country_type = default
+				prev = {
+					is_hostile_to = prev
+					is_unfriendly_to = prev
+				}
+			}
+		}
+		modifier = {
+			add = 600
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 2000
+			}
+			used_naval_capacity_percent < 0.7
+		}
+		modifier = {
+			add = 400
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 2000
+			}
+		}
+	}
+}
+
+alloys_expenditure_ships_neighbour = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		or = {
+			or = {
+				ai_colonize_plans < 1
+				resource_stockpile_compare = {
+					resource = alloys
+					value > 600
+				}
+			}
+			any_relation = {
+				or = {
+					is_ai = no
+					is_hostile_to = prev
+					is_unfriendly_to = prev
+				}
+			}
+		}
+		scared_of_neighbour = yes
+		can_you_please_stop_building_ships = no
+	}
+
+	fraction = {
+		weight = 0.7
+	}
+	static_min = {
+		base = 1000
+		modifier = {
+			add = 2000
+			years_passed > 40
+		}
+		modifier = {
+			add = 3000
+			years_passed > 100
+		}
+	}
+}
+
+alloys_expenditure_ships_wartime = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		can_you_please_stop_building_ships = no
+		or = {
+			is_at_war = yes
+			and = {
+				prepare_for_war = yes
+				or = {
+					has_country_flag = ferocious_rusher
+					ai_colonize_plans < 1
+				}
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.7
+	}
+	static_min = {
+		base = 10000
+	}
+}
+
+alloys_expenditure_ships_later = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		years_passed > 15
+		safespace = no
+		can_you_please_stop_building_ships = no
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+	static_min = {
+		base = 800
+	}
+}
+
+
+alloys_expenditure_ships_latefleet = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		has_technology = tech_energy_torpedoes_1
+		can_you_please_stop_building_ships = no
+	}
+
+	fraction = {
+		weight = 0.7
+	}
+	static_min = {
+		base = 3000
+	}
+}
+
+
+alloys_expenditure_ships_battleships = {
+	resource = alloys
+	type = expenditure
+	category = ships
+
+	potential = {
+		has_technology = tech_energy_torpedoes_2
+		can_you_please_stop_building_ships = no
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+	static_min = {
+		base = 5000
+	}
+}
+
+#alloys_expenditure_ships_early = {
+	#resource = alloys
+	#type = expenditure
+	#category = ships
+
+	#potential = {
+		#years_passed < 5
+	#}
+
+	#fraction = {
+		#weight = 0
+	#}
+	#static_min = {
+		#base = 0
+		#modifier = {
+			#add = 60
+			#is_difficulty = 5
+		#}
+		#modifier = {
+			#add = 10
+			#is_difficulty < 5
+		#}
+		#modifier = {
+			#add = 10
+			#is_difficulty < 4
+		#}
+		#modifier = {
+			#add = 10
+			#is_difficulty < 3
+		#}
+		#modifier = {
+			#add = 10
+			#is_difficulty < 2
+		#}
+		#modifier = {
+			#add = -6
+			#or = {
+				#has_valid_civic = civic_fanatic_purifiers
+				#has_valid_civic = civic_machine_terminator
+				#has_valid_civic = civic_hive_devouring_swarm
+			#}
+		#}
+	#}
+#}
+
+alloys_expenditure_ship_upgrades = {
+	resource = alloys
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		is_at_war = no
+		nor = {
+			any_relation = { is_crisis_faction = yes }
+			has_global_flag = ai_invasion_ongoing
+			has_global_flag = war_in_heaven_ongoing
+			has_global_flag = extradimensional_invasion_happened
+			has_global_flag = ongoing_prethoryn_invasion
+		}
+	}
+
+	fraction = {
+		weight = 0
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 600
+			stalemate = yes
+			safespace = no
+		}
+		modifier = {
+			add = 1000
+			years_passed < @str_years_of_guaranteed_truce
+		}
+		modifier = {
+			add = 600
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 1000
+			}
+		}
+		modifier = {
+			add = 1000
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 2000
+			}
+		}
+		modifier = {
+			add = 3000
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 3000
+			}
+		}
+	}
+}
+
+alloys_expenditure_planets = {
+	resource = alloys
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+
+	static_min = {
+		base = 4500
+	}
+}
+
+alloys_expenditure_starbases = {
+	resource = alloys
+	type = expenditure
+	category = starbases
+
+	potential = {
+		nand = {
+			has_country_flag = str_emergency_fleetbuilding_rush
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 500
+			}
+		}
+		str_save_alloys_against_rush = no
+		or = {
+			years_passed < @str_years_of_extended_truce
+			used_naval_capacity_percent > 0.5
+			resource_stockpile_compare = {
+				resource = influence
+				value > 100
+			}
+		}
+		NOT = {
+			is_country_type = fallen_empire
+		}
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+	static_min = {
+		base = 120
+		modifier = {
+			add = 300
+			or = {
+				has_country_flag = ferocious_rusher
+				ai_colonize_plans < 1
+			}
+			years_passed > 8
+		}
+		modifier = {
+			add = 500
+			or = {
+				has_country_flag = ferocious_rusher
+				ai_colonize_plans < 1
+			}
+			years_passed > 13
+		}
+		modifier = {
+			add = 700
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 500
+			}
+		}
+		modifier = {
+			add = 1500
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 2000
+			}
+		}
+		modifier = {
+			add = 2000
+			used_naval_capacity_percent > 0.9
+			years_passed > 25
+		}
+		modifier = {
+			add = 4000
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 4000
+			}
+		}
+		modifier = {
+			add = 1000
+			num_ascension_perks > 2
+		}
+		modifier = {
+			add = 700
+			or = {
+				has_country_flag = ferocious_rusher
+				ai_colonize_plans < 1
+			}
+			years_passed > 22
+		}
+	}
+}
+
+alloys_expenditure_starbases_fallen_empires = {
+	resource = alloys
+	type = expenditure
+	category = starbases
+
+	potential = {
+		is_country_type = fallen_empire
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+alloys_expenditure_starbases_expand = {
+	resource = alloys
+	type = expenditure
+	category = starbases
+
+	potential = {
+		not = {
+			has_country_flag = str_emergency_fleetbuilding_rush
+		}
+		str_save_alloys_against_rush = no
+		has_ai_expansion_plan = yes
+		highest_threat < 50
+		NOR = {
+			is_country_type = fallen_empire
+		}
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+alloys_expenditure_starbases_excess = {
+	resource = alloys
+	type = expenditure
+	category = starbases
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 2000
+		}
+		str_save_alloys_against_rush = no
+	}
+
+	fraction = {
+		weight = 0
+	}
+	static_min = {
+		base = 1000
+		modifier = {
+			add = 2000
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 5000
+			}
+		}
+	}
+}
+#alloys_expenditure_stations_base = {
+#	resource = alloys
+#	type = expenditure
+#	category = stations
+
+#	potential = {
+#		always = yes
+#	}
+
+#	fraction = {
+#		weight = 0.15
+#	}
+#}
+
+#alloys_expenditure_stations_no_expand = {
+#	resource = alloys
+#	type = expenditure
+#	category = stations
+#
+#	potential = {
+#		has_ai_expansion_plan = no
+#	}
+#
+#	fraction = {
+#		weight = 0.25
+#	}
+#}
+
+alloys_expenditure_colonies = {
+	resource = alloys
+	type = expenditure
+	category = colonies
+
+	potential = {
+		nand = {
+			has_country_flag = str_emergency_fleetbuilding_rush
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 500
+			}
+		}
+		not = {
+			has_country_flag = ferocious_rusher
+		}
+		or = {
+			years_passed < 15
+			ai_colonize_plans > 0
+		}
+		nand = {
+			is_at_war = yes
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 300
+			}
+			used_naval_capacity_percent < 1
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+
+	static_min = {
+		base = 3500
+	}
+}
+
+alloys_expenditure_megastructures = {
+	resource = alloys
+	type = expenditure
+	category = megastructures
+
+	potential = {
+		is_country_type = default
+		is_at_war = no
+		or = {
+			has_galactic_wonders = yes
+			has_technology = tech_strategic_coordination
+			has_origin = origin_void_dwellers
+		}
+		ai_colonize_plans < 3
+	}
+
+	fraction = {
+		weight = 0.4
+	}
+
+	static_min = {
+		base = 30000 # current max alloy cost for a stage
+	}
+}
+
+alloys_expenditure_decisions = {
+	resource = alloys
+	type = expenditure
+	category = decisions
+	potential = {
+		has_technology = tech_habitat_2
+		any_owned_planet = {
+			is_planet_class = pc_habitat
+			NOT = { has_planet_flag = advanced_habitat_2 }
+		}
+		# only consider these kinds of decisions when "wealthy"
+		has_resource = {
+			type = alloys
+			amount > 5000
+		}
+	}
+	fraction = {
+		weight = 0.20
+	}
+	# based on mastery of nature decision
+	static_max = {
+		base = 2000
+		modifier = {
+			add = 1000
+			has_technology = tech_habitat_3
+			any_owned_planet = {
+				has_planet_flag = advanced_habitat
+				NOT = { has_planet_flag = advanced_habitat_2 }
+			}
+		}
+	}
+}
+
+############
+## Upkeep ##
+############
+alloys_upkeep_buffer = {	# Buffer, will not be spent
+	resource = alloys
+	type = upkeep
+	category = buffer
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0
+	}
+}
+
+alloys_upkeep_ships = {
+	resource = alloys
+	type = upkeep
+	category = ships
+
+	potential = {
+		or = {
+			years_passed > @str_years_of_guaranteed_truce
+			has_country_flag = str_need_to_defend_against_rush
+			is_at_war = yes
+			resource_stockpile_compare = {
+				resource = alloys
+				value > 12000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+alloys_upkeep_planets = {
+	resource = alloys
+	type = upkeep
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.30
+	}
+}

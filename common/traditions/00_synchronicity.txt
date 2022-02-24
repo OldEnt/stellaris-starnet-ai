@@ -1,0 +1,169 @@
+tr_synchronicity_adopt = {
+	modifier = {
+		planet_pops_organics_food_upkeep_mult = -0.10
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_machine_adopt
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			planet_pops_robotics_upkeep_mult = -0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_lithoid_adopt
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_lithoid_empire = yes
+		}
+		modifier = {
+			planet_pops_organics_minerals_upkeep_mult = -0.10
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	possible = {
+		or = {
+			is_ai = no
+			num_ascension_perks > 2
+		}
+	}
+}
+
+tr_synchronicity_finish = {
+	modifier = {
+		empire_size_pops_mult = -0.10
+		ascension_perks_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_machine_finish
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = { #also gain access to an edict
+			empire_size_pops_mult = -0.10
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+}
+
+tr_synchronicity_integrated_preservation = {
+
+	tradition_swap = {
+		name = tr_synchronicity_instinctive_synchronization
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_synchronicity_kinship_gestalt = {
+	modifier = {
+		leaders_upkeep_mult = -0.20
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_synchronicity_collective_reasoning = {
+	possible = {
+		has_tradition = tr_synchronicity_integrated_preservation
+	}
+
+	modifier = {
+		planet_stability_add = 5
+	}
+
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_synchronicity_harmonious_directives = {
+	possible = {
+		has_tradition = tr_synchronicity_kinship_gestalt
+		has_tradition = tr_synchronicity_cloned_organs
+	}
+
+	modifier = {
+		country_edict_cap_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_harmonious_directives_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_synchronicity_cloned_organs = {
+	modifier = {
+		leader_age = 20
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_self_preservation
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_synchronicity_unity_of_mind
+		# gain unity per pop necrophaged
+		trigger = {
+			has_origin = origin_necrophage
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+		modifier = {
+			factor = 10
+			has_origin = origin_necrophage
+		}
+	}
+}

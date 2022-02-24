@@ -1,0 +1,110 @@
+
+tr_adaptability_adopt = {
+	modifier = {
+		pop_housing_usage_mult = -0.10
+	}
+	possible = {
+		or = {
+			is_ai = no
+			num_ascension_perks > 1
+		}
+	}
+}
+
+tr_adaptability_finish = {
+	modifier = {
+		ascension_perks_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_adaptability_void_finish
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_origin = origin_void_dwellers
+		}
+		modifier = {
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+}
+
+
+tr_adaptability_dietary_enrichment = {
+	modifier = {
+		country_food_produces_mult = 0.10
+	}
+
+	tradition_swap = {
+		name = tr_adaptability_recycling
+		trigger = {
+			is_lithoid_empire = yes
+		}
+		modifier = {
+			planet_building_refund_mult = 0.15
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 10000
+	}
+}
+
+tr_adaptability_survival_fittest = {
+	possible = {
+		has_tradition = tr_adaptability_dietary_enrichment
+	}
+
+	modifier = {
+		planet_orbital_bombardment_damage = -0.25
+		army_defense_damage_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_adaptability_environmental_diversification = {
+	modifier = {
+		pop_environment_tolerance = 0.10
+	}
+
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_adaptability_adaptive_ecology = {
+	possible = {
+		has_tradition = tr_adaptability_environmental_diversification
+	}
+
+	modifier = {
+		planet_max_buildings_add = 1
+	}
+
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_adaptability_appropriation = {
+	possible = {
+		has_tradition = tr_adaptability_environmental_diversification
+	}
+
+	modifier = {
+		pop_resettlement_cost_mult = -0.33
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

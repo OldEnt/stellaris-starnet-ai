@@ -1,0 +1,413 @@
+buildings_simple_allow = {
+	hidden_trigger = {
+		owner = { or = {
+			resource_income_compare = {
+				resource = minerals
+				value > 30
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value > 800
+			}
+			is_ai = no
+			}
+		}
+		planet = {
+			OR = {
+				AND = {
+					free_jobs < 7
+					str_num_free_districts_mining = { operator = = num = 0 }
+					str_num_free_districts_generator = { operator = = num = 0 }
+					str_num_free_districts_farming = { operator = = num = 0 }
+					str_num_free_districts_milindustry = { operator = = num = 0 }
+				}
+				AND = {
+					exists = owner
+					owner = { is_ai = no }
+				}
+				owner = {
+					and = {
+						resource_income_compare = {
+							resource = energy
+							value > -20
+						}
+						or = {
+							country_uses_food = no
+							resource_stockpile_compare = {
+								resource = food
+								value > 600
+							}
+							resource_income_compare = {
+								resource = food
+								value > 5
+							}
+						}
+
+						or = {
+							country_uses_consumer_goods = no
+							resource_stockpile_compare = {
+								resource = consumer_goods
+								value > 600
+							}
+							resource_income_compare = {
+								resource = consumer_goods
+								value > 5
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+building_basic_income_check = {
+	hidden_trigger = {
+		planet = {
+			exists = owner
+			OR = {
+				owner = { is_ai = no }
+				AND = {
+					free_jobs < 7
+					owner = {
+						OR = {
+							resource_income_compare = {
+								resource = energy
+								value > -5
+							}
+							has_resource = { type = energy amount > 1500 }
+						}
+
+						OR = {
+							resource_income_compare = {
+								resource = minerals
+								value > 0
+							}
+							has_resource = { type = minerals amount > 1500 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+building_relaxed_basic_income_check = {
+	hidden_trigger = {
+		planet = {
+			exists = owner
+			OR = {
+				owner = { is_ai = no }
+				AND = {
+					owner = {
+						OR = {
+							resource_income_compare = {
+								resource = energy
+								value > -5
+							}
+							has_resource = { type = energy amount > 1000 }
+						}
+
+						OR = {
+							resource_income_compare = {
+								resource = minerals
+								value > 0
+							}
+							has_resource = { type = minerals amount > 1000 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+buildings_build_building = {
+	planet_devastation < 10
+	NOT = {
+		planet = {
+			has_current_purge = yes
+		}
+	}
+	OR = {
+		has_modifier = planet_population_control
+		has_modifier = planet_population_control_gestalt
+		has_modifier = planet_robot_assembly_control
+		has_modifier = planet_growth_discouraged
+		free_district_slots = 0
+	}
+	NAND = {
+		exists = owner
+		owner = { is_lithoid_devouring_swarm = yes }
+		is_lithoid_devouring_swarm_consumption_world = yes
+	}
+}
+
+country_uses_food = {
+	any_owned_species = {
+		NOR = {
+			has_trait = trait_lithoid
+			has_trait = trait_machine_unit
+			has_trait = trait_mechanical
+		}
+		is_sapient = yes
+		NOR = {
+			has_citizenship_type = {
+				type = citizenship_purge
+				country = prev
+			}
+			has_citizenship_type = {
+				type = citizenship_purge_machine
+				country = prev
+			}
+		}
+	}
+}
+
+country_uses_consumer_goods = {
+	OR = {
+		is_regular_empire = yes
+		has_valid_civic = civic_machine_servitor
+	}
+}
+
+buildings_unemployed = {
+	planet = {
+		any_owned_pop = {
+			NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+			NOR = {
+				is_pop_category = specialist
+				is_pop_category = ruler
+			}
+			OR = {
+				is_unemployed = yes
+				has_job = servant
+			}
+		}
+	}
+}
+
+buildings_difficulty = {
+	is_difficulty > 2
+	years_passed > 20
+	has_resource = { type = energy amount > 1000 }
+	has_resource = { type = minerals amount > 2000 }
+}
+
+buildings_stop_pop = {
+	exists = owner
+	free_housing < -4
+	free_district_slots = 0
+}
+
+districts_build_district = {
+	OR = {
+		has_modifier = planet_population_control
+		has_modifier = planet_population_control_gestalt
+		has_modifier = planet_robot_assembly_control
+		has_modifier = planet_growth_discouraged
+		any_owned_pop = {
+			is_unemployed = yes
+			OR = {
+				has_citizenship_type = { type = citizenship_slavery }
+				AND = {
+					specialist_job_check_trigger = no
+					NOT = { has_citizenship_type = { type = citizenship_assimilation } }
+				}
+			}
+		}
+		AND = {
+			planet_devastation < 10
+			has_building_construction = no
+			free_jobs < 2
+			NOT = {
+				planet = {
+					has_current_purge = yes
+				}
+			}
+		}
+	}
+	NAND = {
+		exists = owner
+		owner = { is_lithoid_devouring_swarm = yes }
+		is_lithoid_devouring_swarm_consumption_world = yes
+	}
+}
+
+districts_good_energy = {
+	planet = {
+		OR = {
+			has_modifier = hazardous_weather
+			has_modifier = divine_algorithm
+			has_modifier = energy_relic
+			has_modifier = gas_rich_planet_fo_realz
+			has_planet_flag = buildings_good_energy
+		}
+	}
+}
+
+districts_good_minerals = {
+	planet = {
+		OR = {
+			has_modifier = extensive_moon_system
+			has_modifier = carbon_world
+			has_modifier = mineral_rich
+			has_modifier = ultra_rich
+			has_modifier = asteroid_belt
+			has_modifier = minerals_relic
+			has_planet_flag = buildings_good_minerals
+		}
+	}
+}
+
+districts_good_food = {
+	planet = {
+		OR = {
+			has_modifier = lush_planet
+			has_planet_flag = buildings_good_food
+		}
+	}
+}
+
+jobs_work_minerals_goods = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		resource_income_compare = {
+			resource = minerals
+			value < 50
+		}
+		OR = {
+			AND = {
+				has_resource = {
+					type = minerals
+					amount < 5000
+				}
+				has_resource = {
+					type = consumer_goods
+					amount > 1500
+				}
+			}
+			AND = {
+				has_resource = {
+					type = minerals
+					amount < 3000
+				}
+				has_resource = {
+					type = consumer_goods
+					amount > 750
+				}
+			}
+			AND = {
+				has_resource = {
+					type = minerals
+					amount < 501
+				}
+				has_resource = {
+					type = consumer_goods
+					amount > 500
+				}
+			}
+		}
+	}
+}#If true makes the AI really value mining jobs and stops organics from working factory jobs.
+
+buildings_no_motes = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		has_deficit = volatile_motes
+		resource_stockpile_compare = { #can buy on market
+			resource = energy
+			value < 1500
+		}
+	}
+}#Used to destroy buildings that require the SR but lack it.
+
+buildings_no_crystals = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		has_deficit = rare_crystals
+		resource_stockpile_compare = { #can buy on market
+			resource = energy
+			value < 1500
+		}
+	}
+}#Used to destroy buildings that require the SR but lack it.
+
+buildings_no_exotic_gases = {
+	exists = owner
+	owner = {
+		is_ai = yes
+		has_deficit = exotic_gases
+		resource_stockpile_compare = { #can buy on market
+			resource = energy
+			value < 1500
+		}
+	}
+}#Used to destroy buildings that require the SR but lack it.
+
+buildings_has_motes = {
+	exists = owner
+	owner = {
+		OR = {
+			is_ai = no
+			resource_income_compare = {
+				resource = volatile_motes
+				value >= 1
+			}
+		}
+	}
+}#Used in the buildings file to determine if the country has the needed Strategic Resource.
+
+buildings_has_crystals = {
+	exists = owner
+	owner = {
+		OR = {
+			is_ai = no
+			resource_income_compare = {
+				resource = rare_crystals
+				value >= 1
+			}
+		}
+	}
+}#Used in the buildings file to determine if the country has the needed Strategic Resource.
+
+buildings_has_exotic_gases = {
+	exists = owner
+	owner = {
+		OR = {
+			is_ai = no
+			resource_income_compare = {
+				resource = exotic_gases
+				value >= 1
+			}
+		}
+	}
+}#Used in the buildings file to determine if the country has the needed Strategic Resource.
+
+buildings_upgrade_allow = {
+	hidden_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			free_jobs < 3
+		}
+	}
+}
+
+jobs_any_research = {
+	planet = {
+		any_owned_pop = {
+			OR = {
+				has_job = head_researcher
+				has_job = researcher
+				has_job = brain_drone
+				has_job = calculator
+				has_job = dimensional_portal_researcher
+				has_job = dimensional_portal_researcher_gestalt
+			}
+		}
+	}
+}

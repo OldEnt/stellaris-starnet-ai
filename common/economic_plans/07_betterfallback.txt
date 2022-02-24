@@ -1,0 +1,195 @@
+# Base AI economic plans
+
+# Early ---------------------------------------
+
+early_default_plan_3 = {
+
+	income = {
+		energy = 100
+		minerals = 200
+		alloys = 40
+
+		exotic_gases = 2
+		volatile_motes = 2
+		rare_crystals = 2
+	}
+
+	focus = {
+		energy = 50
+		minerals = 50
+		alloys = 20
+	}
+
+	subplan = {
+		potential = { always = yes }
+		income = { starnet_spice_melange = 100000 }
+		focus = { starnet_spice_melange = 50000 }
+	}
+
+
+	subplan = {
+		potential = { always = yes }
+		income = { unity = 20000 }
+		focus = { unity = 10000 }
+	}
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = yes
+		}
+
+		income = {
+			food = 5
+			consumer_goods = 20
+		}
+
+		focus = {
+			food = 5
+			consumer_goods = 20
+		}
+	}
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			country_uses_food = no
+		}
+
+		income = {
+			consumer_goods = 20
+		}
+
+		focus = {
+			consumer_goods = 10
+		}
+	}
+
+	# increased food goals for hiveminds
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = no
+			country_uses_food = yes
+		}
+
+		income = {
+			food = 10
+		}
+
+		focus = {
+			food = 10
+		}
+	}
+
+	subplan = {
+		potential = { has_country_flag = str_lets_terraform
+			resource_stockpile_compare = {
+				resource = energy
+				value < 7000
+			}
+			resource_income_compare = {
+				resource = energy
+				value < 2000
+			}
+		}
+		income = { energy = 2000 }
+		focus = { energy = 1500 }
+	}
+
+
+	subplan = {
+		potential = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			resource_income_compare = {
+				resource = energy
+				value < 2000
+			}
+		}
+		income = { energy = 2000 }
+		focus = { energy = 1500 }
+	}
+	subplan = {
+		potential = { str_food_crisis_0 = yes }
+		income = { food = 500 }
+		focus = { food = 200 }
+	}
+
+	subplan = {
+		potential = { str_minerals_crisis_0 = yes }
+		income = { minerals = 500 }
+		focus = { minerals = 200 }
+	}
+
+	subplan = {
+		potential = { str_energy_crisis_0 = yes }
+		income = { energy = 500 }
+		focus = { energy = 200 }
+	}
+	subplan = {
+		potential = {
+			or = {
+				resource_income_compare = { resource = consumer_goods value > -5 }
+				resource_stockpile_compare = { resource = consumer_goods value > 400 }
+			}
+			resource_income_compare = { resource = energy value > -5 }
+			resource_income_compare = { resource = food value > -5 }
+			resource_income_compare = { resource = minerals value > 40 }
+			resource_income_compare = { resource = volatile_motes value > -2 }
+			resource_income_compare = { resource = exotic_gases value > -2 }
+			resource_income_compare = { resource = rare_crystals value > -2 }
+			resource_income_compare = { resource = alloys value > 20 }
+		}
+		income = {
+			alloys = 100
+			physics_research = 300
+			society_research = 300
+			engineering_research = 300
+		}
+		focus = {
+			alloys = 50
+			physics_research = 200
+			society_research = 200
+			engineering_research = 200
+		}
+	}
+
+	subplan = {
+		potential = {
+			or = {
+				resource_income_compare = { resource = consumer_goods value > -5 }
+				resource_stockpile_compare = { resource = consumer_goods value > 2000 }
+			}
+			resource_income_compare = { resource = energy value > 500 }
+			resource_income_compare = { resource = food value > 5 }
+			resource_income_compare = { resource = minerals value > 80 }
+			resource_income_compare = { resource = volatile_motes value > 0 }
+			resource_income_compare = { resource = exotic_gases value > 0 }
+			resource_income_compare = { resource = rare_crystals value > 0 }
+			resource_income_compare = { resource = alloys value > 100 }
+		}
+		income = {
+			alloys = 10000
+			physics_research = 10000
+			society_research = 10000
+			engineering_research = 10000
+		}
+		focus = {
+			alloys = 500
+			physics_research = 1000
+			society_research = 1000
+			engineering_research = 1000
+		}
+	}
+
+	potential = {
+		not = { has_country_flag = str_reconsider_plans }
+	}
+
+	pops = 5000
+	empire_size = 1
+
+	ai_weight = {
+		weight = 900
+	}
+}

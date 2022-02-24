@@ -1,0 +1,153 @@
+namespace = str_manage_pops
+
+# Event is written by Jorgen_CAB, feel free to check his mods :)
+# Event to help AI resettle POP that otherwise can't auto migrate.
+
+
+country_event = {
+	id = str_manage_pops.100
+	is_triggered_only = yes
+	hide_window = yes
+
+
+	# pre_triggers = {
+	# 	has_owner = yes
+	#	 is_ai = yes
+	# }
+
+
+	Immediate = {
+
+
+		every_owned_planet = {
+			limit = {
+				num_unemployed >= 2
+				free_district_slots = 0
+				free_building_slots = 0
+			}
+			random_owned_pop = {
+				limit = {
+					is_unemployed = yes
+					OR = {
+						is_enslaved = yes
+						is_shackled_robot = yes
+					}	
+				}
+				prevprev = {
+					set_variable = { which = planet_found value = -1 }
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								free_jobs >= 2
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 1.0 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								or = { free_jobs >= 3 free_district_slots > 1 }
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.9 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								or = { free_jobs >= 3 free_district_slots > 1 }
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.8 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}					
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								or = { free_jobs >= 3 free_district_slots > 1 }
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.7 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}					
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								or = { free_jobs >= 3 free_district_slots > 1 }
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.6 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}					
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								free_jobs >= 2
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.5 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}					
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = -1 } }
+						random_owned_planet = {
+							limit = {
+								or = { free_jobs >= 3 free_district_slots > 1 }
+								is_under_colonization = no
+								habitability = { who = prevprev value >= 0.4 }
+							}
+							resettle_pop = {
+								pop = prevprev
+								planet = this
+							}
+							prev = { set_variable = { which = planet_found value = 1 } }
+						}					
+					}
+					IF = {
+						limit = { check_variable = { which = planet_found value = 1 } }
+						add_resource = { energy = -50 }
+					} else = {
+						log = "---- No suitable planets found for [This.GetName] ----"
+					}
+				}
+			}
+		}
+	}
+}

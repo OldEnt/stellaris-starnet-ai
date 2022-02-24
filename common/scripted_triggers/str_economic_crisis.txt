@@ -1,0 +1,314 @@
+
+str_food_crisis_0 = {
+	country_uses_food = yes
+	resource_stockpile_compare = {
+		resource = food
+		value < 1000
+	}
+	resource_income_compare = {
+		resource = food
+		value < 1
+	}
+}
+
+str_food_crisis_1 = {
+	country_uses_food = yes
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = food
+				value < 1000
+			}
+			resource_income_compare = {
+				resource = food
+				value < -20
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = food
+				value < 500
+			}
+			resource_income_compare = {
+				resource = food
+				value < -10
+			}
+		}
+	}
+}
+
+str_food_crisis_2 = {
+	country_uses_food = yes
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = food
+				value < 100
+			}
+			resource_income_compare = {
+				resource = food
+				value < -20
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = food
+				value < 500
+			}
+			resource_income_compare = {
+				resource = food
+				value < -30
+			}
+		}
+	}
+}
+
+
+str_minerals_crisis_0 = {
+	years_passed > 15
+	resource_stockpile_compare = {
+		resource = minerals
+		value < 1000
+	}
+	resource_stockpile_compare = {
+		resource = minerals
+		value < 50
+	}
+}
+
+
+str_minerals_crisis_1 = {
+	years_passed > 15
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = minerals
+				value < 1000
+			}
+			resource_income_compare = {
+				resource = minerals
+				value < 20
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = minerals
+				value < 500
+			}
+			resource_income_compare = {
+				resource = minerals
+				value < 30
+			}
+		}
+	}
+}
+
+
+str_minerals_crisis_2 = {
+	years_passed > 15
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = minerals
+				value < 200
+			}
+			resource_income_compare = {
+				resource = minerals
+				value < 5
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = minerals
+				value < 500
+			}
+			resource_income_compare = {
+				resource = minerals
+				value < -5
+			}
+		}
+	}
+}
+
+
+str_energy_crisis_0 = {
+	years_passed > 15
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 500
+			}
+			resource_income_compare = {
+				resource = energy
+				value < 5
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 1000
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -10
+			}
+		}
+	}
+}
+
+str_energy_crisis_1 = {
+	years_passed > 15
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 100
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -20
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 500
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -40
+			}
+		}
+	}
+}
+
+
+str_energy_crisis_2 = {
+	years_passed > 15
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 100
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -30
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = energy
+				value < 400
+			}
+			resource_income_compare = {
+				resource = energy
+				value < -50
+			}
+		}
+	}
+}
+
+
+str_consumer_goods_crisis_0 = {
+	country_uses_consumer_goods = yes
+	not = { has_country_flag = str_consumer_goods_margin }
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value < 700
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value < -30
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value < 500
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value < -20
+			}
+		}
+	}
+}
+
+str_consumer_goods_crisis_1 = {
+	country_uses_consumer_goods = yes
+	not = { has_country_flag = str_consumer_goods_margin }
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value < 300
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value < -30
+			}
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value < 200
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value < -40
+			}
+		}
+	}
+}
+
+str_raw_ecocrisis_level_0 = {
+	or = {
+		str_food_crisis_0 = yes
+		str_minerals_crisis_0 = yes
+		str_energy_crisis_0 = yes
+	}
+}
+str_raw_ecocrisis_level_1 = {
+	or = {
+		str_food_crisis_1 = yes
+		str_minerals_crisis_1 = yes
+		str_energy_crisis_1 = yes
+	}
+}
+
+str_raw_ecocrisis_level_2 = {
+	or = {
+		str_food_crisis_2 = yes
+		str_minerals_crisis_2 = yes
+		str_energy_crisis_2 = yes
+	}
+}
+
+
+str_can_use_basic_plan = {
+	nor = {
+		str_raw_ecocrisis_level_1 = yes
+		str_consumer_goods_crisis_1 = yes
+		and = {
+			lategame = yes
+			nor = { has_ethic = ethic_pacifist has_ethic = ethic_fanatic_pacifist }
+		}
+	}
+}
+
+str_prepare_for_lategame = {
+	has_technology = tech_battleships
+	has_technology = tech_energy_torpedoes_2
+	resource_income_compare = {
+		resource = society_research
+		value > 1000
+	}
+	or = {
+		reroll_society = yes
+		has_technology = tech_ascension_theory
+	}
+}

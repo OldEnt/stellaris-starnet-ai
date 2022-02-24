@@ -1,0 +1,155 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+consumer_goods_expenditure_buffer = { # Buffer, will not be spent
+	resource = consumer_goods
+	type = expenditure
+	category = buffer
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.05
+	}
+}
+
+#consumer_goods_expenditure_colonies = {
+#	resource = consumer_goods
+#	type = expenditure
+#	category = colonies
+
+#	potential = {
+#		always = yes
+#	}
+
+#	fraction = {
+#		weight = 0.3
+#	}
+#}
+
+consumer_goods_expenditure_colonies = {
+	resource = consumer_goods
+	type = expenditure
+	category = colonies
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1.2
+	}
+
+	static_min = {
+		base = 250
+	}
+}
+
+consumer_goods_expenditure_trade = {
+	resource = consumer_goods
+	type = expenditure
+	category = trade
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 40
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value > 4000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value < 1000
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value > 20
+			}
+			resource_income_compare = {
+				resource = energy
+				value < 10
+			}
+		}
+
+		modifier = {
+			add = 40
+			ai_colonize_plans < 1
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value > 1000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value < 300
+			}
+			resource_income_compare = {
+				resource = consumer_goods
+				value > 10
+			}
+			resource_income_compare = {
+				resource = energy
+				value < 0
+			}
+		}
+	}
+}
+
+consumer_goods_expenditure_decisions = {
+	resource = consumer_goods
+	type = expenditure
+	category = decisions
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.05
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 1000
+			resource_stockpile_compare = {
+				resource=consumer_goods
+				value > 300
+			}
+			resource_income_compare = {
+				resource=consumer_goods
+				value > 5
+			}
+		}
+	}
+}
+consumer_goods_expenditure_decisions_excess = {
+	resource = consumer_goods
+	type = expenditure
+	category = decisions
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = consumer_goods
+			value > 5000
+		}
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 1000
+	}
+}

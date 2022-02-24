@@ -1,0 +1,21 @@
+tradition_subterfuge = {
+	tree_template = "tree_12_12"
+	adoption_bonus = "tr_subterfuge_adopt"
+	finish_bonus = "tr_subterfuge_finish"
+
+	potential = {
+		has_nemesis = yes
+	}
+
+	traditions = {
+		"tr_subterfuge_information_security"
+		"tr_subterfuge_operational_security"
+		"tr_subterfuge_nda"
+		"tr_subterfuge_double_agents"
+		"tr_subterfuge_shadow_recruits"
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}

@@ -1,0 +1,58 @@
+#Fake job that is used to force AI build buildings
+starnet_spice_melange_farmer = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_residence
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		nor = {
+			has_job = starnet_spice_melange_farmer
+			is_unemployed = yes
+		}
+		planet = {
+			has_building_construction = no
+		}
+	}
+
+	resources = {
+		category = planet_soldiers
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+			}
+			starnet_spice_melange = 1000
+		}
+	}
+	weight = {
+		weight = 1000
+	}
+}
+
+
+starnet_spice_melange_antifarmer = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_residence
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		is_sapient = no
+		is_sapient = yes
+	}
+
+	possible = {
+		always = no
+	}
+
+	weight = {
+		weight = 0
+	}
+}

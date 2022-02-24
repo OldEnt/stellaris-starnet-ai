@@ -1,0 +1,295 @@
+# from = country
+# this = species
+
+slavery_normal = {
+	token = slavery_normal
+
+	pop_modifier = {
+		planet_jobs_produces_mult = 0.10
+		pop_happiness = -0.30
+	}
+
+	in_breach_of = {
+		{
+			key = resolution_greatergood_greater_than_ourselves
+		}
+	}
+
+	potential = {
+		from = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+
+	allow = {
+		hidden_trigger = { always = yes } #triggers covered in citizenship_slavery and potential trigger
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 0.0001
+			is_multiplayer = yes
+			from = {
+				has_country_flag = str_recently_human
+			}
+			NOT = {
+				has_slavery_type = {
+					type = slavery_normal
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			from = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+	}
+}
+
+slavery_domestic = {
+	token = slavery_domestic
+
+	pop_modifier = {
+		pop_happiness = -0.20
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		from = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+
+	allow = {
+		hidden_trigger = { always = yes }
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0.0001
+			is_multiplayer = yes
+			from = {
+				has_country_flag = str_recently_human
+			}
+			NOT = {
+				has_slavery_type = {
+					type = slavery_domestic
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			has_trait = trait_nerve_stapled
+		}
+		modifier = {
+			factor = 100
+			has_trait = trait_syncretic_proles
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_trait = trait_charismatic
+
+				AND = {
+					from = {
+						is_galactic_community_member = yes
+					}
+					OR = {
+						is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+						is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+						is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+					}
+				}
+			}
+		}
+	}
+}
+
+slavery_military = {
+	token = slavery_military
+
+	modifier = {
+		army_damage_mult = 0.2
+	}
+
+	pop_modifier = {
+		pop_happiness = -0.20
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		from = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+
+	allow = {
+		hidden_trigger = { always = yes }
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0.0001
+			from = {
+				has_country_flag = str_recently_human
+			}
+			NOT = {
+				has_slavery_type = {
+					type = slavery_military
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_trait = trait_very_strong }
+		}
+	}
+}
+
+slavery_indentured = {
+	token = slavery_indentured
+
+	pop_modifier = {
+		pop_happiness = -0.20
+		pop_political_power = 0.50
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		from = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+
+	allow = {
+		hidden_trigger = { always = yes }
+	}
+	ai_will_do = {
+		factor = 5000
+		modifier = {
+			factor = 0.0001
+			is_multiplayer = yes
+			from = {
+				has_country_flag = str_recently_human
+			}
+			NOT = {
+				has_slavery_type = {
+					type = slavery_indentured
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_trait = trait_syncretic_proles
+		}
+		modifier = {
+			factor = 50
+			from = { has_valid_civic = civic_indentured_assets }
+		}
+		modifier = { # Syncretic Slaver Guild starts need their primary species to be in Indentured Service to avoid unemployment at game start.
+			factor = 50
+			from = {
+				has_valid_civic = civic_slaver_guilds
+				has_origin = origin_syncretic_evolution
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOR = {
+				has_trait = trait_psionic
+				has_trait = trait_erudite
+				has_trait = trait_charismatic
+				has_trait = trait_natural_engineers
+				has_trait = trait_natural_physicists
+				has_trait = trait_natural_sociologists
+				has_trait = trait_intelligent
+			}
+		}
+	}
+}
+
+slavery_matrix = {
+	token = slavery_matrix
+
+	pop_modifier = {
+		pop_happiness = -0.40
+	}
+
+	potential = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		from = { has_authority = auth_machine_intelligence }
+	}
+
+	in_breach_of = {
+		{
+			key = resolution_greatergood_greater_than_ourselves
+		}
+	}
+
+	allow = {
+		hidden_trigger = { always = yes }
+	}
+
+	ai_will_do = {
+		factor = 50000
+	}
+}
+
+slavery_livestock = {
+	token = slavery_livestock
+
+	pop_modifier = {
+		pop_happiness = -0.40
+	}
+
+	potential = {
+		host_has_dlc = "Utopia"
+		from = { NOT = { has_authority = auth_machine_intelligence } }
+	}
+
+	in_breach_of = {
+		{
+			key = resolution_greatergood_greater_than_ourselves
+		}
+	}
+
+	allow = {
+		hidden_trigger = { exists = from }
+		custom_tooltip = {
+			fail_text = CANNOT_LIVESTOCK_MATRIX_MACHINES
+			NOR = {
+				has_trait = trait_mechanical
+				has_trait = trait_machine_unit
+			}
+		}
+		custom_tooltip = {
+			fail_text = empire_not_xenophobe
+			from = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0
+			NOR = {
+				has_trait = trait_delicious
+				from = { has_authority = auth_hive_mind }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			from = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+	}
+}

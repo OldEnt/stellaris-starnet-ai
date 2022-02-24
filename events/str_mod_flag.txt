@@ -1,0 +1,15 @@
+#Compatibility flag. Used to tell other mods that Starnet is running
+
+namespace = str_mod_flag
+
+event = {
+	id = str_mod_flag.1	
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = "str_enabled_flag"
+	}
+}
+

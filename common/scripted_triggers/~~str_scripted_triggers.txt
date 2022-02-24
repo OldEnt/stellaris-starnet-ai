@@ -1,0 +1,8 @@
+no_resource_for_component = {
+	is_country_type = default
+			is_ai = yes
+			resource_stockpile_compare = {
+				resource = $RESOURCE$
+				value < 100
+	}
+}

@@ -1,0 +1,138 @@
+
+
+everything_is_fine_normal = {
+	free_amenities > 2
+	owner = {
+		resource_income_compare = {
+			resource = consumer_goods
+			value > 5
+		}
+		resource_income_compare = {
+			resource = alloys
+			value > 40
+		}
+		used_naval_capacity_percent > 0.95
+	}
+}
+
+everything_is_fine_gestalt = {
+	free_amenities > 2
+	owner = {
+		resource_income_compare = {
+			resource = alloys
+			value > 40
+		}
+		used_naval_capacity_percent > 0.95
+	}
+}
+
+supervised_destruction = {
+	owner = {
+		is_ai = yes
+		not = { has_country_flag = acceptable_mineral_economy }
+	}
+	has_planet_flag = supervisor
+	free_building_slots = 0
+}
+unsupervised_destruction = {
+	owner = {
+		is_ai = yes
+		not = { has_country_flag = acceptable_mineral_economy }
+	}
+	free_building_slots = 0
+}
+
+
+good_economy_trigger = {
+	resource_income_compare = {
+		resource = consumer_goods
+		value > 10
+	}
+	resource_income_compare = {
+		resource = minerals
+		value > 100
+	}
+	resource_income_compare = {
+		resource = food
+		value > 40
+	}
+	or = {
+		resource_income_compare = {
+			resource = energy
+			value > 0
+		}
+		and = {
+			resource_income_compare = {
+				resource = energy
+				value > -20
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value > 200
+			}
+		}
+	}
+}
+
+
+str_bad_raw_economy_trigger = {
+	or = {
+		and = {
+			country_uses_food = yes
+			resource_income_compare = {
+				resource = food
+				value < -20
+			}
+			resource_stockpile_compare = {
+				resource = food
+				value < 1000
+			}
+		}
+		and = {
+			resource_income_compare = {
+				resource = energy
+				value < -30
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value < 500
+			}
+		}
+		and = {
+			resource_income_compare = {
+				resource = minerals
+				value < 30
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value < 1300
+			}
+		}
+	}
+}
+
+
+str_keep_unemployed_to_resettle = {
+	or = {
+		and = { has_planet_flag = str_bad_habitability num_pops < 20 }
+		and = { has_planet_flag = str_acceptable_habitability num_pops < 10 }
+	}
+	not = { has_planet_flag = str_five_year_new_colony }
+	owner = { has_country_flag = str_there_exists_pop_sink }
+	or = {
+		not = { has_building = building_robot_assembly_plant }
+		num_unemployed < 2
+	}
+}
+
+str_prepare_unemployed_to_resettle = {
+	or = {
+		and = { has_planet_flag = str_bad_habitability num_pops < 20 }
+		and = { has_planet_flag = str_acceptable_habitability num_pops < 10 }
+	}
+	owner = { has_country_flag = str_there_exists_pop_sink }
+	or = {
+		not = { has_building = building_robot_assembly_plant }
+		num_unemployed < 2
+	}
+}

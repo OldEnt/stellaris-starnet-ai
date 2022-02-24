@@ -1,0 +1,164 @@
+
+minerals_emergency = {
+	or = {
+		resource_income_compare = {
+			resource = minerals
+			value < 40
+		}
+		and = {
+			resource_income_compare = {
+			resource = minerals
+			value < 60
+			}
+			resource_stockpile_compare = {
+			resource = minerals
+			value < 400
+			}
+		}
+	}	
+}
+
+consumer_emergency = {
+	country_uses_consumer_goods = yes
+	or = {
+		resource_income_compare = {
+			resource = consumer_goods
+			value < 5
+		}
+		and = {
+			resource_income_compare = {
+			resource = consumer_goods
+			value < 10
+			}
+			resource_stockpile_compare = {
+			resource = consumer_goods
+			value < 400
+			}
+		}
+	}	
+}
+
+food_emergency = {
+	country_uses_food = yes
+	or = {
+		and = {
+		resource_income_compare = {
+			resource = food
+			value < 5
+		}
+		resource_stockpile_compare = {
+			resource = food 
+			value < 1000
+		} 
+		}
+		and = {
+			resource_income_compare = {
+			resource = food
+			value < 15
+			}
+			resource_stockpile_compare = {
+			resource = food
+			value < 700
+			}
+		}
+	}	
+}
+
+energy_emergency = {
+	or = {
+		resource_income_compare = {
+			resource = energy
+			value < -10
+		}
+		and = {
+		resource_income_compare = {
+			resource = energy
+			value < -20
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value < 1000
+		}
+		}
+	}
+}
+
+no_emergency = {
+	food_emergency = no
+	consumer_emergency = no
+	minerals_emergency = no
+	used_naval_capacity_percent > 0.5
+}
+
+science_priority = {
+	used_naval_capacity_percent > 0.9
+	resource_income_compare = {
+		resource = alloys 
+		value > 40
+	}
+	resource_stockpile_compare = {
+		resource = alloys
+		value > 3500
+	}
+}
+
+alloy_priority = {
+	or = {
+	used_naval_capacity_percent < 0.5
+	and = {
+	resource_stockpile_compare = {
+		resource = alloys
+		value < 1000
+		} 
+	used_naval_capacity_percent < 0.7
+	}
+	}
+}
+
+utopic_economy = {
+	resource_income_compare = {
+		resource = energy 
+		value > 5
+	}
+	resource_income_compare = {
+		resource = minerals 
+		value > 70
+	}
+	resource_stockpile_compare = {
+		resource = minerals
+		value > 1200
+	}
+	no_emergency = yes
+	or = {
+		country_uses_food = no
+		resource_income_compare = {
+			resource = food
+			value > 10
+		}
+		resource_stockpile_compare = {
+			resource = food
+			value > 3000
+		}
+	}
+	or = {
+		country_uses_consumer_goods = no
+		resource_income_compare = {
+			resource = consumer_goods
+			value > 15
+		}
+		resource_stockpile_compare = {
+			resource = consumer_goods
+			value > 2500
+		}
+	}
+}
+
+can_afford_science = {
+	or = {
+		country_uses_consumer_goods = no
+		resource_income_compare = {
+			resource = consumer_goods
+			value > 5
+		}
+	}
+}

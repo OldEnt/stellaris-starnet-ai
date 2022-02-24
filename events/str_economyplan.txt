@@ -1,0 +1,1589 @@
+namespace = str_economy_plan
+
+event = {
+	id = str_economy_plan.1
+	is_triggered_only = yes
+	fire_only_once = no
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				years_passed < @str_years_of_extended_truce
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+					or = { 
+						used_naval_capacity_integer > 5
+						resource_stockpile_compare = {
+							resource = alloys
+							value > 1500
+						}	
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = yes
+						has_country_flag = str_normal_empire
+						capital_scope = {
+							distance = {
+								source = prevprev.capital_scope
+								use_bypasses = no
+								bypass_empire = owner
+								min_jumps = 1
+								max_jumps = 13
+							}
+						}
+					}
+					remove_country_flag = str_need_1000_alloys
+					remove_country_flag = str_need_1500_alloys
+					remove_country_flag = str_need_2000_alloys
+					remove_country_flag = str_need_3000_alloys
+					remove_country_flag = str_need_4000_alloys
+					remove_country_flag = str_need_5000_alloys
+					remove_country_flag = str_need_6000_alloys
+					remove_country_flag = str_need_7000_alloys
+					if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 7500	} }
+						}
+						set_country_flag = str_need_7000_alloys
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 6500	} }
+						}
+						set_country_flag = str_need_6000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_7000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 4500	} }
+						}
+						set_country_flag = str_need_5000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_6000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 3500	} }
+						}
+						set_country_flag = str_need_4000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_5000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 3000	} }
+						}
+						set_country_flag = str_need_3000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_4000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 2500	} }
+						}
+						set_country_flag = str_need_2000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_3000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 2000	} }
+						}
+						set_country_flag = str_need_1500_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_2000_alloys
+						}
+					}
+					else_if = {
+						limit = {
+							prev = { resource_stockpile_compare = {	resource = alloys value > 1500	} }
+						}
+						set_country_flag = str_need_1000_alloys
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+							set_country_flag = str_need_1500_alloys
+						}
+					}
+
+					if = {
+						limit = {
+							prev = { used_naval_capacity_integer > 35 }
+						}
+						set_country_flag = str_need_40_corvettes
+					}
+					else_if = {
+						limit = {
+							prev = { used_naval_capacity_integer > 25 }
+						}
+						set_country_flag = str_need_30_corvettes
+						if = {
+							limit = {
+								is_difficulty > 2
+							}
+						set_country_flag = str_need_40_corvettes
+					}
+				}
+				else_if = {
+					limit = {
+						prev = { used_naval_capacity_integer > 15 }
+					}
+					set_country_flag = str_need_20_corvettes
+					if = {
+						limit = {
+							is_difficulty > 2
+						}
+						set_country_flag = str_need_30_corvettes
+					}
+				}
+				else_if = {
+					limit = {
+						prev = { used_naval_capacity_integer > 10 }
+					}
+					set_country_flag = str_need_15_corvettes
+					if = {
+						limit = {
+							is_difficulty > 2
+						}
+						set_country_flag = str_need_20_corvettes
+					}
+				}
+				else_if = {
+					limit = {
+						prev = { used_naval_capacity_integer > 5 }
+					}
+					set_country_flag = str_need_10_corvettes
+					if = {
+						limit = {
+							is_difficulty > 2
+						}
+						set_country_flag = str_need_15_corvettes
+					}
+				}
+			}
+		}
+	}
+	every_country = {
+		limit = {
+			is_ai = no
+			or = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+				has_country_flag = str_normal_empire
+			}
+		}
+		set_timed_country_flag = {
+			flag = str_recently_human
+			days = 3600
+		}
+	}
+
+	every_country = {
+		limit = {
+			is_ai = yes
+			or = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+				has_country_flag = str_normal_empire
+			}
+		}
+			country_event = { id = str_economy_plan.2 random = 100 days = 1 }
+			#country_event = { id = str_planet_spec.2 random = 100 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = str_economy_plan.2
+	is_triggered_only = yes
+	fire_only_once = no
+	hide_window = yes
+	immediate = {
+		remove_country_flag = str_has_room_to_grow_new
+		remove_country_flag = str_has_designated_factory_switch
+		remove_country_flag = str_has_designated_foundry_switch
+		remove_country_flag = str_has_designated_good_factory_switch
+		remove_country_flag = str_has_designated_good_foundry_switch
+		remove_country_flag = str_has_designated_good_extra_switch
+		remove_country_flag = str_has_designated_extra_switch
+		remove_country_flag = str_has_misplaced_factory
+		remove_country_flag = str_has_misplaced_foundry
+		remove_country_flag = str_consumer_goods_margin
+		remove_country_flag = str_deleted_extra_shipyard
+		remove_country_flag = str_deleted_extra_anchorage
+		remove_country_flag = str_need_to_defend_against_rush
+		remove_country_flag = str_there_exists_pop_sink_new
+		remove_country_flag = str_has_terraformables
+		remove_country_flag = str_fill_homeworld_with_science_pls
+
+		if = {
+			limit = {
+				has_technology = tech_energy_torpedoes_1
+				not = { has_country_flag = str_has_launchers }
+			}
+			set_country_flag = str_has_launchers
+			set_timed_country_flag = {
+				flag = str_just_got_launchers
+				days = 3600
+			}
+		}
+
+		if = {
+			limit = {
+				is_country_type = default
+			}
+			set_country_flag = str_normal_empire
+		}
+
+		if = {
+			limit = {
+				or = {
+					and = {
+						years_passed > 60
+						is_ai = yes
+						has_technology = tech_robotic_workers
+						has_country_flag = str_normal_empire
+						resource_stockpile_compare = {
+							resource = energy
+							value > 250
+						}
+					}
+					has_valid_civic = civic_slaver_guilds
+					has_valid_civic = civic_indentured_assets
+				}
+			}
+			country_event = {
+				id = str_manage_pops.100 days = 135
+				#resettlement
+			}
+		}
+
+		set_timed_country_flag = {
+			flag = str_reconsider_plans
+			days = 70
+		}
+		set_timed_country_flag = {
+			flag = str_planet_buildings_unstuck
+			days = 40
+		}
+
+		if = {
+			limit = { str_make_fleet_against_rush = yes	years_passed < @str_years_of_extended_truce }
+			set_country_flag = str_need_to_defend_against_rush
+		}
+
+		if = {
+			limit = {
+				years_passed < @str_years_of_extended_truce
+				or = {
+					and = { used_naval_capacity_integer < 10 has_country_flag = str_need_10_corvettes }
+					and = { used_naval_capacity_integer < 15 has_country_flag = str_need_15_corvettes }
+					and = { used_naval_capacity_integer < 20 has_country_flag = str_need_20_corvettes }
+					and = { used_naval_capacity_integer < 30 has_country_flag = str_need_30_corvettes }
+					and = { used_naval_capacity_integer < 40 has_country_flag = str_need_40_corvettes }
+				}
+			}
+			set_country_flag = str_need_to_defend_against_rush
+		}
+
+		if = {
+			limit = {
+				years_passed < @str_years_of_extended_truce
+				or = {
+					and = { used_naval_capacity_integer < 5 has_country_flag = str_need_10_corvettes }
+					and = { used_naval_capacity_integer < 10 has_country_flag = str_need_15_corvettes }
+					and = { used_naval_capacity_integer < 15 has_country_flag = str_need_20_corvettes }
+					and = { used_naval_capacity_integer < 25 has_country_flag = str_need_30_corvettes }
+					and = { used_naval_capacity_integer < 35 has_country_flag = str_need_40_corvettes }
+				}
+			}
+			set_country_flag = str_emergency_fleetbuilding_rush
+		}
+		if = {
+			limit = {
+				num_owned_planets > 2
+			}
+			set_country_flag = str_has_tried_to_designate_energy_alloy
+		}
+
+		if = {
+			limit = {
+				num_owned_planets > 2
+				not = {
+					has_country_flag = str_has_designated_energy_guaranteed
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_capital = no
+					or = {
+						has_planet_flag = prescripted_ideal
+						and = {
+							has_district = district_generator
+							has_planet_flag = str_good_habitability 
+						}
+					}
+					nor = {
+						has_district = district_industrial
+						has_planet_flag = str_designated_alloy_guaranteed
+					}
+					str_num_free_districts_generator = {
+						operator = >
+						num = 2
+					}
+				}
+				set_planet_flag = str_designated_energy_guaranteed
+				owner = { set_country_flag = str_has_designated_energy_guaranteed }
+			}
+			set_country_flag = str_tried_to_designate_energy
+		}
+
+		if = {
+			limit = {
+				num_owned_planets > 2
+				not = {
+					has_country_flag = str_has_designated_alloy_guaranteed
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_capital = no
+					or = {
+						has_planet_flag = prescripted_ideal
+						and = {
+							has_district = district_industrial
+							has_planet_flag = str_good_habitability 
+						}
+					}
+					or = {
+						has_district = district_industrial
+						owner = { has_country_flag = str_has_designated_energy_guaranteed } 	
+					}
+					not = {
+						has_planet_flag = str_designated_energy_guaranteed
+					}
+				}
+				set_planet_flag = str_designated_alloy_guaranteed
+				owner = { set_country_flag = str_has_designated_alloy_guaranteed }
+			}
+			set_country_flag = str_tried_to_designate_energy
+		}
+
+		if = {
+			limit = {
+				or = {
+					and = {
+						count_owned_starbase = {
+							count >= 14
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					and = {
+						max_naval_capacity < 2000
+						count_owned_starbase = {
+							count >= 10
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					and = {
+						max_naval_capacity < 1500
+						count_owned_starbase = {
+							count >= 9
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					and = {
+						max_naval_capacity < 1000
+						count_owned_starbase = {
+							count >= 7
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					and = {
+						max_naval_capacity < 600
+						count_owned_starbase = {
+							count >= 5
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					and = {
+						max_naval_capacity < 200
+						count_owned_starbase = {
+							count >= 4
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+				}
+			}
+			every_owned_starbase = {
+				if = {
+					limit = {
+						has_starbase_module = shipyard 
+						owner = { not = { has_country_flag = str_deleted_extra_shipyard } }
+					}
+					owner = { set_country_flag = str_deleted_extra_shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_module = { module = shipyard }
+					remove_starbase_building = { building = fleet_academy }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				needs_shipyard = yes
+				or = {
+					count_owned_starbase = {
+						count <= 0
+						limit = { has_starbase_module = shipyard }
+					}
+					and = {
+						max_naval_capacity > 120
+						count_owned_starbase = {
+							count <= 1
+							limit = { has_starbase_module = shipyard }
+						}
+						used_naval_capacity_integer > 20
+					}
+					and = {
+						max_naval_capacity > 200
+						used_naval_capacity_integer > 20
+						count_owned_starbase = {
+							count <= 2
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+				}
+			}
+			every_owned_starbase = {
+				if = {
+					limit = {
+						has_starbase_module = anchorage 
+						owner = { not = { has_country_flag = str_deleted_extra_anchorage } }
+					}
+					owner = { set_country_flag = str_deleted_extra_anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_module = { module = anchorage }
+					remove_starbase_building = { building = naval_logistics_office }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				years_passed > 2
+				not = { has_country_flag = str_capital_starbase_cleared }
+			}
+			set_country_flag =  str_capital_starbase_cleared
+			capital_scope = {
+				starbase = {
+					remove_starbase_module = { module = trading_hub	}
+					remove_starbase_module = { module = solar_panel_network	}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				years_passed < 40
+			}
+			set_country_flag = str_has_room_to_grow_new
+		}
+
+		if = {
+			limit= {
+				is_ai = yes
+				or = { 
+					years_passed < @str_years_of_guaranteed_truce
+					and = {
+						years_passed < @str_years_of_extended_truce
+						scared_of_neighbour = no
+						resource_stockpile_compare = {
+							resource = alloys
+							value < 2000
+						}
+					}
+					and = {
+						has_global_flag = str_friendship_flag
+						years_passed < 25
+					}
+				}
+			}
+			set_timed_country_flag = {
+				flag = str_disable_corvettes
+				days = 450
+			}
+		}
+
+		capital_scope = {
+			if = {
+				limit = {
+					is_capital = yes
+					free_building_slots > 0
+					free_amenities > -4
+					or = {
+						has_building = building_foundry_1
+						owner = { is_gestalt = yes }
+						years_passed > 11
+					}
+					owner = {
+						or = {
+							resource_income_compare = {
+								resource = minerals
+								value > 30
+							}
+							resource_stockpile_compare = {
+								resource = minerals
+								value > 800
+							}
+						}
+						resource_income_compare = {
+							resource = energy
+							value > -10
+						}
+						resource_income_compare = {
+							resource = food
+							value > -5
+						}
+					}
+				}
+				owner = { set_country_flag = str_fill_homeworld_with_science_pls }
+			}
+		}
+
+		if = {
+			limit = {
+				has_origin = origin_necrophage
+			}
+			every_owned_species = {
+				if = {
+					limit = {
+						or = {
+							root = { num_owned_planets = 1 }
+							has_species_flag = str_necrointegration
+							not = { has_species_flag = str_necroassimilation }
+						}
+					}
+					set_species_flag = str_integrated_conquest
+				}
+				else = {
+					set_species_flag = str_necrointegration
+					set_timed_species_flag = {
+						flag = str_necroassimilation
+						days = 600
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				years_passed > 5
+			}
+			every_owned_planet = {
+				if = {
+					limit = {
+						is_planet_class = pc_habitat
+						years_passed > 7
+						exists = owner
+						owner = { is_ai = yes }
+					}
+					remove_district = district_hab_commercial
+					remove_district = district_hab_cultural
+				}
+				if = {
+					limit = {
+						#Not proud of it, but until stellaris stops being ugged there is no other choice I guess.
+						#This will spawn organic sanctuary and subtract the cost simulating the construction
+						owner = {
+							has_civic = civic_machine_servitor
+							resource_stockpile_compare = {
+								resource = minerals
+								value > 500
+							}
+						}
+						count_owned_pop = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } is_unemployed = yes } count > 0 }
+						has_building_construction = no
+					}
+					owner = { add_resource = { minerals = -400 } }
+					add_building = building_organic_sanctuary
+				}
+				if = {
+					limit = {
+						or = { free_housing > 0 free_district_slots > 0 }
+						num_organic_pops_per_year < 0.001
+						or = {
+							and = {
+								owner = {
+									has_valid_civic = civic_machine_assimilator
+								}
+								num_pops < 30
+							}
+							owner = {
+								has_ai_personality_behaviour = purger
+							}
+						}
+					}
+					owner.capital_scope = {
+						random_owned_pop = {
+							limit = {
+								is_organic_species = yes
+							}
+							resettle_pop = {
+								pop = THIS
+								planet = prevprev
+							}
+							owner = {
+								add_resource = { influence = -10 }
+								add_resource = { energy = -50 }
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						free_amenities > 2
+						free_jobs > 1
+						free_district_slots > 0
+						has_planet_flag = str_good_habitability
+					}
+					owner = { set_country_flag = str_there_exists_pop_sink_new }
+					owner = { set_country_flag = str_there_exists_pop_sink }
+				}
+
+				if = {
+					limit = {
+						owner = {
+							str_raw_ecocrisis_level_1 = yes
+						}
+						or = {
+							and = {
+								any_owned_pop = {
+									has_job = clerk
+								}
+								free_jobs < 3
+							}
+							num_unemployed > 0
+						}
+					}
+					set_planet_flag = str_need_clerks
+				}
+				else = {
+					remove_planet_flag = str_need_clerks
+				}
+
+
+				if = {
+					limit = {
+						not = { is_planet_class = pc_gaia }
+					}
+					owner = { set_country_flag = str_has_terraformables }
+				}
+
+				if = {
+					limit = {
+						free_building_slots = 0
+						free_amenities < -14
+					}
+					if = {
+						limit = {
+							num_buildings = { type = building_bureaucratic_1 value > 0 }
+							free_district_slots = 0
+						}
+						remove_building = building_bureaucratic_1
+					}
+					else_if = {
+						limit = {
+							num_buildings = { type = building_research_lab_1 value > 0 }
+							free_district_slots = 0
+						}
+						remove_building = building_research_lab_1
+					}
+				}
+
+				remove_planet_flag = str_good_factory_switching_candidate
+				remove_planet_flag = str_good_foundry_switching_candidate
+				remove_planet_flag = str_foundry_switching_candidate
+				remove_planet_flag = str_factory_switching_candidate
+				remove_planet_flag = str_good_extra_switching_candidate
+				remove_planet_flag = str_extra_switching_candidate
+
+				if = {
+					limit = {
+						str_is_col_factory = yes
+						owner = { not = { has_country_flag = str_has_designated_good_factory_switch } }
+					}
+					if = {
+						limit = {
+							num_buildings = { type = building_factory_1 value = 0 }
+							num_buildings = { type = building_factory_2 value = 0 }
+						}
+						set_planet_flag = str_good_factory_switching_candidate
+						owner = { set_country_flag = str_has_designated_good_factory_switch }
+						owner = { set_country_flag = str_has_designated_factory_switch }
+					}
+					if = {
+						limit = { owner = { not = { has_country_flag = str_has_designated_factory_switch } } }
+						set_planet_flag = str_factory_switching_candidate
+						owner = { set_country_flag = str_has_designated_factory_switch }
+					}
+				}
+					
+
+				if = {
+					limit = {
+						str_is_col_foundry = yes
+						owner = { not = { has_country_flag = str_has_designated_good_foundry_switch } }
+					}
+					if = {
+						limit = { owner = { resource_income_compare = { resource = consumer_goods value > 10 } } }
+						owner = { set_country_flag = str_consumer_goods_margin }
+					}
+					if = {
+						limit = {
+							num_buildings = { type = building_foundry_1 value = 0 }
+							num_buildings = { type = building_foundry_2 value = 0 }
+						}
+						set_planet_flag = str_good_foundry_switching_candidate
+						owner = { set_country_flag = str_has_designated_good_foundry_switch }
+						owner = { set_country_flag = str_has_designated_foundry_switch }
+					}
+					if = {
+						limit = { owner = { not = { has_country_flag = str_has_designated_foundry_switch } } }
+						set_planet_flag = str_foundry_switching_candidate
+						owner = { set_country_flag = str_has_designated_foundry_switch }
+					}
+				}
+
+				if = {
+					limit = {
+						str_is_col_foundry = yes
+						owner = {
+							resource_income_compare = {
+								resource = consumer_goods
+								value < 5
+							}
+							not = { has_country_flag = str_has_designated_good_extra_switch } 
+						}
+						nor = {
+							has_planet_flag = str_foundry_switching_candidate
+							has_planet_flag = str_good_foundry_switching_candidate
+						}
+					}
+
+					if = {
+						limit = {
+							num_buildings = { type = building_foundry_1 value = 0 }
+							num_buildings = { type = building_foundry_2 value = 0 }
+						}
+						set_planet_flag = str_good_extra_switching_candidate
+						owner = { set_country_flag = str_has_designated_good_extra_switch }
+						owner = { set_country_flag = str_has_designated_extra_switch }
+					}
+					if = {
+						limit = { owner = { not = { has_country_flag = str_has_designated_extra_switch } } }
+						set_planet_flag = str_extra_switching_candidate
+						owner = { set_country_flag = str_has_designated_extra_switch }
+					}
+				}
+
+
+				if = {
+					limit = {
+						str_is_col_factory = yes
+						owner = {
+							resource_income_compare = {
+								resource = consumer_goods
+								value > 5
+							}
+							not = { has_country_flag = str_has_designated_good_extra_switch } 
+						}
+						nor = {
+							has_planet_flag = str_factory_switching_candidate
+							has_planet_flag = str_good_factory_switching_candidate
+						}
+					}
+
+					if = {
+						limit = {
+							num_buildings = { type = building_factory_1 value = 0 }
+							num_buildings = { type = building_factory_2 value = 0 }
+						}
+						set_planet_flag = str_good_extra_switching_candidate
+						owner = { set_country_flag = str_has_designated_good_extra_switch }
+						owner = { set_country_flag = str_has_designated_extra_switch }
+					}
+					if = {
+						limit = { owner = { not = { has_country_flag = str_has_designated_extra_switch } } }
+						set_planet_flag = str_extra_switching_candidate
+						owner = { set_country_flag = str_has_designated_extra_switch }
+					}
+				}
+
+
+				if = {
+					limit = {
+						str_is_col_foundry = yes
+						or = {
+							num_buildings = { type = building_factory_1 value = 1 }
+							num_buildings = { type = building_factory_2 value = 1 }
+						}
+					}
+					if = {
+						limit = {
+							owner = { has_country_flag = str_has_misplaced_factory }
+						}
+						remove_building = building_factory_1
+						remove_building = building_factory_2
+					}
+					else = {
+						owner = { set_country_flag = str_has_misplaced_factory }
+					}
+				}
+
+					
+				if = {
+					limit = {
+						str_is_col_factory = yes
+						or = {
+							num_buildings = { type = building_foundry_1 value = 1 }
+							num_buildings = { type = building_foundry_2 value = 1 }
+						}
+					}
+					if = {
+						limit = {
+							owner = { has_country_flag = str_has_misplaced_foundry }
+						}
+						remove_building = building_foundry_1
+						remove_building = building_foundry_2
+					}
+					else = {
+						owner = { set_country_flag = str_has_misplaced_foundry }
+					}
+				}
+
+
+				if = {
+					limit = {
+						or = {
+							owner = {
+								is_machine_empire = yes
+							}
+							and = {
+								any_owned_pop = {
+									is_sapient = yes
+									is_being_purged = no
+									planet = { habitability = { who = prev value > 0.65 } }
+									is_robot_pop = no
+								}
+								or = {
+									num_pops < 6
+									any_owned_pop = {
+										count > 3
+										is_sapient = yes
+										is_being_purged = no
+										planet = { habitability = { who = prev value > 0.65 } }
+										is_robot_pop = no
+									}
+								}
+							}
+						}
+					}
+					set_planet_flag = str_good_habitability
+					remove_planet_flag = str_acceptable_habitability
+					remove_planet_flag = str_bad_habitability
+					remove_planet_flag = str_should_use_clerks
+					if = {
+						limit = { or ={ free_jobs > 2 free_district_slots > 0 } }
+						owner = { set_country_flag = str_has_room_to_grow_new }
+					}
+				}
+				else_if = {
+					limit = {
+						any_owned_pop = {
+							planet = { habitability = { who = prev value > 0.35 } }
+							is_robot_pop = no
+							is_being_purged = no
+							is_sapient = yes
+						}
+					}
+					remove_planet_flag = str_good_habitability
+					set_planet_flag = str_acceptable_habitability
+					remove_planet_flag = str_bad_habitability
+					remove_planet_flag = str_should_use_clerks
+					if = {
+						limit = {
+							or = { free_jobs > 2 free_district_slots > 0 }
+						}
+						owner = { set_country_flag = str_has_room_to_grow_new }
+					}
+				}
+				else_if = {
+					remove_planet_flag = str_good_habitability
+					remove_planet_flag = str_acceptable_habitability
+					set_planet_flag = str_bad_habitability
+					remove_district = district_industrial
+					if = {
+						limit = {
+							num_pops = 3
+						}
+						set_timed_planet_flag = {
+							flag = str_get_out_of_here
+							days = 360
+						}
+					}
+					if = {
+						limit = {
+							solar_system = {
+								exists = starbase
+								starbase = {
+									has_starbase_size > starbase_outpost
+								}
+							}
+						}
+						set_planet_flag = str_should_use_clerks
+					}
+				}
+				if = {
+					limit = {
+						solar_system = {
+							exists = starbase
+							starbase = {
+								has_starbase_size > starbase_outpost
+							}
+						}
+					}
+					set_planet_flag = str_should_use_merchants
+					else = {
+						remove_planet_flag = str_should_use_merchants
+					}
+				}
+				
+
+				if = {
+					limit = {
+						owner = { is_machine_empire = yes }
+					}
+					set_planet_flag = str_good_habitability
+					remove_planet_flag = str_acceptable_habitability
+					remove_planet_flag = str_bad_habitability
+					remove_planet_flag = str_should_use_clerks
+				}
+
+				if = {
+					limit = {
+						or = {
+							str_is_col_foundry = yes
+							str_is_col_factory = yes
+							str_is_col_industrial = yes
+							is_capital = yes
+						}
+						or = {
+							str_num_free_districts_milindustry = {
+								operator = <
+								num = 1
+							} 
+							free_jobs > 1
+							and = {
+								owner = {
+									resource_stockpile_compare = {
+										resource = minerals
+										value > 400
+									}
+								}
+								free_jobs > 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							str_num_districts_farming = { operator = > num = 1 }
+							owner = {
+								resource_stockpile_compare = {
+									resource = food
+									value > 900
+								}
+								resource_income_compare = {
+									resource = food
+									value > 20
+								}
+								not = {
+									has_country_flag = str_country_just_removed_food
+								}
+							}
+							num_unemployed = 0
+							or = {
+								owner = { has_technology = tech_droid_workers }
+								not = { has_building = building_robot_assembly_plant }
+								num_pops > 20
+							}
+							owner = {
+								or = {
+									resource_income_compare = {
+										resource = food
+										value > 40
+									}
+									is_catalytic_empire = no
+								}
+							}
+						}
+						remove_district = district_farming
+						owner = {
+							set_timed_country_flag = {
+								flag = str_country_just_removed_food
+								days = 300
+							}
+						}
+						set_timed_planet_flag = {
+							flag = str_just_removed_food_district
+							days = 500
+						}
+					}
+					else_if = {
+						limit = {
+							str_num_districts_mining = { operator = > num = 1 }
+							owner = {
+								resource_stockpile_compare = {
+									resource = minerals
+									value > 2000
+								}
+								resource_income_compare = {
+									resource = minerals
+									value > 70
+								}
+								not = {
+									has_country_flag = str_country_just_removed_minerals
+								}
+							}
+							num_unemployed = 0
+							or = {
+								owner = { has_technology = tech_droid_workers }
+								not = { has_building = building_robot_assembly_plant }
+								num_pops > 20
+							}
+						}
+						remove_district = district_mining
+						set_timed_planet_flag = {
+							flag = str_just_removed_mineral_district
+							days = 600
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = str_country_just_removed_minerals
+								days = 600
+							}
+						}
+					}
+						
+					else_if = {
+						limit = {
+							str_num_districts_generator = { operator = > num = 1 }
+							owner = {
+								nor = {
+									has_ascension_perk = ap_world_shaper
+									has_ascension_perk = ap_machine_worlds
+									has_ascension_perk = ap_hive_worlds
+								}
+								resource_stockpile_compare = {
+									resource = energy
+									value > 800
+								}
+								resource_income_compare = {
+									resource = energy
+									value > 60
+								}
+								not = {
+									has_country_flag = str_country_just_removed_energy
+								}
+							}
+							num_unemployed = 0
+							or = {
+								owner = { has_technology = tech_droid_workers }
+								not = { has_building = building_robot_assembly_plant }
+								num_pops > 20
+							}
+						}
+						remove_district = district_generator
+						set_timed_planet_flag = {
+							flag = str_just_removed_energy_district
+							days = 600
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = str_country_just_removed_energy
+								days = 600
+							}
+						}
+					}
+				}
+					
+				if = {
+					limit = {
+						str_num_districts_farming = { operator = > num = 1 }
+							has_designation = col_farming
+						owner = {
+							resource_stockpile_compare = {
+								resource = food
+								value > 900
+							}
+							resource_income_compare = {
+								resource = food
+								value > 35
+							}
+							not = {
+								has_country_flag = str_country_just_removed_food
+							}
+						}
+					}
+					remove_district = district_farming
+					owner = {
+						set_timed_country_flag = {
+							flag = str_country_just_removed_food
+							days = 300
+						}
+					}
+					set_timed_planet_flag = {
+						flag = str_just_removed_food_district
+						days = 500
+					}
+				}
+				if = {
+					limit = {
+						str_is_col_farming = yes
+						owner = {
+							resource_stockpile_compare = {
+								resource = food
+								value > 950
+							}
+							resource_income_compare = {
+								resource = food
+								value > 65
+							}
+							not = {
+								has_country_flag = str_country_just_removed_food
+							}
+						}
+					}
+					remove_district = district_farming
+					owner = {
+						set_timed_country_flag = {
+							flag = str_country_just_removed_food
+							days = 300
+						}
+					}
+					set_timed_planet_flag = {
+						flag = str_just_removed_food_district
+						days = 500
+					}
+				}
+				if = {
+					limit = {
+						free_jobs > 5
+						free_amenities < -9
+						planet_stability < 40
+						free_building_slots > 0
+					}
+					remove_district = district_farming
+					remove_district = district_mining
+					remove_district = district_generator
+				}
+
+				if = {
+					limit = {
+						planet_crime < 1
+						has_active_building = building_precinct_house
+						nand = { has_branch_office = yes branch_office_owner = { is_criminal_syndicate = yes } }
+						not = { has_modifier = criminal_underworld }
+						num_unemployed < 1
+					}
+					remove_building = building_precinct_house
+					set_timed_planet_flag = {
+						flag = str_just_removed_precinct
+						days = 300
+					}
+				}
+
+				if = {
+					limit = {
+						has_planet_flag = str_bad_habitability
+						num_pops < 9
+						num_pops > 2
+						not = { has_planet_flag = str_five_year_new_colony }
+						owner = { has_country_flag = str_there_exists_pop_sink }
+						owner = { has_country_flag = str_has_room_to_grow }
+						num_unemployed < 1
+						not = { has_building = building_robot_assembly_plant }
+						owner = { str_raw_ecocrisis_level_1 = no }
+					}
+					if = {
+						limit = {
+							or = {
+								owner = {
+									resource_income_compare = {
+										resource = energy
+										value > 0
+									}
+									resource_stockpile_compare = {
+										resource = energy
+										value > 700
+									}
+								}
+								owner = {
+									resource_income_compare = {
+										resource = energy
+										value > 10
+									}
+									resource_stockpile_compare = {
+										resource = energy
+										value > 300
+									}
+								}
+							}
+						}
+						remove_district = district_generator
+					}
+					if = {
+						limit = {
+							or = {
+								owner = {
+									resource_income_compare = {
+										resource = minerals
+										value > 50
+									}
+									resource_stockpile_compare = {
+										resource = minerals
+										value > 400
+									}
+								}
+								owner = {
+									resource_income_compare = {
+										resource = minerals
+										value > 70
+									}
+								}
+								owner = {
+									resource_income_compare = {
+										resource = minerals
+										value > 40
+									}
+									resource_stockpile_compare = {
+										resource = minerals
+										value > 1500
+									}
+								}
+							}
+						}
+						remove_district = district_mining
+					}
+					if = {
+						limit = {
+							or = {
+								owner = {
+									resource_income_compare = {
+										resource = food
+										value > 10
+									}
+									resource_stockpile_compare = {
+										resource = food
+										value > 500
+									}
+								}
+								owner = {
+									resource_income_compare = {
+										resource = food
+										value > 25
+									}
+									resource_stockpile_compare = {
+										resource = food
+										value > 300
+									}
+								}
+							}
+						}
+						remove_district = district_farming
+					}
+				}
+				if = {
+					limit = {
+						free_building_slots < 0
+					}
+					remove_last_built_building = yes
+				}
+			}
+		}
+		remove_country_flag = str_there_exists_pop_sink
+		if = {
+			limit = {
+				has_country_flag = str_there_exists_pop_sink_new
+			}
+			set_country_flag = str_there_exists_pop_sink
+		}
+		remove_country_flag = str_has_room_to_grow
+		if = {
+			limit = {
+				has_country_flag = str_has_room_to_grow_new
+			}
+			set_country_flag = str_has_room_to_grow
+		}
+
+		if = {
+			limit = {
+				is_ai = yes
+				not = {
+					has_country_flag = str_demolish_industry_mineral_crisis
+				}
+				or = {
+					has_deficit = minerals
+					str_minerals_crisis_2 = yes
+				}
+			}
+			every_owned_planet = {
+				remove_district = district_industrial
+			}
+			set_timed_country_flag = {
+				flag = str_demolish_industry_mineral_crisis
+				days = 720
+			}
+		}
+					
+		if = {
+			limit = {
+				is_ai = yes
+				is_gestalt = yes
+			}
+			every_owned_planet = {
+				if = {
+					limit = {
+						or = { free_amenities > 7 free_amenities < -1 }
+					}
+					planet_event = {
+						id = str_planet_audit.1
+					}
+				}
+				if = {
+					limit = {
+						free_amenities > 13
+					}
+					planet_event = {
+						id = str_planet_audit.1
+					}
+					planet_event = {
+						id = str_planet_audit.1
+					}
+				}
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = str_economy_plan.3
+	is_triggered_only = yes
+	fire_only_once = no
+	hide_window = yes
+	immediate = {
+		remove_country_flag = str_lets_terraform
+		every_owned_planet = {
+			limit = {
+				not = { has_planet_flag = str_good_habitability } 
+				nand = { 
+					has_planet_flag = str_did_terraforming 
+					not = { is_planet_class = pc_machine }	
+					not = { is_planet_class = pc_hive }
+				}
+				num_pops > 5
+			}
+			remove_planet_flag = str_terraform_alpine
+			remove_planet_flag = str_terraform_tundra
+			remove_planet_flag = str_terraform_arctic
+			remove_planet_flag = str_terraform_continental
+			remove_planet_flag = str_terraform_tropical
+			remove_planet_flag = str_terraform_ocean
+			remove_planet_flag = str_terraform_savannah
+			remove_planet_flag = str_terraform_desert
+			remove_planet_flag = str_terraform_arid
+			if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_alpine_preference
+					}
+				}
+				set_planet_flag = str_terraform_alpine
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_tundra_preference
+					}
+				}
+				set_planet_flag = str_terraform_tundra
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_arctic_preference
+					}
+				}
+				set_planet_flag = str_terraform_arctic
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_ocean_preference
+					}
+				}
+				set_planet_flag = str_terraform_ocean
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_continental_preference
+					}
+				}
+				set_planet_flag = str_terraform_continental
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_tropical_preference
+					}
+				}
+				set_planet_flag = str_terraform_tropical
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_arid_preference
+					}
+				}
+				set_planet_flag = str_terraform_arid
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_desert_preference
+					}
+				}
+				set_planet_flag = str_terraform_desert
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					any_owned_pop = {
+						count >= 5
+						is_organic_species = yes
+						is_sapient = yes
+						is_being_purged = no
+						has_trait = trait_pc_savannah_preference
+					}
+				}
+				set_planet_flag = str_terraform_savannah
+				owner = { set_country_flag = str_lets_terraform }
+				break = yes
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = str_economy_plan.4
+	is_triggered_only = yes
+	fire_only_once = no
+	hide_window = yes
+	immediate = {
+		remove_planet_flag = str_terraform_alpine
+		remove_planet_flag = str_terraform_tundra
+		remove_planet_flag = str_terraform_arctic
+		remove_planet_flag = str_terraform_continental
+		remove_planet_flag = str_terraform_tropical
+		remove_planet_flag = str_terraform_ocean
+		remove_planet_flag = str_terraform_savannah
+		remove_planet_flag = str_terraform_desert
+		remove_planet_flag = str_terraform_arid
+		set_planet_flag = str_did_terraforming
+	}
+}

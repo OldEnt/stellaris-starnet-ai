@@ -1,0 +1,165 @@
+namespace = first_contact_critters 
+
+first_contact_event = {
+	id = first_contact_critters.35
+	title = story.201.name
+	# Phile
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		text = story.201.desc.phile
+	}
+	# Phobe
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		text = story.201.desc.phobe
+	}
+	# Pacif
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		text = story.201.desc.pacif
+	}
+	# Spiri
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		text = story.201.desc.spiri
+	}
+	# Milit
+	desc = {
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		text = story.201.desc.milit
+	}
+	# Generic / Gestalt
+	desc = {
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		text = story.201.desc
+	}
+	picture = GFX_evt_fleet_evil
+	show_sound = event_space_crystals
+	
+	is_triggered_only = yes
+	first_contact = yes
+
+	immediate = {
+		set_site_progress_locked = yes
+	}
+
+	option = { # Hunting Buff
+		name = story.201.aa
+		trigger = {
+			owner = {
+				hidden_trigger = {
+					is_ai = no
+				}
+				OR = {
+					is_xenophobe = yes
+					is_militarist = yes
+					is_homicidal = yes
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = crystal_hunting_buff
+				days = -1
+			}
+		}
+		custom_tooltip = story.201.aa.crystalhunt
+	}
+
+	option = { # Special Project
+		name = story.201.bb
+		owner = {
+			capital_scope = {
+				enable_special_project = {
+					name = "CRYSTALS_PROJECT"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+	}
+
+	option = {
+		name = story.201.cc
+		trigger = {
+			owner = {
+				hidden_trigger = {
+					or = {
+						is_ai = no
+						is_pacifist = yes
+					}
+				}
+				OR = {
+					is_xenophile = yes
+					is_pacifist = yes
+				}
+			}
+		}
+		owner = {
+			capital_scope = {
+				enable_special_project = {
+					name = "CRYSTALS_PACIFICATION_PROJECT"
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+	}
+
+	after = { 
+		finish_first_contact_effect = yes
+		set_site_progress_locked = no
+	}
+}
+
+

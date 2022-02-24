@@ -1,0 +1,87 @@
+namespace = story
+
+country_event = {
+	id = story.205
+	title = story.205.name
+	desc = {
+		trigger = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		text = story.205.desc.gesta
+	}
+	# Phile
+	desc = {
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		text = story.205.desc.phile
+	}
+	# Pacifist
+	desc = {
+		trigger = {
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		text = story.205.desc.pacif
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+			}
+		}
+		text = story.205.desc
+	}
+	picture = GFX_evt_fleet_evil
+	show_sound = event_crystal_ship
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			hidden_trigger = {
+				owner = {
+					or = {
+						is_ai = no
+						is_pacifist = yes
+					}
+				}
+			}
+		}
+		name = story.205.bb
+		add_modifier = {
+			modifier = crystal_focus # +5% energy
+			days = -1
+		}
+
+	}
+
+	option = {
+		trigger = { 
+			owner = {
+				NOR = {
+					has_technology = tech_crystal_armor_1
+					has_technology = tech_crystal_armor_2
+				}
+			}
+		}
+		name = story.205.aa
+		add_research_option = tech_crystal_armor_1
+		add_tech_progress = {
+			tech = tech_crystal_armor_1
+			progress = 0.5
+		}
+	}
+}
+

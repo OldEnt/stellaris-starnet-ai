@@ -1,0 +1,78 @@
+
+
+str_make_fleet_against_rush = {
+	is_ai = yes
+	years_passed < @str_years_of_guaranteed_truce
+	any_relation = {
+		is_ai = no
+		or = {
+			and = {
+				fleet_power > 500
+				prev = { fleet_power < 1000 }
+			}
+			and = {
+				fleet_power > 1000
+				prev = { fleet_power < 1500 }
+			}
+			and = {
+				fleet_power > 1500
+				prev = { fleet_power < 2500 }
+			}
+			and = {
+				fleet_power > 2000
+				prev = { fleet_power < 4000 }
+			}
+		}
+	}
+}
+
+
+str_save_alloys_against_rush = {
+	is_ai = yes
+	years_passed < @str_years_of_guaranteed_truce
+	or = {
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 2000
+			}
+			years_passed > @str_ai_prioritise_energy_for_fleet_after
+			years_passed < @str_years_of_extended_truce
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 1000
+			}
+			has_country_flag = str_need_1000_alloys
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 1500
+			}
+			has_country_flag = str_need_1500_alloys
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 2000
+			}
+			has_country_flag = str_need_2000_alloys
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 3000
+			}
+			has_country_flag = str_need_3000_alloys
+		}
+		and = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value < 4000
+			}
+			has_country_flag = str_need_4000_alloys
+		}
+	}
+}

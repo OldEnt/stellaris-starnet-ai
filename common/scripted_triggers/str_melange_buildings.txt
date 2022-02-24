@@ -1,0 +1,138 @@
+str_force_ai_research_lab = {
+	free_building_slots > 0
+	owner = {
+		is_ai = yes
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 600
+		}
+	}
+	owner = {
+		str_raw_ecocrisis_level_0 = no
+		lategame = no
+	}
+	owner = {
+		or = {
+			minilategame = no
+			resource_income_compare = {
+				resource = physics_research
+				value > 1000
+			}
+		}
+	}
+	or = {
+		str_is_col_research = yes
+		str_is_col_capital = yes
+		owner = {
+			empire_sprawl_over_cap < 40
+			resource_income_compare = {
+				resource = physics_research
+				value < 200
+			}
+		}
+	}
+	or = {
+		free_amenities > 0
+		and = {
+			free_building_slots > 1
+			free_amenities > -3
+		}
+	}
+	nand = {
+		free_jobs > 5
+		num_unemployed = 0
+	}
+	or = {
+		free_building_slots > 1
+		and = {
+			str_is_col_factory = yes
+			or = {
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_3
+			}
+			or = {
+				has_building = building_ministry_production
+				has_building = building_production_center
+				owner = { not = { has_technology = tech_global_production_strategy } }
+			}
+		}
+		and = {
+			str_is_col_foundry = yes
+			or = {
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
+			or = {
+				has_building = building_ministry_production
+				has_building = building_production_center
+				owner = { not = { has_technology = tech_global_production_strategy } }
+			}
+		}
+		and = {
+			str_is_col_mining = yes
+			or = {
+				has_building = building_mineral_purification_hub
+				has_building = building_mineral_purification_plant
+			}
+		}
+		and = {
+			str_is_col_generator = yes
+			or = {
+				has_building = building_energy_grid
+				has_building = building_energy_nexus
+			}
+		}
+		and = {
+			str_is_col_farming = yes
+			or = {
+				has_building = building_food_processing_facility
+				has_building = building_food_processing_center
+			}
+		}
+		str_is_col_research = yes
+		str_is_col_capital = yes
+	}
+}
+
+str_force_ai_stronghold = {
+
+	free_building_slots > 0
+
+	owner = {
+		is_ai = yes
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 600
+		}
+	}
+
+	or = {
+		nor = {
+			str_is_col_bureau = yes
+			str_is_col_research = yes
+		}
+		owner = { lategame = yes }
+	}
+	years_passed > 80
+	owner = {
+		used_naval_capacity_percent > 0.9
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 1500
+		}
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 1500
+		}
+		resource_income_compare = {
+			resource = minerals
+			value > 40
+		}
+		resource_income_compare = {
+			resource = energy
+			value > -5
+		}
+	}
+}

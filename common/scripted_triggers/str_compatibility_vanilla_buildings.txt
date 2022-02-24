@@ -1,0 +1,31 @@
+#These triggers are used in acot compatibility patch, also this way it would be easier to write compatibility patches for other OP mods
+
+str_force_city_district_compatibility = {
+	always = yes
+}
+str_city_allow_compatibility = {
+	always = yes
+}
+
+str_industry_allow_compatibility = {
+	always = yes
+}
+
+str_food_allow_compatibility = {
+	always = yes
+}
+
+str_minerals_allow_compatibility = {
+	always = yes
+}
+
+str_energy_allow_compatibility = {
+	always = yes
+}
+
+str_vanilla_buildings_allow_compatibility = {
+	always = yes
+}
+
+
+

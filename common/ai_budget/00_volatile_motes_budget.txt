@@ -1,0 +1,136 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+volatile_motes_expenditure_ships = {
+	resource = volatile_motes
+	type = expenditure
+	category = ships
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 50
+	}
+}
+
+volatile_motes_expenditure_trade = {
+	resource = volatile_motes
+	type = expenditure
+	category = trade
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+volatile_motes_expenditure_planets = {
+	resource = volatile_motes
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 500
+	}
+}
+
+volatile_motes_upkeep_planets = {
+	resource = volatile_motes
+	type = upkeep
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+volatile_motes_upgrade_ships = {
+	resource = volatile_motes
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+volatile_motes_expenditure_edicts = {
+	resource = volatile_motes
+	type = expenditure
+	category = edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = volatile_motes
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+volatile_motes_expenditure_rareedicts = {
+	resource = volatile_motes
+	type = expenditure
+	category = rare_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = volatile_motes
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+volatile_motes_expenditure_shipedicts = {
+	resource = volatile_motes
+	type = expenditure
+	category = ship_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = volatile_motes
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 1000
+			is_at_war = yes
+		}
+	}
+}

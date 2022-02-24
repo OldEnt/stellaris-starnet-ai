@@ -1,0 +1,60 @@
+rusher = {
+	OR = {
+		has_ethic = ethic_fanatic_militarist
+		AND = {
+			has_ethic = ethic_militarist
+			NOT = {
+				has_ethic = ethic_materialist
+			}
+			NOT = {
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+	}
+}
+
+turtler = {
+	OR = {
+		AND = {
+			has_ethic = ethic_materialist
+			NOT = {
+				has_ethic = ethic_militarist
+			}
+			NOT = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		has_ethic = ethic_fanatic_materialist
+	}
+}
+
+rusher2 = {
+	or = {
+		has_civic = civic_distinguished_admiralty
+		has_civic = civic_citizen_service
+	}
+}
+
+rusher3 = {
+	or = {
+		has_civic = civic_hive_devouring_swarm
+		has_civic = civic_fanatic_purifiers
+		has_civic = civic_machine_terminator
+		has_civic = civic_machine_assimilator
+	}
+}
+
+turtler2 = {
+	or = {
+		has_ethic = ethic_pacifist
+		has_civic = civic_technocracy
+		has_origin = origin_mechanists
+	}
+}
+
+turtler3 = {
+	or = {
+		has_ethic = ethic_fanatic_pacifist
+		has_civic = civic_inwards_perfection
+	}
+}

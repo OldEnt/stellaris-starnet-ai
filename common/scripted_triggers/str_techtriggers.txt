@@ -1,0 +1,122 @@
+#If AI ever reaches lategame it will scrap science facilities and spam strongholds and alloys
+
+lategame = {
+	or = {
+		and = {
+			has_technology = tech_battleships
+			has_technology = tech_zero_point_power
+			has_technology = tech_ascension_theory
+			has_technology = tech_energy_torpedoes_2
+			has_technology = tech_energy_lance_2
+			has_technology = tech_kinetic_artillery_2
+			has_technology = tech_mass_accelerator_2
+			has_technology = tech_arc_emitter_2
+			or = {
+				has_technology = tech_matter_decompressor
+				has_technology = tech_dyson_sphere
+				nor = { host_has_dlc = "Utopia" host_has_dlc = "Megacorp" }
+			}
+		}
+		and = {
+			minilategame = yes
+			has_ascension_perk = ap_become_the_crisis
+			has_crisis_level = crisis_level_3
+		}
+	}
+}
+
+minilategame = {
+	has_technology = tech_battleships
+	has_technology = tech_ascension_theory
+	has_technology = tech_energy_torpedoes_2
+}
+
+#I value ascension theory very highly
+#so if it's a possible option
+# AI will try to "reroll" techs by picking cheap techs until it's offered
+
+reroll_society = {
+	or = {
+		and = {
+			NOT = {
+				has_tech_option = tech_ascension_theory
+			}
+			or = {
+				has_tech_option = tech_repeatable_command_limit
+				has_tech_option = tech_repeatable_improved_army_damage
+				has_tech_option = tech_repeatable_improved_army_health
+				has_tech_option = tech_repeatable_improved_core_system_cap
+				has_tech_option = tech_repeatable_improved_edict_length
+				has_tech_option = tech_repeatable_improved_leader_life_span
+				has_tech_option = tech_repeatable_naval_cap
+			}
+		}
+		and = {
+			not = { has_technology = tech_climate_restoration }
+			or = {
+				has_tech_option = tech_galactic_campaigns
+				has_tech_option = tech_manifest_destiny
+				has_tech_option = tech_doctrine_navy_size_3
+				has_tech_option = tech_doctrine_navy_size_4
+				has_tech_option = tech_doctrine_fleet_size_3
+				has_tech_option = tech_doctrine_fleet_size_4
+				has_tech_option = tech_doctrine_fleet_size_5
+				has_tech_option = tech_galactic_markets
+				has_tech_option = tech_nutrient_replication
+				has_tech_option = tech_society_3
+				has_tech_option = tech_colonization_5
+			}
+		}
+	}
+}
+
+beta_arcology = {
+	num_ascension_perks > 1
+	has_technology = tech_housing_2
+	host_has_dlc = "Megacorp"
+	is_regular_empire = yes
+	NOT = { has_valid_civic = civic_agrarian_idyll }
+	NOT = {
+		has_ascension_perk = ap_arcology_project
+	}
+}
+
+
+arcology_save_claims = {
+	is_ai = yes
+	or = {
+		and = {
+			has_country_flag = making_ecumen
+			or = {
+				has_ascension_perk = ap_arcology_project
+				resource_stockpile_compare = {
+					resource = influence
+					value < 400
+				}
+			}
+		}
+
+		and = {
+			has_country_flag = has_unrestored_relic
+			has_technology = tech_housing_2
+		}
+	}
+	resource_stockpile_compare = {
+		resource = influence
+		value < 210
+	}
+	resource_stockpile_compare = {
+		resource = minerals
+		value > 17000
+	}
+}
+
+ecumen_in_progress ={
+	is_ai = yes
+	any_owned_planet = {
+		has_planet_flag = ecumen
+		not = {
+			is_planet_class = pc_city
+		}
+	}
+}

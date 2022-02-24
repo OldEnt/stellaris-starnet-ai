@@ -1,0 +1,410 @@
+namespace = action
+namespace = necroids
+
+# triggered by on_planet_attackers_win
+# ROOT = country, leader attacker
+# FROM = country, planet owner
+# FROMFROM = planet
+# These events are written by corsairmark, I am using them with his agreement.
+# Apparently vanilla gives free districts when a human player conques primitives but doesn't give them when an AI does the same
+# This discrimination is unacceptable.
+
+
+country_event = {
+	id = action.14
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FROM = { is_country_type = primitive }
+		is_country_type = default
+	}
+	immediate = {
+		log = "primitive conquest: [FromFrom.GetName] conquered by the [Root.GetName]"
+		if = {
+			limit = { is_regular_empire = yes }
+			FROMFROM = {
+				add_modifier = {
+					modifier = planet_culture_shock
+					years = 10
+				}
+				set_owner = ROOT
+			}
+		}
+		else = {
+			FROMFROM = { set_owner = ROOT }
+		}
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				is_country_type = default
+				NOT = { is_same_value = ROOT }
+			}
+			add_opinion_modifier = {
+				who = ROOT
+				modifier = opinion_primitive_violation
+			}
+		}
+		FROMFROM = { save_event_target_as = conquered_primitive_planet }
+		FROM = { owner_species = { save_event_target_as = conquered_primitive_species } }
+		if = {
+			limit = { is_ai = no }
+			country_event = { id = action.140 }
+		}
+		else = {
+			# NB NOTE: the AI deserves free districts too - it just doesn't need the fancy window alert
+			FROMFROM = { planet_event = { id = action.141 } }
+		}
+		reset_years_of_peace = yes
+	}
+}
+
+# chained from action.14, which is triggered for primitive planets by on_planet_attackers_win
+# ROOT = country that just conquered the planet
+# event_target:conquered_primitive_planet = the planet that was conquered
+# event_target:conquered_primitive_species = the species that was conquered
+country_event = {
+	id = action.140
+	title = action.14.name
+	desc = { #Non-Purge Policy Regular Empires
+		text = action.14.desc
+		trigger = {
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				event_target:conquered_primitive_species = {
+					has_citizenship_type = { country = ROOT type = citizenship_purge }
+				}
+			}
+		}
+	}
+	desc = { #Purge Policy Regular Empires
+		text = action.14.desc.purge
+		trigger = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			event_target:conquered_primitive_species = {
+				has_citizenship_type = { country = ROOT type = citizenship_purge }
+			}
+		}
+	}
+	desc = { #Servitors
+		text = action.14.desc.serv
+		trigger = {
+			has_civic = civic_machine_servitor
+		}
+	}
+	desc = { #Assimilators
+		text = action.14.desc.assim
+		trigger = {
+			has_civic = civic_machine_assimilator
+		}
+	}
+	desc = { #Exterminators
+		text = action.14.desc.term
+		trigger = {
+			has_civic = civic_machine_terminator
+		}
+	}
+	desc = { #Purge Policy MIs
+		text = action.14.desc.mach.purge
+		trigger = {
+			has_authority = auth_machine_intelligence
+			event_target:conquered_primitive_species = {
+				has_citizenship_type = { country = ROOT type = citizenship_purge }
+			}
+			NOR = {
+				has_civic = civic_machine_servitor
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_terminator
+			}
+		}
+	}
+	desc = { #Enslave Policy MIs
+		text = action.14.desc.mach.slave
+		trigger = {
+			has_authority = auth_machine_intelligence
+			event_target:conquered_primitive_species = {
+				has_citizenship_type = { country = ROOT type = citizenship_slavery }
+			}
+			NOR = {
+				has_civic = civic_machine_servitor
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_terminator
+			}
+		}
+	}
+	desc = { #Purge Policy Hiveminds
+		text = action.14.desc.hive.purge
+		trigger = {
+			has_authority = auth_hive_mind
+			event_target:conquered_primitive_species = {
+				has_citizenship_type = { country = ROOT type = citizenship_purge }
+			}
+		}
+	}
+	desc = { #Enslave Policy Hiveminds
+		text = action.14.desc.hive.slave
+		trigger = {
+			has_authority = auth_hive_mind
+			event_target:conquered_primitive_species = {
+				has_citizenship_type = { country = ROOT type = citizenship_slavery }
+			}
+		}
+	}
+	picture = GFX_evt_ground_combat
+	show_sound = event_alien_signal
+	location = event_target:conquered_primitive_planet
+	is_triggered_only = yes
+	immediate = {
+		event_target:conquered_primitive_planet = { planet_event = { id = action.141 } }
+	}
+	option = {
+		name = action.14.a.phobe
+		custom_tooltip = action.14.a.tooltip
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+			}
+		}
+	}
+	option = {
+		name = action.14.a.military
+		custom_tooltip = action.14.a.tooltip
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+			}
+		}
+	}
+	option = {
+		name = action.14.a.spirit
+		custom_tooltip = action.14.a.tooltip
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			}
+		}
+	}
+	option = {
+		name = action.14.a.material
+		custom_tooltip = action.14.a.tooltip
+		trigger = {
+			OR = {
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_materialist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			}
+		}
+	}
+	option = {
+		name = action.14.a
+		custom_tooltip = action.14.a.tooltip
+		trigger = {
+			NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_materialist
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+		}
+	}
+	option = {
+		name = action.14.a
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+	option = {
+		name = action.14.a.serv
+		trigger = {
+			has_civic = civic_machine_servitor
+		}
+	}
+	option = {
+		name = action.14.a.assim
+		trigger = {
+			has_civic = civic_machine_assimilator
+		}
+	}
+	option = {
+		name = action.14.a.term
+		trigger = {
+			has_civic = civic_machine_terminator
+		}
+	}
+	option = {
+		name = action.14.a.mach
+		trigger = {
+			has_authority = auth_machine_intelligence
+			NOR = {
+				has_civic = civic_machine_servitor
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_terminator
+			}
+		}
+	}
+}
+
+# NB NOTE: this event adds the same districts as the original code from action.140,
+# but is more succinct, doesn't rely on break statements, and won't fail if there
+# are over 35 pops.  It also accounts for conquering lithoid primitives, which
+# logically wouldn't have needed farming.
+# ROOT = the planet that was conquered
+# event_target:conquered_primitive_species = the species that was conquered
+planet_event = {
+	id = action.141
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "primitive conquest add districts: constructing on [Root.GetName] for the [Root.Owner.GetName]"
+		if = {
+			limit = { is_planet_class = pc_ringworld_habitable }
+			add_primitive_conquest_rw_urban_district = yes
+		}
+		else = {
+			set_variable = {
+				which = count_machine_servitor_urban
+				value = 0
+			}
+			add_primitive_conquest_urban_district = yes
+			add_primitive_conquest_food_district = yes
+			if = {
+				limit = { num_pops > 10 }
+				add_primitive_conquest_urban_district = yes
+				add_district = district_mining
+			}
+			if = {
+				limit = { num_pops > 15 }
+				add_primitive_conquest_food_district = yes
+				add_district = district_mining
+			}
+			if = {
+				limit = { num_pops > 20 }
+				add_primitive_conquest_urban_district = yes
+			}
+			if = {
+				limit = { num_pops > 25 }
+				add_primitive_conquest_urban_district = yes
+				add_district = district_generator
+			}
+			if = {
+				limit = { num_pops > 30 }
+				add_primitive_conquest_urban_district = yes
+			}
+			clear_variable = count_machine_servitor_urban
+		}
+	}
+}
+
+# scheduled to fire 4 times, 5 years apart by game_start.33, which itself is triggered by on_game_start_country
+# ROOT = a country with necrophage origin
+country_event = {
+	id = necroids.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+	}
+	immediate = {
+		log = "necroids primitive 'conquest': helping the [Root.GetName] 'conquer' all primitives within its borders"
+		# try to have 3 necrophage pops on every planet with planet_culture_shock
+		every_owned_planet = {
+			limit = {
+				has_modifier = planet_culture_shock
+				count_owned_pop = {
+					count <= 1
+					limit = { is_same_species = ROOT }
+				}
+			}
+			while = {
+				count = 3
+				limit = {
+					count_owned_pop = {
+						count < 3
+						limit = { is_same_species = ROOT }
+					}
+				}
+				ROOT = {
+					capital_scope = {
+						random_owned_pop = {
+							limit = { species = { is_same_species = ROOT } }
+							resettle_pop = {
+								pop = THIS
+								planet = PREVPREVPREV
+							}
+							clear_pop_category = yes # in case a specialist/ruler was moved
+						}
+					}
+				}
+			}
+			check_planet_employment = yes
+			add_district = district_city
+		}
+		# automatically take control of any primitves within borders
+		every_planet_within_border = {
+			limit = {
+				is_colony = yes
+				owner = { is_country_type = primitive }
+			}
+			owner_species = { save_event_target_as = conquered_primitive_species }
+			if = {
+				limit = { has_observation_outpost = yes }
+				observation_outpost = { dismantle = yes }
+			}
+			set_owner = ROOT
+			add_modifier = {
+				modifier = planet_culture_shock
+				years = 10
+			}
+			# move 3 necrophage pops to the newly "conquered" planet
+			while = {
+				count = 3
+				ROOT = {
+					capital_scope = {
+						random_owned_pop = {
+							limit = { species = { is_same_species = ROOT } }
+							resettle_pop = {
+								pop = THIS
+								planet = PREVPREVPREV
+							}
+							clear_pop_category = yes # in case a specialist/ruler was moved
+						}
+					}
+				}
+			}
+			add_district = district_city
+			# replicate some planetary conquest events
+			planet_event = { # Crisis Menace Objective: Conquer a Colony
+				id = crisis.5010
+				scopes = {
+					from = ROOT
+				}
+			}
+			planet_event = { id = action.84 } # Imperialists are pleased
+			planet_event = { id = action.141 } # Add conquest districts
+			check_planet_employment = yes
+		}
+	}
+}

@@ -1,0 +1,3316 @@
+#root = planet
+
+@small_planet_threshold = 18
+@free_districts_verylow_threshold = 3
+@free_districts_low_threshold = 5
+@free_districts_medium_threshold = 10
+@free_districts_high_threshold = 15
+@built_districts_low_threshold = 3
+@built_districts_medium_threshold = 4
+@built_districts_high_threshold = 8
+
+# Colony
+col_default = {
+	icon = GFX_colony_type_normal_colony
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes}
+		has_upgraded_capital = no
+		is_special_colony_type = no
+		num_sapient_pops < 5
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		pop_happiness = 0.10
+	}
+
+	weight_modifier = {
+		base = 1000
+		modifier = {
+			factor = 100
+			owner = { is_ai = yes }
+		}
+	}
+}
+
+# Colony Machine
+col_default_machine = {
+	icon = GFX_colony_type_normal_colony
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		has_upgraded_capital = no
+		is_special_colony_type = no
+		num_sapient_pops < 5 # Non-sapient machines are included
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_no_happiness_add = 10
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			factor = 100
+			owner = { is_ai = yes }
+		}
+	}
+}
+
+# Urban Planet
+col_city = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_structures_upkeep_mult = -0.10
+		planet_district_city_build_speed_mult = 0.25
+		trade_value_mult = 0.20
+	}
+
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Mining Planet
+col_mining = {
+	icon = GFX_colony_type_mine
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_mining_build_speed_mult = 0.25
+		planet_miners_produces_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 1
+			num_free_districts = { type = district_mining value > @free_districts_low_threshold }
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 2
+			num_free_districts = { type = district_mining value > @free_districts_medium_threshold }
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 3
+			has_designation = col_mining
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_modifier = asteroid_belt
+				has_modifier = mineral_rich
+				has_modifier = ultra_rich
+				has_modifier = extensive_moon_system
+				has_modifier = asteroid_impacts
+			}
+		}
+		modifier = {
+			add = 3
+			OR = {
+				has_modifier = asteroid_belt
+				has_modifier = mineral_rich
+				has_modifier = ultra_rich
+				has_modifier = extensive_moon_system
+				has_modifier = asteroid_impacts
+			}
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 1 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 2 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 3 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_mining value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_mining value >= 6 }
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_mining value = 0 }
+		}
+		modifier = {
+			factor = 1.5
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+
+# Farming Planet
+col_farming = {
+	icon = GFX_colony_type_farm
+
+	potential = {
+		exists = owner
+		owner = { country_uses_food = yes }
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+			uses_district_set = machine_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_farming_build_speed_mult = 0.25
+		planet_farmers_produces_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 1
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_farming value > @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 2
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_farming value > @free_districts_medium_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 3
+			has_designation = col_farming
+		}
+		modifier = {
+			add = 5
+			has_modifier = lush_planet
+		}
+		modifier = {
+			factor = 0.1
+			has_modifier = bleak_planet
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 1 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 2 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 3 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_farming value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_farming value >= 6 }
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_farming value = 0 }
+		}
+		modifier = {
+			factor = 1.5
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+
+# Generator Planet
+col_generator = {
+	icon = GFX_colony_type_generator
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_generator_build_speed_mult = 0.25
+		planet_technician_produces_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 3
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value > @free_districts_low_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 5
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value > @free_districts_medium_threshold }
+			num_free_districts = { type = district_city value <= @small_planet_threshold }
+			num_free_districts = { type = district_nexus value <= @small_planet_threshold }
+			num_free_districts = { type = district_hive value <= @small_planet_threshold }
+		}
+		modifier = {
+			add = 3
+			has_designation = col_generator
+		}
+		modifier = {
+			add = 8
+			OR = {
+				has_modifier = hazardous_weather
+				has_modifier = strong_magnetic_field
+			}
+		}
+		modifier = {
+			add = 20
+			years_passed < 15
+			has_planet_flag = str_designated_energy_guaranteed
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 1 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 2 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 3 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_generator value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_districts = { type = district_generator value >= 6 }
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_generator value = 0 }
+		}
+		modifier = {
+			factor = 1.5
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+
+# Hive Planet/Nest planet
+col_hive = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		NOR = {
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		exists = owner
+		owner = { is_hive_empire = yes }
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_structures_upkeep_mult = -0.10
+		planet_jobs_complex_drone_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 0
+	}
+}
+
+
+# Nexus Planet
+col_nexus = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		NOR = {
+			uses_district_set = machine_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		exists = owner
+		owner = { is_machine_empire = yes }
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_structures_upkeep_mult = -0.10
+		planet_jobs_complex_drone_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 0
+	}
+}
+
+col_industrial = {
+	icon = GFX_colony_type_industrial
+
+	potential = {
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+			uses_district_set = machine_world
+			uses_district_set = hive_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.10
+		planet_metallurgists_upkeep_mult = -0.10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 5
+			has_designation = col_industrial
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= @built_districts_low_threshold }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			add = 10
+			AND = {
+				OR = {
+					has_building = building_factory_1
+					has_building = building_factory_2
+					has_building = building_factory_3
+				}
+				OR = {
+					has_building = building_foundry_1
+					has_building = building_foundry_2
+					has_building = building_foundry_3
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_industrial value = 0 }
+		}
+		modifier = {
+			factor = 0
+			owner = { is_ai = yes }
+		}
+	}
+}
+
+# Forge Planet
+col_foundry = {
+	icon = GFX_colony_type_foundry
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+			uses_district_set = machine_world
+			uses_district_set = hive_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_foundry_custom
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.20
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 3
+			OR = {
+				num_free_districts = { type = district_city value = @free_districts_high_threshold }
+				num_free_districts = { type = district_nexus value = @free_districts_high_threshold }
+				num_free_districts = { type = district_hive value = @free_districts_high_threshold }
+			}
+			OR = {
+				AND = {
+					owner = {
+						has_monthly_income = { resource = alloys value < 10 }
+						years_passed <= 20
+					}
+				}
+				AND = {
+					owner = {
+						has_monthly_income = { resource = alloys value < 20 }
+						years_passed > 20
+						years_passed < 50
+					}
+				}
+				AND = {
+					owner = {
+						has_monthly_income = { resource = alloys value < 40 }
+						years_passed > 50
+						years_passed < 75
+					}
+				}
+				AND = {
+					owner = {
+						has_monthly_income = { resource = alloys value < 50 }
+						years_passed > 75
+						years_passed < 100
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 7
+			has_designation = col_foundry
+		}
+
+		modifier = {
+			add = 20
+			years_passed < 15
+			has_planet_flag = str_designated_alloy_guaranteed
+		}
+
+		modifier = {
+			add = 0
+			has_designation = col_factory
+			str_industrial_switcher = no
+		}
+
+		modifier = {
+			add = 50
+			has_designation = col_factory
+			str_factory_to_foundry_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 950
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 10
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 750
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 15
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 550
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 20
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 50
+			has_designation = col_factory
+			str_foundry_to_factory_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 850
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 10
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 650
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 15
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 450
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 20
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 50
+			has_designation = col_factory
+			str_extra_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 750
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 10
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 550
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 15
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 350
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value > 20
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 5
+			str_foundry_to_factory_switcher = yes
+		}
+
+		modifier = {
+			add = 50
+			owner = {
+				has_deficit = consumer_goods
+				resource_stockpile_compare = {
+					resource = food
+					value < 300
+				}
+				resource_income_compare = {
+					resource = food
+					value < -12
+				}
+				resource_income_compare = {
+					resource = energy
+					value < 10
+				}
+				resource_stockpile_compare = {
+					resource = energy
+					value < 1000
+				}
+			}
+		}
+
+
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 1 }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 2 }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 3 }
+		}
+		modifier = {
+			add = 10
+			num_districts = { type = district_industrial value >= 4 }
+		}
+		modifier = {
+			add = 10
+			num_districts = { type = district_industrial value >= 6 }
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_industrial value = 0 }
+		}
+		modifier = {
+			add = 2
+			has_building = building_foundry_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_foundry_2
+		}
+		modifier = {
+			add = 2
+			owner = {
+				resource_income_compare = {
+					resource = consumer_goods
+					value > 20
+				}
+				resource_income_compare = {
+					resource = consumer_goods
+					value > 1000
+				}
+			}
+			num_buildings = { type = building_factory_1 value = 0 }
+			num_buildings = { type = building_factory_2 value = 0 }
+		}
+		modifier = {
+			factor = 0
+			not = {
+				owner = {
+					has_deficit = consumer_goods
+					resource_stockpile_compare = {
+						resource = food
+						value < 300
+					}
+					resource_income_compare = {
+						resource = food
+						value < -12
+					}
+					resource_income_compare = {
+						resource = energy
+						value < 10
+					}
+					resource_stockpile_compare = {
+						resource = energy
+						value < 1000
+					}
+				}
+			}
+			owner = {
+				or = {
+					and = {
+						resource_stockpile_compare = {
+							resource = minerals
+							value < 100
+						}
+						resource_stockpile_compare = {
+							resource = minerals
+							value < 5
+						}
+					}
+					and = {
+						resource_stockpile_compare = {
+							resource = food
+							value < 200
+						}
+						resource_stockpile_compare = {
+							resource = food
+							value < -50
+						}
+					}
+					and = {
+						resource_stockpile_compare = {
+							resource = food
+							value < 100
+						}
+						resource_stockpile_compare = {
+							resource = food
+							value < -15
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 2
+			owner = {
+				resource_income_compare = {
+					resource = consumer_goods
+					value > 20
+				}
+				resource_income_compare = {
+					resource = consumer_goods
+					value > 1000
+				}
+			}
+		}
+	}
+}
+
+# Factory Planet
+col_factory = {
+	icon = GFX_colony_type_factory
+
+	potential = {
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+			uses_district_set = machine_world
+			uses_district_set = hive_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_factory_custom
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.20
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 4
+			owner = { has_monthly_income = { resource = consumer_goods value < 5 } }
+			OR = {
+				num_free_districts = { type = district_city value >= @free_districts_high_threshold }
+				num_free_districts = { type = district_hive value >= @free_districts_high_threshold }
+				num_free_districts = { type = district_nexus value >= @free_districts_high_threshold }
+			}
+		}
+
+		modifier = {
+			add = 100
+			or = {
+				has_designation = col_factory
+				has_designation = col_foundry
+			}
+			owner = {
+				resource_income_compare = {
+					resource = consumer_goods
+					value < 0
+				}
+				resource_stockpile_compare = {
+					resource = consumer_goods
+					value < 10
+				}
+			}
+			not = {
+				owner = {
+					has_deficit = consumer_goods
+					resource_stockpile_compare = {
+						resource = food
+						value < 300
+					}
+					resource_income_compare = {
+						resource = food
+						value < -12
+					}
+					resource_income_compare = {
+						resource = energy
+						value < 10
+					}
+					resource_stockpile_compare = {
+						resource = energy
+						value < 1000
+					}
+				}
+			}
+		}
+
+
+		modifier = {
+			add = 7
+			has_designation = col_factory
+		}
+
+		modifier = {
+			add = 20
+			years_passed < 15
+			has_planet_flag = str_designated_alloy_guaranteed
+		}
+
+		modifier = {
+			add = 5
+			str_factory_to_foundry_switcher = yes
+		}
+
+		modifier = {
+			add = 50
+			has_designation = col_foundry
+			str_foundry_to_factory_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 110
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < 0
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 190
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < -20
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 50
+			has_designation = col_foundry
+			str_factory_to_foundry_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 160
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < 0
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 250
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < -20
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 50
+			has_designation = col_foundry
+			str_extra_switcher = yes
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 210
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < 0
+					}
+				}
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 300
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < -20
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 2
+			owner = {
+				used_naval_capacity_percent > 0.9
+				resource_income_compare = {
+					resource = alloys
+					value > 700
+				}
+				resource_stockpile_compare = {
+					resource = alloys
+					value > 7000
+				}
+			}
+			num_buildings = { type = building_factory_1 value = 0 }
+			num_buildings = { type = building_factory_2 value = 0 }
+		}
+		modifier = {
+			add = 2
+			owner = {
+				used_naval_capacity_percent > 0.9
+				resource_income_compare = {
+					resource = alloys
+					value > 700
+				}
+				resource_stockpile_compare = {
+					resource = alloys
+					value > 7000
+				}
+			}
+		}
+
+		modifier = {
+			add = 5
+			has_designation = col_factory
+			owner = {
+				or = {
+					resource_income_compare = {
+						resource = consumer_goods
+						value < 20
+					}
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value < 250
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 1 }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 2 }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= 3 }
+		}
+		modifier = {
+			add = 10
+			num_districts = { type = district_industrial value >= 4 }
+		}
+		modifier = {
+			add = 10
+			num_districts = { type = district_industrial value >= 6 }
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_industrial value = 0 }
+		}
+		modifier = {
+			add = 6
+			has_building = building_factory_1
+		}
+		modifier = {
+			add = 10
+			has_building = building_factory_2
+		}
+		modifier = {
+			add = 2
+			owner = {
+				resource_income_compare = {
+					resource = consumer_goods
+					value < 0
+				}
+			}
+			not = { has_designation = col_foundry }
+		}
+		modifier = {
+			add = 2
+			owner = {
+				resource_income_compare = {
+					resource = consumer_goods
+					value < 0
+				}
+			}
+			not = { has_designation = col_foundry }
+			num_buildings = { type = building_foundry_1 value = 0 }
+			num_buildings = { type = building_foundry_2 value = 0 }
+		}
+	}
+}
+
+# Refinery Planet
+col_refinery = {
+	icon = GFX_colony_type_refinery
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_refiners_produces_mult = 0.1
+		planet_translucers_produces_mult = 0.1
+		planet_chemists_produces_mult = 0.1
+		planet_building_refinery_build_speed_mult = 0.25
+		planet_building_chemical_plant_build_speed_mult = 0.25
+		planet_building_crystal_plant_build_speed_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_refiners_produces_mult = 0.05
+			planet_translucers_produces_mult = 0.05
+			planet_chemists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Research Planet
+col_research = {
+	icon = GFX_colony_type_research
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_building_research_lab_1_build_speed_mult = 0.25
+		planet_researchers_upkeep_mult = -0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 1
+			OR = {
+				AND = {
+					num_free_districts = { type = district_city value >= @free_districts_high_threshold }
+					num_free_districts = { type = district_mining value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_farming value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_generator value <= @free_districts_verylow_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_hive value >= @free_districts_high_threshold }
+					num_free_districts = { type = district_mining value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_farming value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_generator value <= @free_districts_verylow_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_nexus value >= @free_districts_high_threshold }
+					num_free_districts = { type = district_mining value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_farming value <= @free_districts_verylow_threshold }
+					num_free_districts = { type = district_generator value <= @free_districts_verylow_threshold }
+				}
+			}
+		}
+		modifier = {
+			add = 5
+			has_designation = col_research
+		}
+		modifier = {
+			add = 7
+			OR = {
+				has_modifier = wild_storms
+				has_modifier = titanic_life
+				has_modifier = atmospheric_hallucinogen
+				has_modifier = dangerous_wildlife
+				has_modifier = unstable_tectonics
+				has_deposit = d_central_spire
+			}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 3 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 4 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 5 }
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_research_lab_2 value >= 1 }
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_research_lab_2 value >= 2 }
+		}
+		modifier = {
+			add = 8
+			num_buildings = { type = building_research_lab_3 value >= 1 }
+		}
+		modifier = {
+			factor = 0
+			num_buildings = { type = building_research_lab_1 value = 0 }
+			num_buildings = { type = building_research_lab_2 value = 0 }
+			num_buildings = { type = building_research_lab_3 value = 0 }
+		}
+	}
+}
+
+
+# Fortress Planet
+col_fortress = {
+	icon = GFX_colony_type_fortress
+
+	potential = {
+		exists = owner
+		NOR = {
+			uses_district_set = city_world
+			uses_district_set = ring_world
+			uses_district_set = habitat
+			uses_district_set = machine_world
+			uses_district_set = hive_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_building_stronghold_build_speed_mult = 0.25
+		planet_orbital_bombardment_damage = -0.10
+		army_defense_damage_mult = 0.20
+	}
+
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Capital Planet
+col_capital = {
+	icon = GFX_colony_type_capital
+
+	potential = {
+		is_capital = yes
+		NAND = {
+			exists = owner
+			owner = {
+				OR = {
+					NOT = { is_country_type = default }
+					is_gestalt = yes
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 10
+		pop_government_ethic_attraction = 1
+	}
+
+	weight_modifier = {
+		base = 15000
+	}
+}
+
+# Capital Planet - Hive Mind
+col_capital_hive = {
+	icon = GFX_colony_type_capital
+
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = {
+			is_country_type = default
+			is_hive_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_no_happiness_add = 10
+		planet_crime_no_happiness_add = -20
+	}
+
+	weight_modifier = {
+		base = 15000
+	}
+}
+
+# Capital Planet - Machine Empire
+col_capital_machine = {
+	icon = GFX_colony_type_capital
+
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = {
+			is_country_type = default
+			is_machine_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+		planet_amenities_no_happiness_add = 10
+		planet_crime_no_happiness_add = -20
+		planet_jobs_complex_drone_produces_mult = 0.05
+		planet_jobs_simple_drone_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 15000
+	}
+}
+
+# Habitat
+col_habitat = {
+	icon = GFX_colony_type_habitat
+
+	potential = {
+		uses_district_set = habitat
+	}
+
+	weight_modifier = {
+		base = 1
+	}
+}
+
+# Habitat Energy
+col_habitat_energy = {
+	icon = GFX_colony_type_habitat_energy
+
+	potential = {
+		uses_district_set = habitat
+		exists = owner
+		OR = {
+			owner = { is_gestalt = yes }
+			has_planet_flag = energy_habitat
+		}
+	}
+	planet_modifier = {
+		planet_district_hab_energy_build_speed_mult = 0.25
+		planet_technician_produces_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 1.8
+			num_districts = {type = district_hab_energy value >= 1}
+		}
+		modifier = {
+			add = 1.8
+			num_districts = {type = district_hab_energy value >= 2}
+		}
+		modifier = {
+			add = 3.6
+			num_districts = {type = district_hab_energy value >= 4}
+		}
+		modifier = {
+			add = 3.6
+			num_districts = {type = district_hab_energy value >= 6}
+		}
+		modifier = {
+			factor = 1.16
+			has_building = building_energy_grid
+		}
+		modifier = {
+			factor = 1.33
+			has_building = building_energy_nexus
+		}
+		modifier = {
+			factor = 1.33
+			owner = { is_hive_empire = yes }
+		}
+	}
+}
+
+# Habitat Cultural
+col_habitat_leisure = {
+	icon = GFX_colony_type_habitat_leisure
+
+	potential = {
+		uses_district_set = habitat
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+	planet_modifier = {
+		planet_district_hab_cultural_build_speed_mult = 0.25
+		pop_happiness = 0.10
+	}
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Habitat Trade
+col_habitat_trade = {
+	icon = GFX_colony_type_habitat_trade
+
+	potential = {
+		uses_district_set = habitat
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	planet_modifier = {
+		planet_district_hab_commercial_build_speed_mult = 0.25
+		trade_value_mult = 0.20
+	}
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Habitat Research
+col_habitat_research = {
+	icon = GFX_colony_type_habitat_research
+
+	potential = {
+		uses_district_set = habitat
+	}
+	planet_modifier = {
+		planet_district_hab_science_build_speed_mult = 0.25
+		planet_researchers_produces_mult = 0.1
+	}
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 1.08
+			num_districts = { type = district_hab_science value >= 1 }
+		}
+		modifier = {
+			add = 1.08
+			num_districts = { type = district_hab_science value >= 2 }
+		}
+		modifier = {
+			add = 2.16
+			num_districts = { type = district_hab_science value >= 4 }
+		}
+		modifier = {
+			add = 2.16
+			num_districts = { type = district_hab_science value >= 6 }
+		}
+		modifier = {
+			add = 0.72
+			num_buildings = { type = building_research_lab_1 value >= 1 }
+		}
+		modifier = {
+			add = 0.72
+			num_buildings = { type = building_research_lab_1 value >= 2 }
+		}
+		modifier = {
+			add = 1.44
+			num_buildings = { type = building_research_lab_1 value >= 4 }
+		}
+		modifier = {
+			add = 2.88
+			num_buildings = { type = building_research_lab_2 value >= 2 }
+		}
+		modifier = {
+			add = 2.88
+			num_buildings = { type = building_research_lab_2 value >= 4 }
+		}
+		modifier = {
+			add = 4.32
+			num_buildings = { type = building_research_lab_3 value >= 2 }
+		}
+		modifier = {
+			add = 4.32
+			num_buildings = { type = building_research_lab_3 value >= 4 }
+		}
+		modifier = { 		#Count 1 Consumer good as 2.5 energy.
+			factor = 1.25
+			owner = { country_uses_consumer_goods = yes }
+		}
+	}
+}
+
+# Habitat Mining
+col_habitat_mining = {
+	icon = GFX_colony_type_habitat_mining
+
+	potential = {
+		uses_district_set = habitat
+		has_planet_flag = mining_habitat
+	}
+	planet_modifier = {
+		planet_district_hab_mining_build_speed_mult = 0.25
+		planet_miners_produces_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 1.2
+			num_districts = { type = district_hab_mining value >= 1 }
+		}
+		modifier = {
+			add = 1.2
+			num_districts = { type = district_hab_mining value >= 2 }
+		}
+		modifier = {
+			add = 2.4
+			num_districts = { type = district_hab_mining value >= 4 }
+		}
+		modifier = {
+			add = 2.4
+			num_districts = { type = district_hab_mining value >= 6 }
+		}
+		modifier = {
+			factor = 1.25
+			has_building = building_mineral_purification_plant
+		}
+		modifier = {
+			factor = 1.50
+			has_building = building_mineral_purification_plant
+		}
+		modifier = {
+			factor = 1.33
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { 		#Count 1 Mineral as 1.5 energy
+			factor = 1.5
+			always = yes
+		}
+	}
+}
+
+# Habitat Fortress
+col_habitat_fortress = {
+	icon = GFX_colony_type_habitat_fortress
+
+	potential = {
+		uses_district_set = habitat
+	}
+	planet_modifier = {
+		planet_building_stronghold_build_speed_mult = 0.25
+		planet_orbital_bombardment_damage = -0.10
+		army_defense_damage_mult = 0.20
+	}
+	weight_modifier = {
+		base = 0
+	}
+}
+
+# Habitat Industrial
+col_habitat_industrial = {
+	icon = GFX_colony_type_hab_industrial
+
+	potential = {
+		uses_district_set = habitat
+	}
+	planet_modifier = {
+		planet_district_hab_industrial_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.1
+		planet_artisans_upkeep_mult = -0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 600
+		modifier = {
+			factor = 3
+			AND = {
+				OR = {
+					has_building = building_factory_1
+					has_building = building_factory_2
+					has_building = building_factory_3
+				}
+				OR = {
+					has_building = building_foundry_1
+					has_building = building_foundry_2
+					has_building = building_foundry_3
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			has_designation = col_habitat_industrial
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_hab_industrial value = 0 }
+		}
+		modifier = {
+			factor = 0
+			owner = { is_ai = yes }
+		}
+	}
+}
+
+# Habitat Foundry
+col_habitat_foundry = {
+	icon = GFX_colony_type_habitat_foundry
+
+	potential = {
+		uses_district_set = habitat
+	}
+	planet_modifier = {
+		custom_tooltip = col_habitat_foundry_custom
+		planet_district_hab_industrial_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 3.2
+			num_districts = {type = district_hab_industrial value >= 1}
+		}
+		modifier = {
+			add = 3.2
+			num_districts = {type = district_hab_industrial value >= 2}
+		}
+		modifier = {
+			add = 6.4
+			num_districts = {type = district_hab_industrial value >= 4}
+		}
+		modifier = {
+			add = 6.4
+			num_districts = {type = district_hab_industrial value >= 6}
+		}
+		modifier = {
+			factor = 1.25
+			has_building = building_foundry_2
+		}
+		modifier = {
+			factor = 1.5
+			has_building = building_foundry_3
+		}
+		modifier = { 		#Count 1 Mineral as 1.5 energy
+			factor = 1.5
+			always = yes
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_2
+			}
+		}
+	}
+}
+
+# Habitat Factory
+col_habitat_factory = {
+	icon = GFX_colony_type_habitat_factory
+
+	potential = {
+		uses_district_set = habitat
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+	}
+	planet_modifier = {
+		custom_tooltip = col_habitat_factory_custom
+		planet_district_hab_industrial_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+		}
+	}
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 2.4
+			num_districts = {type = district_hab_industrial value >= 1}
+		}
+		modifier = {
+			add = 2.4
+			num_districts = {type = district_hab_industrial value >= 2}
+		}
+		modifier = {
+			add = 4.8
+			num_districts = {type = district_hab_industrial value >= 4}
+		}
+		modifier = {
+			add = 4.8
+			num_districts = {type = district_hab_industrial value >= 6}
+		}
+		modifier = {
+			factor = 1.16
+			has_building = building_factory_2
+		}
+		modifier = {
+			factor = 1.33
+			has_building = building_factory_3
+		}
+		modifier = { 		#Count 1 Mineral as 1.5 energy
+			factor = 1.5
+			always = yes
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_2
+			}
+		}
+	}
+}
+
+# Habitat Refinery
+col_habitat_refinery = {
+	icon = GFX_colony_type_habitat_refinery
+
+	potential = {
+		uses_district_set = habitat
+	}
+	planet_modifier = {
+		planet_building_refinery_build_speed_mult = 0.25
+		planet_building_chemical_plant_build_speed_mult = 0.25
+		planet_building_crystal_plant_build_speed_mult = 0.25
+		planet_refiners_produces_mult = 0.1
+		planet_translucers_produces_mult = 0.1
+		planet_chemists_produces_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_refiners_produces_mult = 0.05
+			planet_translucers_produces_mult = 0.05
+			planet_chemists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 0
+		modifier = {
+			add = 4
+			num_buildings = { type = building_chemical_plant value >= 2}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_crystal_plant value >= 2}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_refinery value >= 2}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_chemical_plant value >= 4}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_crystal_plant value >= 4}
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_refinery value >= 4}
+		}
+		modifier = { 		#Count 1 Mineral as 1.5 energy
+			factor = 1.5
+			always = yes
+		}
+	}
+}
+
+# Rural Planet - Gestalt
+col_rural_gestalt = {
+	icon = GFX_colony_type_fringe
+
+	potential = {
+		NOR = {
+			uses_district_set = habitat
+			uses_district_set = ring_world
+			uses_district_set = machine_world
+			uses_district_set = hive_world
+		}
+		exists = owner
+		owner = { is_gestalt = yes }
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_farming_build_speed_mult = 0.25
+		planet_district_mining_build_speed_mult = 0.25
+		planet_district_generator_build_speed_mult = 0.25
+		planet_jobs_simple_drone_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 1
+			OR = {
+				AND = {
+					num_free_districts = { type = district_mining value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_farming value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_hive value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_farming value > @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value > @free_districts_low_threshold }
+					num_free_districts = { type = district_hive value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_mining value > @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value > @free_districts_low_threshold }
+					num_free_districts = { type = district_hive value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_mining value > @free_districts_low_threshold }
+					num_free_districts = { type = district_farming value > @free_districts_low_threshold }
+					num_free_districts = { type = district_hive value < @free_districts_high_threshold }
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			num_districts = { type = district_mining value > @built_districts_low_threshold }
+			num_districts = { type = district_farming value > @built_districts_low_threshold }
+			num_districts = { type = district_generator value > @built_districts_low_threshold }
+			num_districts = { type = district_hive value <= @built_districts_medium_threshold }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value > @built_districts_medium_threshold }
+			num_districts = { type = district_farming value > @built_districts_medium_threshold }
+			num_districts = { type = district_generator value > @built_districts_medium_threshold }
+			num_districts = { type = district_hive value <= @built_districts_high_threshold }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 6 }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 6 }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 6 }
+		}
+
+		modifier = {
+			factor = 1.5
+			has_planet_flag = str_acceptable_habitability
+		}
+
+		modifier = {
+			add = 1
+			has_designation = col_rural_gestalt
+		}
+	}
+}
+
+
+# Rural Planet
+col_rural = {
+	icon = GFX_colony_type_rural
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+		NOR = {
+			uses_district_set = habitat
+			uses_district_set = ring_world
+			uses_district_set = city_world
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		planet_district_farming_build_speed_mult = 0.25
+		planet_district_generator_build_speed_mult = 0.25
+		planet_district_mining_build_speed_mult = 0.25
+		planet_jobs_worker_produces_mult = 0.10
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 1
+			OR = {
+				AND = {
+					num_free_districts = { type = district_mining value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_farming value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value <= @free_districts_low_threshold }
+					num_free_districts = { type = district_city value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_farming value > @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value > @free_districts_low_threshold }
+					num_free_districts = { type = district_city value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_mining value > @free_districts_low_threshold }
+					num_free_districts = { type = district_generator value > @free_districts_low_threshold }
+					num_free_districts = { type = district_city value < @free_districts_high_threshold }
+				}
+				AND = {
+					num_free_districts = { type = district_mining value > @free_districts_low_threshold }
+					num_free_districts = { type = district_farming value > @free_districts_low_threshold }
+					num_free_districts = { type = district_city value < @free_districts_high_threshold }
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			num_districts = { type = district_mining value > @built_districts_low_threshold }
+			num_districts = { type = district_farming value > @built_districts_low_threshold }
+			num_districts = { type = district_generator value > @built_districts_low_threshold }
+			num_districts = { type = district_city value <= @built_districts_medium_threshold }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value > @built_districts_medium_threshold }
+			num_districts = { type = district_farming value > @built_districts_medium_threshold }
+			num_districts = { type = district_generator value > @built_districts_medium_threshold }
+			num_districts = { type = district_city value <= @built_districts_high_threshold }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_mining value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_mining value >= 6 }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_farming value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_farming value >= 6 }
+		}
+
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 1 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 2 }
+		}
+		modifier = {
+			add = 1.5
+			num_districts = { type = district_generator value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 4 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_generator value >= 6 }
+		}
+
+		modifier = {
+			factor = 1.5
+			has_planet_flag = str_acceptable_habitability
+		}
+
+		modifier = {
+			add = 1
+			has_designation = col_rural
+		}
+	}
+}
+
+# Fallen Empire Capital
+col_fe_capital = {
+	icon = GFX_colony_type_capital
+
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { is_fallen_empire = yes }
+	}
+
+	planet_modifier = {
+		planet_stability_add = 10
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+
+# Fallen Empire Colony
+col_fe_colony = {
+	icon = GFX_colony_type_normal_colony
+
+	potential = {
+		is_capital = no
+		exists = owner
+		owner = { is_fallen_empire = yes }
+	}
+
+	planet_modifier = {
+		planet_stability_add = 5
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+# Resort World
+col_resort = {
+	icon = GFX_colony_type_resort
+
+	potential = {
+		has_modifier = resort_colony
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+# Penal Colony
+col_penal = {
+	icon = GFX_colony_type_penal
+
+	potential = {
+		has_modifier = penal_colony
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+# Primitive World
+col_primitive = {
+	icon = GFX_colony_type_primitive
+
+	potential = {
+		exists = owner
+		owner = { is_country_type = primitive }
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+# Infested World
+col_infested = {
+	icon = GFX_colony_type_dying
+
+	potential = {
+		exists = owner
+		owner = { is_country_type = swarm }
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+
+# Contingency World
+col_contingency = {
+	icon = GFX_colony_type_dying
+
+	potential = {
+		exists = owner
+		owner = { is_country_type = ai_empire }
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+
+# Slave-Breeding Colony
+col_slave = {
+	icon = GFX_colony_type_workers
+
+	potential = {
+		has_modifier = slave_colony
+	}
+
+	weight_modifier = {
+		base = 1000
+	}
+}
+
+# Ringworld Mixed
+col_ring_mix = {
+	icon = GFX_colony_type_workers
+
+	potential = {
+		uses_district_set = ring_world
+	}
+
+	planet_modifier = {
+		planet_immigration_pull_mult = 0.2
+		planet_jobs_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 100
+	}
+}
+
+col_ring_research = {
+	icon = GFX_colony_type_research
+
+	potential = {
+		uses_district_set = ring_world
+	}
+
+	planet_modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.15
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 150
+			or = {
+				num_buildings = {
+					type = building_research_lab_1
+					value > 4
+				}
+				num_buildings = {
+					type = building_research_lab_2
+					value > 2
+				}
+				num_buildings = {
+					type = building_research_lab_3
+					value > 1
+					}
+			}
+		}
+		modifier = {
+			add = 100
+			has_designation = col_ring_research
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_rw_science value >= 1 }
+		}
+	}
+}
+
+col_ring_farming = {
+	icon = GFX_colony_type_farm
+
+	potential = {
+		uses_district_set = ring_world
+	}
+
+	planet_modifier = {
+		planet_farmers_food_produces_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 100
+			has_designation = col_ring_farming
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_rw_farming value >= 1 }
+		}
+	}
+}
+
+col_ring_trade = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = ring_world
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+
+	planet_modifier = {
+		trade_value_mult = 0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 100
+			has_designation = col_ring_trade
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_rw_commercial value >= 1 }
+		}
+	}
+}
+
+col_ring_generator = {
+	icon = GFX_colony_type_generator
+
+	potential = {
+		uses_district_set = ring_world
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+
+	planet_modifier = {
+		planet_technician_energy_produces_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = no
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_gestalt = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_greatergood_five_year_plans"
+				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			}
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 100
+			has_designation = col_ring_generator
+		}
+		modifier = {
+			add = 200
+			is_capital = no
+			num_districts = { type = district_rw_generator value >= 1 }
+		}
+	}
+}
+
+# Ecumenpolis
+col_ecu_mix = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = city_world
+	}
+
+	planet_modifier = {
+		planet_structures_upkeep_mult = -0.25
+		trade_value_mult = 0.20
+	}
+
+	weight_modifier = {
+		base = 10
+	}
+}
+# Ecumenpolis Industrial
+col_ecu_industrial = {
+	icon = GFX_colony_type_industrial
+
+	potential = {
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+		uses_district_set = city_world
+	}
+
+	planet_modifier = {
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.10
+		planet_metallurgists_upkeep_mult = -0.10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			add = 5
+			has_designation = col_ecu_industrial
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_arcology_arms_industry value >= @built_districts_low_threshold }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_arcology_arms_industry value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_arcology_civilian_industry value >= @built_districts_low_threshold }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_arcology_civilian_industry value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			add = 10
+			AND = {
+				OR = {
+					has_building = building_factory_1
+					has_building = building_factory_2
+					has_building = building_factory_3
+				}
+				OR = {
+					has_building = building_foundry_1
+					has_building = building_foundry_2
+					has_building = building_foundry_3
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			num_districts = { type = district_arcology_civilian_industry value = 0 }
+			num_districts = { type = district_arcology_arms_industry value = 0 }
+		}
+	}
+}
+
+# Ecumenpolis Foundry
+col_ecu_foundry = {
+	icon = GFX_colony_type_foundry
+
+	potential = {
+		uses_district_set = city_world
+	}
+
+	planet_modifier = {
+		planet_building_foundry_1_build_speed_mult = 0.25
+		planet_district_arcology_arms_industry_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = alloys value < 100 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_ecu_foundry
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_arcology_arms_industry value >= 2 }
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_arcology_arms_industry value >= 3 }
+		}
+		modifier = {
+			add = 2
+			has_building = building_foundry_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_foundry_2
+		}
+		modifier = {
+			factor = 0
+			num_buildings = { type = building_foundry_1 value = 0 }
+			num_buildings = { type = building_foundry_2 value = 0 }
+		}
+	}
+}
+
+# Ecumenpolis Factory
+col_ecu_factory = {
+	icon = GFX_colony_type_factory
+
+	potential = {
+		uses_district_set = city_world
+		exists = owner
+		owner = { country_uses_consumer_goods = yes }
+	}
+
+	planet_modifier = {
+		planet_building_factory_1_build_speed_mult = 0.25
+		planet_district_arcology_civilian_industry_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = consumer_goods value < 5 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_ecu_factory
+		}
+		modifier = {
+			add = 2
+			num_districts = { type = district_arcology_civilian_industry value >= 2 }
+		}
+		modifier = {
+			add = 3
+			num_districts = { type = district_arcology_civilian_industry value >= 3 }
+		}
+		modifier = {
+			add = 2
+			has_building = building_factory_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_factory_2
+		}
+		modifier = {
+			factor = 0
+			num_buildings = { type = building_factory_1 value = 0 }
+			num_buildings = { type = building_factory_2 value = 0 }
+		}
+	}
+}
+
+# Ecumenpolis Research
+col_ecu_research = {
+	icon = GFX_colony_type_research
+
+	potential = {
+		uses_district_set = city_world
+	}
+
+
+	planet_modifier = {
+		planet_building_research_lab_1_build_speed_mult = 0.25
+		planet_researchers_upkeep_mult = -0.2
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = physics_research value < 200 } }
+			owner = { has_monthly_income = { resource = society_research value < 200 } }
+			owner = { has_monthly_income = { resource = engineering_research value < 200 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_ecu_research
+		}
+		modifier = {
+			add = 1
+			num_buildings = { type = building_research_lab_1 value >= 2 }
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_research_lab_1 value >= 3 }
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_research_lab_1 value >= 4 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_1 value >= 5 }
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_research_lab_2 value >= 1 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_research_lab_2 value >= 2 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_research_lab_3 value >= 1 }
+		}
+	}
+}
+
+# Machine World
+col_mac = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = machine_world
+	}
+
+	planet_modifier = {
+		planet_district_mining_uncapped_build_speed_mult = 0.25
+		planet_district_generator_uncapped_build_speed_mult = 0.25
+		planet_jobs_simple_drone_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 10
+	}
+}
+
+# Machine World Foundry
+col_mac_foundry = {
+	icon = GFX_colony_type_foundry
+
+	potential = {
+		uses_district_set = machine_world
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_foundry_custom
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = alloys value < 100 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_mac_foundry
+		}
+		modifier = {
+			add = 2
+			has_building = building_foundry_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_foundry_2
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
+			num_buildings = { type = building_foundry_1 value = 0 }
+			num_buildings = { type = building_foundry_2 value = 0 }
+		}
+	}
+}
+
+# Machine World Factory
+col_mac_factory = {
+	icon = GFX_colony_type_factory
+
+	potential = {
+		uses_district_set = machine_world
+		owner = { country_uses_consumer_goods = yes }
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_factory_custom
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_artisans_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = consumer_goods value < 100 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_mac_factory
+		}
+		modifier = {
+			add = 2
+			has_building = building_factory_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_factory_2
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
+			num_buildings = { type = building_factory_1 value = 0 }
+			num_buildings = { type = building_factory_2 value = 0 }
+		}
+	}
+}
+
+# Hive World
+col_hiv = {
+	icon = GFX_colony_type_urban
+
+	potential = {
+		uses_district_set = hive_world
+	}
+
+	planet_modifier = {
+		planet_district_mining_uncapped_build_speed_mult = 0.25
+		planet_district_farming_uncapped_build_speed_mult = 0.25
+		planet_district_generator_uncapped_build_speed_mult = 0.25
+		planet_jobs_simple_drone_produces_mult = 0.05
+	}
+
+	weight_modifier = {
+		base = 10
+	}
+}
+
+# Hive World Foundry
+col_hiv_foundry = {
+	icon = GFX_colony_type_foundry
+
+	potential = {
+		uses_district_set = hive_world
+	}
+
+	planet_modifier = {
+		planet_district_industrial_build_speed_mult = 0.25
+		planet_metallurgists_upkeep_mult = -0.20
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_metallurgists_produces_mult = 0.05
+		}
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { has_monthly_income = { resource = alloys value < 100 } }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_hiv_foundry
+		}
+		modifier = {
+			add = 2
+			has_building = building_foundry_1
+		}
+		modifier = {
+			add = 4
+			has_building = building_foundry_2
+		}
+		modifier = {
+			add = 5
+			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
+			num_buildings = { type = building_foundry_1 value = 0 }
+			num_buildings = { type = building_foundry_2 value = 0 }
+		}
+	}
+}
+
+# Bureaucratic Center
+
+col_bureau = {
+	icon = GFX_colony_type_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		NOR = {
+			uses_district_set = hive_world
+			uses_district_set = habitat
+		}
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_bureaucracy_custom
+		planet_bureaucrats_upkeep_mult = -0.10
+		pop_ethics_shift_speed_mult = -0.20
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 3
+			owner = { empire_sprawl_over_cap > 20 }
+		}
+		modifier = {
+			add = 3
+			has_designation = col_bureau
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_bureaucratic_1 value >= 2 }
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_bureaucratic_1 value >= 3 }
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_bureaucratic_1 value >= 4 }
+		}
+		modifier = {
+			add = 2
+			num_buildings = { type = building_bureaucratic_1 value >= 5 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_bureaucratic_2 value >= 1 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_bureaucratic_2 value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			num_buildings = { type = building_bureaucratic_1 value = 0 }
+			num_buildings = { type = building_bureaucratic_2 value = 0 }
+		}
+		modifier = {
+			factor = 1.3
+			has_planet_flag = str_acceptable_habitability
+		}
+	}
+}
+col_habitat_bureau = {
+	icon = GFX_colony_type_hab_bureaucratic
+
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		uses_district_set = habitat
+		is_special_colony_type = no
+	}
+
+	planet_modifier = {
+		custom_tooltip = col_bureaucracy_custom
+		planet_bureaucrats_upkeep_mult = -0.10
+		pop_ethics_shift_speed_mult = -0.20
+	}
+
+	weight_modifier = {
+		base = 10
+		modifier = {
+			add = 5
+			owner = { empire_sprawl_over_cap > 40 }
+		}
+		modifier = {
+			add = 5
+			has_designation = col_habitat_bureau
+		}
+		modifier = {
+			add = 3
+			num_buildings = { type = building_bureaucratic_1 value >= 2 }
+		}
+		modifier = {
+			add = 4
+			num_buildings = { type = building_bureaucratic_1 value >= 3 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_bureaucratic_1 value >= 4 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_bureaucratic_1 value >= 5 }
+		}
+		modifier = {
+			add = 5
+			num_buildings = { type = building_bureaucratic_2 value >= 1 }
+		}
+		modifier = {
+			add = 6
+			num_buildings = { type = building_bureaucratic_2 value >= 2 }
+		}
+		modifier = {
+			factor = 0
+			num_buildings = { type = building_bureaucratic_1 value = 0 }
+			num_buildings = { type = building_bureaucratic_2 value = 0 }
+		}
+	}
+}

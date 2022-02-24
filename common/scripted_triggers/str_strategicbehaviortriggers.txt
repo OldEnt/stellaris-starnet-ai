@@ -1,0 +1,400 @@
+
+
+prepare_for_war = {
+	years_passed > 12
+	#Alchemy code used to see if there is any country WE are hostile towards
+
+	#The reason we even ask this question is the following:
+	#If ai behavior is already hostile (I can't mod the behaviors sadly)
+	#that means ai will claim and declare war as soon as it has the influence
+	#so saving influence won't be wasted
+	any_neighbor_country = {
+		is_country_type = default
+		prev = {
+			or = {
+				is_hostile_to = prev
+				is_unfriendly_to = prev
+			}
+		}
+	}
+
+	resource_stockpile_compare = {
+		resource = minerals
+		value > 1500
+	}
+	resource_income_compare = { resource = minerals value > 40}
+	str_raw_ecocrisis_level_0 = no
+	and = {
+		used_naval_capacity_integer > 25
+		or = {
+			has_ascension_perk = ap_interstellar_dominion
+			and = {
+				has_ascension_perk = ap_executive_vigor
+				has_edict = capacity_subsidies
+			}
+			and = { num_ascension_perks > 1 has_tradition = tr_supremacy_adopt }
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 1000
+		}
+	}
+}
+
+
+
+scared_of_neighbour = {
+	or = {
+		any_relation = {
+			years_passed < 20
+			years_passed > 5
+			is_country_type = default
+			and = {
+				num_owned_planets < 2
+				nand = {
+					has_origin = origin_shattered_ring
+					or = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_hive_devouring_swarm
+						has_civic = civic_fanatic_purifiers
+						has_civic = civic_machine_terminator
+					}
+				}
+			}
+			and = {
+				resource_income_compare = { resource = alloys value > 30 }
+				resource_stockpile_compare = { resource = alloys value < 400 }
+			}
+		}
+
+		any_relation = {
+			years_passed > 5
+			num_guaranteed_colonies > 0
+			and = {
+				num_owned_planets < 2
+				nand = {
+					has_origin = origin_shattered_ring
+					or = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_hive_devouring_swarm
+						has_civic = civic_fanatic_purifiers
+						has_civic = civic_machine_terminator
+					}
+				}
+			}
+			resource_income_compare = {
+				resource = alloys
+				value > 25
+			}
+		}
+
+		any_relation = {
+			is_country_type = default
+			resource_income_compare = {
+				resource = alloys
+				value > 35
+			}
+			or = {
+				and = {
+					years_passed < 5
+					num_pops > 60
+				}
+				and = {
+					years_passed < 10
+					num_pops > 80
+				}
+				and = {
+					years_passed < 15
+					num_pops > 100
+				}
+				and = {
+					years_passed < 25
+					num_pops > 150
+				}
+				and = {
+					years_passed < 35
+					num_pops > 250
+				}
+				and = {
+					years_passed < 50
+					num_pops > 400
+				}
+				and = {
+					years_passed < 70
+					num_pops > 600
+				}
+				and = {
+					years_passed < 100
+					num_pops > 1000
+				}
+			}
+		}
+
+		any_relation = {
+			years_passed > 10
+			num_guaranteed_colonies > 0
+			and = {
+				num_owned_planets < 3
+				nand = {
+					has_origin = origin_shattered_ring
+					or = {
+						has_civic = civic_machine_assimilator
+						has_civic = civic_hive_devouring_swarm
+						has_civic = civic_fanatic_purifiers
+						has_civic = civic_machine_terminator
+					}
+				}
+			}
+			resource_income_compare = {
+				resource = alloys
+				value > 25
+			}
+		}
+
+		any_neighbor_country = {
+			years_passed > 15
+			is_country_type = default
+			relative_power = {
+				who = prev
+				category = fleet
+				value > equivalent
+			}
+			not = {
+				is_friendly_to = prev
+			}
+		}
+	}
+}
+
+#midgame fleet of neutron launcher destroyer is a huge powerspike
+#and is a mainstay of multiplayer meta
+#it is capable of both annihilating corvettes in a war of attrition
+#and killing starbase a player may try to turtle behind
+
+#ai will be prone to do timing attacks by switching its production to
+#alloys and building large fleet of destroyers and attacking people around
+
+
+can_kill_turtles = {
+	has_technology = tech_lasers_3
+	has_technology = tech_destroyers
+}
+
+large_size = {
+	or = {
+		has_technology = tech_energy_torpedoes_1
+		has_technology = tech_kinetic_artillery_1
+	}
+}
+
+cruisers_good = {
+	has_technology = tech_cruisers
+	not = {
+		any_neighbor_country = {
+			is_country_type = default
+			has_technology = tech_battleships
+		}
+	}
+}
+
+#If ai ends up in a stalemate with huge fleet and no courage to fight
+#they will try to ramp up their science/unity while waiting
+
+stalemate = {
+	used_naval_capacity_percent > 0.95
+	resource_stockpile_compare = {
+		resource = alloys
+		value > 2000
+	}
+	is_at_war = no
+}
+
+safespace = {
+	years_passed > 20
+	NOT = {
+		any_neighbor_country = {
+			opinion = {
+				who = prev
+				value < 90
+			}
+		}
+	}
+}
+
+#strategy_level = {
+#calc_true_if = {
+	#amount > 5
+	#turtler = yes
+	#rusher = no
+	#NOR = {
+		#has_ethic = ethic_militarist
+		#has_ethic = ethic_fanatic_militarist
+	#}
+	#NOR = {
+		#has_ethic = ethic_fanatic_xenophobe
+		#has_ethic = ethic_xenophobe
+	#}
+	#or = {
+		#has_ethic = ethic_fanatic_xenophile
+		#has_ethic = ethic_xenophile
+	#}
+	#or = {
+		#has_ethic = ethic_fanatic_pacifist
+		#has_ethic = ethic_pacifist
+	#}
+	#or = {
+		#has_ethic = ethic_fanatic_materialist
+		#has_ethic = ethic_materialist
+	#}
+	#safespace = yes
+	#safespace = yes
+	#safespace = yes
+	#stalemate = yes
+	#stalemate = yes
+	#can_kill_turtles = no
+	#can_kill_turtles = no
+	#can_kill_turtles = no
+	#scared_of_neighbour = no
+	#scared_of_neighbour = no
+	#scared_of_neighbour = no
+	#prepare_for_war = no
+#}
+
+
+needs_shipyard = { #country scope
+	years_passed > 10
+	nor = {
+		and = {
+			max_naval_capacity < 40
+			count_owned_starbase = {
+				count >= 1
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 150
+			count_owned_starbase = {
+				count >= 2
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 350
+			count_owned_starbase = {
+				count >= 3
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 700
+			count_owned_starbase = {
+				count >= 4
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 1000
+			count_owned_starbase = {
+				count >= 5
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 1500
+			count_owned_starbase = {
+				count >= 6
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 2000
+			count_owned_starbase = {
+				count >= 7
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 2500
+			count_owned_starbase = {
+				count >= 8
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 3000
+			count_owned_starbase = {
+				count >= 9
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			max_naval_capacity < 3500
+			count_owned_starbase = {
+				count >= 10
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+		and = {
+			count_owned_starbase = {
+				count >= 12
+				limit = { has_starbase_module = shipyard }
+			}
+		}
+	}
+}
+
+
+has_ecumen = {
+	any_owned_planet = {
+		is_planet_class = pc_city
+	}
+}
+
+
+can_you_please_stop_building_ships = {
+	or = {
+		and = {
+			years_passed < 80
+			used_naval_capacity_percent > 2
+			resource_income_compare = {
+				resource = energy
+				value < 150
+			}
+		}
+		and = {
+			years_passed < 100
+			used_naval_capacity_percent > 1.5
+			resource_income_compare = {
+				resource = energy
+				value < 50
+			}
+		}
+		and = {
+			years_passed < 150
+			used_naval_capacity_percent > 1.5
+			resource_income_compare = {
+				resource = energy
+				value < 0
+			}
+		}
+		and = {
+			used_naval_capacity_percent > 1
+			ai_colonize_plans > 0
+		}
+		and = {
+			years_passed > 80
+			resource_income_compare = {
+				resource = energy
+				value < -100
+			}
+		}
+		and = {
+			years_passed > 80
+			used_naval_capacity_integer < 1000
+			resource_income_compare = {
+				resource = energy
+				value < -50
+			}
+		}
+	}
+}

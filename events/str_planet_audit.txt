@@ -1,0 +1,115 @@
+#This event is written by equalizer to simulate disabling of the maintenance drones in gestalts
+
+namespace = str_planet_audit
+
+planet_event = {
+	id = str_planet_audit.1
+	fire_only_once = no
+	is_triggered_only = yes
+	hide_window = yes
+
+	pre_triggers = {
+		has_owner = yes
+	}
+
+	immediate = {
+		if = {
+			limit = { owner = { is_ai = yes is_gestalt = yes } }
+			if = {
+				limit = { free_amenities < 0 }
+				if = {
+					limit = { has_modifier = ai_mdrone_neg1 }
+					remove_modifier = ai_mdrone_neg1
+				} else_if = {
+					limit = { has_modifier = ai_mdrone_neg2 }
+					remove_modifier = ai_mdrone_neg2 
+					add_modifier = { modifier = ai_mdrone_neg1 }
+				} else_if = {
+					limit = { has_modifier = ai_mdrone_neg4 }
+					remove_modifier = ai_mdrone_neg4
+					add_modifier = { modifier = ai_mdrone_neg2 }
+					add_modifier = { modifier = ai_mdrone_neg1 }
+				} else_if = {
+					limit = { has_modifier = ai_mdrone_neg8 }
+					remove_modifier = ai_mdrone_neg8
+					add_modifier = { modifier = ai_mdrone_neg4 }
+					add_modifier = { modifier = ai_mdrone_neg2 }
+					add_modifier = { modifier = ai_mdrone_neg1 }
+				} else_if = {
+					limit = { has_modifier = ai_mdrone_neg16 }
+					remove_modifier = ai_mdrone_neg16 
+					add_modifier = { modifier = ai_mdrone_neg8 }
+					add_modifier = { modifier = ai_mdrone_neg4 }
+					add_modifier = { modifier = ai_mdrone_neg2 }
+					add_modifier = { modifier = ai_mdrone_neg1 }
+				}
+			} else_if = {
+				limit = {
+					free_amenities > 7 
+					count_owned_pop = { limit = { has_job = maintenance_drone } count > 0 }
+				}
+				if = {
+					limit = {
+						NOT = { has_modifier = ai_mdrone_neg16 }
+						has_modifier = ai_mdrone_neg8 
+						has_modifier = ai_mdrone_neg4 
+						has_modifier = ai_mdrone_neg2
+						has_modifier = ai_mdrone_neg1
+					}
+					add_modifier = { modifier = ai_mdrone_neg16 }
+					remove_modifier = ai_mdrone_neg8 
+					remove_modifier = ai_mdrone_neg4
+					remove_modifier = ai_mdrone_neg2 
+					remove_modifier = ai_mdrone_neg1 
+				} else_if = {
+					limit = {
+						has_modifier = ai_mdrone_neg4 
+						has_modifier = ai_mdrone_neg2
+						has_modifier = ai_mdrone_neg1
+					}
+					add_modifier = { modifier = ai_mdrone_neg8 }
+					remove_modifier = ai_mdrone_neg4
+					remove_modifier = ai_mdrone_neg2 
+					remove_modifier = ai_mdrone_neg1 
+				} else_if = {
+					limit = {
+						has_modifier = ai_mdrone_neg2
+						has_modifier = ai_mdrone_neg1
+					}
+					add_modifier = { modifier = ai_mdrone_neg4 }
+					remove_modifier = ai_mdrone_neg2 
+					remove_modifier = ai_mdrone_neg1 
+				} else_if = {
+					limit = {
+						has_modifier = ai_mdrone_neg1
+					}
+					add_modifier = { modifier = ai_mdrone_neg2 }
+					remove_modifier = ai_mdrone_neg1 
+				} else = {
+					add_modifier = { modifier = ai_mdrone_neg1 }
+				}
+			}
+		}
+		else = {
+			remove_modifier = ai_mdrone_neg1
+			remove_modifier = ai_mdrone_neg2
+			remove_modifier = ai_mdrone_neg4
+			remove_modifier = ai_mdrone_neg8
+			remove_modifier = ai_mdrone_neg16
+		}
+	}
+}
+
+planet_event = {
+	id = str_planet_audit.2
+	fire_only_once = no
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_timed_planet_flag = {
+			flag = str_five_year_new_colony
+			days = 1800
+		}
+	}
+}

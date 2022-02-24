@@ -1,0 +1,258 @@
+
+namespace = starnet
+
+event = {
+	#Determine what countries are ahead. 5 year pulse
+	id = starnet.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		if = {
+			limit = {
+				years_passed > 30
+			}
+			every_country = {
+				limit = {
+					or = { has_country_flag = str_normal_empire is_ai = no }
+				}
+				country_event = {
+					id = starnet.2 days = 1 random = 180
+				}
+				if = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = starnet.3 days = 1 random = 200
+					}
+				}
+				if = {
+					limit = {
+						has_technology = tech_ecological_adaptation
+						years_passed > 20
+						not = {
+							has_authority = auth_machine_intelligence
+						}
+						#If empire can take world shaper soon they should wait with terraforming
+						nand = {
+							has_technology = tech_climate_restoration
+							NOT = { has_authority = auth_hive_mind }
+							OR = {
+								NOT = { has_authority = auth_machine_intelligence }
+								has_valid_civic = civic_machine_servitor
+								has_valid_civic = civic_machine_assimilator
+							}
+						}
+					}
+					country_event = {
+						id = str_economy_plan.3 days = 1 random = 500
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = starnet.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		remove_country_flag = str_has_bad_fleet_score
+		remove_country_flag = str_has_bad_tech_score
+		remove_country_flag = str_has_bad_economy_score
+		remove_country_flag = str_has_terrible_fleet_score
+		remove_country_flag = str_has_terrible_tech_score
+		remove_country_flag = str_has_terrible_economy_score
+		every_relation = {
+			limit = {
+				is_country_type = default
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = fleet
+						value > equivalent
+					}
+				}
+				prev = { set_country_flag = str_has_bad_fleet_score }
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = technology
+						value > equivalent
+					}
+				}
+				prev = { set_country_flag = str_has_bad_tech_score }
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = economy
+						value > equivalent
+					}
+				}
+				prev = { set_country_flag = str_has_bad_economy_score }
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = fleet
+						value > superior
+					}
+				}
+				prev = { set_country_flag = str_has_terrible_fleet_score }
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = technology
+						value > superior
+					}
+				}
+				prev = { set_country_flag = str_has_terrible_tech_score }
+			}
+			if = {
+				limit = {
+					relative_power = {
+						who = prev
+						category = economy
+						value > superior
+					}
+				}
+				prev = { set_country_flag = str_has_terrible_economy_score }
+			}
+		}
+	}
+}
+
+country_event = {
+	# Determine small changes in fleet composition. AI uses similar compositions, but will vary two things
+	# First it will sometimes add carrier cruisers (AI is restricted to one design per shipclass so it can't add carrier battleships)
+	# Second it can switch policies, hit&run is much better against corvettes but useless in battleship vs battleship fight
+	# So if it's fighting corvettes it should add cruisers and use hit and run and if it doesn't then use RD/no retreat and use purely battleship
+	# Since opponent AIs will be battleship-heavy no matter what I am running this event exclusively on human empires to save the CPU
+	# Against other AIs, the AI will do what's correct.
+	# The exact value of 200 is irrelevant, it doesn't matter, the question is only if there is a sufficient number of enemy corvettes.
+
+	id = starnet.3
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = no
+
+	immediate = {
+		remove_country_flag = str_corvette_user
+		if = {	
+			limit = {
+				used_naval_capacity_integer < 400
+			}
+			if = {
+				limit = {
+					count_owned_ship = {
+						count > 200
+						limit = {
+							is_ship_size = corvette
+						}
+					}
+				}
+				set_country_flag = str_corvette_user
+			}
+		}
+		else_if = {
+			
+			limit = {
+				used_naval_capacity_integer < 800
+			}
+			if = {
+				limit = {
+					count_owned_ship = {
+						count > 400
+						limit = {
+							is_ship_size = corvette
+						}
+					}
+				}
+				set_country_flag = str_corvette_user
+			}
+		}
+		else_if = {
+			limit = {
+				count_owned_ship = {
+					count > 600
+					limit = {
+						is_ship_size = corvette
+					}
+				}
+			}
+			set_country_flag = str_corvette_user
+		}
+
+		if = { 
+			limit = {
+				has_country_flag = str_corvette_user
+			}
+			every_relation = {
+				limit = {
+					is_ai = yes
+					or = {
+						is_rival = prev
+						is_hostile = prev
+						is_hostile_to = prev
+						is_at_war_with = prev  
+					}
+				}
+				set_timed_country_flag = {
+					flag = str_need_to_counter_corvettes
+					days = 2000
+				}
+			}
+		}
+
+	}
+
+}
+
+event = {
+	#Two year pulse
+	id = starnet.5
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = no
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = yes
+				or = {
+					is_country_type = default
+					has_country_flag = str_normal_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+			country_event = { id = str_doomstack.1 days = 1 random = 180 }
+		}
+		
+		every_country = {
+			limit = {
+				or = { is_ai = no
+					is_gestalt = no	
+				}
+		}
+			every_owned_planet = {
+				remove_modifier = ai_mdrone_neg1
+				remove_modifier = ai_mdrone_neg2
+				remove_modifier = ai_mdrone_neg4
+				remove_modifier = ai_mdrone_neg8
+				remove_modifier = ai_mdrone_neg16
+			}
+		}
+	}
+}

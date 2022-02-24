@@ -1,0 +1,21 @@
+# Add global variables here that will be available in all script files.
+# @something = 42
+# They can be overridden in each normal script file.
+
+
+@special_job_weight = 0.01 # Intentionally very low weight	
+
+@ruler_job_weight = 10000
+@colonist_job_weight = 2000
+@soldier_job_weight = 1000
+@specialist_job_weight = 400
+@criminal_job_weight = 40
+@worker_job_weight = 1
+@clerk_job_weight = 0.15 # Bit lower than other worker jobs
+
+@spawner_drone_job_weight = 100000
+@synapse_drone_job_weight = 10000
+@warrior_drone_job_weight = 1000
+@complex_drone_job_weight = 400
+@simple_drone_job_weight = 1
+

@@ -1,0 +1,410 @@
+#An event  which tries to make AI doomstack their fleets
+
+namespace = str_doomstack
+
+country_event = {
+	id=str_doomstack.1
+	hide_window = yes
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				or = {
+					is_country_type = default
+					is_country_type = awakened_fallen_empire
+					has_country_flag = str_normal_empire
+				}
+				is_at_war = no
+			}
+
+			random_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_transport
+					is_fleet_idle = yes
+				}
+				set_timed_fleet_flag = {
+					flag = rallypoint_armies
+					days = 3
+				}
+				closest_system = {
+					min_steps = 1
+					max_steps = 5
+					use_bypasses = no
+					limit = {
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
+						starbase = {
+							has_starbase_module = shipyard
+						}
+					}
+					set_timed_star_flag = {
+						flag = rallypoint_army
+						days = 3
+					}
+				}
+			}
+
+			random_owned_fleet = {
+				limit = {
+					fleet_power > 500
+					is_ship_class = shipclass_military
+				}
+				weights = {
+					base = 1
+					modifier = {
+						add = 10
+						fleet_power > 2000
+					}
+					modifier = {
+						add = 1000
+						fleet_power > 10000
+					}
+				}
+
+
+
+				if = {
+					limit = {
+						has_fleet_order = follow_order
+					}
+					clear_orders = yes
+					clear_fleet_actions = this
+				}
+				set_timed_fleet_flag = {
+					flag = rallypoint_f
+					days = 3
+				}
+				closest_system = {
+					min_steps = 1
+					max_steps = 5
+					use_bypasses = no
+					limit = {
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
+						exists = starbase
+						starbase = {
+							has_starbase_module = shipyard
+						}
+					}
+					set_timed_star_flag = {
+						flag = rallypoint
+						days = 3
+					}
+				}
+			}
+
+
+			random_owned_fleet = {
+				limit = {
+					fleet_power > 5000
+					is_ship_class = shipclass_military
+				}
+				weights = {
+					base = 1
+					modifier = {
+						add = 10
+						fleet_power > 10000
+					}
+					modifier = {
+						add = 1000
+						fleet_power > 40000
+					}
+				}
+				if = {
+					limit = {
+						has_fleet_order = follow_order
+					}
+					clear_orders = yes
+				}
+				set_timed_fleet_flag = {
+					flag = rallypoint_f
+					days = 3
+				}
+				closest_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
+						starbase = {
+							has_starbase_module = shipyard
+						}
+					}
+					set_timed_star_flag = {
+						flag = rallypoint
+						days = 3
+					}
+				}
+			}
+
+
+			random_owned_fleet = {
+				limit = {
+					fleet_power > 40000
+					is_ship_class = shipclass_military
+				}
+				weights = {
+					base = 1
+					modifier = {
+						add = 10
+						fleet_power > 100000
+					}
+					modifier = {
+						add = 1000
+						fleet_power > 300000
+					}
+				}
+				if = {
+					limit = {
+						has_fleet_order = follow_order
+					}
+					clear_orders = yes
+					clear_fleet_actions = this
+				}
+				set_timed_fleet_flag = {
+					flag = rallypoint_f
+					days = 3
+				}
+				closest_system = {
+					limit = {
+						exists = owner
+						owner = {
+							is_same_value = root.owner
+						}
+						exists = starbase
+						starbase = {
+							has_starbase_module = shipyard
+						}
+					}
+					set_timed_star_flag = {
+						flag = rallypoint
+						days = 3
+					}
+				}
+			}
+
+			every_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_transport
+					is_fleet_idle = yes
+					not = {
+						has_fleet_flag = rallypoint_armies
+					}
+				}
+				clear_orders = yes
+				queue_actions = {
+
+					find_closest_system = {
+						trigger = {
+							id = str_doomstack.rallypoint.armies
+							has_star_flag = rallypoint_army
+							is_owned_by = root
+						}
+						found_system = {
+							move_to = this
+						}
+					}
+				}
+			}
+
+			every_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_military
+					fleet_power > 50
+					not = {
+						has_fleet_flag = rallypoint_f
+					}
+				}
+				clear_orders = yes
+				queue_actions = {
+
+					find_closest_system = {
+						trigger = {
+							id = str_doomstack.rallypoint
+							has_star_flag = rallypoint
+							is_owned_by = root
+						}
+						found_system = {
+							move_to = this
+						}
+					}
+				}
+			}
+		}
+		else_if ={
+			limit = {
+				is_ai = yes
+				is_country_type = default
+				has_country_flag = str_normal_empire
+				is_at_war = yes
+			}
+
+			random_owned_fleet = {
+				limit = {
+					fleet_power > 1000
+					is_ship_class = shipclass_military
+				}
+				weights = {
+					base = 1
+					modifier = {
+						add = 10
+						fleet_power > 2000
+					}
+					modifier = {
+						add = 1000
+						fleet_power > 10000
+					}
+					modifier = {
+						add = 100000
+						fleet_power > 80000
+					}
+				}
+				set_timed_fleet_flag = {
+					flag = str_flagman
+					days = 2
+				}
+				if = {
+					limit = {
+						has_fleet_order = follow_order
+					}
+					clear_orders = yes
+				}
+				owner = {
+					every_owned_fleet = {
+						limit = {
+							not = {
+								has_fleet_flag = str_flagman
+							}
+							has_hp_percentage > 0.95
+							is_ship_class = shipclass_military
+							fleet_power > 700
+							is_fleet_idle = yes
+						}
+						auto_follow_fleet = {
+							target = prevprev
+							attack_fleet = no
+						}
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				is_ai = yes
+				or = {
+					is_country_type = default
+					is_country_type = awakened_fallen_empire
+					has_country_flag = str_normal_empire
+				}
+			}
+			country_event = { id = str_doomstack.2 days = 2  }
+			country_event = { id = str_doomstack.2 days = 5  }
+			country_event = { id = str_doomstack.2 days = 8  }
+			country_event = { id = str_doomstack.2 days = 11  }
+		}
+	}
+}
+
+fleet_event = {
+	id = str_doomstack.3
+	hide_window = yes
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		solar_system = {
+			random_fleet_in_system = {
+				limit = {
+					is_ship_class = shipclass_military
+					NOT = { is_same_value = root }
+					owner = { is_same_empire = root.owner }
+					fleet_power > 0
+				}
+				save_event_target_as = strmerger
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:strmerger
+				event_target:strmerger = {
+					exists = owner
+					owner = { is_same_value = root.owner }
+				}
+				not = { is_same_value = event_target:strmerger }
+			}
+			queue_actions = {
+				find_closest_fleet = {
+					found_fleet = {
+						merge_fleet = {
+							target = event_target:strmerger
+							allow_ftl = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Merger event
+country_event = {
+	id=str_doomstack.2
+	hide_window = yes
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+
+		every_owned_starbase = {
+			limit = {
+				has_starbase_module = shipyard
+			}
+			star = {
+				solar_system = {
+					every_ship_in_system = {
+						repair_ship = yes
+						add_modifier = {
+							modifier = str_fleet_pseudorepair
+							days = 1
+						}
+					}
+					random_fleet_in_system = {
+						limit = {
+							is_ship_class = shipclass_military
+							fleet_power > 0
+							has_hp_percentage > 0.95
+						}
+						fleet_event = {
+							id = str_doomstack.3
+						}
+					}
+					random_fleet_in_system = {
+						limit = {
+							is_ship_class = shipclass_military
+							fleet_power > 0
+							has_hp_percentage > 0.95
+						}
+						fleet_event = {
+							id = str_doomstack.3
+						}
+					}
+					random_fleet_in_system = {
+						limit = {
+							is_ship_class = shipclass_military
+							fleet_power > 0
+							has_hp_percentage > 0.95
+						}
+						fleet_event = {
+							id = str_doomstack.3
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,491 @@
+
+str_force_city_district = {
+	str_force_city_district_compatibility = yes
+	years_passed > 10
+	free_district_slots > 0
+
+	str_num_districts_city = {
+		operator = <
+		num = 9
+	}
+	exists = owner
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 500
+		}
+		resource_income_compare = {
+			resource = minerals
+			value > 30
+		}
+	}
+
+	or = {
+		owner = { str_raw_ecocrisis_level_1 = no }
+		free_amenities < -4
+		free_housing < 7
+	}
+
+	or = {
+		and = {
+			free_housing < 15
+			num_pops > 15
+		}
+		and = {
+			free_housing < 17
+			num_pops > 20
+		}
+		and = {
+			free_housing < 20
+			num_pops > 25
+		}
+		and = { free_amenities < -8 free_building_slots = 0 }
+		and = {
+			has_modifier = planet_luxuries_boost
+			free_amenities < 5
+			free_building_slots = 0
+		}
+		and = {
+			free_building_slots = 0
+			not = { has_building = building_robot_assembly_plant }
+			owner = { has_technology = tech_robotic_workers }
+		}
+	}
+	or = {
+		free_building_slots = 0
+		and = {
+			num_pops > 15
+			free_housing < 25
+		}
+	}
+	or = {
+		and = {
+			free_district_slots < 2
+			free_building_slots = 0
+		}
+		and = {
+			has_modifier = planet_luxuries_boost
+			free_amenities < 5
+			free_building_slots = 0
+		}
+		and = {
+			free_building_slots = 0
+			free_amenities < -4
+		}
+		and = {
+			free_building_slots = 0
+			free_housing < 25
+			free_district_slots > 2
+			owner = { str_raw_ecocrisis_level_0 = no }
+		}
+		and = {
+			free_building_slots = 0
+			or = {
+				str_is_col_research = yes
+				str_is_col_bureau = yes
+			}
+			owner = { str_raw_ecocrisis_level_0 = no }
+		}
+	}
+}
+
+str_force_food_processing = {
+	or = {
+		and = {
+			str_num_districts_farming = {
+				operator = >
+				num = 2
+			}
+			str_num_free_districts_farming = {
+				operator = >
+				num = 2
+		}
+			}
+		str_num_districts_farming = {
+			operator = >
+			num = 4
+		}
+	}
+	free_building_slots > 0
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 400
+		}
+	}
+	str_is_col_farming = yes
+	num_pops > 12
+	num_buildings = {
+		type = building_food_processing_center
+		value = 0
+	}
+	str_num_districts_farming = {
+		operator = >
+		num = 3
+	}
+}
+
+str_force_energy_grid = {
+	or = {
+		and = {
+			str_num_districts_generator = {
+				operator = >
+				num = 2
+			}
+			str_num_free_districts_generator = {
+				operator = >
+				num = 2
+		}
+			}
+		str_num_districts_generator = {
+			operator = >
+			num = 3
+		}
+		has_planet_flag = str_designated_energy_guaranteed
+	}
+	free_building_slots > 0
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 400
+		}
+	}
+	str_is_col_generator = yes
+	or = {
+		num_pops > 12
+		has_planet_flag = str_designated_energy_guaranteed
+	}
+	num_buildings = {
+		type = building_energy_grid
+		value = 0
+	}
+	str_num_districts_generator = {
+		operator = >
+		num = 3
+	}
+}
+
+str_force_mineral_purification = {
+
+	or = {
+		and = {
+			str_num_districts_mining = {
+				operator = >
+				num = 2
+			}
+			str_num_free_districts_mining = {
+				operator = >
+				num = 2
+		}
+			}
+		str_num_districts_mining = {
+			operator = >
+			num = 4
+		}
+	}
+	free_building_slots > 0
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 400
+		}
+	}
+	str_is_col_mining = yes
+	num_pops > 12
+	num_buildings = {
+		type = building_mineral_purification_hub
+		value = 0
+	}
+	str_num_districts_mining = {
+		operator = >
+		num = 3
+	}
+}
+
+str_force_building_factory = {
+
+	and = {
+		free_building_slots > 0
+		owner = {
+			resource_stockpile_compare = {
+				resource = minerals
+				value > 1000
+			}
+		}
+		str_is_col_factory = yes
+		str_num_districts_civindustry = {
+			operator = >
+			num = 3
+		}
+		str_factory_to_foundry_switcher = no
+		owner = { str_raw_ecocrisis_level_0 = no }
+	}
+	num_buildings = {
+		type = building_factory_1
+		value = 0
+	}
+	num_buildings = {
+		type = building_foundry_1
+		value = 0
+	}
+}
+
+str_force_building_foundry = {
+	or = {
+		and = {
+			is_capital = no
+			has_planet_flag = str_designated_alloy_guaranteed
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 45
+				}
+			}
+		}
+		and = {
+			or = {
+				is_capital = yes
+				is_planet_class = pc_habitat
+			}
+			owner = {
+				or = {
+					has_origin = origin_void_dwellers
+					has_origin = origin_shattered_ring
+				}
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 600
+				}
+				resource_income_compare = {
+					resource = minerals
+					value > 30
+				}
+			}
+		}
+		and = {
+			years_passed < 10
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 400
+				}
+				or = {
+					resource_income_compare = {
+						resource = minerals
+						value > 40
+					}
+					and = {
+						resource_stockpile_compare = {
+							resource = minerals
+							value > 1200
+						}
+						resource_income_compare = {
+							resource = minerals
+							value > 30
+						}
+					}
+				}
+			}
+			is_capital = yes
+		}
+		and = {
+			free_building_slots > 0
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 1000
+				}
+			}
+			str_is_col_foundry = yes
+			str_num_districts_milindustry = {
+				operator = >
+				num = 2
+			}
+			str_extra_switcher = no
+			owner = { str_raw_ecocrisis_level_0 = no }
+		}
+	}
+	num_buildings = {
+		type = building_foundry_1
+		value = 0
+	}
+	num_buildings = {
+		type = building_factory_1
+		value = 0
+	}
+}
+
+str_force_building_factory_upgrade = {
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 1000
+		}
+		resource_income_compare = {
+			resource = rare_crystals
+			value > 2
+		}
+	}
+	str_is_col_factory = yes
+	str_num_districts_civindustry = {
+		operator = >
+		num = 3
+	}
+	str_factory_to_foundry_switcher = no
+	owner = { str_raw_ecocrisis_level_0 = no }
+}
+
+str_force_building_foundry_upgrade = {
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 1000
+		}
+		resource_income_compare = {
+			resource = volatile_motes
+			value > 2
+		}
+	}
+	str_is_col_foundry = yes
+	str_num_districts_milindustry = {
+		operator = >
+		num = 3
+	}
+	str_foundry_to_factory_switcher = no
+	owner = { str_raw_ecocrisis_level_0 = no }
+}
+
+str_force_district_industrial = {
+	years_passed < 10
+	always = no
+	is_capital = yes
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 400
+		}
+		resource_income_compare = {
+			resource = minerals
+			value > 55
+		}
+		resource_income_compare = {
+			resource = energy
+			value > 0
+		}
+	}
+	num_buildings = {
+		type = building_foundry_1
+		value > 0
+	}
+}
+
+str_force_district_farming = {
+	always = no
+}
+
+str_force_district_mining = {
+	exists = owner
+	str_num_free_districts_mining = {
+		operator = >
+		num = 0
+	}
+	has_building_construction = no
+	years_passed < 7
+	is_capital = yes
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 300
+		}
+		resource_stockpile_compare = {
+			resource = minerals
+			value < 1000
+		}
+		resource_income_compare = {
+			resource = minerals
+			value < 50
+		}
+	}
+}
+
+str_force_district_generator = {
+
+	always = no
+}
+
+str_force_stronghold = {
+	always = no
+}
+
+str_force_holotheatre = {
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 700
+		}
+	}
+	free_building_slots > 0
+	or = {
+		free_amenities < -10
+		and = {
+			has_modifier = planet_luxuries_boost
+			free_amenities < 5
+		}
+	}
+	num_pops > 11
+}
+
+str_force_comzones = {
+	owner = {
+		resource_stockpile_compare = {
+			resource = minerals
+			value > 700
+		}
+	}
+	free_building_slots > 0
+	or = {
+		free_amenities < 0
+		and = {
+			has_modifier = planet_luxuries_boost
+			free_amenities < 8
+		}
+	}
+	num_pops > 11
+	str_uses_comzones = yes
+}
+
+str_force_gases = {
+	is_ai = yes
+	not = {
+		has_country_flag = str_is_building_gases
+	}
+	has_technology = tech_exotic_gases
+	resource_income_compare = {
+		resource = exotic_gases
+		value < 1
+	}
+}
+
+str_force_crystals = {
+	is_ai = yes
+	not = {
+		has_country_flag = str_is_building_crystals
+	}
+	has_technology = tech_rare_crystals
+	resource_income_compare = {
+		resource = rare_crystals
+		value < 1
+	}
+}
+
+str_force_motes = {
+	is_ai = yes
+	not = {
+		has_country_flag = str_is_building_motes
+	}
+	has_technology = tech_volatile_motes
+	resource_income_compare = {
+		resource = volatile_motes
+		value < 1
+	}
+}

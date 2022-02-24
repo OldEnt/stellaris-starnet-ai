@@ -1,0 +1,70 @@
+# scope should be planet
+add_primitive_conquest_rw_urban_district = {
+	if = {
+		limit = { owner = { is_machine_empire = yes } }
+		if = {
+			limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
+			add_district = district_rw_nexus
+		}
+		else = {
+			# TODO: num_pops % 10 times
+			add_building = building_organic_sanctuary
+		}
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		add_district = district_rw_hive
+	}
+	else = {
+		add_district = district_rw_city
+	}
+}
+
+# scope should be planet
+# count_machine_servitor_urban is a variable in the planet scope - rogue servitors get organic sanctuaries if the value is zero or even
+add_primitive_conquest_urban_district = {
+	if = {
+		limit = { owner = { is_machine_empire = yes } }
+		if = {
+			limit = {
+				owner = { has_valid_civic = civic_machine_servitor }
+				is_variable_set = count_machine_servitor_urban
+				check_variable_arithmetic = {
+					which = count_machine_servitor_urban
+					modulo = 2
+					value = 0
+				}
+			}
+			add_building = building_organic_sanctuary
+		}
+		else = {
+			add_district = district_nexus
+		}
+		if = {
+			limit = { is_variable_set = count_machine_servitor_urban }
+			change_variable = {
+				which = count_machine_servitor_urban
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		add_district = district_hive
+	}
+	else = {
+		add_district = district_city
+	}
+}
+
+# scope should be planet
+# event_target:conquered_primitive_species must be species
+add_primitive_conquest_food_district = {
+	if = {
+		limit = { event_target:conquered_primitive_species = { NOT = { is_archetype = LITHOID } } }
+		add_district = district_farming
+	}
+	else = {
+		add_district = district_mining
+	}
+}

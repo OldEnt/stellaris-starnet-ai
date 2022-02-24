@@ -1,0 +1,4 @@
+#override vanilla plans
+#plans are "sticky", all starnet plans have potential ={} field that switches them off in case of emergency
+#if vanilla plans are kept (or any other modded plan that doesn't have the same exit clause) AI may get stuck in it forever
+#Let's hope my weights are high enough that it won't happen. Thankfully most mods edit base so overriding this should work

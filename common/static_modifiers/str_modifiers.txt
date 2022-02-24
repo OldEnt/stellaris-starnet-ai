@@ -1,0 +1,29 @@
+ai_mdrone_neg1 = {
+    job_maintenance_drone_add = -1
+}
+
+ai_mdrone_neg2 = {
+    job_maintenance_drone_add = -2
+}
+
+ai_mdrone_neg4 = {
+    job_maintenance_drone_add = -4
+}
+
+ai_mdrone_neg8 = {
+    job_maintenance_drone_add = -8
+}
+
+ai_mdrone_neg16 = {
+    job_maintenance_drone_add = -16
+}
+
+str_fleet_pseudorepair = {
+    ship_armor_regen_add_perc = 100000
+    #AI sometimes will get its wounded ships be near the starbase instead of being on a starbase
+    #This causes them to "wait" for a repair that never comes and they get stuck forever
+    #Since as far as I know there is no way to issue an orbit order via a script I can't fix this
+
+    #The workaround I implemented is an event that will check if there any stuck ships and if they are it will heal them artificially using this modifier
+    #These ships couldn't have been healed by a starbase if they were orbitting it, but since ships are just on a starbase without orbitting this workaround is needed.
+}

@@ -1,0 +1,39 @@
+namespace = str_monthly
+
+event = {
+	id = str_monthly.1
+	hide_window = yes
+    is_triggered_only = yes 
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = yes
+				or = {
+					is_country_type = default
+					has_country_flag = str_normal_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+				country_event = { id = str_monthly.2 days = 1 random = 25  }
+		}
+	}
+}
+
+#This event creates a "supervisor flag", planets with a supervisor flag
+#destroy buildings if they don't fit current strategy (it's important to do adjustments one building at a time
+#so income is recalculated, otherwise you can see AI destroying 17 factories simultaneously)
+
+country_event = {
+	id = str_monthly.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			set_timed_planet_flag = {
+				flag = str_supervisor
+				days = 90
+			}
+		}
+	}
+}

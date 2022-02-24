@@ -1,0 +1,27 @@
+﻿l_simp_chinese:
+
+#Buildings
+
+building_str_ai_research_lab: "$building_research_lab_1$"
+building_str_ai_research_lab_desc: "$building_research_lab_1_desc$"
+building_str_ai_stronghold: "$building_stronghold$"
+building_str_ai_stronghold_desc: "$building_stronghold_desc$"
+building_str_ai_holo_theatres: "$building_holo_theatres$"
+building_str_ai_holo_theatres_desc: "$building_holo_theatres_desc$"
+building_str_ai_commercial_zone: "$building_commercial_zone$"
+building_str_ai_commercial_zone_desc: "$building_commercial_zone_desc$"
+
+ai_mdrone_neg1: "Starnet AI maintenance drones disabled"
+ai_mdrone_neg2: "Starnet AI maintenance drones disabled"
+ai_mdrone_neg4: "Starnet AI maintenance drones disabled"
+ai_mdrone_neg8: "Starnet AI maintenance drones disabled"
+ai_mdrone_neg16: "Starnet AI maintenance drones disabled"
+str_fleet_pseudorepair: "StarNet AI ship repair workaround"
+
+gestalt_economic_thinker_name: "$drone_policy_thinker$"
+job_starnet_spice_melange_farmer: "StarNet AI construction decisions workaround"
+job_starnet_spice_melange_farmer_desc: "StarNet AI construction decisions workaround"
+job_starnet_spice_melange_antifarmer: "StarNet AI construction decisions workaround"
+job_starnet_spice_melange_antifarmer_desc: "StarNet AI construction decisions workaround"
+mod_job_starnet_spice_melange_farmer_add: "StarNet AI construction decisions workaround"
+mod_job_starnet_spice_melange_antifarmer_add: "StarNet AI construction decisions workaround"

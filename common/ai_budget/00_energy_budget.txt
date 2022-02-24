@@ -1,0 +1,682 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+energy_expenditure_campaigns = {
+	resource = energy
+	type = expenditure
+	category = campaigns
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = energy
+			value > 1500
+		}
+	}
+
+	static_min = {
+		base = 20000
+	}
+}
+
+energy_expenditure_colonies = {
+	resource = energy
+	type = expenditure
+	category = trade
+
+	potential = {
+		always = yes
+	}
+	fraction ={
+		weight = 0.5
+	}
+
+	static_min = {
+		base = 1000
+	}
+}
+
+energy_expenditure_leaders = {
+	resource = energy
+	type = expenditure
+	category = leaders
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1.3
+	}
+	static_min = {
+		base = 20000
+	}
+}
+
+energy_expenditure_privatecolonies = {
+	resource = energy
+	type = expenditure
+	category = colonies
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.8
+	}
+	static_min = {
+		base = 700
+	}
+}
+
+energy_expenditure_slums = {
+	resource = energy
+	type = expenditure
+	category = deposit_blockers
+	potential = {
+		years_passed < 15
+		years_passed > 3
+	}
+
+	fraction = {
+		weight = 0.7
+	}
+
+	static_min = {
+		base = 0
+		modifier = {
+			add = 400
+			years_passed > 3
+		}
+	}
+}
+
+
+energy_expenditure_ringworld_blockers = {
+	resource = energy
+	type = expenditure
+	category = deposit_blockers
+	potential = {
+		has_origin = origin_shattered_ring
+	}
+
+	fraction = {
+		weight = 0
+	}
+
+	static_min = {
+		base = 1000
+	}
+}
+
+energy_expenditure_deposit_blockers = {
+	resource = energy
+	type = expenditure
+	category = deposit_blockers
+
+	potential = {
+		years_passed > 3
+		str_raw_ecocrisis_level_1 = no
+		or = {
+			resource_income_compare = {
+				resource = minerals
+				value > 60
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value > 700
+			}
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value > 1000
+		}
+	}
+
+	fraction = {
+		weight = 0.7
+	}
+
+	static_min = {
+		base = 0
+		modifier = {
+			add = 500
+			years_passed > 3
+			any_owned_planet = {
+				num_uncleared_blockers > 0
+				or = {
+					num_free_districts = { type = any value < 1 }
+					num_pops > 14
+				}
+			}
+		}
+		modifier = {
+			add = 2000
+			any_owned_planet = {
+				num_uncleared_blockers > 0
+				or = {
+					num_free_districts = { type = any value < 1 }
+					num_pops > 14
+				}
+			}
+			years_passed > 20
+		}
+	}
+}
+
+energy_expenditure_decisions = {
+	resource = energy
+	type = expenditure
+	category = decisions
+
+	potential = {
+		resource_income_compare = {
+			resource = energy
+			value > 5
+		}
+	}
+
+	fraction = {
+		weight = 0
+	}
+
+	static_min = {
+		base = 30000
+	}
+	static_max = {
+		base = 30000
+	}
+}
+
+energy_expenditure_missing_scientist = {
+	resource = energy
+	type = expenditure
+	category = leaders
+
+	potential = {
+		OR = {
+			scientist_count < 4
+
+			NOT = {
+				research_leader = {
+					area = physics
+				}
+			}
+			NOT = {
+				research_leader = {
+					area = society
+				}
+			}
+			NOT = {
+				research_leader = {
+					area = engineering
+				}
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+
+	static_min = {
+		base = 15000
+	}
+	static_max = {
+		base = 50000
+	}
+}
+
+energy_expenditure_megastructures = {
+	resource = energy
+	type = expenditure
+	category = megastructures
+
+	potential = {
+		is_country_type = default
+		is_at_war = no
+		has_galactic_wonders = yes
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+
+	static_max = {
+		base = 20000 #
+	}
+}
+
+energy_expenditure_terraforming = {
+	resource = energy
+	type = expenditure
+	category = terraforming
+
+	potential = {
+		has_technology = tech_terrestrial_sculpting
+	}
+
+	fraction = {
+		weight = 0.3
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_ascension_perk = ap_machine_worlds
+				has_ascension_perk = ap_hive_worlds
+				AND = {
+					has_technology = tech_climate_restoration
+					any_system_within_border = {
+						any_system_planet = {
+							OR = {
+								has_modifier = terraforming_candidate
+								AND = {
+									is_planet_class = pc_nuked
+									root = {
+										NOT = { ideal_planet_class = pc_nuked }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	static_max = { #never any need for more than that for a single planet
+		base = 20000
+	}
+}
+
+
+energy_expenditure_armies = {
+	resource = energy
+	type = expenditure
+	category = armies
+
+	potential = {
+		has_valid_civic = civic_reanimated_armies
+		or = {
+			is_at_war = yes
+			and = {
+				prepare_for_war = yes
+				used_naval_capacity_percent <= 1
+			}
+			and = {
+				resource_stockpile_compare = {
+					resource = energy
+					value > 1000
+				}
+				resource_income_compare = {
+					resource = energy
+					value > 10
+				}
+				used_naval_capacity_percent > 0.9
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+	static_min = {
+		base = 5000
+	}
+}
+
+############
+## Upkeep ##
+############
+energy_upkeep_country = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.75
+	}
+}
+
+energy_upkeep_building_unstucker = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = planets
+
+	potential = {
+		has_country_flag = str_planet_buildings_unstuck
+	}
+
+	fraction = {
+		weight = 2
+	}
+}
+
+energy_upkeep_starbase_unstucker = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = starbases
+
+	potential = {
+		has_country_flag = str_planet_buildings_unstuck
+	}
+
+	fraction = {
+		weight = 2
+	}
+}
+
+energy_upkeep_country_not_terraforming = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		nand = {
+			or = {
+				and = {
+					has_ascension_perk = ap_world_shaper
+					has_country_flag = str_has_terraformables
+				}
+				has_country_flag = str_lets_terraform
+			}
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.15
+	}
+}
+
+energy_upkeep_country_early = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		years_passed < 30
+		years_passed > 9
+		has_technology = tech_hydroponics
+	}
+
+	fraction = {
+		weight = 0.25
+	}
+}
+
+energy_upkeep_country_getting_rushed_panic = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		str_make_fleet_against_rush = yes
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+}
+
+energy_upkeep_country_can_spend = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		resource_income_compare = {
+			resource = energy
+			value > 10
+		}
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}
+
+energy_upkeep_war = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		is_at_war = yes
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+}
+
+energy_upkeep_warprep = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		prepare_for_war = yes
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+energy_upkeep_country_a = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		has_country_flag = acceptable_raw_economy
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.05
+	}
+}
+energy_upkeep_country_f = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		has_country_flag = fine_raw_economy
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}
+
+energy_upkeep_country_g = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		has_country_flag = good_raw_economy
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}
+energy_upkeep_country_insane = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		resource_income_compare = {
+			resource = energy
+			value > 50
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value > 10000
+		}
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+
+energy_expenditure_ultralate = {
+	resource = energy
+	type = upkeep
+	category = country
+	potential = {
+		nand = {
+			or = {
+				and = {
+					has_ascension_perk = ap_world_shaper
+					has_country_flag = str_has_terraformables
+				}
+				has_country_flag = str_lets_terraform
+			}
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+		years_passed > 150
+		resource_stockpile_compare = {
+			resource = energy
+			value > 5000
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value > 1500
+		}
+		resource_stockpile_compare = {
+			resource = food
+			value > 3000
+		}
+	}
+	fraction = {
+		weight = 0.5
+	}
+}
+
+energy_expenditure_ultralate2 = {
+	resource = energy
+	type = upkeep
+	category = country
+	potential = {
+		years_passed > 150
+		has_country_flag = fallback_is_needed
+	}
+	fraction = {
+		weight = 0.4
+	}
+}
+
+energy_upkeep_country_insane2 = { # Covers most other things
+	resource = energy
+	type = upkeep
+	category = country
+
+	potential = {
+		resource_income_compare = {
+			resource = energy
+			value > 100
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value > 10000
+		}
+	}
+
+	fraction = {
+		weight = 0.3
+	}
+}
+
+
+
+energy_upkeep_lategame = {
+	resource = energy
+	type = upkeep
+	category = country
+	potential = {
+		years_passed > 150
+		resource_income_compare = {
+			resource = energy
+			value > -40
+		}
+		nand = {
+			has_ascension_perk = ap_world_shaper
+			has_country_flag = str_has_terraformables
+			used_naval_capacity_percent > 0.9
+			resource_stockpile_compare = {
+				resource = energy
+				value < 8000
+			}
+		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}

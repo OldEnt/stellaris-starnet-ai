@@ -1,0 +1,138 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+exotic_gases_expenditure_ships = {
+	resource = exotic_gases
+	type = expenditure
+	category = ships
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 50
+	}
+}
+
+exotic_gases_expenditure_trade = {
+	resource = exotic_gases
+	type = expenditure
+	category = trade
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+}
+
+exotic_gases_expenditure_planets = {
+	resource = exotic_gases
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 500
+	}
+}
+
+exotic_gases_upkeep_planets = {
+	resource = exotic_gases
+	type = upkeep
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+exotic_gases_upgrade_ships = {
+	resource = exotic_gases
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+
+exotic_gases_expenditure_edicts = {
+	resource = exotic_gases
+	type = expenditure
+	category = edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = exotic_gases
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
+exotic_gases_expenditure_shipedicts = {
+	resource = exotic_gases
+	type = expenditure
+	category = ship_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = exotic_gases
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 0
+		modifier = {
+			add = 1000
+			is_at_war = yes
+		}
+	}
+}
+
+exotic_gases_expenditure_rareedicts = {
+	resource = exotic_gases
+	type = expenditure
+	category = rare_edicts
+
+	potential = {
+		resource_stockpile_compare = {
+			resource = exotic_gases
+			value > 100
+		}
+	}
+
+	fraction = {
+		weight = 1
+	}
+}
