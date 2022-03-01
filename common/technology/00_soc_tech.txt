@@ -4850,10 +4850,12 @@ tech_planetary_unification = {
 		campaign_edicts
 	}
 
-	# also unlocks planet-happiness edict
+	# also unlocks planet-happiness edict and gives a one time Unity award
 
 	modifier = {
-		country_base_unity_produces_add = 2
+		country_unity_produces_mult = 0.05
+		show_only_custom_tooltip = no
+		custom_tooltip = tech_planetary_unification_effect
 	}
 
 	weight_modifier = {
@@ -5253,7 +5255,7 @@ tech_adaptive_bureaucracy = {
 	gateway = espionage
 
 	modifier = {
-		country_admin_cap_mult = 0.05
+		country_edict_fund_add = 20
 	}
 
 	weight_modifier = {
@@ -5306,7 +5308,7 @@ tech_effective_bureaucracy = {
 	weight = @tier2weight1
 
 	modifier = {
-		country_admin_cap_mult = 0.05
+		country_edict_fund_add = 20
 	}
 
 	weight_modifier = {
@@ -5361,7 +5363,7 @@ tech_colonial_bureaucracy = {
 	gateway = espionage
 
 	modifier = {
-		country_admin_cap_add = 10
+		country_edict_fund_add = 20
 		add_base_country_intel = 10
 	}
 
@@ -5478,7 +5480,7 @@ tech_living_state = {
 	}
 
 	modifier = {
-		pop_factions_influence_produces_add = 1
+		pop_factions_unity_produces_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -5613,7 +5615,7 @@ tech_autonomous_agents = {
 	}
 
 	modifier = {
-		country_base_influence_produces_add = 1
+		country_tech_influence_produces_add = 1
 		envoys_add = 1
 	}
 
@@ -6150,7 +6152,10 @@ tech_cultural_heritage = {
 	tier = 0
 
 	potential = {
-		is_hive_empire = no
+		OR = {
+			is_hive_empire = no
+			is_memorialist_empire = yes
+		}
 	}
 
 	weight_modifier = {
@@ -6183,14 +6188,6 @@ tech_heritage_site = {
 	weight = @tier1weight3
 
 	#unlocks upgraded culture building
-
-	potential = {
-		NOR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-			has_valid_civic = civic_machine_servitor
-		}
-	}
 
 	weight_modifier = {
 		modifier = {
@@ -6235,14 +6232,6 @@ tech_hypercomms_forum = {
 	weight = @tier3weight1
 
 	#unlocks 2nd upgraded culture building
-
-	potential = {
-		NOR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-			has_valid_civic = civic_machine_servitor
-		}
-	}
 
 	weight_modifier = {
 		modifier = {

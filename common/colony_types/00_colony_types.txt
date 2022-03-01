@@ -3278,9 +3278,8 @@ col_bureau = {
 	}
 
 	planet_modifier = {
-		custom_tooltip = col_bureaucracy_custom
-		planet_bureaucrats_upkeep_mult = -0.10
-		pop_ethics_shift_speed_mult = -0.20
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
 	}
 
 	weight_modifier = {
@@ -3339,9 +3338,8 @@ col_habitat_bureau = {
 	}
 
 	planet_modifier = {
-		custom_tooltip = col_bureaucracy_custom
-		planet_bureaucrats_upkeep_mult = -0.10
-		pop_ethics_shift_speed_mult = -0.20
+		planet_administrators_produces_mult = 0.10
+		planet_administrators_upkeep_mult = -0.10
 	}
 
 	weight_modifier = {

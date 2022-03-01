@@ -341,6 +341,7 @@ district_farming = {
 		}
 		NOT = {
 			AND = {
+				exists = owner
 				owner = {
 					is_ai = yes
 					NOT = { has_country_flag = str_recently_human }

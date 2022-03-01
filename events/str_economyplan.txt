@@ -914,12 +914,14 @@ country_event = {
 								}
 								or = {
 									num_pops < 6
-									any_owned_pop = {
+									count_owned_pop = {
 										count > 3
-										is_sapient = yes
-										is_being_purged = no
-										planet = { habitability = { who = prev value > 0.65 } }
-										is_robot_pop = no
+										limit = {									
+											is_sapient = yes
+											is_being_purged = no
+											planet = { habitability = { who = prev value > 0.65 } }
+											is_robot_pop = no
+										}
 									}
 								}
 							}
@@ -1441,12 +1443,14 @@ country_event = {
 			remove_planet_flag = str_terraform_arid
 			if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_alpine_preference
+						limit = {	
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_alpine_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_alpine
@@ -1455,12 +1459,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_tundra_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_tundra_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_tundra
@@ -1469,12 +1475,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_arctic_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_arctic_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_arctic
@@ -1483,13 +1491,16 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_ocean_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_ocean_preference
+						}
 					}
+
 				}
 				set_planet_flag = str_terraform_ocean
 				owner = { set_country_flag = str_lets_terraform }
@@ -1497,12 +1508,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_continental_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_continental_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_continental
@@ -1511,12 +1524,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_tropical_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_tropical_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_tropical
@@ -1525,12 +1540,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_arid_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_arid_preference
+						}					
 					}
 				}
 				set_planet_flag = str_terraform_arid
@@ -1539,12 +1556,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_desert_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_desert_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_desert
@@ -1553,12 +1572,14 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					any_owned_pop = {
+					count_owned_pop = {
 						count >= 5
-						is_organic_species = yes
-						is_sapient = yes
-						is_being_purged = no
-						has_trait = trait_pc_savannah_preference
+						limit = {
+							is_organic_species = yes
+							is_sapient = yes
+							is_being_purged = no
+							has_trait = trait_pc_savannah_preference
+						}
 					}
 				}
 				set_planet_flag = str_terraform_savannah
