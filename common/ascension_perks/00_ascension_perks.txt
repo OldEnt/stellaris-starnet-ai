@@ -133,6 +133,7 @@ ap_become_the_crisis = {
 		}
 	}
 }
+
 #################
 # AQUATICS ASCENSION PERKS
 #################
@@ -184,6 +185,7 @@ ap_hydrocentric = {
 		}
 	}
 }
+
 #################
 # APOCALYPSE ASCENSION PERKS
 #################
@@ -1193,7 +1195,7 @@ ap_mastery_of_nature = {
 
 ap_imperial_prerogative = {
 	modifier = {
-		country_admin_cap_mult = 0.20
+		empire_size_colonies_mult = -0.50
 	}
 
 	potential = {
@@ -1214,7 +1216,7 @@ ap_imperial_prerogative = {
 
 ap_executive_vigor = {
 	modifier = {
-		country_edict_cap_add = 2
+		country_edict_fund_add = 100
 	}
 
 	potential = {
@@ -1324,12 +1326,7 @@ ap_voidborn = {
 	}
 
 	on_enabled = {
-		if = {
-			limit = {
-				is_gestalt = no
-			}
-			custom_tooltip = "ap_voidborn_habitat_effect"
-		}
+		custom_tooltip = "ap_voidborn_habitat_effect"
 		if = {
 			limit = {
 				NOT = { has_technology = tech_habitat_2 }
@@ -1567,6 +1564,7 @@ ap_galactic_wonders_utopia_and_megacorp = {
 			fail_text = "requires_built_or_repaired_megastructure"
 			has_country_flag = has_built_or_repaired_megastructure
 		}
+
 	}
 
 	potential = {
