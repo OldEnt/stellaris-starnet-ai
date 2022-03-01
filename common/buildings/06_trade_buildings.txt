@@ -4,6 +4,7 @@
 building_commercial_zone = {
 	base_buildtime = @b1_time
 
+	exempt_from_ai_planet_specialization = no
 	category = trade
 
 	potential = {
@@ -230,7 +231,6 @@ building_galactic_stock_exchange = {
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 		has_major_upgraded_capital = yes
 	}
 

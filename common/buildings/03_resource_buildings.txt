@@ -167,13 +167,6 @@ building_hydroponics_farm = {
 	prerequisites = {
 		"tech_hydroponics"
 	}
-
-	ai_resource_production = {
-		food = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
 building_food_processing_facility = {
@@ -198,6 +191,12 @@ building_food_processing_facility = {
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_farming_district = no
+			}
 		}
 	}
 
@@ -353,9 +352,17 @@ building_food_processing_center = {
 		OR = {
 			AND = {
 				exists = owner
-				owner = {
-					is_ai = yes
-					country_uses_food = no
+				OR = {
+					owner = {
+						is_ai = yes
+						country_uses_food = no
+					}
+					AND = {
+						owner = {
+							is_ai = yes
+						}
+						has_any_farming_district = no
+					}
 				}
 			}
 			is_planet_class = pc_machine
@@ -512,7 +519,15 @@ building_mineral_purification_plant = {
 	category = resource
 
 	destroy_trigger = {
-		has_modifier = resort_colony
+		OR = {
+			has_modifier = resort_colony
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_mining_district = no
+			}
+		}	
 	}
 
 	potential = {
@@ -736,9 +751,18 @@ building_mineral_purification_hub = {
 
 	destroy_trigger = {
 		OR = {
-			has_modifier = resort_colony
-			buildings_no_motes = yes
-		}
+			OR = {
+				has_modifier = resort_colony
+				buildings_no_motes = yes
+			}
+
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_mining_district = no
+			}
+		}	
 	}
 
 
@@ -933,10 +957,18 @@ building_energy_grid = {
 	category = resource
 
 	destroy_trigger = {
-		or = {
-			has_modifier = resort_colony
-			str_energy_grid_destroy = yes
-		}
+		OR = {
+			OR = {
+				has_modifier = resort_colony
+			}
+
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_generator_district = no
+			}
+		}	
 	}
 
 	potential = {
@@ -1107,8 +1139,16 @@ building_energy_nexus = {
 
 	destroy_trigger = {
 		OR = {
-			has_modifier = resort_colony
-			buildings_no_exotic_gases = yes
+			OR = {
+				has_modifier = resort_colony
+				buildings_no_exotic_gases = yes
+			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_generator_district = no
+			}
 		}
 	}
 
@@ -1340,6 +1380,10 @@ building_bio_reactor = {
 				is_machine_empire = yes
 				is_mechanical_empire = yes
 				is_lithoid_empire = yes
+			}
+			OR = {
+				owner = { is_ai = no }
+				owner = { country_uses_food = no }
 			}
 		}
 	}

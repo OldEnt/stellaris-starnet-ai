@@ -339,6 +339,15 @@ district_farming = {
 				NOT = { is_planet_class = pc_ocean }
 			}
 		}
+		NOT = {
+			AND = {
+				owner = {
+					is_ai = yes
+					NOT = { has_country_flag = str_recently_human }
+				}
+				owner = { country_uses_food = no }
+			}
+		}
 	}
 
 	allow = {
@@ -1099,10 +1108,16 @@ district_farming_uncapped = {
 		text = job_pearl_diver_effect_desc
 	}
 
-	ai_resource_production = {
-		food = 5
-		trigger = {
-			always = yes
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = {
+					is_ai = yes
+					NOT = {
+						has_country_flag = str_recently_human
+					}
+				}
+			owner = { country_uses_food = no }
 		}
 	}
 }

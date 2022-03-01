@@ -31,6 +31,10 @@ tradition_unyielding = {
 		modifier = {
 			factor = 3
 			any_neighbor_country = {
+				OR = {		
+					is_country_type = default
+					merg_is_standard_empire = yes	# Merger of Rules
+				}
 				opinion_level = { who = prev level <= poor }
 				relative_power = { who = prev value >= superior }
 			}

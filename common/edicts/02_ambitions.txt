@@ -2,16 +2,26 @@
 # Unity Ambitions - edicts
 ##########################################################################
 
-# Ambition duration variable
-@ambitionDuration = 3600
+@ambitionDuration = -1
+@ambitionCost = 75
+@ambitionUpkeep = 75
 
 scientific_revolution = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -32,9 +42,18 @@ desperate_measures = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -59,9 +78,18 @@ fortress_proclamation = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -82,9 +110,18 @@ architectural_renaissance = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -110,9 +147,18 @@ hearts_and_minds = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -134,9 +180,18 @@ omnifarious_acquisition = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -167,9 +222,18 @@ grand_fleet = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
@@ -194,13 +258,22 @@ will_to_power = {
 	length = @ambitionDuration
 	icon = "GFX_edict_type_time"
 
-	is_ambition = yes		# Costs Unity scaled to tradition cost
 	resources = {
 		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
 	}
 
 	modifier = {
-		country_base_influence_produces_add = 5
+		country_ambition_influence_produces_add = 5
 	}
 
 	potential = {

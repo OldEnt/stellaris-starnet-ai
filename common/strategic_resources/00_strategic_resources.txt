@@ -372,6 +372,9 @@ influence = {
 }
 
 unity = {
+
+	deficit_modifier = unity_deficit #found in static modifiers
+
 	ai_weight = {
 		weight = 1
 	}

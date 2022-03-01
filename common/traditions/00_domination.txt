@@ -25,8 +25,24 @@ tr_domination_adopt = {
 
 tr_domination_finish = {
 	modifier = {
-		country_admin_cap_mult = 0.20
+		empire_size_pops_mult = -0.10
 		ascension_perks_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_domination_federations_finish
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = yes
+		}
+		modifier = {
+			empire_size_pops_mult = -0.10
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
 	}
 }
 
@@ -109,7 +125,7 @@ tr_domination_grand_council = {
 
 	modifier = {
 		ruler_skill_levels = 2
-		country_edict_cap_add = 1
+		country_edict_fund_add = 50
 	}
 
 	tradition_swap = {

@@ -9,6 +9,14 @@ building_foundry_1 = {
 	potential = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
+		NOT = {
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
+		}
 	}
 
 	allow = {
@@ -242,6 +250,12 @@ building_foundry_2 = {
 				exists = owner
 				buildings_no_motes = yes
 			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
 		}
 	}
 
@@ -466,6 +480,12 @@ building_foundry_3 = {
 				exists = owner
 				buildings_no_motes = yes
 			}
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
 		}
 	}
 
@@ -679,6 +699,14 @@ building_factory_1 = {
 		str_factory_allow = yes
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
+		NOT = {
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -864,9 +892,17 @@ building_factory_2 = {
 
 			AND = {
 				exists = owner
-				owner = {
-					is_ai = yes
-					country_uses_consumer_goods = no
+				OR = {
+					owner = {
+						is_ai = yes
+						country_uses_consumer_goods = no
+					}
+					AND = {
+						owner = {
+							is_ai = yes
+						}
+						has_any_industry_district = no		
+					}
 				}
 			}
 			buildings_no_crystals = yes
@@ -1036,9 +1072,17 @@ building_factory_3 = {
 
 			AND = {
 				exists = owner
-				owner = {
-					is_ai = yes
-					country_uses_consumer_goods = no
+				OR = {
+					owner = {
+						is_ai = yes
+						country_uses_consumer_goods = no
+					}
+					AND = {
+						owner = {
+							is_ai = yes
+						}
+						has_any_industry_district = no	
+					}
 				}
 			}
 			buildings_no_crystals = yes
@@ -1180,12 +1224,12 @@ building_factory_3 = {
 building_refinery = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = no
 	category = manufacturing
 
 	potential = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		building_basic_income_check = yes
 	}
 
 	allow = {
@@ -1292,12 +1336,12 @@ building_refinery = {
 building_chemical_plant = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = no
 	category = manufacturing
 
 	potential = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		building_basic_income_check = yes
 	}
 
 	allow = {
@@ -1403,12 +1447,12 @@ building_chemical_plant = {
 building_crystal_plant = {
 	base_buildtime = @b2_time
 
+	exempt_from_ai_planet_specialization = no
 	category = manufacturing
 
 	potential = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		building_basic_income_check = yes
 	}
 
 	allow = {
@@ -1542,7 +1586,6 @@ building_nanite_transmuter = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
-		building_basic_income_check = yes
 	}
 
 	allow = {
@@ -1609,6 +1652,12 @@ building_ministry_production = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			buildings_no_motes = yes
+			AND = {
+				owner = {
+					is_ai = yes
+				}	
+				has_any_industry_district = no
+			}
 		}
 	}
 
@@ -1624,7 +1673,7 @@ building_ministry_production = {
 	}
 
 	planet_modifier = {
-		job_administrator_add = 1
+		job_politician_add = 1
 		planet_metallurgists_produces_mult = 0.15
 		planet_artisans_produces_mult = 0.15
 	}
@@ -1668,7 +1717,7 @@ building_ministry_production = {
 	}
 
 	triggered_desc = {
-		text = job_administrator_effect_desc
+		text = job_politician_effect_desc
 	}
 
 	show_tech_unlock_if = {
@@ -1722,6 +1771,7 @@ building_production_center = {
 		OR = {
 			owner = { is_gestalt = no }
 			buildings_no_motes = yes
+			has_any_industry_district = no
 		}
 	}
 

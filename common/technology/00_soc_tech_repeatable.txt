@@ -86,7 +86,7 @@ tech_repeatable_improved_core_system_cap = {
 	}
 
 	modifier = {
-		country_admin_cap_add = 15
+		country_unity_produces_mult = 0.05
 	}
 }
 
@@ -120,35 +120,35 @@ tech_repeatable_improved_core_system_cap = {
 #	}
 #}
 
-tech_repeatable_improved_edict_length = {
-	area = society
-	cost = @repeatableTechBaseCost
-	cost_per_level = @repeatableTechLevelCost
-	tier = @repeatableTechTier
-	category = { statecraft }
-	levels = -1
-	prerequisites = { "tech_artificial_moral_codes" }
-	weight = @repeatableTechWeight
-
-	weight_modifier = {
-		factor = @repatableTechFactor
-	}
-
-	ai_weight = {
-		factor = 1.0
-	}
-
-	weight_groups = {
-		repeatable
-	}
-	mod_weight_if_group_picked = {
-		repeatable = 0.01
-	}
-
-	modifier = {
-		edict_length_mult = 0.1
-	}
-}
+#tech_repeatable_improved_edict_length = {
+#	area = society
+#	cost = @repeatableTechBaseCost
+#	cost_per_level = @repeatableTechLevelCost
+#	tier = @repeatableTechTier
+#	category = { statecraft }
+#	levels = -1
+#	prerequisites = { "tech_artificial_moral_codes" }
+#	weight = @repeatableTechWeight
+#
+#	weight_modifier = {
+#		factor = @repatableTechFactor
+#	}
+#
+#	ai_weight = {
+#		factor = 1.0
+#	}
+#
+#	weight_groups = {
+#		repeatable
+#	}
+#	mod_weight_if_group_picked = {
+#		repeatable = 0.01
+#	}
+#
+#	modifier = {
+#		edict_length_mult = 0.1
+#	}
+#}
 
 tech_repeatable_improved_army_damage = {
 	area = society

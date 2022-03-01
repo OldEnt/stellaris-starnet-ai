@@ -13,9 +13,11 @@
 # propagator -> Will they only get aggressive once boxed in?
 # multispecies -> Will they give rights to aliens?
 # species_mod_priority = {}		define weights for how much the AI should try to modify a given species (root=country, this=species)
+# crisis_leader -> Will they fight the crisis and invite others to do so (Fallen Empires special behviour. Emperor/Custodian will behave the same way regardless of this flag.)
+# crisis_fighter -> Will they consider fighting the crisis? (If 'no' they will only care about themselves.)
 
 ##### Modifiers:
-# aggressiveness -> Chance of declaring wars
+# aggressiveness -> Affects chance of declaring wars, chance of sending insults, and how much % of fleet power is committed to offense (at 0, 50% is committed, at 1 it is more like 75%, at 2 it is 100%; higher values still count extra towards war dec and insult chance)
 # trade_willingness -> At 1.0 willingness they will accept a deal that is equally good for both sides
 # bravery -> Affects the chance that they will pick rivals & war targets of similar strength instead of picking on the weak
 # military_spending -> Affects mineral & energy budget that goes to navies and armies
@@ -106,6 +108,7 @@ honorbound_warriors = {
 				has_ethic = "ethic_militarist"
 			}
 		}
+
 	}
 
 	weight_modifier = {
@@ -183,23 +186,23 @@ evangelising_zealots = {
 	weight_modifier = {
 		weight = 10
 		modifier = {
-			factor = 2
+			add = 2
 			has_ethic = "ethic_fanatic_spiritualist"
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			has_ethic = "ethic_fanatic_authoritarian"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_conformists"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_charismatic"
 		}
 		modifier = {
-			factor = -1
+			add = -1
 			has_trait = "trait_repugnant"
 		}
 	}
@@ -271,34 +274,34 @@ erudite_explorers = {
 	weight_modifier = {
 		weight = 10
 		modifier = {
-			factor = 2
+			add = 2
 			has_ethic = "ethic_fanatic_materialist"
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			has_trait = "trait_intelligent"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_natural_engineers"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_natural_physicists"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_industrious"
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			OR = {
 				has_government = gov_science_directorate
 				has_government = gov_illuminated_autocracy
 			}
 		}
 		modifier = {
-			factor = -2
+			add = -2
 			has_election_type = none
 		}
 	}
@@ -376,27 +379,27 @@ spiritual_seekers = {
 	weight_modifier = {
 		weight = 10
 		modifier = {
-			factor = 2
+			add = 2
 			has_ethic = "ethic_fanatic_pacifist"
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			has_ethic = "ethic_fanatic_xenophile"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_adaptive"
 		}
 		modifier = {
-			factor = -1
+			add = -1
 			has_trait = "trait_nonadaptive"
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			has_trait = "trait_extremely_adaptive"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_election_type = democratic
 		}
 	}
@@ -656,7 +659,7 @@ slaving_despots = {
 		opportunist = yes
 		slaver = yes
 		uplifter = no
-		purger = yes
+		purger = no
 		displacer = no
 		dominator = yes
 		infiltrator = no
@@ -896,11 +899,11 @@ harmonious_hierarchy = {
 	weight_modifier = {
 		weight = 10
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_conformists"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_election_type = none
 		}
 	}
@@ -1077,37 +1080,37 @@ xenophobic_isolationists = {
 	weight_modifier = {
 		weight = 10
 		modifier = {
-			factor = -2
+			add = -2
 			NOT = {
 				has_ethic = "ethic_pacifist"
 				has_ethic = "ethic_fanatic_pacifist"
 			}
 		}
 		modifier = {
-			factor = 2
+			add = 2
 			OR = {
 				has_ethic = "ethic_pacifist"
 				has_ethic = "ethic_fanatic_pacifist"
 			}
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_repugnant"
 		}
 		modifier = {
-			factor = 1
+			add = 1
 			has_trait = "trait_sedentary"
 		}
 		modifier = {
-			factor = -1
+			add = -1
 			has_trait = "trait_nomadic"
 		}
 		modifier = {
-			factor = -1
+			add = -1
 			has_trait = "trait_charismatic"
 		}
 		modifier = {
-			factor = 1000
+			add = 1000
 			has_valid_civic = civic_inwards_perfection
 		}
 	}
@@ -1770,6 +1773,7 @@ fanatic_befrienders = {
 		weight = 100
 	}
 }
+
 became_the_crisis = {
 	aggressiveness = 2.0
 	trade_willingness = 0.5

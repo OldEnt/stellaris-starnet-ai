@@ -77,7 +77,7 @@ tr_harmony_harmonious_directives = {
 	}
 
 	modifier = {
-		country_edict_cap_add = 1
+		country_edict_fund_add = 50
 	}
 
 	ai_weight = {

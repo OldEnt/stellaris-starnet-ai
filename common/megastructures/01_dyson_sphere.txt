@@ -10,7 +10,7 @@ dyson_sphere_0 = {
 		category = megastructures
 		cost = {
 			alloys = 5000
-			influence = 300
+			unity = 1000
 		}
 
 		upkeep = {
@@ -151,6 +151,7 @@ dyson_sphere_1 = {
 		category = megastructures
 		cost = {
 			alloys = 10000
+			unity = 5000
 		}
 	}
 
@@ -180,6 +181,7 @@ dyson_sphere_2 = {
 		category = megastructures
 		cost = {
 			alloys = 10000
+			unity = 5000
 		}
 
 		produces = {
@@ -213,6 +215,7 @@ dyson_sphere_3 = {
 		category = megastructures
 		cost = {
 			alloys = 10000
+			unity = 5000
 		}
 
 		produces = {
@@ -246,6 +249,7 @@ dyson_sphere_4 = {
 		category = megastructures
 		cost = {
 			alloys = 10000
+			unity = 5000
 		}
 
 		produces = {
@@ -279,6 +283,7 @@ dyson_sphere_5 = {
 		category = megastructures
 		cost = {
 			alloys = 10000
+			unity = 5000
 		}
 
 		produces = {
@@ -352,6 +357,7 @@ dyson_sphere_restored = {
 		category = megastructures
 		cost = {
 			alloys = 20000
+			unity = 7500
 		}
 
 		produces = {

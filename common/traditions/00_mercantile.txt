@@ -23,6 +23,22 @@ tr_mercantile_finish = {
 		trade_value_mult = 0.1
 		ascension_perks_add = 1
 	}
+
+	tradition_swap = {
+		name = tr_mercantile_federations_finish
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = yes
+		}
+		modifier = {
+			trade_value_mult = 0.1
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
 }
 
 tr_mercantile_trickle_up_economics = {

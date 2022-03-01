@@ -10,7 +10,7 @@ decision_launch_anticrime_campaign = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 25
+			unity = 250
 		}
 	}
 
@@ -63,7 +63,7 @@ decision_negotiate_with_crime_lords = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 25
+			unity = 250
 		}
 	}
 

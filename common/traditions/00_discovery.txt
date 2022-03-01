@@ -19,6 +19,22 @@ tr_discovery_finish = {
 		all_technology_research_speed = 0.10
 		ascension_perks_add = 1
 	}
+
+	tradition_swap = {
+		name = tr_discovery_federations_finish
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = yes
+		}
+		modifier = {
+			all_technology_research_speed = 0.10
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
 }
 
 tr_discovery_to_boldly_go = {

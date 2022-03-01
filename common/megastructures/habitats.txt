@@ -32,7 +32,7 @@ habitat_0 = {
 				is_at_war = no
 				resource_stockpile_compare = {
 					resource = influence
-					value > 450
+					value > 400
 				}
 			}
 		}
@@ -89,6 +89,15 @@ habitat_0 = {
 			custom_tooltip = {
 				fail_text = "requires_not_star"
 				is_star = no
+			}
+			if = {
+				limit = { 
+					from = { is_ai = yes }
+				}
+				or = {
+					has_deposit_for = shipclass_mining_station
+	 				has_deposit_for = shipclass_research_station
+				}
 			}
 		} # use these for all non-star megastructures
 	}

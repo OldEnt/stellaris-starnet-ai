@@ -213,7 +213,7 @@ hangar_bay = {
 
 solar_panel_network = {
 	icon = "GFX_solar_panel_network"
-	section = "REFINERY_STARBASE_SECTION"
+	section = "SCIENCE_STARBASE_SECTION"
 	construction_days = 180
 	initial = yes
 

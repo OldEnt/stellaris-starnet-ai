@@ -5,22 +5,18 @@
 # Regular empire
 building_autochthon_monument = {
 	base_buildtime = @b1_time
-
+	base_cap_amount = 1
 	category = unity
 
 	potential = {
 		exists = owner
-		building_basic_income_check = yes
 		NOT = { has_modifier = slave_colony }
 		owner = {
 			NOR = {
 				is_gestalt = yes
-				is_spiritualist = yes
 				is_megacorp = yes
 				is_ai = yes
-				has_valid_civic = civic_memorialist
-				has_valid_civic = civic_hive_memorialist
-				has_valid_civic = civic_machine_memorialist
+				is_memorialist_empire = yes
 			}
 		}
 	}
@@ -32,12 +28,9 @@ building_autochthon_monument = {
 			owner = {
 				OR = {
 					is_gestalt = yes
-					is_spiritualist = yes
 					is_megacorp = yes
 					is_ai = yes
-					has_valid_civic = civic_memorialist
-					has_valid_civic = civic_hive_memorialist
-					has_valid_civic = civic_machine_memorialist
+					is_memorialist_empire = yes
 				}
 			}
 		}

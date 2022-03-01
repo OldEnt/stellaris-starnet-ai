@@ -12,7 +12,7 @@ matter_decompressor_0 = {
 		category = megastructures
 		cost = {
 			alloys = 5000
-			influence = 300
+			unity = 5000
 		}
 
 		upkeep = {
@@ -145,6 +145,7 @@ matter_decompressor_1 = {
 		category = megastructures
 		cost = {
 			alloys = 12500
+			unity = 5000
 		}
 
 		produces = {
@@ -181,6 +182,7 @@ matter_decompressor_2 = {
 		category = megastructures
 		cost = {
 			alloys = 12500
+			unity = 5000
 		}
 
 		produces = {
@@ -216,6 +218,7 @@ matter_decompressor_3 = {
 		category = megastructures
 		cost = {
 			alloys = 12500
+			unity = 5000
 		}
 
 		produces = {
@@ -252,6 +255,7 @@ matter_decompressor_4 = {
 		category = megastructures
 		cost = {
 			alloys = 12500
+			unity 5000
 		}
 
 		produces = {
@@ -323,6 +327,7 @@ matter_decompressor_restored = {
 		category = megastructures
 		cost = {
 			alloys = 20000
+			unity = 7500
 		}
 
 		produces = {

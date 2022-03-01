@@ -4,6 +4,7 @@
 district_city = {
 	base_buildtime = 480
 	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
 
 	show_on_uncolonized = {
 		exists = from
@@ -268,6 +269,7 @@ district_city = {
 district_hive = {
 	base_buildtime = 480
 	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
 
 	show_on_uncolonized = {
 		from = { is_hive_empire = yes }
@@ -433,6 +435,7 @@ district_hive = {
 district_nexus = {
 	base_buildtime = 480
 	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
 
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }

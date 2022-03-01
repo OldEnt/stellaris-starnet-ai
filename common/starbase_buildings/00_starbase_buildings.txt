@@ -399,7 +399,13 @@ fleet_academy = {
 	}
 
 	possible = {
-		has_starbase_module = shipyard
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = fleet_academy
+			}
+		}
 	}
 
 	ship_modifier = {
@@ -1170,6 +1176,8 @@ transit_hub = {
 		planet_resettlement_unemployed_mult = 1.00
 	}
 
+	custom_tooltip = sm_transit_hub_desc_modifier
+
 	show_in_tech = "tech_hyper_drive_2"
 
 	ai_build_at_chokepoint = yes
@@ -1372,6 +1380,13 @@ dragon_hatchery = {
 		custom_tooltip = {
 			fail_text = "requires_citadel"
 			has_starbase_size >= starbase_citadel
+		}
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = dragon_hatchery
+			}
 		}
 	}
 

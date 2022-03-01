@@ -591,6 +591,29 @@ col_industrial = {
 col_foundry = {
 	icon = GFX_colony_type_foundry
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 0
+		alloys = 2 
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = 0.5
+		consumer_goods = -2
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		exists = owner
 		NOR = {
@@ -1929,6 +1952,30 @@ col_habitat_foundry = {
 col_habitat_factory = {
 	icon = GFX_colony_type_habitat_factory
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 2
+		alloys = 0
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	# Used by AI to estimate the current effects of this designation
+	ai_resource_current_conversion = {
+		consumer_goods = 0.5
+		alloys = -0.5
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		uses_district_set = habitat
 		exists = owner
@@ -2849,6 +2896,30 @@ col_ecu_foundry = {
 # Ecumenpolis Factory
 col_ecu_factory = {
 	icon = GFX_colony_type_factory
+
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 2
+		alloys = 0
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	# Used by AI to estimate the current effects of this designation
+	ai_resource_current_conversion = {
+		consumer_goods = 0.5
+		alloys = -0.5
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
 
 	potential = {
 		uses_district_set = city_world
