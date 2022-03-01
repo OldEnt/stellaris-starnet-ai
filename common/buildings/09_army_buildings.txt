@@ -141,11 +141,23 @@ building_stronghold = {
 	category = army
 
 	potential = {
-		str_stronghold_potential = yes
+		buildings_simple_allow = yes
 	}
 
 	destroy_trigger = {
-		str_stronghold_destroy = yes
+		exists = owner
+		owner = { is_ai = yes }
+		AND = {
+			OR = {
+				num_buildings = { type = building_stronghold value > 1 }
+				has_building = building_fortress
+			}
+			free_building_slots = 0
+			owner = {
+				used_naval_capacity_percent < 0.6
+				is_at_war = no # don't destroy while at war
+			}
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -208,147 +220,6 @@ building_stronghold = {
 		}
 		text = job_soldier_effect_desc
 	}
-	ai_resource_production = {
-		energy = 10
-		minerals = 10
-		food = 10
-		alloys = 10
-		physics_research = 15
-		trigger = {
-			nor = {
-				str_is_col_bureau = yes
-				str_is_col_research = yes
-			}
-			years_passed > 80
-			owner = {
-				used_naval_capacity_percent > 0.97
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 1500
-				}
-				resource_stockpile_compare = {
-					resource = minerals
-					value > 1500
-				}
-				resource_income_compare = {
-					resource = minerals
-					value > 40
-				}
-				resource_income_compare = {
-					resource = energy
-					value > -5
-				}
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 6
-		trigger = {
-			nor = {
-				str_is_col_bureau = yes
-				str_is_col_research = yes
-			}
-			years_passed > 80
-			owner = {
-				used_naval_capacity_percent > 0.97
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 3500
-				}
-				resource_income_compare = {
-					resource = energy
-					value > 5
-				}
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 8
-		trigger = {
-			or = {
-				has_planet_flag = str_acceptable_habitability
-				has_planet_flag = str_bad_habitability
-			}
-			nor = {
-				str_is_col_bureau = yes
-				str_is_col_research = yes
-			}
-			years_passed > 80
-			owner = {
-				used_naval_capacity_percent > 0.97
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 3500
-				}
-				resource_income_compare = {
-					resource = energy
-					value > 5
-				}
-			}
-		}
-	}
-	ai_resource_production = {
-		energy = 10
-		trigger = {
-			or = {
-				has_planet_flag = str_acceptable_habitability
-				has_planet_flag = str_bad_habitability
-			}
-			nor = {
-				str_is_col_bureau = yes
-				str_is_col_research = yes
-			}
-			years_passed > 80
-			owner = {
-				used_naval_capacity_percent > 0.97
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 1500
-				}
-				resource_income_compare = {
-					resource = energy
-					value > 5
-				}
-			}
-		}
-	}
-
-	ai_resource_production = {
-		energy = 6
-		trigger = {
-			owner = {
-				lategame = yes
-				used_naval_capacity_percent > 0.8
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 1000
-				}
-				resource_income_compare = {
-					resource = energy
-					value > 5
-				}
-			}
-			free_amenities > -6
-		 }
-	}
-	ai_resource_production = {
-		alloys = 6
-		trigger = {
-			owner = {
-				lategame = yes
-				used_naval_capacity_percent > 0.8
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 2000
-				}
-				resource_income_compare = {
-					resource = energy
-					value > 5
-				}
-			}
-			free_amenities > -6
-		 }
-	}
 }
 
 building_fortress = {
@@ -360,14 +231,7 @@ building_fortress = {
 	category = army
 
 	allow = {
-		exists = owner
 		has_upgraded_capital = yes
-		buildings_upgrade_allow = yes
-		buildings_has_motes = yes
-		or = {
-			owner = { is_ai = no }
-			has_planet_flag = str_supervisor
-		}
 	}
 
 	destroy_trigger = {
@@ -379,10 +243,7 @@ building_fortress = {
 				free_building_slots = 0
 				owner = { used_naval_capacity_percent < 0.4	}
 			}
-			and = {
-				buildings_no_motes = yes
-				has_planet_flag = str_supervisor
-			}
+			buildings_no_motes = yes
 		}
 	}
 

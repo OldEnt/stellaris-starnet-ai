@@ -13,8 +13,8 @@ building_private_mining_consortium = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = no
-			NOT = { is_ai = yes }
 		}
 		is_artificial = no
 		NOR = {
@@ -42,7 +42,7 @@ building_private_mining_consortium = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 1
 	}
 }
 
@@ -54,8 +54,8 @@ building_food_conglomerate = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = no
-			NOT = { is_ai = yes }
 		}
 		NOR = {
 			is_planet_class = pc_hive
@@ -64,8 +64,35 @@ building_food_conglomerate = {
 		}
 	}
 
-	planet_modifier = {
-		job_farmer_add = 1
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			OR = {
+				owner = {
+					is_anglers_empire = no
+					AND = {
+						is_anglers_empire = yes
+						NOT = { PREV = { planet = { is_wet = yes } } }
+					}
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_anglers_empire = yes
+				PREV = { planet = { is_wet = yes } }
+			}
+		}
+		modifier = {
+			job_angler_add = 1
+		}
 	}
 
 	resources = {
@@ -114,13 +141,22 @@ building_virtual_entertainment_studios = {
 	}
 
 	ai_weight = {
-		weight = 50
+		weight = 3
 		modifier = {
-			factor = 0
-			owner = {
-				resource_income_compare = {
+			factor = 5
+			branch_office_owner = {
+				has_monthly_income = {
 					resource = consumer_goods
-					value > 15
+					value < 0
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value >= 10
 				}
 			}
 		}
@@ -135,8 +171,8 @@ building_private_shipyards = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = no
-			NOT = { is_ai = yes }
 		}
 	}
 
@@ -158,7 +194,7 @@ building_private_shipyards = {
 	}
 
 	ai_weight = {
-		weight = 100
+		weight = 1
 	}
 }
 
@@ -170,8 +206,8 @@ building_military_contractors = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = no
-			NOT = { is_ai = yes }
 		}
 	}
 
@@ -198,7 +234,7 @@ building_military_contractors = {
 	}
 
 	ai_weight = {
-		weight = 150
+		factor = 10
 	}
 }
 
@@ -231,7 +267,7 @@ building_public_relations_office = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 2
 	}
 }
 
@@ -267,12 +303,6 @@ building_private_research_initiative = {
 
 	ai_weight = {
 		weight = 10
-		modifier = {
-			factor = 0
-			branch_office_owner = {
-				lategame = yes
-			}
-		}
 	}
 }
 
@@ -302,7 +332,17 @@ building_amusement_megaplex = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 2
+
+		modifier = {
+			weight = 0.5
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
 	}
 }
 
@@ -334,17 +374,6 @@ building_commercial_forum = {
 
 	ai_weight = {
 		weight = 50
-		modifier = {
-			factor = 0
-			planet_crime > 40
-		}
-		modifier = {
-			factor = 0
-			branch_office_value = {
-				who = THIS
-				value < 30
-			}
-		}
 	}
 }
 
@@ -398,7 +427,13 @@ building_corporate_embassy = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 50
+		modifier = {
+			factor = 10
+			branch_office_owner = {
+				is_galactic_community_member = yes
+			}
+		}
 	}
 }
 
@@ -411,8 +446,8 @@ building_wildcat_miners = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = yes
-			NOT = { is_ai = yes }
 		}
 		is_artificial = no
 		NOR = {
@@ -441,7 +476,7 @@ building_wildcat_miners = {
 	}
 
 	ai_weight = {
-		weight = 10
+		factor = 1
 	}
 }
 
@@ -453,8 +488,8 @@ building_bio_reprocessing_facilities = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = yes
-			NOT = { is_ai = yes }
 		}
 		NOR = {
 			is_planet_class = pc_hive
@@ -482,7 +517,7 @@ building_bio_reprocessing_facilities = {
 	}
 
 	ai_weight = {
-		weight = 0
+		factor = 1
 	}
 }
 
@@ -515,13 +550,22 @@ building_underground_chemists = {
 	}
 
 	ai_weight = {
-		weight = 50
+		weight = 3
 		modifier = {
-			factor = 0
-			owner = {
-				resource_income_compare = {
+			factor = 5
+			branch_office_owner = {
+				has_monthly_income = {
 					resource = consumer_goods
-					value > 15
+					value < 0
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value >= 10
 				}
 			}
 		}
@@ -536,8 +580,8 @@ building_wrecking_yards = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = yes
-			NOT = { is_ai = yes }
 		}
 	}
 
@@ -560,7 +604,7 @@ building_wrecking_yards = {
 	}
 
 	ai_weight = {
-		weight = 100
+		factor = 1
 	}
 }
 
@@ -572,8 +616,8 @@ building_pirate_haven = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
+			is_ai = no
 			is_criminal_syndicate = yes
-			NOT = { is_ai = yes }
 		}
 	}
 
@@ -601,7 +645,7 @@ building_pirate_haven = {
 	}
 
 	ai_weight = {
-		weight = 150
+		factor = 15
 	}
 }
 
@@ -632,7 +676,26 @@ building_underground_clubs = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 5
+
+		modifier = {
+			factor = 3
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 0
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
 	}
 }
 
@@ -666,7 +729,7 @@ building_syndicate_outreach_office = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 5
 	}
 }
 
@@ -703,6 +766,7 @@ building_illicit_research_labs = {
 
 	ai_weight = {
 		weight = 10
+
 	}
 }
 
@@ -734,14 +798,7 @@ building_smuggling_rings = {
 	}
 
 	ai_weight = {
-		weight = 25
-		modifier = {
-			factor = 0
-			branch_office_value = {
-				who = this
-				value < 30
-			}
-		}
+		weight = 100
 	}
 }
 
@@ -797,7 +854,7 @@ building_disinformation_center = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 50
 	}
 }
 
@@ -863,21 +920,7 @@ building_temple_of_prosperity = {
 	}
 
 	ai_weight = {
-		weight = 1
-
-		modifier = {
-			factor = 5
-			owner = {
-				has_ethic = ethic_spiritualist
-			}
-		}
-
-		modifier = {
-			factor = 6
-			branch_office_owner = {
-				has_ethic = ethic_fanatic_militarist
-			}
-		}
+		weight = 250
 	}
 }
 
@@ -894,7 +937,7 @@ building_executive_retreat = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
-			NOT = { is_ai = yes }
+			is_ai = no
 		}
 	}
 
@@ -923,7 +966,7 @@ building_executive_retreat = {
 	}
 
 	ai_weight = {
-		factor = 50
+		factor = 100
 	}
 }
 
@@ -938,7 +981,7 @@ building_xeno_tourism_agency = {
 	potential = {
 		has_branch_office = yes
 		branch_office_owner = {
-			NOT = { is_ai = yes }
+			is_ai = no
 		}
 	}
 
@@ -967,7 +1010,7 @@ building_xeno_tourism_agency = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = 100
 	}
 }
 
@@ -1007,12 +1050,5 @@ building_imperial_concession_port = {
 
 	ai_weight = {
 		weight = 100
-		modifier = {
-			factor = 0
-			branch_office_value = {
-				who = THIS
-				value < 20
-			}
-		}
 	}
 }

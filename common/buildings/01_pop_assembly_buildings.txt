@@ -12,18 +12,8 @@ building_robot_assembly_plant = {
 		exists = owner
 		OR = {
 			owner = { is_ai = no }
-			and = {
-				free_building_slots > 0
-				owner = { num_pops < 1000 }
-				or = {
-					AND = {
-						str_is_col_factory = no
-						str_is_col_foundry = no
-					}
-					owner = { has_technology = tech_droid_workers }
-					free_district_slots > 3
-				}
-			}
+			NOT = { exists = assembling_species }
+			assembling_species = { is_robotic_species = yes }
 		}
 		owner = {
 			is_regular_empire = yes
@@ -45,25 +35,14 @@ building_robot_assembly_plant = {
 		hidden_trigger = {
 			OR = {
 				owner = { is_ai = no }
-				AND = {
-					num_buildings = { type = any value <= 14 }
-					NOT = { is_planet_class = pc_habitat }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
 				}
 			}
 		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_robot_assembly_plant
-				value = 0
-			}
-		}
-		job_starnet_spice_melange_farmer_add = 2
-		job_starnet_spice_melange_antifarmer_add = -2
 	}
 
 	destroy_trigger = {
@@ -78,23 +57,15 @@ building_robot_assembly_plant = {
 			has_modifier = slave_colony
 			AND = {
 				owner = { is_ai = yes }
-				free_jobs < 1
-				OR = {
-					num_buildings = {
-						type = any
-						value = 16
-					}
-					is_planet_class = pc_habitat
-				}
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
 			}
 			owner = {
 				is_ai = yes
 				has_ascension_perk = ap_engineered_evolution
 				is_materialist = no
-			}
-			owner = {
-				is_ai = yes
-				num_pops > 1500
 			}
 		}
 	}
@@ -118,7 +89,15 @@ building_robot_assembly_plant = {
 	}
 	triggered_desc = {
 		trigger = {
-			has_building = building_clone_vats
+			OR = {
+				has_building = building_clone_vats
+				has_building = building_clone_army_clone_vat
+				has_building = building_posthumous_employment_center
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_organic_species = yes }
+				}
+			}
 		}
 		text = tooltip_organic_and_artificial_assembly_warning
 	}
@@ -148,26 +127,15 @@ building_machine_assembly_plant = {
 		building_robot_assembly_plant
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_machine_assembly_plant
-				value = 0
-			}
-		}
-		job_starnet_spice_melange_farmer_add = 2
-		job_starnet_spice_melange_antifarmer_add = -2
-	}
-
 	allow = {
 		hidden_trigger = {
 			OR = {
 				owner = { is_ai = no }
-				AND = {
-					num_buildings = { type = any value <= 14 }
-					NOT = { is_planet_class = pc_habitat }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
 				}
 			}
 		}
@@ -176,16 +144,13 @@ building_machine_assembly_plant = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = {
-				is_robot_empire = no
-			}
+			owner = { is_robot_empire = no }
 			AND = {
 				owner = { is_ai = yes }
-				free_jobs < 1
-				OR = {
-					num_buildings = { type = any value = 16 }
-					is_planet_class = pc_habitat
-				}
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
 			}
 		}
 	}
@@ -232,31 +197,6 @@ building_machine_assembly_complex = {
 		building_robot_assembly_plant
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_machine_assembly_complex
-				value = 0
-			}
-		}
-		job_starnet_spice_melange_farmer_add = 2
-		job_starnet_spice_melange_antifarmer_add = -2
-	}
-
-	allow = {
-		hidden_trigger = {
-			OR = {
-				owner = { is_ai = no }
-				AND = {
-					num_buildings = { type = any value <= 14 }
-					NOT = { is_planet_class = pc_habitat }
-				}
-			}
-		}
-	}
-
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -266,11 +206,10 @@ building_machine_assembly_complex = {
 			}
 			AND = {
 				owner = { is_ai = yes }
-				free_jobs < 1
-				OR = {
-					num_buildings = { type = any value = 16 }
-					is_planet_class = pc_habitat
-				}
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
 			}
 		}
 	}
@@ -361,18 +300,6 @@ building_necrophage_elevation_chamber = {
 				}
 			}
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_necrophage_elevation_chamber
-				value = 0
-			}
-		}
-		job_starnet_spice_melange_farmer_add = 2
-		job_starnet_spice_melange_antifarmer_add = -2
 	}
 
 	destroy_trigger = {

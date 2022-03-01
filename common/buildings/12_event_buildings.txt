@@ -349,11 +349,4 @@ building_crystal_plant_2 = {
 		}
 		text = job_translucer_drone_effect_desc
 	}
-
-	ai_resource_production = {
-		rare_crystals = @b3_rare_upkeep
-		trigger = {
-			always = yes
-		}
-	}
 }
