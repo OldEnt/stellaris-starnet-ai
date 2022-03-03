@@ -44,10 +44,133 @@ building_colony_shelter = {
 		planet_max_buildings_add = @buildings_t1
 	}
 
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 0
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 2
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 4
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 6
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 0
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 2
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 4
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 6
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+ 
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_mechanical_empire = no }
+			or = {
+				owner = { is_ai = no }
+				nor = {
+					has_designation = col_default
+					resettlement_cheesy_disable = yes
+				}
+			}
 		}
 		job_colonist_add = 2
 	}
@@ -145,12 +268,40 @@ building_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			nor = {
+				owner = { is_ai = no }
+				num_pops > 20
+				has_branch_office = yes
+				has_modifier = criminal_underworld
+			}
+		}
+		job_enforcer_add = -1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = {
 				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
 			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			has_building = building_colony_shelter
+			num_pops > 9
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 3
+			job_starnet_spice_melange_antifarmer_add = -3
 		}
 	}
 
@@ -245,6 +396,123 @@ building_capital = {
 		}
 	}
 
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 0
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 2
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 4
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 6
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 0
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 2
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 4
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 6
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+ 
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -322,6 +590,11 @@ building_capital = {
 	triggered_desc = {
 		text = job_enforcer_effect_desc
 	}
+	#please upgrade
+	ai_resource_production = {
+		alloys = 11
+		trigger = { num_pops > 6 }
+	}
 }
 
 # Major Capital
@@ -396,6 +669,121 @@ building_major_capital = {
 		}
 		job_roboticist_add = 2
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 0
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 2
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 4
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 6
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 0
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 2
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 4
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 6
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+ 
 
 	triggered_planet_modifier = {
 		potential = {
@@ -687,6 +1075,120 @@ building_system_capital = {
 	}
 
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 0
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 2
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 4
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 6
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 0
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 2
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 4
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 6
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+ 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1348,6 +1850,49 @@ building_hive_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 1
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 3
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 5
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+ 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { has_technology = tech_capital_productivity_1 }
 		}
 		modifier = {
@@ -1434,6 +1979,49 @@ building_hive_major_capital = {
 		planet_max_buildings_add = @buildings_t4
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 1
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 3
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_hive
+				value > 5
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+ 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner

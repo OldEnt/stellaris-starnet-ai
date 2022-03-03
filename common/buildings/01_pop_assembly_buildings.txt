@@ -12,8 +12,26 @@ building_robot_assembly_plant = {
 		exists = owner
 		OR = {
 			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
-			assembling_species = { is_robotic_species = yes }
+			AND = {
+				OR = {			
+					NOT = {
+						exists = assembling_species
+					}
+					AND = {
+						exists = assembling_species
+						assembling_species = { is_robotic_species = yes }
+					}
+				}
+				#	owner = { num_pops < 1000 }
+				or = {
+					AND = {
+						str_is_col_factory = no
+						str_is_col_foundry = no
+					}
+					owner = { has_technology = tech_droid_workers }
+					free_district_slots > 3
+				}
+			}
 		}
 		owner = {
 			is_regular_empire = yes
@@ -45,6 +63,19 @@ building_robot_assembly_plant = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_buildings = {
+				type = building_robot_assembly_plant
+				value = 0
+			}
+		}
+		job_starnet_spice_melange_farmer_add = 2
+		job_starnet_spice_melange_antifarmer_add = -2
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -57,16 +88,24 @@ building_robot_assembly_plant = {
 			has_modifier = slave_colony
 			AND = {
 				owner = { is_ai = yes }
-				free_district_slots = 0
-				free_building_slots = 0
-				free_housing <= 0
-				free_jobs <= 0
+				free_jobs < 1
+				OR = {
+					num_buildings = {
+						type = any
+						value = 16
+					}
+					is_planet_class = pc_habitat
+				}
 			}
 			owner = {
 				is_ai = yes
 				has_ascension_perk = ap_engineered_evolution
 				is_materialist = no
 			}
+			#	owner = {
+			#		is_ai = yes
+			#		num_pops > 1500
+			#	}
 		}
 	}
 
@@ -125,6 +164,19 @@ building_machine_assembly_plant = {
 
 	convert_to = {
 		building_robot_assembly_plant
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_buildings = {
+				type = building_machine_assembly_plant
+				value = 0
+			}
+		}
+		job_starnet_spice_melange_farmer_add = 2
+		job_starnet_spice_melange_antifarmer_add = -2
 	}
 
 	allow = {
@@ -195,6 +247,31 @@ building_machine_assembly_complex = {
 
 	convert_to = {
 		building_robot_assembly_plant
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_buildings = {
+				type = building_machine_assembly_complex
+				value = 0
+			}
+		}
+		job_starnet_spice_melange_farmer_add = 2
+		job_starnet_spice_melange_antifarmer_add = -2
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				AND = {
+					num_buildings = { type = any value <= 14 }
+					NOT = { is_planet_class = pc_habitat }
+				}
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -300,6 +377,18 @@ building_necrophage_elevation_chamber = {
 				}
 			}
 		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_buildings = {
+				type = building_necrophage_elevation_chamber
+				value = 0
+			}
+		}
+		job_starnet_spice_melange_farmer_add = 2
+		job_starnet_spice_melange_antifarmer_add = -2
 	}
 
 	destroy_trigger = {
@@ -718,8 +807,15 @@ building_posthumous_employment_center = {
 		exists = owner
 		OR = {
 			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
-			assembling_species = { is_organic_species = yes }
+			OR = {			
+				NOT = {
+					exists = assembling_species
+				}
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_organic_species = yes }
+				}
+			}
 		}
 		OR = {
 			owner = { is_ai = no }

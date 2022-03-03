@@ -21,11 +21,13 @@ building_hydroponics_farm = {
 
 	allow = {
 		buildings_simple_allow = yes
+		str_hydroponics_allow = yes
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			str_hydroponics_destroy = yes
 			owner = {
 				is_ai = yes
 				country_uses_food = no
@@ -165,6 +167,13 @@ building_hydroponics_farm = {
 	prerequisites = {
 		"tech_hydroponics"
 	}
+
+	ai_resource_production = {
+		food = 1
+		trigger = {
+			always = yes
+		}
+	}
 }
 
 building_food_processing_facility = {
@@ -182,19 +191,18 @@ building_food_processing_facility = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			str_food_processing_destroy = yes
 			owner = {
 				is_ai = yes
 				country_uses_food = no
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_farming_district = no
-			}
 		}
+	}
+
+	allow = {
+		str_food_processing_allow = yes
 	}
 
 	planet_modifier = {
@@ -309,6 +317,25 @@ building_food_processing_facility = {
 	prerequisites = {
 		"tech_food_processing_1"
 	}
+
+	ai_resource_production = {
+		food = 3
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		food = 10
+		trigger = {
+			str_num_districts_farming = { operator = > num = 3 }
+		}
+	}
+	ai_resource_production = {
+		food = 20
+		trigger = {
+			str_num_districts_farming = { operator = > num = 5 }
+		}
+	}
 }
 
 building_food_processing_center = {
@@ -318,6 +345,7 @@ building_food_processing_center = {
 
 	allow = {
 		exists = owner
+		buildings_has_motes = yes
 		has_upgraded_capital = yes
 	}
 
@@ -325,17 +353,9 @@ building_food_processing_center = {
 		OR = {
 			AND = {
 				exists = owner
-				OR = {
-					owner = {
-						is_ai = yes
-						country_uses_food = no
-					}
-					AND = {
-						owner = {
-							is_ai = yes
-						}
-						has_any_farming_district = no
-					}
+				owner = {
+					is_ai = yes
+					country_uses_food = no
 				}
 			}
 			is_planet_class = pc_machine
@@ -454,6 +474,25 @@ building_food_processing_center = {
 	prerequisites = {
 		"tech_food_processing_2"
 	}
+
+	ai_resource_production = {
+		food = 6
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		food = 15
+		trigger = {
+			str_num_districts_farming = { operator = > num = 3 }
+		}
+	}
+	ai_resource_production = {
+		food = 30
+		trigger = {
+			str_num_districts_farming = { operator = > num = 5 }
+		}
+	}
 }
 
 building_mineral_purification_plant = {
@@ -473,15 +512,7 @@ building_mineral_purification_plant = {
 	category = resource
 
 	destroy_trigger = {
-		OR = {
-			has_modifier = resort_colony
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_mining_district = no
-			}
-		}	
+		has_modifier = resort_colony
 	}
 
 	potential = {
@@ -497,8 +528,26 @@ building_mineral_purification_plant = {
 		}
 	}
 
+	allow = {
+		str_mineral_purification_allow = yes
+	}
+
 	planet_modifier = {
 		planet_miners_minerals_produces_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_mineral_purification = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -649,6 +698,18 @@ building_mineral_purification_plant = {
 		}
 		text = job_scrap_miner_effect_desc
 	}
+	ai_resource_production = {
+		minerals = 10
+		trigger = {
+			str_num_districts_mining = { operator = > num = 2 }
+		}
+	}
+	ai_resource_production = {
+		minerals = 20
+		trigger = {
+			str_num_districts_mining = { operator = > num = 4 }
+		}
+	}
 }
 
 building_mineral_purification_hub = {
@@ -669,23 +730,15 @@ building_mineral_purification_hub = {
 
 	allow = {
 		has_upgraded_capital = yes
+		buildings_has_motes = yes
 		NOT = { has_modifier = resort_colony }
 	}
 
 	destroy_trigger = {
 		OR = {
-			OR = {
-				has_modifier = resort_colony
-				buildings_no_motes = yes
-			}
-
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_mining_district = no
-			}
-		}	
+			has_modifier = resort_colony
+			buildings_no_motes = yes
+		}
 	}
 
 
@@ -853,6 +906,25 @@ building_mineral_purification_hub = {
 		}
 		text = job_scrap_miner_effect_desc
 	}
+
+	ai_resource_production = {
+		minerals = 6
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		minerals = 10
+		trigger = {
+			str_num_districts_mining = { operator = > num = 2 }
+		}
+	}
+	ai_resource_production = {
+		minerals = 20
+		trigger = {
+			str_num_districts_mining = { operator = > num = 4 }
+		}
+	}
 }
 
 building_energy_grid = {
@@ -861,18 +933,10 @@ building_energy_grid = {
 	category = resource
 
 	destroy_trigger = {
-		OR = {
-			OR = {
-				has_modifier = resort_colony
-			}
-
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_generator_district = no
-			}
-		}	
+		or = {
+			has_modifier = resort_colony
+			str_energy_grid_destroy = yes
+		}
 	}
 
 	potential = {
@@ -887,8 +951,25 @@ building_energy_grid = {
 		}
 	}
 
+	allow = {
+		str_energy_grid_allow = yes
+	}
 	planet_modifier = {
 		planet_technician_energy_produces_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_energy_grid = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -993,6 +1074,25 @@ building_energy_grid = {
 		}
 		text = job_fe_acolyte_generator_effect_desc
 	}
+
+	ai_resource_production = {
+		energy = 3
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 15
+		trigger = {
+			str_num_districts_generator = { operator = > num = 2 }
+		}
+	}
+	ai_resource_production = {
+		energy = 30
+		trigger = {
+			str_num_districts_generator = { operator = > num = 4 }
+		}
+	}
 }
 
 building_energy_nexus = {
@@ -1002,20 +1102,13 @@ building_energy_nexus = {
 
 	allow = {
 		has_upgraded_capital = yes
+		buildings_has_exotic_gases = yes
 	}
 
 	destroy_trigger = {
 		OR = {
-			OR = {
-				has_modifier = resort_colony
-				buildings_no_exotic_gases = yes
-			}
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_generator_district = no
-			}
+			has_modifier = resort_colony
+			buildings_no_exotic_gases = yes
 		}
 	}
 
@@ -1123,6 +1216,25 @@ building_energy_nexus = {
 		}
 		text = job_fe_acolyte_generator_effect_desc
 	}
+
+	ai_resource_production = {
+		energy = 6
+		trigger = {
+			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			str_num_districts_generator = { operator = > num = 2 }
+		}
+	}
+	ai_resource_production = {
+		energy = 20
+		trigger = {
+			str_num_districts_generator = { operator = > num = 4 }
+		}
+	}
 }
 
 building_resource_silo = {
@@ -1139,6 +1251,7 @@ building_resource_silo = {
 
 	allow = {
 		exists = owner
+		owner = { is_ai = no }
 		hidden_trigger = {
 			OR = {
 				owner = { is_ai = no }
@@ -1253,5 +1366,25 @@ building_bio_reactor = {
 
 	prerequisites = {
 		"tech_bio_reactor"
+	}
+
+	on_queued = {
+		IF = {
+			limit = {
+				owner = { has_technology = tech_construction_templates }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 270 } }
+		}
+		ELSE_IF = {
+			limit = {
+				owner = { has_technology = tech_assembly_pattern }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 390 } }
+		}
+		ELSE = {
+			planet = {
+				owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 510 } }
+			}
+		}
 	}
 }

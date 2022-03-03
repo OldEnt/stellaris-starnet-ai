@@ -4,12 +4,25 @@
 # Shipyard
 sshipyard = {
 	potential = {
-		has_starbase_size > starbase_outpost
-		count_starbase_modules = {
-			type = shipyard
-			count > 0
-		}
-	}
+        has_starbase_size > starbase_outpost
+        OR = {
+            count_starbase_modules = {
+                type = shipyard
+                count > 0
+            }
+			AND = {
+				exists = owner
+				owner = {
+					NOT = {
+						any_owned_starbase = {
+							has_starbase_size > starbase_outpost
+							has_starbase_module = shipyard
+						}
+					}
+				}
+			}      
+        }
+    }
 
 	weight_modifier = {
 		base = 100

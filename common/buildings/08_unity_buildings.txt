@@ -20,6 +20,16 @@ building_autochthon_monument = {
 		}
 	}
 
+	allow = {
+		exists = owner
+		OR = {
+			owner = {	
+				is_ai = no
+			}
+			is_capital = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -31,6 +41,16 @@ building_autochthon_monument = {
 					is_memorialist_empire = yes
 				}
 			}
+		}
+		AND = {
+			owner = {
+				is_ai = yes
+				NOT = {
+					has_country_flag = str_recently_human
+				}
+			}
+			is_capital = yes
+			free_building_slots < 1
 		}
 	}
 
@@ -95,6 +115,9 @@ building_heritage_site = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -171,6 +194,9 @@ building_hypercomms_forum = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -242,11 +268,31 @@ building_bureaucratic_1 = {
 
 	}
 
+	allow = {
+		exists = owner
+		OR = {
+			owner = {	
+				is_ai = no
+			}
+			is_capital = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
 			owner = { is_spiritualist = yes }
+		}
+		AND = {
+			owner = {
+				is_ai = yes
+				NOT = {
+					has_country_flag = str_recently_human
+				}
+			}
+			is_capital = yes
+			free_building_slots < 1
 		}
 	}
 
@@ -331,6 +377,9 @@ building_bureaucratic_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {	
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -425,6 +474,9 @@ building_bureaucratic_3 = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {	
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -516,6 +568,16 @@ building_temple = {
 		NOT = { has_modifier = slave_colony }
 	}
 
+	allow = {
+		exists = owner
+		OR = {
+			owner = {	
+				is_ai = no
+			}
+			is_capital = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -523,6 +585,16 @@ building_temple = {
 				is_spiritualist = no
 			}
 			has_modifier = slave_colony
+		}
+		AND = {
+			owner = {
+				is_ai = yes
+				NOT = {
+					has_country_flag = str_recently_human
+				}
+			}
+			is_capital = yes
+			free_building_slots < 1
 		}
 	}
 
@@ -608,6 +680,9 @@ building_holotemple = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -705,6 +780,9 @@ building_sacred_nexus = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -802,6 +880,16 @@ building_uplink_node = {
 		}
 	}
 
+	allow = {
+		exists = owner
+		OR = {
+			owner = {	
+				is_ai = no
+			}
+			is_capital = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -809,6 +897,16 @@ building_uplink_node = {
 				is_machine_empire = no
 				has_valid_civic = civic_machine_servitor
 			}
+		}
+		AND = {
+			owner = {
+				is_ai = yes
+				NOT = {
+					has_country_flag = str_recently_human
+				}
+			}
+			is_capital = yes
+			free_building_slots < 1
 		}
 	}
 
@@ -872,6 +970,9 @@ building_network_junction = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -949,6 +1050,9 @@ building_system_conflux = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1112,6 +1216,9 @@ building_hive_cluster = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1213,6 +1320,9 @@ building_hive_confluence = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1383,6 +1493,9 @@ building_sacrificial_temple_2 = {
 			is_death_cult_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1485,6 +1598,9 @@ building_sacrificial_temple_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1705,6 +1821,9 @@ building_galactic_memorial_2 = {
 	allow = {
 		exists = owner
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -1834,6 +1953,9 @@ building_galactic_memorial_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2034,6 +2156,9 @@ building_simulation_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2108,6 +2233,9 @@ building_simulation_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2248,6 +2376,9 @@ building_corporate_site = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2317,6 +2448,9 @@ building_corporate_forum = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2456,6 +2590,9 @@ building_sensorium_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2530,6 +2667,9 @@ building_sensorium_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2981,6 +3121,12 @@ building_organic_paradise = {
 	potential = {
 		exists = owner
 		owner = { has_valid_civic = civic_machine_servitor }
+	}
+
+	allow = {
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {

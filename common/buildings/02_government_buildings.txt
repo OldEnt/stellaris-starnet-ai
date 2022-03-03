@@ -22,7 +22,28 @@ building_noble_estates = {
 
 	allow = {
 		has_upgraded_capital = yes
-		buildings_simple_allow = yes
+		exists = owner
+		or = {
+			num_pops > 40
+			owner = { is_ai = no }
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			num_buildings = {
+				type = building_noble_estates
+				value = 0
+			}
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
 	}
 
 	destroy_trigger = {
@@ -49,6 +70,12 @@ building_noble_estates = {
 
 	triggered_desc = {
 		text = job_noble_effect_desc
+	}
+	ai_resource_production = {
+		trigger = { num_pops > 40 }
+		alloys = 15
+		energy = 10
+		minerals = 15
 	}
 }
 
@@ -121,15 +148,16 @@ building_precinct_house = {
 			OR = {
 				owner = { is_ai = no }
 				AND = {
-					planet_crime > 15
-					NOR = {
-						AND = {
-							has_building = building_precinct_house
-							owner = { has_technology = tech_colonial_centralization }
-						}
-						has_building = building_hall_judgment
-						num_buildings = { type = building_precinct_house value = 3 }
+					planet_crime > 40
+					owner = { str_raw_ecocrisis_level_1 = no }
+					num_pops > 20
+					NOT = {
+						has_modifier = crime_lord_deal
 					}
+					NOT = {
+						has_planet_flag = str_just_removed_precinct
+					}
+					num_buildings = { type = building_precinct_house value < 2 }
 				}
 			}
 		}
@@ -141,7 +169,7 @@ building_precinct_house = {
 			NOT = {	owner = { is_regular_empire = yes }	}
 			AND = {
 				owner = { is_ai = yes } #Players dont like random buildings blowing up
-				planet = { has_building = building_hall_judgment }
+				has_modifier = crime_lord_deal
 			}#This way the AI gets to reclaim its building slots that it sunk into this expense
 		}
 	}
@@ -243,6 +271,7 @@ building_sentinel_posts = {
 				AND = {
 					buildings_simple_allow = yes
 					NOT = { has_building = building_sentinel_posts }
+					planet_crime > 30
 				}
 			}
 		}
@@ -342,6 +371,13 @@ building_clone_vats = {
 
 	potential = {
 		exists = owner
+		#	OR = {
+		#		owner = { is_ai = no }
+		#		and = {
+		#			free_building_slots > 0
+		#			owner = { num_pops < 1000 }
+		#		}
+		#	}
 		owner = { has_ascension_perk = ap_engineered_evolution }
 		NOT = { has_modifier = resort_colony }
 		OR = {
@@ -368,6 +404,9 @@ building_clone_vats = {
 				free_jobs <= 0
 			}
 			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
+			#	and = {
+			#		owner = { is_ai = yes num_pops > 1500 }
+			#	}
 		}
 	}
 
