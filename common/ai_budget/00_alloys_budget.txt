@@ -679,7 +679,7 @@ alloys_expenditure_habitats = {
 			has_origin = origin_void_dwellers
 		}
 		modifier = {
-			factor = 2
+			factor = 5
 			has_origin = origin_void_dwellers
 			count_owned_planet = {
 				limit = { is_planet_class = pc_habitat }
@@ -688,7 +688,15 @@ alloys_expenditure_habitats = {
 		}
 		modifier = {
 			factor = 2
-			has_origin = origin_void_dwellers
+			OR = {
+				has_origin = origin_void_dwellers
+				capital_scope = {
+					is_a_habitable_planet_megastructure = yes
+				}
+				years_of_peace = {
+					value > 15
+				}
+			}
 			count_owned_planet = {
 				limit = { is_planet_class = pc_habitat }
 				count < 12

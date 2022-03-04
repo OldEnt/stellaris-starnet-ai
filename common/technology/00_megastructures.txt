@@ -590,7 +590,7 @@ tech_gateway_activation = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -683,7 +683,7 @@ tech_gateway_construction = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"

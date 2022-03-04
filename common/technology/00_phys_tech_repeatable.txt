@@ -13,8 +13,7 @@ tech_repeatable_improved_tile_energy_output = {
 	}
 
 	ai_weight = {
-		weight = 1.0
-		factor = 125 #scaling factor
+		factor = 125
 	}
 
 	weight_groups = {
@@ -45,7 +44,7 @@ tech_repeatable_improved_shield_output = {
 	}
 
 	ai_weight = {
-		weight = 1.0
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -76,8 +75,7 @@ tech_repeatable_weapon_type_energy_damage = {
 	}
 
 	ai_weight = {
-		weight = 1.0
-		factor = 125 #scaling factor
+		factor = 125
 	}
 
 	weight_groups = {
@@ -108,8 +106,7 @@ tech_repeatable_weapon_type_energy_fire_rate = {
 	}
 
 	ai_weight = {
-		weight = 1.0
-		factor = 125 #scaling factor
+		factor = 125
 	}
 
 	weight_groups = {
@@ -139,8 +136,7 @@ tech_repeatable_reduced_building_cost = {
 	}
 
 	ai_weight = {
-		weight = 1.0
-		factor = 125 #scaling factor
+		factor = 125
 	}
 
 	weight_groups = {

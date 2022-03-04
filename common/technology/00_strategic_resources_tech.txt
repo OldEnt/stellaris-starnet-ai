@@ -16,7 +16,33 @@ tech_mine_living_metal = {
 	weight = @tier5weight1
 
 	weight_modifier = {
-		factor = 0
+		factor = 0.5
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = {
+					has_deposit = d_living_metal_deposit
+				}
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+		modifier = {
+			factor = 1000
+			has_country_flag = dragon_breeders #so they can recruit Fledgeling Dragons
+		}
+		modifier = {
+			factor = 0
+			is_ai = yes
+			has_monthly_income = { resource = engineering_research value < 750 }
+		}
 	}
 }
 
@@ -82,7 +108,7 @@ tech_mine_volatile_motes = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -161,7 +187,7 @@ tech_volatile_motes = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -199,7 +225,7 @@ tech_mine_exotic_gases = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
@@ -282,7 +308,7 @@ tech_exotic_gases = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
@@ -400,7 +426,7 @@ tech_rare_crystals = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
@@ -482,6 +508,10 @@ tech_mine_zro = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 5
+			has_ascension_perk = ap_transcendence
 		}
 	}
 }
@@ -567,7 +597,7 @@ tech_nanite_transmutation = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"

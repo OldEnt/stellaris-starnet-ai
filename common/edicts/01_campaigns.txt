@@ -584,6 +584,10 @@ living_metal_construction = {
 				limit = { is_upgrading = yes }
 			}
 		}
+		modifier = {
+			weight = @EdictHighPrio
+			has_origin = origin_void_dwellers
+		}
 	}
 }
 

@@ -22,6 +22,8 @@ tech_basic_science_lab_2 = {
 	prerequisites = { "tech_basic_science_lab_1" }
 	weight = @tier1weight3
 
+	# unlocks upgraded labs
+
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -32,7 +34,7 @@ tech_basic_science_lab_2 = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -41,7 +43,7 @@ tech_basic_science_lab_2 = {
 	}
 
 	ai_weight = {
-		weight =15
+		weight = 15
 		modifier = {
 			factor = 100
 			has_technology = tech_lasers_4
@@ -64,10 +66,12 @@ tech_basic_science_lab_3 = {
 	prerequisites = { "tech_basic_science_lab_2" "tech_colonial_centralization" }
 	weight = @tier3weight1
 
+	# unlocks 2nd upgraded labs
+
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -125,7 +129,7 @@ tech_global_research_initiative = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -358,6 +362,7 @@ tech_archeology_lab = {
 	}
 }
 
+
 tech_space_science_1 = {
 	cost = @tier1cost1
 	area = physics
@@ -372,7 +377,7 @@ tech_space_science_1 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -412,7 +417,7 @@ tech_space_science_2 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -453,7 +458,7 @@ tech_space_science_3 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -504,7 +509,7 @@ tech_space_science_4 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -554,7 +559,7 @@ tech_space_science_5 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -623,7 +628,7 @@ tech_physics_1 = {
 			years_passed > 20
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -695,7 +700,7 @@ tech_physics_2 = {
 			years_passed > 40
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -765,7 +770,7 @@ tech_physics_3 = {
 			years_passed > 40
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -806,7 +811,7 @@ tech_administrative_ai = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -845,7 +850,7 @@ tech_cryostasis_1 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -887,7 +892,7 @@ tech_cryostasis_2 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -931,7 +936,7 @@ tech_self_aware_logic = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -975,7 +980,7 @@ tech_automated_exploration = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1071,7 +1076,7 @@ tech_sapient_ai = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1114,7 +1119,7 @@ tech_positronic_implants = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1160,7 +1165,7 @@ tech_combat_computers_1 = {
 			has_technology = tech_battleships
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1209,7 +1214,7 @@ tech_combat_computers_2 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1291,7 +1296,7 @@ tech_combat_computers_3 = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1370,7 +1375,7 @@ tech_combat_computers_autonomous = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1413,7 +1418,7 @@ tech_auxiliary_fire_control = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1534,7 +1539,7 @@ tech_consumer_good_refinement_1 = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1577,7 +1582,7 @@ tech_consumer_good_refinement_2 = {
 	weight_modifier = {
 		factor = 2
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1598,6 +1603,8 @@ tech_consumer_good_refinement_2 = {
 	}
 }
 
+### ENCRYPTION / DECRYPTION
+
 tech_encryption_1 = {
 	area = physics
 	tier = 1
@@ -1614,7 +1621,7 @@ tech_encryption_1 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1657,7 +1664,7 @@ tech_encryption_2 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1741,7 +1748,7 @@ tech_decryption_1 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1784,7 +1791,7 @@ tech_decryption_2 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1825,7 +1832,7 @@ tech_decryption_3 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -1899,7 +1906,7 @@ tech_fusion_power = {
 			has_technology = tech_destroyers
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -1953,7 +1960,7 @@ tech_cold_fusion_power = {
 			has_technology = tech_cruisers
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2008,7 +2015,7 @@ tech_antimatter_power = {
 			has_technology = tech_battleships
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2059,7 +2066,7 @@ tech_zero_point_power = {
 			has_technology = tech_battleships
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2106,7 +2113,7 @@ tech_reactor_boosters_2 = {
 	weight_modifier = {
 		factor = 1.5
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2144,7 +2151,7 @@ tech_reactor_boosters_3 = {
 	weight_modifier = {
 		factor = 1.5
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2197,7 +2204,7 @@ tech_shields_2 = {
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2237,7 +2244,7 @@ tech_shields_3 = {
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2277,7 +2284,7 @@ tech_shields_4 = {
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2316,7 +2323,7 @@ tech_shields_5 = {
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2354,7 +2361,7 @@ tech_shield_rechargers_1 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2424,7 +2431,7 @@ tech_planetary_shield_generator = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2460,7 +2467,7 @@ tech_sensors_2 = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -2507,7 +2514,7 @@ tech_sensors_3 = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -2554,7 +2561,7 @@ tech_sensors_4 = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -2616,7 +2623,7 @@ tech_power_plant_2 = {
 			has_tradition = tr_prosperity_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2663,7 +2670,7 @@ tech_power_plant_3 = {
 			has_tradition = tr_prosperity_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2708,7 +2715,7 @@ tech_power_plant_4 = {
 			has_tradition = tr_prosperity_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2749,7 +2756,7 @@ tech_power_hub_1 = {
 			has_tradition = tr_prosperity_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2796,7 +2803,7 @@ tech_power_hub_2 = {
 			has_tradition = tr_prosperity_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
@@ -2865,7 +2872,7 @@ tech_hyper_drive_2 = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2912,7 +2919,7 @@ tech_hyper_drive_3 = {
 			has_tradition = tr_discovery_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -2991,7 +2998,7 @@ tech_wormhole_stabilization = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
@@ -3120,10 +3127,10 @@ tech_ftl_inhibitor = {
 		factor = 4 #FTL inhibitor is very important
 		modifier = {
 			factor = 1.25
-			has_tradition = tr_supremacy_adopt
+			has_tradition = tr_unyielding_adopt
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"

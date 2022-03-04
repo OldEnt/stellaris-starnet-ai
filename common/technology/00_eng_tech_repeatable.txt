@@ -47,7 +47,7 @@ tech_repeatable_improved_military_station_damage = {
 	}
 
 	ai_weight = {
-		weight = 1.0
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -77,7 +77,7 @@ tech_repeatable_improved_military_station_health = {
 	}
 
 	ai_weight = {
-		weight = 1.0
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -108,7 +108,7 @@ tech_repeatable_improved_military_station_health = {
 #	}
 #
 #	ai_weight = {
-#		weight = 1.0
+#		factor = 1.0
 #	}
 #
 #	weight_groups = {
@@ -139,8 +139,7 @@ tech_repeatable_improved_armor_output = {
 	}
 
 	ai_weight = {
-		weight = 10
-		factor = 125 #scaling factor
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -171,7 +170,7 @@ tech_repeatable_weapon_type_explosive_damage = {
 	}
 
 	ai_weight = {
-		weight = 10
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -202,7 +201,7 @@ tech_repeatable_weapon_type_explosive_fire_rate = {
 	}
 
 	ai_weight = {
-		weight = 10
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -233,8 +232,7 @@ tech_repeatable_weapon_type_kinetic_damage = {
 	}
 
 	ai_weight = {
-		weight = 10
-		factor = 125 #scaling factor
+		factor = 1.0
 	}
 
 	weight_groups = {
@@ -358,7 +356,7 @@ tech_repeatable_reduced_building_time = {
 	}
 
 	ai_weight = {
-		weight = 1
+		factor = 1.0
 	}
 
 	weight_groups = {
