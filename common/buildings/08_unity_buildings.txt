@@ -22,11 +22,8 @@ building_autochthon_monument = {
 
 	allow = {
 		exists = owner
-		OR = {
-			owner = {	
-				is_ai = no
-			}
-			is_capital = no
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -270,11 +267,8 @@ building_bureaucratic_1 = {
 
 	allow = {
 		exists = owner
-		OR = {
-			owner = {	
-				is_ai = no
-			}
-			is_capital = no
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -570,11 +564,8 @@ building_temple = {
 
 	allow = {
 		exists = owner
-		OR = {
-			owner = {	
-				is_ai = no
-			}
-			is_capital = no
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -882,11 +873,8 @@ building_uplink_node = {
 
 	allow = {
 		exists = owner
-		OR = {
-			owner = {	
-				is_ai = no
-			}
-			is_capital = no
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -1697,6 +1685,12 @@ building_galactic_memorial_1 = {
 		}
 	}
 
+	allow = {
+		owner = {
+			is_ai = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -2084,6 +2078,12 @@ building_simulation_1 = {
 		}
 	}
 
+	allow = {
+		owner = {
+			is_ai = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -2307,6 +2307,12 @@ building_corporate_monument = {
 		}
 	}
 
+	allow = {
+		owner = {
+			is_ai = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -2515,6 +2521,12 @@ building_sensorium_1 = {
 		owner = {
 			is_hive_empire = yes
 			is_memorialist_empire = no
+		}
+	}
+
+	allow = {
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -2743,6 +2755,9 @@ building_autocurating_vault = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2813,6 +2828,9 @@ building_citadel_of_faith = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2875,6 +2893,9 @@ building_corporate_vault = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -2940,6 +2961,9 @@ building_alpha_hub = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		owner = {
+			is_ai = no
+		}
 	}
 
 	destroy_trigger = {
@@ -3121,12 +3145,6 @@ building_organic_paradise = {
 	potential = {
 		exists = owner
 		owner = { has_valid_civic = civic_machine_servitor }
-	}
-
-	allow = {
-		owner = {
-			is_ai = no
-		}
 	}
 
 	destroy_trigger = {
