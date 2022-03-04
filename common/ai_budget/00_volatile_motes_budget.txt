@@ -134,3 +134,17 @@ volatile_motes_expenditure_shipedicts = {
 		}
 	}
 }
+
+volatile_motes_upkeep_edicts = {
+	resource = volatile_motes
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
+	}
+}

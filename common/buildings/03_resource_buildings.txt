@@ -1347,6 +1347,32 @@ building_bio_reactor = {
 		}
 	}
 
+	allow = {
+		owner = {
+			OR = {
+				is_ai = no
+				AND = {
+					is_ai = yes
+					NOT = {
+						has_deficit = food
+						has_country_flag = buildings_new_reactor_building
+					}
+					resource_stockpile_compare = {
+						resource = food
+						value = 5000
+					}
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_ai = yes
+			has_deficit = food
+		}
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {

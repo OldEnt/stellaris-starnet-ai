@@ -136,3 +136,17 @@ exotic_gases_expenditure_rareedicts = {
 		weight = 1
 	}
 }
+
+exotic_gases_upkeep_edicts = {
+	resource = exotic_gases
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
+	}
+}

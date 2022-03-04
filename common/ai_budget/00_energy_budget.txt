@@ -4,6 +4,38 @@
 #################
 ## Expenditure ##
 #################
+energy_expenditure_planets_gaia_seeder = {
+	resource = energy
+	type = expenditure
+	category = planets
+
+	potential = {
+		OR = {
+			has_valid_civic = civic_idyllic_bloom
+			has_valid_civic = civic_hive_idyllic_bloom
+		}
+		resource_stockpile_compare = { resource = energy value > 2000 }
+
+		any_owned_planet = {
+			NOR = {
+				is_planet_class = pc_gaia
+				is_planet_class = pc_city
+				is_planet_class = pc_hive
+				is_planet_class = pc_machine
+			}
+			is_artificial = no
+		}
+	}
+
+	fraction = {
+		weight = 1.0
+	}
+
+	static_max = {
+		base = 1350
+	}
+}
+
 energy_expenditure_campaigns = {
 	resource = energy
 	type = expenditure
@@ -35,23 +67,6 @@ energy_expenditure_colonies = {
 
 	static_min = {
 		base = 1000
-	}
-}
-
-energy_expenditure_leaders = {
-	resource = energy
-	type = expenditure
-	category = leaders
-
-	potential = {
-		always = yes
-	}
-
-	fraction = {
-		weight = 1.3
-	}
-	static_min = {
-		base = 20000
 	}
 }
 
@@ -191,45 +206,6 @@ energy_expenditure_decisions = {
 	}
 }
 
-energy_expenditure_missing_scientist = {
-	resource = energy
-	type = expenditure
-	category = leaders
-
-	potential = {
-		OR = {
-			scientist_count < 4
-
-			NOT = {
-				research_leader = {
-					area = physics
-				}
-			}
-			NOT = {
-				research_leader = {
-					area = society
-				}
-			}
-			NOT = {
-				research_leader = {
-					area = engineering
-				}
-			}
-		}
-	}
-
-	fraction = {
-		weight = 0.3
-	}
-
-	static_min = {
-		base = 15000
-	}
-	static_max = {
-		base = 50000
-	}
-}
-
 energy_expenditure_megastructures = {
 	resource = energy
 	type = expenditure
@@ -237,16 +213,26 @@ energy_expenditure_megastructures = {
 
 	potential = {
 		is_country_type = default
+		has_technology = tech_gateway_activation
 		is_at_war = no
-		has_galactic_wonders = yes
+		any_owned_megastructure = {
+			OR = {
+				is_megastructure_type = gateway_0
+				is_megastructure_type = gateway_ruined
+			}
+		}
+		has_resource = {
+			type = energy
+			amount > 6000
+		}
 	}
 
 	fraction = {
-		weight = 0.3
+		weight = 0.5
 	}
 
 	static_max = {
-		base = 20000 #
+		base = 20000 # currently only used by gateways
 	}
 }
 
@@ -674,6 +660,20 @@ energy_upkeep_lategame = {
 				value < 8000
 			}
 		}
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}
+
+energy_upkeep_campaigns = {
+	resource = energy
+	type = upkeep
+	category = campaigns
+
+	potential = {
+		has_technology = tech_planetary_unification
 	}
 
 	fraction = {

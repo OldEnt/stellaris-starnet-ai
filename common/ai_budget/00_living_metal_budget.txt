@@ -4,6 +4,20 @@
 #################
 ## Expenditure ##
 #################
+living_metal_expenditure_edicts = {
+	resource = sr_living_metal
+	type = expenditure
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.1
+	}
+}
+
 living_metal_expenditure_ships = {
 	resource = sr_living_metal
 	type = expenditure
@@ -71,5 +85,19 @@ living_metal_upkeep_ships = {
 
 	fraction = {
 		weight = 1
+	}
+}
+
+living_metal_upkeep_edicts = {
+	resource = sr_living_metal
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
 	}
 }

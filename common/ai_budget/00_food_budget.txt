@@ -145,3 +145,47 @@ food_expenditure_decisions = {
 		}
 	}
 }
+
+food_upkeep_ships = {
+	resource = food
+	type = upkeep
+	category = campaigns
+
+	potential = {
+		has_origin = origin_here_be_dragons
+		is_dragon_breeder_country = yes
+	}
+
+	fraction = {
+		weight = 5
+	}
+}
+
+food_upkeep_country = { # Covers most other things
+	resource = food
+	type = upkeep
+	category = country
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+}
+
+food_upkeep_campaigns = {
+	resource = food
+	type = upkeep
+	category = campaigns
+
+	potential = {
+		is_hive_empire = yes
+		is_lithoid_empire = no
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}

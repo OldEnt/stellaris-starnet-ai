@@ -335,3 +335,42 @@ influence_expenditure_megastructures = {
 		base = 300 # only used by construction sites
 	}
 }
+
+influence_expenditure_habitats = {
+	resource = influence
+	type = expenditure
+	category = megastructures_habitat
+
+	potential = { ai_should_build_habitats = yes }
+
+	fraction = {
+		weight = 0.1
+		modifier = {
+			factor = 2
+			has_origin = origin_void_dwellers
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_void_dwellers
+			count_owned_planet = {
+				limit = { is_planet_class = pc_habitat }
+				count < 4
+			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_void_dwellers
+			count_owned_planet = {
+				limit = { is_planet_class = pc_habitat }
+				count < 12
+			}
+		}
+	}
+
+	static_min = {
+		base = 150
+	}
+	static_max = {
+		base = 150
+	}
+}

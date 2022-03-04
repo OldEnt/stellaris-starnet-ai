@@ -665,6 +665,45 @@ alloys_expenditure_megastructures = {
 	}
 }
 
+alloys_expenditure_habitats = {
+	resource = alloys
+	type = expenditure
+	category = megastructures_habitat
+
+	potential = { ai_should_build_habitats = yes }
+
+	fraction = {
+		weight = 0.2
+		modifier = {
+			factor = 2.5
+			has_origin = origin_void_dwellers
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_void_dwellers
+			count_owned_planet = {
+				limit = { is_planet_class = pc_habitat }
+				count < 4
+			}
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_void_dwellers
+			count_owned_planet = {
+				limit = { is_planet_class = pc_habitat }
+				count < 12
+			}
+		}
+	}
+
+	static_min = {
+		base = 1000
+	}
+	static_max = {
+		base = 1500
+	}
+}
+
 alloys_expenditure_decisions = {
 	resource = alloys
 	type = expenditure

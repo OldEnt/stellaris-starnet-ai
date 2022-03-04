@@ -139,3 +139,17 @@ rare_crystals_expenditure_shipedicts = {
 		}
 	}
 }
+
+rare_crystals_upkeep_edicts = {
+	resource = rare_crystals
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
+	}
+}

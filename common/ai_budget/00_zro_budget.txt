@@ -73,3 +73,17 @@ zro_upkeep_ships = {
 		weight = 1
 	}
 }
+
+zro_upkeep_edicts = {
+	resource = sr_zro
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
+	}
+}

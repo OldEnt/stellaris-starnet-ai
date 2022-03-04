@@ -73,3 +73,17 @@ dark_matter_upkeep_ships = {
 		weight = 1
 	}
 }
+
+dark_matter_upkeep_edicts = {
+	resource = sr_dark_matter
+	type = upkeep
+	category = edicts
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		base = 0.25
+	}
+}
