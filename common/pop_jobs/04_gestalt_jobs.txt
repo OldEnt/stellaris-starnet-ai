@@ -1373,6 +1373,20 @@ maintenance_drone = {
 	weight = {
 		weight = @clerk_job_weight
 		modifier = {
+			add = @maintenance_drone_job
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+		}
+		modifier = {
+			add = -2.2
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+		}
+		modifier = {
 			factor = 2
 			OR = {
 				has_trait = trait_robot_emotion_emulators
@@ -1394,26 +1408,6 @@ maintenance_drone = {
 			has_trait = trait_cybernetic
 		}
 		modifier = {
-			factor = 0.1
-			NOT = { has_job = maintenance_drone }
-			planet = {
-				free_amenities > 5
-			}
-		}
-
-		modifier = {
-			factor = 0
-			planet = { habitability = { who = root value < 0.4 } }
-			planet = { num_pops > 1 num_pops < 8 }
-			owner = { num_pops < 100 }
-		}
-		modifier = {
-			factor = 100000
-			years_passed > 2
-			owner = { is_ai = yes }
-		}
-
-		modifier = {
 			factor = 1.1
 			OR = {
 				has_trait = trait_traditional
@@ -1423,6 +1417,63 @@ maintenance_drone = {
 			owner = {
 				has_valid_civic = civic_machine_maintenance_protocols
 			}
+		}
+		modifier = {
+			factor = 0.85
+			has_trait = trait_necrophage
+		}
+
+		modifier = {
+			factor = 1000 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+			NOT = { has_job = maintenance_drone }
+			planet = {
+				free_amenities < 3
+			}
+		}
+
+		modifier = {
+			factor = 1000 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+			has_job = maintenance_drone
+			planet = {
+				free_amenities < 8
+			}
+		}
+		modifier = {
+			factor = 0.1
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+			NOT = { has_job = maintenance_drone }
+			planet = {
+				free_amenities > 5
+			}
+		}		
+		modifier = {
+			factor = 0
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			planet = { habitability = { who = root value < 0.4 } }
+			planet = { num_pops > 1 num_pops < 8 }
+			owner = { num_pops < 100 }
+		}
+		modifier = {
+			factor = 100000
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			years_passed > 2
 		}
 		modifier = {
 			factor = 2
@@ -1441,10 +1492,6 @@ maintenance_drone = {
 			planet = {
 				free_amenities <= -10
 			}
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_necrophage
 		}
 	}
 }
