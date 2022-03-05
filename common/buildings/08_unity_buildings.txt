@@ -1110,6 +1110,12 @@ building_hive_node = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		owner = {
+			is_ai = no
+		}
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_hive_empire = no }
