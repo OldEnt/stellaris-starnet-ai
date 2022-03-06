@@ -255,7 +255,7 @@ matter_decompressor_4 = {
 		category = megastructures
 		cost = {
 			alloys = 12500
-			unity 5000
+			unity = 5000
 		}
 
 		produces = {

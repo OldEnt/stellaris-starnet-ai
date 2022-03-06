@@ -4152,6 +4152,10 @@ tech_psionic_theory = {
 	weight_modifier = {
 		factor = 0.5
 		modifier = {
+			factor = 0
+			has_ethic = ethic_gestalt_consciousness
+		}
+		modifier = {
 			factor = 0.5
 			is_spiritualist = no
 		}
