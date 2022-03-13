@@ -414,8 +414,9 @@ motes_kinetic = {
 	icon = "GFX_edict_type_time"
 	resources = {
 		category = ship_edicts
-		cost = {
-			volatile_motes = 50
+		upkeep = {
+			volatile_motes = 1
+			multiplier = value:edict_size_effect
 		}
 	}
 
