@@ -478,7 +478,7 @@ alloys = {
 	deficit_modifier = alloys_deficit
 
 	ai_weight = {
-		weight = 3.7
+		weight = 4
 		modifier = {
 			factor = 2
 			resource_stockpile_compare = { resource = alloys value < @critical_alloys_value }

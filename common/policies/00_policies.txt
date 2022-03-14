@@ -170,6 +170,11 @@ diplomatic_stance = {
 				factor = 5
 				is_pacifist = yes
 			}
+			
+			modifier = {
+				factor = 100
+				has_federation = yes
+			}
 
 			modifier = {
 				factor = 0.01
@@ -184,7 +189,7 @@ diplomatic_stance = {
 			# Tons of Ethics modifiers!
 			# Cranky people:
 			modifier = {
-				factor = 0
+				factor = 0.05
 				has_ethic = ethic_fanatic_xenophobe
 			}
 			modifier = {
@@ -289,6 +294,11 @@ diplomatic_stance = {
 				has_ascension_perk = ap_become_the_crisis
 			}
 
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = has_encountered_other_empire }
+			}
+			
 			modifier = {
 				factor = 0.25 # Let the isolationists start in this if they want
 				NOT = { has_country_flag = has_encountered_other_empire }

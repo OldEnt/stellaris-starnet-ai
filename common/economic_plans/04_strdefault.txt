@@ -1296,6 +1296,23 @@ str_early_boom_plan = {
 		no_emergency = yes
 	}
 
+	scaling_subplan = {
+		set_name = "general scaling"
+		potential = {
+			has_monthly_income = { resource = energy value > 100 }			
+			has_monthly_income = { resource = minerals value > 100 }			
+		}
+
+		income = {
+			alloys = 10
+			minerals = 5
+			energy = 10
+			physics_research = 5
+			society_research = 5
+			engineering_research = 5
+		}
+	}
+
 	pops = 8000
 	empire_size = 1
 

@@ -514,7 +514,13 @@ col_industrial = {
 
 	potential = {
 		exists = owner
-		owner = { country_uses_consumer_goods = yes }
+		owner = {
+			OR = {
+				is_ai = no
+				has_country_flag = str_col_industrial_allowed
+			}
+			country_uses_consumer_goods = yes
+		}
 		NOR = {
 			uses_district_set = city_world
 			uses_district_set = ring_world
@@ -605,7 +611,7 @@ col_foundry = {
 
 	ai_resource_current_conversion = {
 		alloys = 0.5
-		consumer_goods = -2
+		consumer_goods = -1
 
 		trigger = {
 			owner = {
@@ -624,6 +630,10 @@ col_foundry = {
 			uses_district_set = hive_world
 		}
 		is_special_colony_type = no
+		OR = {
+			str_can_be_factory_pretrigger = no
+			str_can_be_foundry_pretrigger = yes
+		}
 	}
 
 	custom_tooltip = col_foundry_custom
@@ -695,12 +705,6 @@ col_foundry = {
 			add = 20
 			years_passed < 15
 			has_planet_flag = str_designated_alloy_guaranteed
-		}
-
-		modifier = {
-			add = 0
-			has_designation = col_factory
-			str_industrial_switcher = no
 		}
 
 		modifier = {
@@ -950,6 +954,11 @@ col_foundry = {
 			}
 		}
 		modifier = {
+			factor = 0
+			has_designation = col_factory
+			str_industrial_switcher = no
+		}
+		modifier = {
 			add = 2
 			owner = {
 				resource_income_compare = {
@@ -969,6 +978,29 @@ col_foundry = {
 col_factory = {
 	icon = GFX_colony_type_factory
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 4
+		alloys = 0
+		
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
+	ai_resource_current_conversion = {
+		alloys = -0.5
+		consumer_goods = 1
+
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+
 	potential = {
 		exists = owner
 		owner = { country_uses_consumer_goods = yes }
@@ -980,6 +1012,10 @@ col_factory = {
 			uses_district_set = hive_world
 		}
 		is_special_colony_type = no
+		OR = {
+			str_can_be_factory_pretrigger = yes
+			str_can_be_foundry_pretrigger = no
+		}
 	}
 
 	custom_tooltip = col_factory_custom
@@ -1254,6 +1290,24 @@ col_factory = {
 			not = { has_designation = col_foundry }
 			num_buildings = { type = building_foundry_1 value = 0 }
 			num_buildings = { type = building_foundry_2 value = 0 }
+		}
+		
+		modifier = {
+			factor = 0
+			has_designation = col_foundry
+			str_industrial_switcher = no
+			or = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = consumer_goods
+						value > 500
+					}
+					resource_income_compare = {
+						resource = consumer_goods
+						value < -30
+					}
+				}
+			}
 		}
 	}
 }
