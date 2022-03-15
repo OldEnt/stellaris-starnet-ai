@@ -1980,7 +1980,7 @@ building_galactic_memorial_3 = {
 		category = planet_buildings
 		produces = {
 			trigger = { exists = owner }
-			unity = 2
+			unity = 3
 			multiplier = owner.trigger:num_ascension_perks
 		}
 		cost = {

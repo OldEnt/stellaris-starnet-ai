@@ -40,7 +40,7 @@ building_colony_shelter = {
 
 	planet_modifier = {
 		planet_housing_add = 3
-		planet_amenities_add = 3
+		planet_amenities_add = 7
 		planet_max_buildings_add = @buildings_t1
 	}
 
