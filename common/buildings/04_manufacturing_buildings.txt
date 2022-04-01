@@ -1244,7 +1244,7 @@ building_refinery = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_gases
+				flag = str_is_building_gases
 				days = 720
 			}
 		}
@@ -1356,7 +1356,7 @@ building_chemical_plant = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_motes
+				flag = str_is_building_motes
 				days = 720
 			}
 		}
@@ -1469,7 +1469,7 @@ building_crystal_plant = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_crystals
+				flag = str_is_building_crystals
 				days = 720
 			}
 		}

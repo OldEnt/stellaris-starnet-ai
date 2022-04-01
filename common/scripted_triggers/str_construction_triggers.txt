@@ -628,11 +628,14 @@ str_food_district_allow = {
 		}
 		or = {
 			str_force_district_farming = yes
-			owner = {
-				is_catalytic_empire = yes
-				resource_income_compare = {
-					resource = food
-					value < 10
+			and = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+					resource_income_compare = {
+						resource = food
+						value < 10
+					}
 				}
 			}
 			and = {
