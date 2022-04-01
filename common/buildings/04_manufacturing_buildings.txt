@@ -692,13 +692,11 @@ building_factory_1 = {
 		str_factory_allow = yes
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		NOT = {
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_industry_district = no
+		OR = {
+			owner = {
+				is_ai = no
 			}
+			has_any_industry_district = yes
 		}
 	}
 

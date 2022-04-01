@@ -92,7 +92,7 @@ building_robot_assembly_plant = {
 				OR = {
 					num_buildings = {
 						type = any
-						value = 16
+						value >= 12
 					}
 					is_planet_class = pc_habitat
 				}
@@ -267,7 +267,7 @@ building_machine_assembly_complex = {
 			OR = {
 				owner = { is_ai = no }
 				AND = {
-					num_buildings = { type = any value <= 14 }
+					num_buildings = { type = any value <= 10 }
 					NOT = { is_planet_class = pc_habitat }
 				}
 			}

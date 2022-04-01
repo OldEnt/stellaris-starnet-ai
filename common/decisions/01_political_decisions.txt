@@ -427,13 +427,7 @@ decision_expel_population = {
 				0 < { set_variable = { which = expel_pop_var value = 1 } } # 1
 			}
 			while = {
-				count = 10
-				limit = {
-					check_variable = {
-						which = expel_pop_var
-						value > 0
-					}
-				}
+				count = expel_pop_var
 
 				random_owned_pop = {
 					limit = {

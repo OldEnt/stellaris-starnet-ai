@@ -1,6 +1,14 @@
 #root = starbase
 #from = player
 
+# Weights in the ai_design part are multiplied with the base weight of 00_starbase_buildings.txt and 00_starbase_modules.txt
+# Then, a random number between that value and and extra 50% of that it is ADDED to it
+# F.e. 100 base weight multiplies with 2.00 = 200. Then we take a random number between 0 and 100 (50% of 200) and ADD it to 200. 235 then, for example
+# This is done for ALL starbase modules and buildings in the list every time an evaluation is made
+# And the building or module with the highest value will be chosen to being built
+# The implication of that is that you can not balance the weights TOO FAR from each other - otherwise some modules will never be chosen, unless they are the only thing on the evaluation
+# Due to the progression of the game and the unlocking of tech, though, it is often the case that there will only be 1 item on the list at any given time anyway
+
 # Shipyard
 sshipyard = {
 	potential = {
@@ -142,40 +150,13 @@ sanchorage = {
 
 	weight_modifier = {
 		base = 100
-		modifier = {
-			add = 100
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+100 for each anchorage
+			trigger = count_starbase_modules
+			parameters = {
 				type = anchorage
-				count > 1
 			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = anchorage
-				count > 2
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = anchorage
-				count > 3
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = anchorage
-				count > 4
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = anchorage
-				count > 5
-			}
+			mode = add
+			mult = 100
 		}
 	}
 
@@ -268,40 +249,13 @@ strading_hub = {
 
 	weight_modifier = {
 		base = 100
-		modifier = {
-			add = 100
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+100 for each trading_hub
+			trigger = count_starbase_modules
+			parameters = {
 				type = trading_hub
-				count > 1
 			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 2
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 3
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 4
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 5
-			}
+			mode = add
+			mult = 100
 		}
 	}
 
@@ -369,131 +323,29 @@ sfortress = {
 
 	weight_modifier = {
 		base = 75
-		modifier = {
-			add = 75
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+75 for each gun_battery
+			trigger = count_starbase_modules
+			parameters = {
 				type = gun_battery
-				count > 0
 			}
+			mode = add
+			mult = 75
 		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = gun_battery
-				count > 1
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = gun_battery
-				count > 2
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = gun_battery
-				count > 3
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = gun_battery
-				count > 4
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = gun_battery
-				count > 5
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+75 for each missile_battery
+			trigger = count_starbase_modules
+			parameters = {
 				type = missile_battery
-				count > 0
 			}
+			mode = add
+			mult = 75
 		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = missile_battery
-				count > 1
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = missile_battery
-				count > 2
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = missile_battery
-				count > 3
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = missile_battery
-				count > 4
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = missile_battery
-				count > 5
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+75 for each hangar_bay
+			trigger = count_starbase_modules
+			parameters = {
 				type = hangar_bay
-				count > 0
 			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = hangar_bay
-				count > 1
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = hangar_bay
-				count > 2
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = hangar_bay
-				count > 3
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = hangar_bay
-				count > 4
-			}
-		}
-		modifier = {
-			add = 75
-			count_starbase_modules = {
-				type = hangar_bay
-				count > 5
-			}
+			mode = add
+			mult = 75
 		}
 	}
 
@@ -573,40 +425,13 @@ strading_hub_gestalt = {
 
 	weight_modifier = {
 		base = 100
-		modifier = {
-			add = 100
-			count_starbase_modules = {
+		complex_trigger_modifier = { #+100 for each trading_hub
+			trigger = count_starbase_modules
+			parameters = {
 				type = trading_hub
-				count > 1
 			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 2
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 3
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 4
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = trading_hub
-				count > 5
-			}
+			mode = add
+			mult = 100
 		}
 	}
 }
