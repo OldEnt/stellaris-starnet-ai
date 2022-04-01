@@ -22,10 +22,12 @@ building_noble_estates = {
 
 	allow = {
 		has_upgraded_capital = yes
-		exists = owner
-		or = {
-			num_pops > 40
-			owner = { is_ai = no }
+		hidden_trigger = {
+			exists = owner
+			or = {
+				num_pops > 40
+				owner = { is_ai = no }
+			}
 		}
 	}
 

@@ -16,9 +16,11 @@ tr_domination_adopt = {
 		}
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 3
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 3
+			}
 		}
 	}
 }

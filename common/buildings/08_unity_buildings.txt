@@ -21,9 +21,11 @@ building_autochthon_monument = {
 	}
 
 	allow = {
-		exists = owner
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -112,8 +114,11 @@ building_heritage_site = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -191,8 +196,11 @@ building_hypercomms_forum = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -266,9 +274,11 @@ building_bureaucratic_1 = {
 	}
 
 	allow = {
-		exists = owner
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -371,8 +381,11 @@ building_bureaucratic_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {	
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -468,8 +481,11 @@ building_bureaucratic_3 = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {	
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -563,9 +579,11 @@ building_temple = {
 	}
 
 	allow = {
-		exists = owner
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -671,8 +689,11 @@ building_holotemple = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -771,8 +792,11 @@ building_sacred_nexus = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -872,9 +896,11 @@ building_uplink_node = {
 	}
 
 	allow = {
-		exists = owner
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -958,8 +984,11 @@ building_network_junction = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1038,8 +1067,11 @@ building_system_conflux = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1111,8 +1143,11 @@ building_hive_node = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1210,8 +1245,11 @@ building_hive_cluster = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1314,8 +1352,11 @@ building_hive_confluence = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1487,8 +1528,10 @@ building_sacrificial_temple_2 = {
 			is_death_cult_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1592,8 +1635,11 @@ building_sacrificial_temple_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1692,8 +1738,11 @@ building_galactic_memorial_1 = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1821,8 +1870,11 @@ building_galactic_memorial_2 = {
 	allow = {
 		exists = owner
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1953,8 +2005,11 @@ building_galactic_memorial_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2085,8 +2140,11 @@ building_simulation_1 = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2162,8 +2220,11 @@ building_simulation_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2239,8 +2300,11 @@ building_simulation_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2314,8 +2378,11 @@ building_corporate_monument = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2388,8 +2455,11 @@ building_corporate_site = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2460,8 +2530,11 @@ building_corporate_forum = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2531,8 +2604,11 @@ building_sensorium_1 = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2608,8 +2684,11 @@ building_sensorium_2 = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2685,8 +2764,11 @@ building_sensorium_3 = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2761,8 +2843,11 @@ building_autocurating_vault = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2834,8 +2919,11 @@ building_citadel_of_faith = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2899,8 +2987,11 @@ building_corporate_vault = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -2967,8 +3058,11 @@ building_alpha_hub = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 

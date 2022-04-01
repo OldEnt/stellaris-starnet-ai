@@ -20,48 +20,50 @@ building_luxury_residence = {
 	}
 
 	allow = {
-		or = {
-			owner = {
-				is_ai = no
-			}
-			not = { has_building = building_luxury_residence }
-		}
-		or = {
-			owner = { is_ai = no }
-			nor = {
-				is_capital = yes
-				num_buildings = {
-					type = building_research_lab_1
-					value > 0
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				num_pops < 13
+				not = { has_building = building_luxury_residence }
 			}
-		}
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -4
-				or = {
-					free_district_slots < 3
-					num_pops < 16
+			or = {
+				owner = { is_ai = no }
+				nor = {
+					is_capital = yes
+					num_buildings = {
+						type = building_research_lab_1
+						value > 0
+					}
+					num_pops < 13
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -4
+					or = {
+						free_district_slots < 3
+						num_pops < 16
+						num_pops > 11
+					}
+					free_amenities > -9
+				}
+				and = {
+					free_jobs > 4
+					free_building_slots > 1
+					free_amenities < -10
 					num_pops > 11
 				}
-				free_amenities > -9
-			}
-			and = {
-				free_jobs > 4
-				free_building_slots > 1
-				free_amenities < -10
-				num_pops > 11
-			}
-			and = {
-				free_building_slots > 1
-				free_jobs > 1
-				free_amenities < -2
-				free_amenities > -6
-				free_district_slots = 0
-				has_building = building_holo_theatres
+				and = {
+					free_building_slots > 1
+					free_jobs > 1
+					free_amenities < -2
+					free_amenities > -6
+					free_district_slots = 0
+					has_building = building_holo_theatres
+				}
 			}
 		}
 	}
@@ -208,7 +210,9 @@ building_paradise_dome = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	destroy_trigger = {
@@ -290,48 +294,50 @@ building_communal_housing = {
 	}
 
 	allow = {
-		or = {
-			owner = {
-				is_ai = no
-			}
-			not = { has_building = building_communal_housing }
-		}
-		or = {
-			owner = { is_ai = no }
-			nor = {
-				is_capital = yes
-				num_buildings = {
-					type = building_research_lab_1
-					value > 0
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				num_pops < 13
+				not = { has_building = building_communal_housing }
 			}
-		}
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -4
-				or = {
-					free_district_slots < 3
-					num_pops < 16
+			or = {
+				owner = { is_ai = no }
+				nor = {
+					is_capital = yes
+					num_buildings = {
+						type = building_research_lab_1
+						value > 0
+					}
+					num_pops < 13
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -4
+					or = {
+						free_district_slots < 3
+						num_pops < 16
+						num_pops > 11
+					}
+					free_amenities > -9
+				}
+				and = {
+					free_jobs > 4
+					free_building_slots > 1
+					free_amenities < -10
 					num_pops > 11
 				}
-				free_amenities > -9
-			}
-			and = {
-				free_jobs > 4
-				free_building_slots > 1
-				free_amenities < -10
-				num_pops > 11
-			}
-			and = {
-				free_building_slots > 1
-				free_jobs > 1
-				free_amenities < -2
-				free_amenities > -6
-				free_district_slots = 0
-				has_building = building_holo_theatres
+				and = {
+					free_building_slots > 1
+					free_jobs > 1
+					free_amenities < -2
+					free_amenities > -6
+					free_district_slots = 0
+					has_building = building_holo_theatres
+				}
 			}
 		}
 	}
@@ -474,7 +480,9 @@ building_communal_housing_large = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	destroy_trigger = {
@@ -561,7 +569,9 @@ building_drone_storage = {
 
 	allow = {
 		buildings_simple_allow = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	convert_to = {
@@ -664,21 +674,23 @@ building_hive_warren = {
 
 	allow = {
 		buildings_simple_allow = yes
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -2
-				free_amenities > -8
-				or = {
-					free_amenities > -10
-					and = {
-						num_pops > 13
-						free_housing < 15
-					}
-					and = {
-						num_pops > 20
-						free_housing < 25
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -2
+					free_amenities > -8
+					or = {
+						free_amenities > -10
+						and = {
+							num_pops > 13
+							free_housing < 15
+						}
+						and = {
+							num_pops > 20
+							free_housing < 25
+						}
 					}
 				}
 			}
@@ -779,7 +791,9 @@ building_expanded_warren = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	show_tech_unlock_if = {
@@ -843,25 +857,27 @@ building_holo_theatres = {
 	}
 
 	allow = {
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_amenities < -5
-				num_pops > 11
-			}
-			and = {
-				free_amenities < -4
-				or = { has_building = building_luxury_residence has_building = building_communal_housing }
-			}
-			and = {
-				free_amenities < 2
-				or = {
-					years_passed > 15
-					free_amenities < -2
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_amenities < -5
+					num_pops > 11
 				}
-				owner = { has_origin = origin_default }
-				is_capital = yes
-				not = { has_building = building_holo_theatres }
+				and = {
+					free_amenities < -4
+					or = { has_building = building_luxury_residence has_building = building_communal_housing }
+				}
+				and = {
+					free_amenities < 2
+					or = {
+						years_passed > 15
+						free_amenities < -2
+					}
+					owner = { has_origin = origin_default }
+					is_capital = yes
+					not = { has_building = building_holo_theatres }
+				}
 			}
 		}
 	}
@@ -980,8 +996,10 @@ building_hyper_entertainment_forum = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 

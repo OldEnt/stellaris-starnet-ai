@@ -3,11 +3,13 @@ tr_diplomacy_adopt = {
 		diplomacy_upkeep_mult = -0.5
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 2
-			has_origin = origin_common_ground
-			has_origin = origin_common_ground_npc
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 2
+				has_origin = origin_common_ground
+				has_origin = origin_common_ground_npc
+			}
 		}
 	}
 }

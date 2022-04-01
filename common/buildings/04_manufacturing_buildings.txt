@@ -1643,12 +1643,14 @@ building_ministry_production = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
-			str_num_districts_allindustry = { operator = > num = 3 }
-			str_is_col_factory = yes
-			str_is_col_foundry = yes
-			str_is_col_industrial = yes
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				str_num_districts_allindustry = { operator = > num = 3 }
+				str_is_col_factory = yes
+				str_is_col_foundry = yes
+				str_is_col_industrial = yes
+			}
 		}
 	}
 
@@ -1756,12 +1758,14 @@ building_production_center = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
-			str_num_districts_allindustry = { operator = > num = 3 }
-			str_is_col_foundry = yes
-			str_is_col_factory = yes
-			str_is_col_industrial = yes
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				str_num_districts_allindustry = { operator = > num = 3 }
+				str_is_col_foundry = yes
+				str_is_col_factory = yes
+				str_is_col_industrial = yes
+			}
 		}
 	}
 

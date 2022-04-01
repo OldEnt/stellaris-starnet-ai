@@ -4,11 +4,13 @@ tr_discovery_adopt = {
 		ship_anomaly_research_speed_mult = 0.20
 	}
 	possible = {
-		nand = {
-			is_ai = yes
-			num_ascension_perks = 1
-			not = {
-				has_tradition = tr_supremacy_adopt
+		hidden_trigger = {
+			nand = {
+				is_ai = yes
+				num_ascension_perks = 1
+				not = {
+					has_tradition = tr_supremacy_adopt
+				}
 			}
 		}
 	}

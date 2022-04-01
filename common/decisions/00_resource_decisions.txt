@@ -127,19 +127,22 @@ decision_planet_luxuries_boost = {
 
 	allow = {
 		NOT = { has_modifier = planet_luxuries_boost }
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_amenities < -6
-				num_pops > 15
-				owner = {
-					resource_income_compare = {
-						resource = consumer_goods
-						value > 5
-					}
-					resource_stockpile_compare = {
-						resource = consumer_goods
-						value > 300
+		hidden_trigger = {
+			exists = owner
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_amenities < -6
+					num_pops > 15
+					owner = {
+						resource_income_compare = {
+							resource = consumer_goods
+							value > 5
+						}
+						resource_stockpile_compare = {
+							resource = consumer_goods
+							value > 300
+						}
 					}
 				}
 			}

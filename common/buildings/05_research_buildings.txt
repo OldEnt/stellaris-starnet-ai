@@ -115,21 +115,23 @@ building_research_lab_2 = {
 	allow = {
 		has_upgraded_capital = yes
 		buildings_has_exotic_gases = yes
-		or = {
-			owner = {
-				is_ai = no
-			}
-			and = {
-				free_building_slots = 0
-				free_district_slots < 3
-				free_jobs < 2
-				or = {
-					str_is_col_research = yes
-					num_unemployed > 1
-					is_capital = yes
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				free_housing > 5
-				str_research_allow = yes
+				and = {
+					free_building_slots = 0
+					free_district_slots < 3
+					free_jobs < 2
+					or = {
+						str_is_col_research = yes
+						num_unemployed > 1
+						is_capital = yes
+					}
+					free_housing > 5
+					str_research_allow = yes
+				}
 			}
 		}
 	}
@@ -230,21 +232,23 @@ building_research_lab_3 = {
 	allow = {
 		has_major_upgraded_capital = yes
 		buildings_has_exotic_gases = yes
-		or = {
-			owner = {
-				is_ai = no
-			}
-			and = {
-				free_building_slots = 0
-				free_district_slots < 3
-				free_jobs < 2
-				or = {
-					str_is_col_research = yes
-					num_unemployed > 1
-					is_capital = yes
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				free_housing > 5
-				str_research_allow = yes
+				and = {
+					free_building_slots = 0
+					free_district_slots < 3
+					free_jobs < 2
+					or = {
+						str_is_col_research = yes
+						num_unemployed > 1
+						is_capital = yes
+					}
+					free_housing > 5
+					str_research_allow = yes
+				}
 			}
 		}
 	}
@@ -408,24 +412,26 @@ building_institute = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		exists = owner
-		or = {
-			owner = { is_ai = no }
+		hidden_trigger = {
+			exists = owner
 			or = {
-				num_buildings = {
-					type = building_research_lab_1
-					value > 3
-				}
-				num_buildings = {
-					type = building_research_lab_2
-					value > 1
-				}
-				num_buildings = {
-					type = building_research_lab_3
-					value > 1
+				owner = { is_ai = no }
+				or = {
+					num_buildings = {
+						type = building_research_lab_1
+						value > 3
 					}
+					num_buildings = {
+						type = building_research_lab_2
+						value > 1
+					}
+					num_buildings = {
+						type = building_research_lab_3
+						value > 1
+					}
+				}
+				str_is_col_research = yes
 			}
-			str_is_col_research = yes
 		}
 	}
 
@@ -526,23 +532,25 @@ building_supercomputer = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
+		hidden_trigger = {
 			or = {
-				num_buildings = {
-					type = building_research_lab_1
-					value > 2
-				}
-				num_buildings = {
-					type = building_research_lab_2
-					value > 1
-				}
-				num_buildings = {
-					type = building_research_lab_3
-					value > 1
+				owner = { is_ai = no }
+				or = {
+					num_buildings = {
+						type = building_research_lab_1
+						value > 2
 					}
+					num_buildings = {
+						type = building_research_lab_2
+						value > 1
+					}
+					num_buildings = {
+						type = building_research_lab_3
+						value > 1
+					}
+				}
+				str_is_col_research = yes
 			}
-			str_is_col_research = yes
 		}
 	}
 

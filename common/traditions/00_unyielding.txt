@@ -4,9 +4,11 @@ tr_unyielding_adopt = {
 		starbase_upgrade_speed_mult = 0.50
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 2
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 2
+			}
 		}
 	}
 }

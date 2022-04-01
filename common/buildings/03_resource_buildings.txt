@@ -1250,27 +1250,9 @@ building_resource_silo = {
 	}
 
 	allow = {
-		exists = owner
-		owner = { is_ai = no }
 		hidden_trigger = {
-			OR = {
-				owner = { is_ai = no }
-				AND = {
-					NOT = { has_building = building_resource_silo }
-					OR = {
-						owner = {
-							is_machine_empire = yes
-							has_active_tradition = tr_domination_modular_depot
-						}
-						is_active_resolution = "resolution_greatergood_balance_in_the_middle"
-						is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
-						owner = {
-							has_ascension_perk = ap_arcology_project
-							NOT = { has_technology = tech_mega_engineering }
-						}
-					}
-				}
-			}
+			exists = owner
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1348,18 +1330,20 @@ building_bio_reactor = {
 	}
 
 	allow = {
-		owner = {
-			OR = {
-				is_ai = no
-				AND = {
-					is_ai = yes
-					NOT = {
-						has_deficit = food
-						has_country_flag = buildings_new_reactor_building
-					}
-					resource_stockpile_compare = {
-						resource = food
-						value = 5000
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no
+					AND = {
+						is_ai = yes
+						NOT = {
+							has_deficit = food
+							has_country_flag = buildings_new_reactor_building
+						}
+						resource_stockpile_compare = {
+							resource = food
+							value = 5000
+						}
 					}
 				}
 			}

@@ -3,9 +3,11 @@ tr_subterfuge_adopt = {
 		intel_decryption_add = 1
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 4
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 4
+			}
 		}
 	}
 }

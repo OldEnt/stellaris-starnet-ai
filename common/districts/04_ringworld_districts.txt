@@ -441,12 +441,14 @@ district_rw_commercial = {
 		uses_district_set = ring_world
 	}
 	allow = {
-		exists = owner
-		or = {
-			owner = { is_ai = no }
-			num_districts = {
-				type = district_rw_commercial
-				value < 1
+		hidden_trigger = {
+			exists = owner
+			or = {
+				owner = { is_ai = no }
+				num_districts = {
+					type = district_rw_commercial
+					value < 1
+				}
 			}
 		}
 	}
