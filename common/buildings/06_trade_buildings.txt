@@ -218,7 +218,7 @@ building_commercial_megaplex = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-				job = servant
+					job = servant
 					value >= 10
 				}
 			}
