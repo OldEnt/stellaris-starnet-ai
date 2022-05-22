@@ -4,7 +4,6 @@
 # OVERLORD ASCENSION PERKS
 #################
 
-#TODO: AI
 ap_lord_of_war = {
 	potential = {
 		host_has_dlc = "Overlord"
@@ -89,17 +88,16 @@ ap_become_the_crisis = {
 		factor = 7.5
 		modifier = {
 			factor = 0
-			nor = {
+			NOR = {
 				is_militarist = yes
 				is_xenophobe = yes
 				is_gestalt = yes
-				and = {
+				AND = {
 					is_authoritarian = yes
 					is_spiritualist = yes
 				}
 			}
 		}
-
 		modifier = {
 			factor = 10
 			is_homicidal = yes
@@ -156,7 +154,7 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			count_country = {
+			count_playable_country = {
 				count > 2
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
@@ -165,7 +163,7 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			count_country = {
+			count_playable_country = {
 				count > 1
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
@@ -379,6 +377,18 @@ ap_colossus = {
 		modifier = {
 			factor = 2
 			is_militarist = yes
+		}
+		modifier = {
+			factor = 2
+			has_authority = auth_machine_intelligence #just because
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			has_crisis_level = crisis_level_5
 		}
 	}
 }

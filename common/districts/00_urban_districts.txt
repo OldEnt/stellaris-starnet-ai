@@ -1088,7 +1088,7 @@ district_srw_commercial = {
 	triggered_desc = {
 		text = job_clerk_effect_desc
 	}
-
+	
 	triggered_desc = {
 		text = job_merchant_effect_desc
 		trigger = {

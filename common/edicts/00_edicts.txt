@@ -11,6 +11,7 @@
 #################
 # Toggle Edicts
 #################
+
 evacuation_protocols = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -1094,7 +1095,6 @@ greater_than_ourselves = {
 	}
 }
 
-#TODO: AI
 relay_network_dummy = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -1122,7 +1122,6 @@ relay_network_dummy = {
 	show_tech_unlock_if = { always = yes }
 }
 
-#TODO: AI
 relay_network_stability = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -1171,7 +1170,6 @@ relay_network_stability = {
 	}
 }
 
-#TODO: AI
 relay_network_movement = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -1221,7 +1219,6 @@ relay_network_movement = {
 	}
 }
 
-#TODO: AI
 relay_network_amenities = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -1275,7 +1272,6 @@ relay_network_amenities = {
 	}
 }
 
-#TODO: AI
 relay_network_amenities_gestalt = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
