@@ -25,6 +25,7 @@ col_default = {
 		planet_stability_add = 5
 		planet_amenities_add = 10
 		pop_happiness = 0.10
+		planet_resettlement_unemployed_destination_mult = 0.25
 	}
 
 	weight_modifier = {
@@ -51,6 +52,7 @@ col_default_machine = {
 	planet_modifier = {
 		planet_stability_add = 5
 		planet_amenities_no_happiness_add = 10
+		planet_resettlement_unemployed_destination_mult = 0.25
 	}
 
 	weight_modifier = {
@@ -523,7 +525,6 @@ col_industrial = {
 		}
 		NOR = {
 			uses_district_set = city_world
-			uses_district_set = ring_world
 			uses_district_set = habitat
 			uses_district_set = machine_world
 			uses_district_set = hive_world
@@ -568,6 +569,10 @@ col_industrial = {
 			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
 		}
 		modifier = {
+			add = 5
+			num_districts = { type = district_rw_industrial value >= @built_districts_medium_threshold }
+		}
+		modifier = {
 			add = 10
 			AND = {
 				OR = {
@@ -600,8 +605,8 @@ col_foundry = {
 	# used by AI to estimate what will happen when we change the designation
 	ai_resource_conversion = {
 		consumer_goods = 0
-		alloys = 2 
-		
+		alloys = 2
+
 		trigger = {
 			owner = {
 				is_gestalt = no
@@ -624,7 +629,6 @@ col_foundry = {
 		exists = owner
 		NOR = {
 			uses_district_set = city_world
-			uses_district_set = ring_world
 			uses_district_set = habitat
 			uses_district_set = machine_world
 			uses_district_set = hive_world
@@ -658,6 +662,7 @@ col_foundry = {
 	}
 
 	weight_modifier = {
+		base = 1
 		modifier = {
 			add = 3
 			OR = {
@@ -982,7 +987,7 @@ col_factory = {
 	ai_resource_conversion = {
 		consumer_goods = 4
 		alloys = 0
-		
+
 		trigger = {
 			owner = {
 				is_gestalt = no
@@ -1006,7 +1011,6 @@ col_factory = {
 		owner = { country_uses_consumer_goods = yes }
 		NOR = {
 			uses_district_set = city_world
-			uses_district_set = ring_world
 			uses_district_set = habitat
 			uses_district_set = machine_world
 			uses_district_set = hive_world
@@ -1040,6 +1044,7 @@ col_factory = {
 	}
 
 	weight_modifier = {
+		base = 1
 		modifier = {
 			add = 4
 			owner = { has_monthly_income = { resource = consumer_goods value < 5 } }
@@ -1378,6 +1383,7 @@ col_research = {
 	}
 
 	weight_modifier = {
+		base = 1
 		modifier = {
 			add = 1
 			OR = {
@@ -1464,8 +1470,6 @@ col_fortress = {
 			uses_district_set = city_world
 			uses_district_set = ring_world
 			uses_district_set = habitat
-			uses_district_set = machine_world
-			uses_district_set = hive_world
 		}
 		is_special_colony_type = no
 	}
@@ -1503,6 +1507,7 @@ col_capital = {
 		planet_amenities_add = 10
 		pop_government_ethic_attraction = 1
 		planet_jobs_produces_mult = 0.1
+		planet_resettlement_unemployed_destination_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -1528,6 +1533,7 @@ col_capital_hive = {
 		planet_amenities_no_happiness_add = 10
 		planet_crime_no_happiness_add = -20
 		planet_jobs_produces_mult = 0.1
+		planet_resettlement_unemployed_destination_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -1553,6 +1559,7 @@ col_capital_machine = {
 		planet_amenities_no_happiness_add = 10
 		planet_crime_no_happiness_add = -20
 		planet_jobs_produces_mult = 0.15
+		planet_resettlement_unemployed_destination_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -1934,8 +1941,8 @@ col_habitat_foundry = {
 	# used by AI to estimate what will happen when we change the designation
 	ai_resource_conversion = {
 		consumer_goods = 0
-		alloys = 2 
-		
+		alloys = 2
+
 		trigger = {
 			owner = {
 				is_gestalt = no
@@ -2036,7 +2043,7 @@ col_habitat_factory = {
 	ai_resource_conversion = {
 		consumer_goods = 2
 		alloys = 0
-		
+
 		trigger = {
 			owner = {
 				is_gestalt = no
@@ -2917,8 +2924,8 @@ col_ecu_foundry = {
 	# used by AI to estimate what will happen when we change the designation
 	ai_resource_conversion = {
 		consumer_goods = 0
-		alloys = 2 
-		
+		alloys = 2
+
 		trigger = {
 			always = yes
 		}
@@ -2940,8 +2947,8 @@ col_ecu_foundry = {
 	# used by AI to estimate what will happen when we change the designation
 	ai_resource_conversion = {
 		consumer_goods = 0
-		alloys = 2 
-		
+		alloys = 2
+
 		trigger = {
 			owner = {
 				is_gestalt = no
@@ -3024,7 +3031,7 @@ col_ecu_factory = {
 	ai_resource_conversion = {
 		consumer_goods = 2
 		alloys = 0
-		
+
 		trigger = {
 			owner = {
 				is_gestalt = no

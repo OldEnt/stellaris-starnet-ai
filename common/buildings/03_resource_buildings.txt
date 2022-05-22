@@ -188,6 +188,7 @@ building_food_processing_facility = {
 			has_modifier = resort_colony
 		}
 	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -954,6 +955,7 @@ building_energy_grid = {
 	allow = {
 		str_energy_grid_allow = yes
 	}
+
 	planet_modifier = {
 		planet_technician_energy_produces_add = 1
 	}
@@ -1286,7 +1288,17 @@ building_resource_silo = {
 	}
 
 	country_modifier = {
-		country_resource_max_add = 2000
+		country_resource_max_add = 5000
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_global_production_strategy
+			}
+		}
+		country_resource_max_add = 5000
 	}
 
 	prerequisites = {

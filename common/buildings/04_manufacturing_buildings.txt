@@ -246,7 +246,7 @@ building_foundry_2 = {
 			AND = {
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}
@@ -474,9 +474,10 @@ building_foundry_3 = {
 				buildings_no_motes = yes
 			}
 			AND = {
+				exists = owner
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}
@@ -1207,10 +1208,6 @@ building_refinery = {
 		building_basic_income_check = yes
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
-
 	destroy_trigger = {
 		free_building_slots = 0
 		exists = owner
@@ -1320,9 +1317,6 @@ building_chemical_plant = {
 		building_basic_income_check = yes
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
 	destroy_trigger = {
 		free_building_slots = 0
 		exists = owner
@@ -1430,10 +1424,6 @@ building_crystal_plant = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
 		building_basic_income_check = yes
-	}
-
-	allow = {
-		has_upgraded_capital = yes
 	}
 
 	destroy_trigger = {
@@ -1633,7 +1623,7 @@ building_ministry_production = {
 			AND = {
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}

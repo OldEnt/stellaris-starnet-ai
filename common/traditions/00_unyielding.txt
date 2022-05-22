@@ -39,7 +39,6 @@ tr_unyielding_finish = {
 }
 
 tr_unyielding_resistance_is_frugal = {
-	# fortress building should produce 3 unity
 	modifier = {
 		army_defense_health_mult = 0.25
 	}

@@ -257,7 +257,10 @@ tech_pk_neutron = {
 				}
 				AND = {
 					host_has_dlc = "Utopia"
-					has_ascension_perk = ap_mind_over_matter
+					OR = {
+						has_ascension_perk = ap_mind_over_matter
+						has_origin = origin_shroudwalker_apprentice
+					}
 				}
 			}
 		}
@@ -338,7 +341,10 @@ tech_pk_godray = {
 			}
 			AND = {
 				host_has_dlc = "Utopia"
-				has_ascension_perk = ap_mind_over_matter
+				OR = {
+					has_ascension_perk = ap_mind_over_matter
+					has_origin = origin_shroudwalker_apprentice
+				}
 			}
 		}
 	}

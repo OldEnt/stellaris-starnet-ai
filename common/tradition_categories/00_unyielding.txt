@@ -11,7 +11,10 @@ tradition_unyielding = {
 	}
 
 	potential = {
-		host_has_dlc = "Apocalypse"
+		OR = {
+			host_has_dlc = "Apocalypse"
+			has_overlord_dlc = yes
+		}
 	}
 
 	ai_weight = {

@@ -62,13 +62,19 @@
 #		construction = yes					#should AI build ships and buildings? default yes
 #		tech = yes							#should AI advance its technology? default yes
 #		espionage = yes					#should AI use espionage? default yes
-#		ship_data							#highest fleet slot size first for military ship sizes
 #
 #		modules = {							#List of diferent ai modules this country type should have
 #			military_minister_module
 #			foreign_minister_module
 #			interior_minister_module
 #		}
+#	}
+#
+#	fleet_manager = {								#block of Country Fleet Manager settings
+#		on_contract_started = {						#effect fired when fleet owned by country is hired
+#		}											#Scope - Fleet, From - Country that hired the fleet
+#		on_contract_broken = {						#effect fired when hire contract of a fleet owned by country is broken
+#		}											#Scope - Fleet, From - Country that hired the fleet
 #	}
 #
 #	modules = {							#List of modules countries of this should have.
@@ -103,6 +109,7 @@ default = {
 	observable = yes
 	can_use_invalid_technology = no
 	can_receive_envoys = yes
+	ownership_limits = default
 
 	ai = {
 		enabled = yes
@@ -122,8 +129,11 @@ default = {
 			military_minister_module
 			foreign_minister_module
 			interior_minister_module
+			mercenary_buyer_minister_module
+			enclave_founder_minister_module
 		}
 
+		#TODO: AI - ship_data moved to 00_ship_sizes.txt
 		ship_data = {
 			constructor = {
 				min = 3
@@ -872,6 +882,7 @@ fallen_empire = {
 			interior_minister_module
 		}
 
+		#TODO: AI - army_data removed in 3.4?
 		army_data = {
 			gene_warrior_army = {
 				fraction = {
@@ -1024,6 +1035,7 @@ awakened_fallen_empire = {
 			interior_minister_module
 		}
 
+		#TODO: AI - army_data removed in 3.4?
 		army_data = {
 			gene_warrior_army = {
 				fraction = {
@@ -1299,6 +1311,212 @@ enclave = {
 	}
 }
 
+#TODO: AI
+enclave_mercenary = {
+	blocks_piracy = yes
+	show_in_contacts_list = yes
+	can_have_their_comms_shared = yes
+	government = yes
+	is_enclave = yes
+	is_mercenary = yes
+	observable = yes # no
+	playable = no
+	needs_survey = no
+	ship_disengagement = yes
+	has_complete_sensor = no
+	orbital_bombardment = yes
+	attack_unarmed_orbital_stations = yes
+	destroys_starbases = yes
+
+	ai = {
+		enabled = yes
+		modules = {
+			enclave_mercenary_military_minister_module
+			interior_minister_module
+			standard_species_rights_module
+			space_monsters_modules
+			enclave_mercenary_seller_minister_module
+		}
+
+		declare_war = no
+		colonizer = no
+		internal_policies = no
+		modification = no
+		construction = no
+		limited_military_construction = yes
+		limited_leaders = yes
+		tech = yes
+		espionage = no
+	}
+	fleet_manager = {
+		on_contract_started = {
+			if = {
+				limit = {
+					is_active_resolution = resolution_defenseprivatization_corporate_warlords
+				}
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_galcom_5
+				}
+			}
+			else_if = {
+				limit = {
+					is_active_resolution = resolution_defenseprivatization_security_business
+				}
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_galcom_4
+				}
+			}
+			else_if = {
+				limit = {
+					is_active_resolution = resolution_defenseprivatization_condottieri
+				}
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_galcom_3
+				}
+			}
+			else_if = {
+				limit = {
+					is_active_resolution = resolution_defenseprivatization_private_support_troops
+				}
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_galcom_2
+				}
+			}
+			else_if = {
+				limit = {
+					is_active_resolution = resolution_defenseprivatization_defense_contracts
+				}
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_galcom_1
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = hired_mercenary_fleet_naval_cap_usage_no_galcom
+				}
+			}
+		}
+		on_contract_broken = {
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_no_galcom
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_1
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_2
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_3
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_4
+			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_5
+		}
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+	}
+	custom_diplomacy = yes
+	custom_opinion = yes
+	modules = {
+		standard_technology_module = {}
+		standard_event_module = {}
+		standard_leader_module = {}
+		standard_economy_module = {}
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
+	}
+
+	resources = {
+		category = country_base
+		produces = {
+			energy = 500
+			minerals = 250
+			food = 100
+			alloys = 250
+			consumer_goods = 100
+			rare_crystals = 1
+			exotic_gases = 1
+			volatile_motes = 1
+			sr_dark_matter = 1
+			sr_living_metal = 1
+			sr_zro = 1
+
+			physics_research = 100
+			engineering_research = 100
+			society_research = 100
+
+			unity = 50
+		}
+
+		produces = {
+			trigger = {
+				mid_game_years_passed > 0
+			}
+			energy = 250
+			alloys = 250
+			rare_crystals = 10
+			exotic_gases = 10
+			volatile_motes = 10
+
+			physics_research = 250
+			engineering_research = 250
+			society_research = 250
+		}
+
+		produces = {
+			trigger = {
+				end_game_years_passed > 0
+			}
+			energy = 250
+			alloys = 250
+			sr_dark_matter = 2
+			sr_living_metal = 2
+			sr_zro = 2
+
+			physics_research = 400
+			engineering_research = 400
+			society_research = 400
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_rare_crystals
+			}
+			rare_crystals = 2
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_exotic_gases
+			}
+			exotic_gases = 2
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_volatile_motes
+			}
+			volatile_motes = 2
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_mine_dark_matter
+			}
+			sr_dark_matter = 1
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_mine_living_metal
+			}
+			sr_living_metal = 1
+		}
+
+		produces = {
+			trigger = {
+				has_technology = tech_mine_zro
+			}
+			sr_zro = 1
+		}
+	}
+}
+
 shroud = {
 	is_the_shroud = yes
 	show_in_contacts_list = yes
@@ -1367,6 +1585,7 @@ gdf = {
 			galactic_community_patrol_military_minister_module
 		}
 
+		#TODO: AI - ship_data moved to 00_ship_sizes.txt
 		ship_data = {
 			constructor = {
 				min = 3

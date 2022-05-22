@@ -93,22 +93,26 @@ honorbound_warriors = {
 	}
 
 	allow = {
-		is_country_type = default
 		OR = {
+			is_country_type = enclave_mercenary
 			AND = {
-				has_ethic = "ethic_fanatic_militarist"
+				is_country_type = default
 				OR = {
-					has_ethic = "ethic_spiritualist"
-					has_ethic = "ethic_egalitarian"
-					has_ethic = "ethic_xenophile"
+					AND = {
+						has_ethic = "ethic_fanatic_militarist"
+						OR = {
+							has_ethic = "ethic_spiritualist"
+							has_ethic = "ethic_egalitarian"
+							has_ethic = "ethic_xenophile"
+						}
+					}
+					AND = {
+						has_ethic = "ethic_fanatic_xenophile"
+						has_ethic = "ethic_militarist"
+					}
 				}
 			}
-			AND = {
-				has_ethic = "ethic_fanatic_xenophile"
-				has_ethic = "ethic_militarist"
-			}
 		}
-
 	}
 
 	weight_modifier = {
@@ -1853,6 +1857,45 @@ galactic_defense_force = {
 
 	allow = {
 		is_country_type = gdf
+	}
+
+	weight_modifier = {
+		weight = 10000
+	}
+}
+
+#TODO: AI
+imperial_origin_overlord_ai = {
+	aggressiveness = 0.1
+	trade_willingness = 0.25
+	bravery = 0.5
+	combat_bravery = 0.5
+
+	military_spending = 1.0
+	colony_spending = 0.5
+
+	behaviour = {
+		conqueror = no
+		subjugator = no
+		liberator = no
+		opportunist = no
+		slaver = no
+		uplifter = no
+		purger = no
+		displacer = no
+		dominator = no
+		infiltrator = no
+		robot_exploiter = no
+		robot_liberator = no
+		propagator = no
+		multispecies = no
+		crisis_fighter = yes
+		crisis_leader = no
+		attack_neutrals = no
+	}
+
+	allow = {
+		has_origin = origin_imperial_vassal_overlord
 	}
 
 	weight_modifier = {

@@ -129,7 +129,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_FUSION_REACTOR"
 
 	ai_weight = {
@@ -156,7 +156,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 	upgrades_to = "DESTROYER_FUSION_REACTOR"
 
 	ai_weight = {
@@ -183,7 +183,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 	upgrades_to = "CRUISER_FUSION_REACTOR"
 
 	ai_weight = {
@@ -210,7 +210,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 	upgrades_to = "BATTLESHIP_FUSION_REACTOR"
 
 	ai_weight = {
@@ -294,6 +294,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_FUSION_REACTOR"
 
@@ -325,7 +328,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -352,7 +355,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 	upgrades_to = "DESTROYER_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -379,7 +382,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 	upgrades_to = "CRUISER_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -406,7 +409,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 	upgrades_to = "BATTLESHIP_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -490,6 +493,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_COLD_FUSION_REACTOR"
 
@@ -521,7 +527,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -548,7 +554,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 	upgrades_to = "DESTROYER_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -575,7 +581,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 	upgrades_to = "CRUISER_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -602,7 +608,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 	upgrades_to = "BATTLESHIP_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -686,6 +692,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_ANTIMATTER_REACTOR"
 
@@ -717,7 +726,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -744,7 +753,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 	upgrades_to = "DESTROYER_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -771,7 +780,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 	upgrades_to = "CRUISER_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -798,7 +807,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 	upgrades_to = "BATTLESHIP_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -882,6 +891,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_ZERO_POINT_REACTOR"
 
@@ -913,7 +925,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -940,7 +952,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 	upgrades_to = "DESTROYER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -967,7 +979,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 	upgrades_to = "CRUISER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -994,7 +1006,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 	upgrades_to = "BATTLESHIP_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -1116,6 +1128,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 	upgrades_to = "STARBASE_DARK_MATTER_REACTOR"
 
@@ -1148,7 +1163,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 
 	ai_weight = {
 		weight = 6
@@ -1179,7 +1194,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { destroyer crisis_destroyer offspring_destroyer }
 
 	ai_weight = {
 		weight = 6
@@ -1210,7 +1225,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { cruiser crisis_cruiser }
+	size_restriction = { cruiser crisis_cruiser offspring_cruiser }
 
 	ai_weight = {
 		weight = 6
@@ -1241,7 +1256,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { battleship }
+	size_restriction = { battleship offspring_battleship }
 
 	ai_weight = {
 		weight = 6
@@ -1382,6 +1397,9 @@ utility_component_template = {
 		starbase_starfortress
 		starbase_citadel
 		juggernaut
+		orbital_ring_tier_1
+		orbital_ring_tier_2
+		orbital_ring_tier_3
 	}
 
 	ai_weight = {

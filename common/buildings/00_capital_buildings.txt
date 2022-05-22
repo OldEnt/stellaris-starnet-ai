@@ -1849,6 +1849,15 @@ building_hive_capital = {
 
 	triggered_planet_modifier = {
 		potential = {
+			owner = { has_origin = origin_progenitor_hive }
+			is_planet_class = pc_hive
+		}
+		job_spawning_drone_add = -1
+		job_offspring_drone_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = { is_ai = yes }
 			num_districts = {
@@ -1981,6 +1990,15 @@ building_hive_major_capital = {
 
 	triggered_planet_modifier = {
 		potential = {
+			owner = { has_origin = origin_progenitor_hive }
+			is_planet_class = pc_hive
+		}
+		job_spawning_drone_add = -1
+		job_offspring_drone_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = { is_ai = yes }
 			num_districts = {
@@ -2106,7 +2124,7 @@ building_hab_capital = {
 	}
 
 	resources = {
-		category = planet_buildings
+		category = planet_buildings_hab_capital
 		upkeep = {
 			energy = 3
 			alloys = 5
@@ -2121,6 +2139,11 @@ building_hab_capital = {
 		planet_housing_add = 3
 		planet_amenities_add = 3
 		planet_max_buildings_add = @buildings_t1
+	}
+
+	triggered_planet_modifier = {
+		modifier = { planet_stability_add = 1 }
+		mult = modifier:habitat_stability_add
 	}
 
 	triggered_planet_modifier = {
@@ -2141,7 +2164,7 @@ building_hab_capital = {
 			owner = { has_active_tradition = tr_prosperity_void_works }
 		}
 		modifier = {
-			 planet_max_buildings_add = 1
+			planet_max_buildings_add = 1
 		}
 	}
 
@@ -2157,7 +2180,10 @@ building_hab_capital = {
 		potential = {
 			exists = owner
 			owner = {
-				NOT = { has_authority = auth_corporate }
+				NOR = {
+					has_authority = auth_corporate
+					has_origin = origin_void_dwellers
+				}
 				is_regular_empire = yes
 			}
 		}
@@ -2167,7 +2193,10 @@ building_hab_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_authority = auth_corporate }
+			owner = {
+				has_authority = auth_corporate
+				NOT = { has_origin = origin_void_dwellers }
+			}
 		}
 		modifier = {
 			job_executive_add = 1
@@ -2177,10 +2206,23 @@ building_hab_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				has_origin = origin_void_dwellers
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_colonist_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { has_ascension_perk = ap_voidborn }
 		}
 		modifier = {
-			 planet_max_buildings_add = 2
+			planet_max_buildings_add = 2
 		}
 	}
 
@@ -2300,7 +2342,7 @@ building_hab_major_capital = {
 	}
 
 	resources = {
-		category = planet_buildings
+		category = planet_buildings_hab_capital
 		cost = {
 			minerals = @b2_minerals
 		}
@@ -2319,6 +2361,11 @@ building_hab_major_capital = {
 		planet_amenities_add = 5
 		planet_max_buildings_add = @buildings_t2
 		planet_max_branch_office_buildings_add = 1
+	}
+
+	triggered_planet_modifier = {
+		modifier = { planet_stability_add = 1 }
+		mult = modifier:habitat_stability_add
 	}
 
 	triggered_planet_modifier = {
@@ -3450,6 +3497,15 @@ building_imperial_hive_capital = {
 		job_patrol_drone_add = 4
 		planet_max_buildings_add = 11
 		planet_max_branch_office_buildings_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_origin = origin_progenitor_hive }
+			is_planet_class = pc_hive
+		}
+		job_spawning_drone_add = -1
+		job_offspring_drone_add = 1
 	}
 
 	triggered_planet_modifier = {

@@ -273,6 +273,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -312,6 +313,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -351,6 +353,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -395,6 +398,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -433,6 +437,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -471,6 +476,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -613,6 +619,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -653,6 +660,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -693,6 +701,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -738,6 +747,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -777,6 +787,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -816,6 +827,7 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
