@@ -148,3 +148,17 @@ volatile_motes_upkeep_edicts = {
 		base = 0.25
 	}
 }
+
+volatile_motes_upkeep_hyper_relays = {
+	resource = volatile_motes
+	type = upkeep
+	category = megastructures_hyper_relay
+
+	potential = {
+		has_technology = tech_hyper_relays
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}

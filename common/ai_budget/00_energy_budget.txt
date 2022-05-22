@@ -680,3 +680,56 @@ energy_upkeep_campaigns = {
 		weight = 0.1
 	}
 }
+
+energy_upkeep_operations = {
+	resource = energy
+	type = upkeep
+	category = operations
+
+	potential = {
+		# only allocate energy for operations if we can afford them
+		has_resource = {
+			type = energy
+			amount > 2000
+		}
+
+		# and if we have a spy network to use them in!
+		any_spynetwork = {
+			owner = { is_same_value = root }
+			is_spynetwork_level >= 20
+		}
+	}
+
+	fraction = {
+		weight = 0.05
+
+		modifier = {
+			factor = 2
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 40
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 60
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 80
+			}
+		}
+	}
+
+	# based on crisis beacon op upkeep
+	static_max = {
+		base = 20
+	}
+}

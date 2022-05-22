@@ -164,6 +164,24 @@ food_expenditure_buildings = {
 	}
 }
 
+food_expenditure_buildings = {
+	resource = food
+	type = expenditure
+	category = planets
+
+	potential = {
+		country_uses_food = yes
+	}
+
+	fraction = {
+		weight = 0.2
+	}
+
+	static_max = {
+		base = 500
+	}
+}
+
 food_upkeep_ships = {
 	resource = food
 	type = upkeep

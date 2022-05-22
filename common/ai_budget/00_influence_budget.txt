@@ -74,6 +74,21 @@ influence_expenditure_resolutions = {
 	}
 }
 
+influence_expenditure_agreement_proposals = {
+	resource = influence
+	type = expenditure
+	category = agreement_proposals
+
+	potential = {
+		is_overlord = yes
+		ai_wants_to_negotiate_agreement = yes
+	}
+
+	fraction = {
+		weight = 1000
+	}
+}
+
 influence_expenditure_edicts_initial = {
 	resource = influence
 	type = expenditure
@@ -380,5 +395,68 @@ influence_expenditure_habitats = {
 	}
 	static_max = {
 		base = 150
+	}
+}
+
+influence_expenditure_operations = {
+	resource = influence
+	type = expenditure
+	category = operations
+
+	potential = {
+		# only allocate influence for operations if we can afford them
+		has_resource = {
+			type = influence
+			amount > 250
+		}
+
+		# and if we have a spy network to use them in!
+		any_spynetwork = {
+			owner = { is_same_value = root }
+			is_spynetwork_level >= 20
+		}
+	}
+
+	fraction = {
+		weight = 0.05
+
+		modifier = {
+			factor = 2
+			has_tradition = tr_subterfuge_finish
+		}
+
+		modifier = {
+			factor = 2
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 40
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 60
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level >= 80
+			}
+		}
+	}
+
+	# based on gather information op
+	static_min = {
+		base = 20
+	}
+
+	# based on crisis beacon op
+	static_max = {
+		base = 320
 	}
 }

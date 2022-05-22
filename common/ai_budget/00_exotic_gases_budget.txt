@@ -150,3 +150,17 @@ exotic_gases_upkeep_edicts = {
 		base = 0.25
 	}
 }
+
+exotic_gases_upkeep_hyper_relays = {
+	resource = exotic_gases
+	type = upkeep
+	category = megastructures_hyper_relay
+
+	potential = {
+		has_technology = tech_hyper_relays
+	}
+
+	fraction = {
+		weight = 0.1
+	}
+}

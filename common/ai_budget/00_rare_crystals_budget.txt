@@ -35,6 +35,26 @@ rare_crystals_expenditure_trade = {
 	}
 }
 
+rare_crystals_expenditure_hyper_relays = {
+	resource = rare_crystals
+	type = expenditure
+	category = megastructures_hyper_relay
+
+	potential = {
+		has_technology = tech_hyper_relays
+	}
+
+	fraction = {
+		weight = 0.5
+	}
+	static_min = {
+		base = 100
+	}
+	static_max = {
+		base = 100
+	}
+}
+
 rare_crystals_expenditure_planets = {
 	resource = rare_crystals
 	type = expenditure
@@ -151,5 +171,19 @@ rare_crystals_upkeep_edicts = {
 
 	fraction = {
 		base = 0.25
+	}
+}
+
+rare_crystals_upkeep_hyper_relays = {
+	resource = rare_crystals
+	type = upkeep
+	category = megastructures_hyper_relay
+
+	potential = {
+		has_technology = tech_hyper_relays
+	}
+
+	fraction = {
+		weight = 0.1
 	}
 }
