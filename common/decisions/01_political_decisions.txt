@@ -18,10 +18,7 @@ decision_martial_law = {
 	}
 
 	effect = {
-		custom_tooltip = decision_martial_law_effects_custom
-		hidden_effect = {
-			add_modifier = { modifier = "martial_law" days = -1 }
-		}
+		add_modifier = { modifier = "martial_law" days = -1 }
 	}
 
 	ai_weight = {
@@ -71,10 +68,7 @@ decision_martial_law_machine = {
 	}
 
 	effect = {
-		custom_tooltip = decision_martial_law_machine_effects_custom
-		hidden_effect = {
-			add_modifier = { modifier = "compliance_protocols" days = -1 }
-		}
+		add_modifier = { modifier = "compliance_protocols" days = -1 }
 	}
 
 	ai_weight = {
@@ -121,10 +115,7 @@ decision_martial_law_hive = {
 	}
 
 	effect = {
-		custom_tooltip = decision_martial_law_hive_effects_custom
-		hidden_effect = {
-			add_modifier = { modifier = "hunter_killer_drones" days = -1 }
-		}
+		add_modifier = { modifier = "hunter_killer_drones" days = -1 }
 	}
 
 	ai_weight = {
@@ -427,21 +418,14 @@ decision_expel_population = {
 				0 < { set_variable = { which = expel_pop_var value = 1 } } # 1
 			}
 			while = {
-				count = 10
-				limit = {
-					check_variable = {
-						which = expel_pop_var
-						value > 0
-					}
-				}
+				count = expel_pop_var
 
 				random_owned_pop = {
 					limit = {
 						is_robot_pop = no
 						NOR = {
 							has_trait = trait_hive_mind
-							has_trait = trait_nerve_stapled
-							has_trait = trait_zombie
+							can_think = no
 							is_pop_category = ruler
 						}
 					}

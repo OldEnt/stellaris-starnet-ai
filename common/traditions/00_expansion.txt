@@ -4,16 +4,18 @@ tr_expansion_adopt = {
 		planet_colony_development_speed_mult = 0.25
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks < 1
-		}
-		or = {
-			is_ai = no
-			nor = {
-				has_origin = origin_necrophage
-				has_origin = origin_void_dwellers
-				num_guaranteed_colonies < 2
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks < 1
+			}
+			or = {
+				is_ai = no
+				nor = {
+					has_origin = origin_necrophage
+					has_origin = origin_void_dwellers
+					num_guaranteed_colonies < 2
+				}
 			}
 		}
 	}

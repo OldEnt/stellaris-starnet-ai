@@ -246,7 +246,7 @@ building_foundry_2 = {
 			AND = {
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}
@@ -474,9 +474,10 @@ building_foundry_3 = {
 				buildings_no_motes = yes
 			}
 			AND = {
+				exists = owner
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}
@@ -692,13 +693,11 @@ building_factory_1 = {
 		str_factory_allow = yes
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		NOT = {
-			AND = {
-				owner = {
-					is_ai = yes
-				}	
-				has_any_industry_district = no
+		OR = {
+			owner = {
+				is_ai = no
 			}
+			has_any_industry_district = yes
 		}
 	}
 
@@ -1209,10 +1208,6 @@ building_refinery = {
 		building_basic_income_check = yes
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
-
 	destroy_trigger = {
 		free_building_slots = 0
 		exists = owner
@@ -1246,7 +1241,7 @@ building_refinery = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_gases
+				flag = str_is_building_gases
 				days = 720
 			}
 		}
@@ -1322,9 +1317,6 @@ building_chemical_plant = {
 		building_basic_income_check = yes
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
 	destroy_trigger = {
 		free_building_slots = 0
 		exists = owner
@@ -1358,7 +1350,7 @@ building_chemical_plant = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_motes
+				flag = str_is_building_motes
 				days = 720
 			}
 		}
@@ -1434,10 +1426,6 @@ building_crystal_plant = {
 		building_basic_income_check = yes
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
-
 	destroy_trigger = {
 		free_building_slots = 0
 		exists = owner
@@ -1471,7 +1459,7 @@ building_crystal_plant = {
 	on_queued = {
 		owner = {
 			set_timed_country_flag = {
-				flag = str_is_bulding_crystals
+				flag = str_is_building_crystals
 				days = 720
 			}
 		}
@@ -1635,7 +1623,7 @@ building_ministry_production = {
 			AND = {
 				owner = {
 					is_ai = yes
-				}	
+				}
 				has_any_industry_district = no
 			}
 		}
@@ -1643,12 +1631,14 @@ building_ministry_production = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
-			str_num_districts_allindustry = { operator = > num = 3 }
-			str_is_col_factory = yes
-			str_is_col_foundry = yes
-			str_is_col_industrial = yes
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				str_num_districts_allindustry = { operator = > num = 3 }
+				str_is_col_factory = yes
+				str_is_col_foundry = yes
+				str_is_col_industrial = yes
+			}
 		}
 	}
 
@@ -1756,12 +1746,14 @@ building_production_center = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		or = {
-			owner = { is_ai = no }
-			str_num_districts_allindustry = { operator = > num = 3 }
-			str_is_col_foundry = yes
-			str_is_col_factory = yes
-			str_is_col_industrial = yes
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				str_num_districts_allindustry = { operator = > num = 3 }
+				str_is_col_foundry = yes
+				str_is_col_factory = yes
+				str_is_col_industrial = yes
+			}
 		}
 	}
 

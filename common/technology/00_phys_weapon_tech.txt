@@ -508,7 +508,7 @@ tech_arc_emitter_1 = {
 			has_ethic = ethic_fanatic_militarist
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"

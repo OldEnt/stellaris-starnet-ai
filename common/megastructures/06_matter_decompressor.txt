@@ -56,27 +56,11 @@ matter_decompressor_0 = {
 			is_star_class = sc_black_hole
 		}
 		custom_tooltip = {
-			fail_text = "requires_no_existing_megastructure"
-			#will be changed to type-specific string with next translation pass
-			#fail_text = "requires_no_existing_matter_decompressor"
-			from = {
-				NOT = {
-					any_owned_megastructure = {
-						OR = {
-							is_megastructure_type = matter_decompressor_0
-							is_megastructure_type = matter_decompressor_1
-							is_megastructure_type = matter_decompressor_2
-							is_megastructure_type = matter_decompressor_3
-							is_megastructure_type = matter_decompressor_4
-							#is_megastructure_type = matter_decompressor_restored
-						}
-					}
-				}
-			}
+			fail_text = "requires_no_existing_matter_decompressor"
+			from = { NOT = { has_country_flag = built_matter_decompressor_site } }
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
-			#NOT = { has_any_megastructure = yes }
 			has_no_non_gate_megastructure = yes
 		}
 	}

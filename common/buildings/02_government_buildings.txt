@@ -22,10 +22,12 @@ building_noble_estates = {
 
 	allow = {
 		has_upgraded_capital = yes
-		exists = owner
-		or = {
-			num_pops > 40
-			owner = { is_ai = no }
+		hidden_trigger = {
+			exists = owner
+			or = {
+				num_pops > 40
+				owner = { is_ai = no }
+			}
 		}
 	}
 
@@ -324,7 +326,13 @@ building_psi_corps = {
 	base_cap_amount = 1
 
 	potential = {
-		owner = { has_ascension_perk = ap_mind_over_matter }
+		host_has_dlc = "Utopia"
+		owner = {
+			OR = {
+				has_ascension_perk = ap_mind_over_matter
+				has_origin = origin_shroudwalker_apprentice
+			}
+		}
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
 	}
@@ -337,7 +345,12 @@ building_psi_corps = {
 	destroy_trigger = {
 		exists = owner
 		NOT = {
-			owner = { has_ascension_perk = ap_mind_over_matter }
+			owner = {
+				OR = {
+					has_ascension_perk = ap_mind_over_matter
+					has_origin = origin_shroudwalker_apprentice
+				}
+			}
 		}
 	}
 
@@ -384,6 +397,9 @@ building_clone_vats = {
 			owner = { is_ai = no }
 			NOT = { exists = assembling_species }
 			assembling_species = { is_organic_species = yes }
+		}
+		OR = {
+			owner = { is_ai = no }
 			NAND = {
 				free_district_slots = 0
 				free_building_slots <= 1
@@ -610,15 +626,12 @@ building_gaiaseeders_1 = {
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
+			is_planet_class = pc_relic
 		}
 		is_artificial = no
 	}
 
 	allow = {
-		is_ideal_planet_class = {
-			who = owner
-			status = yes
-		}
 		has_upgraded_capital = yes
 	}
 
@@ -628,6 +641,7 @@ building_gaiaseeders_1 = {
 			is_planet_class = pc_city
 			is_planet_class = pc_hive
 			is_planet_class = pc_machine
+			is_planet_class = pc_relic
 			NOT = { exists = owner }
 			owner = {
 				NOR = {
@@ -645,6 +659,7 @@ building_gaiaseeders_1 = {
 		}
 		upkeep = {
 			energy = 20
+			multiplier = value:gaiaseeder_upkeep
 		}
 	}
 
@@ -669,6 +684,7 @@ building_gaiaseeders_2 = {
 		upkeep = {
 			energy = 20
 			exotic_gases = @b2_rare_upkeep
+			multiplier = value:gaiaseeder_upkeep
 		}
 	}
 
@@ -689,10 +705,7 @@ building_gaiaseeders_2 = {
 	}
 
 	allow = {
-		is_ideal_planet_class = {
-			who = owner
-			status = yes
-		}
+		can_build_gaiaseeder = yes
 	}
 
 	planet_modifier = {
@@ -717,6 +730,7 @@ building_gaiaseeders_3 = {
 		upkeep = {
 			energy = 20
 			exotic_gases = @b3_rare_upkeep
+			multiplier = value:gaiaseeder_upkeep
 		}
 	}
 
@@ -737,10 +751,7 @@ building_gaiaseeders_3 = {
 	}
 
 	allow = {
-		is_ideal_planet_class = {
-			who = owner
-			status = yes
-		}
+		can_build_gaiaseeder = yes
 	}
 
 	planet_modifier = {
@@ -778,10 +789,7 @@ building_gaiaseeders_4 = {
 	}
 
 	allow = {
-		is_ideal_planet_class = {
-			who = owner
-			status = yes
-		}
+		can_build_gaiaseeder = yes
 	}
 
 	triggered_desc = {

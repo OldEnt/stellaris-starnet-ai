@@ -5,13 +5,21 @@
 # ##################
 
 tech_basic_science_lab_1 = {
-	cost = 0
+	cost = @tier0cost1
 	area = physics
 	tier = 0
 	category = { computing }
 	start_tech = yes
 
 	# # unlock basic science lab lvl 1
+	weight_modifier = {
+		factor = 1000
+	}
+
+	ai_weight = {
+		weight = 10000
+	}
+
 }
 
 tech_basic_science_lab_2 = {
@@ -39,6 +47,10 @@ tech_basic_science_lab_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -76,6 +88,10 @@ tech_basic_science_lab_3 = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -134,6 +150,10 @@ tech_global_research_initiative = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -634,6 +654,10 @@ tech_physics_1 = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 
 	ai_weight = {
@@ -706,6 +730,10 @@ tech_physics_2 = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 
 	ai_weight = {
@@ -776,6 +804,10 @@ tech_physics_3 = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 
 	ai_weight = {
@@ -816,6 +848,10 @@ tech_administrative_ai = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -1082,6 +1118,10 @@ tech_sapient_ai = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 
 	ai_weight = {
@@ -1124,6 +1164,10 @@ tech_positronic_implants = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -1705,7 +1749,7 @@ tech_encryption_3 = {
 
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -2188,7 +2232,6 @@ tech_shields_1 = {
 	tier = 0
 	category = { field_manipulation }
 	ai_update_type = all
-	prerequisites = { "tech_basic_science_lab_1" }
 	start_tech = yes
 }
 
@@ -2209,6 +2252,10 @@ tech_shields_2 = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
 		}
 	}
 
@@ -2250,6 +2297,10 @@ tech_shields_3 = {
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
 	}
 
 	ai_weight = {
@@ -2290,6 +2341,10 @@ tech_shields_4 = {
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
 	}
 
 	ai_weight = {
@@ -2328,6 +2383,10 @@ tech_shields_5 = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
 		}
 	}
 
@@ -2762,6 +2821,10 @@ tech_power_hub_1 = {
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
+		}
 	}
 
 	ai_weight = {
@@ -2809,6 +2872,10 @@ tech_power_hub_2 = {
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
+		}
 	}
 
 	ai_weight = {
@@ -2843,7 +2910,6 @@ tech_hyper_drive_1 = {
 	area = physics
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_basic_science_lab_1" }
 	start_tech = yes
 
 	is_reverse_engineerable = no
@@ -2870,6 +2936,10 @@ tech_hyper_drive_2 = {
 		modifier = {
 			factor = 1.25
 			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -2917,6 +2987,10 @@ tech_hyper_drive_3 = {
 		modifier = {
 			factor = 1.25
 			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -2988,6 +3062,10 @@ tech_wormhole_stabilization = {
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
 			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
 			factor = @federation_perk_factor
@@ -3080,6 +3158,10 @@ tech_jump_drive_1 = {
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
 			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
 			factor = @federation_perk_factor

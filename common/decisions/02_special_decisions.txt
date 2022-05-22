@@ -2623,7 +2623,7 @@ decision_flood_habitat = {
 		weight = 1
 		modifier = {
 			factor = 2
-			has_planet_flag = advanced_habitat 
+			has_planet_flag = advanced_habitat
 		}
 		modifier = {
 			factor = 3
@@ -2708,7 +2708,7 @@ incinerate_the_flagella = {
 		weight = 100
 		modifier = {
 			factor = 0
-			owner = { 
+			owner = {
 				NOR = {
 					is_robot_empire = yes
 					is_xenophobe = yes

@@ -38,7 +38,7 @@ tech_space_trading = {
 	weight = @tier1weight3
 
 	potential = {
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 
 	weight_modifier = {
@@ -203,7 +203,7 @@ tech_prescient_data_modeling = {
 	}
 
 	modifier = {
-		planet_jobs_energy_produces_mult = 0.05
+		trade_value_mult = 0.05
 	}
 }
 
@@ -666,6 +666,17 @@ tech_food_processing_1 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_valid_civic = civic_agrarian_idyll
+				is_anglers_empire = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			is_catalytic_empire = yes
+		}
 	}
 
 	ai_weight = {
@@ -794,6 +805,10 @@ tech_society_1 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
 	}
 
 	ai_weight = {
@@ -848,6 +863,10 @@ tech_society_2 = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -904,6 +923,10 @@ tech_society_3 = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = scholarium }
 		}
 	}
 
@@ -1036,7 +1059,7 @@ tech_arcane_deciphering = {
 
 #New Worlds Protocol
 tech_colonization_1 = {
-	cost = 0
+	cost = @tier0cost1
 	area = society
 	tier = 0
 	category = { new_worlds }
@@ -1347,7 +1370,7 @@ tech_frontier_health = {
 	weight = @tier1weight2
 
 	potential = {
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 
 	weight_modifier = {
@@ -3285,7 +3308,7 @@ tech_capacity_boosters = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_egalitarian = yes
 		}
 		modifier = {
@@ -4094,6 +4117,10 @@ tech_global_defense_grid = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
 	}
 
 	ai_weight = {
@@ -4207,6 +4234,12 @@ tech_psionic_theory = {
 			}
 		}
 		modifier = {
+			factor = 2
+			any_owned_planet = {
+				has_modifier = pm_shroudwalker_teacher
+			}
+		}
+		modifier = {
 			factor = 0
 			AND = {
 				is_materialist = yes
@@ -4274,6 +4307,7 @@ tech_telepathy = {
 		modifier = {
 			factor = 0
 			host_has_dlc = "Utopia"
+			NOT = { has_origin = origin_shroudwalker_apprentice }
 		}
 		modifier = {
 			factor = 0.50
@@ -4327,6 +4361,12 @@ tech_telepathy = {
 		modifier = {
 			factor = 3
 			has_ethic = "ethic_fanatic_spiritualist"
+		}
+		modifier = {
+			factor = 3
+			any_owned_planet = {
+				has_modifier = pm_shroudwalker_teacher
+			}
 		}
 		modifier = {
 			factor = 4
@@ -4414,6 +4454,12 @@ tech_precognition_interface = {
 			has_ethic = "ethic_fanatic_spiritualist"
 		}
 		modifier = {
+			factor = 3
+			any_owned_planet = {
+				has_modifier = pm_shroudwalker_teacher
+			}
+		}
+		modifier = {
 			factor = 2
 			research_leader = {
 				area = society
@@ -4498,6 +4544,12 @@ tech_thought_enforcement = {
 			factor = 3
 			is_spiritualist = yes
 			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			any_owned_planet = {
+				has_modifier = pm_shroudwalker_teacher
+			}
 		}
 		modifier = {
 			factor = 2
@@ -4594,6 +4646,10 @@ tech_psi_jump_drive_1 = {
 		modifier = {
 			factor = @ap_technological_ascendancy_rare_tech
 			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
 			factor = @federation_perk_factor
@@ -5286,6 +5342,10 @@ tech_global_production_strategy = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = prospectorium }
+		}
 	}
 
 	ai_weight = {
@@ -5369,6 +5429,10 @@ tech_effective_bureaucracy = {
 	category = { statecraft }
 	prerequisites = { "tech_adaptive_bureaucracy" }
 	weight = @tier2weight1
+
+	potential = {
+		is_gestalt = no
+	}
 
 	modifier = {
 		country_edict_fund_add = 20
@@ -5797,7 +5861,7 @@ tech_neural_implants = {
 	# unlocks slave processing plant, slave armies
 
 	potential = {
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		is_regular_empire = yes
 	}
 
 	weight_modifier = {

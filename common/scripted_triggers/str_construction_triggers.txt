@@ -36,9 +36,9 @@ str_enable_clerks = {
 }
 
 str_bureaucratic_allow = {
-	exists = owner
-	str_vanilla_buildings_allow_compatibility = yes
 	hidden_trigger = {
+		exists = owner
+		str_vanilla_buildings_allow_compatibility = yes
 		owner = {
 			or = {
 				is_ai = no
@@ -121,137 +121,143 @@ str_bureaucratic_destroy = {
 }
 
 str_foundry_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	or = {
-		owner = { is_ai = no }
-		and = {
-			is_planet_class = pc_habitat
-			owner = {
-				resource_income_compare = {
-					resource = minerals
-					value > 40
-				}
-			}
-		}
-		and = {
-			years_passed < 10
-			owner = {
-				or = {
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		or = {
+			owner = { is_ai = no }
+			and = {
+				is_planet_class = pc_habitat
+				owner = {
 					resource_income_compare = {
 						resource = minerals
 						value > 40
 					}
-					and = {
-						resource_stockpile_compare = {
-							resource = minerals
-							value > 1200
-						}
+				}
+			}
+			and = {
+				years_passed < 10
+				owner = {
+					or = {
 						resource_income_compare = {
 							resource = minerals
-							value > 30
+							value > 40
+						}
+						and = {
+							resource_stockpile_compare = {
+								resource = minerals
+								value > 1200
+							}
+							resource_income_compare = {
+								resource = minerals
+								value > 30
+							}
 						}
 					}
 				}
+				is_capital = yes
+				owner = { is_gestalt = no }
+				num_buildings = {
+					type = building_foundry_1
+					value = 0
+				}
 			}
-			is_capital = yes
-			owner = { is_gestalt = no }
-			num_buildings = {
-				type = building_foundry_1
-				value = 0
+			and = {
+				owner = { str_bad_raw_economy_trigger = no }
+				years_passed > @str_ai_prioritise_research_until
+				or = {
+					has_planet_flag = prescripted_ideal
+					years_passed > 15
+					has_better_world = no
+				}
+				or = {
+					has_planet_flag = str_acceptable_habitability
+					has_planet_flag = str_good_habitability
+				}
+				str_is_col_foundry = yes
+				str_extra_switcher = no
+				num_pops > 8
 			}
-		}
-		and = {
-			owner = { str_bad_raw_economy_trigger = no }
-			years_passed > @str_ai_prioritise_research_until
-			or = {
-				has_planet_flag = prescripted_ideal
-				years_passed > 15
-				has_better_world = no
-			}
-			or = {
-				has_planet_flag = str_acceptable_habitability
-				has_planet_flag = str_good_habitability
-			}
-			str_is_col_foundry = yes
-			str_extra_switcher = no
-			num_pops > 8
 		}
 	}
 }
 
 str_factory_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	or = {
-		owner = { is_ai = no }
-		and = {
-			owner = { str_bad_raw_economy_trigger = no }
-			or = {
-				has_planet_flag = prescripted_ideal
-				years_passed > 20
-				has_better_world = no
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		or = {
+			owner = { is_ai = no }
+			and = {
+				owner = { str_bad_raw_economy_trigger = no }
+				or = {
+					has_planet_flag = prescripted_ideal
+					years_passed > 20
+					has_better_world = no
+				}
+				or = {
+					has_planet_flag = str_acceptable_habitability
+					has_planet_flag = str_good_habitability
+					has_planet_flag = prescripted_ideal
+				}
+				str_is_col_factory = yes
+				str_extra_switcher = no
+				num_pops > 8
 			}
-			or = {
-				has_planet_flag = str_acceptable_habitability
-				has_planet_flag = str_good_habitability
-				has_planet_flag = prescripted_ideal
-			}
-			str_is_col_factory = yes
-			str_extra_switcher = no
-			num_pops > 8
 		}
 	}
 }
 
 str_research_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	owner = {
-		or = {
-			is_ai = no
-			str_bad_raw_economy_trigger = no
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		owner = {
+			or = {
+				is_ai = no
+				str_bad_raw_economy_trigger = no
+			}
 		}
-	}
-	owner = {
-		or = {
-			is_ai = no
-			lategame = no
-			nor = {
-				not = { has_ascension_perk = ap_become_the_crisis }
-				has_crisis_level = crisis_level_5
-				resource_income_compare = {
-					resource = engineering_research
-					value > 900
+		owner = {
+			or = {
+				is_ai = no
+				lategame = no
+				nor = {
+					not = { has_ascension_perk = ap_become_the_crisis }
+					has_crisis_level = crisis_level_5
+					resource_income_compare = {
+						resource = engineering_research
+						value > 900
+					}
 				}
 			}
 		}
-	}
 
-	owner = {
-		or = {
-			is_ai = no
-			and = {
-				str_raw_ecocrisis_level_1 = no
-				str_consumer_goods_crisis_1 = no
+		owner = {
+			or = {
+				is_ai = no
+				and = {
+					str_raw_ecocrisis_level_1 = no
+					str_consumer_goods_crisis_1 = no
+				}
 			}
 		}
-	}
-	or = {
-		owner = { is_ai = no }
-		has_planet_flag = prescripted_ideal
-		is_capital = yes
-		years_passed > 20
-		has_better_world = no
-	}
-	or = {
-		has_planet_flag = str_good_habitability
-		and = {
-			free_building_slots > 1
-			has_planet_flag = str_acceptable_habitability
+		or = {
+			owner = { is_ai = no }
+			has_planet_flag = prescripted_ideal
+			is_capital = yes
+			years_passed > 20
+			has_better_world = no
 		}
-		owner = { is_ai = no }
-	}
-	or = {
-		owner = { is_ai = no }
-		str_is_col_bureau = no
+		or = {
+			has_planet_flag = str_good_habitability
+			and = {
+				free_building_slots > 1
+				has_planet_flag = str_acceptable_habitability
+			}
+			owner = { is_ai = no }
+		}
+		or = {
+			owner = { is_ai = no }
+			str_is_col_bureau = no
+		}
 	}
 }
 
@@ -280,196 +286,198 @@ str_research_destroy = {
 }
 
 str_industrial_district_allow = {
-	str_industry_allow_compatibility = yes
-	nand = {
-		exists = owner 
-		owner = { is_ai = yes }
-		free_jobs > 5
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = str_designated_energy_guaranteed
-		num_unemployed < 2
-		years_passed < 20
-	}
-
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		years_passed < 8
-		owner = { num_owned_planets > 2 }
-		has_planet_flag = prescripted_ideal
-		owner = {
-			not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
-		}
-	}
-
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = str_bad_habitability
-	}
-
-	or = {
-		and = {
+	hidden_trigger = {
+		str_industry_allow_compatibility = yes
+		nand = {
 			exists = owner
-			num_unemployed >= 2
-			num_pops > 12
-			owner = { str_raw_ecocrisis_level_0 = no }
-			or = {
-				str_is_col_foundry = yes
-				str_is_col_factory = yes
-				str_is_col_industrial = yes
+			owner = { is_ai = yes }
+			free_jobs > 5
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = str_designated_energy_guaranteed
+			num_unemployed < 2
+			years_passed < 20
+		}
+
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			years_passed < 8
+			owner = { num_owned_planets > 2 }
+			has_planet_flag = prescripted_ideal
+			owner = {
+				not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
 			}
 		}
-		and = {
-			nand = {
+
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = str_bad_habitability
+		}
+
+		or = {
+			and = {
 				exists = owner
-				owner = { is_ai = yes }
-				free_amenities < -7
-				free_building_slots = 0
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				years_passed < @str_ai_prioritise_research_until
+				num_unemployed >= 2
+				num_pops > 12
+				owner = { str_raw_ecocrisis_level_0 = no }
 				or = {
-					and = {
-						str_num_districts_milindustry = {
-							operator = >
-							num = 2
+					str_is_col_foundry = yes
+					str_is_col_factory = yes
+					str_is_col_industrial = yes
+				}
+			}
+			and = {
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					free_amenities < -7
+					free_building_slots = 0
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					years_passed < @str_ai_prioritise_research_until
+					or = {
+						and = {
+							str_num_districts_milindustry = {
+								operator = >
+								num = 2
+							}
+							nor = {
+								str_is_col_foundry = yes
+								str_is_col_factory = yes
+								str_is_col_industrial = yes
+							}
 						}
-						nor = {
+						and = {
+							owner = {
+								or = {
+									resource_income_compare = {
+										resource = alloys
+										value > 30
+									}
+									resource_stockpile_compare = {
+										resource = alloys
+										value > 1500
+									}
+								}
+							}
+							str_is_col_foundry = yes
+						}
+						and = {
+							owner = {
+								or = {
+									resource_income_compare = {
+										resource = consumer_goods
+										value > 8
+									}
+
+									resource_stockpile_compare = {
+										resource = consumer_goods
+										value > 1000
+									}
+								}
+							}
+							str_is_col_factory = yes
+						}
+						and = {
+							is_capital = yes
+							or = {
+								and = {
+									years_passed > 15
+									years_passed < @str_ai_prioritise_research_until
+								}
+								owner = {
+									resource_income_compare = {
+										resource = consumer_goods
+										value > 5
+									}
+									resource_income_compare = {
+										resource = alloys
+										value > 25
+									}
+								}
+							}
+						}
+					}
+				}
+
+				nand = {
+					exists = owner
+					owner = {
+						is_ai = yes
+					}
+					nand = {
+						free_jobs < 5
+						owner = {
+							or = {
+								str_bad_raw_economy_trigger = no
+								is_ai = no
+							}
+						}
+						years_passed > 3
+						owner = {
+							or = {
+								resource_stockpile_compare = {
+									resource = minerals
+									value > 600
+								}
+								resource_income_compare = {
+									resource = minerals
+									value > 40
+								}
+							}
+						}
+						owner = {
+							or = {
+								str_raw_ecocrisis_level_1 = no
+								is_ai = no
+							}
+						}
+						or = {
+							owner = { is_ai = no }
+							has_planet_flag = prescripted_ideal
+							has_planet_flag = str_good_habitability
+							is_capital = yes
+							years_passed > 15
+							years_passed < 3
+							has_better_world = no
+						}
+						or = {
+							has_planet_flag = str_acceptable_habitability
+							has_planet_flag = str_good_habitability
+							has_planet_flag = prescripted_ideal
+							is_capital = yes
+							owner = { is_ai = no }
+						}
+						or = {
+							owner = {
+								is_ai = no
+							}
 							str_is_col_foundry = yes
 							str_is_col_factory = yes
 							str_is_col_industrial = yes
-						}
-					}
-					and = {
-						owner = {
-							or = {
-								resource_income_compare = {
-									resource = alloys
-									value > 30
-								}
-								resource_stockpile_compare = {
-									resource = alloys
-									value > 1500
-								}
-							}
-						}
-						str_is_col_foundry = yes
-					}
-					and = {
-						owner = {
-							or = {
-								resource_income_compare = {
-									resource = consumer_goods
-									value > 8
-								}
-
-								resource_stockpile_compare = {
-									resource = consumer_goods
-									value > 1000
-								}
-							}
-						}
-						str_is_col_factory = yes
-					}
-					and = {
-						is_capital = yes
-						or = {
+							is_capital = yes
 							and = {
-								years_passed > 15
-								years_passed < @str_ai_prioritise_research_until
+								num_pops < 16
+								owner = { str_raw_ecocrisis_level_0 = no }
 							}
-							owner = {
-								resource_income_compare = {
-									resource = consumer_goods
-									value > 5
-								}
-								resource_income_compare = {
-									resource = alloys
-									value > 25
+							and = {
+								num_pops < 20
+								owner = { str_raw_ecocrisis_level_0 = no }
+								str_num_districts_milindustry = {
+									operator = >
+									num = 0
 								}
 							}
-						}
-					}
-				}
-			}
-
-			nand = {
-				exists = owner
-				owner = {
-					is_ai = yes
-				}
-				nand = {
-					free_jobs < 5
-					owner = {
-						or = {
-							str_bad_raw_economy_trigger = no
-							is_ai = no
-						}
-					}
-					years_passed > 3
-					owner = {
-						or = {
-							resource_stockpile_compare = {
-								resource = minerals
-								value > 600
-							}
-							resource_income_compare = {
-								resource = minerals
-								value > 40
-							}
-						}
-					}
-					owner = {
-						or = {
-							str_raw_ecocrisis_level_1 = no
-							is_ai = no
-						}
-					}
-					or = {
-						owner = { is_ai = no }
-						has_planet_flag = prescripted_ideal
-						has_planet_flag = str_good_habitability
-						is_capital = yes
-						years_passed > 15
-						years_passed < 3
-						has_better_world = no
-					}
-					or = {
-						has_planet_flag = str_acceptable_habitability
-						has_planet_flag = str_good_habitability
-						has_planet_flag = prescripted_ideal
-						is_capital = yes
-						owner = { is_ai = no }
-					}
-					or = {
-						owner = {
-							is_ai = no
-						}
-						str_is_col_foundry = yes
-						str_is_col_factory = yes
-						str_is_col_industrial = yes
-						is_capital = yes
-						and = {
-							num_pops < 16
-							owner = { str_raw_ecocrisis_level_0 = no }
-						}
-						and = {
-							num_pops < 20
-							owner = { str_raw_ecocrisis_level_0 = no }
 							str_num_districts_milindustry = {
 								operator = >
-								num = 0
+								num = 1
 							}
-						}
-						str_num_districts_milindustry = {
-							operator = >
-							num = 1
 						}
 					}
 				}
@@ -479,337 +487,39 @@ str_industrial_district_allow = {
 }
 
 str_energy_district_allow = {
-	str_energy_allow_compatibility = yes
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = str_designated_alloy_guaranteed
-		num_unemployed < 1
-		years_passed < 20
-	}
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		str_prepare_unemployed_to_resettle = yes
-		or = {
-			free_jobs > 0
-			not = { has_planet_flag = str_five_year_new_colony }
-		}
-		owner = { str_energy_crisis_1 = no }
-	}
-	or = {
-		and = {
-			num_unemployed >= 2
-		}
-		and = {
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				free_jobs > 2
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				has_planet_flag = str_just_removed_energy_district
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				free_amenities < -9
-				free_building_slots = 0
-			}
-			nand = {
-				exists = owner
-				owner = {
-					is_ai = yes
-					resource_income_compare = {
-						resource = energy
-						value > 20
-					}
-					resource_stockpile_compare = {
-						resource = energy
-						value > 900
-					}
-				}
-				or = {
-					str_is_col_foundry = yes
-					str_is_col_factory = yes
-					str_is_col_industrial = yes
-					is_capital = yes
-				}
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				resettlement_cheesy_disable = yes
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				not = {
-					owner = { has_ascension_perk = ap_world_shaper }
-				}
-				or = {
-					free_jobs > 2
-					and = {
-						free_jobs > 1
-						owner = {
-							resource_income_compare = {
-								resource = energy
-								value > 20
-							}
-						}
-					}
-				}
-				years_passed > 9
-			}
-		}
-	}
-}
-
-
-str_food_district_allow = {
-	str_food_allow_compatibility = yes
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		or = {
-			has_planet_flag = str_designated_energy_guaranteed
+	hidden_trigger = {
+		str_energy_allow_compatibility = yes
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
 			has_planet_flag = str_designated_alloy_guaranteed
+			num_unemployed < 1
+			years_passed < 20
 		}
-		years_passed < 20
-		num_unemployed < 1
-		owner = {
-			resource_income_compare = {
-				resource = food
-				value > -5
-			}
-			resource_stockpile_compare = {
-				resource = food
-				value > 200
-			}
-		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		years_passed < 8
-		owner = { num_owned_planets > 2 }
-		has_planet_flag = prescripted_ideal
-		owner = {
-			not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
-		}
-	}
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		str_prepare_unemployed_to_resettle = yes
-		or = {
-			free_jobs > 0
-			not = { has_planet_flag = str_five_year_new_colony }
-		}
-		owner = { str_food_crisis_1 = no }
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		free_jobs > 3
-	}
-	or = {
-		str_force_district_farming = yes
-		owner = {
-			is_catalytic_empire = yes
-			resource_income_compare = {
-				resource = food
-				value < 10
-			}
-		}
-		and = {
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				has_planet_flag = str_just_removed_food_district
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				free_amenities < -9
-				free_building_slots = 0
-				owner = {
-					resource_income_compare = {
-						resource = food
-						value > -20
-					}
-				}
-			}
-			nand = {
-				exists = owner
-				owner = {
-					is_ai = yes
-					resource_income_compare = {
-						resource = food
-						value > 2
-					}
-					resource_stockpile_compare = {
-						resource = food
-						value > 600
-					}
-				}
-				or = {
-					str_is_col_foundry = yes
-					str_is_col_factory = yes
-					str_is_col_industrial = yes
-					is_capital = yes
-				}
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				resettlement_cheesy_disable = yes
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				or = {
-					free_jobs > 3
-					and = {
-						free_jobs > 2
-						owner = {
-							resource_income_compare = {
-								resource = food
-								value > -5
-							}
-						}
-					}
-					and = {
-						free_jobs > 1
-						owner = {
-							resource_income_compare = {
-								resource = food
-								value > 5
-							}
-						}
-					}
-				}
-				years_passed > 9
-			}
-			NAND = {
-				exists = owner
-				owner = { is_ai = yes }
-				owner = {
-					resource_income_compare = {
-						resource = food
-						value > 5
-					}
-				}
-			}
-		}
-	}
-}
-
-str_mineral_district_allow = {
-	str_minerals_allow_compatibility = yes
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		or = {
-			has_planet_flag = str_designated_energy_guaranteed
-			has_planet_flag = str_designated_alloy_guaranteed
-		}
-		num_unemployed < 1
-		years_passed < 20
-		owner = {
-			resource_income_compare = {
-				resource = minerals
-				value > 30
-			}
-		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		years_passed < 30
-		owner = {
-			resource_stockpile_compare = {
-				resource = minerals
-				value > 1500
-			}
-			resource_income_compare = {
-				resource = minerals
-				value > 80
-			}
-		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		years_passed < 8
-		owner = { num_owned_planets > 2 }
-		has_planet_flag = prescripted_ideal
-		owner = {
-			not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
-		}
-	}
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		str_prepare_unemployed_to_resettle = yes
-		or = {
-			free_jobs > 0
-			not = { has_planet_flag = str_five_year_new_colony }
-		}
-		owner = { str_minerals_crisis_1 = no }
-	}
-	or = {
-		and = { num_unemployed > 2 }
-		and = {
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				free_jobs > 2
-			}
-			nand = {
-				exists = owner
-				years_passed < 90
-				owner = {
-					is_ai = yes
-					resource_income_compare = {
-						resource = minerals
-						value > 50
-					}
-					resource_stockpile_compare = {
-						resource = minerals
-						value > 2500
-					}
-				}
-			}
+		NAND = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_prepare_unemployed_to_resettle = yes
 			or = {
-				NAND = {
+				free_jobs > 0
+				not = { has_planet_flag = str_five_year_new_colony }
+			}
+			owner = { str_energy_crisis_1 = no }
+		}
+		or = {
+			and = {
+				num_unemployed >= 2
+			}
+			and = {
+				nand = {
 					exists = owner
 					owner = { is_ai = yes }
-					owner = {
-						or = {
-							resource_income_compare = {
-								resource = minerals
-								value > 30
-							}
-							and = {
-								resource_income_compare = {
-									resource = minerals
-									value > 20
-								}
-								resource_stockpile_compare = {
-									resource = minerals
-									value > 1000
-								}
-							}
-						}
-					}
+					free_jobs > 2
 				}
 				nand = {
 					exists = owner
 					owner = { is_ai = yes }
-					has_planet_flag = str_just_removed_mineral_district
+					has_planet_flag = str_just_removed_energy_district
 				}
 				nand = {
 					exists = owner
@@ -822,11 +532,11 @@ str_mineral_district_allow = {
 					owner = {
 						is_ai = yes
 						resource_income_compare = {
-							resource = minerals
-							value > 60
+							resource = energy
+							value > 20
 						}
 						resource_stockpile_compare = {
-							resource = minerals
+							resource = energy
 							value > 900
 						}
 					}
@@ -845,14 +555,17 @@ str_mineral_district_allow = {
 				nand = {
 					exists = owner
 					owner = { is_ai = yes }
+					not = {
+						owner = { has_ascension_perk = ap_world_shaper }
+					}
 					or = {
-					free_jobs > 2
-					and = {
-						free_jobs > 1
-						owner = {
-							resource_income_compare = {
-								resource = minerals
-								value > 40
+						free_jobs > 2
+						and = {
+							free_jobs > 1
+							owner = {
+								resource_income_compare = {
+									resource = energy
+									value > 20
 								}
 							}
 						}
@@ -864,171 +577,479 @@ str_mineral_district_allow = {
 	}
 }
 
-str_nexus_district_allow = {
-	exists = owner
-	str_city_allow_compatibility = yes
-	or = {
-		owner = {
-			is_ai = no
-		}
-		and = {
-			owner = {
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 3000
-				}
-				resource_income_compare = {
-					resource = alloys
-					value > 50
-				}
-				str_raw_ecocrisis_level_0 = no
-			}
-			num_pops > 15
-			free_housing < 30
-		}
-		and = {
-			owner = {
-				resource_stockpile_compare = {
-					resource = alloys
-					value > 4000
-				}
-				resource_income_compare = {
-					resource = alloys
-					value > 30
-				}
-				str_raw_ecocrisis_level_0 = no
-			}
-			num_pops > 15
-			free_housing < 30
-		}
-		and = {
+
+str_food_district_allow = {
+	hidden_trigger = {
+		str_food_allow_compatibility = yes
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
 			or = {
-				owner = { is_ai = no }
-				or = {
+				has_planet_flag = str_designated_energy_guaranteed
+				has_planet_flag = str_designated_alloy_guaranteed
+			}
+			years_passed < 20
+			num_unemployed < 1
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > -5
+				}
+				resource_stockpile_compare = {
+					resource = food
+					value > 200
+				}
+			}
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			years_passed < 8
+			owner = { num_owned_planets > 2 }
+			has_planet_flag = prescripted_ideal
+			owner = {
+				not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
+			}
+		}
+		NAND = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_prepare_unemployed_to_resettle = yes
+			or = {
+				free_jobs > 0
+				not = { has_planet_flag = str_five_year_new_colony }
+			}
+			owner = { str_food_crisis_1 = no }
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			free_jobs > 3
+		}
+		or = {
+			str_force_district_farming = yes
+			and = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+					resource_income_compare = {
+						resource = food
+						value < 10
+					}
+				}
+			}
+			and = {
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					has_planet_flag = str_just_removed_food_district
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					free_amenities < -9
 					free_building_slots = 0
-					free_housing < 5
-					and = {
-						free_amenities < -8
-						nor = {
-							has_modifier = ai_mdrone_neg1
-							has_modifier = ai_mdrone_neg2
-							has_modifier = ai_mdrone_neg4
-							has_modifier = ai_mdrone_neg8
+					owner = {
+						resource_income_compare = {
+							resource = food
+							value > -20
+						}
+					}
+				}
+				nand = {
+					exists = owner
+					owner = {
+						is_ai = yes
+						resource_income_compare = {
+							resource = food
+							value > 2
+						}
+						resource_stockpile_compare = {
+							resource = food
+							value > 600
+						}
+					}
+					or = {
+						str_is_col_foundry = yes
+						str_is_col_factory = yes
+						str_is_col_industrial = yes
+						is_capital = yes
+					}
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					resettlement_cheesy_disable = yes
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					or = {
+						free_jobs > 3
+						and = {
+							free_jobs > 2
+							owner = {
+								resource_income_compare = {
+									resource = food
+									value > -5
+								}
+							}
+						}
+						and = {
+							free_jobs > 1
+							owner = {
+								resource_income_compare = {
+									resource = food
+									value > 5
+								}
+							}
+						}
+					}
+					years_passed > 9
+				}
+				NAND = {
+					exists = owner
+					owner = { is_ai = yes }
+					owner = {
+						resource_income_compare = {
+							resource = food
+							value > 5
 						}
 					}
 				}
 			}
+		}
+	}
+}
+
+str_mineral_district_allow = {
+	hidden_trigger = {
+		str_minerals_allow_compatibility = yes
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
 			or = {
-				owner = { is_ai = no }
-				free_building_slots < 2
-				free_housing < 3
+				has_planet_flag = str_designated_energy_guaranteed
+				has_planet_flag = str_designated_alloy_guaranteed
 			}
-			or = {
-				owner = { is_ai = no }
-				free_housing < 25
+			num_unemployed < 1
+			years_passed < 20
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 30
+				}
 			}
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			years_passed < 30
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 1500
+				}
+				resource_income_compare = {
+					resource = minerals
+					value > 80
+				}
+			}
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			years_passed < 8
+			owner = { num_owned_planets > 2 }
+			has_planet_flag = prescripted_ideal
+			owner = {
+				not = { has_country_flag = str_has_tried_to_designate_energy_alloy }
+			}
+		}
+		NAND = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_prepare_unemployed_to_resettle = yes
 			or = {
-				owner = { is_ai = no }
+				free_jobs > 0
+				not = { has_planet_flag = str_five_year_new_colony }
+			}
+			owner = { str_minerals_crisis_1 = no }
+		}
+		or = {
+			and = { num_unemployed > 2 }
+			and = {
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					free_jobs > 2
+				}
+				nand = {
+					exists = owner
+					years_passed < 90
+					owner = {
+						is_ai = yes
+						resource_income_compare = {
+							resource = minerals
+							value > 50
+						}
+						resource_stockpile_compare = {
+							resource = minerals
+							value > 2500
+						}
+					}
+				}
+				or = {
+					NAND = {
+						exists = owner
+						owner = { is_ai = yes }
+						owner = {
+							or = {
+								resource_income_compare = {
+									resource = minerals
+									value > 30
+								}
+								and = {
+									resource_income_compare = {
+										resource = minerals
+										value > 20
+									}
+									resource_stockpile_compare = {
+										resource = minerals
+										value > 1000
+									}
+								}
+							}
+						}
+					}
+					nand = {
+						exists = owner
+						owner = { is_ai = yes }
+						has_planet_flag = str_just_removed_mineral_district
+					}
+					nand = {
+						exists = owner
+						owner = { is_ai = yes }
+						free_amenities < -9
+						free_building_slots = 0
+					}
+					nand = {
+						exists = owner
+						owner = {
+							is_ai = yes
+							resource_income_compare = {
+								resource = minerals
+								value > 60
+							}
+							resource_stockpile_compare = {
+								resource = minerals
+								value > 900
+							}
+						}
+						or = {
+							str_is_col_foundry = yes
+							str_is_col_factory = yes
+							str_is_col_industrial = yes
+							is_capital = yes
+						}
+					}
+					nand = {
+						exists = owner
+						owner = { is_ai = yes }
+						resettlement_cheesy_disable = yes
+					}
+					nand = {
+						exists = owner
+						owner = { is_ai = yes }
+						or = {
+						free_jobs > 2
+						and = {
+							free_jobs > 1
+							owner = {
+								resource_income_compare = {
+									resource = minerals
+									value > 40
+									}
+								}
+							}
+						}
+						years_passed > 9
+					}
+				}
+			}
+		}
+	}
+}
+
+str_nexus_district_allow = {
+	hidden_trigger = {
+		exists = owner
+		str_city_allow_compatibility = yes
+		or = {
+			owner = {
+				is_ai = no
+			}
+			and = {
 				owner = {
+					resource_stockpile_compare = {
+						resource = alloys
+						value > 3000
+					}
+					resource_income_compare = {
+						resource = alloys
+						value > 50
+					}
+					str_raw_ecocrisis_level_0 = no
+				}
+				num_pops > 15
+				free_housing < 30
+			}
+			and = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = alloys
+						value > 4000
+					}
 					resource_income_compare = {
 						resource = alloys
 						value > 30
 					}
+					str_raw_ecocrisis_level_0 = no
 				}
-				free_housing < 3
+				num_pops > 15
+				free_housing < 30
 			}
-			or = {
-				owner = { is_ai = no }
-				str_is_col_research = yes
-				free_housing < 20
-			}
-			or = {
-				owner = { is_ai = no }
-				num_pops > 10
-				free_housing < 3
-			}
-			or = {
-				owner = { is_ai = no }
-				owner = {
-					resource_stockpile_compare = {
-						resource = alloys
-						value > 900
+			and = {
+				or = {
+					owner = { is_ai = no }
+					or = {
+						free_building_slots = 0
+						free_housing < 5
+						and = {
+							free_amenities < -8
+							nor = {
+								has_modifier = ai_mdrone_neg1
+								has_modifier = ai_mdrone_neg2
+								has_modifier = ai_mdrone_neg4
+								has_modifier = ai_mdrone_neg8
+							}
+						}
 					}
 				}
-				free_housing < 3
+				or = {
+					owner = { is_ai = no }
+					free_building_slots < 2
+					free_housing < 3
+				}
+				or = {
+					owner = { is_ai = no }
+					free_housing < 25
+				}
+				or = {
+					owner = { is_ai = no }
+					owner = {
+						resource_income_compare = {
+							resource = alloys
+							value > 30
+						}
+					}
+					free_housing < 3
+				}
+				or = {
+					owner = { is_ai = no }
+					str_is_col_research = yes
+					free_housing < 20
+				}
+				or = {
+					owner = { is_ai = no }
+					num_pops > 10
+					free_housing < 3
+				}
+				or = {
+					owner = { is_ai = no }
+					owner = {
+						resource_stockpile_compare = {
+							resource = alloys
+							value > 900
+						}
+					}
+					free_housing < 3
+				}
 			}
 		}
 	}
 }
 
 str_city_district_allow = {
-	str_city_allow_compatibility = yes
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		str_prepare_unemployed_to_resettle = yes
-	}
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		free_housing > 7
-		free_building_slots > 0
-	}
-	NAND = {
-		exists = owner
-		owner = { is_ai = yes }
-		free_housing > 2
-		free_building_slots > 1
-	}
-	or = {
-		and = {
+	hidden_trigger = {
+		str_city_allow_compatibility = yes
+		NAND = {
 			exists = owner
-			num_unemployed >= 2
-			num_pops > 25
-			owner = { str_raw_ecocrisis_level_0 = no }
+			owner = { is_ai = yes }
+			str_prepare_unemployed_to_resettle = yes
 		}
-		and = {
-			NAND = {
+		NAND = {
+			exists = owner
+			owner = { is_ai = yes }
+			free_housing > 7
+			free_building_slots > 0
+		}
+		NAND = {
+			exists = owner
+			owner = { is_ai = yes }
+			free_housing > 2
+			free_building_slots > 1
+		}
+		or = {
+			and = {
 				exists = owner
-				owner = { is_ai = yes }
-				free_housing > 26
-				free_amenities > -2
+				num_unemployed >= 2
+				num_pops > 25
+				owner = { str_raw_ecocrisis_level_0 = no }
 			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				resettlement_cheesy_disable = yes
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				free_building_slots > 0
-				or = {
-					free_housing > 15
-					num_pops < 13
+			and = {
+				NAND = {
+					exists = owner
+					owner = { is_ai = yes }
+					free_housing > 26
+					free_amenities > -2
 				}
-				free_housing > 0
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				or = {
-					num_pops < 11
-					and = {
-						free_building_slots = 0
-						free_jobs < 1
-						free_housing > 20
-						free_amenities > -11
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					resettlement_cheesy_disable = yes
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					free_building_slots > 0
+					or = {
+						free_housing > 15
+						num_pops < 13
+					}
+					free_housing > 0
+				}
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					or = {
+						num_pops < 11
+						and = {
+							free_building_slots = 0
+							free_jobs < 1
+							free_housing > 20
+							free_amenities > -11
+						}
 					}
 				}
-			}
-			nand = {
-				exists = owner
-				owner = { is_ai = yes }
-				owner = { str_raw_ecocrisis_level_1 = yes }
-				free_district_slots > 0
-				free_amenities > -3
-				free_housing > 0
+				nand = {
+					exists = owner
+					owner = { is_ai = yes }
+					owner = { str_raw_ecocrisis_level_1 = yes }
+					free_district_slots > 0
+					free_amenities > -3
+					free_housing > 0
+				}
 			}
 		}
 	}
@@ -1047,11 +1068,13 @@ resettlement_cheesy_disable = {
 
 
 str_hydroponics_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	owner = {
-		or = {
-			is_ai = no
-			has_origin = origin_void_dwellers
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		owner = {
+			or = {
+				is_ai = no
+				has_origin = origin_void_dwellers
+			}
 		}
 	}
 }
@@ -1069,11 +1092,13 @@ str_hydroponics_destroy = {
 }
 
 str_food_processing_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	or = {
-		str_is_col_farming = yes
-		owner = {
-			is_ai=no
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		or = {
+			str_is_col_farming = yes
+			owner = {
+				is_ai=no
+			}
 		}
 	}
 }
@@ -1092,11 +1117,13 @@ str_food_processing_destroy = {
 
 
 str_mineral_purification_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	or = {
-		str_is_col_mining = yes
-		owner = {
-			is_ai=no
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		or = {
+			str_is_col_mining = yes
+			owner = {
+				is_ai=no
+			}
 		}
 	}
 }
@@ -1115,11 +1142,13 @@ str_mineral_purification_destroy = {
 
 
 str_energy_grid_allow = {
-	str_vanilla_buildings_allow_compatibility = yes
-	or = {
-		str_is_col_generator = yes
-		owner = {
-			is_ai=no
+	hidden_trigger = {
+		str_vanilla_buildings_allow_compatibility = yes
+		or = {
+			str_is_col_generator = yes
+			owner = {
+				is_ai=no
+			}
 		}
 	}
 }
@@ -1276,38 +1305,39 @@ str_stronghold_destroy = {
 
 
 str_habitat_housing_allow = {
-
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = energy_habitat
-		str_num_districts_generator = {
-			operator = <
-			num = 2
+	hidden_trigger = {
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = energy_habitat
+			str_num_districts_generator = {
+				operator = <
+				num = 2
+			}
 		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = research_habitat
-		str_num_districts_science = {
-			operator = <
-			num = 2
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = research_habitat
+			str_num_districts_science = {
+				operator = <
+				num = 2
+			}
 		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = mining_habitat
-		str_num_districts_mining = {
-			operator = <
-			num = 2
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = mining_habitat
+			str_num_districts_mining = {
+				operator = <
+				num = 2
+			}
 		}
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		num_pops < 7
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_pops < 7
+		}
 	}
 }
 
@@ -1317,26 +1347,28 @@ str_habitat_housing_destroy = {
 
 
 str_habitat_industry_allow = {
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = energy_habitat
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		is_capital = yes
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = research_habitat
-	}
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
-		has_planet_flag = mining_habitat
-		years_passed > 20
+	hidden_trigger = {
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = energy_habitat
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			is_capital = yes
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = research_habitat
+		}
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+			has_planet_flag = mining_habitat
+			years_passed > 20
+		}
 	}
 }
 
@@ -1345,9 +1377,11 @@ str_habitat_industry_destroy = {
 }
 
 str_habitat_trade_allow = {
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
+	hidden_trigger = {
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+		}
 	}
 }
 
@@ -1359,9 +1393,11 @@ str_habitat_trade_destroy = {
 
 
 str_habitat_culture_allow = {
-	nand = {
-		exists = owner
-		owner = { is_ai = yes }
+	hidden_trigger = {
+		nand = {
+			exists = owner
+			owner = { is_ai = yes }
+		}
 	}
 }
 

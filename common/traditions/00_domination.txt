@@ -16,9 +16,11 @@ tr_domination_adopt = {
 		}
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 3
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 3
+			}
 		}
 	}
 }
@@ -49,7 +51,7 @@ tr_domination_finish = {
 tr_domination_colonial_viceroys = {
 	modifier = {
 		governor_skill_levels = 2
-		country_base_influence_produces_add = 0.5
+		country_traditions_influence_produces_add = 0.5
 	}
 
 	tradition_swap = {

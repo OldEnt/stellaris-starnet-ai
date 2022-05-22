@@ -12,6 +12,10 @@ shipyard = {
 	construction_days = 180
 	initial = yes
 
+	potential = {
+		is_orbital_ring = no
+	}
+
 	resources = {
 		category = starbase_modules
 		cost = {
@@ -50,6 +54,10 @@ anchorage = {
 	icon = "GFX_starbase_anchorage"
 	section = "ANCHORAGE_STARBASE_SECTION"
 	construction_days = 180
+
+	potential = {
+		is_orbital_ring = no
+	}
 
 	resources = {
 		category = starbase_modules
@@ -95,6 +103,10 @@ gun_battery = {
 	icon = GFX_spaceport_modules
 	construction_days = 180
 
+	potential = {
+		is_orbital_ring = no
+	}
+
 	resources = {
 		category = starbase_modules
 		cost = {
@@ -111,6 +123,7 @@ gun_battery = {
 		ship_armor_mult = 0.10
 		starbase_trade_protection_range_add = 1
 		starbase_trade_protection_add = 5
+		starbase_defense_platform_capacity_add = 1
 	}
 
 	ai_build_at_chokepoint = yes
@@ -137,6 +150,10 @@ missile_battery = {
 	icon = "GFX_starbase_missile_battery"
 	construction_days = 180
 
+	potential = {
+		is_orbital_ring = no
+	}
+
 	resources = {
 		category = starbase_modules
 		cost = {
@@ -153,6 +170,7 @@ missile_battery = {
 		ship_armor_mult = 0.10
 		starbase_trade_protection_range_add = 1
 		starbase_trade_protection_add = 5
+		starbase_defense_platform_capacity_add = 1
 	}
 
 	ai_build_at_chokepoint = no
@@ -177,6 +195,7 @@ hangar_bay = {
 	potential = {
 		exists = owner
 		owner = { has_technology = tech_strike_craft_1 }
+		is_orbital_ring = no
 	}
 
 	resources = {
@@ -195,6 +214,7 @@ hangar_bay = {
 		ship_armor_mult = 0.10
 		starbase_trade_protection_range_add = 1
 		starbase_trade_protection_add = 10
+		starbase_defense_platform_capacity_add = 1
 	}
 
 	ai_build_at_chokepoint = no
@@ -219,6 +239,7 @@ solar_panel_network = {
 
 	potential = {
 		exists = owner
+		is_orbital_ring = no
 		owner = {
 			is_gestalt = yes
 			has_technology = "tech_solar_panel_network"
@@ -286,6 +307,7 @@ trading_hub = {
 		owner = {
 			is_gestalt = no
 		}
+		is_orbital_ring = no
 	}
 
 	resources = {

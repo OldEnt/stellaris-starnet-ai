@@ -20,48 +20,50 @@ building_luxury_residence = {
 	}
 
 	allow = {
-		or = {
-			owner = {
-				is_ai = no
-			}
-			not = { has_building = building_luxury_residence }
-		}
-		or = {
-			owner = { is_ai = no }
-			nor = {
-				is_capital = yes
-				num_buildings = {
-					type = building_research_lab_1
-					value > 0
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				num_pops < 13
+				not = { has_building = building_luxury_residence }
 			}
-		}
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -4
-				or = {
-					free_district_slots < 3
-					num_pops < 16
+			or = {
+				owner = { is_ai = no }
+				nor = {
+					is_capital = yes
+					num_buildings = {
+						type = building_research_lab_1
+						value > 0
+					}
+					num_pops < 13
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -4
+					or = {
+						free_district_slots < 3
+						num_pops < 16
+						num_pops > 11
+					}
+					free_amenities > -9
+				}
+				and = {
+					free_jobs > 4
+					free_building_slots > 1
+					free_amenities < -10
 					num_pops > 11
 				}
-				free_amenities > -9
-			}
-			and = {
-				free_jobs > 4
-				free_building_slots > 1
-				free_amenities < -10
-				num_pops > 11
-			}
-			and = {
-				free_building_slots > 1
-				free_jobs > 1
-				free_amenities < -2
-				free_amenities > -6
-				free_district_slots = 0
-				has_building = building_holo_theatres
+				and = {
+					free_building_slots > 1
+					free_jobs > 1
+					free_amenities < -2
+					free_amenities > -6
+					free_district_slots = 0
+					has_building = building_holo_theatres
+				}
 			}
 		}
 	}
@@ -208,7 +210,9 @@ building_paradise_dome = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	destroy_trigger = {
@@ -290,48 +294,50 @@ building_communal_housing = {
 	}
 
 	allow = {
-		or = {
-			owner = {
-				is_ai = no
-			}
-			not = { has_building = building_communal_housing }
-		}
-		or = {
-			owner = { is_ai = no }
-			nor = {
-				is_capital = yes
-				num_buildings = {
-					type = building_research_lab_1
-					value > 0
+		hidden_trigger = {
+			or = {
+				owner = {
+					is_ai = no
 				}
-				num_pops < 13
+				not = { has_building = building_communal_housing }
 			}
-		}
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -4
-				or = {
-					free_district_slots < 3
-					num_pops < 16
+			or = {
+				owner = { is_ai = no }
+				nor = {
+					is_capital = yes
+					num_buildings = {
+						type = building_research_lab_1
+						value > 0
+					}
+					num_pops < 13
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -4
+					or = {
+						free_district_slots < 3
+						num_pops < 16
+						num_pops > 11
+					}
+					free_amenities > -9
+				}
+				and = {
+					free_jobs > 4
+					free_building_slots > 1
+					free_amenities < -10
 					num_pops > 11
 				}
-				free_amenities > -9
-			}
-			and = {
-				free_jobs > 4
-				free_building_slots > 1
-				free_amenities < -10
-				num_pops > 11
-			}
-			and = {
-				free_building_slots > 1
-				free_jobs > 1
-				free_amenities < -2
-				free_amenities > -6
-				free_district_slots = 0
-				has_building = building_holo_theatres
+				and = {
+					free_building_slots > 1
+					free_jobs > 1
+					free_amenities < -2
+					free_amenities > -6
+					free_district_slots = 0
+					has_building = building_holo_theatres
+				}
 			}
 		}
 	}
@@ -474,7 +480,9 @@ building_communal_housing_large = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	destroy_trigger = {
@@ -561,7 +569,9 @@ building_drone_storage = {
 
 	allow = {
 		buildings_simple_allow = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	convert_to = {
@@ -664,21 +674,23 @@ building_hive_warren = {
 
 	allow = {
 		buildings_simple_allow = yes
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_jobs > 0
-				free_amenities < -2
-				free_amenities > -8
-				or = {
-					free_amenities > -10
-					and = {
-						num_pops > 13
-						free_housing < 15
-					}
-					and = {
-						num_pops > 20
-						free_housing < 25
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_jobs > 0
+					free_amenities < -2
+					free_amenities > -8
+					or = {
+						free_amenities > -10
+						and = {
+							num_pops > 13
+							free_housing < 15
+						}
+						and = {
+							num_pops > 20
+							free_housing < 25
+						}
 					}
 				}
 			}
@@ -779,7 +791,9 @@ building_expanded_warren = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = {
+			owner = { is_ai = no }
+		}
 	}
 
 	show_tech_unlock_if = {
@@ -843,25 +857,27 @@ building_holo_theatres = {
 	}
 
 	allow = {
-		or = {
-			owner = { is_ai = no }
-			and = {
-				free_amenities < -5
-				num_pops > 11
-			}
-			and = {
-				free_amenities < -4
-				or = { has_building = building_luxury_residence has_building = building_communal_housing }
-			}
-			and = {
-				free_amenities < 2
-				or = {
-					years_passed > 15
-					free_amenities < -2
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				and = {
+					free_amenities < -5
+					num_pops > 11
 				}
-				owner = { has_origin = origin_default }
-				is_capital = yes
-				not = { has_building = building_holo_theatres }
+				and = {
+					free_amenities < -4
+					or = { has_building = building_luxury_residence has_building = building_communal_housing }
+				}
+				and = {
+					free_amenities < 2
+					or = {
+						years_passed > 15
+						free_amenities < -2
+					}
+					owner = { has_origin = origin_default }
+					is_capital = yes
+					not = { has_building = building_holo_theatres }
+				}
 			}
 		}
 	}
@@ -980,8 +996,10 @@ building_hyper_entertainment_forum = {
 
 	allow = {
 		has_upgraded_capital = yes
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -1207,7 +1225,11 @@ building_spawning_pool = {
 	category = amenity
 
 	potential = {
-		owner = { is_hive_empire = yes }
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			NOT = { has_origin = origin_progenitor_hive }
+		}
 		or = {
 			num_buildings = { type = any value < 15 }
 			owner = { is_ai = no }
@@ -1233,7 +1255,12 @@ building_spawning_pool = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = { is_hive_empire = no }
+		owner = {
+			OR = {
+				is_hive_empire = no
+				has_origin = origin_progenitor_hive
+			}
+		}
 	}
 
 	planet_modifier = {
@@ -1250,6 +1277,9 @@ building_spawning_pool = {
 		}
 	}
 
+	convert_to = {
+		building_offspring_nest
+	}
 	triggered_desc = {
 		trigger = {
 			NAND = {
@@ -1346,6 +1376,176 @@ building_overseer_homes = {
 		}
 		upkeep = {
 			energy = 1
+		}
+	}
+}
+
+#TODO: AI
+building_offspring_nest = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	category = amenity
+
+	potential = {
+		owner = { has_origin = origin_progenitor_hive }
+		or = {
+			num_buildings = { type = any value < 15 }
+			owner = { is_ai = no }
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_origin = origin_progenitor_hive } }
+	}
+
+	#ruined_trigger = {
+	#	has_planet_flag = offspring_defeated
+	#}
+
+	planet_modifier = {
+		job_offspring_drone_add = 1
+	}
+	convert_to = {
+		building_spawning_pool
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			exists = growing_species
+			growing_species = {
+				has_trait = trait_hive_mind
+			}
+		}
+		text = job_offspring_drone_effect_desc
+	}
+	triggered_desc = {
+		text = offspring_nest_tooltip
+	}
+}
+
+#TODO: AI
+building_ranger_lodge = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	category = amenity
+	icon = holding_park_ranger_lodge
+	potential = {
+		always = no
+		NOT = {	has_modifier = slave_colony	}
+		owner = {
+			is_regular_empire = yes
+			has_valid_civic = civic_environmentalist
+		}
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_relic
+		}
+		is_artificial = no
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = no_free_district_for_ranger_lodge
+			planet = {
+				num_free_districts = {
+					type = any
+					value > 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			owner = { NOT = { has_valid_civic = civic_environmentalist } }
+			is_planet_class = pc_city
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_relic
+		}
+	}
+
+	planet_modifier = {
+		job_ranger_add = @b1_jobs
+		deposit_blockers_natural_unity_produces_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_active_resolution = resolution_ecology_integrated_gardens
+			}
+		}
+		deposit_blockers_natural_unity_produces_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_active_resolution = resolution_ecology_environmental_control_board
+			}
+		}
+		deposit_blockers_natural_unity_produces_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+				is_active_resolution = resolution_ecology_paradise_initiative
+			}
+		}
+		deposit_blockers_natural_unity_produces_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_ranger_effect_desc
+	}
+
+	on_built = {
+		planet = {
+			add_blocker = { type = d_big_nature_preserve_blocker }
+		}
+	}
+
+	on_destroy = {
+		planet = {
+			if = {
+				limit = { has_deposit = d_big_nature_preserve_blocker }
+				remove_deposit = d_big_nature_preserve_blocker
+			}
 		}
 	}
 }

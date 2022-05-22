@@ -32,6 +32,7 @@ slavery_normal = {
 			}
 			NOT = {
 				has_slavery_type = {
+					country = from
 					type = slavery_normal
 				}
 			}
@@ -75,6 +76,7 @@ slavery_domestic = {
 			}
 			NOT = {
 				has_slavery_type = {
+					country = from
 					type = slavery_domestic
 				}
 			}
@@ -135,6 +137,7 @@ slavery_military = {
 			}
 			NOT = {
 				has_slavery_type = {
+					country = from
 					type = slavery_military
 				}
 			}
@@ -172,6 +175,7 @@ slavery_indentured = {
 			}
 			NOT = {
 				has_slavery_type = {
+					country = from
 					type = slavery_indentured
 				}
 			}

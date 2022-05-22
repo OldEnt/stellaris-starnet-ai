@@ -3,9 +3,11 @@ tr_versatility_adopt = {
 		planet_pop_assemblers_upkeep_mult = -0.10
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 2
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 2
+			}
 		}
 	}
 }

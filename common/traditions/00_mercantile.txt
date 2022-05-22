@@ -4,10 +4,12 @@ tr_mercantile_adopt = {
 		starbase_trade_collection_range_add = 1
 	}
 	possible = {
-		or = {
-			is_ai = no
-			num_ascension_perks > 2
-			has_valid_civic = civic_merchant_guilds
+		hidden_trigger = {
+			or = {
+				is_ai = no
+				num_ascension_perks > 2
+				has_valid_civic = civic_merchant_guilds
+			}
 		}
 	}
 	ai_weight = {

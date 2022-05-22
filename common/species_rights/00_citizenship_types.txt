@@ -249,9 +249,9 @@ citizenship_assimilation = {
 	}
 
 	ai_will_do = {
-		factor = 100
+		factor = 10000
 		modifier = {
-			factor = 0.001
+			factor = 0.00001
 			is_multiplayer = yes
 			from = { has_country_flag = str_recently_human }
 			not = {

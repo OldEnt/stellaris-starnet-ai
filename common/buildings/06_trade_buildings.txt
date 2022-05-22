@@ -34,15 +34,17 @@ building_commercial_zone = {
 	}
 
 	allow = {
-		or = {
-			owner = { is_ai = no }
-			and = {
-				str_uses_comzones = yes
-				free_amenities < 2
-				or = {
-					str_is_col_research = no
-					str_is_col_bureau = no
-					free_amenities < -5
+		hidden_trigger = {
+			or = {
+				owner = { is_ai = no }
+				and = {
+					str_uses_comzones = yes
+					free_amenities < 2
+					or = {
+						str_is_col_research = no
+						str_is_col_bureau = no
+						free_amenities < -5
+					}
 				}
 			}
 		}
@@ -138,8 +140,10 @@ building_commercial_megaplex = {
 	}
 
 	allow = {
-		owner = {
-			is_ai = no
+		hidden_trigger = {
+			owner = {
+				is_ai = no
+			}
 		}
 	}
 
@@ -214,7 +218,7 @@ building_commercial_megaplex = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-				job = servant
+					job = servant
 					value >= 10
 				}
 			}
@@ -235,10 +239,12 @@ building_galactic_stock_exchange = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		owner = {
-			OR = {
-				is_ai = no
-				is_megacorp = yes		
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no
+					is_megacorp = yes
+				}
 			}
 		}
 	}
