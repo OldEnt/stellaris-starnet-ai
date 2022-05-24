@@ -681,15 +681,15 @@ opinion_status_quo_not_accepted = {
 # Favorable trade deal
 opinion_trade_gift = {
 	opinion = {
-		base = 1
+		base = 0.1
 	}
 
 	accumulative = yes
 
-	max = 100
+	max = 1000
 
 	decay = {
-		base = 2
+		base = 5
 	}
 }
 

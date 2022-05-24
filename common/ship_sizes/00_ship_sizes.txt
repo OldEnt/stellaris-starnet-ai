@@ -375,6 +375,7 @@ titan = {
 					is_scope_type = starbase
 					has_starbase_size >= starbase_citadel
 				}
+#				is_ship_size = enclave_mercenary_station
 			}
 		}
 		custom_tooltip = {
@@ -391,6 +392,7 @@ titan = {
 					is_scope_type = starbase
 					has_starbase_building = titan_yards
 				}
+#				is_ship_size = enclave_mercenary_station
 			}
 		}
 	}

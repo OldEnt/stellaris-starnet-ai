@@ -577,6 +577,7 @@ citizenship_slavery = {
 			from = {
 				is_authoritarian = no
 				is_xenophobe = no
+				is_hive_empire = no
 			}
 		}
 		modifier = {
@@ -588,6 +589,10 @@ citizenship_slavery = {
 				is_active_resolution = "resolution_greatergood_balance_in_the_middle"
 				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
 			}
+		}
+		modifier = {
+			factor = 2
+			has_species_flag = syncretic_species@from
 		}
 	}
 }

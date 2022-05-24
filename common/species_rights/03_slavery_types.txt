@@ -194,6 +194,7 @@ slavery_indentured = {
 				has_valid_civic = civic_slaver_guilds
 				has_origin = origin_syncretic_evolution
 			}
+			is_same_species = owner_main_species
 		}
 		modifier = {
 			factor = 0.15

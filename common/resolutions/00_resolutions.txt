@@ -1209,6 +1209,7 @@ resolution_ecology_paradise_initiative = {
 	}
 
 	effect = {
+		#custom_tooltip = resolution_ecology_paradise_initiative_tooltip
 		hidden_effect = {
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_ecology days = @resolution_flag_timer }
 			add_modifier = {

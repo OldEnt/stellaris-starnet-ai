@@ -1791,7 +1791,11 @@ first_contact_protocol = {
 		AI_weight = {
 			modifier = {
 				factor = 2
-				is_homicidal = yes
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 2
+				is_xenophobe = yes
 			}
 			modifier = {
 				factor = 2
