@@ -17,61 +17,38 @@
 # Shipyard
 sshipyard = {
 	potential = {
-        has_starbase_size > starbase_outpost
-        OR = {
-            count_starbase_modules = {
-                type = shipyard
-                count > 0
-            }
-			AND = {
-				exists = owner
-				owner = {
-					NOT = {
-						any_owned_starbase = {
-							has_starbase_size > starbase_outpost
-							has_starbase_module = shipyard
-						}
-					}
-				}
-			}      
-        }
-    }
+		has_starbase_size > starbase_outpost
+	}
 
 	weight_modifier = {
-		base = 100
-		modifier = {
-			add = 100
-			count_starbase_modules = {
+		base = 0
+		complex_trigger_modifier = { #+100 for each shipyard
+			trigger = count_starbase_modules
+			parameters = {
 				type = shipyard
-				count > 1
 			}
+			mode = add
+			mult = 100
 		}
 		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = shipyard
-				count > 2
-			}
+			add = 500
+			owner = { needs_shipyard = yes }
+			not = { has_starbase_module = anchorage }
 		}
 		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = shipyard
-				count > 3
-			}
+			add = 200
+			owner = { needs_shipyard = yes }
+			has_starbase_module = anchorage 
 		}
+
 		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = shipyard
-				count > 4
-			}
-		}
-		modifier = {
-			add = 100
-			count_starbase_modules = {
-				type = shipyard
-				count > 5
+			add = 1000
+			owner = {
+				NOT = {
+					any_owned_starbase = {
+						has_starbase_module = shipyard
+					}
+				}
 			}
 		}
 	}
@@ -82,7 +59,7 @@ sshipyard = {
 		}
 
 		ratio = {
-			base = 0.25
+			base = 0.20
 			modifier = {
 				add = 0.10
 				exists = owner
@@ -125,6 +102,9 @@ sshipyard = {
 			resource_silo = {
 				base = 5
 			}
+			dragon_hatchery = {
+				base = 1.00
+			}
 		}
 
 		modules = {
@@ -147,14 +127,10 @@ sshipyard = {
 sanchorage = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		count_starbase_modules = {
-			type = anchorage
-			count > 0
-		}
 	}
 
 	weight_modifier = {
-		base = 100
+		base = 0
 		complex_trigger_modifier = { #+100 for each anchorage
 			trigger = count_starbase_modules
 			parameters = {
@@ -162,6 +138,11 @@ sanchorage = {
 			}
 			mode = add
 			mult = 100
+		}
+		modifier = {
+			add = 500
+			owner = { needs_shipyard = no }
+			not = { has_starbase_module = shipyard }
 		}
 	}
 
@@ -171,26 +152,12 @@ sanchorage = {
 		}
 
 		ratio = {
-			base = 0.45
+			base = 0.65
 			modifier = {
 				add = 0.05
 				exists = owner
 				owner = {
 					has_ethic = ethic_militarist
-				}
-			}
-			modifier = {
-				add = 0.1
-				exists = owner
-				owner = {
-					used_naval_capacity_percent > 0.7
-				}
-			}
-			modifier = {
-				add = 0.1
-				exists = owner
-				owner = {
-					used_naval_capacity_percent > 0.9
 				}
 			}
 			modifier = {
@@ -244,16 +211,12 @@ sanchorage = {
 strading_hub = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		count_starbase_modules = {
-			type = trading_hub
-			count > 0
-		}
 		exists = owner
 		owner = { NOT = { has_ethic = ethic_gestalt_consciousness } }
 	}
 
 	weight_modifier = {
-		base = 100
+		base = 0
 		complex_trigger_modifier = { #+100 for each trading_hub
 			trigger = count_starbase_modules
 			parameters = {
@@ -270,7 +233,7 @@ strading_hub = {
 		}
 
 		ratio = {
-			base = 0.3
+			base = 0.15
 			modifier = {
 				add = 0.05
 				exists = owner
@@ -327,7 +290,7 @@ sfortress = {
 	}
 
 	weight_modifier = {
-		base = 75
+		base = 0
 		complex_trigger_modifier = { #+75 for each gun_battery
 			trigger = count_starbase_modules
 			parameters = {
@@ -352,6 +315,18 @@ sfortress = {
 			mode = add
 			mult = 75
 		}
+		modifier = {
+			add = 150
+			solar_system = { is_bottleneck_system = yes }
+			closest_system = {
+				max_steps = 3
+				limit = {
+					exists = owner
+					owner = { is_rival = root }
+				}
+				exists = this
+			}
+		}
 	}
 
 	ai_design = {
@@ -360,7 +335,7 @@ sfortress = {
 		}
 
 		ratio = {
-			base = 0.25
+			base = 0.15
 			modifier = {
 				add = 0.10
 				exists = owner
@@ -420,16 +395,12 @@ sfortress = {
 strading_hub_gestalt = {
 	potential = {
 		has_starbase_size > starbase_outpost
-		count_starbase_modules = {
-			type = trading_hub
-			count > 0
-		}
 		exists = owner
 		owner = { has_ethic = ethic_gestalt_consciousness }
 	}
 
 	weight_modifier = {
-		base = 100
+		base = 0
 		complex_trigger_modifier = { #+100 for each trading_hub
 			trigger = count_starbase_modules
 			parameters = {
