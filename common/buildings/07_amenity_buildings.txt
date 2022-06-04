@@ -40,8 +40,18 @@ building_luxury_residence = {
 			}
 			or = {
 				owner = { is_ai = no }
+				num_buildings = {
+					type = building_luxury_residence
+					value < 1
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				free_jobs > 2
+			}
+			or = {
+				owner = { is_ai = no }
 				and = {
-					free_jobs > 0
 					free_amenities < -4
 					or = {
 						free_district_slots < 3
@@ -51,14 +61,7 @@ building_luxury_residence = {
 					free_amenities > -9
 				}
 				and = {
-					free_jobs > 4
 					free_building_slots > 1
-					free_amenities < -10
-					num_pops > 11
-				}
-				and = {
-					free_building_slots > 1
-					free_jobs > 1
 					free_amenities < -2
 					free_amenities > -6
 					free_district_slots = 0
@@ -85,7 +88,9 @@ building_luxury_residence = {
 					type = building_research_lab_1
 					value > 1
 				}
-				free_amenities > 4
+				owner = { lategame = no }
+				free_jobs < 1
+				free_amenities > 6
 				free_building_slots = 0
 				owner = {
 					is_ai = yes
@@ -314,8 +319,18 @@ building_communal_housing = {
 			}
 			or = {
 				owner = { is_ai = no }
+				num_buildings = {
+					type = building_communal_housing
+					value < 1
+				}
+			}
+			or = {
+				owner = { is_ai = no }
+				free_jobs > 2
+			}
+			or = {
+				owner = { is_ai = no }
 				and = {
-					free_jobs > 0
 					free_amenities < -4
 					or = {
 						free_district_slots < 3
@@ -325,14 +340,7 @@ building_communal_housing = {
 					free_amenities > -9
 				}
 				and = {
-					free_jobs > 4
 					free_building_slots > 1
-					free_amenities < -10
-					num_pops > 11
-				}
-				and = {
-					free_building_slots > 1
-					free_jobs > 1
 					free_amenities < -2
 					free_amenities > -6
 					free_district_slots = 0
@@ -346,11 +354,27 @@ building_communal_housing = {
 		exists = owner
 		OR = {
 			AND = {
-				owner = { is_ai = yes }
 				free_building_slots = 0
-				free_jobs < -3
+				free_jobs < -2
 				free_housing > 10
 				free_district_slots = 0
+				free_amenities > 2
+				owner = {
+					is_ai = yes
+				}
+			}
+			and = {
+				num_buildings = {
+					type = building_research_lab_1
+					value > 1
+				}
+				owner = { lategame = no }
+				free_jobs < 1
+				free_amenities > 6
+				free_building_slots = 0
+				owner = {
+					is_ai = yes
+				}
 			}
 			AND = {
 				is_planet_class = pc_habitat
