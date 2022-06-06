@@ -1,0 +1,4 @@
+# Reduces error.log and CWTools spam.
+str_dmm_display_exception_for_ = {
+	has_leader_flag = dmm_display_exception_for_@prevprev
+}

@@ -1,0 +1,83 @@
+# Scope: country. This effect minimalises error.log spam.
+str_dmm_add_button_exception = {
+	if = {
+		limit = {
+			is_multiplayer = yes
+			NOT = {
+				is_same_value = root				# Prevents players from locking themselves out in a multiplayer game.
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					event_target:dmm_global_country = {
+						any_owned_leader = {
+							has_leader_flag = starnet_menu_name_flag
+							has_leader_flag = dmm_display_exception_for_@prevprev
+						}
+					}
+				}
+			}
+			dmm_add_button_exception = {
+				DMM_FLAG = starnet_menu_name_flag
+			}
+			root = {
+				country_event = {
+					id = str_menu.3
+				}
+			}
+		}
+		else = {
+			dmm_remove_button_exception = {
+				DMM_FLAG = starnet_menu_name_flag
+			}
+			root = {
+				country_event = {
+					id = str_menu.3
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_multiplayer = no
+		}
+		if = {
+			limit = {
+				NOT = {
+					event_target:dmm_global_country = {
+						any_owned_leader = {
+							has_leader_flag = starnet_menu_name_flag
+							has_leader_flag = dmm_display_exception_for_@prevprev
+						}
+					}
+				}
+			}
+			dmm_add_button_exception = {
+				DMM_FLAG = starnet_menu_name_flag
+			}
+			root = {
+				country_event = {
+					id = str_menu.3
+				}
+			}
+		}
+		else = {
+			dmm_remove_button_exception = {
+				DMM_FLAG = starnet_menu_name_flag
+			}
+			root = {
+				country_event = {
+					id = str_menu.3
+				}
+			}
+		}
+	}
+	else = {
+		root = {
+			country_event = {
+				id = str_menu.3
+			}
+		}
+	}
+}

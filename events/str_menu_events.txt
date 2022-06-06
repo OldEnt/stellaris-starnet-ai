@@ -33,6 +33,1110 @@ country_event = {
 	}
 
 	option = {
+		allow = {
+			custom_tooltip = {
+				fail_text = str_menu.1_dmm_installed
+				has_global_flag = dmm_installed
+			}
+		}
+		name = str_menu.1.dmm
+		custom_tooltip = str_menu.1.dmm.tooltip
+		hidden_effect = {
+			country_event = {
+				id = str_menu.3				# Closes main menu window and redirects to DMM options.
+			}
+		}
+	}
+
+	option = {
 		name = str_menu.1.exit
+	}
+}
+
+country_event = {
+	id = str_menu.3
+	title = str_menu.3.name
+	desc = str_menu.3.desc
+	# picture = GFX_evt_spymaster
+	diplomatic = yes
+	picture_event_data = {
+		portrait = root.owner_main_species
+		room = enclave_curator_room
+	}
+	custom_gui = str_menu_window
+	is_triggered_only = yes
+	immediate = {
+		clear_global_event_target = str_str_event_target_human_player_live_1
+		clear_global_event_target = str_str_event_target_human_player_live_2
+		clear_global_event_target = str_str_event_target_human_player_live_3
+		clear_global_event_target = str_str_event_target_human_player_live_4
+		clear_global_event_target = str_str_event_target_human_player_live_5
+		clear_global_event_target = str_str_event_target_human_player_live_6
+		clear_global_event_target = str_str_event_target_human_player_live_7
+		clear_global_event_target = str_str_event_target_human_player_live_8
+		clear_global_event_target = str_str_event_target_human_player_live_9
+		clear_global_event_target = str_str_event_target_human_player_live_10
+		clear_global_event_target = str_str_event_target_human_player_live_11
+		clear_global_event_target = str_str_event_target_human_player_live_12
+		clear_global_event_target = str_str_event_target_human_player_live_13
+		clear_global_event_target = str_str_event_target_human_player_live_14
+		clear_global_event_target = str_str_event_target_human_player_live_15
+		clear_global_event_target = str_str_event_target_human_player_live_16
+		clear_global_event_target = str_str_event_target_human_player_live_17
+		clear_global_event_target = str_str_event_target_human_player_live_18
+		clear_global_event_target = str_str_event_target_human_player_live_19
+		clear_global_event_target = str_str_event_target_human_player_live_20
+		clear_global_event_target = str_str_event_target_human_player_live_21
+		clear_global_event_target = str_str_event_target_human_player_live_22
+		clear_global_event_target = str_str_event_target_human_player_live_23
+		clear_global_event_target = str_str_event_target_human_player_live_24
+		clear_global_event_target = str_str_event_target_human_player_live_25
+		clear_global_event_target = str_str_event_target_human_player_live_26
+		clear_global_event_target = str_str_event_target_human_player_live_27
+		clear_global_event_target = str_str_event_target_human_player_live_28
+		clear_global_event_target = str_str_event_target_human_player_live_29
+		clear_global_event_target = str_str_event_target_human_player_live_30
+		clear_global_event_target = str_str_event_target_human_player_live_31
+		clear_global_event_target = str_str_event_target_human_player_live_32
+		clear_global_event_target = str_str_event_target_human_player_live_33
+		clear_global_event_target = str_str_event_target_human_player_live_34
+		clear_global_event_target = str_str_event_target_human_player_live_35
+		clear_global_event_target = str_str_event_target_human_player_live_36
+		clear_global_event_target = str_str_event_target_human_player_live_37
+		clear_global_event_target = str_str_event_target_human_player_live_38
+		clear_global_event_target = str_str_event_target_human_player_live_39
+		clear_global_event_target = str_str_event_target_human_player_live_40
+		clear_global_event_target = str_str_event_target_human_player_live_41
+		clear_global_event_target = str_str_event_target_human_player_live_42
+		clear_global_event_target = str_str_event_target_human_player_live_43
+		clear_global_event_target = str_str_event_target_human_player_live_44
+		clear_global_event_target = str_str_event_target_human_player_live_45
+		clear_global_event_target = str_str_event_target_human_player_live_46
+		clear_global_event_target = str_str_event_target_human_player_live_47
+		clear_global_event_target = str_str_event_target_human_player_live_48
+		clear_global_event_target = str_str_event_target_human_player_live_49
+		clear_global_event_target = str_str_event_target_human_player_live_50
+		every_country = {
+			limit = {
+				OR = {
+					AND = {
+						is_multiplayer = yes
+						is_ai = no
+					}
+					is_multiplayer = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_1
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_1
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_2
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_2
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_3
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_3
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_4
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_4
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_5
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_5
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_6
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_6
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_7
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_7
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_8
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_8
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_9
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_9
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_10
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_10
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_11
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_11
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_12
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_12
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_13
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_13
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_14
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_14
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_15
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_15
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_16
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_16
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_17
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_17
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_18
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_18
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_19
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_19
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_20
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_20
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_21
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_21
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_22
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_22
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_23
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_23
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_24
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_24
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_25
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_25
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_26
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_26
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_27
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_27
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_28
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_28
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_29
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_29
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_30
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_30
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_31
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_31
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_32
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_32
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_33
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_33
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_34
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_34
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_35
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_35
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_36
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_36
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_37
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_37
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_38
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_38
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_39
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_39
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_40
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_40
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_41
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_41
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_42
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_42
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_43
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_43
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_44
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_44
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_45
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_45
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_46
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_46
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_47
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_47
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_48
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_48
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_49
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_49
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_str_event_target_human_player_live_50
+					}
+				}
+				save_global_event_target_as = str_str_event_target_human_player_live_50
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_1
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_1
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_1 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_2
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_2
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_2 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_3
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_3
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_3 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_4
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_4
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_4 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_5
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_5
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_5 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_6
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_6
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_6 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_7
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_7
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_7 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_8
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_8
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_8 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_9
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_9
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_9 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_10
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_10
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_10 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_11
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_11
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_11 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_12
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_12
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_12 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_13
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_13
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_13 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_14
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_14
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_14 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_15
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_15
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_15 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_16
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_16
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_16 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_17
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_17
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_17 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_18
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_18
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_18 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_19
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_19
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_19 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_20
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_20
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_20 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_21
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_21
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_21 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_22
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_22
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_22 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_23
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_23
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_23 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_24
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_24
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_24 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_25
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_25
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_25 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_26
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_26
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_26 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_27
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_27
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_27 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_28
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_28
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_28 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_29
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_29
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_29 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_30
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_30
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_30 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_31
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_31
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_31 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_32
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_32
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_32 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_33
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_33
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_33 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_34
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_34
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_34 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_35
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_35
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_35 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_36
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_36
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_36 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_37
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_37
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_37 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_38
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_38
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_38 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_39
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_39
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_39 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_40
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_40
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_40 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_41
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_41
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_41 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_42
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_42
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_42 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_43
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_43
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_43 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_44
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_44
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_44 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_45
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_45
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_45 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_46
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_46
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_46 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_47
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_47
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_47 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_48
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_48
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_48 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_49
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_49
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_49 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.player_live_50
+		custom_tooltip = str_menu.3.z.tooltip
+		trigger = {
+			exists = event_target:str_str_event_target_human_player_live_50
+		}
+		hidden_effect = {
+			event_target:str_str_event_target_human_player_live_50 = {
+				str_dmm_add_button_exception = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.3.z
+		custom_tooltip = str_menu.3.z.tooltip
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1				# Closes Advanced Options window and redirects to main menu.
+				days = 0
+				random = 0
+			}
+		}
 	}
 }

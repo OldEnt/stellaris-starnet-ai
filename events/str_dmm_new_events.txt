@@ -87,3 +87,68 @@ event = {
 		}
 	}
 }
+
+# Calls str_dmm_new.5 . on_single_player_save_game_load
+event = {
+	id = str_dmm_new.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = str_dmm_support_installed
+		}
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = {
+				id = str_dmm_new.5
+			}
+		}
+	}
+}
+
+
+# Marks original game host country for DMM access in multiplayer. on_game_start_country
+country_event = {
+	id = str_dmm_new.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_global_flag = str_dmm_support_installed
+		}
+	}
+	immediate = {
+		set_country_flag = str_original_game_host		# Marks original game host country.
+		set_global_flag = str_dmm_support_installed
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = str_num_human_players_start_counted
+				}
+			}
+			event_target:global_event_country = {
+				set_global_flag = str_num_human_players_start_counted
+				set_variable = {
+					which = str_var_country_num_human_players_start
+					value = 0
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					event_target:global_event_country = {
+						change_variable = {
+							which = str_var_country_num_human_players_start							# Counts number of human players on_game_start
+							value = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
