@@ -94,17 +94,16 @@ corvette = {
 		alloys = 1
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
 		fraction = {
-			base = 0
+			base = 100
 			modifier = {
-				add = 25
-				uses_standard_ship_sizes = yes
+				add = -90
+				has_technology = tech_cruisers
 			}
 			modifier = {
-				factor = 1.5
-				is_hive_empire = yes
+				add = -90
+				has_technology = tech_destroyers
 			}
 		}
 	}
@@ -170,13 +169,15 @@ destroyer = {
 		alloys = 2
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
 		fraction = {
-			base = 0
 			modifier = {
-				add = 25
-				uses_standard_ship_sizes = yes
+				add = 90
+				has_technology = tech_destroyers
+			}
+			modifier = {
+				add = -90
+				has_technology = tech_cruisers
 			}
 		}
 	}
@@ -230,17 +231,20 @@ cruiser = {
 		alloys = 4
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
 		fraction = {
-			base = 0
 			modifier = {
-				add = 25
-				uses_standard_ship_sizes = yes
+				add = 90
+				has_technology = tech_cruisers
 			}
 			modifier = {
-				factor = 1.5
-				is_preferred_weapons = weapon_type_strike_craft
+				add = -90
+				has_technology = tech_battleships
+			}
+			modifier = {
+				add = 30
+				has_technology = tech_battleships
+				has_country_flag = str_need_to_counter_corvettes
 			}
 		}
 	}
@@ -294,17 +298,16 @@ battleship = {
 		alloys = 8
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
 		fraction = {
-			base = 0
 			modifier = {
-				add = 25
-				uses_standard_ship_sizes = yes
+				add = 90
+				has_technology = tech_battleships
 			}
 			modifier = {
-				factor = 1.5
-				is_preferred_weapons = weapon_type_strike_craft
+				add = -30
+				has_technology = tech_battleships
+				has_country_flag = str_need_to_counter_corvettes
 			}
 		}
 	}
@@ -409,11 +412,10 @@ titan = {
 		alloys = 16
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
 		min = 1
-		max = 3
-		planet_mult = 0.1
+		max = 10
+		# planet_mult = 0.1
 	}
 }
 
@@ -462,11 +464,14 @@ constructor = {
 		}
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
-		min = value:desired_constructors_min
-		system_mult = 0.15
-		max = value:desired_constructors_max
+		min = 3
+		max = 6
+		system_mult = 0.1
+		# vanilla:
+		# min = value:desired_constructors_min
+		# system_mult = 0.15
+		# max = value:desired_constructors_max
 	}
 }
 
@@ -588,9 +593,12 @@ colonizer = {
 			alloys = @colony_upkeep_alloys
 		}
 	}
-	#TODO: AI - ship_data moved from 00_country_types.txt
+
 	ai_ship_data = {
-		min = value:desired_colonizers
+		min = 2
+		max = 3
+		# vanilla:
+		# min = value:desired_colonizers
 	}
 }
 
@@ -645,9 +653,12 @@ sponsored_colonizer = {
 			has_civic = civic_private_prospectors
 		}
 	}
-	#TODO: AI - ship_data moved from 00_country_types.txt
+
 	ai_ship_data = {
-		min = value:desired_colonizers_base
+		min = 1
+		max = 3
+		# vanilla:
+		# min = value:desired_colonizers_base
 	}
 }
 
@@ -699,9 +710,12 @@ lithoid_colonizer = {
 	potential_country = {
 		has_origin = origin_lithoid
 	}
-	#TODO: AI - ship_data moved from 00_country_types.txt
+
 	ai_ship_data = {
-		min = value:desired_colonizers_base
+		min = 2
+		max = 3
+		# vanilla:
+		# min = value:desired_colonizers_base
 	}
 }
 
@@ -758,11 +772,13 @@ science = {
 		}
 	}
 
-	#TODO: AI - ship_data moved from 00_country_types.txt
 	ai_ship_data = {
-		min = value:desired_science_ships
-		system_mult = value:desired_science_ships_system_mult
-		max = 5
+		min = 4
+		max = 6
+		# vanilla:
+		# min = value:desired_science_ships
+		# system_mult = value:desired_science_ships_system_mult
+		# max = 5
 	}
 }
 
