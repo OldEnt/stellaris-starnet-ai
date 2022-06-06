@@ -242,7 +242,7 @@ middle_imperial_plan = {
 	}
 
 	pops = 1000
-	empire_size = 10
+	# empire_size = 10
 
 	ai_weight = {
 		weight = 5000

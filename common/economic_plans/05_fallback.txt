@@ -74,7 +74,7 @@ early_default_plan = {
 	}
 
 	pops = 500
-	empire_size = 1
+	# empire_size = 1
 
 	potential = {
 		not = { has_country_flag = str_reconsider_plans }

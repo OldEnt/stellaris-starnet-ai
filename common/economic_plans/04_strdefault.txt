@@ -975,7 +975,7 @@ subplan = {
 	}
 
 	pops = 800
-	empire_size = 1
+	# empire_size = 1
 
 	ai_weight = {
 		weight = 5000
@@ -1314,7 +1314,7 @@ str_early_boom_plan = {
 	}
 
 	pops = 8000
-	empire_size = 1
+	# empire_size = 1
 
 	ai_weight = {
 		weight = 1000

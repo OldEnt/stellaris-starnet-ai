@@ -102,7 +102,7 @@ early_crisis_plan = {
 	}
 
 	pops = 500
-	empire_size = 1
+	# empire_size = 1
 
 	ai_weight = {
 		weight = 100

@@ -189,7 +189,7 @@ early_default_plan_4 = {
 	}
 
 	pops = 5000
-	empire_size = 1
+	# empire_size = 1
 
 	ai_weight = {
 		weight = 900
