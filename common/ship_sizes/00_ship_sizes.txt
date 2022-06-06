@@ -105,6 +105,10 @@ corvette = {
 				add = -90
 				has_technology = tech_destroyers
 			}
+			modifier = {
+				mult = 0
+				uses_standard_ship_sizes = no
+			}
 		}
 	}
 }
@@ -179,6 +183,10 @@ destroyer = {
 				add = -90
 				has_technology = tech_cruisers
 			}
+			modifier = {
+				mult = 0
+				uses_standard_ship_sizes = no
+			}
 		}
 	}
 }
@@ -246,6 +254,10 @@ cruiser = {
 				has_technology = tech_battleships
 				has_country_flag = str_need_to_counter_corvettes
 			}
+			modifier = {
+				mult = 0
+				uses_standard_ship_sizes = no
+			}
 		}
 	}
 }
@@ -308,6 +320,10 @@ battleship = {
 				add = -30
 				has_technology = tech_battleships
 				has_country_flag = str_need_to_counter_corvettes
+			}
+			modifier = {
+				mult = 0
+				uses_standard_ship_sizes = no
 			}
 		}
 	}
