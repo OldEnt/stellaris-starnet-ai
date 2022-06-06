@@ -1,0 +1,13 @@
+﻿l_german:
+
+str_name_dynamic_mod_menu_new: "Dynamic Mod Menu"
+str_menu_name: "StarNet AI"
+str_tech_fork_menu_name: "StarTech AI"
+str_or_tech_fork_switch: "[GetName_str_or_tech_fork_switch]"
+str_trigger_yes: "§G$YES$§!"
+str_trigger_no: "§R$NO$§!"
+str_menu.1.name: "$str_or_tech_fork_switch$ $SETTINGS$"
+str_menu.1.desc: "$SETTINGS$."
+str_menu.1.doomstack: "$MERGE$ $OUTLINER_FLEETS$ - [GetName_str_doomstack_switch]"
+str_menu.1.doomstack.tooltip: "[GetName_str_or_tech_fork_switch]: $CUSTOM$ $MERGE$ $NAME_AI$ $FLEETS$"
+str_menu.1.exit: "$EXIT$"

@@ -7,6 +7,11 @@ country_event = {
 	hide_window = yes
 	fire_only_once = no
 	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = str_doomstack_disabled
+		}
+	}
 	immediate = {
 		if = {
 			limit = {

@@ -1,0 +1,89 @@
+namespace = str_dmm_new
+# New Dynamic Mod Menu support.
+event = {
+	id = str_dmm_new.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		dmm_register_mod = {
+			DMM_NAME = str_menu_name
+			DMM_FLAG = starnet_menu_name_flag
+		}
+	}
+}
+
+country_event = {
+	id = str_dmm_new.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		from = {
+			has_leader_flag = starnet_menu_name_flag
+		}
+	}
+	immediate = {
+		country_event = {
+			id = str_menu.1
+		}
+	}
+}
+
+# Hide Dynamic Mod Menu button in a multiplayer-started game for all except orginal game host country. Execute event again to enable for all.
+# Fired from on_game_start.
+# DMM_FLAG = starnet_menu_name_flag	
+# Mod prefix: str
+event = {
+	id = str_dmm_new.3
+	hide_window = yes
+	is_triggered_only = yes
+	# trigger = {
+	# 	has_global_flag = dmm_installed	# Too early for the game to check this flag.
+	# }
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = str_global_flag_dmm_exceptions_set
+				}
+				is_multiplayer = yes				# 	Hide Dynamic Mod Menu button only when in multiplayer.
+			}
+			dmm_hide_button_all = {
+				DMM_FLAG = starnet_menu_name_flag				# Hide Dynamic Mod Menu button for all countries.
+			}
+			every_country = {
+				limit = {
+					is_ai = no					# Iterate through every player country. Too early for the game to trigger check country_flags.
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = str_global_flag_dmm_found_host							# Country with lowest ID gets to execute effect first - always original game host if iterating through players only.
+						}
+					}
+					set_global_flag = str_global_flag_dmm_found_host					# Lock out other countries as soon as first one is found by the script.
+					set_country_flag = str_global_flag_dmm_found_host					# Debug.
+					dmm_add_button_exception = {
+						DMM_FLAG = starnet_menu_name_flag						# Add exception to allow Dynamic Mod Menu button for scoped country.
+					}
+					set_country_flag = str_country_flag_dmm_add_button_exception_from_hide					# Mark country as being exempt from hide button rule.
+					set_global_flag = str_global_flag_dmm_exceptions_set					# Debug.
+				}
+			}
+		}
+		# Below removes all restrictions on Dynamic Mod Menu button when event is fired again.
+		else = {
+			dmm_show_button_all = {
+				DMM_FLAG = starnet_menu_name_flag				# Allow all countries to access menu button.
+			}
+			every_country = {
+				limit = {
+					has_country_flag = str_country_flag_dmm_add_button_exception_from_hide					# Find all countries marked as being exempt from rule.
+				}
+				dmm_remove_button_exception = {
+					DMM_FLAG = starnet_menu_name_flag					# Remove exception as rule is now dmm_show_button_all.
+				}
+			}
+			remove_global_flag = str_global_flag_dmm_exceptions_set			# Debug.
+		}
+	}
+}

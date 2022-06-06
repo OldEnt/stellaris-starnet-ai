@@ -1,0 +1,38 @@
+namespace = str_menu
+
+country_event = {
+	id = str_menu.1
+	title = str_menu.1.name
+	desc = str_menu.1.desc
+	# picture = GFX_evt_fallen_empire_awakes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = root.owner_main_species
+		room = enclave_curator_room
+	}
+	custom_gui = str_menu_window
+	is_triggered_only = yes
+
+	option = {
+		name = str_menu.1.doomstack
+		custom_tooltip = str_menu.1.doomstack.tooltip
+		switch = {
+			trigger = has_global_flag
+			str_doomstack_disabled = {
+				remove_global_flag = str_doomstack_disabled
+			}
+			default = {
+				set_global_flag = str_doomstack_disabled
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1
+			}
+		}
+	}
+
+	option = {
+		name = str_menu.1.exit
+	}
+}

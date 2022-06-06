@@ -1,0 +1,18 @@
+on_game_start = {
+	events = {
+		str_dmm_new.1		# New Dynamic Mod Menu support.
+		str_dmm_new.3		# Hide Dynamic Mod Menu button in a multiplayer-started game for all except orginal game host country. Execute event again to enable for all.
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		str_dmm_new.1		# New Dynamic Mod Menu support.
+	}
+}
+
+dmm_mod_selected = {
+	events = {
+		str_dmm_new.2		# New Dynamic Mod Menu support.
+	}
+}

@@ -1,0 +1,35 @@
+defined_text = {
+	name = GetName_str_or_tech_fork_switch
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_tech_fork
+			}
+		}
+		localization_key = str_menu_name
+	}
+	text = {
+		trigger = {
+			has_global_flag = str_tech_fork
+		}
+		localization_key = str_tech_fork_menu_name
+	}
+}
+
+defined_text = {
+	name = GetName_str_doomstack_switch
+	text = {
+		trigger = {
+			has_global_flag = str_doomstack_disabled
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_doomstack_disabled
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
