@@ -122,6 +122,10 @@ unity_expenditure_leaders = {
 
 	fraction = {
 		weight = 0.4
+		modifier = {
+			add = 10
+			years_passed < 20	# Important for scientists
+		}
 	}
 }
 
