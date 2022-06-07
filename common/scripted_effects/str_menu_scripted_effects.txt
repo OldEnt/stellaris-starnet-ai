@@ -81,3 +81,9 @@ str_dmm_add_button_exception = {
 		}
 	}
 }
+
+# This is a dupe effect to minimalise error.log and CWTools spam. DO NOT USE.
+str_dummy_log_cleaner_effect = {
+	set_leader_flag = starnet_menu_name_flag
+	set_leader_flag = dmm_display_exception_for_@prevprev
+}

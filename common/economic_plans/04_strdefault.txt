@@ -1296,7 +1296,8 @@ str_early_boom_plan = {
 		no_emergency = yes
 	}
 
-	scaling_subplan = {
+	subplan = {
+		scaling = yes
 		set_name = "general scaling"
 		potential = {
 			has_monthly_income = { resource = energy value > 100 }			

@@ -25,3 +25,6 @@ job_starnet_spice_melange_antifarmer: "StarNet AI construction decisions workaro
 job_starnet_spice_melange_antifarmer_desc: "StarNet AI construction decisions workaround"
 mod_job_starnet_spice_melange_farmer_add: "StarNet AI construction decisions workaround"
 mod_job_starnet_spice_melange_antifarmer_add: "StarNet AI construction decisions workaround"
+
+starnet_spice_melange: "starnet_spice_melange"
+starnet_spice_melange_desc: "StarNet AI fake resource tricking AI to behave in a certain way, as AI will try to satisfy demand for it."

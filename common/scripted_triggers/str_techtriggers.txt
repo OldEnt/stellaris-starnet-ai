@@ -46,7 +46,7 @@ reroll_society = {
 				has_tech_option = tech_repeatable_improved_army_damage
 				has_tech_option = tech_repeatable_improved_army_health
 				has_tech_option = tech_repeatable_improved_core_system_cap
-				has_tech_option = tech_repeatable_improved_edict_length
+				# has_tech_option = tech_repeatable_improved_edict_length
 				has_tech_option = tech_repeatable_improved_leader_life_span
 				has_tech_option = tech_repeatable_naval_cap
 			}
