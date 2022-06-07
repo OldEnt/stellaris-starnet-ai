@@ -23,7 +23,7 @@ tradition_prosperity = {
 	}
 
 	ai_weight = {
-		factor = 50
+		factor = 250
 		modifier = {
 			factor = 5
 			num_ascension_perks > 0

@@ -29,6 +29,10 @@ tradition_supremacy = {
 			has_ascension_perk = ap_become_the_crisis
 		}
 		modifier = {
+			factor = 10
+			years_passed > 40
+		}
+		modifier = {
 			factor = 2
 			has_ethic = ethic_militarist
 		}
