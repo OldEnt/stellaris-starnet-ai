@@ -22,7 +22,7 @@ building_robot_assembly_plant = {
 						assembling_species = { is_robotic_species = yes }
 					}
 				}
-				#	owner = { num_pops < 1000 }
+				owner = { is_ai = yes num_pops < 1000 }
 				or = {
 					AND = {
 						str_is_col_factory = no
@@ -102,10 +102,10 @@ building_robot_assembly_plant = {
 				has_ascension_perk = ap_engineered_evolution
 				is_materialist = no
 			}
-			#	owner = {
-			#		is_ai = yes
-			#		num_pops > 1500
-			#	}
+			owner = {
+				is_ai = yes
+				num_pops > 1500
+			}
 		}
 	}
 
