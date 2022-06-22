@@ -181,15 +181,6 @@ building_stronghold = {
 
 	resources = {
 		category = planet_buildings_strongholds
-		produces = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_active_tradition = tr_unyielding_resistance_is_frugal
-				}
-			}
-			unity = 3
-		}
 		cost = {
 			minerals = @b1_minerals
 		}
@@ -268,15 +259,6 @@ building_fortress = {
 
 	resources = {
 		category = planet_buildings_strongholds
-		produces = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_active_tradition = tr_unyielding_resistance_is_frugal
-				}
-			}
-			unity = 3
-		}
 		cost = {
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost

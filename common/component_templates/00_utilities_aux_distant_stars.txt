@@ -17,8 +17,8 @@ utility_component_template = {
 	}
 
 	modifier = {
-		ship_hull_regen_add_perc = 1.5
-		ship_armor_regen_add_perc = 2
+		ship_hull_regen_add_perc = 0.75
+		ship_armor_regen_add_perc = 1
 	}
 
 	prerequisites = { tech_nanite_repair_system }

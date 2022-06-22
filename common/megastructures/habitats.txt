@@ -4,7 +4,7 @@ habitat_0 = {
 	entity = ""
 	construction_entity = "habitat_phase_01_entity"
 	portrait = "GFX_megastructure_construction_background"
-	place_entity_on_planet_plane = yes
+	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 1800
 

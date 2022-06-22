@@ -1,5 +1,5 @@
 #############
-# Machine buildings
+# Robot buildings
 #############
 
 building_robot_assembly_plant = {
@@ -316,6 +316,157 @@ building_machine_assembly_complex = {
 	}
 }
 
+#############
+# Hive buildings
+#############
+
+building_spawning_pool = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	category = amenity
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			NOT = { has_origin = origin_progenitor_hive }
+		}
+		or = {
+			num_buildings = { type = any value < 15 }
+			owner = { is_ai = no }
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+				str_raw_ecocrisis_level_0 = no
+			}
+			num_buildings = {
+				type = building_spawning_pool
+				value = 0
+			}
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 3
+			job_starnet_spice_melange_antifarmer_add = -3
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_hive_empire = no
+				has_origin = origin_progenitor_hive
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_spawning_drone_add = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	convert_to = {
+		building_offspring_nest
+	}
+	triggered_desc = {
+		trigger = {
+			NAND = {
+				exists = owner
+				owner = { has_origin = origin_necrophage }
+				exists = growing_species
+				growing_species = {
+					NOT = { has_trait = trait_hive_mind }
+				}
+			}
+		}
+		text = job_spawning_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_necrophage }
+			exists = growing_species
+			growing_species = {
+				NOT = { has_trait = trait_hive_mind }
+			}
+		}
+		text = job_spawning_drone_necrophage_effect_desc
+	}
+	triggered_desc = {
+		text = spawning_pool_tooltip
+	}
+}
+
+#TODO: AI
+building_offspring_nest = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	category = amenity
+
+	potential = {
+		owner = { has_origin = origin_progenitor_hive }
+		or = {
+			num_buildings = { type = any value < 15 }
+			owner = { is_ai = no }
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_origin = origin_progenitor_hive } }
+	}
+
+	#ruined_trigger = {
+	#	has_planet_flag = offspring_defeated
+	#}
+
+	planet_modifier = {
+		job_offspring_drone_add = 1
+	}
+	convert_to = {
+		building_spawning_pool
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_progenitor_hive }
+			exists = growing_species
+			growing_species = {
+				has_trait = trait_hive_mind
+			}
+		}
+		text = job_offspring_drone_effect_desc
+	}
+	triggered_desc = {
+		text = offspring_nest_tooltip
+	}
+}
+
 #######################################
 # Necrophage "consumption" buildings
 #######################################
@@ -325,6 +476,7 @@ building_necrophage_elevation_chamber = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	position_priority = 100
+	skip_automation_upgrading = yes #colony automation will not try to upgrade this
 
 	desc = {
 		trigger = {
@@ -667,6 +819,123 @@ building_necrophage_house_of_apotheosis = {
 	}
 }
 
+#############
+# Clone vats
+#############
+
+building_clone_vats = {
+	base_buildtime = @b1_time
+
+	category = pop_assembly
+
+	base_cap_amount = 1
+
+	potential = {
+		exists = owner
+		#	OR = {
+		#		owner = { is_ai = no }
+		#		and = {
+		#			free_building_slots > 0
+		#			owner = { num_pops < 1000 }
+		#		}
+		#	}
+		owner = { has_ascension_perk = ap_engineered_evolution }
+		NOT = { has_modifier = resort_colony }
+		OR = {
+			owner = { is_ai = no }
+			NOT = { exists = assembling_species }
+			assembling_species = { is_organic_species = yes }
+		}
+		OR = {
+			owner = { is_ai = no }
+			NAND = {
+				free_district_slots = 0
+				free_building_slots <= 1
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			AND = {
+				owner = { is_ai = yes }
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
+			#	and = {
+			#		owner = { is_ai = yes num_pops > 1500 }
+			#	}
+		}
+	}
+
+	planet_modifier = {
+		planet_pop_assembly_organic_add = 3
+	}
+
+	resources = {
+		category = planet_buildings
+
+		# Base cost
+		cost = {
+			minerals = 500
+		}
+		# Org/Lith cost
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
+			food = 500
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 500
+		}
+
+		# Base upkeep
+		upkeep = {
+			energy = 2
+		}
+		# Org/Lith upkeep
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
+			food = 30
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 30
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			OR = {
+				has_building = building_robot_assembly_plant
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_robotic_species = yes }
+				}
+			}
+		}
+		text = tooltip_organic_and_artificial_assembly_warning
+	}
+}
+
 building_clone_army_clone_vat = {
 	icon = building_ancient_relics
 	base_buildtime = 90
@@ -795,7 +1064,9 @@ building_clone_army_clone_vat = {
 	is_essential = yes
 }
 
-### Permanent Employment Building
+#############
+# Permanent Employment Building
+#############
 
 building_posthumous_employment_center = {
 	base_buildtime = @b1_time

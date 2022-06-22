@@ -3655,7 +3655,7 @@ tech_refit_standards = {
 	weight = @tier3weight1
 
 	modifier = {
-		country_ship_upgrade_cost_mult = -0.20
+		starbase_shipyard_build_speed_mult = 0.10
 		ships_upkeep_mult = -0.05
 	}
 

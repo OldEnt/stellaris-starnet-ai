@@ -2887,10 +2887,7 @@ building_autocurating_vault = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-		}
+	planet_modifier = {
 		planet_administrators_produces_mult = 0.15
 	}
 
@@ -2943,9 +2940,9 @@ building_citadel_of_faith = {
 	}
 
 	planet_modifier = {
-		job_priest_add = @b2_jobs
 		job_high_priest_add = 1
 		pop_ethic_spiritualist_attraction_mult = 0.20
+		planet_administrators_produces_mult = 0.15
 	}
 
 	resources = {
@@ -2958,6 +2955,9 @@ building_citadel_of_faith = {
 			energy = @b2_upkeep
 			rare_crystals = @b2_rare_upkeep
 		}
+		produces = {
+			unity = 10
+		}
 	}
 
 	prerequisites = {
@@ -2965,7 +2965,7 @@ building_citadel_of_faith = {
 	}
 
 	triggered_desc = {
-		text = job_priest_effect_desc
+		text = job_high_priest_effect_desc
 	}
 }
 
@@ -3031,7 +3031,7 @@ building_corporate_vault = {
 	}
 
 	planet_modifier = {
-		planet_managers_produces_mult = 0.15
+		planet_administrators_produces_mult = 0.15
 	}
 
 
@@ -3096,7 +3096,7 @@ building_alpha_hub = {
 	}
 
 	planet_modifier = {
-		planet_administrators_unity_produces_mult = 0.15
+		planet_administrators_produces_mult = 0.15
 	}
 
 	prerequisites = {
@@ -3291,5 +3291,55 @@ building_organic_paradise = {
 
 	show_tech_unlock_if = {
 		owner = { has_valid_civic = civic_machine_servitor }
+	}
+
+	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
+
+	#science
+	ai_resource_production = {
+		unity = 20
+		physics_research = 20
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#alloys
+	ai_resource_production = {
+		unity = 20
+		alloys = 20
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = alloys
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#cgs
+	ai_resource_production = {
+		unity = 20
+		consumer_goods = 20
+
+		trigger = {
+			has_unemployed_pop_of_category = bio_trophy
+
+			planet_resource_compare = {
+				resource = consumer_goods
+				value >= 100
+				type = produces
+			}
+		}
 	}
 }

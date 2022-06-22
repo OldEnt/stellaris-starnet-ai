@@ -70,6 +70,7 @@
 #		}
 #	}
 #
+# 							#Note: these effects are also covered by on_actions on_fleet_lease_started and on_fleet_lease_ended
 #	fleet_manager = {								#block of Country Fleet Manager settings
 #		on_contract_started = {						#effect fired when fleet owned by country is hired
 #		}											#Scope - Fleet, From - Country that hired the fleet

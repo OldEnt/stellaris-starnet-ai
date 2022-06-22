@@ -11,6 +11,10 @@ tech_basic_science_lab_1 = {
 	category = { computing }
 	start_tech = yes
 
+	feature_flags = {
+		unlocks_auto_research
+	}
+
 	# # unlock basic science lab lvl 1
 	weight_modifier = {
 		factor = 1000
@@ -1005,11 +1009,6 @@ tech_automated_exploration = {
 	category = { computing }
 	weight = @tier1weight2
 
-	#allow auto-explore on science ships
-	feature_flags = {
-		tech_automated_exploration
-	}
-
 	modifier = {
 		science_ship_survey_speed = 0.25
 	}
@@ -1097,10 +1096,6 @@ tech_sapient_ai = {
 	category = { computing }
 	prerequisites = { "tech_self_aware_logic" }
 	weight = @tier4weight1
-
-	feature_flags = {
-		unlocks_auto_research
-	}
 
 	modifier = {
 		all_technology_research_speed = 0.05

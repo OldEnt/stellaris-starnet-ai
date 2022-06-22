@@ -623,6 +623,7 @@ wg_subjugation = {
 		}
 		NOR = {
 			has_valid_civic = civic_inwards_perfection
+			FROM = { has_valid_civic = civic_inwards_perfection }
 			has_authority = auth_corporate
 			has_ascension_perk = ap_become_the_crisis
 		}
@@ -756,6 +757,7 @@ wg_subjugation = {
 			}
 
 			last_created_country = {
+				set_origin_effect = yes
 				if = {
 					limit = {
 						tech_unlocked_ratio = {
@@ -824,32 +826,7 @@ wg_subjugation = {
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 		}
@@ -965,6 +942,7 @@ wg_tribute = {
 			}
 
 			last_created_country = {
+				set_origin_effect = yes
 				set_subject_of = {
 					who = root
 					preset = preset_tributary
@@ -981,32 +959,7 @@ wg_tribute = {
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 		}
@@ -1103,23 +1056,10 @@ wg_megacorp_subjugate = {
 					switch = {
 						trigger = has_policy_flag
 						oppressive_terms = {
-							if = {
-								limit = {
-									ROOT = { is_ai = yes }
-								}
-								FROM = {
-									set_subject_of = {
-										who = ROOT
-										preset = preset_subsidiary_oppressive_ai
-									}
-								}
-							}
-							else = {
-								FROM = {
-									set_subject_of = {
-										who = ROOT
-										preset = preset_subsidiary_oppressive
-									}
+							FROM = {
+								set_subject_of = {
+									who = ROOT
+									preset = preset_subsidiary_oppressive
 								}
 							}
 						}
@@ -1159,27 +1099,15 @@ wg_megacorp_subjugate = {
 			}
 
 			last_created_country = {
+				set_origin_effect = yes
 				ROOT = {
 					switch = {
 						trigger = has_policy_flag
 						oppressive_terms = {
-							if = {
-								limit = {
-									ROOT = { is_ai = yes }
-								}
-								PREV = {
-									set_subject_of = {
-										who = ROOT
-										preset = preset_subsidiary_oppressive_ai
-									}
-								}
-							}
-							else = {
-								PREV = {
-									set_subject_of = {
-										who = ROOT
-										preset = preset_subsidiary_oppressive
-									}
+							FROM = {
+								set_subject_of = {
+									who = ROOT
+									preset = preset_subsidiary_oppressive
 								}
 							}
 						}
@@ -1213,32 +1141,7 @@ wg_megacorp_subjugate = {
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 		}
@@ -1319,38 +1222,17 @@ wg_force_ideology = {
 			root = { add_opinion_modifier = { modifier = opinion_we_liberated who = last_created_country } }
 			last_created_country = { add_opinion_modifier = { modifier = opinion_liberated_us who = root } }
 
+			last_created_country = {
+				set_origin_effect = yes
+			}
+
 			if = {
 				limit = {
 					root = { has_authority = auth_corporate }
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 
@@ -1378,67 +1260,53 @@ wg_force_ideology = {
 		}
 	}
 	on_accept = {
-		custom_tooltip = wg_force_ideology_accept
-		custom_tooltip = wg_force_ideology_accept_2
+
+		from = {
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				custom_tooltip = wg_force_ideology_accept
+				custom_tooltip = wg_force_ideology_accept_2
+			}
+
+			every_subject = {
+				limit = {
+					is_gestalt = no
+					any_war = {
+						is_war_participant = {
+							who = prev
+							side = prevprev
+						}
+					}
+				}
+				custom_tooltip = wg_force_ideology_accept_subject
+			}
+		}
+
 		if = {
 			limit = {
 				from = { has_federation = yes }
 			}
 			custom_tooltip = wg_force_ideology_accept_3
 		}
+
 		hidden_effect = {
 			from = {
-				copy_ethos_and_authority = root
 				if = {
 					limit = {
-						has_civic = civic_galactic_sovereign
+						is_gestalt = no
 					}
-					force_remove_civic = civic_galactic_sovereign
+					impose_ideology_effect = yes
 				}
-				if = {
+	
+				every_subject = {
 					limit = {
-						has_civic = civic_galactic_sovereign_megacorp
+						is_gestalt = no
 					}
-					force_remove_civic = civic_galactic_sovereign_megacorp
+					impose_ideology_effect = yes
 				}
 			}
-			if = {
-				limit = {
-					root = { has_authority = auth_corporate }
-					from = { has_authority = auth_corporate }
-				}
-				from = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
-				}
-			}
-			from = { add_modifier = { modifier = recently_liberated days = 7300 } }
-			add_opinion_modifier = { modifier = opinion_we_liberated who = from }
-			from = { add_opinion_modifier = { modifier = opinion_liberated_us who = root } }
 			end_rivalry = from
 			from = { end_rivalry = root }
 			every_system_within_border = {
@@ -1791,24 +1659,68 @@ wg_expel_corp = {
 		}
 	}
 	on_status_quo = {
-		hidden_effect = {
-			every_owned_planet = {
-				limit = { has_branch_office = from }
-				branch_office_owner = { add_resource = { energy = 1000 } }
-				close_branch_office = yes
+		if = {
+			limit = {
+				is_overlord = no
+			}
+			custom_tooltip = wg_expel_corp_status_quo_effects
+			hidden_effect = {
+				every_owned_planet = {
+					limit = { has_branch_office = from }
+					branch_office_owner = { add_resource = { energy = 1000 } }
+					close_branch_office = yes
+				}
 			}
 		}
-		custom_tooltip = wg_expel_corp_status_quo_effects
+		else = {
+			custom_tooltip = wg_expel_corp_subject_status_quo_effects
+			hidden_effect = {
+				every_owned_planet = {
+					limit = { has_branch_office = from }
+					branch_office_owner = { add_resource = { energy = 1000 } }
+					close_branch_office = yes
+				}
+				every_subject = {
+					every_owned_planet = {
+						limit = { has_branch_office = from }
+						branch_office_owner = { add_resource = { energy = 1000 } }
+						close_branch_office = yes
+					}
+				}
+			}
+		}
 	}
 	on_accept = {
-		hidden_effect = {
-			every_owned_planet = {
-				limit = { has_branch_office = from }
-				close_branch_office = yes
-				owner = { add_resource = { energy = 1000 } }
+		if = {
+			limit = {
+				is_overlord = no
+			}
+			custom_tooltip = wg_expel_corp_effects
+			hidden_effect = {
+				every_owned_planet = {
+					limit = { has_branch_office = from }
+					close_branch_office = yes
+					owner = { add_resource = { energy = 1000 } }
+				}
 			}
 		}
-		custom_tooltip = wg_expel_corp_effects
+		else = {
+			custom_tooltip = wg_expel_corp_subject_effects
+			hidden_effect = {
+				every_owned_planet = {
+					limit = { has_branch_office = from }
+					close_branch_office = yes
+					owner = { add_resource = { energy = 1000 } }
+				}
+				every_subject = {
+					every_owned_planet = {
+						limit = { has_branch_office = from }
+						close_branch_office = yes
+						owner = { add_resource = { energy = 1000 } }
+					}
+				}
+			}
+		}
 	}
 
 	ai_weight = {
@@ -2099,44 +2011,20 @@ wg_scion = {
 			}
 			overlord = { save_event_target_as = scion_master }
 			last_created_country = {
+				set_origin_effect = yes
 				set_subject_of = {
 					who = event_target:scion_master
 					preset = preset_scion
 				}
 			}
-
+			
 			if = {
 				limit = {
 					root = { has_authority = auth_corporate }
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 		}
@@ -2222,6 +2110,7 @@ wg_hegemon = {
 			}
 
 			last_created_country = {
+				set_origin_effect = yes
 				join_alliance = { who = root override_requirements = yes }
 			}
 
@@ -2231,32 +2120,7 @@ wg_hegemon = {
 					last_created_country = { has_authority = auth_corporate }
 				}
 				last_created_country = {
-					if = {
-						limit = {
-							has_technology = tech_galactic_administration
-						}
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-								civic = random
-							}
-						}
-					}
-					else = {
-						change_government = {
-							authority = auth_oligarchic
-							cooldown = no
-							remove_invalid_civics = yes
-							civics = {
-								civic = civic_merchant_guilds
-								civic = random
-							}
-						}
-					}
+					set_merchant_government_effect = yes
 				}
 			}
 		}
@@ -2586,7 +2450,14 @@ wg_allegiance = {
 		always = yes
 	}
 	possible = {
-		always = yes
+		NOT = {
+			from = {
+				is_at_war_with = ROOT
+				any_subject = {
+					has_secret_fealty_with = ROOT
+				}
+			}
+		}
 	}
 
 	on_status_quo = {

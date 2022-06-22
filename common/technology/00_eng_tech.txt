@@ -23,6 +23,11 @@ tech_space_exploration = {
 	category = { voidcraft }
 	tier = 0
 
+	#allow auto-explore on science ships
+	feature_flags = {
+		tech_automated_exploration
+	}
+
 	prereqfor_desc = {
 		ship = {
 			title = "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_TITLE"
@@ -3886,6 +3891,8 @@ tech_construction_templates = {
 	modifier = {
 		planet_building_build_speed_mult = 0.50
 		empire_size_districts_mult = -0.10
+		show_only_custom_tooltip = no
+		custom_tooltip = tech_construction_templates_effect
 	}
 
 	weight_modifier = {
