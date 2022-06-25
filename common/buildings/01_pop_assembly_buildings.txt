@@ -51,13 +51,27 @@ building_robot_assembly_plant = {
 
 	allow = {
 		hidden_trigger = {
+			always = yes
 			OR = {
 				owner = { is_ai = no }
-				NAND = {
-					free_district_slots = 0
-					free_building_slots <= 1
-					free_housing <= 0
-					free_jobs <= 0
+				AND = {
+					owner = { is_ai = yes }
+					NAND = {
+						free_jobs < 1
+						OR = {
+							num_buildings = {
+								type = any
+								value >= 12
+							}
+							is_planet_class = pc_habitat
+						}
+					}
+					NAND = {
+						free_district_slots = 0
+						free_building_slots <= 1
+						free_housing <= 0
+						free_jobs <= 0
+					}
 				}
 			}
 		}
