@@ -194,6 +194,24 @@ early_default_plan_3 = {
 		}
 	}
 
+	subplan = {
+        set_name = "str fallback3 early_default_plan_3 scaling"
+		scaling = yes
+        potential = {
+            has_monthly_income = { resource = energy value > 20 }
+            has_monthly_income = { resource = minerals value > 60 }
+        }
+
+        income = {
+            alloys = 10
+            minerals = 5
+            energy = 5
+            physics_research = 5
+            society_research = 5
+            engineering_research = 5
+        }
+    }
+
 	potential = {
 		not = { has_country_flag = str_reconsider_plans }
 	}

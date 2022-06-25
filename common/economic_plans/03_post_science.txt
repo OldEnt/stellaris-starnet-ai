@@ -250,6 +250,24 @@ middle_imperial_plan = {
 		focus = { physics_research = 1000 society_research = 1000 engineering_research = 1000 }
 	}
 
+	subplan = {
+        set_name = "str middle middle_imperial_plan scaling"
+		scaling = yes
+        potential = {
+            has_monthly_income = { resource = energy value > 20 }
+            has_monthly_income = { resource = minerals value > 60 }
+        }
+
+        income = {
+            alloys = 20
+            minerals = 5
+            energy = 5
+            physics_research = 5
+            society_research = 5
+            engineering_research = 5
+        }
+    }
+
 	potential = {
 		nor = {
 			str_raw_ecocrisis_level_1 = yes

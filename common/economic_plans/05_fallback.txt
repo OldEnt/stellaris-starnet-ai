@@ -76,6 +76,24 @@ early_default_plan = {
 		}
 	}
 
+	subplan = {
+        set_name = "str fallback1 early_default_plan scaling"
+		scaling = yes
+        potential = {
+            has_monthly_income = { resource = energy value > 20 }
+            has_monthly_income = { resource = minerals value > 60 }
+        }
+
+        income = {
+            alloys = 10
+            minerals = 5
+            energy = 5
+            physics_research = 5
+            society_research = 5
+            engineering_research = 5
+        }
+    }
+
 	pops = 500
 	# empire_size = 1
 
