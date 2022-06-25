@@ -19,6 +19,19 @@ building_commercial_zone = {
 		}
 		NOT = { has_modifier = slave_colony }
 	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				owner = { is_ai = yes }
+				years_passed > 5
+				str_uses_comzones = no 
+			}
+		}
+	}
 
 	allow = {
 		hidden_trigger = {
@@ -37,18 +50,7 @@ building_commercial_zone = {
 		}
 	}
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
-			AND = {
-				owner = { is_ai = yes }
-				years_passed > 5
-				str_uses_comzones = no 
-			}
-		}
-	}
+
 
 	resources = {
 		category = planet_buildings
@@ -109,7 +111,7 @@ building_commercial_zone = {
 		}
 	}
 	ai_resource_production = {
-		energy = 0 #PM: 0?
+		energy = 0
 		trigger = {
 			OR = {
 				num_unemployed >= 10
@@ -131,8 +133,8 @@ building_commercial_megaplex = {
 	potential = {
 		exists = owner
 		owner = {
-			is_ai = no
 			is_regular_empire = yes
+			is_ai = no
 		}
 		NOT = { has_modifier = slave_colony }
 		has_building = building_commercial_zone

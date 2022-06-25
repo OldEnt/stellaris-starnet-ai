@@ -9,7 +9,6 @@ building_foundry_1 = {
 	potential = {
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
-		}
 	}
 
 	allow = {
@@ -1532,6 +1531,7 @@ building_nanite_transmuter = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
+		building_basic_income_check = yes
 	}
 
 	allow = {
