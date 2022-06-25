@@ -26,6 +26,7 @@ early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str fallback1 food/cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -43,6 +44,7 @@ early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str fallback1 cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -59,6 +61,7 @@ early_default_plan = {
 
 	# increased food goals for hiveminds
 	subplan = {
+		set_name = "str fallback1 food"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes

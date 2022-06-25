@@ -18,12 +18,14 @@ early_crisis_plan = {
 	}
 
 	subplan = {
+		set_name = "str crisis always spice_melange"
 		potential = { always = yes }
 		income = { starnet_spice_melange = 100 }
 		focus = { starnet_spice_melange = 50 }
 	}
 
 	subplan = {
+		set_name = "str crisis food/cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -41,6 +43,7 @@ early_crisis_plan = {
 	}
 
 	subplan = {
+		set_name = "str crisis cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -56,6 +59,7 @@ early_crisis_plan = {
 	}
 
 	subplan = {
+		set_name = "str crisis food"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes
@@ -71,24 +75,28 @@ early_crisis_plan = {
 	}
 
 	subplan = {
+		set_name = "str crisis food_crisis_1"
 		potential = { str_food_crisis_1 = yes }
 		income = { food = 1000 }
 		focus = { food = 850 }
 	}
 
 	subplan = {
+		set_name = "str crisis mineral_crisis_1"
 		potential = { str_minerals_crisis_1 = yes }
 		income = { minerals = 1000 }
 		focus = { minerals = 850 }
 	}
 
 	subplan = {
+		set_name = "str crisis energy_crisis_1"
 		potential = { str_energy_crisis_1 = yes }
 		income = { energy = 1000 }
 		focus = { energy = 850 }
 	}
 
 	subplan = {
+		set_name = "str crisis cgs_crisis_1"
 		potential = { str_consumer_goods_crisis_1 = yes }
 		income = { consumer_goods = 500 }
 		focus = { consumer_goods = 200 }

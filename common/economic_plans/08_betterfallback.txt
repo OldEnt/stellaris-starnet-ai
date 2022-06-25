@@ -21,6 +21,7 @@ early_default_plan_4 = {
 	}
 
 	subplan = {
+		set_name = "str fallback4 always spice_melange"
 		potential = { always = yes }
 		income = { starnet_spice_melange = 100000 }
 		focus = { starnet_spice_melange = 50000 }
@@ -28,12 +29,14 @@ early_default_plan_4 = {
 
 
 	subplan = {
+		set_name = "str fallback4 always unity"
 		potential = { always = yes }
 		income = { unity = 20000 }
 		focus = { unity = 10000 }
 	}
 
 	subplan = {
+		set_name = "str fallback4 food/cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -51,6 +54,7 @@ early_default_plan_4 = {
 	}
 
 	subplan = {
+		set_name = "str fallback4 cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -67,6 +71,7 @@ early_default_plan_4 = {
 
 	# increased food goals for hiveminds
 	subplan = {
+		set_name = "str fallback4 food"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes
@@ -82,6 +87,7 @@ early_default_plan_4 = {
 	}
 
 	subplan = {
+		set_name = "str fallback4 terraform energy focus"
 		potential = {
 			has_country_flag = str_lets_terraform
 			resource_stockpile_compare = {
@@ -98,6 +104,7 @@ early_default_plan_4 = {
 	}
 
 	subplan = {
+		set_name = "str fallback4 terraform low energy"
 		potential = {
 			has_ascension_perk = ap_world_shaper
 			has_country_flag = str_has_terraformables
@@ -109,25 +116,30 @@ early_default_plan_4 = {
 		income = { energy = 2000 }
 		focus = { energy = 1500 }
 	}
+	
 	subplan = {
+		set_name = "str fallback4 food_crisis_0"
 		potential = { str_food_crisis_0 = yes }
 		income = { food = 500 }
 		focus = { food = 200 }
 	}
 
 	subplan = {
+		set_name = "str fallback4 minerals_crisis_0"
 		potential = { str_minerals_crisis_0 = yes }
 		income = { minerals = 500 }
 		focus = { minerals = 200 }
 	}
 
 	subplan = {
+		set_name = "str fallback4 energy_crisis_0"
 		potential = { str_energy_crisis_0 = yes }
 		income = { energy = 500 }
 		focus = { energy = 200 }
 	}
 
 	subplan = {
+		set_name = "str fallback4 research/alloys"
 		potential = {
 			or = {
 				resource_income_compare = { resource = consumer_goods value > -5 }
@@ -156,6 +168,7 @@ early_default_plan_4 = {
 	}
 
 	subplan = {
+		set_name = "str fallback4 research/alloys focus"
 		potential = {
 			or = {
 				resource_income_compare = { resource = consumer_goods value > -5 }
