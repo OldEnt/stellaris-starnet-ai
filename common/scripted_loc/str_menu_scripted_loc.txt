@@ -43,6 +43,42 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetName_str_ai_should_build_habitats_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_ai_should_not_build_habitats
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_ai_should_not_build_habitats
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
+
+defined_text = {
+	name = GetName_str_ai_should_build_megastructures_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_ai_should_not_build_megastructures
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_ai_should_not_build_megastructures
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
+
+defined_text = {
 	name = GetName_str_dmm_display_exception_for_1
 	text = {
 		trigger = {

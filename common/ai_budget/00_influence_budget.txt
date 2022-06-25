@@ -340,6 +340,7 @@ influence_expenditure_megastructures = {
 
 	potential = {
 		is_at_war = no
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {
@@ -356,7 +357,10 @@ influence_expenditure_habitats = {
 	type = expenditure
 	category = megastructures_habitat
 
-	potential = { ai_should_build_habitats = yes }
+	potential = {
+		ai_should_build_habitats = yes
+		str_ai_should_build_habitats = yes
+	}
 
 	fraction = {
 		weight = 0.1

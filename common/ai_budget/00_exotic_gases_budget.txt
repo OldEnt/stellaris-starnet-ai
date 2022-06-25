@@ -158,6 +158,7 @@ exotic_gases_upkeep_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {

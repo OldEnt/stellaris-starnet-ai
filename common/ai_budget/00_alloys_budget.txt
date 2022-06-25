@@ -654,6 +654,7 @@ alloys_expenditure_megastructures = {
 			has_origin = origin_void_dwellers
 		}
 		ai_colonize_plans < 3
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {
@@ -670,7 +671,10 @@ alloys_expenditure_habitats = {
 	type = expenditure
 	category = megastructures_habitat
 
-	potential = { ai_should_build_habitats = yes }
+	potential = {
+		ai_should_build_habitats = yes
+		str_ai_should_build_habitats = yes
+	}
 
 	fraction = {
 		weight = 0.2

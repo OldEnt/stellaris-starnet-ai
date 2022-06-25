@@ -225,6 +225,7 @@ energy_expenditure_megastructures = {
 			type = energy
 			amount > 6000
 		}
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {

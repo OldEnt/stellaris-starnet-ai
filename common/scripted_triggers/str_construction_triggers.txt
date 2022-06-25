@@ -1416,3 +1416,42 @@ str_uses_comzones = {
 	}
 	has_planet_flag = str_should_use_merchants
 }
+
+# Defines if ai_budget should potential for habitats, adjustable via DMM (event str_menu.1). Mods can hook up to these options by checking for flags in their megastructure potential or possible block.
+str_ai_should_build_habitats = {
+	OR = {
+		has_country_flag = str_country_ai_should_build_habitats		# Exception for global flag which bans habitats.
+		NOR = {
+			has_global_flag = str_global_ai_should_not_build_habitats
+			AND = {
+				has_country_flag = str_country_ai_should_not_build_habitats
+				str_is_habitat_empire = no 		# Habitat empires should build habitats anyway.
+			}
+		}
+	}
+}
+
+str_is_habitat_empire = {
+	OR = {
+		has_origin = origin_void_dwellers
+		has_country_flag = str_country_is_habitat_empire
+	}
+}
+
+# Defines if ai_budget should potential for megastructures, adjustable via DMM (event str_menu.1). Mods can hook up to these options by checking for flags in their megastructure potential or possible block.
+str_ai_should_build_megastructures = {
+	OR = {
+		has_country_flag = str_country_ai_should_build_megastructures	# Exception for global flag which bans megastructures.
+		NOR = {
+			has_global_flag = str_global_ai_should_not_build_megastructures
+			AND = {
+				has_country_flag = str_country_ai_should_not_build_megastructures
+				str_is_megastructures_empire = no 		# Megastructures empires should build megastructures anyway.
+			}
+		}
+	}
+}
+
+str_is_megastructures_empire = {
+	has_country_flag = str_country_is_megastructures_empire
+}
