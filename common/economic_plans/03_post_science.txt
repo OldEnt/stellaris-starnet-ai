@@ -29,6 +29,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle always spice_melange"
 		potential = { always = yes }
 		income = { starnet_spice_melange = 100000 }
 		focus = { starnet_spice_melange = 50000 }
@@ -36,6 +37,7 @@ middle_imperial_plan = {
 
 
 	subplan = {
+		set_name = "str middle food/cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -53,6 +55,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -69,6 +72,7 @@ middle_imperial_plan = {
 
 	# increased food goals for hiveminds
 	subplan = {
+		set_name = "str middle food"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes
@@ -84,6 +88,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle terraform energy focus"
 		potential = { has_country_flag = str_lets_terraform
 			resource_stockpile_compare = {
 				resource = energy
@@ -99,6 +104,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle terraform base energy"
 		potential = {
 			or = {
 				has_ascension_perk = ap_world_shaper
@@ -111,6 +117,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle terraform more energy"
 		potential = {
 			has_ascension_perk = ap_world_shaper
 			has_country_flag = str_has_terraformables
@@ -122,13 +129,16 @@ middle_imperial_plan = {
 		income = { energy = 2000 }
 		focus = { energy = 1500 }
 	}
+	
 	subplan = {
+		set_name = "str middle crisis level 1-5 minerals"
 		potential = { has_ascension_perk = ap_become_the_crisis }
 		income = { minerals = 1000 }
 		focus = { minerals = 500 }
 	}
 
 	subplan = {
+		set_name = "str middle crisis level 3 minerals"
 		potential = {
 			has_ascension_perk = ap_become_the_crisis
 			has_crisis_level = crisis_level_3
@@ -138,6 +148,7 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle alloy focus"
 		potential = {
 			resource_stockpile_compare = {
 				resource = alloys
@@ -166,7 +177,9 @@ middle_imperial_plan = {
 		income = { alloys = 5000 }
 		focus = { alloys = 1000 }
 	}
+	
 	subplan = {
+		set_name = "str middle crisis level 3 mineral focus"
 		potential = {
 			has_ascension_perk = ap_become_the_crisis
 			has_crisis_level = crisis_level_3
@@ -199,24 +212,28 @@ middle_imperial_plan = {
 	}
 
 	subplan = {
+		set_name = "str middle food_crisis_0"
 		potential = { str_food_crisis_0 = yes }
 		income = { food = 500 }
 		focus = { food = 200 }
 	}
 
 	subplan = {
+		set_name = "str middle minerals_crisis_0"
 		potential = { str_minerals_crisis_0 = yes }
 		income = { minerals = 500 }
 		focus = { minerals = 200 }
 	}
 
 	subplan = {
+		set_name = "str middle energy_crisis_0"
 		potential = { str_energy_crisis_0 = yes }
 		income = { energy = 500 }
 		focus = { energy = 200 }
 	}
 
 	subplan = {
+		set_name = "str middle no ecocrisis alloys"
 		potential = { str_raw_ecocrisis_level_0 = no }
 		income = { alloys = 1000 }
 		focus = { alloys = 500 }
@@ -224,6 +241,7 @@ middle_imperial_plan = {
 
 
 	subplan = {
+		set_name = "str middle crisis level !5 research focus"
 		potential = {
 			has_ascension_perk = ap_become_the_crisis
 			not = { has_crisis_level = crisis_level_5 }

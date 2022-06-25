@@ -25,6 +25,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str no-catalytic low food income"
 		potential = {
 			is_catalytic_empire = no
 			has_monthly_income = { resource = food value < 5 }
@@ -37,17 +38,21 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str always unity"
 		potential = { always = yes }
 		income = { unity = 20000 }
 		focus = { unity = 10000 }
 	}
+	
 	subplan = {
+		set_name = "str always spice_melange"
 		potential = { always = yes }
 		income = { starnet_spice_melange = 100000}
 		focus = { starnet_spice_melange = 50000}
 	}
 
 	subplan = {
+	set_name = "str <10y mineral focus"
 		potential = {
 			years_passed < 10
 		}
@@ -60,6 +65,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str >10y energy"
 		potential = {
 			years_passed > 10
 		}
@@ -73,6 +79,7 @@ str_early_default_plan = {
 
 	# countrytype specific basic plan changes
 	subplan = {
+		set_name = "str food no cgs"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes
@@ -88,6 +95,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str food and cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -105,6 +113,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str cgs no food"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -118,44 +127,53 @@ str_early_default_plan = {
 			consumer_goods = 15
 		}
 	}
+	
 	subplan = {
+		set_name = "str <20y tree of life food"
 		potential = { has_origin = origin_tree_of_life years_passed < 20 }
 		income = { food = 50 }
 		focus = { food = 30 }
 	}
+	
 ####################
 
 	subplan = {
+		set_name = "str homeworld science pls"
 		potential = { has_country_flag = str_fill_homeworld_with_science_pls }
 		income = { physics_research = 2000 society_research = 2000 engineering_research = 2000 }
 		focus = { physics_research = 1000 society_research = 1000 engineering_research = 1000 }
 	}
 	
 	subplan = {
+		set_name = "str_food crisis_0"
 		potential = { str_food_crisis_0 = yes }
 		income = { food = 500 }
 		focus = { food = 200 }
 	}
 	
 	subplan = {
+		set_name = "str mineral_crisis_0"
 		potential = { str_minerals_crisis_0 = yes }
 		income = { minerals = 500 }
 		focus = { minerals = 200 }
 	}
 	
 	subplan = {
+		set_name = "str energy_crisis_0"
 		potential = { str_energy_crisis_0 = yes }
 		income = { energy = 500 }
 		focus = { energy = 200 }
 	}
 	
 	subplan = {
+		set_name = "str cgs_crisis_0"
 		potential = { str_consumer_goods_crisis_0 = yes }
 		income = { consumer_goods = 50 }
 		focus = { consumer_goods = 10 }
 	}
 
 	subplan = {
+		set_name = "str >9y focus research 0"
 		potential = {
 			years_passed > 9
 			resource_income_compare = { resource = alloys value > 20 }
@@ -166,6 +184,7 @@ str_early_default_plan = {
 	}
 	
 	subplan = {
+		set_name = "str >9y focus research 1"
 		potential = {
 			years_passed > 9
 			resource_income_compare = { resource = alloys value > 30 }
@@ -176,6 +195,7 @@ str_early_default_plan = {
 	}
 	
 	subplan = {
+		set_name = "str >15y no ecocrisis_0 focus research"
 		potential = {
 			years_passed > 15
 			str_raw_ecocrisis_level_0 = no
@@ -185,6 +205,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str >15y ecocrisis_0 focus less research"
 		potential = {
 			years_passed > 15
 			str_raw_ecocrisis_level_0 = yes
@@ -193,19 +214,30 @@ str_early_default_plan = {
 		focus = { physics_research = 100 society_research = 100 engineering_research = 100 }
 	}
 
-subplan = {
-	potential = { years_passed > 15  str_raw_ecocrisis_level_0 = yes safespace = yes }
-	income = { physics_research = 450 society_research = 450 engineering_research = 450  }
-	focus = { physics_research = 200 society_research = 200 engineering_research = 200 }
-}
-
-subplan = {
-	potential = { years_passed > 15  str_raw_ecocrisis_level_0 = yes stalemate = yes }
-	income = { physics_research = 450 society_research = 450 engineering_research = 450  }
-	focus = { physics_research = 200 society_research = 200 engineering_research = 200 }
-}
+	subplan = {
+		set_name = "str >15y ecocrisis_0 safespace research"
+		potential = {
+			years_passed > 15
+			str_raw_ecocrisis_level_0 = yes
+			safespace = yes
+		}
+		income = { physics_research = 450 society_research = 450 engineering_research = 450  }
+		focus = { physics_research = 200 society_research = 200 engineering_research = 200 }
+	}
 
 	subplan = {
+		set_name = "str >15y ecocrisis_0 stalemate research"
+		potential = {
+			years_passed > 15
+			str_raw_ecocrisis_level_0 = yes
+			stalemate = yes
+		}
+		income = { physics_research = 450 society_research = 450 engineering_research = 450  }
+		focus = { physics_research = 200 society_research = 200 engineering_research = 200 }
+	}
+
+	subplan = {
+		set_name = "str no *crisis_0 research"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -215,6 +247,7 @@ subplan = {
 	}
 	
 	subplan = {
+		set_name = "str no *crisis_0 research turtler"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -225,6 +258,7 @@ subplan = {
 	}
 	
 	subplan = {
+		set_name = "str no *crisis_0 research turtler2"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -235,6 +269,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str no *crisis_0 research turtler3"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -245,6 +280,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str >10y no *crisis_0 rusher"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -256,6 +292,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str no *crisis_0 rusher 2"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -266,6 +303,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str no *crisis_0 rusher3"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -276,6 +314,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str >40y no *crisis_0 research"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -290,6 +329,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str str >40 no *crisis_0 minilategame research"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			str_consumer_goods_crisis_0 = no
@@ -305,12 +345,14 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str lets terraform"
 		potential = { has_country_flag = str_lets_terraform }
 		income = { energy = 2000 }
 		focus = { energy = 1500 }
 	}
 
 	subplan = {
+		set_name = "str no ecocrisis_0 alloy focus"
 		potential = {
 			str_raw_ecocrisis_level_0 = no
 			resource_income_compare = {
@@ -331,6 +373,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str terraform energy focus"
 		potential = {
 			or = {
 				has_ascension_perk = ap_world_shaper
@@ -343,6 +386,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str terraforming low energy income"
 		potential = {
 			has_ascension_perk = ap_world_shaper
 			has_country_flag = str_has_terraformables
@@ -356,6 +400,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str terraforming low energy income 2"
 		potential = {
 			has_ascension_perk = ap_world_shaper
 			has_country_flag = str_has_terraformables
@@ -369,6 +414,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low energy income"
 		potential = {
 			resource_income_compare = {
 				resource = energy
@@ -384,6 +430,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low mineral income"
 		potential = {
 			resource_stockpile_compare = {
 				resource = minerals
@@ -399,6 +446,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low mineral stockpile"
 		potential = {
 			resource_stockpile_compare = {
 				resource = minerals
@@ -414,6 +462,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str no cgs more alloys/research"
 		potential = {
 			nand = {
 				used_naval_capacity_percent > 0.9
@@ -451,6 +500,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str more alloys/research/cgs"
 		potential = {
 			nand = {
 				used_naval_capacity_percent > 0.9
@@ -491,6 +541,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str cg_crisis_0 research/alloys
 		potential = {
 			NAND = {
 				used_naval_capacity_percent > 0.9
@@ -520,10 +571,11 @@ subplan = {
 			society_research = 50
 			engineering_research = 50
 		}
-		focus = { alloys = 25 }
+		focus = { alloys = 25 } #PM: I get the feeling this is supposed to be CGs, since str_consumer_goods_crisis_0 = yes
 	}
 
 	subplan = {
+		set_name = "str good navy research focus"
 		potential = {
 			country_uses_consumer_goods = no
 			used_naval_capacity_percent > 0.9
@@ -567,6 +619,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str good navy research/cgs focus"
 		potential = {
 			used_naval_capacity_percent > 0.9
 			resource_income_compare = {
@@ -614,6 +667,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str good navy cg_crisis_0 research"
 		potential = {
 			used_naval_capacity_percent > 0.9
 			resource_income_compare = {
@@ -657,6 +711,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str bad navy focus alloys/cgs"
 		potential = {
 			resource_income_compare = {
 				resource = energy
@@ -699,6 +754,7 @@ subplan = {
 
 
 	subplan = {
+		set_name = "str low cg income"
 		potential = {
 			country_uses_consumer_goods = yes
 			resource_income_compare = {
@@ -713,7 +769,9 @@ subplan = {
 		income = { consumer_goods = 30 }
 		focus = { consumer_goods = 20 }
 	}
+	
 	subplan = {
+		set_name = "str low food income"
 		potential = {
 			country_uses_food = yes
 			resource_income_compare = {
@@ -729,28 +787,38 @@ subplan = {
 		focus = { food = 20 }
 	}
 
-
+	### EMERGENCIES ###
 	subplan = {
+		set_name = "str energy_emergency"
 		potential = { energy_emergency = yes }
 		income = { energy = 100 }
 		focus = { energy = 100 }
 	}
+	
 	subplan = {
+		set_name = "str food_emergency"
 		potential = { food_emergency = yes }
 		income = { food = 100 }
 		focus = { food = 100 }
 	}
+	
 	subplan = {
+		set_name = "str minerals_emergency"
 		potential = { minerals_emergency = yes }
 		income = { minerals = 100 }
 		focus = { minerals = 100 }
 	}
+	
 	subplan = {
+		set_name = "str consumer_emergency"
 		potential = { consumer_emergency = yes }
 		income = { consumer_goods = 100 }
 		focus = { consumer_goods = 100 }
 	}
+	###################
+	
 	subplan = {
+		set_name = "str science priority"
 		potential = { no_emergency = yes science_priority = yes }
 		income = {
 			physics_research = 400
@@ -763,7 +831,9 @@ subplan = {
 			engineering_research = 100
 		}
 	}
+	
 	subplan = {
+		set_name = "str alloy priority"
 		potential = { no_emergency = yes alloy_priority = yes }
 		income = {
 			alloys = 40
@@ -774,6 +844,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str general science/alloy/cgs"
 		potential = {
 			no_emergency = yes
 			science_priority = no
@@ -796,6 +867,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy research/cgs"
 		potential = {
 			utopic_economy = yes
 			science_priority = yes
@@ -816,6 +888,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy research"
 		potential = {
 			utopic_economy = yes
 			science_priority = yes
@@ -834,6 +907,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy alloy/cgs"
 		potential = {
 			utopic_economy = yes
 			alloy_priority = yes
@@ -850,6 +924,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy alloys"
 		potential = {
 			utopic_economy = yes
 			alloy_priority = yes
@@ -864,6 +939,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy research/alloys"
 		potential = {
 			utopic_economy = yes
 			science_priority = no
@@ -884,6 +960,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str utopic_economy research/alloys/cgs"
 		potential = {
 			utopic_economy = yes
 			science_priority = no
@@ -907,6 +984,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low gases"
 		potential = {
 			resource_income_compare = {
 				resource = exotic_gases
@@ -926,6 +1004,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low motes"
 		potential = {
 			resource_income_compare = {
 				resource = volatile_motes
@@ -945,6 +1024,7 @@ subplan = {
 	}
 
 	subplan = {
+		set_name = "str low crystals"
 		potential = {
 			resource_income_compare = {
 				resource = rare_crystals
@@ -1012,6 +1092,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom no-catalytic low food"
 		potential = {
 			is_catalytic_empire = no
 			has_monthly_income = { resource = food value < 5 }
@@ -1022,19 +1103,21 @@ str_early_boom_plan = {
 		}
 	}
 	subplan = {
+		set_name = "str boom always unity"
 		potential = { always = yes }
 		income = { unity = 20000 }
 		focus = { unity = 10000 }
 	}
 
 	subplan = {
+		set_name = "str boom always spice_melange"
 		potential = { always = yes }
 		income = { starnet_spice_melange = 100000 }
 		focus = { starnet_spice_melange = 50000 }
 	}
 
 	subplan = {
-
+		set_name = "str boom food"
 		potential = {
 			country_uses_consumer_goods = no
 			country_uses_food = yes
@@ -1050,6 +1133,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom cgs/food"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = yes
@@ -1067,6 +1151,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom cgs"
 		potential = {
 			country_uses_consumer_goods = yes
 			country_uses_food = no
@@ -1082,6 +1167,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom low energy income"
 		potential = {
 			resource_income_compare = {
 				resource = energy
@@ -1097,11 +1183,14 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom homeworld science pls"
 		potential = { has_country_flag = str_fill_homeworld_with_science_pls }
 		income = { physics_research = 2000 society_research = 2000 engineering_research = 2000 }
 		focus = { physics_research = 1000 society_research = 1000 engineering_research = 1000 }
 	}
+	
 	subplan = {
+		set_name = "str boom tree of life food"
 		potential = {
 			has_origin = origin_tree_of_life
 			years_passed < 20
@@ -1111,6 +1200,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom terraform energy focus"
 		potential = {
 			has_country_flag = str_lets_terraform
 			resource_stockpile_compare = {
@@ -1127,6 +1217,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom can terraform energy"
 		potential = {
 			or = {
 				has_ascension_perk = ap_world_shaper
@@ -1139,6 +1230,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom terraform low energy"
 		potential = {
 			has_ascension_perk = ap_world_shaper
 			has_country_flag = str_has_terraformables
@@ -1152,6 +1244,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom >10 <35 years energy"
 		potential = {
 			years_passed > @str_ai_prioritise_energy_for_fleet_after
 			years_passed < @str_years_of_twilight
@@ -1162,6 +1255,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom priority research/cgs"
 		potential = {
 			science_priority = yes
 			country_uses_consumer_goods = yes
@@ -1181,6 +1275,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom priorty science"
 		potential = {
 			science_priority = yes
 			country_uses_consumer_goods = no
@@ -1199,6 +1294,7 @@ str_early_boom_plan = {
 
 
 	subplan = {
+		set_name = "str boom priority alloys/cgs"
 		potential = {
 			alloy_priority = yes
 			country_uses_consumer_goods = yes
@@ -1214,6 +1310,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom research/alloys/cgs"
 		potential = {
 			science_priority = no
 			alloy_priority = no
@@ -1236,6 +1333,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom low everything alloys/research"
 		potential = {
 			or = {
 				resource_income_compare = { resource = consumer_goods value > -5 }
@@ -1264,6 +1362,7 @@ str_early_boom_plan = {
 	}
 
 	subplan = {
+		set_name = "str boom MORE ALLOYS/RESEARCH"
 		potential = {
 			or = {
 				resource_income_compare = { resource = consumer_goods value > -5 }
