@@ -8,39 +8,26 @@ building_commercial_zone = {
 	category = trade
 
 	potential = {
+		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = {
 			is_regular_empire = yes
-			or = {
+			OR = {
 				is_ai = no
 				years_passed < 3
 				prev = { str_uses_comzones = yes }
-			}
-		}
-		NOT = { has_modifier = slave_colony }
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
-			and = {
-				owner = { is_ai = yes }
-				years_passed > 5
-				str_uses_comzones = no 
 			}
 		}
 	}
 
 	allow = {
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				and = {
+				AND = {
 					str_uses_comzones = yes
 					free_amenities < 2
-					or = {
+					OR = {
 						str_is_col_research = no
 						str_is_col_bureau = no
 						free_amenities < -5
@@ -50,6 +37,18 @@ building_commercial_zone = {
 		}
 	}
 
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			has_modifier = slave_colony
+			AND = {
+				owner = { is_ai = yes }
+				years_passed > 5
+				str_uses_comzones = no 
+			}
+		}
+	}
 
 	resources = {
 		category = planet_buildings
@@ -72,9 +71,7 @@ building_commercial_zone = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
 		}
 		modifier = {
 			job_merchant_add = 1
@@ -84,9 +81,7 @@ building_commercial_zone = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
 		}
 		text = job_merchant_effect_desc
 	}
@@ -110,7 +105,7 @@ building_commercial_zone = {
 		}
 	}
 	ai_resource_production = {
-		energy = 0
+		energy = 0 #PM: 0?
 		trigger = {
 			OR = {
 				num_unemployed >= 10
@@ -132,8 +127,8 @@ building_commercial_megaplex = {
 	potential = {
 		exists = owner
 		owner = {
-			is_regular_empire = yes
 			is_ai = no
+			is_regular_empire = yes
 		}
 		NOT = { has_modifier = slave_colony }
 		has_building = building_commercial_zone
@@ -141,9 +136,7 @@ building_commercial_megaplex = {
 
 	allow = {
 		hidden_trigger = {
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -153,7 +146,7 @@ building_commercial_megaplex = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
-			and = {
+			AND = {
 				owner = { is_ai = yes }
 				years_passed > 2
 			}
@@ -233,8 +226,10 @@ building_galactic_stock_exchange = {
 	category = trade
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 
 	allow = {
@@ -258,7 +253,6 @@ building_galactic_stock_exchange = {
 			buildings_no_crystals = yes
 		}
 	}
-
 
 	planet_modifier = {
 		job_merchant_add = 2
