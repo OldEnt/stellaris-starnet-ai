@@ -541,6 +541,7 @@ str_early_default_plan = {
 	}
 
 	subplan = {
+		set_name = "str cg_crisis_0 research/alloys
 		potential = {
 			NAND = {
 				used_naval_capacity_percent > 0.9
