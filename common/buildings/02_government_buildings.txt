@@ -10,23 +10,22 @@ building_noble_estates = {
 
 	potential = {
 		exists = owner
-		planet = {
-			or = {
-				has_building = building_noble_estates
-				owner = { is_ai = no }
-			}
-		}
 		owner = { has_valid_civic = civic_aristocratic_elite }
 		NOT = { has_modifier = slave_colony }
+		
+		#OR = {
+		#	owner = { is_ai = no }
+		#	has_building = building_noble_estates
+		#} PM: The AI can build this IF it already has one on the planet. But you can only have 1 per planet, so the AI will literally never build this.
 	}
 
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			or = {
-				num_pops > 40
+			OR = {
 				owner = { is_ai = no }
+				num_pops > 40
 			}
 		}
 	}
@@ -34,13 +33,8 @@ building_noble_estates = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			num_buildings = {
-				type = building_noble_estates
-				value = 0
-			}
+			owner = { is_ai = yes }
+			NOT = { has_building = building_noble_estates }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -97,7 +91,7 @@ building_slave_processing = {
 		has_upgraded_capital = yes
 	}
 
-	destroy_trigger = { # destroys if true
+	destroy_trigger = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
@@ -153,13 +147,11 @@ building_precinct_house = {
 					planet_crime > 40
 					owner = { str_raw_ecocrisis_level_1 = no }
 					num_pops > 20
-					NOT = {
+					NOR = {
 						has_modifier = crime_lord_deal
-					}
-					NOT = {
 						has_planet_flag = str_just_removed_precinct
 					}
-					num_buildings = { type = building_precinct_house value < 2 }
+					num_buildings = { type = building_precinct_house value < 2 } #PM: AI can have at most 2 building_precinct_houses on the planet
 				}
 			}
 		}
@@ -172,7 +164,7 @@ building_precinct_house = {
 			AND = {
 				owner = { is_ai = yes } #Players dont like random buildings blowing up
 				has_modifier = crime_lord_deal
-			}#This way the AI gets to reclaim its building slots that it sunk into this expense
+			} #This way the AI gets to reclaim its building slots that it sunk into this expense
 		}
 	}
 
@@ -333,8 +325,10 @@ building_psi_corps = {
 				has_origin = origin_shroudwalker_apprentice
 			}
 		}
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 
 	allow = {
@@ -344,14 +338,20 @@ building_psi_corps = {
 
 	destroy_trigger = {
 		exists = owner
-		NOT = {
-			owner = { 
-				OR = {
-					has_ascension_perk = ap_mind_over_matter 
-					has_origin = origin_shroudwalker_apprentice
-				}
+		owner = {
+			NOR = {
+				has_ascension_perk = ap_mind_over_matter 
+				has_origin = origin_shroudwalker_apprentice
 			}
 		}
+		#NOT = { PM: If only there was a way to invert an OR...
+		#	owner = { 
+		#		OR = {
+		#			has_ascension_perk = ap_mind_over_matter 
+		#			has_origin = origin_shroudwalker_apprentice
+		#		}
+		#	}
+		#}
 	}
 
 	planet_modifier = {
@@ -384,11 +384,13 @@ building_embassy = {
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
-
-		exists = planet
-		planet = { is_capital = yes }
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		is_capital = yes
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+		#exists = planet PM: Buildings are planet scope, so checking if the planet you're on exists makes no sense.
+		#planet = { } PM: Scoping from the planet you're on to the planet you're on also makes no sense
 	}
 
 	upgrades = {
@@ -406,7 +408,7 @@ building_embassy = {
 				exists = owner
 				owner = { is_regular_empire = no }
 			}
-			planet = { is_capital = no }
+			is_capital = no
 			buildings_no_crystals = yes
 		}
 	}
@@ -445,10 +447,11 @@ building_grand_embassy = {
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
-
-		planet = { is_capital = yes }
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		is_capital = yes
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 
 	allow = {
@@ -461,7 +464,7 @@ building_grand_embassy = {
 				exists = owner
 				owner = { is_regular_empire = no }
 			}
-			planet = { is_capital = no }
+			is_capital = no
 			buildings_no_crystals = yes
 		}
 	}
