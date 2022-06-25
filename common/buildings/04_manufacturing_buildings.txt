@@ -501,7 +501,7 @@ building_foundry_3 = {
 			exists = owner
 			owner = { is_ai = yes }
 			str_force_building_foundry_upgrade = yes
-			NOT = { has_building = building_foundry_3
+			NOT = { has_building = building_foundry_3 }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -1213,7 +1213,7 @@ building_refinery = {
 				is_ai = yes
 				str_force_gases = yes
 			}
-			NOT = { has_building = building_refinery
+			NOT = { has_building = building_refinery }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 2
@@ -1717,7 +1717,7 @@ building_production_center = {
 	allow = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
 				str_num_districts_allindustry = { operator = > num = 3 }
 				str_is_col_foundry = yes

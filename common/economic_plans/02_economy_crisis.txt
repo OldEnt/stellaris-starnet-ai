@@ -103,7 +103,7 @@ early_crisis_plan = {
 	}
 
 	potential = {
-		or = {
+		OR = {
 			str_raw_ecocrisis_level_1 = yes
 			str_consumer_goods_crisis_1 = yes
 		}

@@ -23,9 +23,7 @@ building_autochthon_monument = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -44,9 +42,7 @@ building_autochthon_monument = {
 		AND = {
 			owner = {
 				is_ai = yes
-				NOT = {
-					has_country_flag = str_recently_human
-				}
+				NOT = { has_country_flag = str_recently_human }
 			}
 			is_capital = yes
 			free_building_slots < 1
@@ -116,9 +112,7 @@ building_heritage_site = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -198,9 +192,7 @@ building_hypercomms_forum = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -265,35 +257,33 @@ building_bureaucratic_1 = {
 	category = government
 
 	potential = {
-		exists = owner
-
-		owner = { is_regular_empire = yes }
-		owner = { is_spiritualist = no }
 		NOT = { has_modifier = slave_colony }
-
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+		}
 	}
 
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
 	destroy_trigger = {
 		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			owner = { is_spiritualist = yes }
+		owner = {
+			OR = {
+				is_regular_empire = no
+				is_spiritualist = yes
+			}
 		}
 		AND = {
 			owner = {
 				is_ai = yes
-				NOT = {
-					has_country_flag = str_recently_human
-				}
+				NOT = { has_country_flag = str_recently_human }
 			}
 			is_capital = yes
 			free_building_slots < 1
@@ -373,19 +363,19 @@ building_bureaucratic_2 = {
 	category = government
 
 	potential = {
-		exists = owner
-		owner = { is_regular_empire = yes }
-		owner = { is_spiritualist = no }
 		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+		}
 	}
 
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -473,19 +463,19 @@ building_bureaucratic_3 = {
 	category = government
 
 	potential = {
-		exists = owner
-		owner = { is_regular_empire = yes }
-		owner = { is_spiritualist = no }
 		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_spiritualist = no
+		}
 	}
 
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -571,19 +561,15 @@ building_temple = {
 	category = unity
 
 	potential = {
-		exists = owner
-		owner = {
-			is_spiritualist = yes
-		}
 		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = { is_spiritualist = yes }	
 	}
 
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -598,9 +584,7 @@ building_temple = {
 		AND = {
 			owner = {
 				is_ai = yes
-				NOT = {
-					has_country_flag = str_recently_human
-				}
+				NOT = { has_country_flag = str_recently_human }
 			}
 			is_capital = yes
 			free_building_slots < 1
@@ -680,31 +664,25 @@ building_holotemple = {
 	category = unity
 
 	potential = {
-		exists = owner
-		owner = {
-			is_spiritualist = yes
-		}
 		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = { is_spiritualist = yes }
 	}
 
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = {
-				is_spiritualist = no
-			}
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
+			owner = { is_spiritualist = no }
 		}
 	}
 
@@ -783,31 +761,25 @@ building_sacred_nexus = {
 	category = unity
 
 	potential = {
-		exists = owner
-		owner = {
-			is_spiritualist = yes
-		}
 		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = { is_spiritualist = yes }	
 	}
 
 	allow = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = {
-				is_spiritualist = no
-			}
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
+			owner = { is_spiritualist = no }
 		}
 	}
 
@@ -889,18 +861,14 @@ building_uplink_node = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
-				has_valid_civic = civic_machine_servitor
-			}
+			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 	}
 
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -915,9 +883,7 @@ building_uplink_node = {
 		AND = {
 			owner = {
 				is_ai = yes
-				NOT = {
-					has_country_flag = str_recently_human
-				}
+				NOT = { has_country_flag = str_recently_human }
 			}
 			is_capital = yes
 			free_building_slots < 1
@@ -959,9 +925,7 @@ building_uplink_node = {
 
 	show_tech_unlock_if = {
 		is_machine_empire = yes
-		NOT = {
-			has_valid_civic = civic_machine_servitor
-		}
+		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 }
 
@@ -976,9 +940,7 @@ building_network_junction = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
-				has_valid_civic = civic_machine_servitor
-			}
+			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 	}
 
@@ -986,9 +948,7 @@ building_network_junction = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1042,9 +1002,7 @@ building_network_junction = {
 
 	show_tech_unlock_if = {
 		is_machine_empire = yes
-		NOT = {
-			has_valid_civic = civic_machine_servitor
-		}
+		NOT = { has_valid_civic = civic_machine_servitor }
 	}
 }
 
@@ -1059,9 +1017,7 @@ building_system_conflux = {
 		exists = owner
 		owner = {
 			is_machine_empire = yes
-			NOT = {
-				has_valid_civic = civic_machine_servitor
-			}
+			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 	}
 
@@ -1069,9 +1025,7 @@ building_system_conflux = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1145,9 +1099,7 @@ building_hive_node = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1173,9 +1125,7 @@ building_hive_node = {
 		upkeep = {
 			trigger = {
 				exists = owner
-				owner = {
-					has_edict = synaptic_reinforcement
-				}
+				owner = { has_edict = synaptic_reinforcement }
 			}
 			energy = 2
 		}
@@ -1188,9 +1138,7 @@ building_hive_node = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}
+			owner = { has_active_tradition = tr_domination_synaptic_extensions }
 		}
 		modifier = {
 			planet_housing_add = 2
@@ -1200,9 +1148,7 @@ building_hive_node = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
+			owner = { has_edict = synaptic_reinforcement }
 		}
 		job_maintenance_drone_add = 1
 	}
@@ -1214,9 +1160,7 @@ building_hive_node = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
+			owner = { has_edict = synaptic_reinforcement }
 		}
 		text = job_maintenance_drone_effect_desc
 	}
@@ -1247,9 +1191,7 @@ building_hive_cluster = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1354,9 +1296,7 @@ building_hive_confluence = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1387,9 +1327,7 @@ building_hive_confluence = {
 		upkeep = {
 			trigger = {
 				exists = owner
-				owner = {
-					has_edict = synaptic_reinforcement
-				}
+				owner = { has_edict = synaptic_reinforcement }
 			}
 			energy = 2
 		}
@@ -1402,9 +1340,7 @@ building_hive_confluence = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_synaptic_extensions
-			}
+			owner = { has_active_tradition = tr_domination_synaptic_extensions }
 		}
 		modifier = {
 			planet_housing_add = 2
@@ -1414,9 +1350,7 @@ building_hive_confluence = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
+			owner = { has_edict = synaptic_reinforcement }
 		}
 		job_maintenance_drone_add = 1
 	}
@@ -1432,9 +1366,7 @@ building_hive_confluence = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
+			owner = { has_edict = synaptic_reinforcement }
 		}
 		text = job_maintenance_drone_effect_desc
 	}
@@ -1448,11 +1380,11 @@ building_sacrificial_temple_1 = {
 	category = unity
 
 	potential = {
+		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = {
 			is_death_cult_empire = yes
 		}
-		NOT = { has_modifier = slave_colony }
 	}
 
 	destroy_trigger = {
@@ -1529,9 +1461,7 @@ building_sacrificial_temple_2 = {
 		}
 		NOT = { has_modifier = slave_colony }
 		hidden_trigger = {
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1626,20 +1556,18 @@ building_sacrificial_temple_3 = {
 	category = unity
 
 	potential = {
+		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = {
 			is_death_cult_empire = yes
 		}
-		NOT = { has_modifier = slave_colony }
 	}
 
 	allow = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1740,9 +1668,7 @@ building_galactic_memorial_1 = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1872,9 +1798,7 @@ building_galactic_memorial_2 = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2007,9 +1931,7 @@ building_galactic_memorial_3 = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2142,9 +2064,7 @@ building_simulation_1 = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2222,9 +2142,7 @@ building_simulation_2 = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2302,9 +2220,7 @@ building_simulation_3 = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2380,9 +2296,7 @@ building_corporate_monument = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2457,9 +2371,7 @@ building_corporate_site = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2532,9 +2444,7 @@ building_corporate_forum = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2606,9 +2516,7 @@ building_sensorium_1 = {
 	allow = {
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2766,9 +2674,7 @@ building_sensorium_3 = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2845,9 +2751,7 @@ building_autocurating_vault = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2918,9 +2822,7 @@ building_citadel_of_faith = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -2989,9 +2891,7 @@ building_corporate_vault = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -3060,9 +2960,7 @@ building_alpha_hub = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -3128,16 +3026,16 @@ building_organic_sanctuary = {
 		exists = owner
 		OR = {
 			owner = {
-				NOT = { owner = { has_valid_civic = civic_machine_servitor } }
+				NOT = { has_valid_civic = civic_machine_servitor }
 			}
 			AND = {
 				owner = { is_ai = yes }
-				count_owned_pop = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count <= 20 }
+				num_assigned_jobs = { job = bio_trophy value <= 20 } #PM: Dev Diary 182 explains that num_assigned_jobs is much faster than iterating through every pop, and this shouldn't trigger with unemployed bio-trophies
 				num_buildings = { type = building_organic_sanctuary value > 3 }
 			}
 			AND = {
 				owner = { is_ai = yes }
-				count_owned_pop = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count <= 40 }
+				num_assigned_jobs = { job = bio_trophy value <= 40 }
 				num_buildings = { type = building_organic_paradise value > 5 }
 			}
 		}
