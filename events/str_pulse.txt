@@ -26,6 +26,11 @@ event = {
 					country_event = {
 						id = starnet.3 days = 1 random = 200	# Determine small changes in fleet composition.
 					}
+				}
+				if = {
+					limit = {
+						is_ai = yes
+					}
 					country_event = {
 						id = starnet.6 days = 5 random = 60		# Scripts attempting to unstuck economy.
 					}
