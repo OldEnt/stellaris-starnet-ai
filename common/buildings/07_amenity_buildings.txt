@@ -331,7 +331,10 @@ building_communal_housing = {
 					is_ai = yes
 					lategame = no
 				}
-				has_building = building_research_lab_1
+				num_buildings = {
+					type = building_research_lab_1
+					value > 1
+				}
 				free_jobs < 1
 				free_amenities > 6
 				free_building_slots = 0

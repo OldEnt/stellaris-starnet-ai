@@ -682,6 +682,7 @@ building_factory_1 = {
 		owner = {
 			country_uses_consumer_goods = yes
 		}
+		str_factory_allow = yes
 		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
 		OR = {
