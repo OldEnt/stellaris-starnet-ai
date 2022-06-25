@@ -294,7 +294,9 @@ building_foundry_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_catalytic_empire = no }
+			owner = {
+				is_catalytic_empire = no
+			}
 		}
 		modifier = {
 			planet_metallurgists_minerals_upkeep_add = 2
