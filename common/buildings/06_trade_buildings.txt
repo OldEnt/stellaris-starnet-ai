@@ -8,7 +8,6 @@ building_commercial_zone = {
 	category = trade
 
 	potential = {
-		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -18,6 +17,7 @@ building_commercial_zone = {
 				prev = { str_uses_comzones = yes }
 			}
 		}
+		NOT = { has_modifier = slave_colony }
 	}
 
 	allow = {
@@ -71,7 +71,9 @@ building_commercial_zone = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
 		}
 		modifier = {
 			job_merchant_add = 1
@@ -81,7 +83,9 @@ building_commercial_zone = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
 		}
 		text = job_merchant_effect_desc
 	}
@@ -211,7 +215,7 @@ building_commercial_megaplex = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-					job = servant
+				job = servant
 					value >= 10
 				}
 			}
@@ -226,10 +230,8 @@ building_galactic_stock_exchange = {
 	category = trade
 
 	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
 	}
 
 	allow = {
@@ -253,6 +255,7 @@ building_galactic_stock_exchange = {
 			buildings_no_crystals = yes
 		}
 	}
+
 
 	planet_modifier = {
 		job_merchant_add = 2

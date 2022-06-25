@@ -56,9 +56,6 @@ building_luxury_residence = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_regular_empire = no }
-			owner = { has_valid_civic = civic_shared_burden }
-			has_modifier = slave_colony
 			AND = {
 				owner = { is_ai = yes }
 				free_building_slots = 0
@@ -76,6 +73,9 @@ building_luxury_residence = {
 				free_amenities > 6
 				free_building_slots = 0
 			}
+			owner = { is_regular_empire = no }
+			owner = { has_valid_civic = civic_shared_burden }
+			has_modifier = slave_colony
 		}
 	}
 
@@ -93,7 +93,9 @@ building_luxury_residence = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -198,11 +200,11 @@ building_paradise_dome = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_ai = yes }
-			has_modifier = slave_colony
-			buildings_no_crystals = yes
 			owner = { is_regular_empire = no }
 			owner = { has_valid_civic = civic_shared_burden }
+			buildings_no_crystals = yes
+			has_modifier = slave_colony
+			owner = { is_ai = yes }
 		}
 	}
 
@@ -221,7 +223,9 @@ building_paradise_dome = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -356,7 +360,9 @@ building_communal_housing = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -489,7 +495,9 @@ building_communal_housing_large = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -668,13 +676,14 @@ building_hive_warren = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_hive_empire = no }
 			AND = {
 				owner = { is_ai = yes }
 				free_building_slots = 0
 				free_jobs < -3
 				free_housing > 6
 				free_district_slots = 0
+			NOR = {
+				owner = { is_hive_empire = yes }
 			}
 		}
 	}
@@ -781,7 +790,9 @@ building_expanded_warren = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -1039,11 +1050,9 @@ building_clinic = {
 	category = amenity
 
 	potential = {
-		owner = {
-			is_regular_empire = yes
-			is_ai = no
-		}
+		owner = { is_regular_empire = yes }
 		NOT = { has_modifier = slave_colony }
+		owner = { is_ai = no }
 	}
 
 	destroy_trigger = {
@@ -1255,9 +1264,9 @@ building_ranger_lodge = {
 	category = amenity
 	icon = holding_park_ranger_lodge
 	potential = {
-		always = no #PM: ?????
+		always = no
 		NOT = {	has_modifier = slave_colony	}
-		owner = {
+		owner = { 
 			is_regular_empire = yes
 			has_valid_civic = civic_environmentalist
 		}
