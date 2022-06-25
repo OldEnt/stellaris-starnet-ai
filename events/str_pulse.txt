@@ -24,7 +24,10 @@ event = {
 						is_ai = no
 					}
 					country_event = {
-						id = starnet.3 days = 1 random = 200
+						id = starnet.3 days = 1 random = 200	# Determine small changes in fleet composition.
+					}
+					country_event = {
+						id = starnet.6 days = 5 random = 60		# Scripts attempting to unstuck economy.
 					}
 				}
 				if = {
@@ -253,6 +256,21 @@ event = {
 				remove_modifier = ai_mdrone_neg8
 				remove_modifier = ai_mdrone_neg16
 			}
+		}
+	}
+}
+
+# Scripts attempting to unstuck economy.
+country_event = {
+	id = starnet.6
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		add_resource = { starnet_spice_melange = -100000 }
+		every_owned_planet = {
+			check_planet_employment = yes
+			calculate_modifier = yes
 		}
 	}
 }
