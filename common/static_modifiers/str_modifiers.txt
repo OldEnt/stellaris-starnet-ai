@@ -18,6 +18,18 @@ ai_mdrone_neg16 = {
     job_maintenance_drone_add = -16
 }
 
+# This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in patch. Can be removed in Stellaris 3.5. see event starnet.101
+ai_disable_popular_amenity_jobs_save_fix_1 = {
+    job_maintenance_drone_add = -1000
+    job_entertainer_add = -1000
+    job_duelist_add = -1000
+    planet_amenities_add = 1000
+}
+
+ai_disable_popular_amenity_jobs_save_fix_2 = {
+    planet_stability_add = 100
+}
+
 str_fleet_pseudorepair = {
     ship_armor_regen_add_perc = 100000
     #AI sometimes will get its wounded ships be near the starbase instead of being on a starbase

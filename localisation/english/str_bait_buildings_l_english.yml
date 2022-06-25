@@ -28,3 +28,9 @@ mod_job_starnet_spice_melange_antifarmer_add: "StarNet AI construction decisions
 
 starnet_spice_melange: "starnet_spice_melange"
 starnet_spice_melange_desc: "StarNet AI fake resource tricking AI to behave in a certain way, as AI will try to satisfy demand for it."
+
+ai_disable_popular_amenity_jobs_save_fix_1: "AI_UPPER_AMENITIES_LIMIT define save fix"
+ai_disable_popular_amenity_jobs_save_fix_1_desc: "This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in StarNet. StarNet uses its own way to disable jobs."
+
+ai_disable_popular_amenity_jobs_save_fix_2: "$ai_disable_popular_amenity_jobs_save_fix_1$"
+ai_disable_popular_amenity_jobs_save_fix_2_desc: "$ai_disable_popular_amenity_jobs_save_fix_1_desc$"

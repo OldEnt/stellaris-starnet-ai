@@ -288,6 +288,8 @@ str_research_destroy = {
 str_industrial_district_allow = {
 	hidden_trigger = {
 		str_industry_allow_compatibility = yes
+		OR = {
+			has_planet_flag = str_industrial_district_allow_fixer # Save fix, see event starnet.100 Remove in 3.5
 		nand = {
 			exists = owner
 			owner = { is_ai = yes }
@@ -482,6 +484,7 @@ str_industrial_district_allow = {
 					}
 				}
 			}
+		}
 		}
 	}
 }

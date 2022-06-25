@@ -256,3 +256,125 @@ event = {
 		}
 	}
 }
+
+# This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in StarNet. StarNet uses its own way to disable jobs. Can be removed in Stellaris 3.5.
+event = {
+	id = starnet.100
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = str_ai_upper_amenities_limit_fixer_event_fired
+		}
+	}
+	immediate = {
+		set_global_flag = str_ai_upper_amenities_limit_fixer_event_fired
+	}
+}
+
+event = {
+	id = starnet.101
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_global_flag = str_ai_upper_amenities_limit_fixer_event_fired
+		}
+	}
+	immediate = {
+		set_global_flag = str_ai_upper_amenities_limit_fixer_event_fired
+		every_country = {
+			limit = {
+				is_ai = yes
+				OR = {
+					is_country_type = default
+					merg_is_standard_empire = yes
+
+				}
+			}
+			every_owned_planet = {
+				set_planet_flag = str_industrial_district_allow_fixer
+				add_modifier = {
+					modifier = ai_disable_popular_amenity_jobs_save_fix_1
+					days = 1
+				}
+				add_modifier = {
+					modifier = ai_disable_popular_amenity_jobs_save_fix_2
+					days = 7
+				}
+				calculate_modifier = yes
+				if = {
+					limit = {
+						owner = {
+							is_gestalt = yes
+						}
+					}
+					planet_event = {
+						id = starnet.102
+						days = 7
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = starnet.102
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+		owner = {
+			is_ai = yes
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				or = { free_amenities > 7 free_amenities < -1 }
+			}
+			planet_event = {
+				id = str_planet_audit.1
+			}
+		}
+		if = {
+			limit = {
+				free_amenities > 13
+			}
+			planet_event = {
+				id = str_planet_audit.1
+			}
+			planet_event = {
+				id = str_planet_audit.1
+			}
+		}
+		if = {
+			limit = {
+				free_amenities > 20
+			}
+			planet_event = {
+				id = str_planet_audit.1
+				days = 1
+			}
+			planet_event = {
+				id = str_planet_audit.1
+				days = 1
+			}
+		}
+		if = {
+			limit = {
+				free_amenities > 30
+			}
+			planet_event = {
+				id = str_planet_audit.1
+				days = 2
+			}
+			planet_event = {
+				id = str_planet_audit.1
+				days = 2
+			}
+		}
+	}
+}
+
