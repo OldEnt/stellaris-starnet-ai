@@ -1,0 +1,84 @@
+#Root = country, attacker
+#This = country, target
+#This rule is a condition for declaring war
+can_declare_war = {
+	custom_tooltip = {
+		fail_text = "ACTION_DECLARE_WAR_OVERLORD_ON_SUBJECT"
+		NOT = {
+			has_overlord = ROOT
+		}
+	}
+	if = {
+		limit = {
+			exists = root
+			ROOT = {
+				has_policy_flag = no_wars
+				OR = {
+					is_subject = no
+					overlord = {
+						is_same_value = root
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "CAN_DECLARE_WAR_POLICY"
+			always = no
+		}
+	}
+	if = {
+		limit = {
+			exists = root
+			ROOT = {
+				is_ai = yes
+			}
+		}
+		ROOT = {
+			is_at_war = no
+		}
+	}
+	if = {
+		limit = {
+			has_global_flag = str_enabled_flag			# Checks if StarNet or StarTech was loaded.
+			exists = root
+			OR = {
+				root = {
+					has_country_flag = str_country_banned_from_declare_war					# Stops country from declaring war, can be used as timed flag. Overrides StarNet truce and other can_declar_war subrules.
+				}
+				has_country_flag = str_country_war_immunity				# Grants country immunity from having war declared on it, can be used as timed flag. Overrides StarNet truce and other can_declar_war subrules.
+				AND = {
+					root = {
+						OR = {
+							is_ai = yes							# On default StarNet truce affects AI only.
+							has_global_flag = str_player_will_not_declare_war_until							# Makes players affected by StarNet truce.
+						}
+						NOT = {
+							has_country_flag = str_country_ignore_will_not_declare_war_until							# Excludes given country from StarNet truce.
+						}
+					}
+					NOT = {
+						has_global_flag = str_global_disable_will_not_declare_war_until						# Disables StarNet truce entirely.
+					}
+					event_target:global_event_country = {
+						OR = {
+							AND = {
+								is_variable_set = str_var_ai_will_not_declare_war_until								# Checks if custom truce value was set in the menu. Mods can hook up to change StarNet truce by setting this variable.
+								NOT = {
+									years_passed >= str_var_ai_will_not_declare_war_until									# Use value set in the menu.
+								}
+							}
+							NOR = {
+								is_variable_set = str_var_ai_will_not_declare_war_until								# If truce has not been custom set in the menu then scripted variable will be used (value differs between StarNet and StarTech).
+								years_passed >= @str_ai_will_not_declare_war_until								# Use default value as defined in common\scripted_variables. END NOTE: variable str_var_truce_years_localisation will give real truce years value, variable str_var_end_of_truce_year_localisation will give real year when truce ends (use str_calculate_real_truce_years = yes to refresh those if you are not using StarNet menu to change str_var_ai_will_not_declare_war_until).
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "STR_CAN_DECLARE_WAR"
+			always = no
+		}
+	}
+}

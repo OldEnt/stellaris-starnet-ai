@@ -1,0 +1,39 @@
+# StarNet uses it for localisations only but it will be accurate.
+str_calculate_real_truce_years = {
+	event_target:global_event_country = {
+		if = {
+			limit = {
+				is_variable_set = str_var_ai_will_not_declare_war_until
+			}
+			set_variable = {
+				which = str_var_truce_years_localisation
+				value = str_var_ai_will_not_declare_war_until				# Use value set in the menu.
+			}
+		}
+		else = {
+			set_variable = {
+				which = str_var_truce_years_localisation
+				value = @str_ai_will_not_declare_war_until				# Use default value.
+			}
+		}
+		set_variable = {
+			which = str_var_end_of_truce_year_localisation
+			value = str_var_truce_years_localisation
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = str_var_game_start_year
+				}
+			}
+			set_variable = {
+				which = str_var_game_start_year
+				value = 2200
+			}
+		}
+		change_variable = {
+			which = str_var_end_of_truce_year_localisation
+			value = str_var_game_start_year
+		}
+	}
+}

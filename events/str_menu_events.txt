@@ -1,5 +1,4 @@
 namespace = str_menu
-
 country_event = {
 	id = str_menu.1
 	title = str_menu.1.name
@@ -12,7 +11,63 @@ country_event = {
 	}
 	custom_gui = str_menu_window
 	is_triggered_only = yes
-
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = str_menu_truce_1
+					has_global_flag = str_menu_truce_2
+					has_global_flag = str_menu_truce_3
+				}
+			}
+			set_global_flag = str_menu_truce_1			# Flags only for menu switches, they do not affect the AI.
+		}
+		str_calculate_real_truce_years = yes
+	}
+	option = {
+		name = str_menu.1.truce
+		custom_tooltip = str_menu.1.truce.tooltip
+		switch = {
+			trigger = has_global_flag
+			str_menu_truce_1 = {
+				set_global_flag = str_player_will_not_declare_war_until
+				remove_global_flag = str_menu_truce_1
+				set_global_flag = str_menu_truce_2
+			}
+			str_menu_truce_2 = {
+				set_global_flag = str_global_disable_will_not_declare_war_until
+				remove_global_flag = str_menu_truce_2
+				set_global_flag = str_menu_truce_3
+			}
+			str_menu_truce_3 = {
+				remove_global_flag = str_player_will_not_declare_war_until
+				remove_global_flag = str_global_disable_will_not_declare_war_until
+				remove_global_flag = str_menu_truce_3
+				set_global_flag = str_menu_truce_1
+			}
+			default = {
+				remove_global_flag = str_player_will_not_declare_war_until
+				remove_global_flag = str_global_disable_will_not_declare_war_until
+				set_global_flag = str_menu_truce_1
+				remove_global_flag = str_menu_truce_2
+				remove_global_flag = str_menu_truce_3
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1
+			}
+		}
+	}
+	option = {
+		name = str_menu.1.truce.settings
+		custom_tooltip = str_menu.1.truce.settings.tooltip
+		hidden_effect = {
+			country_event = {
+				id = str_menu.2
+			}
+		}
+	}
 	option = {
 		name = str_menu.1.doomstack
 		custom_tooltip = str_menu.1.doomstack.tooltip
@@ -31,7 +86,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = str_menu.1.habitats
 		custom_tooltip = str_menu.1.habitats.tooltip
@@ -50,7 +104,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = str_menu.1.megastructures
 		custom_tooltip = str_menu.1.megastructures.tooltip
@@ -69,7 +122,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		allow = {
 			custom_tooltip = {
@@ -85,9 +137,32 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = str_menu.1.exit
+	}
+}
+
+country_event = {
+	id = str_menu.2
+	title = str_menu.2.name
+	desc = str_menu.2.desc
+	# picture = GFX_evt_fallen_empire_awakes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = root.owner_main_species
+		room = enclave_curator_room
+	}
+	custom_gui = str_menu_window
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = str_menu.2.exit
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1
+			}
+		}
 	}
 }
 
