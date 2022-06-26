@@ -45,6 +45,7 @@ unity_expenditure_megastructures = {
 			type = unity
 			amount > 7500
 		}
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {

@@ -6,10 +6,11 @@ event = {
 	id = str_mod_flag.1	
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
+	fire_only_once = no
 	
 	immediate = {
 		set_global_flag = "str_enabled_flag"
+		str_calculate_real_truce_years = yes
 	}
 }
 

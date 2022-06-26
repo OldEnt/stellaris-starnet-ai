@@ -6,6 +6,7 @@ event = {
 	fire_only_once = no
 	hide_window = yes
 	immediate = {
+		str_calculate_real_truce_years = yes	# StarNet uses it for localisations only but it will be accurate.
 		if = {
 			limit = {
 				years_passed < @str_years_of_extended_truce

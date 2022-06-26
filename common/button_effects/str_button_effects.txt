@@ -1,0 +1,117 @@
+str_var_ai_will_not_declare_war_until_add_one = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = 1
+			}
+		}
+	}
+}
+
+str_var_ai_will_not_declare_war_until_add_ten = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = 10
+			}
+		}
+	}
+}
+
+str_var_ai_will_not_declare_war_until_add_hundred = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = 100
+			}
+		}
+	}
+}
+
+str_var_ai_will_not_declare_war_until_minus_hundred = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = -100
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = str_var_ai_will_not_declare_war_until
+						value <= 0
+					}
+				}
+				clear_variable = str_var_ai_will_not_declare_war_until
+			}
+		}
+
+	}
+}
+
+str_var_ai_will_not_declare_war_until_minus_ten = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = -10
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = str_var_ai_will_not_declare_war_until
+						value <= 0
+					}
+				}
+				clear_variable = str_var_ai_will_not_declare_war_until
+			}
+		}
+	}
+}
+
+str_var_ai_will_not_declare_war_until_minus_one = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = -1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = str_var_ai_will_not_declare_war_until
+						value <= 0
+					}
+				}
+				clear_variable = str_var_ai_will_not_declare_war_until
+			}
+		}
+	}
+}

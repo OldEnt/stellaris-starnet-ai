@@ -25,6 +25,102 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetName_str_truce_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_disable_will_not_declare_war_until
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_disable_will_not_declare_war_until
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
+
+defined_text = {
+	name = GetName_str_truce_switch_active
+	text = {
+		trigger = {
+			has_global_flag = str_global_disable_will_not_declare_war_until
+		}
+		localization_key = NOT_ACTIVE
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_disable_will_not_declare_war_until
+			}
+		}
+		localization_key = ACTIVE
+	}
+}
+
+defined_text = {
+	name = GetName_str_truce_players_switch
+	text = {
+		trigger = {
+			has_global_flag = str_player_will_not_declare_war_until
+		}
+		localization_key = ALL
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_player_will_not_declare_war_until
+			}
+		}
+		localization_key = NUM_EMPIRES
+	}
+}
+
+# Requires root scope: attacker country
+defined_text = {
+	name = GetName_str_country_banned_from_declare_war
+	text = {
+		trigger = {
+			root = {
+				has_country_flag = str_country_banned_from_declare_war
+			}
+		}
+		localization_key = str_truce_country_banned_from_declare_war
+	}
+	text = {
+		trigger = {
+			NOT = {
+				root = {
+					has_country_flag = str_country_banned_from_declare_war
+				}
+			}
+		}
+		localization_key = BLANK_STRING
+	}
+}
+
+# Requires this scope: attacked country
+defined_text = {
+	name = GetName_str_country_war_immunity
+	text = {
+		trigger = {
+			has_country_flag = str_country_war_immunity
+		}
+		localization_key = str_truce_country_war_immunity
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = str_country_war_immunity
+			}
+		}
+		localization_key = BLANK_STRING
+	}
+}
+
+defined_text = {
 	name = GetName_str_doomstack_switch
 	text = {
 		trigger = {
@@ -36,6 +132,42 @@ defined_text = {
 		trigger = {
 			NOT = {
 				has_global_flag = str_doomstack_disabled
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
+
+defined_text = {
+	name = GetName_str_ai_should_build_habitats_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_ai_should_not_build_habitats
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_ai_should_not_build_habitats
+			}
+		}
+		localization_key = str_trigger_yes
+	}
+}
+
+defined_text = {
+	name = GetName_str_ai_should_build_megastructures_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_ai_should_not_build_megastructures
+		}
+		localization_key = str_trigger_no
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_ai_should_not_build_megastructures
 			}
 		}
 		localization_key = str_trigger_yes

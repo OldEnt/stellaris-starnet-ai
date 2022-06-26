@@ -1,0 +1,4 @@
+# Allow Merger of Rules to overwrite this.
+merg_is_standard_empire = {
+	always = no
+}

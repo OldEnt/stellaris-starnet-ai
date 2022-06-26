@@ -42,6 +42,7 @@ rare_crystals_expenditure_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
+		str_ai_should_build_megastructures = yes
 	}
 
 	fraction = {
