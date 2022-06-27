@@ -5,23 +5,23 @@
 str_early_default_plan = {
 
 	income = {
-		energy = 50
-		minerals = 200
-		alloys = 40
+		energy = @str_early_default_plan_income_energy
+		minerals = @str_early_default_plan_income_minerals
+		alloys = @str_early_default_plan_income_alloys
 
-		physics_research = 150
-		society_research = 150
-		engineering_research = 150
+		physics_research = @str_early_default_plan_income_physics_research
+		society_research = @str_early_default_plan_income_society_research
+		engineering_research = @str_early_default_plan_income_engineering_research
 
-		exotic_gases = 5
-		volatile_motes = 5
-		rare_crystals = 5
+		exotic_gases = @str_early_default_plan_income_exotic_gases
+		volatile_motes = @str_early_default_plan_income_volatile_motes
+		rare_crystals = @str_early_default_plan_income_rare_crystals
 	}
 
 	focus = {
-		energy = 10
-		minerals = 150
-		alloys = 35
+		energy = @str_early_default_plan_focus_energy
+		minerals = @str_early_default_plan_focus_minerals
+		alloys = @str_early_default_plan_focus_alloys
 	}
 
 	subplan = {
@@ -217,6 +217,7 @@ str_early_default_plan = {
 	subplan = {
 		set_name = "str >15y ecocrisis_0 safespace research"
 		potential = {
+			str_is_startech_loaded = no
 			years_passed > 15
 			str_raw_ecocrisis_level_0 = yes
 			safespace = yes
@@ -228,12 +229,25 @@ str_early_default_plan = {
 	subplan = {
 		set_name = "str >15y ecocrisis_0 stalemate research"
 		potential = {
+			str_is_startech_loaded = no
 			years_passed > 15
 			str_raw_ecocrisis_level_0 = yes
 			stalemate = yes
 		}
 		income = { physics_research = 450 society_research = 450 engineering_research = 450  }
 		focus = { physics_research = 200 society_research = 200 engineering_research = 200 }
+	}
+
+	subplan = {
+		set_name = "str str_ai_prioritise_energy_for_fleet_after str_years_of_twilight"
+		potential = {
+			str_is_startech_loaded = yes
+			years_passed > @str_ai_prioritise_energy_for_fleet_after
+			years_passed < @str_years_of_twilight
+			used_naval_capacity_percent < 0.9
+		}
+		income = { energy = 350 }
+		focus = { energy = 250 }
 	}
 
 	subplan = {

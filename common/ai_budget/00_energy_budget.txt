@@ -567,6 +567,19 @@ energy_upkeep_country_insane = { # Covers most other things
 	}
 }
 
+energy_upkeep_fleetbuilding = {
+	resource = energy
+	type = upkeep
+	category = country
+	potential = {
+		str_is_startech_loaded = yes
+		years_passed > @str_years_of_guaranteed_truce
+		used_naval_capacity_percent < 0.6
+	}
+	fraction = {
+		weight = 0.15
+	}
+}
 
 energy_expenditure_ultralate = {
 	resource = energy

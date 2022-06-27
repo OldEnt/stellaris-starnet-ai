@@ -16,3 +16,17 @@
 
 # The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Always trigger check with equal.
 @str_or_tech_fork_switch = 1
+
+# Base income for str_early_default_plan economic plan. Differs between StarNet and StarTech. When overwriting these values use FIOS overwrite instead of full file overwrite, otherwise StarNet may not detect properly whether StarNet or StarTech is running.
+@str_early_default_plan_income_energy = 50
+@str_early_default_plan_income_minerals = 200
+@str_early_default_plan_income_alloys = 40
+@str_early_default_plan_income_physics_research = 150
+@str_early_default_plan_income_society_research = 150
+@str_early_default_plan_income_engineering_research = 150
+@str_early_default_plan_income_exotic_gases = 5
+@str_early_default_plan_income_volatile_motes = 5
+@str_early_default_plan_income_rare_crystals = 5
+@str_early_default_plan_focus_energy = 10
+@str_early_default_plan_focus_minerals = 150
+@str_early_default_plan_focus_alloys = 35
