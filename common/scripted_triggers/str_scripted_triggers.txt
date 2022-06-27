@@ -1,0 +1,9 @@
+# Evaluates to true if StarTech fork is actually running. Also see GetName_str_or_tech_fork_switch scripted localisation.
+str_is_startech_loaded = {
+	event_target:global_event_country = {
+		check_variable_arithmetic = {
+			which = @str_or_tech_fork_switch			# The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Always trigger check with equal.
+			value = 2
+		}
+	}
+}

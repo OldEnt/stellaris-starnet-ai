@@ -1,16 +1,18 @@
-#Compatibility flag. Used to tell other mods that Starnet is running
-
+# Compatibility flag. Used to tell other mods that Starnet was installed.
 namespace = str_mod_flag
-
 event = {
-	id = str_mod_flag.1	
+	id = str_mod_flag.1
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = no
-	
 	immediate = {
 		set_global_flag = "str_enabled_flag"
+		if = {
+			limit = {
+				str_is_startech_loaded = yes
+			}
+			set_global_flag = "str_tech_fork"
+		}
 		str_calculate_real_truce_years = yes
 	}
 }
-
