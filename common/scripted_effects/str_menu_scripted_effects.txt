@@ -82,6 +82,529 @@ str_dmm_add_button_exception = {
 	}
 }
 
+str_truce_settings_register_countries = {
+	clear_global_event_target = str_menu_countries_register_1
+	clear_global_event_target = str_menu_countries_register_2
+	clear_global_event_target = str_menu_countries_register_3
+	clear_global_event_target = str_menu_countries_register_4
+	clear_global_event_target = str_menu_countries_register_5
+	clear_global_event_target = str_menu_countries_register_6
+	clear_global_event_target = str_menu_countries_register_7
+	clear_global_event_target = str_menu_countries_register_8
+	clear_global_event_target = str_menu_countries_register_9
+	clear_global_event_target = str_menu_countries_register_10
+	clear_global_event_target = str_menu_countries_register_11
+	clear_global_event_target = str_menu_countries_register_12
+	clear_global_event_target = str_menu_countries_register_13
+	clear_global_event_target = str_menu_countries_register_14
+	clear_global_event_target = str_menu_countries_register_15
+	clear_global_event_target = str_menu_countries_register_16
+	clear_global_event_target = str_menu_countries_register_17
+	clear_global_event_target = str_menu_countries_register_18
+	clear_global_event_target = str_menu_countries_register_19
+	clear_global_event_target = str_menu_countries_register_20
+	clear_global_event_target = str_menu_countries_register_21
+	clear_global_event_target = str_menu_countries_register_22
+	clear_global_event_target = str_menu_countries_register_23
+	clear_global_event_target = str_menu_countries_register_24
+	clear_global_event_target = str_menu_countries_register_25
+	clear_global_event_target = str_menu_countries_register_26
+	clear_global_event_target = str_menu_countries_register_27
+	clear_global_event_target = str_menu_countries_register_28
+	clear_global_event_target = str_menu_countries_register_29
+	clear_global_event_target = str_menu_countries_register_30
+	clear_global_event_target = str_menu_countries_register_31
+	clear_global_event_target = str_menu_countries_register_32
+	clear_global_event_target = str_menu_countries_register_33
+	clear_global_event_target = str_menu_countries_register_34
+	clear_global_event_target = str_menu_countries_register_35
+	clear_global_event_target = str_menu_countries_register_36
+	clear_global_event_target = str_menu_countries_register_37
+	clear_global_event_target = str_menu_countries_register_38
+	clear_global_event_target = str_menu_countries_register_39
+	clear_global_event_target = str_menu_countries_register_40
+	clear_global_event_target = str_menu_countries_register_41
+	clear_global_event_target = str_menu_countries_register_42
+	clear_global_event_target = str_menu_countries_register_43
+	clear_global_event_target = str_menu_countries_register_44
+	clear_global_event_target = str_menu_countries_register_45
+	clear_global_event_target = str_menu_countries_register_46
+	clear_global_event_target = str_menu_countries_register_47
+	clear_global_event_target = str_menu_countries_register_48
+	clear_global_event_target = str_menu_countries_register_49
+	clear_global_event_target = str_menu_countries_register_50
+	every_country = {
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_1
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_1
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_2
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_2
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_3
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_3
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_4
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_4
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_5
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_5
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_6
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_6
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_7
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_7
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_8
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_8
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_9
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_9
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_10
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_10
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_11
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_11
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_12
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_12
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_13
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_13
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_14
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_14
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_15
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_15
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_16
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_16
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_17
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_17
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_18
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_18
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_19
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_19
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_20
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_20
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_21
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_21
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_22
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_22
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_23
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_23
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_24
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_24
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_25
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_25
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_26
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_26
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_27
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_27
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_28
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_28
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_29
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_29
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_30
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_30
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_31
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_31
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_32
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_32
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_33
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_33
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_34
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_34
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_35
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_35
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_36
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_36
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_37
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_37
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_38
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_38
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_39
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_39
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_40
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_40
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_41
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_41
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_42
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_42
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_43
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_43
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_44
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_44
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_45
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_45
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_46
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_46
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_47
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_47
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_48
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_48
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_49
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_49
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_menu_countries_register_50
+				}
+			}
+			save_global_event_target_as = str_menu_countries_register_50
+		}
+	}
+}
+
+str_truce_settings_switch = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = str_country_banned_from_declare_war
+				has_country_flag = str_country_war_immunity
+				has_country_flag = str_country_ignore_will_not_declare_war_until
+			}
+		}
+		set_country_flag = str_country_banned_from_declare_war
+	}
+	else_if = {
+		limit = {
+			has_country_flag = str_country_banned_from_declare_war
+			NOR = {
+				has_country_flag = str_country_war_immunity
+				has_country_flag = str_country_ignore_will_not_declare_war_until
+			}
+		}
+		remove_country_flag = str_country_banned_from_declare_war
+		set_country_flag = str_country_war_immunity
+	}
+	else_if = {
+		limit = {
+			has_country_flag = str_country_war_immunity
+			NOR = {
+				has_country_flag = str_country_banned_from_declare_war
+				has_country_flag = str_country_ignore_will_not_declare_war_until
+			}
+		}
+		set_country_flag = str_country_banned_from_declare_war
+	}
+	else_if = {
+		limit = {
+			has_country_flag = str_country_war_immunity
+			has_country_flag = str_country_banned_from_declare_war
+			NOT = {
+				has_country_flag = str_country_ignore_will_not_declare_war_until
+			}
+		}
+		remove_country_flag = str_country_banned_from_declare_war
+		remove_country_flag = str_country_banned_from_declare_war
+		set_country_flag = str_country_ignore_will_not_declare_war_until
+	}
+	else_if = {
+		limit = {
+			has_country_flag = str_country_ignore_will_not_declare_war_until
+			NOR = {
+				has_country_flag = str_country_war_immunity
+				has_country_flag = str_country_banned_from_declare_war
+			}
+			set_country_flag = str_country_war_immunity
+		}
+	}
+	else = {
+		remove_country_flag = str_country_war_immunity
+		remove_country_flag = str_country_banned_from_declare_war
+		remove_country_flag = str_country_ignore_will_not_declare_war_until
+	}
+	hidden_effect = {
+		root = {
+			country_event = {
+				id = str_menu.2
+			}
+		}
+	}
+}
+
 # This is a dupe effect to minimalise error.log and CWTools spam. DO NOT USE.
 str_dummy_log_cleaner_effect = {
 	set_leader_flag = starnet_menu_name_flag
