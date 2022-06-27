@@ -23,7 +23,7 @@ building_robot_assembly_plant = {
 					}
 				}
 				owner = { is_ai = yes num_pops < 1000 }
-				or = {
+				OR = {
 					AND = {
 						str_is_col_factory = no
 						str_is_col_foundry = no
@@ -81,10 +81,7 @@ building_robot_assembly_plant = {
 		potential = {
 			exists = owner
 			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_robot_assembly_plant
-				value = 0
-			}
+			NOT = { has_building = building_robot_assembly_plant }
 		}
 		job_starnet_spice_melange_farmer_add = 2
 		job_starnet_spice_melange_antifarmer_add = -2
@@ -184,10 +181,7 @@ building_machine_assembly_plant = {
 		potential = {
 			exists = owner
 			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_machine_assembly_plant
-				value = 0
-			}
+			NOT = { has_building = building_machine_assembly_plant }
 		}
 		job_starnet_spice_melange_farmer_add = 2
 		job_starnet_spice_melange_antifarmer_add = -2
@@ -267,10 +261,7 @@ building_machine_assembly_complex = {
 		potential = {
 			exists = owner
 			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_machine_assembly_complex
-				value = 0
-			}
+			NOT = { has_building = building_machine_assembly_complex }
 		}
 		job_starnet_spice_melange_farmer_add = 2
 		job_starnet_spice_melange_antifarmer_add = -2
@@ -338,7 +329,7 @@ building_spawning_pool = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 
-	category = amenity
+	category = pop_assembly
 
 	potential = {
 		exists = owner
@@ -358,10 +349,7 @@ building_spawning_pool = {
 				is_ai = yes
 				str_raw_ecocrisis_level_0 = no
 			}
-			num_buildings = {
-				type = building_spawning_pool
-				value = 0
-			}
+			NOT = { has_building = building_spawning_pool }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 3
@@ -430,7 +418,7 @@ building_offspring_nest = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 
-	category = amenity
+	category = pop_assembly
 
 	potential = {
 		owner = { has_origin = origin_progenitor_hive }
@@ -548,10 +536,7 @@ building_necrophage_elevation_chamber = {
 		potential = {
 			exists = owner
 			owner = { is_ai = yes }
-			num_buildings = {
-				type = building_necrophage_elevation_chamber
-				value = 0
-			}
+			NOT = { has_building = building_necrophage_elevation_chamber }
 		}
 		job_starnet_spice_melange_farmer_add = 2
 		job_starnet_spice_melange_antifarmer_add = -2
