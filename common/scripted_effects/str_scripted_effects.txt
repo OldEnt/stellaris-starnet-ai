@@ -16,6 +16,8 @@ str_calculate_real_truce_years = {
 				value = @str_ai_will_not_declare_war_until				# Use default value.
 			}
 		}
+	}
+	event_target:global_event_country = {
 		set_variable = {
 			which = str_var_end_of_truce_year_localisation
 			value = str_var_truce_years_localisation
@@ -34,6 +36,22 @@ str_calculate_real_truce_years = {
 		change_variable = {
 			which = str_var_end_of_truce_year_localisation
 			value = str_var_game_start_year
+		}
+	}
+}
+
+str_var_ai_will_not_declare_war_until_set_default = {
+	event_target:global_event_country  = {
+		if = {
+			limit = {
+				NOT = {
+					is_variable_set = str_var_ai_will_not_declare_war_until
+				}
+			}
+			set_variable = {
+				which = str_var_ai_will_not_declare_war_until
+				value = @str_ai_will_not_declare_war_until				# Use default value.
+			}
 		}
 	}
 }

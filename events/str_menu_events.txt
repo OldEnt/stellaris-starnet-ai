@@ -152,7 +152,7 @@ country_event = {
 		portrait = root.owner_main_species
 		room = enclave_curator_room
 	}
-	custom_gui = str_menu_window
+	custom_gui = str_menu_window_truce_settings
 	is_triggered_only = yes
 	immediate = {
 		str_truce_settings_register_countries = yes
