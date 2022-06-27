@@ -38,7 +38,7 @@
  str_truce_ignore: "£community_in_breach£"
  str_truce_prohibited_legend: "£blocker£ §R$treaties_separate_no$§! - $slavery_procreation_not_allowed$ $ACTION_DECLARE_WAR_TITLE$"
  str_truce_protected_legend: "£trade_protection£ §G$pre_sapients_protect$§! - $ISOLATIONIST_PEACE3$"
- str_truce_ignore_legend: "£community_in_breach£ §B$SETTINGS_VOICE_TYPE_default_advisor_voice_type$§! - $NO$ $ACTION_DECLARE_WAR_TITLE$ during $str_truce$, $str_truce_prohibited$ $AND$ $str_truce_protected$ $LOYALTY_ACCEPTANCE_FACTOR$"
+ str_truce_ignore_legend: "£community_in_breach£ §B$SETTINGS_VOICE_TYPE_default_advisor_voice_type$§! - $treaties_separate_yes$ $ACTION_DECLARE_WAR_TITLE$ during $str_truce$, $str_truce_prohibited$ $AND$ $str_truce_protected$ $LOYALTY_ACCEPTANCE_FACTOR$"
 
   # Menu countries register------------------------------------
  str_menu.2.option_1: "[str_menu_countries_register_1.GetRealName] [str_menu_countries_register_1.GetName_str_truce_settings_banned_from_declare_war] [str_menu_countries_register_1.GetName_str_truce_settings_str_country_war_immunity] [str_menu_countries_register_1.GetName_str_truce_settings_str_country_ignore_will_not_declare_war_until]"

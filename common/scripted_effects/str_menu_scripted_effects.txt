@@ -578,18 +578,27 @@ str_truce_settings_switch = {
 			}
 		}
 		remove_country_flag = str_country_banned_from_declare_war
-		remove_country_flag = str_country_banned_from_declare_war
 		set_country_flag = str_country_ignore_will_not_declare_war_until
 	}
 	else_if = {
 		limit = {
 			has_country_flag = str_country_ignore_will_not_declare_war_until
-			NOR = {
-				has_country_flag = str_country_war_immunity
+			has_country_flag = str_country_war_immunity
+			NOT = {
 				has_country_flag = str_country_banned_from_declare_war
 			}
-			set_country_flag = str_country_war_immunity
 		}
+		remove_country_flag = str_country_war_immunity
+	}
+	else_if = {
+		limit = {
+			has_country_flag = str_country_ignore_will_not_declare_war_until
+			NOR = {
+				has_country_flag = str_country_banned_from_declare_war
+				has_country_flag = str_country_war_immunity
+			}
+		}
+		remove_country_flag = str_country_ignore_will_not_declare_war_until
 	}
 	else = {
 		remove_country_flag = str_country_war_immunity
