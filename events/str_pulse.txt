@@ -348,7 +348,7 @@ planet_event = {
 	is_triggered_only = yes
 	pre_triggers = {
 		has_owner = yes
-		is_ai = no
+		is_ai = yes
 	}
 	immediate = {
 		if = {
