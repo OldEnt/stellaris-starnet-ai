@@ -758,6 +758,18 @@ country_event = {
 		}
 	}
 	option = {
+		name = str_menu.2.reset
+		custom_tooltip = str_menu.2.reset.tooltip
+		hidden_effect = {
+			every_country = {
+				str_truce_settings_switch_reset_flags = yes
+			}
+			country_event = {
+				id = str_menu.2
+			}
+		}
+	}
+	option = {
 		name = str_menu.2.exit
 		hidden_effect = {
 			country_event = {
