@@ -24,9 +24,9 @@ building_noble_estates = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
 			exists = owner
-			or = {
-				num_pops > 40
+			OR = {
 				owner = { is_ai = no }
+				num_pops > 40
 			}
 		}
 	}
@@ -34,13 +34,8 @@ building_noble_estates = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			num_buildings = {
-				type = building_noble_estates
-				value = 0
-			}
+			owner = { is_ai = yes }
+			NOT = { has_building = building_noble_estates }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -153,10 +148,8 @@ building_precinct_house = {
 					planet_crime > 40
 					owner = { str_raw_ecocrisis_level_1 = no }
 					num_pops > 20
-					NOT = {
+					NOR = {
 						has_modifier = crime_lord_deal
-					}
-					NOT = {
 						has_planet_flag = str_just_removed_precinct
 					}
 					num_buildings = { type = building_precinct_house value < 2 }

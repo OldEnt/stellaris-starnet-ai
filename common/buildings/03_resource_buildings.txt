@@ -540,9 +540,7 @@ building_mineral_purification_plant = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_mineral_purification = yes
 		}
 		modifier = {
@@ -934,7 +932,7 @@ building_energy_grid = {
 	category = resource
 
 	destroy_trigger = {
-		or = {
+		OR = {
 			has_modifier = resort_colony
 			str_energy_grid_destroy = yes
 		}
@@ -1363,6 +1361,7 @@ building_bio_reactor = {
 	}
 
 	destroy_trigger = {
+		exists = owner
 		owner = {
 			is_ai = yes
 			has_deficit = food

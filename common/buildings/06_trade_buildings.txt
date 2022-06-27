@@ -11,7 +11,7 @@ building_commercial_zone = {
 		exists = owner
 		owner = {
 			is_regular_empire = yes
-			or = {
+			OR = {
 				is_ai = no
 				years_passed < 3
 				prev = { str_uses_comzones = yes }
@@ -19,13 +19,13 @@ building_commercial_zone = {
 		}
 		NOT = { has_modifier = slave_colony }
 	}
-
+	
 	destroy_trigger = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
-			and = {
+			AND = {
 				owner = { is_ai = yes }
 				years_passed > 5
 				str_uses_comzones = no 
@@ -35,12 +35,12 @@ building_commercial_zone = {
 
 	allow = {
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				and = {
+				AND = {
 					str_uses_comzones = yes
 					free_amenities < 2
-					or = {
+					OR = {
 						str_is_col_research = no
 						str_is_col_bureau = no
 						free_amenities < -5
@@ -49,6 +49,7 @@ building_commercial_zone = {
 			}
 		}
 	}
+
 
 
 	resources = {
@@ -141,9 +142,7 @@ building_commercial_megaplex = {
 
 	allow = {
 		hidden_trigger = {
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -153,7 +152,7 @@ building_commercial_megaplex = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
-			and = {
+			AND = {
 				owner = { is_ai = yes }
 				years_passed > 2
 			}

@@ -19,19 +19,19 @@ building_foundry_1 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			and = {
+			AND = {
 				is_capital = yes
 				owner = {
 					is_ai = yes
 					resource_income_compare = { resource = alloys value > 45 }
 					num_owned_planets > 3
-					or = {
+					OR = {
 						resource_stockpile_compare = { resource = alloys value > 3500 }
 						used_naval_capacity_percent > 0.95
 					}
 				}
 				years_passed > 20
-				not = { owner = { has_origin = origin_void_dwellers } }
+				NOT = { owner = { has_origin = origin_void_dwellers } }
 			}
 		}
 	}
@@ -281,14 +281,9 @@ building_foundry_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_building_foundry_upgrade = yes
-			num_buildings = {
-				type = building_foundry_2
-				value = 0
-			}
+			NOT = { has_building = building_foundry_2 }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -508,14 +503,9 @@ building_foundry_3 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_building_foundry_upgrade = yes
-			num_buildings = {
-				type = building_foundry_3
-				value = 0
-			}
+			NOT = { has_building = building_foundry_3 }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -738,9 +728,7 @@ building_factory_1 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_building_factory = yes
 		}
 		modifier = {
@@ -907,14 +895,9 @@ building_factory_2 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_building_factory_upgrade = yes
-			num_buildings = {
-				type = building_factory_2
-				value = 0
-			}
+			NOT = { has_building = building_factory_2 }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -1085,14 +1068,9 @@ building_factory_3 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_building_factory_upgrade = yes
-			num_buildings = {
-				type = building_factory_2
-				value = 0
-			}
+			NOT = { has_building = building_factory_2 }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
@@ -1237,12 +1215,9 @@ building_refinery = {
 			exists = owner
 			owner = {
 				is_ai = yes
+				str_force_gases = yes
 			}
-			owner = { str_force_gases = yes }
-			num_buildings = {
-				type = building_refinery
-				value = 0
-			}
+			NOT = { has_building = building_refinery }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 2
@@ -1346,12 +1321,9 @@ building_chemical_plant = {
 			exists = owner
 			owner = {
 				is_ai = yes
+				str_force_motes = yes
 			}
-			owner = { str_force_motes = yes }
-			num_buildings = {
-				type = building_chemical_plant
-				value = 0
-			}
+			NOT = { has_building = building_chemical_plant }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 2
@@ -1455,12 +1427,9 @@ building_crystal_plant = {
 			exists = owner
 			owner = {
 				is_ai = yes
+				str_force_crystals = yes
 			}
-			owner = { str_force_crystals = yes }
-			num_buildings = {
-				type = building_crystal_plant
-				value = 0
-			}
+			NOT = { has_building = building_crystal_plant }
 		}
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 2
@@ -1644,7 +1613,7 @@ building_ministry_production = {
 	allow = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
 				str_num_districts_allindustry = { operator = > num = 3 }
 				str_is_col_factory = yes
@@ -1675,14 +1644,9 @@ building_ministry_production = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			num_buildings = {
-				type = building_ministry_production
-				value = 0
-			}
-			or = {
+			owner = { is_ai = yes }
+			NOT = { has_building = building_ministry_production }
+			OR = {
 				str_is_col_foundry = yes
 				str_is_col_factory = yes
 				str_is_col_industrial = yes
@@ -1759,7 +1723,7 @@ building_production_center = {
 	allow = {
 		has_major_upgraded_capital = yes
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
 				str_num_districts_allindustry = { operator = > num = 3 }
 				str_is_col_foundry = yes

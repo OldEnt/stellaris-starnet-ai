@@ -21,51 +21,33 @@ building_luxury_residence = {
 
 	allow = {
 		hidden_trigger = {
-			or = {
-				owner = {
-					is_ai = no
-				}
-				not = { has_building = building_luxury_residence }
-			}
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				nor = {
-					is_capital = yes
-					num_buildings = {
-						type = building_research_lab_1
-						value > 0
+				AND = {
+					NOR = {
+						has_building = building_luxury_residence
+						has_building = building_research_lab_1
 					}
-					num_pops < 13
-				}
-			}
-			or = {
-				owner = { is_ai = no }
-				num_buildings = {
-					type = building_luxury_residence
-					value < 1
-				}
-			}
-			or = {
-				owner = { is_ai = no }
-				free_jobs > 2
-			}
-			or = {
-				owner = { is_ai = no }
-				and = {
-					free_amenities < -4
-					or = {
-						free_district_slots < 3
-						num_pops < 16
-						num_pops > 11
+					is_capital = no
+					num_pops >= 13
+					free_jobs > 2
+					OR = {
+						AND = {
+							free_amenities < -4
+							free_amenities > -9
+							OR = {
+								free_district_slots < 3
+								num_pops < 16
+							}
+						}
+						AND = {
+							free_building_slots > 1
+							free_amenities < -2
+							free_amenities > -6
+							free_district_slots = 0
+							has_building = building_holo_theatres
+						}
 					}
-					free_amenities > -9
-				}
-				and = {
-					free_building_slots > 1
-					free_amenities < -2
-					free_amenities > -6
-					free_district_slots = 0
-					has_building = building_holo_theatres
 				}
 			}
 		}
@@ -83,12 +65,12 @@ building_luxury_residence = {
 					is_ai = yes
 				}
 			}
-			and = {
+			AND = {
+				owner = { lategame = no }
 				num_buildings = {
 					type = building_research_lab_1
-					value > 1
+					value > 1	
 				}
-				owner = { lategame = no }
 				free_jobs < 1
 				free_amenities > 6
 				free_building_slots = 0
@@ -300,51 +282,33 @@ building_communal_housing = {
 
 	allow = {
 		hidden_trigger = {
-			or = {
-				owner = {
-					is_ai = no
-				}
-				not = { has_building = building_communal_housing }
-			}
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				nor = {
-					is_capital = yes
-					num_buildings = {
-						type = building_research_lab_1
-						value > 0
+				AND = {
+					NOR = {
+						has_building = building_communal_housing
+						has_building = building_research_lab_1
 					}
-					num_pops < 13
-				}
-			}
-			or = {
-				owner = { is_ai = no }
-				num_buildings = {
-					type = building_communal_housing
-					value < 1
-				}
-			}
-			or = {
-				owner = { is_ai = no }
-				free_jobs > 2
-			}
-			or = {
-				owner = { is_ai = no }
-				and = {
-					free_amenities < -4
-					or = {
-						free_district_slots < 3
-						num_pops < 16
-						num_pops > 11
+					is_capital = no
+					num_pops >= 13
+					free_jobs > 2
+					OR = {
+						AND = {
+							free_amenities < -4
+							free_amenities > -9
+							OR = {
+								free_district_slots < 3
+								num_pops < 16
+							}
+						}
+						AND = {
+							free_building_slots > 1
+							free_amenities < -2
+							free_amenities > -6
+							free_district_slots = 0
+							has_building = building_holo_theatres
+						}
 					}
-					free_amenities > -9
-				}
-				and = {
-					free_building_slots > 1
-					free_amenities < -2
-					free_amenities > -6
-					free_district_slots = 0
-					has_building = building_holo_theatres
 				}
 			}
 		}
@@ -354,27 +318,27 @@ building_communal_housing = {
 		exists = owner
 		OR = {
 			AND = {
+				owner = { is_ai = yes }
 				free_building_slots = 0
 				free_jobs < -2
 				free_housing > 10
 				free_district_slots = 0
 				free_amenities > 2
+				
+			}
+			AND = {
 				owner = {
 					is_ai = yes
+					lategame = no
 				}
-			}
-			and = {
 				num_buildings = {
 					type = building_research_lab_1
 					value > 1
 				}
-				owner = { lategame = no }
 				free_jobs < 1
 				free_amenities > 6
 				free_building_slots = 0
-				owner = {
-					is_ai = yes
-				}
+
 			}
 			AND = {
 				is_planet_class = pc_habitat
@@ -699,19 +663,19 @@ building_hive_warren = {
 	allow = {
 		buildings_simple_allow = yes
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				and = {
+				AND = {
 					free_jobs > 0
 					free_amenities < -2
 					free_amenities > -8
-					or = {
-						free_amenities > -10
-						and = {
+					OR = {
+						#free_amenities > -10 PM: -11 is LESS than -8, so this will never be true due to earlier check for > -8
+						AND = {
 							num_pops > 13
 							free_housing < 15
 						}
-						and = {
+						AND = {
 							num_pops > 20
 							free_housing < 25
 						}
@@ -882,25 +846,28 @@ building_holo_theatres = {
 
 	allow = {
 		hidden_trigger = {
-			or = {
+			OR = {
 				owner = { is_ai = no }
-				and = {
+				AND = {
 					free_amenities < -5
 					num_pops > 11
 				}
-				and = {
+				AND = {
 					free_amenities < -4
-					or = { has_building = building_luxury_residence has_building = building_communal_housing }
+					OR = {
+						has_building = building_luxury_residence
+						has_building = building_communal_housing
+					}
 				}
-				and = {
+				AND = {
+					owner = { has_origin = origin_default }
+					is_capital = yes
+					NOT = { has_building = building_holo_theatres }
 					free_amenities < 2
-					or = {
+					OR = {
 						years_passed > 15
 						free_amenities < -2
 					}
-					owner = { has_origin = origin_default }
-					is_capital = yes
-					not = { has_building = building_holo_theatres }
 				}
 			}
 		}
@@ -946,9 +913,7 @@ building_holo_theatres = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_ai = yes
-			}
+			owner = { is_ai = yes }
 			str_force_holotheatre = yes
 		}
 		modifier = {
@@ -1021,9 +986,7 @@ building_hyper_entertainment_forum = {
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = {
-			owner = {
-				is_ai = no
-			}
+			owner = { is_ai = no }
 		}
 	}
 
@@ -1117,6 +1080,7 @@ building_clinic = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
+			
 		}
 	}
 
