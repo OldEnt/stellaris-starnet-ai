@@ -10,8 +10,8 @@ str_var_ai_will_not_declare_war_until_reset = {
 					limit = {
 						is_variable_set = str_var_ai_will_not_declare_war_until
 					}
+					clear_variable = str_var_ai_will_not_declare_war_until
 				}
-				clear_variable = str_var_ai_will_not_declare_war_until
 			}
 			str_calculate_real_truce_years = yes
 		}
