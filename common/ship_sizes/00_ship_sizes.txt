@@ -96,17 +96,11 @@ corvette = {
 
 	ai_ship_data = {
 		fraction = {
-			base = 100
 			modifier = {
-				add = -90
-				has_technology = tech_cruisers
+				add = value:str_value_ai_ship_data_corvette
 			}
 			modifier = {
-				add = -90
-				has_technology = tech_destroyers
-			}
-			modifier = {
-				mult = 0
+				set = 0
 				uses_standard_ship_sizes = no
 			}
 		}
@@ -176,15 +170,10 @@ destroyer = {
 	ai_ship_data = {
 		fraction = {
 			modifier = {
-				add = 90
-				has_technology = tech_destroyers
+				add = value:str_value_ai_ship_data_destroyer
 			}
 			modifier = {
-				add = -90
-				has_technology = tech_cruisers
-			}
-			modifier = {
-				mult = 0
+				set = 0
 				uses_standard_ship_sizes = no
 			}
 		}
@@ -242,20 +231,10 @@ cruiser = {
 	ai_ship_data = {
 		fraction = {
 			modifier = {
-				add = 90
-				has_technology = tech_cruisers
+				add = value:str_value_ai_ship_data_cruiser
 			}
 			modifier = {
-				add = -90
-				has_technology = tech_battleships
-			}
-			modifier = {
-				add = 30
-				has_technology = tech_battleships
-				has_country_flag = str_need_to_counter_corvettes
-			}
-			modifier = {
-				mult = 0
+				set = 0
 				uses_standard_ship_sizes = no
 			}
 		}
@@ -313,16 +292,10 @@ battleship = {
 	ai_ship_data = {
 		fraction = {
 			modifier = {
-				add = 90
-				has_technology = tech_battleships
+				add = value:str_value_ai_ship_data_battleship
 			}
 			modifier = {
-				add = -30
-				has_technology = tech_battleships
-				has_country_flag = str_need_to_counter_corvettes
-			}
-			modifier = {
-				mult = 0
+				set = 0
 				uses_standard_ship_sizes = no
 			}
 		}

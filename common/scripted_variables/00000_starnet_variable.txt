@@ -30,3 +30,21 @@
 @str_early_default_plan_focus_energy = 10
 @str_early_default_plan_focus_minerals = 150
 @str_early_default_plan_focus_alloys = 35
+
+# Values for fleet composition modifiers.
+@str_ai_ship_data_corvette_base = 100
+@str_ai_ship_data_corvette_has_tech_cruisers = -90
+@str_ai_ship_data_corvette_has_tech_destroyers = -90
+
+@str_ai_ship_data_destroyer_base = 0
+@str_ai_ship_data_destroyers_has_tech_destroyers = 90
+@str_ai_ship_data_destroyers_has_tech_cruisers = -90
+
+@str_ai_ship_data_cruiser_base = 0
+@str_ai_ship_data_cruisers_has_tech_cruisers = 90
+@str_ai_ship_data_cruisers_has_tech_battleships = -90
+@str_ai_ship_data_cruisers_need_to_counter_corvettes = 30
+
+@str_ai_ship_data_battleship_base = 0
+@str_ai_ship_data_battleships_has_tech_battleships = 90
+@str_ai_ship_data_battleships_need_to_counter_corvettes = -30
