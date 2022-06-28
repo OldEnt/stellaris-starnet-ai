@@ -37,15 +37,15 @@ str_value_ai_ship_data_destroyer = {
 str_value_ai_ship_data_cruiser = {
 	base = @str_ai_ship_data_cruiser_base	# 0
 	modifier = {
-		add = @str_ai_ship_data_cruisers_has_tech_cruisers		# 90
+		add = @str_ai_ship_data_cruiser_has_tech_cruisers		# 90
 		has_technology = tech_cruisers
 	}
 	modifier = {
-		add = @str_ai_ship_data_cruisers_has_tech_battleships		# -90
+		add = @str_ai_ship_data_cruiser_has_tech_battleships		# -90
 		has_technology = tech_battleships
 	}
 	modifier = {
-		add = @str_ai_ship_data_cruisers_need_to_counter_corvettes		# 30
+		add = @str_ai_ship_data_cruiser_need_to_counter_corvettes		# 30
 		has_technology = tech_battleships
 		has_country_flag = str_need_to_counter_corvettes
 	}
