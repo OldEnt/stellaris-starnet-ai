@@ -164,9 +164,9 @@ food_expenditure_buildings = {
 	}
 }
 
-food_expenditure_buildings = {
+food_upkeep_buildings = {
 	resource = food
-	type = expenditure
+	type = upkeep
 	category = planets
 
 	potential = {
@@ -174,12 +174,9 @@ food_expenditure_buildings = {
 	}
 
 	fraction = {
-		weight = 0.2
+		weight = 0.1
 	}
 
-	static_max = {
-		base = 500
-	}
 }
 
 food_upkeep_ships = {
