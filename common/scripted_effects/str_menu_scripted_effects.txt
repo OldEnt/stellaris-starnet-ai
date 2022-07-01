@@ -622,4 +622,5 @@ str_truce_settings_switch_reset_flags = {
 str_dummy_log_cleaner_effect = {
 	set_leader_flag = starnet_menu_name_flag
 	set_leader_flag = dmm_display_exception_for_@prevprev
+	set_global_flag = str_friendship_flag
 }

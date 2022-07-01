@@ -7,12 +7,26 @@ event = {
 	fire_only_once = no
 	immediate = {
 		set_global_flag = "str_enabled_flag"
+		str_calculate_real_truce_years = yes
 		if = {
 			limit = {
 				str_is_startech_loaded = yes
 			}
 			set_global_flag = "str_tech_fork"
 		}
-		str_calculate_real_truce_years = yes
+		if = {
+			limit = {
+				str_is_startech_loaded = no
+				has_global_flag = "str_tech_fork"
+			}
+			remove_global_flag = "str_tech_fork"
+		}
+		if = {
+			limit = {
+				str_is_friendship_patch_loaded = no
+				has_global_flag = "str_friendship_flag"
+			}
+			remove_global_flag = "str_friendship_flag"
+		}
 	}
 }
