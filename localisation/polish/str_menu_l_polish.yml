@@ -153,3 +153,12 @@
  str_menu.3.player_live_48: "[str_str_event_target_human_player_live_48.GetRealName] [str_str_event_target_human_player_live_48.GetName_str_dmm_display_exception_for_48]"
  str_menu.3.player_live_49: "[str_str_event_target_human_player_live_49.GetRealName] [str_str_event_target_human_player_live_49.GetName_str_dmm_display_exception_for_49]"
  str_menu.3.player_live_50: "[str_str_event_target_human_player_live_50.GetRealName] [str_str_event_target_human_player_live_50.GetName_str_dmm_display_exception_for_50]"
+
+  # Fleet Compositions------------------------------------
+ str_menu.1.ship_sizes.settings: "§E$str_menu.4.name$§!"
+ str_menu.1.ship_sizes.settings.tooltip: "$BLANK_STRING$"
+ str_menu.4.name: "$FLEET_COMPOSITION$"
+ str_menu.4.desc: "$str_menu.4.values$"
+ str_menu.4.reload: "$RELOAD$"
+ str_menu.4.exit: "§Y$SETTINGS_BACK$§!"
+ str_menu.4.values: "$BLANK_STRING$"

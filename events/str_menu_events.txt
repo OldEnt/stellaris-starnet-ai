@@ -69,6 +69,18 @@ country_event = {
 		}
 	}
 	option = {
+		name = str_menu.1.ship_sizes.settings
+		custom_tooltip = str_menu.1.ship_sizes.settings.tooltip
+		allow = {
+			always = no
+		}
+		hidden_effect = {
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+	option = {
 		name = str_menu.1.doomstack
 		custom_tooltip = str_menu.1.doomstack.tooltip
 		switch = {
@@ -1862,6 +1874,67 @@ country_event = {
 				id = str_menu.1				# Closes Advanced Options window and redirects to main menu.
 				days = 0
 				random = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = str_menu.4
+	title = str_menu.4.name
+	desc = str_menu.4.desc
+	# picture = GFX_evt_fallen_empire_awakes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = root.owner_main_species
+		room = enclave_curator_room
+	}
+	custom_gui = str_menu_window
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:str_register_ship_size_name_country_1					# Debug.
+				}
+			}
+			random_country = {
+				limit = {
+					is_ai = no
+				}
+				save_global_event_target_as = str_register_ship_size_name_country_1
+				set_variable = {
+					which = display_str_value_ai_ship_data_corvette
+					value = value:str_value_ai_ship_data_corvette
+				}
+				set_variable = {
+					which = display_str_value_ai_ship_data_destroyer
+					value = value:str_value_ai_ship_data_destroyer
+				}
+				set_variable = {
+					which = display_str_value_ai_ship_data_cruiser
+					value = value:str_value_ai_ship_data_cruiser
+				}
+				set_variable = {
+					which = display_str_value_ai_ship_data_battleship
+					value = value:str_value_ai_ship_data_battleship
+				}
+			}
+		}
+	}
+	option = {
+		name = str_menu.4.reload
+		hidden_effect = {
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+	option = {
+		name = str_menu.4.exit
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1
 			}
 		}
 	}

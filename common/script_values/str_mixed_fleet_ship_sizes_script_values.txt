@@ -1,0 +1,49 @@
+str_mixed_fleet_value_ai_ship_data_corvette = {
+	base = 100
+	modifier = {
+		add = -50
+		has_technology = tech_cruisers
+	}
+	modifier = {
+		add = 30
+		has_technology = tech_cruisers
+		can_kill_turtles = yes
+	}
+	modifier = {
+		add = -70
+		can_kill_turtles = yes
+	}
+}
+
+str_mixed_fleet_value_ai_ship_data_destroyer = {
+	base = 0
+	modifier = {
+		add = 70
+		can_kill_turtles = yes
+	}
+	modifier = {
+		add = -50
+		can_kill_turtles = yes
+		has_technology = tech_cruisers
+	}
+}
+
+str_mixed_fleet_value_ai_ship_data_cruiser = {
+	base = 0
+	modifier = {
+		add = 70
+		has_technology = tech_cruisers
+	}
+	modifier = {
+		add = -40
+		has_technology = tech_battleships
+	}
+}
+
+str_mixed_fleet_value_ai_ship_data_battleship = {
+	base = 0
+	modifier = {
+		add = 40
+		has_technology = tech_battleships
+	}
+}

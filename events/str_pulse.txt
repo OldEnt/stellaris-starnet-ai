@@ -399,3 +399,11 @@ planet_event = {
 	}
 }
 
+event = {
+	id = starnet.200
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		str_on_game_start_register_vanilla_ship_sizes = yes
+	}
+}

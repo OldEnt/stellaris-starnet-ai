@@ -1,5 +1,6 @@
 # StarNet uses it for localisations only but it will be accurate.
 str_calculate_real_truce_years = {
+	optimize_memory
 	event_target:global_event_country = {
 		if = {
 			limit = {
@@ -41,7 +42,8 @@ str_calculate_real_truce_years = {
 }
 
 str_var_ai_will_not_declare_war_until_set_default = {
-	event_target:global_event_country  = {
+	optimize_memory
+	event_target:global_event_country = {
 		if = {
 			limit = {
 				NOT = {
@@ -53,5 +55,823 @@ str_var_ai_will_not_declare_war_until_set_default = {
 				value = @str_ai_will_not_declare_war_until				# Use default value.
 			}
 		}
+	}
+}
+
+# Register ship_size for fleet composition settings.
+str_on_game_start_register_vanilla_ship_sizes = {
+	optimize_memory
+	str_register_ship_size = {
+		SHIP_SIZE = corvette
+		MOD_NAME = vanilla
+		AI_SHIP_DATA_FACTOR = 25
+		SIZE_MULTIPLIER = 1
+		# REFRESH = yes	# Use this parameter only if you want to clear all parameters (including MOD_NAME) inside already registered unit without killing it. Do not forget to provide new values (also see str_deregister_ship_size effect).
+	}
+	str_register_ship_size = {
+		SHIP_SIZE = destroyer
+		MOD_NAME = vanilla
+		AI_SHIP_DATA_FACTOR = 25
+		SIZE_MULTIPLIER = 2
+	}
+	str_register_ship_size = {
+		SHIP_SIZE = cruiser
+		MOD_NAME = vanilla
+		AI_SHIP_DATA_FACTOR = 25
+		SIZE_MULTIPLIER = 4
+	}
+	str_register_ship_size = {
+		SHIP_SIZE = battleship
+		MOD_NAME = vanilla
+		AI_SHIP_DATA_FACTOR = 25
+		SIZE_MULTIPLIER = 8
+	}
+	# Below hulls are not being supported for compatibility reasons as they are not being overwritten, they serve as an example.
+	str_register_ship_size = {
+		SHIP_SIZE = titan
+		MOD_NAME = vanilla
+		SIZE_MULTIPLIER = 16
+		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
+		AI_SHIP_DATA_DESIRED_MAX = 3		# If not provided will set 3.
+		AI_SHIP_DATA_DESIRED_MULT = 0.1		# If not provided will set 0.1.
+		# Below values would be used in \common\country_limits\ship_of_size_limits but the files are not being overwritten for compatibility reasons.
+		LIMITS_BASE = 16
+		LIMITS_MAX = 320
+		LIMITS_NAVAL_CAP_FRACTION = 0.08
+	}
+	str_register_ship_size = {
+		SHIP_SIZE = colossus
+		MOD_NAME = vanilla
+		SIZE_MULTIPLIER = 32
+		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
+		AI_SHIP_DATA_DESIRED_MAX = 1		# If not provided will set 3.
+		# Below values would be used in \common\country_limits\ship_of_size_limits but files are not being overwritten for compatibility reasons.
+		LIMITS_BASE = 32
+	}
+	str_register_ship_size = {
+		SHIP_SIZE = juggernaut
+		MOD_NAME = vanilla
+		SIZE_MULTIPLIER = 32
+		# Below values would be used in \common\country_limits\ship_of_size_limits but files are not being overwritten for compatibility reasons.
+		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
+		AI_SHIP_DATA_DESIRED_MAX = 1		# If not provided will set 3.
+		LIMITS_BASE = 32
+	}
+	# 1/2: Example \common\country_limits\ship_of_size_limits...
+	# titan_ships_limit = { 
+	# 	ship_types = { 
+	# 		titan
+	# 	}
+	# 	base = value:str_value_limits_base_titan # 16 # 1 * titan's size_multiplier
+	# 	max = value:str_value_limits_max_titan # 320 # 20 * 16
+	# 	naval_cap_fraction = value:str_value_limits_naval_cap_fraction_titan # 0.08
+	# 	show = {
+	# 		is_scope_valid = yes
+	# 		has_technology = tech_titans
+	# 	}
+	# }
+	# 2/2: ...and corresponding example common\script_values:
+	# str_value_limits_base_titan = {
+	# 	base = 16	# Default value.
+	# 	modifier = {
+	# 		set = 16	# Custom value.
+	# 		is_variable_set = str_var_limits_base_titan
+	# 	}
+	# }
+	# str_value_limits_max_titan = {
+	# 	base = 320	# Default value.
+	# 	modifier = {
+	# 		set = str_var_limits_max_titan	# Custom value.
+	# 		is_variable_set = str_var_limits_max_titan
+	# 	}
+	# }
+	# str_value_limits_naval_cap_fraction_titan = {
+	# 	base = 0.08	# Default value.
+	# 	modifier = {
+	# 		set = str_var_limits_naval_cap_fraction_titan	# Custom value.
+	# 		is_variable_set = str_var_limits_naval_cap_fraction_titan
+	# 	}
+	# }
+}
+
+str_register_ship_size = {
+	optimize_memory
+	str_register_create_if_needed = yes
+	[[REFRESH]
+	if = {
+		limit = {
+			exists = event_target:str_register_ship_size_$SHIP_SIZE$
+		}
+		event_target:global_event_country = {
+			every_owned_leader = {
+				limit = {
+					has_leader_flag = $SHIP_SIZE$
+				}
+			}
+			remove_leader_flag = str_ship_size_mod_name_$MOD_NAME$
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_factor
+				}
+				clear_variable = str_var_ai_ship_data_factor
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_size_multiplier
+				}
+				clear_variable = str_var_size_multiplier
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_desired_min
+				}
+				clear_variable = str_var_ai_ship_data_desired_min
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_AI_ship_data_desired_max
+				}
+				clear_variable = str_var_AI_ship_data_desired_max
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_desired_mult
+				}
+				clear_variable = str_var_ai_ship_data_desired_mult
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_base
+				}
+				clear_variable = str_var_limits_base
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_max
+				}
+				clear_variable = str_var_limits_max
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_naval_cap_fraction
+				}
+				clear_variable = str_var_limits_naval_cap_fraction
+			}
+		}
+	}
+	]
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:str_register_ship_size_$SHIP_SIZE$
+			}
+		}
+		event_target:global_event_country = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_leader = {
+							has_leader_flag = $SHIP_SIZE$
+						}
+					}
+				}
+				create_leader = {
+					class = general
+					name = $SHIP_SIZE$
+					species = event_target:str_register_global_species
+					immortal = yes
+				}
+				last_created_leader = {
+					set_leader_flag = $SHIP_SIZE$
+					set_leader_flag = str_ship_size_register
+					save_global_event_target_as = str_register_ship_size_$SHIP_SIZE$
+					str_register_ship_size_assign_index = yes
+				}
+			}
+		}
+	}
+	event_target:global_event_country = {
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = str_ship_size_register
+				has_leader_flag = $SHIP_SIZE$
+			}
+			[[AI_SHIP_DATA_FACTOR]set_variable = {
+				which = str_var_ai_ship_data_factor
+				value = $AI_SHIP_DATA_FACTOR$
+			}
+			]
+			[[SIZE_MULTIPLIER]set_variable = {
+				which = str_var_size_multiplier
+				value = $SIZE_MULTIPLIER$
+			}
+			]
+			[[AI_SHIP_DATA_DESIRED_MIN]set_variable = {
+				which = str_var_ai_ship_data_desired_min
+				value = $AI_SHIP_DATA_DESIRED_MIN$
+			}
+			]
+			[[AI_SHIP_DATA_DESIRED_MAX]set_variable = {
+				which = str_var_AI_ship_data_desired_max
+				value = $AI_SHIP_DATA_DESIRED_MAX$
+			}
+			]
+			[[AI_SHIP_DATA_DESIRED_MULT]set_variable = {
+				which = str_var_ai_ship_data_desired_mult
+				value = $AI_SHIP_DATA_DESIRED_MULT$
+			}
+			]
+			[[LIMITS_BASE]set_variable = {
+				which = str_var_limits_base
+				value = $LIMITS_BASE$
+			}
+			]
+			[[LIMITS_MAX]set_variable = {
+				which = str_var_limits_max
+				value = $LIMITS_MAX$
+			}
+			]
+			[[LIMITS_NAVAL_CAP_FRACTION]set_variable = {
+				which = str_var_limits_naval_cap_fraction
+				value = $LIMITS_NAVAL_CAP_FRACTION$
+			}
+			]
+			[[MOD_NAME]set_leader_flag = str_ship_size_mod_name_$MOD_NAME$
+			]
+		}
+	}
+}
+
+# Event targets used in localisations only.
+# this: ship_size leader.
+str_register_ship_size_assign_index = {
+	optimize_memory
+	event_target:global_event_country = {
+		clear_global_event_target = str_register_ship_size_1
+		clear_global_event_target = str_register_ship_size_2
+		clear_global_event_target = str_register_ship_size_3
+		clear_global_event_target = str_register_ship_size_4
+		clear_global_event_target = str_register_ship_size_5
+		clear_global_event_target = str_register_ship_size_6
+		clear_global_event_target = str_register_ship_size_7
+		clear_global_event_target = str_register_ship_size_8
+		clear_global_event_target = str_register_ship_size_9
+		clear_global_event_target = str_register_ship_size_10
+		clear_global_event_target = str_register_ship_size_11
+		clear_global_event_target = str_register_ship_size_12
+		clear_global_event_target = str_register_ship_size_13
+		clear_global_event_target = str_register_ship_size_14
+		clear_global_event_target = str_register_ship_size_15
+		clear_global_event_target = str_register_ship_size_16
+		clear_global_event_target = str_register_ship_size_17
+		clear_global_event_target = str_register_ship_size_18
+		clear_global_event_target = str_register_ship_size_19
+		clear_global_event_target = str_register_ship_size_20
+		clear_global_event_target = str_register_ship_size_21
+		clear_global_event_target = str_register_ship_size_22
+		clear_global_event_target = str_register_ship_size_23
+		clear_global_event_target = str_register_ship_size_24
+		clear_global_event_target = str_register_ship_size_25
+		clear_global_event_target = str_register_ship_size_26
+		clear_global_event_target = str_register_ship_size_27
+		clear_global_event_target = str_register_ship_size_28
+		clear_global_event_target = str_register_ship_size_29
+		clear_global_event_target = str_register_ship_size_30
+		clear_global_event_target = str_register_ship_size_31
+		clear_global_event_target = str_register_ship_size_32
+		clear_global_event_target = str_register_ship_size_33
+		clear_global_event_target = str_register_ship_size_34
+		clear_global_event_target = str_register_ship_size_35
+		clear_global_event_target = str_register_ship_size_36
+		clear_global_event_target = str_register_ship_size_37
+		clear_global_event_target = str_register_ship_size_38
+		clear_global_event_target = str_register_ship_size_39
+		clear_global_event_target = str_register_ship_size_40
+		clear_global_event_target = str_register_ship_size_41
+		clear_global_event_target = str_register_ship_size_42
+		clear_global_event_target = str_register_ship_size_43
+		clear_global_event_target = str_register_ship_size_44
+		clear_global_event_target = str_register_ship_size_45
+		clear_global_event_target = str_register_ship_size_46
+		clear_global_event_target = str_register_ship_size_47
+		clear_global_event_target = str_register_ship_size_48
+		clear_global_event_target = str_register_ship_size_49
+		clear_global_event_target = str_register_ship_size_50
+		every_owned_leader = {
+			limit = {
+				has_leader_flag = str_ship_size_register
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_1
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_1
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_2
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_2
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_3
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_3
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_4
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_4
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_5
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_5
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_6
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_6
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_7
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_7
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_8
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_8
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_9
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_9
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_10
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_10
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_11
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_11
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_12
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_12
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_13
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_13
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_14
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_14
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_15
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_15
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_16
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_16
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_17
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_17
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_18
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_18
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_19
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_19
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_20
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_20
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_21
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_21
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_22
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_22
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_23
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_23
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_24
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_24
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_25
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_25
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_26
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_26
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_27
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_27
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_28
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_28
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_29
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_29
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_30
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_30
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_31
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_31
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_32
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_32
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_33
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_33
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_34
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_34
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_35
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_35
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_36
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_36
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_37
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_37
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_38
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_38
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_39
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_39
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_40
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_40
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_41
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_41
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_42
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_42
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_43
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_43
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_44
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_44
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_45
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_45
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_46
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_46
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_47
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_47
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_48
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_48
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_49
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_49
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = event_target:str_register_ship_size_50
+					}
+				}
+				save_global_event_target_as = str_register_ship_size_50
+			}
+		}
+	}
+}
+
+str_register_create_if_needed = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:str_register_global_species
+			}
+		}
+		event_target:global_event_country = {
+			create_species = {
+				class = MOL
+				portrait = mol17
+				effect = {
+					save_global_event_target_as = str_register_global_species
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:str_register_name_register
+			}
+		}
+		event_target:global_event_country = {
+			create_leader = {
+				class = general
+				name = str_menu_name
+				species = event_target:str_register_global_species
+				immortal = yes
+			}
+			last_created_leader = {
+				set_leader_flag = str_register_name_register
+				save_global_event_target_as = str_register_name_register
+			}
+		}
+	}
+}
+
+# Usage:
+# str_deregister_ship_size = { SHIP_SIZE = corvette }
+# This will kill leader which is a ship data register storage unit.
+str_deregister_ship_size = {
+	optimize_memory
+	event_target:global_event_country = {
+		every_owned_leader = {
+			limit = {
+				has_leader_flag = $SHIP_SIZE$
+			}
+			kill_leader = {
+				show_notification = no
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = event_target:str_register_ship_size_$SHIP_SIZE$
+		}
+		clear_global_event_target = str_register_ship_size_$SHIP_SIZE$
+	}
+	str_register_ship_size_assign_index = yes
+}
+
+# Do not use.
+str_error_cleaner_effect = {
+	save_event_target_as = str_register_ship_size_corvette
+	save_event_target_as = str_register_ship_size_destroyer
+	save_event_target_as = str_register_ship_size_cruiser
+	save_event_target_as = str_register_ship_size_corvette
+	set_leader_flag = $SHIP_SIZE$
+	set_leader_flag = corvette
+	set_leader_flag = destroyer
+	set_leader_flag = cruiser
+	set_leader_flag = battleship
+	set_leader_flag = titan
+	set_leader_flag = colossus
+	set_leader_flag = juggernaut
+	set_variable = {
+		which = str_var_ai_ship_data_factor
+		value = 0
+	}
+	set_variable = {
+		which = str_var_size_multiplier
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_desired_min
+		value = 0
+	}
+	set_variable = {
+		which = str_var_AI_ship_data_desired_max
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_desired_mult
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_base
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_max
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_naval_cap_fraction
+		value = 0
 	}
 }

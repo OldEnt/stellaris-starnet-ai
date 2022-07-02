@@ -3,6 +3,7 @@ on_game_start = {
 	events = {
 		str_mod_flag.1 #Sets this mods global flag so that other modders can check if this mod is running.
 		starnet.100	# This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in patch. Can be removed in Stellaris 3.5.
+		starnet.200	# Register ship_size for fleet composition settings.
 	}
 }
 
@@ -10,6 +11,7 @@ on_single_player_save_game_load = {
 	events = {
 		str_mod_flag.1
 		starnet.101	# This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in patch. Can be removed in Stellaris 3.5.
+		starnet.200	# Register ship_size for fleet composition settings.
 	}
 }
 
