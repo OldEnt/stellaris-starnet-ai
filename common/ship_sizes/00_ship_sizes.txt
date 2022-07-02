@@ -99,10 +99,6 @@ corvette = {
 			modifier = {
 				add = value:str_value_ai_ship_data_corvette
 			}
-			modifier = {
-				set = 0
-				uses_standard_ship_sizes = no
-			}
 		}
 	}
 }
@@ -172,10 +168,6 @@ destroyer = {
 			modifier = {
 				add = value:str_value_ai_ship_data_destroyer
 			}
-			modifier = {
-				set = 0
-				uses_standard_ship_sizes = no
-			}
 		}
 	}
 }
@@ -233,10 +225,6 @@ cruiser = {
 			modifier = {
 				add = value:str_value_ai_ship_data_cruiser
 			}
-			modifier = {
-				set = 0
-				uses_standard_ship_sizes = no
-			}
 		}
 	}
 }
@@ -293,10 +281,6 @@ battleship = {
 		fraction = {
 			modifier = {
 				add = value:str_value_ai_ship_data_battleship
-			}
-			modifier = {
-				set = 0
-				uses_standard_ship_sizes = no
 			}
 		}
 	}

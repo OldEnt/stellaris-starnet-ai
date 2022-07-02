@@ -1,20 +1,25 @@
 # Debug effect:
 # effect set_variable = { which = str_var_ai_ship_data_factor_corvette value = 0 } set_variable = { which = str_var_ai_ship_data_factor_destroyer value = 0 } set_variable = { which = str_var_ai_ship_data_factor_cruiser value = 0 } set_variable = { which = str_var_ai_ship_data_factor_battleship value = 0 }
 str_value_ai_ship_data_corvette = {
-	base = @str_ai_ship_data_corvette_base	# 100
+	base = 100
 	modifier = {
-		add = @str_ai_ship_data_corvette_has_tech_cruisers		# -90
+		add = -90
 		has_technology = tech_cruisers
 	}
 	modifier = {
-		add = @str_ai_ship_data_corvette_has_tech_destroyers		# -90
+		add = -90
 		has_technology = tech_destroyers
 	}
+	# Override with Mixed Fleet if present.
 	modifier = {
 		set = value:str_mixed_fleet_value_ai_ship_data_corvette
 		str_is_mixed_fleet_loaded = yes
 	}
-	# Below modifier always has to be at the bottom.
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = 0
+		uses_standard_ship_sizes = no
+	}
 	modifier = {
 		set = str_var_ai_ship_data_factor_corvette
 		is_variable_set = str_var_ai_ship_data_factor_corvette
@@ -22,20 +27,25 @@ str_value_ai_ship_data_corvette = {
 }
 
 str_value_ai_ship_data_destroyer = {
-	base = @str_ai_ship_data_destroyer_base	# 0
+	base = 0
 	modifier = {
-		add = @str_ai_ship_data_destroyer_has_tech_destroyers		# 90
+		add = 90
 		has_technology = tech_destroyers
 	}
 	modifier = {
-		add = @str_ai_ship_data_destroyer_has_tech_cruisers		# -90
+		add = -90
 		has_technology = tech_cruisers
 	}
+	# Override with Mixed Fleet if present.
 	modifier = {
 		set = value:str_mixed_fleet_value_ai_ship_data_destroyer
 		str_is_mixed_fleet_loaded = yes
 	}
-	# Below modifier always has to be at the bottom.
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = 0
+		uses_standard_ship_sizes = no
+	}
 	modifier = {
 		set = str_var_ai_ship_data_factor_destroyer
 		is_variable_set = str_var_ai_ship_data_factor_destroyer
@@ -43,25 +53,30 @@ str_value_ai_ship_data_destroyer = {
 }
 
 str_value_ai_ship_data_cruiser = {
-	base = @str_ai_ship_data_cruiser_base	# 0
+	base = 0
 	modifier = {
-		add = @str_ai_ship_data_cruiser_has_tech_cruisers		# 90
+		add = 90
 		has_technology = tech_cruisers
 	}
 	modifier = {
-		add = @str_ai_ship_data_cruiser_has_tech_battleships		# -90
+		add = -90
 		has_technology = tech_battleships
 	}
 	modifier = {
-		add = @str_ai_ship_data_cruiser_need_to_counter_corvettes		# 30
+		add = 30
 		has_technology = tech_battleships
 		has_country_flag = str_need_to_counter_corvettes
 	}
+	# Override with Mixed Fleet if present.
 	modifier = {
 		set = value:str_mixed_fleet_value_ai_ship_data_cruiser
 		str_is_mixed_fleet_loaded = yes
 	}
-	# Below modifier always has to be at the bottom.
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = 0
+		uses_standard_ship_sizes = no
+	}
 	modifier = {
 		set = str_var_ai_ship_data_factor_cruiser
 		is_variable_set = str_var_ai_ship_data_factor_cruiser
@@ -69,21 +84,26 @@ str_value_ai_ship_data_cruiser = {
 }
 
 str_value_ai_ship_data_battleship = {
-	base = @str_ai_ship_data_battleship_base	# 0
+	base = 0
 	modifier = {
-		add = @str_ai_ship_data_battleship_has_tech_battleships		# 90
+		add = 90
 		has_technology = tech_battleships
 	}
 	modifier = {
-		add = @str_ai_ship_data_battleship_need_to_counter_corvettes		# -30
+		add = -30
 		has_technology = tech_battleships
 		has_country_flag = str_need_to_counter_corvettes
 	}
+	# Override with Mixed Fleet if present.
 	modifier = {
 		set = value:str_mixed_fleet_value_ai_ship_data_battleship
 		str_is_mixed_fleet_loaded = yes
 	}
-	# Below modifier always has to be at the bottom.
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = 0
+		uses_standard_ship_sizes = no
+	}
 	modifier = {
 		set = str_var_ai_ship_data_factor_battleship
 		is_variable_set = str_var_ai_ship_data_factor_battleship
