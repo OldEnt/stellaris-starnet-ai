@@ -210,6 +210,13 @@ ship_section_template = {
 						value > 50
 					}
 				}
+				and = {
+					has_technology = tech_arc_emitter_1
+					resource_stockpile_compare = {
+						resource = rare_crystals
+						value > 50
+					}
+				}
 			}
 		}
 	}
