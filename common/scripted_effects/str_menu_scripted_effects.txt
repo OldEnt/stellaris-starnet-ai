@@ -624,4 +624,5 @@ str_dummy_log_cleaner_effect = {
 	set_leader_flag = dmm_display_exception_for_@prevprev
 	set_global_flag = str_friendship_flag
 	set_global_flag = str_mixed_fleet_flag
+	set_global_flag = str_nsc2_patch_flag
 }

@@ -1,0 +1,2 @@
+# The following variable can be used to determine if StarNet for NSC2 is properly loaded (overwriting StarNet). Always trigger check with equal. It does not check if other mods are overwriting the patch.
+@str_is_nsc2_patch_loaded = 0

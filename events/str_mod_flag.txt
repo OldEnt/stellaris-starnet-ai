@@ -35,5 +35,12 @@ event = {
 			}
 			remove_global_flag = "str_mixed_fleet_flag"
 		}
+		if = {
+			limit = {
+				str_is_nsc2_patch_loaded = no
+				has_global_flag = "str_nsc2_patch_flag"
+			}
+			remove_global_flag = "str_nsc2_patch_flag"
+		}
 	}
 }
