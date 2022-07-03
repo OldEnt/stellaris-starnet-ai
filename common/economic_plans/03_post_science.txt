@@ -150,17 +150,13 @@ middle_imperial_plan = {
 	subplan = {
 		set_name = "str middle alloy focus"
 		potential = {
-			resource_stockpile_compare = {
-				resource = alloys
-				value > 1000
-			}
 			resource_income_compare = {
 				resource = energy
-				value > 5
+				value > 100
 			}
 			resource_income_compare = {
 				resource = minerals
-				value > 30
+				value > 100
 			}
 			resource_stockpile_compare = {
 				resource = minerals
@@ -274,6 +270,138 @@ middle_imperial_plan = {
 			str_consumer_goods_crisis_1 = yes
 			lategame = no
 			or = { has_ethic = ethic_pacifist has_ethic = ethic_fanatic_pacifist }
+		}
+	}
+
+	#####################################################################################################################
+	##### GIGAS SPECIFIC
+
+	# extra alloys once we have mega-engineering
+	subplan = {
+		scaling = yes
+		set_name = "Gigas megaengineering alloys"
+		potential = {
+			has_technology = tech_mega_engineering
+			
+			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
+			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
+		}
+
+		income = {
+			alloys = 10	# 5
+		}
+	}
+
+	# basic sentient metal production to make sure they have an income
+	subplan = {
+		set_name = "Gigas base sentient metal"
+		potential = {
+			has_technology = tech_ehof_sentient_tier_1
+			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
+			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
+			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+		}
+
+		income = {
+			ehof_sr_sentient_metal = 10
+		}
+	}
+
+	# scaling sentient metal when the compound is active for weapons etc
+	subplan = {
+		scaling = yes
+		set_name = "Gigas compound crisis sentient metal"
+		potential = {
+			has_global_flag = compound_invasion_ongoing
+			not = { has_global_flag = compound_destroyed }
+
+			has_technology = tech_ehof_sentient_tier_1
+			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
+			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
+			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+		}
+
+		income = {
+			ehof_sr_sentient_metal = 10
+		}
+	}
+
+	# basic negative mass production to make sure they have an income
+	subplan = {
+		set_name = "Gigas base negative mass"
+		potential = {
+			has_technology = tech_nm_utilization_1
+			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
+		}
+
+		income = {
+			ehof_sr_negative_mass = 10
+		}
+	}
+
+	# scaling negative mass when the compound is active for weapons etc
+	subplan = {
+		scaling = yes
+		set_name = "Gigas compound crisis negative mass"
+		potential = {
+			has_global_flag = compound_invasion_ongoing
+			not = { has_global_flag = compound_destroyed }
+
+			has_technology = tech_nm_utilization_1
+			has_monthly_income = { resource = energy value> 25 }	# @energy_target = 25
+		}
+
+		income = {
+			ehof_sr_negative_mass = 10
+		}
+	}
+
+	# supertensiles production so they can make megas while the job option is selected
+	subplan = {
+		optional = yes
+		set_name = "Gigas supertensiles"
+		potential = {
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20 #value:giga_amb_supertensiles_target # 20 times the megalogistics hub max
+		}
+	}
+
+	subplan = {
+		optional = yes
+		set_name = "Gigas supertensiles origin boost"
+		potential = {
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			giga_has_amb_important_origin = yes
+			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20 # an extra emphasis for empires which need megas early
+		}
+	}
+
+	# scaling supertensiles after mega-engineering when the options open up more
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Gigas scaling supertensiles"
+		potential = {
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			has_technology = tech_mega_engineering
+			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 4
 		}
 	}
 
