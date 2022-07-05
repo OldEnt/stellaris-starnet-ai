@@ -306,462 +306,2309 @@ str_register_ship_size = {
 # this: ship_size leader.
 str_register_ship_size_assign_index = {
 	optimize_memory
-	event_target:global_event_country = {
-		clear_global_event_target = str_register_ship_size_1
-		clear_global_event_target = str_register_ship_size_2
-		clear_global_event_target = str_register_ship_size_3
-		clear_global_event_target = str_register_ship_size_4
-		clear_global_event_target = str_register_ship_size_5
-		clear_global_event_target = str_register_ship_size_6
-		clear_global_event_target = str_register_ship_size_7
-		clear_global_event_target = str_register_ship_size_8
-		clear_global_event_target = str_register_ship_size_9
-		clear_global_event_target = str_register_ship_size_10
-		clear_global_event_target = str_register_ship_size_11
-		clear_global_event_target = str_register_ship_size_12
-		clear_global_event_target = str_register_ship_size_13
-		clear_global_event_target = str_register_ship_size_14
-		clear_global_event_target = str_register_ship_size_15
-		clear_global_event_target = str_register_ship_size_16
-		clear_global_event_target = str_register_ship_size_17
-		clear_global_event_target = str_register_ship_size_18
-		clear_global_event_target = str_register_ship_size_19
-		clear_global_event_target = str_register_ship_size_20
-		clear_global_event_target = str_register_ship_size_21
-		clear_global_event_target = str_register_ship_size_22
-		clear_global_event_target = str_register_ship_size_23
-		clear_global_event_target = str_register_ship_size_24
-		clear_global_event_target = str_register_ship_size_25
-		clear_global_event_target = str_register_ship_size_26
-		clear_global_event_target = str_register_ship_size_27
-		clear_global_event_target = str_register_ship_size_28
-		clear_global_event_target = str_register_ship_size_29
-		clear_global_event_target = str_register_ship_size_30
-		clear_global_event_target = str_register_ship_size_31
-		clear_global_event_target = str_register_ship_size_32
-		clear_global_event_target = str_register_ship_size_33
-		clear_global_event_target = str_register_ship_size_34
-		clear_global_event_target = str_register_ship_size_35
-		clear_global_event_target = str_register_ship_size_36
-		clear_global_event_target = str_register_ship_size_37
-		clear_global_event_target = str_register_ship_size_38
-		clear_global_event_target = str_register_ship_size_39
-		clear_global_event_target = str_register_ship_size_40
-		clear_global_event_target = str_register_ship_size_41
-		clear_global_event_target = str_register_ship_size_42
-		clear_global_event_target = str_register_ship_size_43
-		clear_global_event_target = str_register_ship_size_44
-		clear_global_event_target = str_register_ship_size_45
-		clear_global_event_target = str_register_ship_size_46
-		clear_global_event_target = str_register_ship_size_47
-		clear_global_event_target = str_register_ship_size_48
-		clear_global_event_target = str_register_ship_size_49
-		clear_global_event_target = str_register_ship_size_50
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = str_ship_size_register
-			}
-			if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_1
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_1
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_2
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_2
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_3
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_3
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_4
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_4
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_5
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_5
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_6
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_6
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_7
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_7
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_8
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_8
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_9
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_9
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_10
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_10
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_11
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_11
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_12
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_12
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_13
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_13
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_14
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_14
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_15
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_15
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_16
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_16
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_17
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_17
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_18
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_18
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_19
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_19
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_20
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_20
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_21
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_21
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_22
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_22
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_23
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_23
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_24
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_24
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_25
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_25
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_26
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_26
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_27
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_27
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_28
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_28
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_29
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_29
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_30
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_30
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_31
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_31
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_32
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_32
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_33
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_33
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_34
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_34
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_35
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_35
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_36
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_36
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_37
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_37
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_38
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_38
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_39
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_39
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_40
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_40
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_41
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_41
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_42
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_42
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_43
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_43
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_44
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_44
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_45
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_45
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_46
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_46
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_47
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_47
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_48
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_48
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_49
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_49
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = event_target:str_register_ship_size_50
-					}
-				}
-				save_global_event_target_as = str_register_ship_size_50
+	if = {
+		limit = {
+			NOT = {
+				is_variable_set = str_register_ship_size_index
 			}
 		}
+		set_variable = {
+			which = str_register_ship_size_index
+			value = 0
+		}
+	}
+	while = {
+		limit = {
+			OR = {
+				check_variable = {
+					which = str_register_ship_size_index
+					value = 0
+				}
+				event_target:global_event_country = {
+					any_owned_leader = {
+						has_leader_flag = str_ship_size_register
+						NOT = {
+							is_same_value = prevprev
+						}
+						check_variable = {
+							which = str_register_ship_size_index
+							value = prevprev.str_register_ship_size_index
+						}
+					}
+				}
+			}
+		}
+		change_variable = {
+			which = str_register_ship_size_index
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				check_variable = {
+					which = str_register_ship_size_index
+					value = 0
+				}
+				NOT = {
+					is_variable_set = str_register_ship_size_index
+				}
+			}
+		}
+		set_leader_flag = str_register_ship_size_index_invalid_variable_null		# Debug.
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 1
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_1
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 2
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_2
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 3
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_3
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 4
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_4
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 5
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_5
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 6
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_6
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 7
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_7
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 8
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_8
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 9
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_9
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 10
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_10
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 11
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_11
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 12
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_12
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 13
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_13
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 14
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_14
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 15
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_15
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 16
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_16
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 17
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_17
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 18
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_18
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 19
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_19
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 20
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_20
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 21
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_21
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 22
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_22
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 23
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_23
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 24
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_24
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 25
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_25
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 26
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_26
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 27
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_27
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 28
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_28
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 29
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_29
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 30
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_30
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 31
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_31
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 32
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_32
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 33
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_33
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 34
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_34
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 35
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_35
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 36
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_36
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 37
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_37
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 38
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_38
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 39
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_39
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 40
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_40
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 41
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_41
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 42
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_42
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 43
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_43
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 44
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_44
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 45
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_45
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 46
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_46
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 47
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_47
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 48
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_48
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 49
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_49
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 50
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_50
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 51
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_51
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 52
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_52
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 53
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_53
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 54
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_54
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 55
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_55
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 56
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_56
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 57
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_57
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 58
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_58
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 59
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_59
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 60
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_60
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 61
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_61
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 62
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_62
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 63
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_63
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 64
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_64
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 65
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_65
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 66
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_66
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 67
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_67
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 68
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_68
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 69
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_69
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 70
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_70
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 71
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_71
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 72
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_72
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 73
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_73
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 74
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_74
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 75
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_75
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 76
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_76
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 77
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_77
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 78
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_78
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 79
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_79
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 80
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_80
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 81
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_81
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 82
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_82
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 83
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_83
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 84
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_84
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 85
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_85
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 86
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_86
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 87
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_87
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 88
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_88
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 89
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_89
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 90
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_90
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 91
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_91
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 92
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_92
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 93
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_93
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 94
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_94
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 95
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_95
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 96
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_96
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 97
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_97
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 98
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_98
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 99
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_99
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 100
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_100
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 101
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_101
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 102
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_102
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 103
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_103
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 104
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_104
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 105
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_105
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 106
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_106
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 107
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_107
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 108
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_108
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 109
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_109
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 110
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_110
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 111
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_111
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 112
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_112
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 113
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_113
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 114
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_114
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 115
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_115
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 116
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_116
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 117
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_117
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 118
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_118
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 119
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_119
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 120
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_120
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 121
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_121
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 122
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_122
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 123
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_123
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 124
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_124
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 125
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_125
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 126
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_126
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 127
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_127
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 128
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_128
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 129
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_129
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 130
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_130
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 131
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_131
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 132
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_132
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 133
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_133
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 134
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_134
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 135
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_135
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 136
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_136
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 137
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_137
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 138
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_138
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 139
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_139
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 140
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_140
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 141
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_141
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 142
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_142
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 143
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_143
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 144
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_144
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 145
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_145
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 146
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_146
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 147
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_147
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 148
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_148
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 149
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_149
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 150
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_150
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 151
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_151
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 152
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_152
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 153
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_153
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 154
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_154
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 155
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_155
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 156
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_156
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 157
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_157
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 158
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_158
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 159
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_159
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 160
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_160
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 161
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_161
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 162
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_162
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 163
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_163
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 164
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_164
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 165
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_165
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 166
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_166
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 167
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_167
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 168
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_168
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 169
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_169
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 170
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_170
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 171
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_171
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 172
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_172
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 173
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_173
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 174
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_174
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 175
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_175
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 176
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_176
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 177
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_177
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 178
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_178
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 179
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_179
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 180
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_180
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 181
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_181
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 182
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_182
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 183
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_183
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 184
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_184
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 185
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_185
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 186
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_186
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 187
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_187
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 188
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_188
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 189
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_189
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 190
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_190
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 191
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_191
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 192
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_192
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 193
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_193
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 194
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_194
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 195
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_195
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 196
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_196
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 197
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_197
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 198
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_198
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 199
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_199
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 200
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_200
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 201
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_201
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 202
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_202
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 203
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_203
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 204
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_204
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 205
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_205
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 206
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_206
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 207
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_207
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 208
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_208
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 209
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_209
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 210
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_210
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 211
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_211
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 212
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_212
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 213
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_213
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 214
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_214
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 215
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_215
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 216
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_216
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 217
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_217
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 218
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_218
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 219
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_219
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 220
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_220
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 221
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_221
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 222
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_222
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 223
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_223
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 224
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_224
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 225
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_225
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 226
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_226
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 227
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_227
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 228
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_228
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 229
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_229
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 230
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_230
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 231
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_231
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 232
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_232
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 233
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_233
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 234
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_234
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 235
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_235
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 236
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_236
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 237
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_237
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 238
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_238
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 239
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_239
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 240
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_240
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 241
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_241
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 242
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_242
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 243
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_243
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 244
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_244
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 245
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_245
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 246
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_246
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 247
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_247
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 248
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_248
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 249
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_249
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = str_register_ship_size_index
+				value = 250
+			}
+		}
+		save_global_event_target_as = str_register_ship_size_250
+	}
+	else = {
+		set_leader_flag = str_register_ship_size_index_invalid_array_full		# Debug.
 	}
 }
 
@@ -804,6 +2651,20 @@ str_register_create_if_needed = {
 	}
 }
 
+str_deregister_ship_size_all = {
+	optimize_memory
+	event_target:global_event_country = {
+		every_owned_leader = {
+			limit = {
+				has_leader_flag = str_ship_size_register
+			}
+			kill_leader = {
+				show_notification = no
+			}
+		}
+	}
+}
+
 # Usage:
 # str_deregister_ship_size = { SHIP_SIZE = corvette }
 # This will kill leader which is a ship data register storage unit.
@@ -819,13 +2680,6 @@ str_deregister_ship_size = {
 			}
 		}
 	}
-	if = {
-		limit = {
-			exists = event_target:str_register_ship_size_$SHIP_SIZE$
-		}
-		clear_global_event_target = str_register_ship_size_$SHIP_SIZE$
-	}
-	str_register_ship_size_assign_index = yes
 }
 
 # Do not use.
