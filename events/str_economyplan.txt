@@ -712,7 +712,7 @@ country_event = {
 
 				if = {
 					limit = {
-						not = { is_planet_class = pc_gaia }
+						str_viable_terraformable = yes
 					}
 					owner = { set_country_flag = str_has_terraformables }
 				}

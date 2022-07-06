@@ -368,7 +368,11 @@ energy_upkeep_country_not_terraforming = { # Covers most other things
 		nand = {
 			or = {
 				and = {
-					has_ascension_perk = ap_world_shaper
+					or = {
+						has_ascension_perk = ap_world_shaper
+						has_ascension_perk = ap_hive_worlds
+						has_ascension_perk = ap_machine_worlds
+					}
 					has_country_flag = str_has_terraformables
 				}
 				has_country_flag = str_lets_terraform
@@ -427,7 +431,11 @@ energy_upkeep_country_can_spend = { # Covers most other things
 			value > 10
 		}
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {
@@ -464,7 +472,11 @@ energy_upkeep_warprep = { # Covers most other things
 	potential = {
 		prepare_for_war = yes
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {
@@ -487,7 +499,11 @@ energy_upkeep_country_a = { # Covers most other things
 	potential = {
 		has_country_flag = acceptable_raw_economy
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {
@@ -509,7 +525,11 @@ energy_upkeep_country_f = { # Covers most other things
 	potential = {
 		has_country_flag = fine_raw_economy
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {
@@ -532,7 +552,11 @@ energy_upkeep_country_g = { # Covers most other things
 	potential = {
 		has_country_flag = good_raw_economy
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {
@@ -589,7 +613,11 @@ energy_expenditure_ultralate = {
 		nand = {
 			or = {
 				and = {
-					has_ascension_perk = ap_world_shaper
+					or = {
+						has_ascension_perk = ap_world_shaper
+						has_ascension_perk = ap_hive_worlds
+						has_ascension_perk = ap_machine_worlds
+					}
 					has_country_flag = str_has_terraformables
 				}
 				has_country_flag = str_lets_terraform
@@ -666,7 +694,11 @@ energy_upkeep_lategame = {
 			value > -40
 		}
 		nand = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			used_naval_capacity_percent > 0.9
 			resource_stockpile_compare = {

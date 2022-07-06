@@ -348,3 +348,32 @@ str_can_be_foundry_pretrigger = {
 		}
 	}
 }
+
+str_viable_terraformable = {
+	OR = {
+		AND = {
+			owner = {
+				has_ascension_perk = ap_world_shaper
+			}
+			NOT = {
+				is_planet_class = pc_gaia
+			}
+		}
+		AND = {
+			owner = {
+				has_ascension_perk = ap_hive_worlds
+			}
+			NOT = {
+				is_planet_class = pc_hive
+			}
+		}
+		AND = {
+			owner = {
+				has_ascension_perk = ap_machine_worlds
+			}
+			NOT = {
+				is_planet_class = pc_machine
+			}
+		}
+	}
+}

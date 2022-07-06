@@ -106,7 +106,11 @@ early_default_plan_3 = {
 	subplan = {
 		set_name = "str fallback3 terraform low energy"
 		potential = {
-			has_ascension_perk = ap_world_shaper
+			or = {
+				has_ascension_perk = ap_world_shaper
+				has_ascension_perk = ap_hive_worlds
+				has_ascension_perk = ap_machine_worlds
+			}
 			has_country_flag = str_has_terraformables
 			resource_income_compare = {
 				resource = energy
