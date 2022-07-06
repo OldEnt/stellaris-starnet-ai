@@ -70,6 +70,7 @@ col_city = {
 
 	potential = {
 		exists = owner
+		owner = { is_ai = no }
 		owner = { is_regular_empire = yes }
 		NOR = {
 			uses_district_set = city_world
@@ -77,7 +78,6 @@ col_city = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -103,7 +103,10 @@ col_mining = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+		OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -235,7 +238,10 @@ col_farming = {
 			uses_district_set = machine_world
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+		OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -354,7 +360,10 @@ col_generator = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+			num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -470,14 +479,14 @@ col_hive = {
 	icon = GFX_colony_type_urban
 
 	potential = {
+		exists = owner
+		owner = { is_ai = no }
+		owner = { is_hive_empire = yes }
 		NOR = {
 			uses_district_set = ring_world
 			uses_district_set = habitat
 		}
-		exists = owner
-		owner = { is_hive_empire = yes }
 		is_special_colony_type = no
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -496,15 +505,15 @@ col_nexus = {
 	icon = GFX_colony_type_urban
 
 	potential = {
+		exists = owner
+		owner = { is_ai = no }
+		owner = { is_machine_empire = yes }
 		NOR = {
 			uses_district_set = machine_world
 			uses_district_set = ring_world
 			uses_district_set = habitat
 		}
-		exists = owner
-		owner = { is_machine_empire = yes }
 		is_special_colony_type = no
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -1329,13 +1338,13 @@ col_refinery = {
 
 	potential = {
 		exists = owner
+		owner = { is_ai = no }
 		NOR = {
 			uses_district_set = city_world
 			uses_district_set = ring_world
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -1381,7 +1390,10 @@ col_research = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 6}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 6}
+		}
 	}
 
 	planet_modifier = {
@@ -1474,13 +1486,13 @@ col_fortress = {
 
 	potential = {
 		exists = owner
+		owner = { is_ai = no }
 		NOR = {
 			uses_district_set = city_world
 			uses_district_set = ring_world
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -1681,13 +1693,13 @@ col_habitat_leisure = {
 	potential = {
 		uses_district_set = habitat
 		exists = owner
+		owner = { is_ai = no }
 		owner = {
 			OR = {
 				is_gestalt = no
 				has_valid_civic = civic_machine_servitor
 			}
 		}
-        owner = { is_ai = no }
 	}
 	planet_modifier = {
 		planet_district_hab_cultural_build_speed_mult = 0.25
@@ -1703,10 +1715,10 @@ col_habitat_trade = {
 	icon = GFX_colony_type_habitat_trade
 
 	potential = {
-		uses_district_set = habitat
 		exists = owner
+		owner = { is_ai = no }
 		owner = { is_gestalt = no }
-        owner = { is_ai = no }
+		uses_district_set = habitat
 	}
 	planet_modifier = {
 		planet_district_hab_commercial_build_speed_mult = 0.25
@@ -1872,8 +1884,9 @@ col_habitat_farming = {
 	icon = GFX_colony_type_habitat_farming
 
 	potential = {
-		uses_district_set = habitat
+		exists = owner
 		owner = { is_ai = no }
+		uses_district_set = habitat
 	}
 	custom_tooltip = col_habitat_farming_custom
 	planet_modifier = {
@@ -1949,9 +1962,9 @@ col_habitat_fortress = {
 	icon = GFX_colony_type_habitat_fortress
 
 	potential = {
-		uses_district_set = habitat
         exists = owner
         owner = { is_ai = no }
+		uses_district_set = habitat
 	}
 	planet_modifier = {
 		planet_building_stronghold_build_speed_mult = 0.25
@@ -2310,7 +2323,10 @@ col_rural_gestalt = {
 		exists = owner
 		owner = { is_gestalt = yes }
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -2451,7 +2467,10 @@ col_rural = {
 			uses_district_set = city_world
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -2920,8 +2939,9 @@ col_ecu_mix = {
 	icon = GFX_colony_type_urban
 
 	potential = {
-		uses_district_set = city_world
+		exists = owner
         owner = { is_ai = no }
+		uses_district_set = city_world
 	}
 
 	planet_modifier = {
@@ -2939,9 +2959,9 @@ col_ecu_industrial = {
 
 	potential = {
 		exists = owner
+		owner = { is_ai = no }
 		owner = { country_uses_consumer_goods = yes }
 		uses_district_set = city_world
-        owner = { is_ai = no }
 	}
 
 	planet_modifier = {
@@ -3502,7 +3522,10 @@ col_bureau = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -3589,7 +3612,10 @@ col_bureau_spiritualist = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -3692,7 +3718,10 @@ col_bureau_hive = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
@@ -3763,7 +3792,10 @@ col_bureau_machine = {
 			uses_district_set = habitat
 		}
 		is_special_colony_type = no
-        num_districts = {type = district_industrial value < 4}
+        OR = {
+			owner = { is_ai = no }
+        	num_districts = {type = district_industrial value < 4}
+		}
 	}
 
 	planet_modifier = {
