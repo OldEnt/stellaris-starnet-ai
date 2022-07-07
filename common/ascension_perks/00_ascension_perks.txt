@@ -1755,6 +1755,9 @@ ap_machine_worlds = {
 			or = {
 				has_ascension_perk = ap_world_shaper
 				has_ascension_perk = ap_hive_worlds
+				# Pick ap_world_shaper instead.
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
 			}
 		}
 	}
