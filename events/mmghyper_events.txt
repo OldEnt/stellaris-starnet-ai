@@ -1,0 +1,174 @@
+namespace = mmghyper
+
+# main processing event for path finding
+# note: tested on 90% filled in huge galaxy, caused NO noticeable lag
+country_event = {
+	id = mmghyper.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		# clear variables and flags
+		every_system = {
+			limit = {
+				is_variable_set = mmghyper_distance_to_capital
+			}
+			clear_variable = mmghyper_distance_to_capital
+		}
+		every_system = {
+			limit = {
+				has_star_flag = mmghyper_path_to_capital
+			}
+			remove_star_flag = mmghyper_path_to_capital
+		}
+		every_system = {
+			limit = {
+				is_variable_set = mmghyper_distance_to_sector_capital
+			}
+			clear_variable = mmghyper_distance_to_sector_capital
+		}
+		every_system = {
+			limit = {
+				has_star_flag = mmghyper_path_to_sector_capital
+			}
+			remove_star_flag = mmghyper_path_to_sector_capital
+		}
+
+		############################
+		# EMPIRE CAPITAL DISTANCES #
+		############################
+		every_system = {
+			limit = {
+				is_capital_system = yes
+			}
+			mmghyper_initialize_distance_origin = {
+				DISTANCE = mmghyper_distance_to_capital
+			}
+		}
+		mmghyper_calculate_distances = {
+			DISTANCE = mmghyper_distance_to_capital
+			SAME_OWNER = yes
+		}
+
+		########################
+		# EMPIRE CAPITAL PATHS #
+		########################
+		# path from capital to sector capital, or sectorless wormhole/gateway/catapult
+		every_system = {
+			limit = {
+				exists = owner
+				is_variable_set = mmghyper_distance_to_capital
+				OR = {
+					any_system_planet = { is_sector_capital = yes }
+					AND = {
+						NOT = { exists = sector }
+						OR = {
+							mmghyper_has_wormhole_gate_or_catapult = yes
+							mmghyper_has_fortress_bordering_rival = yes
+						}
+					}
+				}
+			}
+			mmghyper_initialize_path_origin = {
+				PATH = mmghyper_path_to_capital
+			}
+		}
+		mmghyper_find_paths = {
+			PATH = mmghyper_path_to_capital
+			DISTANCE = mmghyper_distance_to_capital
+		}
+
+		############################
+		# SECTOR CAPITAL DISTANCES #
+		############################
+		every_system = {
+			limit = {
+				any_system_planet = {
+					is_sector_capital = yes
+				}
+			}
+			mmghyper_initialize_distance_origin = {
+				DISTANCE = mmghyper_distance_to_sector_capital
+			}
+		}
+		mmghyper_calculate_distances = {
+			DISTANCE = mmghyper_distance_to_sector_capital
+			SAME_OWNER = yes
+			SAME_SECTOR = yes
+		}
+
+		########################
+		# SECTOR CAPITAL PATHS #
+		########################
+		every_system = {
+			limit = {
+				exists = owner
+				exists = sector
+				is_variable_set = mmghyper_distance_to_sector_capital
+				NOT = { any_system_planet = { is_sector_capital = yes } }
+				OR = {
+					any_system_planet = { is_colony = yes }
+					mmghyper_has_wormhole_gate_or_catapult = yes
+					mmghyper_has_fortress_bordering_rival = yes
+				}
+			}
+			mmghyper_initialize_path_origin = {
+				PATH = mmghyper_path_to_sector_capital
+			}
+		}
+		mmghyper_find_paths = {
+			PATH = mmghyper_path_to_sector_capital
+			DISTANCE = mmghyper_distance_to_sector_capital
+		}
+	}
+}
+
+# wrapper to delay main processing event to avoid adding to existing 1st of month lag
+event = {
+	id = mmghyper.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:global_event_country = {
+			country_event = {
+				id = mmghyper.1
+				days = 23
+			}
+		}
+	}
+}
+
+# remove path and distance variables, fired on_system_gained
+# this is so new owner doesn't start building according to old owner's paths
+country_event = {
+	id = mmghyper.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = from
+				from = {
+					is_scope_type = galactic_object
+				}
+			}
+			from = {
+				if = {
+					limit = { is_variable_set = mmghyper_distance_to_capital }
+					clear_variable = mmghyper_distance_to_capital
+				}
+				if = {
+					limit = { is_variable_set = mmghyper_distance_to_sector_capital }
+					clear_variable = mmghyper_distance_to_sector_capital
+				}
+				if = {
+					limit = { has_star_flag = mmghyper_path_to_capital }
+					remove_star_flag = mmghyper_path_to_capital
+				}
+				if = {
+					limit = { has_star_flag = mmghyper_path_to_sector_capital }
+					remove_star_flag = mmghyper_path_to_sector_capital
+				}
+			}
+		}
+	}
+}
