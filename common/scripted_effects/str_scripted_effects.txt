@@ -86,15 +86,14 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		AI_SHIP_DATA_FACTOR = 25
 		SIZE_MULTIPLIER = 8
 	}
-	# Below hulls are not being supported for compatibility reasons as they are not being overwritten, they serve as an example.
 	str_register_ship_size = {
 		SHIP_SIZE = titan
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 16
-		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
-		AI_SHIP_DATA_DESIRED_MAX = 3		# If not provided will set 3.
-		AI_SHIP_DATA_DESIRED_MULT = 0.1		# If not provided will set 0.1.
-		# Below values would be used in \common\country_limits\ship_of_size_limits but the files are not being overwritten for compatibility reasons.
+		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_DESIRED_MAX = 3		# Vanilla: 3.
+		AI_SHIP_DATA_DESIRED_MULT = 0.1		# Vanilla: 0.1.
+		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 16
 		LIMITS_MAX = 320
 		LIMITS_NAVAL_CAP_FRACTION = 0.08
@@ -103,18 +102,18 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		SHIP_SIZE = colossus
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 32
-		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
-		AI_SHIP_DATA_DESIRED_MAX = 1		# If not provided will set 3.
-		# Below values would be used in \common\country_limits\ship_of_size_limits but files are not being overwritten for compatibility reasons.
+		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_DESIRED_MAX = 1		# Vanilla: 1.
+		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 32
 	}
 	str_register_ship_size = {
 		SHIP_SIZE = juggernaut
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 32
-		# Below values would be used in \common\country_limits\ship_of_size_limits but files are not being overwritten for compatibility reasons.
-		AI_SHIP_DATA_DESIRED_MIN = 1		# If not provided will set 1.
-		AI_SHIP_DATA_DESIRED_MAX = 1		# If not provided will set 3.
+		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_DESIRED_MAX = 1		# Vanilla: 1.
+		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 32
 	}
 	# 1/2: Example \common\country_limits\ship_of_size_limits...

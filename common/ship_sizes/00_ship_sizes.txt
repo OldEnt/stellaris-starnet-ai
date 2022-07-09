@@ -386,9 +386,9 @@ titan = {
 	}
 
 	ai_ship_data = {
-		min = 1
-		max = 10
-		# planet_mult = 0.1
+		min = value:str_value_ai_ship_data_min_titan
+		max = value:str_value_ai_ship_data_max_titan
+		# planet_mult = value:str_value_ai_ship_data_planet_mult_titan
 	}
 }
 

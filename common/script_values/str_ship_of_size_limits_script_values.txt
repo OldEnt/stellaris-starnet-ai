@@ -1,0 +1,53 @@
+str_value_limits_base_titan = {
+	base = 16
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_base_titan
+		is_variable_set = str_var_limits_base_titan
+	}
+}
+
+str_value_limits_max_titan = {
+	base = 320
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_max_titan
+		is_variable_set = str_var_limits_max_titan
+	}
+}
+
+str_value_limits_naval_cap_fraction_titan = {
+	base = 0.08
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_naval_cap_fraction_titan
+		is_variable_set = str_var_limits_naval_cap_fraction_titan
+	}
+}
+
+str_value_limits_base_colossus = {
+	base = 32
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_base_colossus
+		is_variable_set = str_var_limits_base_colossus
+	}
+}
+
+str_value_limits_base_juggernaut = {
+	base = 32
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_base_juggernaut
+		is_variable_set = str_var_limits_base_juggernaut
+	}
+}
+
+str_value_limits_base_space_dragon_origin_baby = {
+	base = 80
+	# Below modifiers always have to be at the bottom.
+	modifier = {
+		set = str_var_limits_base_space_dragon_origin_baby
+		is_variable_set = str_var_limits_base_space_dragon_origin_baby
+	}
+}

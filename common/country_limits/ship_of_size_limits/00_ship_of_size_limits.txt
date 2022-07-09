@@ -1,0 +1,91 @@
+# Here you can specify the limits for ships of some types that country can own
+# Please don't use these limits for ship sizes which can be used by federation, community or global designs. 
+# It can result the wrong naval cap calculations (there are special adjustments for naval cap of ships of such designs).
+
+# Example:
+#name_of_limit = {
+#	ship_types = { 
+#		# list of keys to ship_sizes database, these ship_sizes will share the calculated capacity
+#	}
+#	
+#	# Defines the shared capacity of the specified ships that country is allowed to own
+#	# capacity = min( max, base + naval_cap_fraction * current_naval_cap )
+#	# where current_naval_cap is current naval capacity of the country
+#	base = 1					# Base (minimal) shared capacity of ships
+#	max = 200					# Maximal shared capacity of ships
+#	naval_cap_fraction = 0.1	# Fraction of current naval capacity of the country
+#
+#	# Trigger that defines if tooltip for naval capacity icon on the top bar should be shown
+#	show = {
+#		is_scope_valid = yes
+#		has_technology = tech_titans
+#	}
+#}
+
+progenitor_ships_limit = {
+	ship_types = { 
+		offspring_corvette 
+		offspring_destroyer
+		offspring_cruiser
+		offspring_battleship
+	}
+	
+	base = 1
+	max = 200
+	naval_cap_fraction = 0.1
+	
+	show = {
+		is_scope_valid = yes
+		has_origin = origin_progenitor_hive
+	}
+}
+
+titan_ships_limit = { 
+	ship_types = { 
+		titan
+	}
+	
+	base = value:str_value_limits_base_titan	# 16 # 1 * titan's size_multiplier
+	max = value:str_value_limits_max_titan	# 320 # 20 * 16
+	naval_cap_fraction = value:str_value_limits_naval_cap_fraction_titan	# 0.08
+	
+	show = {
+		is_scope_valid = yes
+		has_technology = tech_titans
+	}
+}
+
+colossus_ships_limit = {
+	ship_types = { 
+		colossus
+	}
+	
+	base = value:str_value_limits_base_colossus	# 32 # 1 * colossus's size_multiplier
+	show = {
+		is_scope_valid = yes
+		has_technology = tech_colossus
+	}
+}
+
+juggernaut_ships_limit = {
+	ship_types = {
+		juggernaut
+	}
+	base = value:str_value_limits_base_juggernaut	# 32 # 1 * juggernaut's size_multiplier
+	show = {
+		is_scope_valid = yes
+		has_technology = tech_juggernaut
+	}
+}
+
+space_dragon_origin_babies_limit = {
+	ship_types = { 
+		space_dragon_origin_baby
+	}
+	
+	base = value:str_value_limits_base_space_dragon_origin_baby	# 80 # 10 * dragon baby's size_multiplier
+	show = {
+		is_scope_valid = yes
+		is_dragon_breeder_country = yes
+	}
+}
