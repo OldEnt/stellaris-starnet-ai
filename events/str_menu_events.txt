@@ -1888,9 +1888,105 @@ country_event = {
 	}
 	custom_gui = str_menu_window_ship_sizes_settings
 	is_triggered_only = yes
+	immediate = {
+		str_truce_settings_register_countries = yes
+	}
+	option = {
+		name = str_menu.4.export_ship_data
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = str_register_ship_size_export_target
+				}
+				event_target:global_event_country = {
+					set_timed_country_flag = {
+						flag = str_register_ship_size_export_target_ignore_ship_limits
+						days = 1
+					}
+					country_event = {
+						id = starnet.201
+					}
+					remove_country_flag = str_register_ship_size_export_target_ignore_ship_limits
+				}
+			}
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+	option = {
+		name = str_menu.4.export_ship_limits
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = str_register_ship_size_export_target
+				}
+				event_target:global_event_country = {
+					set_timed_country_flag = {
+						flag = str_register_ship_size_export_target_ignore_ship_data
+						days = 1
+					}
+					country_event = {
+						id = starnet.201
+					}
+					remove_country_flag = str_register_ship_size_export_target_ignore_ship_data
+				}
+			}
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+	option = {
+		name = str_menu.4.export_clear
+		hidden_effect = {
+			every_country = {
+				event_target:global_event_country = {
+					set_timed_country_flag = {
+						flag = str_register_ship_size_export_target_ignore_ship_data
+						days = 1
+					}
+					set_timed_country_flag = {
+						flag = str_register_ship_size_export_target_ignore_ship_limits
+						days = 1
+					}
+					set_timed_country_flag = {
+						flag = str_register_ship_size_export_target_clear_export
+						days = 1
+					}
+					country_event = {
+						id = starnet.201
+					}
+					remove_country_flag = str_register_ship_size_export_target_ignore_ship_data
+					remove_country_flag = str_register_ship_size_export_target_ignore_ship_limits
+					remove_country_flag = str_register_ship_size_export_target_clear_export
+				}
+			}
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+	option = {
+		name = str_menu.4.standard_designs
+		hidden_effect = {
+			every_country = {
+				limit = {
+					uses_standard_ship_sizes = yes
+				}
+				set_country_flag = str_register_ship_size_export_target
+			}
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
 	option = {
 		name = str_menu.4.reload
 		hidden_effect = {
+			every_country = {
+				remove_country_flag = str_register_ship_size_export_target
+			}
 			country_event = {
 				id = str_menu.4
 			}
@@ -1899,8 +1995,611 @@ country_event = {
 	option = {
 		name = str_menu.4.exit
 		hidden_effect = {
+			every_country = {
+				remove_country_flag = str_register_ship_size_export_target
+			}
 			country_event = {
 				id = str_menu.1
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_1
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_1
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_1 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_2
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_2
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_2 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_3
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_3
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_3 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_4
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_4
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_4 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_5
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_5
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_5 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_6
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_6
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_6 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_7
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_7
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_7 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_8
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_8
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_8 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_9
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_9
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_9 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_10
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_10
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_10 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_11
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_11
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_11 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_12
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_12
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_12 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_13
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_13
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_13 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_14
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_14
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_14 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_15
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_15
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_15 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_16
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_16
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_16 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_17
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_17
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_17 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_18
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_18
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_18 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_19
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_19
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_19 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_20
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_20
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_20 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_21
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_21
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_21 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_22
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_22
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_22 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_23
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_23
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_23 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_24
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_24
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_24 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_25
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_25
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_25 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_26
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_26
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_26 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_27
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_27
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_27 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_28
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_28
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_28 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_29
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_29
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_29 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_30
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_30
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_30 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_31
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_31
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_31 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_32
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_32
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_32 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_33
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_33
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_33 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_34
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_34
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_34 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_35
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_35
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_35 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_36
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_36
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_36 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_37
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_37
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_37 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_38
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_38
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_38 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_39
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_39
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_39 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_40
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_40
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_40 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_41
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_41
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_41 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_42
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_42
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_42 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_43
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_43
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_43 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_44
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_44
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_44 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_45
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_45
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_45 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_46
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_46
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_46 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_47
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_47
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_47 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_48
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_48
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_48 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_49
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_49
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_49 = {
+				str_ship_sizes_settings_switch = yes
+			}
+		}
+	}
+	option = {
+		name = str_menu.2.option_50
+		custom_tooltip = str_menu.2.option.tooltip
+		trigger = {
+			exists = event_target:str_menu_countries_register_50
+		}
+		hidden_effect = {
+			event_target:str_menu_countries_register_50 = {
+				str_ship_sizes_settings_switch = yes
 			}
 		}
 	}

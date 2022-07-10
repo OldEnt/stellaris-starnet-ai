@@ -612,6 +612,25 @@ str_truce_settings_switch = {
 	}
 }
 
+str_ship_sizes_settings_switch = {
+	if = {
+		limit = {
+			has_country_flag = str_register_ship_size_export_target
+		}
+		remove_country_flag = str_register_ship_size_export_target
+	}
+	else = {
+		set_country_flag = str_register_ship_size_export_target
+	}
+	hidden_effect = {
+		root = {
+			country_event = {
+				id = str_menu.4
+			}
+		}
+	}
+}
+
 str_truce_settings_switch_reset_flags = {
 	remove_country_flag = str_country_war_immunity
 	remove_country_flag = str_country_banned_from_declare_war

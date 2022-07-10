@@ -407,3 +407,25 @@ event = {
 		str_on_game_start_register_vanilla_ship_sizes = yes
 	}
 }
+
+country_event = {
+	id = starnet.201
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:global_event_country = {
+			set_timed_country_flag = { 
+				flag = str_register_ship_size_export
+				days = 1
+			}
+		}
+		no_scope = {
+			fire_on_action = {
+				on_action = str_on_ship_size_register_export
+			}
+		}
+		event_target:global_event_country = {
+			remove_country_flag = str_register_ship_size_export
+		}
+	}
+}

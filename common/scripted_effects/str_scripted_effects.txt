@@ -90,9 +90,9 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		SHIP_SIZE = titan
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 16
-		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
-		AI_SHIP_DATA_DESIRED_MAX = 3		# Vanilla: 3.
-		AI_SHIP_DATA_DESIRED_MULT = 0.1		# Vanilla: 0.1.
+		AI_SHIP_DATA_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_MAX = 3		# Vanilla: 3.
+		AI_SHIP_DATA_MULT = 0.1		# Vanilla: 0.1.
 		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 16
 		LIMITS_MAX = 320
@@ -102,8 +102,8 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		SHIP_SIZE = colossus
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 32
-		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
-		AI_SHIP_DATA_DESIRED_MAX = 1		# Vanilla: 1.
+		AI_SHIP_DATA_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_MAX = 1		# Vanilla: 1.
 		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 32
 	}
@@ -111,8 +111,8 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		SHIP_SIZE = juggernaut
 		MOD_NAME = vanilla
 		SIZE_MULTIPLIER = 32
-		AI_SHIP_DATA_DESIRED_MIN = 1		# Vanilla: 1.
-		AI_SHIP_DATA_DESIRED_MAX = 1		# Vanilla: 1.
+		AI_SHIP_DATA_MIN = 1		# Vanilla: 1.
+		AI_SHIP_DATA_MAX = 1		# Vanilla: 1.
 		# Below values are used in \common\country_limits\ship_of_size_limits.
 		LIMITS_BASE = 32
 	}
@@ -182,21 +182,21 @@ str_register_ship_size = {
 			}
 			if = {
 				limit = {
-					is_variable_set = str_var_ai_ship_data_desired_min
+					is_variable_set = str_var_ai_ship_data_min
 				}
-				clear_variable = str_var_ai_ship_data_desired_min
+				clear_variable = str_var_ai_ship_data_min
 			}
 			if = {
 				limit = {
-					is_variable_set = str_var_AI_ship_data_desired_max
+					is_variable_set = str_var_ai_ship_data_max
 				}
-				clear_variable = str_var_AI_ship_data_desired_max
+				clear_variable = str_var_ai_ship_data_max
 			}
 			if = {
 				limit = {
-					is_variable_set = str_var_ai_ship_data_desired_mult
+					is_variable_set = str_var_ai_ship_data_mult
 				}
-				clear_variable = str_var_ai_ship_data_desired_mult
+				clear_variable = str_var_ai_ship_data_mult
 			}
 			if = {
 				limit = {
@@ -250,53 +250,164 @@ str_register_ship_size = {
 		}
 	}
 	event_target:global_event_country = {
-		random_owned_leader = {
+		if = {
 			limit = {
-				has_leader_flag = str_ship_size_register
-				has_leader_flag = $SHIP_SIZE$
+				NOT = {
+					has_country_flag = str_register_ship_size_export
+				}
 			}
-			[[AI_SHIP_DATA_FACTOR]set_variable = {
-				which = str_var_ai_ship_data_factor
-				value = $AI_SHIP_DATA_FACTOR$
+			random_owned_leader = {
+				limit = {
+					has_leader_flag = str_ship_size_register
+					has_leader_flag = $SHIP_SIZE$
+				}
+				[[AI_SHIP_DATA_FACTOR]set_variable = {
+					which = str_var_ai_ship_data_factor
+					value = $AI_SHIP_DATA_FACTOR$
+				}
+				]
+				[[SIZE_MULTIPLIER]set_variable = {
+					which = str_var_size_multiplier
+					value = $SIZE_MULTIPLIER$
+				}
+				]
+				[[AI_SHIP_DATA_MIN]set_variable = {
+					which = str_var_ai_ship_data_min
+					value = $AI_SHIP_DATA_MIN$
+				}
+				]
+				[[AI_SHIP_DATA_MAX]set_variable = {
+					which = str_var_ai_ship_data_max
+					value = $AI_SHIP_DATA_MAX$
+				}
+				]
+				[[AI_SHIP_DATA_MULT]set_variable = {
+					which = str_var_ai_ship_data_mult
+					value = $AI_SHIP_DATA_MULT$
+				}
+				]
+				[[LIMITS_BASE]set_variable = {
+					which = str_var_limits_base
+					value = $LIMITS_BASE$
+				}
+				]
+				[[LIMITS_MAX]set_variable = {
+					which = str_var_limits_max
+					value = $LIMITS_MAX$
+				}
+				]
+				[[LIMITS_NAVAL_CAP_FRACTION]set_variable = {
+					which = str_var_limits_naval_cap_fraction
+					value = $LIMITS_NAVAL_CAP_FRACTION$
+				}
+				]
+				[[MOD_NAME]set_leader_flag = str_ship_size_mod_name_$MOD_NAME$
+				]
 			}
-			]
-			[[SIZE_MULTIPLIER]set_variable = {
-				which = str_var_size_multiplier
-				value = $SIZE_MULTIPLIER$
+		}
+		if = {
+			limit = {
+				has_country_flag = str_register_ship_size_export
 			}
-			]
-			[[AI_SHIP_DATA_DESIRED_MIN]set_variable = {
-				which = str_var_ai_ship_data_desired_min
-				value = $AI_SHIP_DATA_DESIRED_MIN$
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = str_register_ship_size_export_target
+						event_target:global_event_country = {
+							has_country_flag = str_register_ship_size_export_target_clear_export
+						}
+					}
+				}
+				event_target:global_event_country = {
+					random_owned_leader = {
+						limit = {
+							has_leader_flag = str_ship_size_register
+							has_leader_flag = $SHIP_SIZE$
+						}
+						prevprev = {
+							if = {
+								limit = {
+									NOT = {
+										event_target:global_event_country = {
+											has_country_flag = str_register_ship_size_export_target_ignore_ship_data
+										}
+									}
+								}
+								clear_variable = str_var_ai_ship_data_factor_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_min_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_max_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_mult_$SHIP_SIZE$
+								[[AI_SHIP_DATA_FACTOR]set_variable = {
+									which = str_var_ai_ship_data_factor_$SHIP_SIZE$
+									value = prev.str_var_ai_ship_data_factor
+								}
+								]
+								[[SIZE_MULTIPLIER]set_variable = {
+									which = str_var_size_multiplier_$SHIP_SIZE$
+									value = prev.str_var_size_multiplier
+								}
+								]
+								[[AI_SHIP_DATA_MIN]set_variable = {
+									which = str_var_ai_ship_data_min_$SHIP_SIZE$
+									value = prev.str_var_ai_ship_data_min
+								}
+								]
+								[[AI_SHIP_DATA_MAX]set_variable = {
+									which = str_var_ai_ship_data_max_$SHIP_SIZE$
+									value = prev.str_var_ai_ship_data_max
+								}
+								]
+								[[AI_SHIP_DATA_MULT]set_variable = {
+									which = str_var_ai_ship_data_mult_$SHIP_SIZE$
+									value = prev.str_var_ai_ship_data_mult
+								}
+								]
+							}
+							if = {
+								limit = {
+									NOT = {
+										event_target:global_event_country = {
+											has_country_flag = str_register_ship_size_export_target_ignore_ship_limits
+										}
+									}
+								}
+								clear_variable = str_var_limits_base_$SHIP_SIZE$
+								clear_variable = str_var_limits_max_$SHIP_SIZE$
+								clear_variable = str_var_limits_naval_cap_fraction_$SHIP_SIZE$
+								[[LIMITS_BASE]set_variable = {
+									which = str_var_limits_base_$SHIP_SIZE$
+									value = prev.str_var_limits_base
+								}
+								]
+								[[LIMITS_MAX]set_variable = {
+									which = str_var_limits_max_$SHIP_SIZE$
+									value = prev.str_var_limits_max
+								}
+								]
+								[[LIMITS_NAVAL_CAP_FRACTION]set_variable = {
+									which = str_var_limits_naval_cap_fraction_$SHIP_SIZE$
+									value = prev.str_var_limits_naval_cap_fraction
+								}
+								]
+							}
+							if = {
+								limit = {
+									event_target:global_event_country = {
+										has_country_flag = str_register_ship_size_export_target_clear_export
+									}
+								}
+								clear_variable = str_var_ai_ship_data_factor_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_min_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_max_$SHIP_SIZE$
+								clear_variable = str_var_ai_ship_data_mult_$SHIP_SIZE$
+								clear_variable = str_var_limits_base_$SHIP_SIZE$
+								clear_variable = str_var_limits_max_$SHIP_SIZE$
+								clear_variable = str_var_limits_naval_cap_fraction_$SHIP_SIZE$
+							}
+						}
+					}
+				}
 			}
-			]
-			[[AI_SHIP_DATA_DESIRED_MAX]set_variable = {
-				which = str_var_AI_ship_data_desired_max
-				value = $AI_SHIP_DATA_DESIRED_MAX$
-			}
-			]
-			[[AI_SHIP_DATA_DESIRED_MULT]set_variable = {
-				which = str_var_ai_ship_data_desired_mult
-				value = $AI_SHIP_DATA_DESIRED_MULT$
-			}
-			]
-			[[LIMITS_BASE]set_variable = {
-				which = str_var_limits_base
-				value = $LIMITS_BASE$
-			}
-			]
-			[[LIMITS_MAX]set_variable = {
-				which = str_var_limits_max
-				value = $LIMITS_MAX$
-			}
-			]
-			[[LIMITS_NAVAL_CAP_FRACTION]set_variable = {
-				which = str_var_limits_naval_cap_fraction
-				value = $LIMITS_NAVAL_CAP_FRACTION$
-			}
-			]
-			[[MOD_NAME]set_leader_flag = str_ship_size_mod_name_$MOD_NAME$
-			]
 		}
 	}
 }
@@ -2687,6 +2798,7 @@ str_error_cleaner_effect = {
 	save_event_target_as = str_register_ship_size_destroyer
 	save_event_target_as = str_register_ship_size_cruiser
 	save_event_target_as = str_register_ship_size_corvette
+	set_leader_flag = str_ship_size_mod_name_$MOD_NAME$
 	set_leader_flag = $SHIP_SIZE$
 	set_leader_flag = corvette
 	set_leader_flag = destroyer
@@ -2695,6 +2807,8 @@ str_error_cleaner_effect = {
 	set_leader_flag = titan
 	set_leader_flag = colossus
 	set_leader_flag = juggernaut
+	set_country_flag = str_register_ship_size_export
+	set_country_flag = str_register_ship_size_export_target
 	set_variable = {
 		which = str_var_ai_ship_data_factor
 		value = 0
@@ -2704,15 +2818,15 @@ str_error_cleaner_effect = {
 		value = 0
 	}
 	set_variable = {
-		which = str_var_ai_ship_data_desired_min
+		which = str_var_ai_ship_data_min
 		value = 0
 	}
 	set_variable = {
-		which = str_var_AI_ship_data_desired_max
+		which = str_var_ai_ship_data_max
 		value = 0
 	}
 	set_variable = {
-		which = str_var_ai_ship_data_desired_mult
+		which = str_var_ai_ship_data_mult
 		value = 0
 	}
 	set_variable = {
@@ -2725,6 +2839,38 @@ str_error_cleaner_effect = {
 	}
 	set_variable = {
 		which = str_var_limits_naval_cap_fraction
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_factor_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_size_multiplier_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_min_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_max_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_ai_ship_data_mult_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_base_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_max_$SHIP_SIZE$
+		value = 0
+	}
+	set_variable = {
+		which = str_var_limits_naval_cap_fraction_$SHIP_SIZE$
 		value = 0
 	}
 }

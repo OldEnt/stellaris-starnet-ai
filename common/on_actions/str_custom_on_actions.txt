@@ -1,0 +1,5 @@
+str_on_ship_size_register_export = {
+	events = {
+		starnet.200
+	}
+}
