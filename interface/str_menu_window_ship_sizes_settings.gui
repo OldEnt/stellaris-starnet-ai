@@ -58,7 +58,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "alien_message_background"
-			size = { x = 468 y = 715 }
+			size = { x = 668 y = 715 }
 			position = { x = 11 y = 50 }
 			spriteType = "GFX_tiles_dark_area_cut_8"
 			alwaysTransparent = yes
@@ -305,7 +305,7 @@ guiTypes = {
 				name = str_register_ship_size_title_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -248 }
+				position = { x = 24 y = -248 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -314,10 +314,22 @@ guiTypes = {
 				effect = str_register_ship_size_title_button_name
 			}
 			effectbuttonType = {					
-				name = str_register_ship_size_title_button_factor
+				name = str_register_ship_size_title_button_multiplier
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
 				position = { x = 114 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_multiplier
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_multiplier
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_factor
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 178 y = -248 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -326,10 +338,82 @@ guiTypes = {
 				effect = str_register_ship_size_title_button_factor
 			}
 			effectbuttonType = {					
+				name = str_register_ship_size_title_button_min
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 242 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_min
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_min
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_max
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 306 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_max
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_max
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_mult
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 370 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_mult
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_mult
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_limits_base
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 434 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_limits_base
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_limits_base
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_limits_max
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 498 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_limits_max
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_limits_max
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_title_button_limits_naval_cap_fraction
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 562 y = -248 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_title_button_limits_naval_cap_fraction
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_title_button_limits_naval_cap_fraction
+			}
+			effectbuttonType = {					
 				name = str_register_ship_size_1_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -216 }
+				position = { x = 24 y = -216 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -341,7 +425,7 @@ guiTypes = {
 				name = str_register_ship_size_1_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -216 }
+				position = { x = 178 y = -216 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -353,7 +437,7 @@ guiTypes = {
 				name = str_register_ship_size_2_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -184 }
+				position = { x = 24 y = -184 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -365,7 +449,7 @@ guiTypes = {
 				name = str_register_ship_size_2_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -184 }
+				position = { x = 178 y = -184 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -377,7 +461,7 @@ guiTypes = {
 				name = str_register_ship_size_3_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -152 }
+				position = { x = 24 y = -152 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -389,7 +473,7 @@ guiTypes = {
 				name = str_register_ship_size_3_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -152 }
+				position = { x = 178 y = -152 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -401,7 +485,7 @@ guiTypes = {
 				name = str_register_ship_size_4_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -120 }
+				position = { x = 24 y = -120 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -413,7 +497,7 @@ guiTypes = {
 				name = str_register_ship_size_4_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -120 }
+				position = { x = 178 y = -120 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -425,7 +509,7 @@ guiTypes = {
 				name = str_register_ship_size_5_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -88 }
+				position = { x = 24 y = -88 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -437,7 +521,7 @@ guiTypes = {
 				name = str_register_ship_size_5_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -88 }
+				position = { x = 178 y = -88 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -449,7 +533,7 @@ guiTypes = {
 				name = str_register_ship_size_6_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -56 }
+				position = { x = 24 y = -56 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -461,7 +545,7 @@ guiTypes = {
 				name = str_register_ship_size_6_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -56 }
+				position = { x = 178 y = -56 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -473,7 +557,7 @@ guiTypes = {
 				name = str_register_ship_size_7_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = -24 }
+				position = { x = 24 y = -24 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -485,7 +569,7 @@ guiTypes = {
 				name = str_register_ship_size_7_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = -24 }
+				position = { x = 178 y = -24 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -497,7 +581,7 @@ guiTypes = {
 				name = str_register_ship_size_8_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 8 }
+				position = { x = 24 y = 8 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -509,7 +593,7 @@ guiTypes = {
 				name = str_register_ship_size_8_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 8 }
+				position = { x = 178 y = 8 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -521,7 +605,7 @@ guiTypes = {
 				name = str_register_ship_size_9_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 40 }
+				position = { x = 24 y = 40 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -533,7 +617,7 @@ guiTypes = {
 				name = str_register_ship_size_9_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 40 }
+				position = { x = 178 y = 40 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -545,7 +629,7 @@ guiTypes = {
 				name = str_register_ship_size_10_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 72 }
+				position = { x = 24 y = 72 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -557,7 +641,7 @@ guiTypes = {
 				name = str_register_ship_size_10_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 72 }
+				position = { x = 178 y = 72 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -569,7 +653,7 @@ guiTypes = {
 				name = str_register_ship_size_11_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 104 }
+				position = { x = 24 y = 104 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -581,7 +665,7 @@ guiTypes = {
 				name = str_register_ship_size_11_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 104 }
+				position = { x = 178 y = 104 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -593,7 +677,7 @@ guiTypes = {
 				name = str_register_ship_size_12_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 136 }
+				position = { x = 24 y = 136 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -605,7 +689,7 @@ guiTypes = {
 				name = str_register_ship_size_12_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 136 }
+				position = { x = 178 y = 136 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -617,7 +701,7 @@ guiTypes = {
 				name = str_register_ship_size_13_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 168 }
+				position = { x = 24 y = 168 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -629,7 +713,7 @@ guiTypes = {
 				name = str_register_ship_size_13_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 168 }
+				position = { x = 178 y = 168 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -641,7 +725,7 @@ guiTypes = {
 				name = str_register_ship_size_14_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 200 }
+				position = { x = 24 y = 200 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -653,7 +737,7 @@ guiTypes = {
 				name = str_register_ship_size_14_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 200 }
+				position = { x = 178 y = 200 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -665,7 +749,7 @@ guiTypes = {
 				name = str_register_ship_size_15_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 50 y = 232 }
+				position = { x = 24 y = 232 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
@@ -677,13 +761,109 @@ guiTypes = {
 				name = str_register_ship_size_15_button_ship_data_factor
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 114 y = 232 }
+				position = { x = 178 y = 232 }
 				size = { x = 150 y = 32 }
 				scale = 1
 				buttonFont = cg_16b
 				buttonText = str_register_ship_size_15_button_ship_data_factor
 				orientation = CENTER_LEFT
 				effect = str_register_ship_size_15_button_ship_data_factor
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_16_button_name
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 24 y = 264 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_16
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_16_button_name
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_16_button_ship_data_factor
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 178 y = 264 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_16_button_ship_data_factor
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_16_button_ship_data_factor
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_17_button_name
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 24 y = 296 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_17
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_17_button_name
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_18_button_ship_data_factor
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 178 y = 296 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_18_button_ship_data_factor
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_18_button_ship_data_factor
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_19_button_name
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 24 y = 328 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_19
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_19_button_name
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_19_button_ship_data_factor
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 178 y = 328 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_19_button_ship_data_factor
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_19_button_ship_data_factor
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_20_button_name
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 24 y = 360 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_20
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_20_button_name
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_20_button_ship_data_factor
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 178 y = 360 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_20_button_ship_data_factor
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_20_button_ship_data_factor
 			}
 
 			listboxType = {

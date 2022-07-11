@@ -183,6 +183,90 @@ str_register_ship_size_title_button_factor = {
 	}
 }
 
+str_register_ship_size_title_button_multiplier = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_min = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_max = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_mult = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_limits_base = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_limits_max = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_title_button_limits_naval_cap_fraction = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
 str_register_ship_size_1_button_name = {
 	potential = {
 		exists = event_target:str_register_ship_size_1
@@ -563,6 +647,136 @@ str_register_ship_size_15_button_name = {
 str_register_ship_size_15_button_ship_data_factor = {
 	potential = {
 		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_16_button_name = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_16_button_ship_data_factor = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_17_button_name = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_17_button_ship_data_factor = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_18_button_name = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_18_button_ship_data_factor = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_19_button_name = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_19_button_ship_data_factor = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_20_button_name = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_20_button_ship_data_factor = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
 	}
 	allow = {
 	}
