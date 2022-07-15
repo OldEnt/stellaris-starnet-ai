@@ -1645,3 +1645,71 @@ defined_text = {
 		localization_key = BLANK_STRING
 	}
 }
+
+defined_text = {
+	name = GetName_str_register_ship_size_str_var_ai_mode
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				is_variable_set = str_register_ship_size_str_var_ai_mode
+			}
+		}
+		localization_key = str_register_ship_size_str_var_ai_mode_multiply
+	}
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				NOT = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+		}
+		localization_key = str_register_ship_size_str_var_ai_mode_clear
+	}
+}
+
+defined_text = {
+	name = GetName_str_register_ship_size_str_var_ai_value
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				NOR = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+					is_variable_set = str_register_ship_size_str_var_ai_value
+				}
+			}
+		}
+		localization_key = BLANK_STRING		# This should never happen.
+	}
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				is_variable_set = str_register_ship_size_str_var_ai_value
+				is_variable_set = str_register_ship_size_str_var_ai_mode
+			}
+		}
+		localization_key = str_register_ship_size_str_var_ai_value_input
+	}
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				is_variable_set = str_register_ship_size_str_var_ai_value
+				NOT = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+		}
+		localization_key = str_register_ship_size_str_var_ai_value_clear
+	}
+	text = {
+		trigger = {
+			event_target:global_event_country = {
+				is_variable_set = str_register_ship_size_str_var_ai_mode
+				NOT = {
+					is_variable_set = str_register_ship_size_str_var_ai_value
+				}
+			}
+		}
+		localization_key = BLANK_STRING		# This should never happen.
+	}
+}

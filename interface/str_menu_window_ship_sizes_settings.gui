@@ -302,6 +302,30 @@ guiTypes = {
 				alwaysTransparent = yes
 			}
 			effectbuttonType = {					
+				name = str_register_ship_size_str_var_ai_mode
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 658 y = -216 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_str_var_ai_mode
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_str_var_ai_mode
+			}
+			effectbuttonType = {					
+				name = str_register_ship_size_str_var_ai_value
+				# quadTextureSprite = "GFX_str_button_square"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 658 y = -184 }
+				size = { x = 150 y = 32 }
+				scale = 1
+				buttonFont = cg_16b
+				buttonText = str_register_ship_size_str_var_ai_value
+				orientation = CENTER_LEFT
+				effect = str_register_ship_size_str_var_ai_value
+			}
+			effectbuttonType = {					
 				name = str_register_ship_size_title_button_name
 				# quadTextureSprite = "GFX_str_button_square"
 				quadTextureSprite = "GFX_tiled_window_transparent"

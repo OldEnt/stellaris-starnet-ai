@@ -159,6 +159,147 @@ str_var_ai_will_not_declare_war_until_minus_one = {
 	}
 }
 
+str_register_ship_size_str_var_ai_mode = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			event_target:global_event_country = {
+				switch = {
+					trigger = has_country_flag
+					str_register_ship_size_str_var_ai_mode_option_1 = {
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_mode
+							value = -1
+						}
+						remove_country_flag = str_register_ship_size_str_var_ai_mode_option_1
+						set_country_flag = str_register_ship_size_str_var_ai_mode_option_2
+					}
+					str_register_ship_size_str_var_ai_mode_option_2 = {
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_mode
+							value = 0
+						}
+						remove_country_flag = str_register_ship_size_str_var_ai_mode_option_2
+						set_country_flag = str_register_ship_size_str_var_ai_mode_option_3
+					}
+					str_register_ship_size_str_var_ai_mode_option_3 = {
+						clear_variable = str_register_ship_size_str_var_ai_mode
+						remove_country_flag = str_register_ship_size_str_var_ai_mode_option_3
+					}
+					default = {
+						set_country_flag = str_register_ship_size_str_var_ai_mode_option_1
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_mode
+							value = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_variable_set = str_register_ship_size_str_var_ai_mode
+						is_variable_set = str_register_ship_size_str_var_ai_value
+					}
+					set_variable = {
+						which = str_register_ship_size_str_var_ai_value_input
+						value = str_register_ship_size_str_var_ai_value
+					}
+					multiply_variable = {
+						which = str_register_ship_size_str_var_ai_value_input
+						value = str_register_ship_size_str_var_ai_mode
+					}
+				}
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value = {
+	potential = {
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			event_target:global_event_country = {
+				if = {
+					limit = {
+						is_variable_set = str_register_ship_size_str_var_ai_value
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_value
+								value = 5
+							}
+						}
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_value
+							value = 10
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_value
+								value = 10
+							}
+						}
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_value
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_value
+								value = 100
+							}
+						}
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_value
+							value = 0.1
+						}
+					}
+					else = {
+						set_variable = {
+							which = str_register_ship_size_str_var_ai_value
+							value = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_variable_set = str_register_ship_size_str_var_ai_value
+						}
+					}
+					set_variable = {
+						which = str_register_ship_size_str_var_ai_value
+						value = 5
+					}
+				}
+				set_variable = {
+					which = str_register_ship_size_str_var_ai_value_input
+					value = str_register_ship_size_str_var_ai_value
+				}
+				if = {
+					limit = {
+						is_variable_set = str_register_ship_size_str_var_ai_mode
+					}
+					multiply_variable = {
+						which = str_register_ship_size_str_var_ai_value_input
+						value = str_register_ship_size_str_var_ai_mode
+					}
+				}
+			}
+		}
+	}
+}
+
 str_register_ship_size_title_button_name = {
 	potential = {
 	}
@@ -288,7 +429,9 @@ str_register_ship_size_1_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 1
+			}
 		}
 	}
 }
@@ -314,7 +457,9 @@ str_register_ship_size_2_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 2
+			}
 		}
 	}
 }
@@ -340,7 +485,9 @@ str_register_ship_size_3_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 3
+			}
 		}
 	}
 }
@@ -366,7 +513,9 @@ str_register_ship_size_4_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 4
+			}
 		}
 	}
 }
@@ -392,7 +541,9 @@ str_register_ship_size_5_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 5
+			}
 		}
 	}
 }
@@ -418,7 +569,9 @@ str_register_ship_size_6_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 6
+			}
 		}
 	}
 }
@@ -444,7 +597,9 @@ str_register_ship_size_7_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 7
+			}
 		}
 	}
 }
@@ -470,7 +625,9 @@ str_register_ship_size_8_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 8
+			}
 		}
 	}
 }
@@ -496,7 +653,9 @@ str_register_ship_size_9_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 9
+			}
 		}
 	}
 }
@@ -522,7 +681,9 @@ str_register_ship_size_10_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 10
+			}
 		}
 	}
 }
@@ -548,7 +709,9 @@ str_register_ship_size_11_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 11
+			}
 		}
 	}
 }
@@ -574,7 +737,9 @@ str_register_ship_size_12_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 12
+			}
 		}
 	}
 }
@@ -600,7 +765,9 @@ str_register_ship_size_13_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 13
+			}
 		}
 	}
 }
@@ -626,7 +793,9 @@ str_register_ship_size_14_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 14
+			}
 		}
 	}
 }
@@ -652,7 +821,9 @@ str_register_ship_size_15_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 15
+			}
 		}
 	}
 }
@@ -678,7 +849,9 @@ str_register_ship_size_16_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 16
+			}
 		}
 	}
 }
@@ -704,7 +877,9 @@ str_register_ship_size_17_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 17
+			}
 		}
 	}
 }
@@ -730,7 +905,9 @@ str_register_ship_size_18_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 18
+			}
 		}
 	}
 }
@@ -756,7 +933,9 @@ str_register_ship_size_19_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 19
+			}
 		}
 	}
 }
@@ -782,7 +961,9 @@ str_register_ship_size_20_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			break = yes
+			str_register_ship_size_str_var_ai_value_set = {
+				INDEX = 20
+			}
 		}
 	}
 }

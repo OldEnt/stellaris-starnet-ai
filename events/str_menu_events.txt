@@ -1890,6 +1890,51 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		str_truce_settings_register_countries = yes
+		event_target:global_event_country = {
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_register_ship_size_str_var_ai_mode
+					}
+				}
+				set_variable = {
+					which = str_register_ship_size_str_var_ai_mode
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_register_ship_size_str_var_ai_value
+					}
+				}
+				set_variable = {
+					which = str_register_ship_size_str_var_ai_value
+					value = 5
+				}
+			}
+			set_country_flag = str_register_ship_size_str_var_ai_mode_option_1
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_register_ship_size_str_var_ai_value_input
+					}
+				}
+				set_variable = {
+					which = str_register_ship_size_str_var_ai_value_input
+					value = str_register_ship_size_str_var_ai_value
+				}
+				if = {
+					limit = {
+						is_variable_set = str_register_ship_size_str_var_ai_mode
+					}
+					multiply_variable = {
+						which = str_register_ship_size_str_var_ai_value_input
+						value = str_register_ship_size_str_var_ai_mode
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = str_menu.4.export_ship_data
