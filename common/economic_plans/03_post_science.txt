@@ -285,6 +285,7 @@ middle_imperial_plan = {
 		scaling = yes
 		set_name = "Gigas megaengineering alloys"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_technology = tech_mega_engineering
 			
 			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
@@ -300,6 +301,7 @@ middle_imperial_plan = {
 	subplan = {
 		set_name = "Gigas base sentient metal"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_technology = tech_ehof_sentient_tier_1
 			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
 			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
@@ -316,6 +318,7 @@ middle_imperial_plan = {
 		scaling = yes
 		set_name = "Gigas compound crisis sentient metal"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_global_flag = compound_invasion_ongoing
 			not = { has_global_flag = compound_destroyed }
 
@@ -334,6 +337,7 @@ middle_imperial_plan = {
 	subplan = {
 		set_name = "Gigas base negative mass"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_technology = tech_nm_utilization_1
 			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
 		}
@@ -348,6 +352,7 @@ middle_imperial_plan = {
 		scaling = yes
 		set_name = "Gigas compound crisis negative mass"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_global_flag = compound_invasion_ongoing
 			not = { has_global_flag = compound_destroyed }
 
@@ -365,6 +370,7 @@ middle_imperial_plan = {
 		optional = yes
 		set_name = "Gigas supertensiles"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
 			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
@@ -380,6 +386,7 @@ middle_imperial_plan = {
 		optional = yes
 		set_name = "Gigas supertensiles origin boost"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
 			giga_has_amb_important_origin = yes
@@ -398,6 +405,7 @@ middle_imperial_plan = {
 		scaling = yes
 		set_name = "Gigas scaling supertensiles"
 		potential = {
+			has_global_flag = gigastructures_enabled
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
 			has_technology = tech_mega_engineering
