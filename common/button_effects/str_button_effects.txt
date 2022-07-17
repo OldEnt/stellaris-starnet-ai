@@ -429,7 +429,7 @@ str_register_ship_size_1_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 1
 			}
 		}
@@ -457,7 +457,7 @@ str_register_ship_size_2_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 2
 			}
 		}
@@ -485,7 +485,7 @@ str_register_ship_size_3_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 3
 			}
 		}
@@ -513,7 +513,7 @@ str_register_ship_size_4_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 4
 			}
 		}
@@ -541,7 +541,7 @@ str_register_ship_size_5_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 5
 			}
 		}
@@ -569,7 +569,7 @@ str_register_ship_size_6_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 6
 			}
 		}
@@ -597,7 +597,7 @@ str_register_ship_size_7_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 7
 			}
 		}
@@ -625,7 +625,7 @@ str_register_ship_size_8_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 8
 			}
 		}
@@ -653,7 +653,7 @@ str_register_ship_size_9_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 9
 			}
 		}
@@ -681,7 +681,7 @@ str_register_ship_size_10_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 10
 			}
 		}
@@ -709,7 +709,7 @@ str_register_ship_size_11_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 11
 			}
 		}
@@ -737,7 +737,7 @@ str_register_ship_size_12_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 12
 			}
 		}
@@ -765,7 +765,7 @@ str_register_ship_size_13_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 13
 			}
 		}
@@ -793,7 +793,7 @@ str_register_ship_size_14_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 14
 			}
 		}
@@ -821,7 +821,7 @@ str_register_ship_size_15_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 15
 			}
 		}
@@ -849,7 +849,7 @@ str_register_ship_size_16_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 16
 			}
 		}
@@ -877,7 +877,7 @@ str_register_ship_size_17_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 17
 			}
 		}
@@ -905,7 +905,7 @@ str_register_ship_size_18_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 18
 			}
 		}
@@ -933,7 +933,7 @@ str_register_ship_size_19_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 				INDEX = 19
 			}
 		}
@@ -961,7 +961,2067 @@ str_register_ship_size_20_button_ship_data_factor = {
 	}
 	effect = {
 		hidden_effect = {
-			str_register_ship_size_str_var_ai_value_set = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_2_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_3_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_4_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_5_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_6_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_7_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_8_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_9_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_10_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_11_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_12_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_13_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_14_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_15_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_16_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_17_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_18_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_19_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_20_button_ship_data_multiplier = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			break = yes
+		}
+	}
+}
+
+str_register_ship_size_1_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_ship_data_min = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_ship_data_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_ship_data_mult = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_limits_base = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_base = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_limits_max = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_max = {
+				INDEX = 20
+			}
+		}
+	}
+}
+
+str_register_ship_size_1_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_1
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 1
+			}
+		}
+	}
+}
+
+str_register_ship_size_2_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_2
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 2
+			}
+		}
+	}
+}
+
+str_register_ship_size_3_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_3
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 3
+			}
+		}
+	}
+}
+
+str_register_ship_size_4_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_4
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 4
+			}
+		}
+	}
+}
+
+str_register_ship_size_5_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_5
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 5
+			}
+		}
+	}
+}
+
+str_register_ship_size_6_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_6
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 6
+			}
+		}
+	}
+}
+
+str_register_ship_size_7_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_7
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 7
+			}
+		}
+	}
+}
+
+str_register_ship_size_8_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_8
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 8
+			}
+		}
+	}
+}
+
+str_register_ship_size_9_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_9
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 9
+			}
+		}
+	}
+}
+
+str_register_ship_size_10_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_10
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 10
+			}
+		}
+	}
+}
+
+str_register_ship_size_11_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_11
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 11
+			}
+		}
+	}
+}
+
+str_register_ship_size_12_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_12
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 12
+			}
+		}
+	}
+}
+
+str_register_ship_size_13_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_13
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 13
+			}
+		}
+	}
+}
+
+str_register_ship_size_14_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_14
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 14
+			}
+		}
+	}
+}
+
+str_register_ship_size_15_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_15
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 15
+			}
+		}
+	}
+}
+
+str_register_ship_size_16_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_16
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 16
+			}
+		}
+	}
+}
+
+str_register_ship_size_17_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_17
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 17
+			}
+		}
+	}
+}
+
+str_register_ship_size_18_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_18
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 18
+			}
+		}
+	}
+}
+
+str_register_ship_size_19_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_19
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+				INDEX = 19
+			}
+		}
+	}
+}
+
+str_register_ship_size_20_button_limits_naval_cap_fraction = {
+	potential = {
+		exists = event_target:str_register_ship_size_20
+	}
+	allow = {
+	}
+	effect = {
+		hidden_effect = {
+			str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
 				INDEX = 20
 			}
 		}

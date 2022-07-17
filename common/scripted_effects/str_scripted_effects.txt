@@ -2856,7 +2856,7 @@ str_deregister_ship_size = {
 	}
 }
 
-str_register_ship_size_str_var_ai_value_set = {
+str_register_ship_size_str_var_ai_value_set_ship_data_factor = {
 	optimize_memory
 	event_target:str_register_ship_size_$INDEX$ = {
 		if = {
@@ -2918,6 +2918,408 @@ str_register_ship_size_str_var_ai_value_set = {
 					is_variable_set = str_var_ai_ship_data_factor
 				}
 				clear_variable = str_var_ai_ship_data_factor
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_ship_data_min = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_ai_ship_data_min
+					}
+				}
+				set_variable = {
+					which = str_var_ai_ship_data_min
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_min
+				}
+				change_variable = {
+					which = str_var_ai_ship_data_min
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_min
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_ai_ship_data_min
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_min
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_min
+				}
+				clear_variable = str_var_ai_ship_data_min
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_ship_data_max = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_ai_ship_data_max
+					}
+				}
+				set_variable = {
+					which = str_var_ai_ship_data_max
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_max
+				}
+				change_variable = {
+					which = str_var_ai_ship_data_max
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_max
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_ai_ship_data_max
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_max
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_max
+				}
+				clear_variable = str_var_ai_ship_data_max
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_ship_data_mult = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_ai_ship_data_mult
+					}
+				}
+				set_variable = {
+					which = str_var_ai_ship_data_mult
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_mult
+				}
+				change_variable = {
+					which = str_var_ai_ship_data_mult
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_mult
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_ai_ship_data_mult
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_ai_ship_data_mult
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_ai_ship_data_mult
+				}
+				clear_variable = str_var_ai_ship_data_mult
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_limits_base = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_limits_base
+					}
+				}
+				set_variable = {
+					which = str_var_limits_base
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_base
+				}
+				change_variable = {
+					which = str_var_limits_base
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_limits_base
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_limits_base
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_limits_base
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_base
+				}
+				clear_variable = str_var_limits_base
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_limits_max = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_limits_max
+					}
+				}
+				set_variable = {
+					which = str_var_limits_max
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_max
+				}
+				change_variable = {
+					which = str_var_limits_max
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_limits_max
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_limits_max
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_limits_max
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_max
+				}
+				clear_variable = str_var_limits_max
+			}
+		}
+	}
+}
+
+str_register_ship_size_str_var_ai_value_set_limits_naval_cap_fraction = {
+	optimize_memory
+	event_target:str_register_ship_size_$INDEX$ = {
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					is_variable_set = str_register_ship_size_str_var_ai_mode
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_set = str_var_limits_naval_cap_fraction
+					}
+				}
+				set_variable = {
+					which = str_var_limits_naval_cap_fraction
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_naval_cap_fraction
+				}
+				change_variable = {
+					which = str_var_limits_naval_cap_fraction
+					value = event_target:global_event_country.str_register_ship_size_str_var_ai_value_input
+				}
+				if = {
+					limit = {
+						event_target:global_event_country = {
+							check_variable = {
+								which = str_register_ship_size_str_var_ai_mode
+								value = 0
+							}
+						}
+					}
+					set_variable = {
+						which = str_var_limits_naval_cap_fraction
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = str_var_limits_naval_cap_fraction
+							value < 0
+						}
+					}
+					set_variable = {
+						which = str_var_limits_naval_cap_fraction
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_variable_set = str_var_limits_naval_cap_fraction
+				}
+				clear_variable = str_var_limits_naval_cap_fraction
 			}
 		}
 	}
