@@ -182,15 +182,33 @@ food_upkeep_buildings = {
 food_upkeep_ships = {
 	resource = food
 	type = upkeep
-	category = campaigns
+	category = ships
 
 	potential = {
-		has_origin = origin_here_be_dragons
-		is_dragon_breeder_country = yes
+		always = yes
 	}
 
 	fraction = {
-		weight = 5
+		weight = 0.1
+		modifier = {
+			add = 4.9
+			has_origin = origin_here_be_dragons
+			is_dragon_breeder_country = yes
+		}
+	}
+}
+
+food_expenditure_ships = {
+	resource = food
+	type = expenditure
+	category = ships
+
+	potential = {
+		always = yes
+	}
+
+	fraction = {
+		weight = 0.1
 	}
 }
 
