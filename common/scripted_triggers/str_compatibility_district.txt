@@ -1,4 +1,3 @@
-
 # CWTools will flag "value $operator$ $num$" as an error, it is not, this is a known flaw of CWTools.
 @IGNORE_VALUE_OPERATOR_NUM_ERRORS_ITS_A_CWTOOLS_BUG = 1
 #	above is because Irony doesn't show comments but does show local defines
