@@ -993,7 +993,7 @@ roboticist = {
 	}
 
 	weight = {
-		weight = 2500
+		weight = 1500
 		modifier = {
 			factor = 10
 			owner = { is_synthetic_empire = yes }
