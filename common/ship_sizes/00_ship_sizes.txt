@@ -834,6 +834,20 @@ military_station_small = {
 		}
 	}
 
+	possible_construction = {
+		hidden_trigger = {
+			NAND = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+				NOT = {
+					has_global_flag = str_global_ai_should_build_starbase_defenses
+				}
+			}
+		}
+	}
+
 	resources = {
 		category = ships
 	}
@@ -877,6 +891,20 @@ military_station_medium = {
 
 	build_block_radius = @build_block_radius_military
 
+	possible_construction = {
+		hidden_trigger = {
+			NAND = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+				NOT = {
+					has_global_flag = str_global_ai_should_build_starbase_defenses
+				}
+			}
+		}
+	}
+
 	resources = {
 		category = ships
 	}
@@ -918,6 +946,20 @@ military_station_large = {
 	required_component_set = "combat_computers"
 
 	build_block_radius = @build_block_radius_military
+
+	possible_construction = {
+		hidden_trigger = {
+			NAND = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+				NOT = {
+					has_global_flag = str_global_ai_should_build_starbase_defenses
+				}
+			}
+		}
+	}
 
 	resources = {
 		category = ships

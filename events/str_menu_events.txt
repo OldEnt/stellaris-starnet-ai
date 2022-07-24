@@ -132,6 +132,24 @@ country_event = {
 		}
 	}
 	option = {
+		name = str_menu.1.starbase_defenses
+		custom_tooltip = str_menu.1.starbase_defenses.tooltip
+		switch = {
+			trigger = has_global_flag
+			str_global_ai_should_build_starbase_defenses = {
+				remove_global_flag = str_global_ai_should_build_starbase_defenses
+			}
+			default = {
+				set_global_flag = str_global_ai_should_build_starbase_defenses
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = str_menu.1
+			}
+		}
+	}
+	option = {
 		allow = {
 			custom_tooltip = {
 				fail_text = str_menu.1_dmm_installed

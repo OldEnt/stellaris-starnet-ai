@@ -175,6 +175,24 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetName_str_ai_should_build_starbase_defenses_switch
+	text = {
+		trigger = {
+			has_global_flag = str_global_ai_should_build_starbase_defenses
+		}
+		localization_key = str_trigger_yes
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = str_global_ai_should_build_starbase_defenses
+			}
+		}
+		localization_key = str_trigger_no
+	}
+}
+
+defined_text = {
 	name = GetName_str_dmm_display_exception_for_1
 	text = {
 		trigger = {
