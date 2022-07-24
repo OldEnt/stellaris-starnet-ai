@@ -21,6 +21,10 @@ district_rw_city = {
 		uses_district_set = ring_world
 	}
 
+	allow = {
+		str_city_district_allow = yes
+	}
+
 	conversion_ratio = 0.5
 	convert_to = {
 		district_rw_nexus
@@ -150,6 +154,10 @@ district_rw_hive = {
 		uses_district_set = ring_world
 	}
 
+	allow = {
+		str_city_district_allow = yes
+	}
+
 	conversion_ratio = 0.5
 	convert_to = {
 		district_rw_nexus
@@ -229,6 +237,10 @@ district_rw_nexus = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 		uses_district_set = ring_world
+	}
+
+	allow = {
+		str_city_district_allow = yes
 	}
 
 	conversion_ratio = 0.5
