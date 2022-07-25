@@ -1,0 +1,127 @@
+mmghyper_initialize_distance_origin = {
+	set_star_flag = $DISTANCE$_active_node
+	set_variable = {
+		which = $DISTANCE$
+		value = 0
+	}
+}
+
+mmghyper_initialize_path_origin = {
+	set_star_flag = $PATH$
+	set_star_flag = $PATH$_active_node
+}
+
+mmghyper_calculate_distances = {
+	while = {
+		limit = {
+			count_system = {
+				count > 0
+				limit = {
+					has_star_flag = $DISTANCE$_active_node
+				}
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = $DISTANCE$_active_node
+			}
+			remove_star_flag = $DISTANCE$_active_node
+			every_neighbor_system = {
+				limit = {
+					[[SAME_OWNER] exists = owner]
+					[[SAME_OWNER] owner = { is_same_empire = prevprev.owner }]
+					[[SAME_SECTOR] exists = sector]
+					[[SAME_SECTOR] exists = prev.sector]
+					[[SAME_SECTOR] sector = { is_same_value = prevprev.sector }]
+					OR = {
+						NOT = { is_variable_set = $DISTANCE$ }
+						OR = {
+							AND = {
+								mmghyper_has_hyper_relay = yes
+								prev = {
+									mmghyper_has_hyper_relay = yes
+									check_variable_arithmetic = {
+										which = $DISTANCE$
+										add = 0.5
+										value < prev.$DISTANCE$
+									}
+								}
+							}
+							prev = {
+								check_variable_arithmetic = {
+									which = $DISTANCE$
+									add = 1
+									value < prev.$DISTANCE$
+								}
+							}
+						}
+					}
+				}
+
+				set_variable = {
+					which = $DISTANCE$
+					value = prev.$DISTANCE$
+				}
+				if = {
+					limit = {
+						mmghyper_has_hyper_relay = yes
+						prev = { mmghyper_has_hyper_relay = yes }
+					}
+					change_variable = {
+						which = $DISTANCE$
+						value = 0.5
+					}
+				}
+				else = {
+					change_variable = {
+						which = $DISTANCE$
+						value = 1
+					}
+				}
+				set_star_flag = $DISTANCE$_active_node
+			}
+		}
+	}
+}
+
+mmghyper_find_paths = {
+	while = {
+		limit = {
+			count_system = {
+				count > 0
+				limit = {
+					has_star_flag = $PATH$_active_node
+				}
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = $PATH$_active_node
+			}
+			remove_star_flag = $PATH$_active_node
+			if = {
+				limit = {
+					check_variable = {
+						which = $DISTANCE$
+						value > 0
+					}
+				}
+				ordered_neighbor_system = {
+					limit = {
+						exists = owner
+						owner = { is_same_empire = prevprev.owner }
+						is_variable_set = $DISTANCE$
+					}
+					position = 0
+					order_by = $DISTANCE$
+					inverse = yes
+					if = {
+						limit = { NOT = { has_star_flag = $PATH$ } }
+						set_star_flag = $PATH$
+						set_star_flag = $PATH$_active_node
+					}
+				}
+			}
+		}
+	}
+}

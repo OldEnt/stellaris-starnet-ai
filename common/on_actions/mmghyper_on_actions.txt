@@ -1,0 +1,11 @@
+on_yearly_pulse = {
+	events = {
+		mmghyper.2 # wrapper around pathfinding
+	}
+}
+
+on_system_gained = {
+	events = {
+		mmghyper.3 # clean up path variables/flags when system owner changes
+	}
+}

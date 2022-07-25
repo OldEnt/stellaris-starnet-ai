@@ -1,0 +1,187 @@
+hyper_relay = {
+	entity = "hyper_relay_entity"
+	construction_entity = "hyper_relay_entity"
+	portrait = "GFX_megastructure_hyper_relay_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	build_time = 360
+	resources = {
+		category = megastructures_hyper_relay
+		cost = {
+			alloys = 500
+			rare_crystals = 100
+			influence = 25
+		}
+
+		upkeep = {
+			energy = 2
+		}
+	}
+	construction_blocks_and_blocked_by = self_type
+
+	potential = {
+		has_technology = tech_hyper_relays
+	}
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border_or_subject"
+			OR = {
+				is_inside_border = from
+				AND = {
+					exists = owner
+					owner = {
+						is_subject = yes
+						overlord = { is_same_value = from }
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system" # or is in my subject's territory
+			OR = {
+				NOT = {
+					any_system_planet = {
+						is_surveyed = {
+							who = prev.from
+							status = no
+						}
+					}
+				}
+				AND = {
+					exists = owner
+					owner = {
+						is_subject = yes
+						overlord = { is_same_value = from }
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_hyper_relay"
+			NOR = {
+				has_megastructure = hyper_relay
+				has_megastructure = hyper_relay_ruined
+				has_megastructure = hyper_relay_restored
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_hyper_relays"
+			from = { has_technology = tech_hyper_relays }
+		}
+	}
+
+	placement_rules = {			# those would be ignored since the hyper relay is being "free-placed" between the inner and outer radius of the system
+	}
+
+	# root = system
+	# from = country
+	ai_weight = {
+		# double base factor
+		factor = 10
+
+		# de-prioritize subjects
+		modifier = {
+			factor = 0.2
+			owner = {
+				NOT = { is_country = from }
+			}
+		}
+		
+
+		# get started in capital very quickly
+		modifier = {
+			factor = 10
+			is_capital_system = yes
+		}
+
+		# then expand quickly into capital sector
+		modifier = {
+			factor = 5
+			exists = sector
+			sector.sector_capital = {
+				is_capital = yes
+			}
+		}
+
+		# then prioritize paths to other sectors
+		modifier = {
+			factor = 3
+			has_star_flag = mmghyper_path_to_capital
+		}
+
+		# and finally paths within sector
+		modifier = {
+			factor = 2
+			has_star_flag = mmghyper_path_to_sector_capital
+		}
+
+		# small boost for connecting planets to network
+		modifier = {
+			factor = 1.5
+			any_system_planet = {
+				is_colony = yes
+			}
+		}
+
+		# don't build unless
+		modifier = {
+			factor = 0
+			NOR = {
+				# is capital
+				is_capital_system = yes
+				# or is isolated sector capital
+				AND = {
+					NOT = { has_star_flag = mmghyper_path_to_capital }
+					any_system_planet = {
+						is_sector_capital = yes
+						colony_age > 120 # wait at least 10 years
+					}
+				}
+				# or neighbor has hyper relay and is on path to (sector) capital
+				AND = {
+					# neighbor has relay
+					any_neighbor_system = {
+						exists = owner
+						owner = {
+							is_country = prevprev.owner
+						}
+						mmghyper_has_hyper_relay = yes
+					}
+					# on path to (sector) capital
+					OR = {
+						has_star_flag = mmghyper_path_to_capital
+						has_star_flag = mmghyper_path_to_sector_capital
+					}
+				}
+				# or owned neighbor has relay and on border
+				AND = {
+					any_neighbor_system = {
+						exists = owner
+						owner = {
+							is_country = prevprev.owner
+						}
+						mmghyper_has_hyper_relay = yes
+					}
+					any_neighbor_system = {
+						exists = owner
+						owner = {
+							NOT = { is_country = prevprev.owner }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	bypass_type = relay_bypass
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		from = {
+			country_event = { id = tutorial.2131 }
+		}
+	}
+}
