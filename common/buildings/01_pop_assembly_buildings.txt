@@ -831,13 +831,13 @@ building_clone_vats = {
 
 	potential = {
 		exists = owner
-		#	OR = {
-		#		owner = { is_ai = no }
-		#		and = {
-		#			free_building_slots > 0
-		#			owner = { num_pops < 1000 }
-		#		}
-		#	}
+			OR = {
+				owner = { is_ai = no }
+				and = {
+					free_building_slots > 0
+					owner = { is_ai = yes num_pops < 1000 }
+				}
+			}
 		owner = { has_ascension_perk = ap_engineered_evolution }
 		NOT = { has_modifier = resort_colony }
 		OR = {
@@ -866,10 +866,15 @@ building_clone_vats = {
 				free_housing <= 0
 				free_jobs <= 0
 			}
-			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
-			#	and = {
-			#		owner = { is_ai = yes num_pops > 1500 }
-			#	}
+			NOT = {
+				owner = {
+					has_ascension_perk = ap_engineered_evolution
+				}
+			}
+			owner = {
+				is_ai = yes
+				num_pops > 1000
+			}
 		}
 	}
 
