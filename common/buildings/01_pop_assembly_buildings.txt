@@ -99,13 +99,21 @@ building_robot_assembly_plant = {
 			has_modifier = slave_colony
 			AND = {
 				owner = { is_ai = yes }
-				free_jobs < 1
-				OR = {
-					num_buildings = {
-						type = any
-						value >= 12
+				AND = {
+					free_jobs < 1
+					OR = {
+						num_buildings = {
+							type = any
+							value >= 12
+						}
+						is_planet_class = pc_habitat
 					}
-					is_planet_class = pc_habitat
+				}
+				AND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
 				}
 			}
 			owner = {
@@ -115,7 +123,7 @@ building_robot_assembly_plant = {
 			}
 			owner = {
 				is_ai = yes
-				num_pops > 1500
+				num_pops > 1000
 			}
 		}
 	}
