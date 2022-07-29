@@ -3,3 +3,7 @@
 merg_is_standard_empire = {
 	always = no
 }
+
+merg_is_default_empire = {
+	always = no
+}

@@ -746,12 +746,9 @@ science = {
 	}
 
 	ai_ship_data = {
-		min = 4
-		max = 6
-		# vanilla:
-		# min = value:desired_science_ships
-		# system_mult = value:desired_science_ships_system_mult
-		# max = 5
+		min = value:desired_science_ships
+		system_mult = value:desired_science_ships_system_mult
+		max = 10
 	}
 }
 
