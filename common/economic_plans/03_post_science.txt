@@ -1,6 +1,20 @@
 #If my calculations are correct, repetable technologies are very, very inefficient
 #Thus, once AI have researched everything useful they will switch to fully alloyed economy
 
+# Scripted variables below are vanilla values for written in compatibility with other mods.
+@rare_resource_target = 4
+@energy_target = 25
+@minerals_target = 30
+@alloy_target = 10
+@machine_empire_alloy_target = 15
+@pops_target = 9000
+@food_target = 10
+@food_target_extra = 20
+@consumer_goods_target = 10
+@research_target = 70
+@scaling_research_target = 25
+@scaling_consumer_goods_target = 1
+@scaling_rare_resource_target = 0.20
 
 # Middle ----------------------------------------
 
@@ -288,12 +302,12 @@ middle_imperial_plan = {
 			has_global_flag = gigastructures_enabled
 			has_technology = tech_mega_engineering
 			
-			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
-			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
+			has_monthly_income = { resource = energy value > @energy_target }			
+			has_monthly_income = { resource = minerals value > @minerals_target }		
 		}
 
 		income = {
-			alloys = 10	# 5
+			alloys = 5
 		}
 	}
 
@@ -303,9 +317,9 @@ middle_imperial_plan = {
 		potential = {
 			has_global_flag = gigastructures_enabled
 			has_technology = tech_ehof_sentient_tier_1
-			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
-			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
-			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = energy value > @energy_target }			
+			has_monthly_income = { resource = minerals value > @minerals_target }	
+			has_monthly_income = { resource = alloys value > @alloy_target }	
 		}
 
 		income = {
@@ -323,9 +337,9 @@ middle_imperial_plan = {
 			not = { has_global_flag = compound_destroyed }
 
 			has_technology = tech_ehof_sentient_tier_1
-			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
-			has_monthly_income = { resource = minerals value > 30 }		# @minerals_target = 30
-			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = energy value > @energy_target }			
+			has_monthly_income = { resource = minerals value > @minerals_target }	
+			has_monthly_income = { resource = alloys value > @alloy_target }
 		}
 
 		income = {
@@ -339,7 +353,7 @@ middle_imperial_plan = {
 		potential = {
 			has_global_flag = gigastructures_enabled
 			has_technology = tech_nm_utilization_1
-			has_monthly_income = { resource = energy value > 25 }	# @energy_target = 25
+			has_monthly_income = { resource = energy value > @energy_target }	
 		}
 
 		income = {
@@ -357,7 +371,7 @@ middle_imperial_plan = {
 			not = { has_global_flag = compound_destroyed }
 
 			has_technology = tech_nm_utilization_1
-			has_monthly_income = { resource = energy value> 25 }	# @energy_target = 25
+			has_monthly_income = { resource = energy value > @energy_target }			
 		}
 
 		income = {
@@ -367,30 +381,30 @@ middle_imperial_plan = {
 
 	# supertensiles production so they can make megas while the job option is selected
 	subplan = {
-		optional = yes
+		#optional = yes
 		set_name = "Gigas supertensiles"
 		potential = {
 			has_global_flag = gigastructures_enabled
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
-			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = alloys value > @alloy_target }
 			has_monthly_income = { resource = unity value > 10 }
 		}
 
 		income = {
-			giga_sr_amb_megaconstruction = 20 #value:giga_amb_supertensiles_target # 20 times the megalogistics hub max
+			giga_sr_amb_megaconstruction = 20
 		}
 	}
 
 	subplan = {
-		optional = yes
+		#optional = yes
 		set_name = "Gigas supertensiles origin boost"
 		potential = {
 			has_global_flag = gigastructures_enabled
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
 			giga_has_amb_important_origin = yes
-			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = alloys value > @alloy_target }
 			has_monthly_income = { resource = unity value > 10 }
 		}
 
@@ -401,7 +415,7 @@ middle_imperial_plan = {
 
 	# scaling supertensiles after mega-engineering when the options open up more
 	subplan = {
-		optional = yes
+		#optional = yes
 		scaling = yes
 		set_name = "Gigas scaling supertensiles"
 		potential = {
@@ -409,11 +423,25 @@ middle_imperial_plan = {
 			has_global_flag = @giga_amb_flag
 			has_technology = giga_tech_amb_supertensiles
 			has_technology = tech_mega_engineering
-			has_monthly_income = { resource = alloys value > 10 }	# @alloy_target = 10
+			has_monthly_income = { resource = alloys value > @alloy_target }
 		}
 
 		income = {
-			giga_sr_amb_megaconstruction = 4
+			giga_sr_amb_megaconstruction = 1.5
+		}
+	}
+
+	# get the AI interested in having positive iodizium if it's available
+	subplan = {
+		optional = yes
+		set_name = "Gigas Iodizium"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_technology = giga_tech_fusion_suppressor
+		}
+
+		income = {
+			sr_iodizium = 5
 		}
 	}
 
