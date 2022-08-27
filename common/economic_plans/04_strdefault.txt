@@ -1,5 +1,20 @@
 # Base AI economic plans
 
+# Scripted variables below are vanilla values for written in compatibility with other mods.
+@rare_resource_target = 4
+@energy_target = 25
+@minerals_target = 30
+@alloy_target = 10
+@machine_empire_alloy_target = 15
+@pops_target = 9000
+@food_target = 10
+@food_target_extra = 20
+@consumer_goods_target = 10
+@research_target = 70
+@scaling_research_target = 25
+@scaling_consumer_goods_target = 1
+@scaling_rare_resource_target = 0.20
+
 # Early ---------------------------------------
 
 str_early_default_plan = {
@@ -1076,6 +1091,80 @@ str_early_default_plan = {
 		}
 	}
 
+	#####################################################################################################################
+	##### GIGAS SPECIFIC
+
+	# supertensiles production so they can make megas while the job option is selected
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20
+		}
+	}
+
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles origin boost"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			giga_has_amb_important_origin = yes
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20 # an extra emphasis for empires which need megas early
+		}
+	}
+
+	#####################################################################################################################
+	##### GIGAS SPECIFIC
+
+	# supertensiles production so they can make megas while the job option is selected
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20
+		}
+	}
+
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles origin boost"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			giga_has_amb_important_origin = yes
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20 # an extra emphasis for empires which need megas early
+		}
+	}
+
 	pops = 800
 	# empire_size = 1
 
@@ -1436,6 +1525,43 @@ str_early_boom_plan = {
 			physics_research = 5
 			society_research = 5
 			engineering_research = 5
+		}
+	}
+
+	#####################################################################################################################
+	##### GIGAS SPECIFIC
+
+	# supertensiles production so they can make megas while the job option is selected
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20
+		}
+	}
+
+	subplan = {
+		#optional = yes
+		set_name = "Gigas supertensiles origin boost"
+		potential = {
+			has_global_flag = gigastructures_enabled
+			has_global_flag = @giga_amb_flag
+			has_technology = giga_tech_amb_supertensiles
+			giga_has_amb_important_origin = yes
+			has_monthly_income = { resource = alloys value > @alloy_target }
+			has_monthly_income = { resource = unity value > 10 }
+		}
+
+		income = {
+			giga_sr_amb_megaconstruction = 20 # an extra emphasis for empires which need megas early
 		}
 	}
 
