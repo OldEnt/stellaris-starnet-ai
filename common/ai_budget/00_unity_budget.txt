@@ -124,8 +124,8 @@ unity_expenditure_leaders = {
 	fraction = {
 		weight = 0.4
 		modifier = {
-			add = 10
-			years_passed < 20	# Important for scientists
+			add = 15
+			years_passed < 50	# Important for scientists
 		}
 	}
 }
@@ -159,6 +159,10 @@ unity_upkeep_leaders = {
 
 	fraction = {
 		weight = 0.3
+		modifier = {
+			add = 15
+			years_passed < 50	# Important for scientists
+		}
 	}
 
 	static_min = {
@@ -166,7 +170,7 @@ unity_upkeep_leaders = {
 	}
 
 	static_max = {
-		base = 100
+		base = 200
 	}
 }
 

@@ -1334,6 +1334,13 @@ ap_executive_vigor = {
 				has_technology = tech_power_hub_1
 			}
 		}
+		modifier = {
+			factor = 0
+			has_origin = origin_void_dwellers
+			NOT = {
+				has_ascension_perk = ap_voidborn
+			}
+		}
 	}
 }
 
@@ -1432,17 +1439,6 @@ ap_voidborn = {
 
 	ai_weight = {
 		factor = 1
-		modifier = {
-			factor = 0
-			not = {
-				has_ascension_perk = ap_executive_vigor
-			}
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-				has_origin = origin_void_dwellers
-			}
-		}
 		modifier = {
 			factor = 20
 			has_ethic = ethic_pacifist
