@@ -1,0 +1,31 @@
+# Irony this is a placeholder file please ignore it
+# Blank scripted effects from other mods to clean up error.log. Always allow overwrite! scripted_effects overwrites are LIOS therefore this file starts with !!!.
+dmm_register_mod = {
+	optimize_memory
+	[[DMM_FLAG]][[DMM_NAME]]
+	# DMM scripted_effects. ALLOW OVERWRITE.
+}
+
+dmm_hide_button_all = {
+	optimize_memory
+	[[DMM_FLAG]]
+	# DMM scripted_effects. ALLOW OVERWRITE.
+}
+
+dmm_add_button_exception = {
+	optimize_memory
+	[[DMM_FLAG]]
+	# DMM scripted_effects. ALLOW OVERWRITE.
+}
+
+dmm_show_button_all = {
+	optimize_memory
+	[[DMM_FLAG]]
+	# DMM scripted_effects. ALLOW OVERWRITE.
+}
+
+dmm_remove_button_exception = {
+	optimize_memory
+	[[DMM_FLAG]]
+	# DMM scripted_effects. ALLOW OVERWRITE.
+}
