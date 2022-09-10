@@ -429,3 +429,110 @@ country_event = {
 		}
 	}
 }
+
+# Staffs science ships if other mods break scientist hiring.
+country_event = {
+	id = starnet.300
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			is_country_type = default
+			merg_is_default_empire = yes
+		}
+		is_ai = yes
+		count_owned_fleet = {
+			count > 0
+			limit = {
+				is_ship_class = shipclass_science_ship
+				NOT = {
+					exists = leader
+				}
+			}
+		}
+	}
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				is_ship_class = shipclass_science_ship
+				NOT = {
+					exists = leader
+				}
+			}
+			fleet_event = {
+				id = starnet.301
+			}
+			fleet_event = {
+				id = starnet.301
+				days = 1				# Leader pool reroll.
+			}
+			fleet_event = {
+				id = starnet.301
+				days = 2				# Leader pool reroll.
+			}
+			fleet_event = {
+				id = starnet.301
+				days = 3				# Leader pool reroll.
+			}
+		}
+		# clear_variable = str_var_count_owned_fleet_num_shipclass_science_ship_no_leader
+	}
+}
+
+fleet_event = {
+	id = starnet.301
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			exists = leader
+		}
+	}
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					resource_stockpile_compare = {
+						resource = unity
+						value >= 1
+						mult = value:leader_cost
+					}
+				}
+				random_pool_leader = {
+					limit = {
+						leader_class = scientist
+						NOT = {
+							has_leader_flag = str_leader_hired
+						}
+					}
+					set_owner = prev
+					set_leader_flag = str_leader_hired
+					prevprev = {
+						assign_leader = prev
+					}
+					prevprev = {
+						if = {
+							limit = {
+								exists = leader
+								leader = {
+									has_leader_flag = str_leader_hired
+								}
+							}
+							owner = {
+								add_resource = {
+									unity = -1
+									mult = value:leader_cost
+								}
+							}
+							leader = {
+								fire_on_action = {
+									on_action = on_leader_assigned
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -121,6 +121,58 @@ food_expenditure_colonies = {
 	}
 }
 
+food_expenditure_colonies_expand_tree = {
+	resource = food
+	type = expenditure
+	category = colonies
+
+	potential = {
+		is_machine_empire = no
+		is_lithoid_empire = no
+		has_origin = origin_tree_of_life
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 2.0
+	}
+
+	static_max = {
+		base = 1100
+	}
+}
+
+food_expenditure_colonies_expand_rock_tree = {
+	resource = food
+	type = expenditure
+	category = colonies
+
+	potential = {
+		is_machine_empire = no
+		is_lithoid_empire = yes
+		has_origin = origin_tree_of_life
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
+	}
+
+	fraction = {
+		weight = 2.0
+	}
+
+	static_max = {
+		base = 600
+	}
+}
+
 
 food_expenditure_decisions = {
 	resource = food
