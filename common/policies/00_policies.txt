@@ -2837,6 +2837,64 @@ pre_sapients = {
 	}
 }
 
+debris = {
+	potential = {
+		has_encountered_other_species = yes
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+
+	option = {
+		name = "research_debris"
+
+		potential = {
+			is_scavenger = no
+		}
+
+		valid = {
+			has_encountered_other_species = yes
+		}
+
+		policy_flags = {
+			research_debris
+		}
+	}
+	option = {
+		name = "scavenge_debris"
+
+		potential = {
+			is_scavenger = no
+		}
+
+		valid = {
+			has_encountered_other_species = yes
+		}
+
+		policy_flags = {
+			scavenge_debris
+		}
+	}
+
+	option = {
+		name = "scavenge_and_research_debris"
+
+		potential = {
+			is_scavenger = yes
+		}
+
+		valid = {
+			has_encountered_other_species = yes
+		}
+
+		policy_flags = {
+			scavenge_and_research_debris
+		}
+	}
+}
+
 refugees = {
 	potential = {
 		has_encountered_other_species = yes
@@ -3161,6 +3219,154 @@ purge = {
 					is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
 					is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
 				}
+			}
+			modifier = {
+				factor = 10
+				has_ascension_perk = ap_become_the_crisis
+			}
+			modifier = {
+				factor = 1000
+				has_origin = origin_necrophage
+				is_xenophobe = yes
+			}
+		}
+	}
+}
+
+knightly_duties = {
+	potential = {
+		is_country_type = default
+		has_origin = origin_toxic_knights
+		NOT = { has_country_flag = quest_abandoned }
+	}
+
+	option = {
+		name = "questing_knights"
+
+		policy_flags = {
+			toxic_knights_questing
+		}
+
+		modifier = {
+			science_ship_survey_speed = 0.15
+			ship_anomaly_generation_chance_mult = 0.05
+		}
+
+		AI_weight = {
+			factor = 5 #This should make sure AIs stick to this policy
+		}
+	}
+
+	option = {
+		name = "military_knights"
+
+		policy_flags = {
+			toxic_knights_military
+		}
+
+		modifier = {
+			ship_home_territory_fire_rate_mult = 0.2
+			ship_fire_rate_mult = 0.10
+			army_damage_mult = 0.10
+		}
+	}
+
+	option = {
+		name = "diplomats_knights"
+
+		policy_flags = {
+			toxic_knights_diplomats
+		}
+
+		modifier = {
+			diplo_weight_mult = 0.05
+			envoys_add = 1
+		}
+	}
+
+	option = {
+		name = "herald_knights"
+
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+
+		policy_flags = {
+			toxic_knights_herald
+		}
+
+		modifier = {
+			edicts_cost_mult = -0.15
+			edicts_upkeep_mult = -0.15
+		}
+	}
+}
+
+relentless_industrialists_policy = {
+	potential = {
+		is_country_type = default
+		is_relentless_industrialist_empire = yes
+		has_country_flag = relentless_industrialists_situation_finished
+	}
+
+	#Fires when the policy group first becomes available
+	on_activate = {
+		set_policy_cooldown = relentless_industrialists_policy
+	}
+
+	option = {
+		name = relentless_industrialists_full_steam_ahead
+
+		policy_flags = {
+			relentless_industrialists_full_steam_ahead
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				has_country_flag = relentless_industrialists_full_steam_ahead
+			}
+		}
+	}
+	option = {
+		name = relentless_industrialists_study
+
+		policy_flags = {
+			relentless_industrialists_study
+		}
+
+		on_enabled = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = relentless_industrialists_study_completed }
+				}
+				enable_special_project = {
+					name = RELENTLESS_INDUSTRIALISTS_STUDY_PROJECT
+				}
+			}
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				has_country_flag = relentless_industrialists_study_completed
+			}
+		}
+	}
+	option = {
+		name = relentless_industrialists_cleanup
+
+		policy_flags = {
+			relentless_industrialists_cleanup
+		}
+
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				has_country_flag = relentless_industrialists_cleanup
 			}
 		}
 	}

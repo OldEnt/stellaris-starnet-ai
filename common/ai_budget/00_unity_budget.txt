@@ -13,7 +13,7 @@ unity_expenditure_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -27,7 +27,7 @@ unity_expenditure_traditions = {
 		has_unlocked_all_traditions = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.8
 	}
 }
@@ -48,12 +48,12 @@ unity_expenditure_megastructures = {
 		str_ai_should_build_megastructures = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 
 
-	static_max = {
+	desired_max = {
 		base = 7500
 	}
 }
@@ -67,11 +67,11 @@ unity_expenditure_decisions = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.20
 	}
 
-	static_max = {
+	desired_max = {
 		base = 1000
 	}
 }
@@ -103,11 +103,11 @@ unity_expenditure_missing_scientist = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1.6
 	}
 
-	static_max = {
+	desired_max = {
 		base = 1500
 	}
 }
@@ -121,7 +121,7 @@ unity_expenditure_leaders = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.4
 		modifier = {
 			add = 15
@@ -139,11 +139,11 @@ unity_upkeep_country = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 
-	static_max = {
+	desired_max = {
 		base = 200
 	}
 }
@@ -157,7 +157,7 @@ unity_upkeep_leaders = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 		modifier = {
 			add = 15
@@ -165,11 +165,11 @@ unity_upkeep_leaders = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 20
 	}
 
-	static_max = {
+	desired_max = {
 		base = 200
 	}
 }
@@ -183,7 +183,7 @@ unity_upkeep_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }

@@ -5,6 +5,7 @@
 @Edict1Cost = 10
 @Edict2Cost = 20
 @Edict3Cost = 30
+@EdictSpecialCost = 1
 
 @EdictPerpetual = -1
 
@@ -1322,5 +1323,124 @@ relay_network_amenities_gestalt = {
 			weight = @EdictMedPrio
 			has_monthly_income = { resource = rare_crystals value > 5 }
 		}
+	}
+}
+
+zro_crystal = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			sr_zro = 0.2
+			multiplier = value:zro_crystal_leaders
+		}
+
+	}
+
+	potential = {
+		has_relic = r_zro_crystal
+		is_machine_empire = no
+	}
+
+	allow = {
+		NOT = {
+			resource_stockpile_compare = {
+				resource = sr_zro
+				value = 0
+			}
+		}
+	}
+
+	modifier = {
+		species_leader_exp_gain = 0.25
+		leader_age = 30
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = { resource = sr_zro value > 5 }
+		}
+	}
+}
+
+zro_crystal_machine = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			sr_zro = 0.2
+			multiplier = value:zro_crystal_leaders
+		}
+
+	}
+
+	potential = {
+		has_relic = r_zro_crystal
+		is_machine_empire = yes
+	}
+
+	allow = {
+		NOT = {
+			resource_stockpile_compare = {
+				resource = sr_zro
+				value = 0
+			}
+		}
+	}
+
+	modifier = {
+		species_leader_exp_gain = 0.25
+		custom_tooltip = edict_zro_crystal_machine_effect
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_monthly_income = { resource = sr_zro value > 5 }
+		}
+	}
+}
+
+damn_the_consequences = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	edict_lock_in_months = 60
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @EdictSpecialCost
+			multiplier = value:consequences_cost
+		}
+	}
+
+	modifier = {
+		planet_pops_organics_upkeep_mult = 1
+	}
+
+	potential = {
+		has_origin = origin_overtuned
+	}
+
+	allow = { }
+
+	ai_weight = {
+		weight = 0
 	}
 }

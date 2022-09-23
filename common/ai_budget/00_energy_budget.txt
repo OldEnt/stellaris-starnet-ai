@@ -27,11 +27,11 @@ energy_expenditure_planets_gaia_seeder = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1.0
 	}
 
-	static_max = {
+	desired_max = {
 		base = 1350
 	}
 }
@@ -48,7 +48,7 @@ energy_expenditure_campaigns = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 20000
 	}
 }
@@ -61,11 +61,11 @@ energy_expenditure_colonies = {
 	potential = {
 		always = yes
 	}
-	fraction ={
+	weight = {
 		weight = 0.5
 	}
 
-	static_min = {
+	desired_min = {
 		base = 1000
 	}
 }
@@ -79,10 +79,10 @@ energy_expenditure_privatecolonies = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.8
 	}
-	static_min = {
+	desired_min = {
 		base = 700
 	}
 }
@@ -96,11 +96,11 @@ energy_expenditure_slums = {
 		years_passed > 3
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
 
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 400
@@ -118,11 +118,11 @@ energy_expenditure_ringworld_blockers = {
 		has_origin = origin_shattered_ring
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
 
-	static_min = {
+	desired_min = {
 		base = 1000
 	}
 }
@@ -151,11 +151,11 @@ energy_expenditure_deposit_blockers = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
 
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 500
@@ -194,14 +194,14 @@ energy_expenditure_decisions = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
 
-	static_min = {
+	desired_min = {
 		base = 30000
 	}
-	static_max = {
+	desired_max = {
 		base = 30000
 	}
 }
@@ -228,11 +228,11 @@ energy_expenditure_megastructures = {
 		str_ai_should_build_megastructures = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 
-	static_max = {
+	desired_max = {
 		base = 20000 # currently only used by gateways
 	}
 }
@@ -246,7 +246,7 @@ energy_expenditure_terraforming = {
 		has_technology = tech_terrestrial_sculpting
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 		modifier = {
 			factor = 1.5
@@ -273,7 +273,7 @@ energy_expenditure_terraforming = {
 		}
 	}
 
-	static_max = { #never any need for more than that for a single planet
+	desired_max = { #never any need for more than that for a single planet
 		base = 20000
 	}
 }
@@ -306,10 +306,10 @@ energy_expenditure_armies = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
-	static_min = {
+	desired_min = {
 		base = 5000
 	}
 }
@@ -326,7 +326,7 @@ energy_upkeep_country = { # Covers most other things
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.75
 	}
 }
@@ -340,7 +340,7 @@ energy_upkeep_building_unstucker = { # Covers most other things
 		has_country_flag = str_planet_buildings_unstuck
 	}
 
-	fraction = {
+	weight = {
 		weight = 2
 	}
 }
@@ -354,7 +354,7 @@ energy_upkeep_starbase_unstucker = { # Covers most other things
 		has_country_flag = str_planet_buildings_unstuck
 	}
 
-	fraction = {
+	weight = {
 		weight = 2
 	}
 }
@@ -385,7 +385,7 @@ energy_upkeep_country_not_terraforming = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.15
 	}
 }
@@ -401,7 +401,7 @@ energy_upkeep_country_early = { # Covers most other things
 		has_technology = tech_hydroponics
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.25
 	}
 }
@@ -415,7 +415,7 @@ energy_upkeep_country_getting_rushed_panic = { # Covers most other things
 		str_make_fleet_against_rush = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 }
@@ -445,7 +445,7 @@ energy_upkeep_country_can_spend = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -459,7 +459,7 @@ energy_upkeep_war = { # Covers most other things
 		is_at_war = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 }
@@ -486,7 +486,7 @@ energy_upkeep_warprep = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -513,7 +513,7 @@ energy_upkeep_country_a = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 	}
 }
@@ -539,7 +539,7 @@ energy_upkeep_country_f = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -566,7 +566,7 @@ energy_upkeep_country_g = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -586,7 +586,7 @@ energy_upkeep_country_insane = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -600,7 +600,7 @@ energy_upkeep_fleetbuilding = {
 		years_passed > @str_years_of_guaranteed_truce
 		used_naval_capacity_percent < 0.6
 	}
-	fraction = {
+	weight = {
 		weight = 0.15
 	}
 }
@@ -642,7 +642,7 @@ energy_expenditure_ultralate = {
 			value > 3000
 		}
 	}
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -655,7 +655,7 @@ energy_expenditure_ultralate2 = {
 		years_passed > 150
 		has_country_flag = fallback_is_needed
 	}
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
 }
@@ -676,7 +676,7 @@ energy_upkeep_country_insane2 = { # Covers most other things
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 }
@@ -708,7 +708,7 @@ energy_upkeep_lategame = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -722,7 +722,7 @@ energy_upkeep_campaigns = {
 		has_technology = tech_planetary_unification
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -746,7 +746,7 @@ energy_upkeep_operations = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 
 		modifier = {
@@ -775,7 +775,7 @@ energy_upkeep_operations = {
 	}
 
 	# based on crisis beacon op upkeep
-	static_max = {
+	desired_max = {
 		base = 20
 	}
 }

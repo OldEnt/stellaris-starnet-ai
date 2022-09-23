@@ -262,7 +262,7 @@ tech_archeology_lab_ancrel = {
 	icon = "tech_archeology_lab"
 
 	modifier = {
-		ship_archeaological_site_clues_add = 2
+		ship_archaeological_site_clues_add = 2
 	}
 
 	weight_modifier = {

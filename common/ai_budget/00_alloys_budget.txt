@@ -13,7 +13,7 @@ alloys_expenditure_buffer = { # Buffer, will not be spent
 		always = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
 }
@@ -27,10 +27,10 @@ alloys_expenditure_trade = {
 		years_passed > 15
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 500
@@ -80,10 +80,10 @@ alloys_expenditure_ships_rush ={
 			}
 		}
 	}
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
-	static_min = {
+	desired_min = {
 		base = 500
 	}
 }
@@ -99,10 +99,10 @@ alloys_expenditure_earlyships ={
 			has_country_flag = str_disable_corvettes
 		}
 	}
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 100
@@ -125,11 +125,11 @@ alloys_expenditure_ships = {
 		can_you_please_stop_building_ships = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 140
@@ -204,10 +204,10 @@ alloys_expenditure_ships_neighbour = {
 		can_you_please_stop_building_ships = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
-	static_min = {
+	desired_min = {
 		base = 1000
 		modifier = {
 			add = 2000
@@ -239,10 +239,10 @@ alloys_expenditure_ships_wartime = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
-	static_min = {
+	desired_min = {
 		base = 10000
 	}
 }
@@ -258,10 +258,10 @@ alloys_expenditure_ships_later = {
 		can_you_please_stop_building_ships = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
-	static_min = {
+	desired_min = {
 		base = 800
 	}
 }
@@ -277,10 +277,10 @@ alloys_expenditure_ships_latefleet = {
 		can_you_please_stop_building_ships = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
-	static_min = {
+	desired_min = {
 		base = 3000
 	}
 }
@@ -296,10 +296,10 @@ alloys_expenditure_ships_battleships = {
 		can_you_please_stop_building_ships = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
-	static_min = {
+	desired_min = {
 		base = 5000
 	}
 }
@@ -313,10 +313,10 @@ alloys_expenditure_ships_battleships = {
 		#years_passed < 5
 	#}
 
-	#fraction = {
+	#weight = {
 		#weight = 0
 	#}
-	#static_min = {
+	#desired_min = {
 		#base = 0
 		#modifier = {
 			#add = 60
@@ -365,10 +365,10 @@ alloys_expenditure_ship_upgrades = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 600
@@ -412,11 +412,11 @@ alloys_expenditure_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 
-	static_min = {
+	desired_min = {
 		base = 4500
 	}
 }
@@ -448,10 +448,10 @@ alloys_expenditure_starbases = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
-	static_min = {
+	desired_min = {
 		base = 120
 		modifier = {
 			add = 300
@@ -519,7 +519,7 @@ alloys_expenditure_starbases_fallen_empires = {
 		is_country_type = fallen_empire
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -541,7 +541,7 @@ alloys_expenditure_starbases_expand = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -559,10 +559,10 @@ alloys_expenditure_starbases_excess = {
 		str_save_alloys_against_rush = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 1000
 		modifier = {
 			add = 2000
@@ -582,7 +582,7 @@ alloys_expenditure_starbases_excess = {
 #		always = yes
 #	}
 
-#	fraction = {
+#	weight = {
 #		weight = 0.15
 #	}
 #}
@@ -596,7 +596,7 @@ alloys_expenditure_starbases_excess = {
 #		has_ai_expansion_plan = no
 #	}
 #
-#	fraction = {
+#	weight = {
 #		weight = 0.25
 #	}
 #}
@@ -631,11 +631,11 @@ alloys_expenditure_colonies = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 
-	static_min = {
+	desired_min = {
 		base = 3500
 	}
 }
@@ -657,11 +657,11 @@ alloys_expenditure_megastructures = {
 		str_ai_should_build_megastructures = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
 
-	static_min = {
+	desired_min = {
 		base = 30000 # current max alloy cost for a stage
 	}
 }
@@ -676,7 +676,7 @@ alloys_expenditure_habitats = {
 		str_ai_should_build_habitats = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 		modifier = {
 			factor = 2.5
@@ -708,10 +708,10 @@ alloys_expenditure_habitats = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 1000
 	}
-	static_max = {
+	desired_max = {
 		base = 1500
 	}
 }
@@ -732,11 +732,11 @@ alloys_expenditure_decisions = {
 			amount > 5000
 		}
 	}
-	fraction = {
+	weight = {
 		weight = 0.20
 	}
 	# based on mastery of nature decision
-	static_max = {
+	desired_max = {
 		base = 2000
 		modifier = {
 			add = 1000
@@ -761,7 +761,7 @@ alloys_upkeep_buffer = {	# Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
 }
@@ -783,7 +783,7 @@ alloys_upkeep_ships = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -797,7 +797,7 @@ alloys_upkeep_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.30
 	}
 }

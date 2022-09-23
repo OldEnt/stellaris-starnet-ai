@@ -740,7 +740,7 @@ deep_space_black_site = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_system_planet = {
+				any_system_colony = {
 					is_owned_by = from
 				}
 			}
@@ -1349,7 +1349,7 @@ transit_hub = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_system_planet = {
+				any_system_colony = {
 					is_owned_by = from
 				}
 			}
@@ -1366,7 +1366,7 @@ transit_hub = {
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = transit_hub
+				type = communications_jammer
 				count > 1
 				include_being_constructed = yes
 			}
@@ -1386,6 +1386,9 @@ transit_hub = {
 
 	system_modifier = {
 		planet_resettlement_unemployed_mult = 1.00
+
+		show_only_custom_tooltip = no
+		custom_tooltip = "sm_transit_hub_migrate_effect_desc"
 	}
 
 	show_in_tech = "tech_hyper_drive_2"
@@ -1426,7 +1429,7 @@ command_center = {
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = command_center
+				type = communications_jammer
 				count > 1
 				include_being_constructed = yes
 			}
@@ -1527,10 +1530,10 @@ trader_proxy_office = {
 		NOT = { has_starbase_building = trader_proxy_office }
 
 		custom_tooltip = {
-			fail_text = "requires_trade_enclave"
+			fail_text = "requires_trader_enclave"
 			solar_system = {
 				OR = {
-					any_system_planet = {
+					any_system_colony = {
 						exists = owner
 						owner = { is_country_type = default }
 					}

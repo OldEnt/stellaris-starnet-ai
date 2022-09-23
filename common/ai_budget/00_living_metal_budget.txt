@@ -13,7 +13,7 @@ living_metal_expenditure_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		base = 0.1
 	}
 }
@@ -27,7 +27,7 @@ living_metal_expenditure_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -41,7 +41,7 @@ living_metal_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -55,7 +55,7 @@ living_metal_expenditure_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 }
@@ -69,7 +69,7 @@ living_metal_upkeep_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -83,7 +83,7 @@ living_metal_upkeep_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -97,7 +97,7 @@ living_metal_upkeep_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		base = 0.25
 	}
 }

@@ -63,10 +63,15 @@ building_autochthon_monument = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.05
+		job_culture_worker_add = @b1_jobs
 	}
 
 	triggered_desc = {
 		text = building_autochthon_monument_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -150,10 +155,15 @@ building_heritage_site = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.10
+		job_culture_worker_add = @b2_jobs
 	}
 
 	triggered_desc = {
 		text = building_heritage_site_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -230,10 +240,15 @@ building_hypercomms_forum = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.15
+		job_culture_worker_add = @b3_jobs
 	}
 
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -254,7 +269,7 @@ building_hypercomms_forum = {
 building_bureaucratic_1 = {
 	base_buildtime = @b1_time
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -357,7 +372,7 @@ building_bureaucratic_2 = {
 	base_buildtime = @b2_time
 	can_build = no
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -455,7 +470,7 @@ building_bureaucratic_3 = {
 	base_buildtime = @b3_time
 	can_build = no
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -858,7 +873,7 @@ building_uplink_node = {
 	base_buildtime = @b1_time
 	icon = building_autochthon_monument
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -899,7 +914,6 @@ building_uplink_node = {
 		building_bureaucratic_1
 		building_temple
 		building_hive_node
-		building_sensorium_1
 	}
 
 	resources = {
@@ -941,7 +955,7 @@ building_network_junction = {
 	can_build = no
 	icon = building_heritage_site
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -978,7 +992,6 @@ building_network_junction = {
 		building_bureaucratic_2
 		building_holotemple
 		building_hive_cluster
-		building_sensorium_2
 	}
 
 	resources = {
@@ -1022,7 +1035,7 @@ building_system_conflux = {
 	can_build = no
 	icon = building_hypercomms_forum
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
@@ -1059,7 +1072,6 @@ building_system_conflux = {
 		building_bureaucratic_3
 		building_sacred_nexus
 		building_hive_confluence
-		building_sensorium_3
 	}
 
 	resources = {
@@ -1612,11 +1624,10 @@ building_sacrificial_temple_3 = {
 	}
 
 	convert_to = {
-		building_hypercomms_forum
-		building_hive_confluence
-		building_simulation_3
-		building_corporate_forum
+		building_bureaucratic_3
 		building_sacred_nexus
+		building_system_conflux
+		building_hive_confluence
 	}
 
 	resources = {
@@ -2067,7 +2078,7 @@ building_galactic_memorial_3 = {
 
 	show_tech_unlock_if = {
 		is_memorialist_empire = yes
-	 }
+	}
 }
 
 
@@ -2124,10 +2135,15 @@ building_simulation_1 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.05
+		job_evaluator_add = @b1_jobs
 	}
 
 	triggered_desc = {
 		text = building_autochthon_monument_effect
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {
@@ -2209,10 +2225,15 @@ building_simulation_2 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.10
+		job_evaluator_add = @b2_jobs
 	}
 
 	triggered_desc = {
 		text = building_heritage_site_effect
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {
@@ -2287,10 +2308,16 @@ building_simulation_3 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.15
+		job_evaluator_add = @b3_jobs
 	}
 
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
+	}
+
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {
@@ -2361,10 +2388,15 @@ building_corporate_monument = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.05
+		job_culture_worker_add = @b1_jobs
 	}
 
 	triggered_desc = {
 		text = building_autochthon_monument_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -2435,10 +2467,15 @@ building_corporate_site = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.10
+		job_culture_worker_add = @b2_jobs
 	}
 
 	triggered_desc = {
 		text = building_heritage_site_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -2508,10 +2545,15 @@ building_corporate_forum = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.15
+		job_culture_worker_add = @b3_jobs
 	}
 
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
+	}
+
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -2576,10 +2618,15 @@ building_sensorium_1 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.05
+		job_evaluator_add = @b1_jobs
 	}
 
 	triggered_desc = {
 		text = building_autochthon_monument_effect
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {
@@ -2663,10 +2710,15 @@ building_sensorium_2 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.10
+		job_evaluator_add = @b2_jobs
 	}
 
 	triggered_desc = {
 		text = building_heritage_site_effect
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {
@@ -2741,10 +2793,15 @@ building_sensorium_3 = {
 
 	planet_modifier = {
 		planet_jobs_unity_produces_mult = 0.15
+		job_evaluator_add = @b3_jobs
 	}
 
 	triggered_desc = {
 		text = building_hypercomms_forum_effect
+	}
+
+	triggered_desc = {
+		text = job_evaluator_effect_desc
 	}
 
 	prerequisites = {

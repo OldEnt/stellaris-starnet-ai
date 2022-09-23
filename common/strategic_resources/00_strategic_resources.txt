@@ -44,7 +44,10 @@
 
 ### System Resources
 
+#allow_deficit = no #default yes // only implemented for tech resources
+
 time = {
+#	deficit_situation = total_panic		#TODO TODO: avoid at all costs
 }
 
 
@@ -825,9 +828,9 @@ rare_crystals = {
 }
 
 
-###########################
-###	Rare Resources ###
-###########################
+#######################
+###	Rare Resources	###
+#######################
 
 # Living Metal
 sr_living_metal = {
@@ -839,6 +842,7 @@ sr_living_metal = {
 
 	prerequisites = { "tech_mine_living_metal" }
 	visibility_prerequisite = { always = yes }
+	deficit_modifier = sr_living_metal_deficit
 
 	ai_weight = {
 		weight = 25
@@ -855,6 +859,7 @@ sr_zro = {
 
 	prerequisites = { "tech_mine_zro" }
 	visibility_prerequisite = { always = yes }
+	deficit_modifier = sr_zro_deficit
 
 	ai_weight = {
 		weight = 25
@@ -873,8 +878,9 @@ sr_dark_matter = {
 	visibility_prerequisite = { always = yes }
 
 	ai_weight = {
-		weight = 25
+		weight = 100
 	}
+	deficit_modifier = dark_matter_deficit #found in static modifiers
 }
 
 # Nanites
@@ -901,9 +907,9 @@ minor_artifacts = {
 	}
 }
 
-#####################
-### Nemesis ###
-#####################
+###############
+###	Nemesis	###
+###############
 
 menace = {
 	tradable = no

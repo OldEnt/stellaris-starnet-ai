@@ -13,7 +13,7 @@ influence_expenditure_buffer = { # Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.0
 	}
 }
@@ -37,10 +37,10 @@ influence_expenditure_decisions = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
-	static_min = {
+	desired_min = {
 		base = 300
 	}
 }
@@ -59,17 +59,17 @@ influence_expenditure_resolutions = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.15
 	}
 
 	# min/max resolution proposal costs defined in resolutions.txt
 
-	static_min = {
+	desired_min = {
 		base = 100
 	}
 
-	static_max = {
+	desired_max = {
 		base = 300
 	}
 }
@@ -84,7 +84,7 @@ influence_expenditure_agreement_proposals = {
 		ai_wants_to_negotiate_agreement = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1000
 	}
 }
@@ -101,11 +101,11 @@ influence_expenditure_edicts_initial = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 
-	static_min = {
+	desired_min = {
 		base = 800
 	}
 }
@@ -124,11 +124,11 @@ influence_expenditure_important_edicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 
-	static_min = {
+	desired_min = {
 		base = 800
 	}
 }
@@ -145,10 +145,10 @@ influence_expenditure_edicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.9
 	}
-	static_min = {
+	desired_min = {
 		base = 800
 	}
 }
@@ -186,10 +186,10 @@ influence_expenditure_stations = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 200
@@ -249,7 +249,7 @@ influence_expenditure_stations_save_for_edicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -269,7 +269,7 @@ influence_expenditure_stations_wartime = {
 		not = { has_country_flag = saving_influence_arcology }
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -296,10 +296,10 @@ influence_expenditure_claims_late = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.75
 	}
-	static_min = {
+	desired_min = {
 		base = 500
 	}
 }
@@ -325,10 +325,10 @@ influence_expenditure_claims_while_preparing = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
-	static_min = {
+	desired_min = {
 		base = 400
 	}
 }
@@ -343,11 +343,11 @@ influence_expenditure_megastructures = {
 		str_ai_should_build_megastructures = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 
-	static_min = {
+	desired_min = {
 		base = 300 # only used by construction sites
 	}
 }
@@ -362,7 +362,7 @@ influence_expenditure_habitats = {
 		str_ai_should_build_habitats = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 		modifier = {
 			factor = 2
@@ -394,10 +394,10 @@ influence_expenditure_habitats = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 150
 	}
-	static_max = {
+	desired_max = {
 		base = 150
 	}
 }
@@ -421,7 +421,7 @@ influence_expenditure_operations = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 
 		modifier = {
@@ -455,12 +455,12 @@ influence_expenditure_operations = {
 	}
 
 	# based on gather information op
-	static_min = {
+	desired_min = {
 		base = 20
 	}
 
 	# based on crisis beacon op
-	static_max = {
+	desired_max = {
 		base = 320
 	}
 }

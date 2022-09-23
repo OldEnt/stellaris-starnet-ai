@@ -43,7 +43,16 @@ interstellar_assembly_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_interstellar_assembly"
-			from = { NOT = { has_country_flag = built_interstellar_assembly_site } }
+			from = {
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_interstellar_assembly_site }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_interstellar_assembly_two"
+			from = { NOT = { has_country_flag = built_interstellar_assembly_site_contingency } }
 		}
 		#custom_tooltip = {
 		#	fail_text = "requires_capital_system"
@@ -255,6 +264,7 @@ interstellar_assembly_permanently_ruined = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
+	show_galactic_map_icon = no
 	upgrade_from = {
 	}
 

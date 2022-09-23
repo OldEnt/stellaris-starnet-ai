@@ -13,7 +13,7 @@ consumer_goods_expenditure_buffer = { # Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 	}
 }
@@ -27,7 +27,7 @@ consumer_goods_expenditure_buffer = { # Buffer, will not be spent
 #		always = yes
 #	}
 
-#	fraction = {
+#	weight = {
 #		weight = 0.3
 #	}
 #}
@@ -41,11 +41,11 @@ consumer_goods_expenditure_colonies = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1.2
 	}
 
-	static_min = {
+	desired_min = {
 		base = 250
 	}
 }
@@ -59,10 +59,10 @@ consumer_goods_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 40
@@ -116,10 +116,10 @@ consumer_goods_expenditure_decisions = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 1000
@@ -146,10 +146,10 @@ consumer_goods_expenditure_decisions_excess = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
-	static_min = {
+	desired_min = {
 		base = 1000
 	}
 }

@@ -44,6 +44,16 @@ district_hab_housing = {
 
 	triggered_planet_modifier = {
 		potential = {
+			has_designation = col_habitat_gestalt_farming
+		}
+		modifier = {
+			planet_housing_add = -2
+			job_agri_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -904,6 +914,10 @@ district_hab_cultural = {
 				has_valid_civic = civic_machine_servitor
 			}
 		}
+		NOR = {
+			has_building = building_order_keep
+			has_building = building_order_castle
+		}
 	}
 
 	allow = {
@@ -913,6 +927,7 @@ district_hab_cultural = {
 	conversion_ratio = 0.5
 	convert_to = {
 		district_hab_energy
+		district_orders_demesne
 	}
 
 	resources = {

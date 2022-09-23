@@ -46,7 +46,16 @@ spy_orb_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_spyorb"
-			from = { NOT = { has_country_flag = built_spyorb } }
+			from = {
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_spyorb }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_spyorb_two"
+			from = { NOT = { has_country_flag = built_spyorb_contingency } }
 		}
 	}
 
@@ -92,7 +101,16 @@ spy_orb_0 = {
 	on_build_cancel = {}
 	on_build_complete = {
 		set_star_flag = spy_orb_built
-		from = { set_country_flag = built_spyorb }
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_spyorb
+				}
+				set_country_flag = built_spyorb_contingency
+			}
+			set_country_flag = built_spyorb
+		}
 	}
 }
 
@@ -237,6 +255,7 @@ spy_orb_4 = {
 spy_orb_permanently_ruined = {
 	entity = "spy_orb_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
+	show_galactic_map_icon = no
 
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }

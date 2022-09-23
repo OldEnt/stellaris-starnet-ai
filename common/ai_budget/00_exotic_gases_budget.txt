@@ -13,10 +13,10 @@ exotic_gases_expenditure_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
-	static_min = {
+	desired_min = {
 		base = 50
 	}
 }
@@ -30,7 +30,7 @@ exotic_gases_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -44,10 +44,10 @@ exotic_gases_expenditure_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
-	static_min = {
+	desired_min = {
 		base = 500
 	}
 }
@@ -61,7 +61,7 @@ exotic_gases_upkeep_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -75,7 +75,7 @@ exotic_gases_upgrade_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -92,7 +92,7 @@ exotic_gases_expenditure_edicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -108,10 +108,10 @@ exotic_gases_expenditure_shipedicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 1000
@@ -132,7 +132,7 @@ exotic_gases_expenditure_rareedicts = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -146,7 +146,7 @@ exotic_gases_upkeep_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		base = 0.25
 	}
 }
@@ -161,7 +161,7 @@ exotic_gases_upkeep_hyper_relays = {
 		str_ai_should_build_megastructures = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }

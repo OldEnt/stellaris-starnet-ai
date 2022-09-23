@@ -28,7 +28,16 @@ dyson_sphere_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_dyson_sphere"
-			from = { NOT = { has_country_flag = built_dyson_sphere } }
+			from = {
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_dyson_sphere }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_dyson_sphere_two"
+			from = { NOT = { has_country_flag = built_dyson_sphere_contingency } }
 		}
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
@@ -45,9 +54,7 @@ dyson_sphere_0 = {
 			fail_text = "requires_no_habitable_planets"
 			NOT = {
 				any_system_planet = {
-					AND = {
-						colonizable_planet = yes
-					}
+					colonizable_planet = yes
 				}
 			}
 		}
@@ -123,12 +130,16 @@ dyson_sphere_0 = {
 	on_build_cancel = {}
 	on_build_complete = {
 		set_star_flag = dyson_sphere_built
-		from = { set_country_flag = built_dyson_sphere }
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
+		remove_system_terraforming_candidates = yes
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_dyson_sphere
+				}
+				set_country_flag = built_dyson_sphere_contingency
 			}
-			remove_modifier = terraforming_candidate
+			set_country_flag = built_dyson_sphere
 		}
 		fromfrom.planet = {
 			if = {
@@ -162,12 +173,7 @@ dyson_sphere_1 = {
 	prerequisites = { "tech_dyson_sphere" }
 
 	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 	}
 }
 
@@ -196,12 +202,7 @@ dyson_sphere_2 = {
 	prerequisites = { "tech_dyson_sphere" }
 
 	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 	}
 }
 
@@ -230,12 +231,7 @@ dyson_sphere_3 = {
 	prerequisites = { "tech_dyson_sphere" }
 
 	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 	}
 }
 
@@ -264,12 +260,7 @@ dyson_sphere_4 = {
 	prerequisites = { "tech_dyson_sphere" }
 
 	on_build_complete = {
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 	}
 }
 
@@ -318,12 +309,7 @@ dyson_sphere_5 = {
 			}
 			change_pc = pc_barren_cold
 		}
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 	}
 }
 
@@ -331,6 +317,7 @@ dyson_sphere_5 = {
 dyson_sphere_permanently_ruined = {
 	entity = "dyson_sphere_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
+	show_galactic_map_icon = no
 
 	potential = {
 		always = no
@@ -394,12 +381,7 @@ dyson_sphere_restored = {
 			}
 			change_pc = pc_barren_cold
 		}
-		every_system_planet = {
-			limit = {
-				has_modifier = terraforming_candidate
-			}
-			remove_modifier = terraforming_candidate
-		}
+		remove_system_terraforming_candidates = yes
 		every_system_ambient_object = {
 			limit = {
 				OR = {

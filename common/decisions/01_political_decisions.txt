@@ -520,5 +520,10 @@ decision_end_discourage_growth = {
 
 	ai_weight = {
 		weight = 20
+
+		modifier = { # don't end if less than 1 housing
+			factor = 0
+			free_housing < 1
+		}
 	}
 }

@@ -5,6 +5,7 @@
 #	can_own_empty_planets					#no by default, decides if empty planets belonging to country are automatically removed from the country.
 #	playable = yes							#if this type is available for players. used when listing countries for hot-joining players
 #	has_pulse_events = no					#if this type gets checked for country-specific pulse events from on_action
+#	has_deficits = yes						#if this type suffers from resource deficits
 #	randomize_ethos = no					#does this empire have a randomly generated ethos?
 #	shuffle_pop_ethos = no					#if pops belonging to this country type should mutate their ethos every now and then
 #	sub_title = "EXAMPLE_COUNTRY"			#sub title that will be shown for this empire. Like "Example Federation - Fallen Empire"
@@ -70,12 +71,16 @@
 #		}
 #	}
 #
-# 							#Note: these effects are also covered by on_actions on_fleet_lease_started and on_fleet_lease_ended
+# 							#Note: these effects are also covered by on_actions on_fleet_contract_started, on_fleet_contract_expired, on_fleet_contract_cancelled and on_fleet_contract_broken
 #	fleet_manager = {								#block of Country Fleet Manager settings
 #		on_contract_started = {						#effect fired when fleet owned by country is hired
-#		}											#Scope - Fleet, From - Country that hired the fleet
-#		on_contract_broken = {						#effect fired when hire contract of a fleet owned by country is broken
-#		}											#Scope - Fleet, From - Country that hired the fleet
+#		}											#Scope - Fleet, From - Country that hired the fleet, FromFrom - Country that owns fleet, FromFromFrom - Country that initiated the ending of the contract
+#		on_contract_expired = {						#effect fired when hire contract of a fleet owned by country is expired
+#		}											#Scope - Fleet, From - Country that hired the fleet, FromFrom - Country that owns fleet, FromFromFrom - Country that initiated the ending of the contract
+#		on_contract_cancelled = {					#effect fired when hire contract of a fleet owned by country is cancelled (when controller prematurely finishes the contract or when the contract cancellation is a part of trade deal)
+#		}											#Scope - Fleet, From - Country that hired the fleet, FromFrom - Country that owns fleet, FromFromFrom - Country that initiated the ending of the contract (trade deal actor when the contract cancellation is a part of trade deal)
+#		on_contract_broken = {						#effect fired when hire contract of a fleet owned by country is broken (when country is attacked by someone of when a war is started)
+#		}											#Scope - Fleet, From - Country that hired the fleet, FromFrom - Country that owns fleet, FromFromFrom - Country that initiated the ending of the contract (main attacker in a case of war)
 #	}
 #
 #	modules = {							#List of modules countries of this should have.
@@ -99,6 +104,7 @@ default = {
 	pop_growth = yes
 	playable = yes
 	has_pulse_events = yes
+	has_deficits = yes
 	piracy_risk = yes
 	randomize_ethos = yes
 	shuffle_pop_ethos = yes
@@ -904,13 +910,14 @@ enclave_mercenary = {
 				}
 			}
 		}
+		on_contract_expired = {
+			remove_fleet_contract_modifiers = yes
+		}
+		on_contract_cancelled = {
+			remove_fleet_contract_modifiers = yes
+		}
 		on_contract_broken = {
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_no_galcom
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_1
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_2
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_3
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_4
-			remove_modifier = hired_mercenary_fleet_naval_cap_usage_galcom_5
+			remove_fleet_contract_modifiers = yes
 		}
 	}
 	faction = {

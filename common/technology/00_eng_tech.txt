@@ -1499,6 +1499,7 @@ tech_habitat_1 = {
 	potential = {
 		OR = {
 			has_origin = origin_void_dwellers
+			has_origin = origin_toxic_knights
 			host_has_dlc = "Utopia"
 		}
 	}
@@ -1588,7 +1589,7 @@ tech_habitat_2 = {
 
 	potential = {
 		OR = {
-			has_origin = origin_void_dwellers
+			has_origin = origin_void_dwellers #Not toxic knights, they just need level 1 tech
 			host_has_dlc = "Utopia"
 		}
 	}

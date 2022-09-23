@@ -13,7 +13,7 @@ minerals_expenditure_buffer = { # Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.0
 	}
 }
@@ -27,10 +27,10 @@ minerals_expenditure_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.80
 	}
-	static_min = {
+	desired_min = {
 		base = 50000
 	}
 }
@@ -44,7 +44,7 @@ minerals_expenditure_stations = {
 		years_passed < 4
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.25
 	}
 }
@@ -59,7 +59,7 @@ minerals_expenditure_stations_later = {
 		years_passed > 3
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.6
 	}
 }
@@ -73,10 +73,10 @@ minerals_expenditure_stations_later2 = {
 		years_passed > 12
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.4
 	}
-	static_min = {
+	desired_min = {
 		base = 2000
 	}
 }
@@ -90,10 +90,10 @@ minerals_expenditure_decisions = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 25000
 	}
 }
@@ -108,7 +108,7 @@ minerals_expenditure_ships = {
 		has_crisis_level = crisis_level_3
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.25
 	}
 }
@@ -127,7 +127,7 @@ minerals_expenditure_ships_excess = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.9
 	}
 }
@@ -143,10 +143,10 @@ minerals_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 100
@@ -192,7 +192,7 @@ minerals_expenditure_stations_2 = {
 		resource_stockpile_compare = { resource = minerals value < 1200 }
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.25
 	}
 }
@@ -207,7 +207,7 @@ minerals_expenditure_stations_3 = {
 		resource_stockpile_compare = { resource = minerals value >= 1200 }
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 }
@@ -228,11 +228,11 @@ minerals_expenditure_relic_origin = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
 
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 900
@@ -257,11 +257,11 @@ minerals_expenditure_colonies_lithoid_expand = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 
-	static_min = {
+	desired_min = {
 		base = 550
 	}
 }
@@ -498,10 +498,10 @@ minerals_expenditure_armies = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
-	static_min = {
+	desired_min = {
 		base = 5000
 	}
 }
@@ -519,7 +519,7 @@ minerals_expenditure_starbases_expand = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.8
 	}
 }
@@ -537,7 +537,7 @@ minerals_expenditure_stations_expand = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.7
 	}
 }
@@ -556,7 +556,7 @@ minerals_expenditure_campaigns = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 20000
 	}
 }
@@ -573,7 +573,7 @@ minerals_upkeep_buffer = {	# Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
 }
@@ -587,7 +587,7 @@ minerals_upkeep_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1.3
 	}
 }
@@ -604,7 +604,7 @@ minerals_upkeep_planets_extra = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -618,7 +618,7 @@ minerals_upkeep_starbases = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.05
 	}
 }
@@ -637,7 +637,7 @@ minerals_upkeep_ships = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.6
 	}
 }

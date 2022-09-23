@@ -13,6 +13,11 @@ building_military_academy = {
 		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
 	}
 
+	allow = {
+		exists = owner
+		owner = { is_ai = no }
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = {

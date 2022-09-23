@@ -89,7 +89,7 @@ building_great_pyramid = {
 building_artist_patron = {
 	base_buildtime = @b2_time
 	can_demolish = yes
-	base_cap_amount = 1
+	empire_limit = 1
 
 	potential = {
 		custom_tooltip = {
@@ -107,7 +107,7 @@ building_artist_patron = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			owner = { is_gestalt = no }
 		}
 		planet_jobs_unity_produces_mult = 0.15
 		job_culture_worker_add = 3
@@ -116,16 +116,7 @@ building_artist_patron = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		planet_jobs_unity_produces_mult = 0.15
-		job_synapse_drone_add = 3
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = { is_gestalt = yes }
 		}
 		planet_jobs_unity_produces_mult = 0.15
 		job_evaluator_add = 3
@@ -148,14 +139,7 @@ building_artist_patron = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_synapse_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = { is_gestalt = yes }
 		}
 		text = job_evaluator_effect_desc
 	}

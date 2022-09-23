@@ -239,6 +239,7 @@ tech_mine_exotic_gases = {
 						has_deposit = d_bubbling_swamp
 						has_deposit = d_fuming_bog
 						has_deposit = d_industrial_sector
+						has_deposit = d_exotic_mountain
 					}
 				}
 				any_planet_within_border = {
@@ -294,6 +295,7 @@ tech_exotic_gases = {
 						has_deposit = d_bubbling_swamp
 						has_deposit = d_fuming_bog
 						has_deposit = d_industrial_sector
+						has_deposit = d_exotic_mountain
 					}
 				}
 				any_planet_within_border = {

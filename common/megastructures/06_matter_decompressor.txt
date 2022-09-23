@@ -58,19 +58,15 @@ matter_decompressor_0 = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_matter_decompressor"
 			from = {
-				NOT = {
-					any_owned_megastructure = {
-						OR = {
-							is_megastructure_type = matter_decompressor_0
-							is_megastructure_type = matter_decompressor_1
-							is_megastructure_type = matter_decompressor_2
-							is_megastructure_type = matter_decompressor_3
-							is_megastructure_type = matter_decompressor_4
-							#is_megastructure_type = matter_decompressor_restored
-						}
-					}
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_matter_decompressor_site }
 				}
 			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_matter_decompressor_two"
+			from = { NOT = { has_country_flag = built_matter_decompressor_site_contingency } }
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
@@ -116,7 +112,16 @@ matter_decompressor_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		from = { set_country_flag = built_matter_decompressor_site }
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_matter_decompressor_site
+				}
+				set_country_flag = built_matter_decompressor_site_contingency
+			}
+			set_country_flag = built_matter_decompressor_site
+		}
 		fromfrom.planet = {
 			if = {
 				limit = { has_orbital_station = yes }
@@ -289,6 +294,7 @@ matter_decompressor_permanently_ruined = {
 	rotate_to_center = yes
 	scale_offset = yes
 	place_entity_on_planet_plane = no
+	show_galactic_map_icon = no
 
 	potential = {
 		always = no

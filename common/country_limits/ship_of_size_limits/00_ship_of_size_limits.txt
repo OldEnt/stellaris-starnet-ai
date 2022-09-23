@@ -1,6 +1,8 @@
-# Here you can specify the limits for ships of some types that country can own
-# Please don't use these limits for ship sizes which can be used by federation, community or global designs. 
-# It can result the wrong naval cap calculations (there are special adjustments for naval cap of ships of such designs).
+# Here you can specify the limits for ships of some types that country can own.
+# Please don't use these limits for ship sizes which can be used by Global designs.
+# The Scope is the active Country; if applied to a Federation design, From will
+# be the Federation; if applied to a Community design, From will be the Country
+# leading it
 
 # Example:
 #name_of_limit = {

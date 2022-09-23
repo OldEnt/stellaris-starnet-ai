@@ -13,7 +13,7 @@ food_expenditure_buffer = { # Buffer, will not be spent
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -32,7 +32,7 @@ food_expenditure_campaigns = {
 		}
 	}
 
-	static_min = {
+	desired_min = {
 		base = 20000
 	}
 }
@@ -45,10 +45,10 @@ food_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 100
@@ -109,10 +109,10 @@ food_expenditure_colonies = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.8
 	}
-	static_min = {
+	desired_min = {
 		base = 700
 		modifier = {
 			add = 1000
@@ -138,11 +138,11 @@ food_expenditure_colonies_expand_tree = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 2.0
 	}
 
-	static_max = {
+	desired_max = {
 		base = 1100
 	}
 }
@@ -164,11 +164,11 @@ food_expenditure_colonies_expand_rock_tree = {
 		}
 	}
 
-	fraction = {
+	weight = {
 		weight = 2.0
 	}
 
-	static_max = {
+	desired_max = {
 		base = 600
 	}
 }
@@ -183,10 +183,10 @@ food_expenditure_decisions = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.6
 	}
-	static_min = {
+	desired_min = {
 		base = 0
 		modifier = {
 			add = 1100
@@ -207,11 +207,11 @@ food_expenditure_buildings = {
 		country_uses_food = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.2
 	}
 
-	static_max = {
+	desired_max = {
 		base = 500
 	}
 }
@@ -225,7 +225,7 @@ food_upkeep_buildings = {
 		country_uses_food = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 
@@ -240,7 +240,7 @@ food_upkeep_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 		modifier = {
 			add = 4.9
@@ -259,7 +259,7 @@ food_expenditure_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }
@@ -273,7 +273,7 @@ food_upkeep_country = { # Covers most other things
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -288,7 +288,7 @@ food_upkeep_campaigns = {
 		is_lithoid_empire = no
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.1
 	}
 }

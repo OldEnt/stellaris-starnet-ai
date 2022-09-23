@@ -13,7 +13,7 @@ zro_expenditure_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -27,7 +27,7 @@ zro_expenditure_trade = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.5
 	}
 }
@@ -41,7 +41,7 @@ zro_expenditure_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 0.3
 	}
 }
@@ -55,7 +55,7 @@ zro_upkeep_planets = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -69,7 +69,7 @@ zro_upkeep_ships = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		weight = 1
 	}
 }
@@ -83,7 +83,7 @@ zro_upkeep_edicts = {
 		always = yes
 	}
 
-	fraction = {
+	weight = {
 		base = 0.25
 	}
 }

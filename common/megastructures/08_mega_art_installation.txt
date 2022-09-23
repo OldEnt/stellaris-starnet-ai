@@ -41,9 +41,19 @@ mega_art_installation_0 = {
 				}
 			}
 		}
+
 		custom_tooltip = {
 			fail_text = "requires_no_existing_mega_art_installation"
-			from = { NOT = { has_country_flag = built_mega_art_installation_site } }
+			from = {
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_mega_art_installation }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_mega_art_installation_two"
+			from = { NOT = { has_country_flag = built_mega_art_installation_contingency } }
 		}
 	}
 
@@ -88,7 +98,16 @@ mega_art_installation_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		from = { set_country_flag = built_mega_art_installation_site }
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_mega_art_installation
+				}
+				set_country_flag = built_mega_art_installation_contingency
+			}
+			set_country_flag = built_mega_art_installation
+		}
 	}
 }
 
@@ -238,14 +257,23 @@ mega_art_installation_4 = {
 	}
 
 	upgrade_from = {
-			mega_art_installation_3
+		mega_art_installation_3
 	}
 
 	prerequisites = { "tech_mega_art" }
 	show_prereqs = no
 
 	possible = {
-		from = { has_ancrel = yes }
+		from = {
+			has_ancrel = yes
+			if = { #otherwise, it will pause building any multitier megas
+				limit = { is_ai = yes }
+				resource_stockpile_compare = {
+					resource = minor_artifacts
+					value >= 100
+				}
+			}
+		}
 	}
 
 	country_modifier = {
@@ -268,6 +296,7 @@ mega_art_installation_permanently_ruined = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
+	show_galactic_map_icon = no
 
 	potential = {
 		always = no
@@ -388,7 +417,16 @@ mega_art_installation_restored_2 = {
 	}
 
 	possible = {
-		from = { has_ancrel = yes }
+		from = {
+			has_ancrel = yes
+			if = { #otherwise, it will pause building any multitier megas
+				limit = { is_ai = yes }
+				resource_stockpile_compare = {
+					resource = minor_artifacts
+					value >= 100
+				}
+			}
+		}
 	}
 
 	on_build_complete = {

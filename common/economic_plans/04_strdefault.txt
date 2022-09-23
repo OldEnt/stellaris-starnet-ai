@@ -2,9 +2,11 @@
 
 # Scripted variables below are vanilla values for written in compatibility with other mods.
 @rare_resource_target = 4
+@rare_resource_limit = 20
 @energy_target = 25
 @minerals_target = 30
 @alloy_target = 10
+@fleet_cap_alloy_target = 50
 @machine_empire_alloy_target = 15
 @pops_target = 9000
 @food_target = 10

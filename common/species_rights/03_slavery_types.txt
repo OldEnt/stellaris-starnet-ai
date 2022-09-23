@@ -275,6 +275,10 @@ slavery_livestock = {
 				}
 			}
 		}
+		custom_tooltip = {
+			fail_text = noxious_stock
+			NOT = { has_trait = trait_noxious }
+		}
 	}
 	ai_will_do = {
 		factor = 3

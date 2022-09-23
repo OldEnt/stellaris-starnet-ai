@@ -38,6 +38,14 @@ ap_lord_of_war = {
 			factor = 2
 			has_authority = auth_corporate
 		}
+		modifier = {
+			factor = 0
+			is_pacifist = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_xenophile = yes
+		}
 	}
 }
 
@@ -1945,5 +1953,37 @@ ap_universal_transactions = {
 
 	ai_weight = {
 		factor = 5
+	}
+}
+
+#################
+# TOXIC ASCENSION PERKS
+#################
+
+ap_detox = {
+	potential = {
+		host_has_dlc = "Toxoids Species Pack"
+		NOT = {
+			has_ascension_perk = ap_detox
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_tech_climate_restoration"
+			has_technology = tech_climate_restoration
+		}
+	}
+
+	on_enabled = {
+		custom_tooltip = "detox_tox_worlds"
+	}
+
+	ai_weight = {
+		factor = 20
+		modifier = {
+			factor = 100
+			toxoids_portrait = yes
+		}
 	}
 }
