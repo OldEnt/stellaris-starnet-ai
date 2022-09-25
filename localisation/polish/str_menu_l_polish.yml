@@ -20,6 +20,7 @@
  str_menu.1.starbase_defenses: "$military_station_small_plural$ - [GetName_str_ai_should_build_starbase_defenses_switch]"
  str_menu.1.starbase_defenses.tooltip: "$NUM_EMPIRES$ $military_station_small_plural$ $PLANETVIEW_CONSTRUCTION$."
  str_truce: "$str_or_tech_fork_switch$ $TRUCE$"
+ STR_CANNOT_COLONIZE_HOLY_WORLD: "$str_or_tech_fork_switch$: AI not allowed to colonise holy worlds."
  STR_CAN_DECLARE_WAR: "§H$str_menu.1.truce.status.1$.§!\n§R$str_menu.1.truce.status.2$.§!§R$STR_CAN_DECLARE_WAR_str_country_banned_from_declare_war$$STR_CAN_DECLARE_WAR_str_country_war_immunity$§!"
  str_truce_country_banned_from_declare_war: "\n$ATTACKER$ $IS_STRING$ $treaties_separate_no$."
  str_truce_country_war_immunity: "\n$DEFENDER$ $IS_STRING$ $pre_sapients_protect$."

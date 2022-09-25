@@ -82,3 +82,27 @@ can_declare_war = {
 		}
 	}
 }
+
+#Root = country
+#This = planet
+can_colonize_planet = {
+	if = {
+		limit = {
+			has_global_flag = str_enabled_flag
+			has_modifier = "holy_planet"
+			root = {
+				is_ai = yes
+				NOT = {
+					has_relic = r_severed_head
+				}
+			}
+			any_country = {
+				has_ai_personality_behaviour = holy_planets
+			}
+		}
+		custom_tooltip = {
+			fail_text = "STR_CANNOT_COLONIZE_HOLY_WORLD"
+			always = no
+		}
+	}
+}
