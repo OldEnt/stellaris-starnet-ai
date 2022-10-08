@@ -11,6 +11,7 @@ alloys_expenditure_buffer = { # Buffer, will not be spent
 
 	potential = {
 		always = no
+		str_ai_budget_potential_alloys_expenditure_buffer = yes
 	}
 
 	weight = {
@@ -24,7 +25,7 @@ alloys_expenditure_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_alloys_expenditure_ships = yes
 	}
 
 	weight = {
@@ -66,6 +67,19 @@ alloys_expenditure_ships = {
 				}
 			}
 		}
+		modifier = {
+			factor = 10
+			count_owned_fleet = {
+				count < value:desired_science_ships
+				limit = {
+					is_ship_class = shipclass_science_ship
+				}
+			}
+		}
+	}
+
+	desired_min = {
+		base = 150
 	}
 }
 
@@ -75,6 +89,7 @@ alloys_expenditure_ship_upgrades = {
 	category = ship_upgrades
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_ship_upgrades = yes
 		is_at_war = no
 		any_owned_fleet = {
 			controller = { is_same_value = root }
@@ -99,7 +114,7 @@ alloys_expenditure_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_alloys_expenditure_planets = yes
 	}
 
 	weight = {
@@ -121,6 +136,7 @@ alloys_expenditure_starbases = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_starbases = yes
 		NOT = {
 			is_country_type = fallen_empire
 		}
@@ -171,6 +187,7 @@ alloys_expenditure_starbases_fallen_empires = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_starbases_fallen_empires = yes
 		is_country_type = fallen_empire
 	}
 
@@ -185,6 +202,7 @@ alloys_expenditure_starbases_expand = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_starbases_expand = yes
 		has_ai_expansion_plan = yes
 		highest_threat < 50
 		NOT = {
@@ -210,6 +228,7 @@ alloys_expenditure_colonies_expand = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_colonies_expand = yes
 		is_machine_empire = no
 		OR = {
 			is_at_war = no
@@ -238,6 +257,10 @@ alloys_expenditure_colonies_expand = {
 
 	weight = {
 		weight = 0.5
+		modifier = {
+			add = 1
+			years_passed < 50
+		}
 	}
 
 	desired_min = {
@@ -255,6 +278,7 @@ alloys_expenditure_colonies_expand_machine = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_colonies_expand_machine = yes
 		is_machine_empire = yes
 		OR = {
 			is_at_war = no
@@ -282,6 +306,7 @@ alloys_expenditure_megastructures = {
 	category = megastructures
 
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_megastructures = yes
 		is_country_type = default
 		OR = {
 			is_at_war = no
@@ -313,7 +338,10 @@ alloys_expenditure_habitats = {
 	type = expenditure
 	category = megastructures_habitat
 
-	potential = { ai_should_build_habitats = yes }
+	potential = {
+		str_ai_budget_potential_alloys_expenditure_habitats = yes
+		ai_should_build_habitats = yes
+	}
 
 	weight = {
 		weight = 0.2
@@ -370,6 +398,7 @@ alloys_expenditure_decisions = {
 	type = expenditure
 	category = decisions
 	potential = {
+		str_ai_budget_potential_alloys_expenditure_decisions = yes
 		OR = {
 			has_technology = tech_habitat_2
 			has_technology = tech_mega_engineering
@@ -442,7 +471,7 @@ alloys_upkeep_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_alloys_upkeep_ships = yes
 	}
 
 	weight = {
@@ -466,7 +495,7 @@ alloys_upkeep_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_alloys_upkeep_planets = yes
 	}
 
 	weight = {

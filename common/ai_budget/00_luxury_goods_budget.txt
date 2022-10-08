@@ -10,7 +10,7 @@ consumer_goods_expenditure_buffer = { # Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_consumer_goods_expenditure_buffer = yes
 	}
 
 	weight = {
@@ -24,6 +24,7 @@ consumer_goods_expenditure_colonies_expand = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_consumer_goods_expenditure_colonies_expand = yes
 		is_regular_empire = yes
 		ai_colonize_plans > 0
 		OR = {
@@ -65,7 +66,7 @@ consumer_goods_expenditure_decisions = {
 	category = decisions
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_consumer_goods_expenditure_decisions = yes
 	}
 
 	weight = {
@@ -82,7 +83,7 @@ consumer_goods_upkeep_buffer = {	# Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_consumer_goods_upkeep_buffer = yes
 	}
 
 	weight = {
@@ -96,7 +97,7 @@ consumer_goods_upkeep_country = {	# Buffer, will not be spent
 	category = country
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_consumer_goods_upkeep_country = yes
 	}
 
 	weight = {
