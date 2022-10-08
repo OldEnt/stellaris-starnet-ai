@@ -122,7 +122,7 @@ rare_crystals_expenditure_edicts = {
 rare_crystals_expenditure_rareedicts = {
 	resource = rare_crystals
 	type = expenditure
-	category = rare_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {
@@ -140,7 +140,7 @@ rare_crystals_expenditure_rareedicts = {
 rare_crystals_expenditure_shipedicts = {
 	resource = rare_crystals
 	type = expenditure
-	category = ship_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {

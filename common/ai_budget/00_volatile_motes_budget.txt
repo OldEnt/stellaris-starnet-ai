@@ -98,7 +98,7 @@ volatile_motes_expenditure_edicts = {
 volatile_motes_expenditure_rareedicts = {
 	resource = volatile_motes
 	type = expenditure
-	category = rare_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {
@@ -114,7 +114,7 @@ volatile_motes_expenditure_rareedicts = {
 volatile_motes_expenditure_shipedicts = {
 	resource = volatile_motes
 	type = expenditure
-	category = ship_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {

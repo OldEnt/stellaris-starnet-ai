@@ -21,7 +21,7 @@ food_expenditure_buffer = { # Buffer, will not be spent
 food_expenditure_campaigns = {
 	resource = food
 	type = expenditure
-	category = campaigns
+	category = country
 
 	potential = {
 		is_hive_empire = yes
@@ -281,7 +281,7 @@ food_upkeep_country = { # Covers most other things
 food_upkeep_campaigns = {
 	resource = food
 	type = upkeep
-	category = campaigns
+	category = country
 
 	potential = {
 		is_hive_empire = yes

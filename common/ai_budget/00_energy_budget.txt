@@ -39,7 +39,7 @@ energy_expenditure_planets_gaia_seeder = {
 energy_expenditure_campaigns = {
 	resource = energy
 	type = expenditure
-	category = campaigns
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {
@@ -334,7 +334,7 @@ energy_upkeep_country = { # Covers most other things
 energy_upkeep_building_unstucker = { # Covers most other things
 	resource = energy
 	type = upkeep
-	category = planets
+	category = country
 
 	potential = {
 		has_country_flag = str_planet_buildings_unstuck
@@ -348,7 +348,7 @@ energy_upkeep_building_unstucker = { # Covers most other things
 energy_upkeep_starbase_unstucker = { # Covers most other things
 	resource = energy
 	type = upkeep
-	category = starbases
+	category = country
 
 	potential = {
 		has_country_flag = str_planet_buildings_unstuck
@@ -716,7 +716,7 @@ energy_upkeep_lategame = {
 energy_upkeep_campaigns = {
 	resource = energy
 	type = upkeep
-	category = campaigns
+	category = country
 
 	potential = {
 		has_technology = tech_planetary_unification
@@ -730,7 +730,7 @@ energy_upkeep_campaigns = {
 energy_upkeep_operations = {
 	resource = energy
 	type = upkeep
-	category = operations
+	category = country
 
 	potential = {
 		# only allocate energy for operations if we can afford them

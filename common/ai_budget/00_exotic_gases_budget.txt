@@ -99,7 +99,7 @@ exotic_gases_expenditure_edicts = {
 exotic_gases_expenditure_shipedicts = {
 	resource = exotic_gases
 	type = expenditure
-	category = ship_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {
@@ -123,7 +123,7 @@ exotic_gases_expenditure_shipedicts = {
 exotic_gases_expenditure_rareedicts = {
 	resource = exotic_gases
 	type = expenditure
-	category = rare_edicts
+	category = country
 
 	potential = {
 		resource_stockpile_compare = {

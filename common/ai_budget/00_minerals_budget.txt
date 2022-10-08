@@ -545,7 +545,7 @@ minerals_expenditure_stations_expand = {
 minerals_expenditure_campaigns = {
 	resource = minerals
 	type = expenditure
-	category = campaigns
+	category = country
 
 	potential = {
 		is_hive_empire = yes
