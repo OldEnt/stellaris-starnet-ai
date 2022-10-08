@@ -1,0 +1,111 @@
+# alloys
+str_ai_budget_potential_alloys_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_ship_upgrades = {
+	years_passed > 20
+	used_naval_capacity_percent > 0.95
+}
+
+str_ai_budget_potential_alloys_expenditure_planets = {
+	years_passed > 10	# Rush alloys_expenditure_ships instead (science ships).
+}
+
+str_ai_budget_potential_alloys_expenditure_starbases = {
+	years_passed > 4	# Rush alloys_expenditure_ships instead (science ships).
+}
+
+str_ai_budget_potential_alloys_expenditure_starbases_fallen_empires = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_starbases_expand = {
+	years_passed > 4	# Rush alloys_expenditure_ships instead (science ships).
+}
+
+str_ai_budget_potential_alloys_expenditure_colonies_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_colonies_expand_machine = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_megastructures = {
+	str_ai_should_build_megastructures = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_habitats = {
+	str_ai_should_build_habitats = yes
+}
+
+str_ai_budget_potential_alloys_expenditure_decisions = {
+	always = yes
+}
+
+str_ai_budget_potential_alloys_upkeep_ships = {
+	always = yes
+}
+
+# unity
+str_ai_budget_potential_unity_expenditure_edicts = {
+	years_passed > 5	# Rush unity_expenditure_leaders instead (science ships).
+}
+
+str_ai_budget_potential_unity_expenditure_traditions = {
+	years_passed > 5	# Rush unity_expenditure_leaders instead (science ships).
+}
+
+str_ai_budget_potential_unity_expenditure_megastructures = {
+	always = yes
+}
+
+str_ai_budget_potential_unity_expenditure_decisions = {
+	years_passed > 5	# Rush unity_expenditure_leaders instead (science ships).
+}
+
+str_ai_budget_potential_unity_expenditure_missing_scientist = {
+	always = yes
+}
+
+str_ai_budget_potential_unity_expenditure_leaders = {
+	always = yes
+}
+
+str_ai_budget_potential_unity_upkeep_country = {
+	always = yes
+}
+
+str_ai_budget_potential_unity_upkeep_leaders = {
+	always = yes
+}
+
+str_ai_budget_potential_unity_upkeep_edicts = {
+	always = yes
+}
+
+# consumer_goods
+str_ai_budget_potential_consumer_goods_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_expenditure_colonies_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_expenditure_decisions = {
+	years_passed > 20	# Rush consumer_goods_expenditure_colonies_expand instead.
+}
+
+str_ai_budget_potential_consumer_goods_upkeep_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_upkeep_country = {
+	always = yes
+}
