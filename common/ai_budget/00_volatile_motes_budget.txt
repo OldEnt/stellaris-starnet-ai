@@ -11,7 +11,7 @@ volatile_motes_expenditure_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_expenditure_planets = yes
 	}
 
 	weight = {
@@ -25,7 +25,7 @@ volatile_motes_expenditure_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_expenditure_ships = yes
 	}
 
 	weight = {
@@ -39,7 +39,7 @@ volatile_motes_expenditure_upgrade = {
 	category = ship_upgrades
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_expenditure_upgrade = yes
 	}
 
 	weight = {
@@ -53,7 +53,7 @@ volatile_motes_expenditure_trade = {
 	category = trade
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_expenditure_trade = yes
 	}
 
 	weight = {
@@ -67,6 +67,7 @@ volatile_motes_expenditure_starbases = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_volatile_motes_expenditure_starbases = yes
 		any_owned_nonprimary_starbase = {
 			has_starbase_size >= orbital_ring_tier_2
 			exists = planet
@@ -109,7 +110,7 @@ volatile_motes_upkeep_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_upkeep_planets = yes
 	}
 
 	weight = {
@@ -123,7 +124,7 @@ volatile_motes_upkeep_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_upkeep_ships = yes
 	}
 
 	weight = {
@@ -137,7 +138,7 @@ volatile_motes_upkeep_edicts = {
 	category = edicts
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_volatile_motes_upkeep_edicts = yes
 	}
 
 	weight = {
@@ -151,6 +152,7 @@ volatile_motes_upkeep_hyper_relays = {
 	category = megastructures_hyper_relay
 
 	potential = {
+		str_ai_budget_potential_volatile_motes_upkeep_hyper_relays = yes
 		has_technology = tech_hyper_relays
 	}
 
@@ -165,6 +167,7 @@ volatile_motes_upkeep_starbases = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_volatile_motes_upkeep_starbases = yes
 		any_owned_nonprimary_starbase = {
 			has_starbase_size >= orbital_ring_tier_2
 			exists = planet

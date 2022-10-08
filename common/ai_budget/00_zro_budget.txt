@@ -12,7 +12,7 @@ zro_expenditure_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_expenditure_planets = yes
 	}
 
 	weight = {
@@ -26,7 +26,7 @@ zro_expenditure_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_expenditure_ships = yes
 	}
 
 	weight = {
@@ -40,7 +40,7 @@ zro_expenditure_upgrade = {
 	category = ship_upgrades
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_expenditure_upgrade = yes
 	}
 
 	weight = {
@@ -54,7 +54,7 @@ zro_expenditure_trade = {
 	category = trade
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_expenditure_trade = yes
 	}
 
 	weight = {
@@ -70,7 +70,7 @@ zro_upkeep_planets = {
 	category = planets
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_upkeep_planets = yes
 	}
 
 	weight = {
@@ -84,7 +84,7 @@ zro_upkeep_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_upkeep_ships = yes
 	}
 
 	weight = {
@@ -98,7 +98,7 @@ zro_upkeep_edicts = {
 	category = edicts
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_zro_upkeep_edicts = yes
 	}
 
 	weight = {

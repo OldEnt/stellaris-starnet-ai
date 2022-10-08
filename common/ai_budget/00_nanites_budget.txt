@@ -6,6 +6,7 @@ nanites_expenditure_ships = {
 	category = ships
 
 	potential = {
+		str_ai_budget_potential_nanites_expenditure_ships = yes
 		has_technology = tech_nanite_repair_system
 	}
 
@@ -20,6 +21,7 @@ nanites_expenditure_ship_upgrades = {
 	category = ship_upgrades
 
 	potential = {
+		str_ai_budget_potential_nanites_expenditure_ship_upgrades = yes
 		has_technology = tech_nanite_repair_system
 	}
 
@@ -34,6 +36,7 @@ nanites_expenditure_buildings = {
 	category = planets
 
 	potential = {
+		str_ai_budget_potential_nanites_expenditure_buildings = yes
 		has_technology = tech_nanite_transmutation
 	}
 
@@ -49,7 +52,7 @@ nanites_upkeep_edicts = {
 	category = edicts
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_nanites_upkeep_edicts = yes
 	}
 
 	weight = {

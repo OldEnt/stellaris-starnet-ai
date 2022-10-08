@@ -10,7 +10,7 @@ food_expenditure_buffer = { # Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_food_expenditure_buffer = yes
 	}
 
 	weight = {
@@ -24,6 +24,7 @@ food_expenditure_colonies_expand = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_food_expenditure_colonies_expand = yes
 		is_machine_empire = no
 		is_lithoid_empire = no
 		NOT = { has_origin = origin_tree_of_life }
@@ -50,6 +51,7 @@ food_expenditure_colonies_expand_tree = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_food_expenditure_colonies_expand_tree = yes
 		is_machine_empire = no
 		is_lithoid_empire = no
 		has_origin = origin_tree_of_life
@@ -76,6 +78,7 @@ food_expenditure_colonies_expand_rock_tree = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_food_expenditure_colonies_expand_rock_tree = yes
 		is_machine_empire = no
 		is_lithoid_empire = yes
 		has_origin = origin_tree_of_life
@@ -102,6 +105,7 @@ food_expenditure_decisions = {
 	category = decisions
 
 	potential = {
+		str_ai_budget_potential_food_expenditure_decisions = yes
 		has_origin = origin_tree_of_life
 		any_owned_planet = {
 			has_modifier = no_lifetree
@@ -125,6 +129,7 @@ food_expenditure_buildings = {
 	category = planets
 
 	potential = {
+		str_ai_budget_potential_food_expenditure_buildings = yes
 		country_uses_food = yes
 	}
 
@@ -151,6 +156,7 @@ food_upkeep_ships = {
 	category = ships
 
 	potential = {
+		str_ai_budget_potential_food_upkeep_ships = yes
 		has_origin = origin_here_be_dragons
 		is_dragon_breeder_country = yes
 	}
@@ -166,7 +172,7 @@ food_upkeep_country = { # Covers most other things
 	category = country
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_food_upkeep_country = yes
 	}
 
 	weight = {

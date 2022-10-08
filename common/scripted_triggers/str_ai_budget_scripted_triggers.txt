@@ -1,3 +1,348 @@
+# dark_matter
+str_ai_budget_potential_dark_matter_expenditure_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_expenditure_megastructures = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_expenditure_upgrade = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_dark_matter_upkeep_edicts = {
+	always = yes
+}
+
+# exotic_gases_expenditure_planets
+str_ai_budget_potential_exotic_gases_expenditure_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_expenditure_upgrade = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_expenditure_starbases = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_upkeep_edicts = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_upkeep_hyper_relays = {
+	always = yes
+}
+
+str_ai_budget_potential_exotic_gases_upkeep_starbases = {
+	always = yes
+}
+
+# food
+str_ai_budget_potential_food_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_food_expenditure_colonies_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_food_expenditure_colonies_expand_tree = {
+	always = yes
+}
+
+str_ai_budget_potential_food_expenditure_colonies_expand_rock_tree = {
+	always = yes
+}
+
+str_ai_budget_potential_food_expenditure_decisions = {
+	always = yes
+}
+
+str_ai_budget_potential_food_expenditure_buildings = {
+	always = yes
+}
+
+str_ai_budget_potential_food_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_food_upkeep_country = {
+	always = yes
+}
+
+# influence
+str_ai_budget_potential_influence_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_decisions = {
+	years_passed > 20
+}
+
+str_ai_budget_potential_influence_expenditure_resolutions = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_agreement_proposals = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_edicts = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_stations = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_claims = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_claims_militarist = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_claims_fanatic_militarist = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_megastructures = {
+	str_ai_should_build_megastructures = yes
+}
+
+str_ai_budget_potential_influence_expenditure_habitats = {
+	str_ai_should_build_habitats = yes
+}
+
+str_ai_budget_potential_influence_expenditure_starbases = {
+	always = yes
+}
+
+str_ai_budget_potential_influence_expenditure_operations = {
+	always = yes
+}
+
+# living_metal
+str_ai_budget_potential_living_metal_expenditure_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_expenditure_upgrade = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_living_metal_upkeep_edicts = {
+	always = yes
+}
+
+# consumer_goods
+str_ai_budget_potential_consumer_goods_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_expenditure_colonies_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_expenditure_decisions = {
+	years_passed > 20	# Rush consumer_goods_expenditure_colonies_expand instead.
+}
+
+str_ai_budget_potential_consumer_goods_upkeep_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_consumer_goods_upkeep_country = {
+	always = yes
+}
+
+# minerals
+str_ai_budget_potential_minerals_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_planets_low = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_planets_med = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_planets_high = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_stations_low = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_stations_med = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_stations_high = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_armies = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_armies_threatened = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_stations_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_colonies_lithoid_expand = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_ship_upgrades = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_upkeep_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_decisions = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_expenditure_deposit_blockers = {
+	always = yes
+}
+
+str_ai_budget_potential_minerals_upkeep_ships = {
+	always = yes
+}
+
+# nanites
+str_ai_budget_potential_nanites_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_nanites_expenditure_ship_upgrades = {
+	always = yes
+}
+
+str_ai_budget_potential_nanites_expenditure_buildings = {
+	always = yes
+}
+
+str_ai_budget_potential_nanites_upkeep_edicts = {
+	always = yes
+}
+
+# rare_crystals
+str_ai_budget_potential_rare_crystals_expenditure_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_expenditure_upgrade = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_expenditure_hyper_relays = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_expenditure_starbases = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_upkeep_edicts = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_upkeep_hyper_relays = {
+	always = yes
+}
+
+str_ai_budget_potential_rare_crystals_upkeep_starbases = {
+	always = yes
+}
+
 # alloys
 str_ai_budget_potential_alloys_expenditure_buffer = {
 	always = yes
@@ -52,6 +397,10 @@ str_ai_budget_potential_alloys_upkeep_ships = {
 	always = yes
 }
 
+str_ai_budget_potential_alloys_upkeep_planets = {
+	always = yes
+}
+
 # unity
 str_ai_budget_potential_unity_expenditure_edicts = {
 	years_passed > 5	# Rush unity_expenditure_leaders instead (science ships).
@@ -89,23 +438,72 @@ str_ai_budget_potential_unity_upkeep_edicts = {
 	always = yes
 }
 
-# consumer_goods
-str_ai_budget_potential_consumer_goods_expenditure_buffer = {
+# volatile_motes
+str_ai_budget_potential_volatile_motes_expenditure_planets = {
 	always = yes
 }
 
-str_ai_budget_potential_consumer_goods_expenditure_colonies_expand = {
+str_ai_budget_potential_volatile_motes_expenditure_ships = {
 	always = yes
 }
 
-str_ai_budget_potential_consumer_goods_expenditure_decisions = {
-	years_passed > 20	# Rush consumer_goods_expenditure_colonies_expand instead.
-}
-
-str_ai_budget_potential_consumer_goods_upkeep_buffer = {
+str_ai_budget_potential_volatile_motes_expenditure_upgrade = {
 	always = yes
 }
 
-str_ai_budget_potential_consumer_goods_upkeep_country = {
+str_ai_budget_potential_volatile_motes_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_expenditure_starbases = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_upkeep_edicts = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_upkeep_hyper_relays = {
+	always = yes
+}
+
+str_ai_budget_potential_volatile_motes_upkeep_starbases = {
+	always = yes
+}
+
+# zro
+str_ai_budget_potential_zro_expenditure_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_expenditure_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_expenditure_upgrade = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_upkeep_planets = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_upkeep_ships = {
+	always = yes
+}
+
+str_ai_budget_potential_zro_upkeep_edicts = {
 	always = yes
 }

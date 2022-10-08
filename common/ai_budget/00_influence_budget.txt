@@ -11,6 +11,7 @@ influence_expenditure_buffer = { # Buffer, will not be spent
 
 	potential = {
 		always = no
+		str_ai_budget_potential_influence_expenditure_buffer = yes
 	}
 
 	weight = {
@@ -24,7 +25,7 @@ influence_expenditure_decisions = {
 	category = decisions
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_influence_expenditure_decisions = yes
 	}
 
 	weight = {
@@ -75,6 +76,7 @@ influence_expenditure_resolutions = {
 	category = resolutions
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_resolutions = yes
 		is_galactic_community_member = yes
 		NOT = { is_proposing_resolution = "any" }
 	}
@@ -98,6 +100,7 @@ influence_expenditure_agreement_proposals = {
 	category = agreement_proposals
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_agreement_proposals = yes
 		is_overlord = yes
 		ai_wants_to_negotiate_agreement = yes
 	}
@@ -113,6 +116,7 @@ influence_expenditure_edicts = {
 	category = edicts
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_edicts = yes
 		is_death_cult_empire = yes
 		has_sacrificial_edict = no
 	}
@@ -136,6 +140,7 @@ influence_expenditure_stations = {
 	category = stations
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_stations = yes
 		has_ai_expansion_plan = yes
 	}
 
@@ -160,6 +165,7 @@ influence_expenditure_claims = {
 	category = claims
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_claims = yes
 		NOT = {
 			OR = {
 				has_ethic = ethic_fanatic_pacifist
@@ -181,6 +187,7 @@ influence_expenditure_claims_militarist = {
 	category = claims
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_claims_militarist = yes
 		has_ethic = ethic_militarist
 		has_potential_claims = yes
 	}
@@ -196,6 +203,7 @@ influence_expenditure_claims_fanatic_militarist = {
 	category = claims
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_claims_fanatic_militarist = yes
 		has_ethic = ethic_fanatic_militarist
 		has_potential_claims = yes
 	}
@@ -211,6 +219,7 @@ influence_expenditure_megastructures = {
 	category = megastructures
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_megastructures = yes
 		is_at_war = no
 		OR = {
 			has_technology = tech_gateway_construction
@@ -252,7 +261,10 @@ influence_expenditure_habitats = {
 	type = expenditure
 	category = megastructures_habitat
 
-	potential = { ai_should_build_habitats = yes }
+	potential = {
+		str_ai_budget_potential_influence_expenditure_habitats = yes
+		ai_should_build_habitats = yes
+	}
 
 	weight = {
 		weight = 0.1
@@ -306,6 +318,7 @@ influence_expenditure_starbases = {
 	category = starbases
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_starbases = yes
 		count_owned_nonprimary_starbase = {
 			count > 0
 		}
@@ -395,6 +408,7 @@ influence_expenditure_operations = {
 	category = operations
 
 	potential = {
+		str_ai_budget_potential_influence_expenditure_operations = yes
 		# only allocate influence for operations if we can afford them
 		has_resource = {
 			type = influence

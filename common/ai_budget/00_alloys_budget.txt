@@ -69,6 +69,7 @@ alloys_expenditure_ships = {
 		}
 		modifier = {
 			factor = 10
+			years_passed < 50
 			count_owned_fleet = {
 				count < value:desired_science_ships
 				limit = {
@@ -204,13 +205,13 @@ alloys_expenditure_starbases_expand = {
 	potential = {
 		str_ai_budget_potential_alloys_expenditure_starbases_expand = yes
 		has_ai_expansion_plan = yes
-		highest_threat < 50
+		# highest_threat < 50
 		NOT = {
 			is_country_type = fallen_empire
 			is_country_type = awakened_fallen_empire
 			ai_colonize_plans > 0
 		}
-		has_resource = { type = influence amount > 75 }
+		# has_resource = { type = influence amount > 75 }
 	}
 
 	weight = {
@@ -230,10 +231,10 @@ alloys_expenditure_colonies_expand = {
 	potential = {
 		str_ai_budget_potential_alloys_expenditure_colonies_expand = yes
 		is_machine_empire = no
-		OR = {
-			is_at_war = no
-			mid_game_years_passed > 0
-		}
+		# OR = {
+		# 	is_at_war = no
+		# 	mid_game_years_passed > 0
+		# }
 		ai_colonize_plans > 0
 		OR = {
 			AND = {
@@ -280,10 +281,10 @@ alloys_expenditure_colonies_expand_machine = {
 	potential = {
 		str_ai_budget_potential_alloys_expenditure_colonies_expand_machine = yes
 		is_machine_empire = yes
-		OR = {
-			is_at_war = no
-			mid_game_years_passed > 0
-		}
+		# OR = {
+		# 	is_at_war = no
+		# 	mid_game_years_passed > 0
+		# }
 		ai_colonize_plans > 0
 	}
 
