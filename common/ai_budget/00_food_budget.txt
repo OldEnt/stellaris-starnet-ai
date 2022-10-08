@@ -14,110 +14,33 @@ food_expenditure_buffer = { # Buffer, will not be spent
 	}
 
 	weight = {
-		weight = 0.1
+		weight = 0.3
 	}
 }
 
-food_expenditure_campaigns = {
-	resource = food
-	type = expenditure
-	category = country
-
-	potential = {
-		is_hive_empire = yes
-		is_lithoid_empire = no
-		resource_stockpile_compare = {
-			resource = food
-			value > 3000
-		}
-	}
-
-	desired_min = {
-		base = 20000
-	}
-}
-food_expenditure_trade = {
-	resource = food
-	type = expenditure
-	category = trade
-
-	potential = {
-		always = yes
-	}
-
-	weight = {
-		weight = 0
-	}
-	desired_min = {
-		base = 0
-		modifier = {
-			add = 100
-			ai_colonize_plans < 1
-			resource_stockpile_compare = {
-				resource = energy
-				value < 1000
-			}
-			resource_stockpile_compare = {
-				resource = food
-				value > 3100
-			}
-			resource_income_compare = {
-				resource = food
-				value > 50
-			}
-		}
-		modifier = {
-			add = 500
-			ai_colonize_plans < 1
-			resource_stockpile_compare = {
-				resource = energy
-				value < 1000
-			}
-			resource_stockpile_compare = {
-				resource = food
-				value > 6100
-			}
-			resource_income_compare = {
-				resource = food
-				value > 50
-			}
-		}
-		modifier = {
-			add = 1000
-			resource_stockpile_compare = {
-				resource = energy
-				value < 1000
-			}
-			resource_stockpile_compare = {
-				resource = food
-				value > 9100
-			}
-			resource_income_compare = {
-				resource = food
-				value > 50
-			}
-		}
-	}
-}
-
-food_expenditure_colonies = {
+food_expenditure_colonies_expand = {
 	resource = food
 	type = expenditure
 	category = colonies
 
 	potential = {
-		always = yes
+		is_machine_empire = no
+		is_lithoid_empire = no
+		NOT = { has_origin = origin_tree_of_life }
+		ai_colonize_plans > 0
+		has_resource = { type = food amount > 400 }
+		has_monthly_income = {
+			resource = food
+			value > 0
+		}
 	}
 
 	weight = {
-		weight = 0.8
+		weight = 2.0
 	}
-	desired_min = {
-		base = 700
-		modifier = {
-			add = 1000
-			has_origin = origin_tree_of_life
-		}
+
+	desired_max = {
+		base = 550
 	}
 }
 
@@ -173,28 +96,26 @@ food_expenditure_colonies_expand_rock_tree = {
 	}
 }
 
-
 food_expenditure_decisions = {
 	resource = food
 	type = expenditure
 	category = decisions
 
 	potential = {
-		always = yes
+		has_origin = origin_tree_of_life
+		any_owned_planet = {
+			has_modifier = no_lifetree
+		}
 	}
 
 	weight = {
-		weight = 0.6
+		weight = 0.5
 	}
 	desired_min = {
-		base = 0
-		modifier = {
-			add = 1100
-			resource_income_compare = {
-				resource = food
-				value > 10
-			}
-		}
+		base = 550
+	}
+	desired_max = {
+		base = 550
 	}
 }
 
@@ -211,24 +132,17 @@ food_expenditure_buildings = {
 		weight = 0.2
 	}
 
+	desired_min = {
+		base = 0
+		modifier = {
+			add = 450
+			has_ascension_perk = ap_engineered_evolution
+		}
+	}
+
 	desired_max = {
 		base = 500
 	}
-}
-
-food_upkeep_buildings = {
-	resource = food
-	type = upkeep
-	category = planets
-
-	potential = {
-		country_uses_food = yes
-	}
-
-	weight = {
-		weight = 0.1
-	}
-
 }
 
 food_upkeep_ships = {
@@ -237,30 +151,12 @@ food_upkeep_ships = {
 	category = ships
 
 	potential = {
-		always = yes
+		has_origin = origin_here_be_dragons
+		is_dragon_breeder_country = yes
 	}
 
 	weight = {
-		weight = 0.1
-		modifier = {
-			add = 4.9
-			has_origin = origin_here_be_dragons
-			is_dragon_breeder_country = yes
-		}
-	}
-}
-
-food_expenditure_ships = {
-	resource = food
-	type = expenditure
-	category = ships
-
-	potential = {
-		always = yes
-	}
-
-	weight = {
-		weight = 0.1
+		weight = 5
 	}
 }
 
@@ -275,20 +171,5 @@ food_upkeep_country = { # Covers most other things
 
 	weight = {
 		weight = 0.5
-	}
-}
-
-food_upkeep_campaigns = {
-	resource = food
-	type = upkeep
-	category = country
-
-	potential = {
-		is_hive_empire = yes
-		is_lithoid_empire = no
-	}
-
-	weight = {
-		weight = 0.1
 	}
 }

@@ -10,7 +10,7 @@ influence_expenditure_buffer = { # Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		always = no
 	}
 
 	weight = {
@@ -25,23 +25,47 @@ influence_expenditure_decisions = {
 
 	potential = {
 		always = yes
-		or = {
-			not = { has_country_flag = saving_influence_arcology }
-			and = {
-				has_country_flag = saving_influence_arcology
-				resource_stockpile_compare = {
-					resource = influence
-					value > 220
+	}
+
+	weight = {
+		weight = 0.20
+		modifier = {
+			factor = 2
+			OR = {
+				AND = {
+					has_technology = tech_housing_2
+					any_owned_planet = {
+						is_planet_class = pc_relic
+						num_uncleared_blockers < 1
+					}
+				}
+				AND = {
+					has_ascension_perk = ap_arcology_project
+					any_owned_planet = {
+						is_artificial = no
+						NOR = {
+							is_planet_class = pc_city
+							is_planet_class = pc_relic
+							has_modifier = resort_colony
+							has_modifier = penal_colony
+							has_modifier = slave_colony
+							has_modifier = pm_wenkwort_custodian
+						}
+						num_uncleared_blockers < 1
+						free_district_slots < 1
+						OR = {
+							num_pops >= 70
+							is_capital = yes
+						}
+					}
 				}
 			}
 		}
 	}
 
-	weight = {
-		weight = 0.4
-	}
-	desired_min = {
-		base = 300
+	# this is the cost of the arcology project decision
+	desired_max = {
+		base = 200
 	}
 }
 
@@ -53,22 +77,16 @@ influence_expenditure_resolutions = {
 	potential = {
 		is_galactic_community_member = yes
 		NOT = { is_proposing_resolution = "any" }
-		resource_stockpile_compare = {
-			resource = influence
-			value > 260
-		}
 	}
 
 	weight = {
-		weight = 0.15
+		weight = 0.30
 	}
 
 	# min/max resolution proposal costs defined in resolutions.txt
-
 	desired_min = {
 		base = 100
 	}
-
 	desired_max = {
 		base = 300
 	}
@@ -89,67 +107,26 @@ influence_expenditure_agreement_proposals = {
 	}
 }
 
-influence_expenditure_edicts_initial = {
-	resource = influence
-	type = expenditure
-	category = edicts
-
-	potential = {
-		years_passed > 8
-		not = {
-			has_edict = capacity_subsidies
-		}
-	}
-
-	weight = {
-		weight = 0.2
-	}
-
-	desired_min = {
-		base = 800
-	}
-}
-
-influence_expenditure_important_edicts = {
-	resource = influence
-	type = expenditure
-	category = edicts
-
-	potential = {
-		years_passed > 10
-		nand = {
-			has_edict = capacity_subsidies
-			has_edict = mining_subsidies
-			has_edict = fortify_the_border
-		}
-	}
-
-	weight = {
-		weight = 0.2
-	}
-
-	desired_min = {
-		base = 800
-	}
-}
-
 influence_expenditure_edicts = {
 	resource = influence
 	type = expenditure
 	category = edicts
 
 	potential = {
-		resource_stockpile_compare = {
-			resource = influence
-			value > 250
-		}
+		is_death_cult_empire = yes
+		has_sacrificial_edict = no
 	}
 
 	weight = {
-		weight = 0.9
+		weight = 0.25
 	}
+
 	desired_min = {
-		base = 800
+		base = 100
+	}
+
+	desired_max = {
+		base = 100
 	}
 }
 
@@ -159,177 +136,72 @@ influence_expenditure_stations = {
 	category = stations
 
 	potential = {
-		str_is_allowed_to_build_outposts = yes
-		not = { has_country_flag = saving_influence_arcology }
-		nand = {
-			is_allowed_to_make_claims = yes
-			has_country_flag = ferocious_rusher
-			any_neighbor_country = {
-				is_country_type = default
-				is_subject = no
-				not = { has_truce = prev }
-				prev = {
-					opinion = {
-						who = prev
-						value < -100
-					}
-				}
-			}
-			resource_stockpile_compare = {
-				resource = influence
-				value < 300
-			}
-		}
-		nand = {
-			not = { has_edict = capacity_subsidies }
-			has_technology = tech_power_hub_1
-		}
+		has_ai_expansion_plan = yes
 	}
 
 	weight = {
-		weight = 0.2
+		weight = 0.50
 	}
+
+	# min is 1 jump away
 	desired_min = {
-		base = 0
-		modifier = {
-			add = 200
-			resource_stockpile_compare = {
-				resource = influence
-				value > 250
-			}
-		}
-		modifier = {
-			add = 100
-			years_passed < 20
-		}
+		base = 75
+	}
+
+	# max is 2 jumps away
+	desired_max = {
+		base = 150
 	}
 }
 
-influence_expenditure_stations_save_for_edicts = {
-	resource = influence
-	type = expenditure
-	category = stations
-
-	potential = {
-		not = { has_country_flag = saving_influence_arcology }
-		nand = {
-			is_allowed_to_make_claims = yes
-			has_country_flag = ferocious_rusher
-			any_neighbor_country = {
-				is_country_type = default
-				is_subject = no
-				not = { has_truce = prev }
-				prev = {
-					opinion = {
-						who = prev
-						value < -100
-					}
-				}
-			}
-			resource_stockpile_compare = {
-				resource = influence
-				value < 300
-			}
-		}
-		or = {
-			and = {
-				or = {
-					has_edict = capacity_subsidies
-					not = { has_technology = tech_power_hub_1 }
-				}
-				or = {
-					has_edict = mining_subsidies not = { has_technology = tech_mineral_purification_1 }
-					not = { has_ascension_perk = ap_executive_vigor }
-				}
-			}
-			resource_stockpile_compare = {
-				resource = influence
-				value > 200
-			}
-		}
-	}
-
-	weight = {
-		weight = 0.2
-	}
-}
-
-
-influence_expenditure_stations_wartime = {
-	resource = influence
-	type = expenditure
-	category = stations
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = influence
-			value > 250
-		}
-		is_at_war = yes
-		not = { has_country_flag = saving_influence_arcology }
-	}
-
-	weight = {
-		weight = 0.2
-	}
-}
-
-influence_expenditure_claims_late = {
+influence_expenditure_claims = {
 	resource = influence
 	type = expenditure
 	category = claims
 
 	potential = {
-		is_at_war = no
-		is_allowed_to_make_claims = yes
-		not = { has_country_flag = saving_influence_arcology }
-		years_passed > @str_ai_will_not_declare_war_until
 		NOT = {
 			OR = {
-	 			has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_pacifist
 				has_ethic = ethic_pacifist
+				has_crisis_level = crisis_level_2
 			}
 		}
-		resource_stockpile_compare = {
-			resource = influence
-			value > 250
-		}
+		has_potential_claims = yes
 	}
 
 	weight = {
-		weight = 0.75
-	}
-	desired_min = {
-		base = 500
+		weight = 0.15
 	}
 }
 
-influence_expenditure_claims_while_preparing = {
+influence_expenditure_claims_militarist = {
 	resource = influence
 	type = expenditure
 	category = claims
 
 	potential = {
-		years_passed > @str_ai_will_not_declare_war_until
-		is_allowed_to_make_claims = yes
-		not = { has_country_flag = saving_influence_arcology }
-		or = {
-			and = {
-				prepare_for_war = yes
-				used_naval_capacity_percent > 0.7
-			}
-			is_at_war = yes
-		}
-		NOT = {
-			has_ethic = ethic_fanatic_pacifist
-		}
+		has_ethic = ethic_militarist
+		has_potential_claims = yes
 	}
 
 	weight = {
-		weight = 0.4
+		weight = 0.05
 	}
-	desired_min = {
-		base = 400
+}
+
+influence_expenditure_claims_fanatic_militarist = {
+	resource = influence
+	type = expenditure
+	category = claims
+
+	potential = {
+		has_ethic = ethic_fanatic_militarist
+		has_potential_claims = yes
+	}
+
+	weight = {
+		weight = 0.10
 	}
 }
 
@@ -340,15 +212,38 @@ influence_expenditure_megastructures = {
 
 	potential = {
 		is_at_war = no
-		str_ai_should_build_megastructures = yes
+		OR = {
+			has_technology = tech_gateway_construction
+			has_technology = tech_ring_world
+		}
+
+		has_resource = {
+			type = influence
+			amount > 500
+		}
 	}
 
 	weight = {
 		weight = 0.1
 	}
 
+	# only used by construction sites, base cost is 300
 	desired_min = {
-		base = 300 # only used by construction sites
+		base = 75
+		modifier = {
+			add = 225
+			has_technology = tech_ring_world
+			NOT = {
+				any_owned_planet = { is_planet_class = pc_ringworld_habitable }
+			}
+		}
+	}
+	desired_max = {
+		base = 75
+		modifier = {
+			add = 225
+			has_technology = tech_ring_world
+		}
 	}
 }
 
@@ -357,10 +252,7 @@ influence_expenditure_habitats = {
 	type = expenditure
 	category = megastructures_habitat
 
-	potential = {
-		ai_should_build_habitats = yes
-		str_ai_should_build_habitats = yes
-	}
+	potential = { ai_should_build_habitats = yes }
 
 	weight = {
 		weight = 0.1
@@ -369,7 +261,7 @@ influence_expenditure_habitats = {
 			has_origin = origin_void_dwellers
 		}
 		modifier = {
-			factor = 5
+			factor = 2
 			has_origin = origin_void_dwellers
 			count_owned_planet = {
 				limit = { is_planet_class = pc_habitat }
@@ -378,19 +270,25 @@ influence_expenditure_habitats = {
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_origin = origin_void_dwellers
-				capital_scope = {
-					is_a_habitable_planet_megastructure = yes
-				}
-				years_of_peace = {
-					value > 15
-				}
-			}
+			has_origin = origin_void_dwellers
 			count_owned_planet = {
 				limit = { is_planet_class = pc_habitat }
-				count < 12
+				count < 6
 			}
+		}
+		modifier = {
+			factor = 5
+			mid_game_years_passed > 0
+			num_owned_planets < 12
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_aquatic
+		}
+		modifier = { #Build fortress habitats
+			factor = 2
+			used_naval_capacity_percent > 0.95
+			used_starbase_capacity_percent >= 1
 		}
 	}
 
@@ -399,6 +297,95 @@ influence_expenditure_habitats = {
 	}
 	desired_max = {
 		base = 150
+	}
+}
+
+influence_expenditure_starbases = {
+	resource = influence
+	type = expenditure
+	category = starbases
+
+	potential = {
+		count_owned_nonprimary_starbase = {
+			count > 0
+		}
+	}
+
+	weight = {
+		base = 0
+
+		modifier = {
+			add = 0.2
+			has_technology = tech_housing_2
+			any_owned_nonprimary_starbase = {
+				exists = planet
+				OR = {
+					AND = {
+						has_starbase_size = orbital_ring_tier_1
+						count_starbase_modules = { count < 2 }
+					}
+					AND = {
+						has_starbase_size = orbital_ring_tier_2
+						count_starbase_modules = { count < 3 }
+					}
+					AND = {
+						has_starbase_size = orbital_ring_tier_3
+						count_starbase_modules = { count < 4 }
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 0.3
+			has_technology = tech_starbase_4
+			any_owned_nonprimary_starbase = {
+				has_starbase_size = orbital_ring_tier_1
+				exists = planet
+				count_starbase_modules = {
+					count = 2
+				}
+			}
+		}
+		modifier = {
+			add = 0.3
+			has_technology = tech_starbase_5
+			any_owned_nonprimary_starbase = {
+				has_starbase_size = orbital_ring_tier_2
+				exists = planet
+				planet = {
+					OR = {
+						has_planetary_ascension_tier >= 3
+						has_major_upgraded_capital = yes
+					}
+				}
+				count_starbase_modules = {
+					count = 3
+				}
+				count_starbase_buildings = {
+					count = 1
+				}
+			}
+		}
+	}
+	desired_min = {
+		base = 50
+	}
+	desired_max = {
+		base = 100
+		modifier = {
+			factor = 1.5
+			has_technology = tech_starbase_5
+			any_owned_nonprimary_starbase = {
+				has_starbase_size = orbital_ring_tier_2
+				exists = planet
+				planet = {
+					OR = {
+						has_planetary_ascension_tier >= 3
+						has_major_upgraded_capital = yes
+					}
+				}
+			}
+		}
 	}
 }
 

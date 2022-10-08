@@ -4,6 +4,21 @@
 #################
 ## Expenditure ##
 #################
+
+rare_crystals_expenditure_planets = {
+	resource = rare_crystals
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.2
+	}
+}
+
 rare_crystals_expenditure_ships = {
 	resource = rare_crystals
 	type = expenditure
@@ -14,10 +29,25 @@ rare_crystals_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.1
+		modifier = {
+			factor = 5
+			is_dragon_breeder_country = yes
+		}
 	}
-	desired_min = {
-		base = 50
+}
+
+rare_crystals_expenditure_upgrade = {
+	resource = rare_crystals
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		base = 0.1
 	}
 }
 
@@ -31,7 +61,7 @@ rare_crystals_expenditure_trade = {
 	}
 
 	weight = {
-		weight = 0.2
+		weight = 0.1
 	}
 }
 
@@ -42,7 +72,6 @@ rare_crystals_expenditure_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
-		str_ai_should_build_megastructures = yes
 	}
 
 	weight = {
@@ -56,22 +85,47 @@ rare_crystals_expenditure_hyper_relays = {
 	}
 }
 
-rare_crystals_expenditure_planets = {
+rare_crystals_expenditure_starbases = {
 	resource = rare_crystals
 	type = expenditure
-	category = planets
+	category = starbases
 
 	potential = {
-		always = yes
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {
-		weight = 0.5
-	}
-	desired_min = {
-		base = 500
+		weight = 0.2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_nonprimary_starbase = {
+					exists = planet
+					OR = {
+						AND = {
+							has_starbase_size = orbital_ring_tier_2
+							count_starbase_buildings = {
+								count = 0
+							}
+						}
+						AND = {
+							has_starbase_size = orbital_ring_tier_3
+							count_starbase_buildings = {
+								count < 2
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
+
+# Upkeep ---------------------------------------------------------------
 
 rare_crystals_upkeep_planets = {
 	resource = rare_crystals
@@ -83,81 +137,21 @@ rare_crystals_upkeep_planets = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.9
 	}
 }
 
-rare_crystals_upgrade_ships = {
+rare_crystals_upkeep_ships = {
 	resource = rare_crystals
-	type = expenditure
-	category = ship_upgrades
+	type = upkeep
+	category = ships
 
 	potential = {
 		always = yes
 	}
 
 	weight = {
-		weight = 1
-	}
-}
-
-rare_crystals_expenditure_edicts = {
-	resource = rare_crystals
-	type = expenditure
-	category = edicts
-
-	potential = {
-		resource_income_compare = {
-			resource = rare_crystals
-			value > 0
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-}
-
-
-rare_crystals_expenditure_rareedicts = {
-	resource = rare_crystals
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = rare_crystals
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-}
-
-
-rare_crystals_expenditure_shipedicts = {
-	resource = rare_crystals
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = rare_crystals
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-	desired_min = {
-		base = 0
-		modifier = {
-			add = 1000
-			is_at_war = yes
-		}
+		weight = 0.1
 	}
 }
 
@@ -182,6 +176,23 @@ rare_crystals_upkeep_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
+	}
+
+	weight = {
+		weight = 0.1
+	}
+}
+
+rare_crystals_upkeep_starbases = {
+	resource = rare_crystals
+	type = upkeep
+	category = starbases
+
+	potential = {
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {

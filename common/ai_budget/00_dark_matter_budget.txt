@@ -4,6 +4,22 @@
 #################
 ## Expenditure ##
 #################
+
+
+dark_matter_expenditure_planets = {
+	resource = sr_dark_matter
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.2
+	}
+}
+
 dark_matter_expenditure_ships = {
 	resource = sr_dark_matter
 	type = expenditure
@@ -14,7 +30,95 @@ dark_matter_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.1
+		modifier = {
+			factor = 10
+			has_ascension_perk = ap_become_the_crisis
+			has_crisis_level = crisis_level_5
+			NOT = {
+				count_controlled_fleet = {
+					count >= 1
+					limit = {
+						is_ship_size = star_eater
+					}
+				}
+			}
+		}
+	}
+	desired_min = {
+		base = 0
+		modifier = {
+			add = 10000
+			has_ascension_perk = ap_become_the_crisis
+			NOT = {
+				count_controlled_fleet = {
+					count >= 1
+					limit = {
+						is_ship_size = star_eater
+					}
+				}
+			}
+		}
+	}
+}
+
+dark_matter_expenditure_megastructures = {
+	resource = sr_dark_matter
+	type = expenditure
+	category = megastructures
+	potential = {
+		has_ascension_perk = ap_become_the_crisis
+		has_crisis_level = crisis_level_5
+	}
+
+	weight = {
+		weight = 0.8
+	}
+
+	desired_min = {
+		base = 0
+		modifier = {
+			add = 20000
+			any_owned_megastructure = {
+				is_megastructure_type = crisis_sphere_0
+				is_upgrading = no
+			}
+		}
+		modifier = {
+			add = 30000
+			any_owned_megastructure = {
+				is_megastructure_type = crisis_sphere_1
+				is_upgrading = no
+			}
+		}
+		modifier = {
+			add = 40000
+			any_owned_megastructure = {
+				is_megastructure_type = crisis_sphere_2
+				is_upgrading = no
+			}
+		}
+		modifier = {
+			add = 50000
+			any_owned_megastructure = {
+				is_megastructure_type = crisis_sphere_3
+				is_upgrading = no
+			}
+		}
+	}
+}
+
+dark_matter_expenditure_upgrade = {
+	resource = sr_dark_matter
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		base = 0.1
 	}
 }
 
@@ -28,23 +132,11 @@ dark_matter_expenditure_trade = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.1
 	}
 }
 
-dark_matter_expenditure_planets = {
-	resource = sr_dark_matter
-	type = expenditure
-	category = planets
-
-	potential = {
-		always = yes
-	}
-
-	weight = {
-		weight = 0.3
-	}
-}
+# Upkeep -----------------------------------------------------------------
 
 dark_matter_upkeep_planets = {
 	resource = sr_dark_matter
@@ -56,7 +148,7 @@ dark_matter_upkeep_planets = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.9
 	}
 }
 
@@ -70,7 +162,7 @@ dark_matter_upkeep_ships = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.1
 	}
 }
 

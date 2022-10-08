@@ -4,17 +4,18 @@
 #################
 ## Expenditure ##
 #################
-living_metal_expenditure_edicts = {
+
+living_metal_expenditure_planets = {
 	resource = sr_living_metal
 	type = expenditure
-	category = edicts
+	category = planets
 
 	potential = {
 		always = yes
 	}
 
 	weight = {
-		base = 0.1
+		weight = 0.2
 	}
 }
 
@@ -28,7 +29,25 @@ living_metal_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.1
+		modifier = {
+			factor = 5
+			is_dragon_breeder_country = yes
+		}
+	}
+}
+
+living_metal_expenditure_upgrade = {
+	resource = sr_living_metal
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		base = 0.1
 	}
 }
 
@@ -42,23 +61,11 @@ living_metal_expenditure_trade = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.1
 	}
 }
 
-living_metal_expenditure_planets = {
-	resource = sr_living_metal
-	type = expenditure
-	category = planets
-
-	potential = {
-		always = yes
-	}
-
-	weight = {
-		weight = 0.3
-	}
-}
+# Upkeep -----------------------------------------------------------------
 
 living_metal_upkeep_planets = {
 	resource = sr_living_metal
@@ -70,7 +77,7 @@ living_metal_upkeep_planets = {
 	}
 
 	weight = {
-		weight = 0.5
+		weight = 0.9
 	}
 }
 
@@ -84,7 +91,7 @@ living_metal_upkeep_ships = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.1
 	}
 }
 

@@ -4,6 +4,21 @@
 #################
 ## Expenditure ##
 #################
+
+exotic_gases_expenditure_planets = {
+	resource = exotic_gases
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.2
+	}
+}
+
 exotic_gases_expenditure_ships = {
 	resource = exotic_gases
 	type = expenditure
@@ -14,10 +29,25 @@ exotic_gases_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.1
+		modifier = {
+			factor = 5
+			is_dragon_breeder_country = yes
+		}
 	}
-	desired_min = {
-		base = 50
+}
+
+exotic_gases_expenditure_upgrade = {
+	resource = exotic_gases
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		base = 0.1
 	}
 }
 
@@ -31,26 +61,51 @@ exotic_gases_expenditure_trade = {
 	}
 
 	weight = {
-		weight = 0.2
+		weight = 0.1
 	}
 }
 
-exotic_gases_expenditure_planets = {
+exotic_gases_expenditure_starbases = {
 	resource = exotic_gases
 	type = expenditure
-	category = planets
+	category = starbases
 
 	potential = {
-		always = yes
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {
-		weight = 0.5
-	}
-	desired_min = {
-		base = 500
+		weight = 0.2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_nonprimary_starbase = {
+					exists = planet
+					OR = {
+						AND = {
+							has_starbase_size = orbital_ring_tier_2
+							count_starbase_buildings = {
+								count = 0
+							}
+						}
+						AND = {
+							has_starbase_size = orbital_ring_tier_3
+							count_starbase_buildings = {
+								count < 2
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
+
+# Upkeep ----------------------------------------------------------
 
 exotic_gases_upkeep_planets = {
 	resource = exotic_gases
@@ -62,78 +117,21 @@ exotic_gases_upkeep_planets = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.9
 	}
 }
 
-exotic_gases_upgrade_ships = {
+exotic_gases_upkeep_ships = {
 	resource = exotic_gases
-	type = expenditure
-	category = ship_upgrades
+	type = upkeep
+	category = ships
 
 	potential = {
 		always = yes
 	}
 
 	weight = {
-		weight = 1
-	}
-}
-
-exotic_gases_expenditure_edicts = {
-	resource = exotic_gases
-	type = expenditure
-	category = edicts
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = exotic_gases
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-}
-exotic_gases_expenditure_shipedicts = {
-	resource = exotic_gases
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = exotic_gases
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-	desired_min = {
-		base = 0
-		modifier = {
-			add = 1000
-			is_at_war = yes
-		}
-	}
-}
-
-exotic_gases_expenditure_rareedicts = {
-	resource = exotic_gases
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = exotic_gases
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
+		weight = 0.1
 	}
 }
 
@@ -158,7 +156,23 @@ exotic_gases_upkeep_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
-		str_ai_should_build_megastructures = yes
+	}
+
+	weight = {
+		weight = 0.1
+	}
+}
+
+exotic_gases_upkeep_starbases = {
+	resource = exotic_gases
+	type = upkeep
+	category = starbases
+
+	potential = {
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {

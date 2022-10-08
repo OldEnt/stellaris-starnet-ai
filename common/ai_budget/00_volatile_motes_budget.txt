@@ -4,6 +4,21 @@
 #################
 ## Expenditure ##
 #################
+
+volatile_motes_expenditure_planets = {
+	resource = volatile_motes
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.2
+	}
+}
+
 volatile_motes_expenditure_ships = {
 	resource = volatile_motes
 	type = expenditure
@@ -14,10 +29,21 @@ volatile_motes_expenditure_ships = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.1
 	}
-	desired_min = {
-		base = 50
+}
+
+volatile_motes_expenditure_upgrade = {
+	resource = volatile_motes
+	type = expenditure
+	category = ship_upgrades
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		base = 0.1
 	}
 }
 
@@ -31,26 +57,51 @@ volatile_motes_expenditure_trade = {
 	}
 
 	weight = {
-		weight = 0.2
+		weight = 0.1
 	}
 }
 
-volatile_motes_expenditure_planets = {
+volatile_motes_expenditure_starbases = {
 	resource = volatile_motes
 	type = expenditure
-	category = planets
+	category = starbases
 
 	potential = {
-		always = yes
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {
-		weight = 0.5
-	}
-	desired_min = {
-		base = 500
+		weight = 0.2
+
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_nonprimary_starbase = {
+					exists = planet
+					OR = {
+						AND = {
+							has_starbase_size = orbital_ring_tier_2
+							count_starbase_buildings = {
+								count = 0
+							}
+						}
+						AND = {
+							has_starbase_size = orbital_ring_tier_3
+							count_starbase_buildings = {
+								count < 2
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
+
+# Upkeep -----------------------------------------------------------
 
 volatile_motes_upkeep_planets = {
 	resource = volatile_motes
@@ -62,76 +113,21 @@ volatile_motes_upkeep_planets = {
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.9
 	}
 }
 
-volatile_motes_upgrade_ships = {
+volatile_motes_upkeep_ships = {
 	resource = volatile_motes
-	type = expenditure
-	category = ship_upgrades
+	type = upkeep
+	category = ships
 
 	potential = {
 		always = yes
 	}
 
 	weight = {
-		weight = 1
-	}
-}
-volatile_motes_expenditure_edicts = {
-	resource = volatile_motes
-	type = expenditure
-	category = edicts
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = volatile_motes
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-}
-volatile_motes_expenditure_rareedicts = {
-	resource = volatile_motes
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = volatile_motes
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-}
-volatile_motes_expenditure_shipedicts = {
-	resource = volatile_motes
-	type = expenditure
-	category = country
-
-	potential = {
-		resource_stockpile_compare = {
-			resource = volatile_motes
-			value > 100
-		}
-	}
-
-	weight = {
-		weight = 1
-	}
-	desired_min = {
-		base = 0
-		modifier = {
-			add = 1000
-			is_at_war = yes
-		}
+		weight = 0.1
 	}
 }
 
@@ -156,7 +152,23 @@ volatile_motes_upkeep_hyper_relays = {
 
 	potential = {
 		has_technology = tech_hyper_relays
-		str_ai_should_build_megastructures = yes
+	}
+
+	weight = {
+		weight = 0.1
+	}
+}
+
+volatile_motes_upkeep_starbases = {
+	resource = volatile_motes
+	type = upkeep
+	category = starbases
+
+	potential = {
+		any_owned_nonprimary_starbase = {
+			has_starbase_size >= orbital_ring_tier_2
+			exists = planet
+		}
 	}
 
 	weight = {

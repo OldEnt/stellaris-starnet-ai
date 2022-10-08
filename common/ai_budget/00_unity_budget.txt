@@ -10,11 +10,11 @@ unity_expenditure_edicts = {
 	category = edicts
 
 	potential = {
-		always = yes
+		has_technology = tech_ascension_theory
 	}
 
 	weight = {
-		weight = 1
+		weight = 0.2
 	}
 }
 
@@ -45,7 +45,6 @@ unity_expenditure_megastructures = {
 			type = unity
 			amount > 7500
 		}
-		str_ai_should_build_megastructures = yes
 	}
 
 	weight = {
@@ -123,10 +122,6 @@ unity_expenditure_leaders = {
 
 	weight = {
 		weight = 0.4
-		modifier = {
-			add = 15
-			years_passed < 50	# Important for scientists
-		}
 	}
 }
 
@@ -159,18 +154,10 @@ unity_upkeep_leaders = {
 
 	weight = {
 		weight = 0.3
-		modifier = {
-			add = 15
-			years_passed < 50	# Important for scientists
-		}
-	}
-
-	desired_min = {
-		base = 20
 	}
 
 	desired_max = {
-		base = 200
+		base = 50
 	}
 }
 
