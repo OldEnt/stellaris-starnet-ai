@@ -167,7 +167,7 @@ unity_upkeep_leaders = {
 	weight = {
 		weight = 0.3
 		modifier = {
-			add = 0.2
+			add = 1
 			years_passed < 5	# Important for scientists
 		}
 	}

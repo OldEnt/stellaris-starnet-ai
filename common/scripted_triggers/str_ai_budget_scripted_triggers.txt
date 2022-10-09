@@ -254,7 +254,14 @@ str_ai_budget_potential_minerals_expenditure_colonies_lithoid_expand = {
 }
 
 str_ai_budget_potential_minerals_expenditure_ships = {
-	always = yes
+	NOT = {
+		str_strategic_stop_building_ships = {
+			UPKEEP_RESOURCE_NAME = energy
+			UPKEEP_RESOURCE_STOCKPILE_COMPARE = 1000
+			UPKEEP_RESOURCE_INCOME_COMPARE = 100
+			UPKEEP_RESOURCE_INCOME_TO_EXPENDITURE_BALANCE_RATIO = 1.1
+		}
+	}
 }
 
 str_ai_budget_potential_minerals_expenditure_ship_upgrades = {
@@ -349,7 +356,14 @@ str_ai_budget_potential_alloys_expenditure_buffer = {
 }
 
 str_ai_budget_potential_alloys_expenditure_ships = {
-	always = yes
+	NOT = {
+		str_strategic_stop_building_ships = {
+			UPKEEP_RESOURCE_NAME = energy
+			UPKEEP_RESOURCE_STOCKPILE_COMPARE = 1000
+			UPKEEP_RESOURCE_INCOME_COMPARE = 100
+			UPKEEP_RESOURCE_INCOME_TO_EXPENDITURE_BALANCE_RATIO = 1.1
+		}
+	}
 }
 
 str_ai_budget_potential_alloys_expenditure_ship_upgrades = {

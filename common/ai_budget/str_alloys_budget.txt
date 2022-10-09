@@ -1,0 +1,23 @@
+str_alloys_expenditure_ships_rush = {
+	resource = alloys
+	type = expenditure
+	category = ships
+	potential = {
+		has_ai_personality = ferocious_rusher
+		any_neighbor_country = {
+			OR = {
+				is_country_type = default
+				merg_is_default_empire = yes
+			}
+			NOT = {
+				has_truce = prev
+			}
+		}
+	}
+	weight = {
+		weight = 0.5
+	}
+	desired_min = {
+		base = 500
+	}
+}
