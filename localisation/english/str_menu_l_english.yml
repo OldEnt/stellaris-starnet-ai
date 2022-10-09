@@ -22,6 +22,7 @@
  str_truce: "$str_or_tech_fork_switch$ $TRUCE$"
  STR_CANNOT_COLONIZE_HOLY_WORLD: "$str_or_tech_fork_switch$: AI not allowed to colonise holy worlds."
  STR_CAN_DECLARE_WAR: "§H$str_menu.1.truce.status.1$.§!\n§R$str_menu.1.truce.status.2$.§!§R$STR_CAN_DECLARE_WAR_str_country_banned_from_declare_war$$STR_CAN_DECLARE_WAR_str_country_war_immunity$§!"
+ STR_CANNOT_CLAIM_FALLEN_EMPIRE: "$str_or_tech_fork_switch$: AI not allowed to claim equivalent or superior fallen empire."
  str_truce_country_banned_from_declare_war: "\n$ATTACKER$ $IS_STRING$ $treaties_separate_no$."
  str_truce_country_war_immunity: "\n$DEFENDER$ $IS_STRING$ $pre_sapients_protect$."
  STR_CAN_DECLARE_WAR_str_country_banned_from_declare_war: "[GetName_str_country_banned_from_declare_war]"

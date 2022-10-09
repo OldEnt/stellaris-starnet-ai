@@ -8,6 +8,14 @@ merg_is_default_empire = {
 	always = no
 }
 
+merg_is_fallen_empire = {
+	always = no
+}
+
+merg_is_awakened_fe = {
+	always = no
+}
+
 giga_has_amb_important_origin = {
 	always = no
 }

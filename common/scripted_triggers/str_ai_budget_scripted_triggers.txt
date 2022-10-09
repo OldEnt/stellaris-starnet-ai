@@ -8,7 +8,7 @@ str_ai_budget_potential_dark_matter_expenditure_ships = {
 }
 
 str_ai_budget_potential_dark_matter_expenditure_megastructures = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_dark_matter_expenditure_upgrade = {
@@ -425,7 +425,7 @@ str_ai_budget_potential_unity_expenditure_traditions = {
 }
 
 str_ai_budget_potential_unity_expenditure_megastructures = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_unity_expenditure_decisions = {
