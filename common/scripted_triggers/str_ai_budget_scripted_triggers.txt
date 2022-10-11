@@ -31,6 +31,51 @@ str_ai_budget_potential_dark_matter_upkeep_edicts = {
 	always = yes
 }
 
+# energy
+str_ai_budget_potential_energy_expenditure_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_planets_gaia_seeder = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_trade = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_trade_deficit = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_colonies = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_deposit_blockers = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_megastructures = {
+	str_ai_should_build_megastructures = yes
+}
+
+str_ai_budget_potential_energy_expenditure_decisions = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_expenditure_terraforming = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_upkeep_buffer = {
+	always = yes
+}
+
+str_ai_budget_potential_energy_upkeep_country = {
+	always = yes
+}
+
 # exotic_gases_expenditure_planets
 str_ai_budget_potential_exotic_gases_expenditure_planets = {
 	always = yes
@@ -65,7 +110,7 @@ str_ai_budget_potential_exotic_gases_upkeep_edicts = {
 }
 
 str_ai_budget_potential_exotic_gases_upkeep_hyper_relays = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_exotic_gases_upkeep_starbases = {
@@ -131,15 +176,15 @@ str_ai_budget_potential_influence_expenditure_stations = {
 }
 
 str_ai_budget_potential_influence_expenditure_claims = {
-	always = yes
+	str_is_allowed_to_make_claims = yes
 }
 
 str_ai_budget_potential_influence_expenditure_claims_militarist = {
-	always = yes
+	str_is_allowed_to_make_claims = yes
 }
 
 str_ai_budget_potential_influence_expenditure_claims_fanatic_militarist = {
-	always = yes
+	str_is_allowed_to_make_claims = yes
 }
 
 str_ai_budget_potential_influence_expenditure_megastructures = {
@@ -323,7 +368,7 @@ str_ai_budget_potential_rare_crystals_expenditure_trade = {
 }
 
 str_ai_budget_potential_rare_crystals_expenditure_hyper_relays = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_rare_crystals_expenditure_starbases = {
@@ -343,7 +388,7 @@ str_ai_budget_potential_rare_crystals_upkeep_edicts = {
 }
 
 str_ai_budget_potential_rare_crystals_upkeep_hyper_relays = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_rare_crystals_upkeep_starbases = {
@@ -486,7 +531,7 @@ str_ai_budget_potential_volatile_motes_upkeep_edicts = {
 }
 
 str_ai_budget_potential_volatile_motes_upkeep_hyper_relays = {
-	always = yes
+	str_ai_should_build_megastructures = yes
 }
 
 str_ai_budget_potential_volatile_motes_upkeep_starbases = {

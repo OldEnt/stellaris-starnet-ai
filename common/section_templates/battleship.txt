@@ -653,6 +653,7 @@ ship_section_template = {
 		name = "MEDIUM_GUN_01"
 		template = "medium_turret"
 		locatorname = "medium_gun_01"
+
 	}
 	component_slot = {
 		name = "MEDIUM_GUN_02"

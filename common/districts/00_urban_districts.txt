@@ -849,6 +849,7 @@ district_industrial = {
 				is_regular_empire = yes
 				is_crafter_empire = no
 			}
+			NOT = { has_designation = col_foundry }
 		}
 		text = job_artisan_effect_desc
 	}
@@ -860,6 +861,7 @@ district_industrial = {
 				is_regular_empire = yes
 				is_crafter_empire = yes
 			}
+			NOT = { has_designation = col_foundry }
 		}
 		text = job_artificer_effect_desc
 	}
@@ -882,6 +884,7 @@ district_industrial = {
 				is_regular_empire = yes
 				is_catalytic_empire = no
 			}
+			NOT = { has_designation = col_factory }
 		}
 		text = job_foundry_effect_desc
 	}
@@ -893,6 +896,7 @@ district_industrial = {
 				is_regular_empire = yes
 				is_catalytic_empire = yes
 			}
+			NOT = { has_designation = col_factory }
 		}
 		text = job_catalytic_technician_effect_desc
 	}

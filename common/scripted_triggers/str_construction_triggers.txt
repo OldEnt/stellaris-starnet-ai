@@ -1659,6 +1659,19 @@ str_ai_should_build_megastructures = {
 				str_is_megastructures_empire = no				# Megastructures empires should build megastructures anyway.
 			}
 		}
+		OR = {
+			is_at_war = no
+			any_war = {
+				any_war_participant = {
+					is_hostile = prevprev
+					relative_power = {
+						who = prevprev
+						category = fleet
+						value < equivalent
+					}
+				}
+			}
+		}
 	}
 }
 

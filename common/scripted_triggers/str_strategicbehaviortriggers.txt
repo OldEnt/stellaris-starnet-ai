@@ -1,16 +1,28 @@
-prepare_for_war = {
+str_prepare_for_war = {
 	years_passed > 12
 	#Alchemy code used to see if there is any country WE are hostile towards
 	#The reason we even ask this question is the following:
 	#If ai behavior is already hostile (I can't mod the behaviors sadly)
 	#that means ai will claim and declare war as soon as it has the influence
 	#so saving influence won't be wasted
-	any_neighbor_country = {
-		is_country_type = default
-		prev = {
-			or = {
-				is_hostile_to = prev
-				is_unfriendly_to = prev
+	OR = {
+		is_at_war = yes
+		any_neighbor_country = {
+			OR = {
+				is_country_type = default
+				merg_is_default_empire = yes
+				has_ascension_perk = ap_become_the_crisis
+			}
+			prev = {
+				OR = {
+					is_hostile_to = prev
+					is_unfriendly_to = prev
+				}
+				# relative_power = {
+				# 	who = prev
+				# 	category = all
+				# 	value >= equivalent
+				# }
 			}
 		}
 	}
@@ -255,7 +267,7 @@ safespace = {
 #scared_of_neighbour = no
 #scared_of_neighbour = no
 #scared_of_neighbour = no
-#prepare_for_war = no
+#str_prepare_for_war = no
 #}
 needs_shipyard = {
 	#country scope

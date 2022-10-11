@@ -1277,14 +1277,12 @@ building_overseer_homes = {
 	}
 }
 
-#TODO: AI
 building_ranger_lodge = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	category = amenity
 	icon = holding_park_ranger_lodge
 	potential = {
-		always = no
 		NOT = {	has_modifier = slave_colony	}
 		owner = {
 			is_regular_empire = yes
@@ -1300,6 +1298,12 @@ building_ranger_lodge = {
 	}
 
 	allow = {
+		hidden_trigger = {
+			exists = owner
+			owner = {
+				is_ai = no
+			}
+		}
 		custom_tooltip = {
 			fail_text = no_free_district_for_ranger_lodge
 			planet = {

@@ -103,6 +103,11 @@ rare_crystals_expenditure_starbases = {
 		weight = 0.2
 
 		modifier = {
+			factor = 0.1
+			is_at_war = yes
+		}
+
+		modifier = {
 			factor = 0
 			NOT = {
 				any_owned_nonprimary_starbase = {

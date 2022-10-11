@@ -536,3 +536,28 @@ fleet_event = {
 		}
 	}
 }
+
+# A Megastructure has been built
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
+# on_megastructure_built
+country_event = {
+	id = starnet.400
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		from = {
+			is_megastructure_type = habitat_0
+		}
+	}
+	immediate = {
+		root = {
+			set_timed_country_flag = {
+				flag = str_just_built_a_hab
+				days = 1800
+			}
+		}
+	}
+}

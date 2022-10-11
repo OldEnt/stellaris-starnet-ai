@@ -176,6 +176,10 @@ alloys_expenditure_starbases = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0.1
+			is_at_war = yes
+		}
 	}
 	desired_max = {
 		base = 12000
@@ -194,6 +198,10 @@ alloys_expenditure_starbases_fallen_empires = {
 
 	weight = {
 		weight = 0.2
+		modifier = {
+			factor = 0.1
+			is_at_war = yes
+		}
 	}
 }
 

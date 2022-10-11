@@ -674,10 +674,7 @@ slaving_despots = {
 
 	allow = {
 		is_country_type = default
-		or = {
-			has_valid_civic = civic_slaver_guilds
-			has_origin = origin_necrophage
-		}
+		has_valid_civic = civic_slaver_guilds
 		NOR = {
 			has_ethic = "ethic_pacifist"
 			has_ethic = "ethic_fanatic_pacifist"
@@ -1859,7 +1856,6 @@ galactic_defense_force = {
 	}
 }
 
-#TODO: AI
 imperial_origin_overlord_ai = {
 	aggressiveness = 0.1
 	trade_willingness = 0.25
@@ -1878,7 +1874,7 @@ imperial_origin_overlord_ai = {
 		uplifter = no
 		purger = no
 		displacer = no
-		dominator = no
+		dominator = yes
 		infiltrator = no
 		robot_exploiter = no
 		robot_liberator = no
@@ -1887,6 +1883,7 @@ imperial_origin_overlord_ai = {
 		crisis_fighter = yes
 		crisis_leader = no
 		attack_neutrals = no
+		wants_tribute = yes
 	}
 
 	allow = {

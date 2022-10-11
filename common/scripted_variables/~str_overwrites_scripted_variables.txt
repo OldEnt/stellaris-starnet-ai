@@ -2,7 +2,6 @@
 # @something = 42
 # They can be overridden in each normal script file.
 
-
 @special_job_weight = 0.01 # Intentionally very low weight	
 
 @ruler_job_weight = 10000
@@ -19,3 +18,4 @@
 @complex_drone_job_weight = 400
 @simple_drone_job_weight = 1
 
+@armies_for_declaring_war = 0

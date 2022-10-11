@@ -37,116 +37,6 @@
 
 # NOTE: Remember to add Resolutions to a Resolution Category!
 
-# Galactic Market Resolutions
-resolution_galactic_market_form = {
-	icon = "GFX_resolution_form_galactic_market"
-
-	resources = {
-		category = resolutions
-		cost = {
-			influence = @resolution_cost_t1
-		}
-	}
-	target = no
-
-	effect = {
-		custom_tooltip = resolution_galactic_market_form_effect_success
-		hidden_effect = {
-			# Kickoff the Forming the Market event chain
-			country_event = { id = action.96 }
-
-			set_global_flag = galactic_community_resolution_passed
-
-			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
-
-			add_modifier = {
-				modifier = resolution_passed_diplomatic_weight
-				days = 2200
-			}
-		}
-	}
-
-	fail_effects = {
-		hidden_effect = {
-			set_timed_country_flag = { flag = galactic_community_resolution_failed_general days = @resolution_flag_timer }
-			add_modifier = {
-				modifier = resolution_failed_diplomatic_weight
-				days = 2200
-			}
-		}
-	}
-
-	modifier = {
-		country_resource_max_add = 10000
-	}
-
-	potential = {
-		NOR = {
-			has_global_flag = galactic_market_founded
-			has_global_flag = ongoing_market_nomination
-		}
-
-		is_gestalt = no
-		is_homicidal = no
-		count_relation = {
-			limit = {
-				is_country_type = default
-				is_homicidal = no
-			}
-			count >= 3
-		}
-	}
-
-	ai_weight = {
-		base = @resolution_weight_popular
-
-		modifier = {
-			factor = 2
-			has_authority = auth_corporate
-			desc = auth_corporate
-		}
-
-		modifier = {
-			factor = 1.25
-			OR = {
-				has_ai_personality = peaceful_traders
-				has_ai_personality = ruthless_capitalists
-			}
-			desc = gal_com_trader_ai_personality
-		}
-
-		modifier = {
-			factor = 0.5
-			has_ai_personality = xenophobic_isolationists
-			desc = personality_xenophobic_isolationists
-		}
-
-		modifier = {
-			factor = 0.8
-			is_xenophobe = yes
-			desc = ethic_xenophobe
-		}
-
-		modifier = {
-			factor = 2
-			years_passed > 50
-			desc = gal_com_years_passed
-		}
-
-		modifier = {
-			factor = 2
-			years_passed > 100
-			desc = gal_com_years_passed
-		}
-
-		modifier = {
-			factor = 2
-			years_passed > 150
-			desc = gal_com_years_passed
-		}
-	}
-}
-
 # Ecology
 
 resolution_ecology_repeal_1 = {
@@ -9366,6 +9256,7 @@ resolution_divinity_a_defined_purpose = {
 				NOT = { has_valid_civic = civic_machine_servitor }
 			}
 		}
+
 	}
 
 	ai_weight = {
@@ -9877,19 +9768,21 @@ resolution_galacticreforms_council_size_2 = {
 
 		modifier = {
 			factor = 3
-			AND = {
-				num_council_positions = 1
-				OR = {
-					galactic_community_rank = 2
-					AND = {
-						is_subject = yes
-						overlord = {
-							opinion_level = { who = prev level >= neutral }
-							galactic_community_rank = 2
+
+				AND = {
+					num_council_positions = 1
+					OR = {
+						galactic_community_rank = 2
+						AND = {
+							is_subject = yes
+							overlord = {
+								opinion_level = { who = prev level >= neutral }
+								galactic_community_rank = 2
+							}
 						}
 					}
 				}
-			}
+
 			desc = gal_com_wants_to_add_themselves_or_overlord_to_council
 		}
 
@@ -14739,6 +14632,117 @@ resolution_repeal_amoeba_conservation_act = {
 	}
 }
 
+
+# Galactic Market Resolutions
+resolution_galactic_market_form = {
+	icon = "GFX_resolution_form_galactic_market"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+
+	effect = {
+		custom_tooltip = resolution_galactic_market_form_effect_success
+		hidden_effect = {
+			# Kickoff the Forming the Market event chain
+			country_event = { id = action.96 }
+
+			set_global_flag = galactic_community_resolution_passed
+
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
+
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_general days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	modifier = {
+		country_resource_max_add = 10000
+	}
+
+	potential = {
+		NOR = {
+			has_global_flag = galactic_market_founded
+			has_global_flag = ongoing_market_nomination
+		}
+
+		is_gestalt = no
+		is_homicidal = no
+		count_relation = {
+			limit = {
+				is_country_type = default
+				is_homicidal = no
+			}
+			count >= 3
+		}
+	}
+
+	ai_weight = {
+		base = @resolution_weight_popular
+
+		modifier = {
+			factor = 2
+			has_authority = auth_corporate
+			desc = auth_corporate
+		}
+
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = ruthless_capitalists
+			}
+			desc = gal_com_trader_ai_personality
+		}
+
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+			desc = personality_xenophobic_isolationists
+		}
+
+		modifier = {
+			factor = 0.8
+			is_xenophobe = yes
+			desc = ethic_xenophobe
+		}
+
+		modifier = {
+			factor = 2
+			years_passed > 50
+			desc = gal_com_years_passed
+		}
+
+		modifier = {
+			factor = 2
+			years_passed > 100
+			desc = gal_com_years_passed
+		}
+
+		modifier = {
+			factor = 2
+			years_passed > 150
+			desc = gal_com_years_passed
+		}
+	}
+}
+
 resolution_galactic_market_ban_sentient_organic_slave_trade = {
 	icon = "GFX_resolution_galactic_market_slave_trade"
 
@@ -14776,6 +14780,7 @@ resolution_galactic_market_ban_sentient_organic_slave_trade = {
 	potential = {
 		has_federations_dlc = yes
 		host_has_dlc = "Megacorp"
+		has_global_flag = galactic_market_founded
 		NOT = {
 			is_active_resolution = "resolution_galactic_market_ban_sentient_organic_slave_trade"
 			has_global_flag = organic_slave_trade_banned_flag
@@ -14857,6 +14862,7 @@ resolution_galactic_market_repeal_sentient_organic_slave_trade = {
 	potential = {
 		has_federations_dlc = yes
 		host_has_dlc = "Megacorp"
+		has_global_flag = galactic_market_founded
 		has_global_flag = organic_slave_trade_banned_flag
 		is_active_resolution = "resolution_galactic_market_ban_sentient_organic_slave_trade"
 	}
@@ -14936,6 +14942,7 @@ resolution_galactic_market_ban_sentient_slave_trade = {
 	potential = {
 		has_federations_dlc = yes
 		host_has_dlc = "Megacorp"
+		has_global_flag = galactic_market_founded
 		has_global_flag = organic_slave_trade_banned_flag
 		is_active_resolution = "resolution_galactic_market_ban_sentient_organic_slave_trade"
 	}
@@ -15021,6 +15028,7 @@ resolution_galactic_market_allow_sentient_slave_trade = {
 	potential = {
 		has_federations_dlc = yes
 		host_has_dlc = "Megacorp"
+		has_global_flag = galactic_market_founded
 		has_global_flag = sentient_slave_trade_banned_flag
 		is_active_resolution = "resolution_galactic_market_ban_sentient_slave_trade"
 	}

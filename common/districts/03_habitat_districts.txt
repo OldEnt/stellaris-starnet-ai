@@ -71,6 +71,13 @@ district_hab_housing = {
 
 	triggered_desc = {
 		trigger = {
+			has_designation = col_habitat_gestalt_farming
+		}
+		text = job_agri_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}

@@ -340,6 +340,7 @@ mega_shipyard_permanently_ruined = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
 	show_galactic_map_icon = no
+	show_in_outliner = no
 	upgrade_from = {
 	}
 

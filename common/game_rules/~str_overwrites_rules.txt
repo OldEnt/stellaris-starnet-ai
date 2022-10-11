@@ -220,6 +220,7 @@ can_colonize_planet = {
 		limit = {
 			has_global_flag = str_enabled_flag
 			has_modifier = "holy_planet"
+			exists = root
 			root = {
 				is_ai = yes
 				NOT = {

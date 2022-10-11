@@ -10,7 +10,7 @@ energy_expenditure_buffer = { # Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_energy_expenditure_buffer = yes
 	}
 
 	weight = {
@@ -24,6 +24,7 @@ energy_expenditure_planets_gaia_seeder = {
 	category = planets
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_planets_gaia_seeder = yes
 		OR = {
 			has_valid_civic = civic_idyllic_bloom
 			has_valid_civic = civic_hive_idyllic_bloom
@@ -52,6 +53,7 @@ energy_expenditure_trade = {
 	category = trade
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_trade = yes
 		has_resource = {
 			type = energy
 			amount > 5000
@@ -69,6 +71,7 @@ energy_expenditure_trade_deficit = {
 	category = trade
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_trade_deficit = yes
 		has_resource = {
 			type = energy
 			amount > 500
@@ -128,6 +131,7 @@ energy_expenditure_colonies = {
 	category = colonies
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_colonies = yes
 		ai_colonize_plans > 0
 		OR = {
 			has_civic = civic_corporate_dominion
@@ -151,6 +155,7 @@ energy_expenditure_deposit_blockers = {
 	category = deposit_blockers
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_deposit_blockers = yes
 		any_owned_planet = {
 			num_uncleared_blockers > 0
 		}
@@ -186,6 +191,7 @@ energy_expenditure_megastructures = {
 	category = megastructures
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_megastructures = yes
 		is_country_type = default
 		has_technology = tech_gateway_activation
 		is_at_war = no
@@ -216,6 +222,7 @@ energy_expenditure_decisions = {
 	category = decisions
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_decisions = yes
 		# only consider these kinds of decisions when "wealthy"
 		has_resource = {
 			type = energy
@@ -239,6 +246,7 @@ energy_expenditure_terraforming = {
 	category = terraforming
 
 	potential = {
+		str_ai_budget_potential_energy_expenditure_terraforming = yes
 		has_technology = tech_terrestrial_sculpting
 	}
 
@@ -295,7 +303,7 @@ energy_upkeep_buffer = {	# Buffer, will not be spent
 	category = buffer
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_energy_upkeep_buffer = yes
 	}
 
 	weight = {
@@ -309,7 +317,7 @@ energy_upkeep_country = { # Covers most other things. Note: each category opts i
 	category = country
 
 	potential = {
-		always = yes
+		str_ai_budget_potential_energy_upkeep_country = yes
 	}
 
 	weight = {

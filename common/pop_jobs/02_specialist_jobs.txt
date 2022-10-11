@@ -2181,7 +2181,7 @@ knight = {
 
 	triggered_country_modifier = {
 		potential = {
-			owner = { has_country_flag = toxoids_7165_a }
+			owner = { has_modifier = alloy_producing_knights }
 		}
 		country_alloys_produces_mult = 0.015
 	}

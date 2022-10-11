@@ -48,6 +48,18 @@ slavery_normal = {
 				is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
 			}
 		}
+		modifier = {
+			factor = 5
+			has_trait = trait_syncretic_proles
+		}
+		modifier = {
+			factor = 1.2
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_very_strong
+		}
 	}
 }
 
@@ -165,6 +177,7 @@ slavery_indentured = {
 	allow = {
 		hidden_trigger = { always = yes }
 	}
+
 	ai_will_do = {
 		factor = 5000
 		modifier = {
@@ -179,10 +192,6 @@ slavery_indentured = {
 					type = slavery_indentured
 				}
 			}
-		}
-		modifier = {
-			factor = 0
-			has_trait = trait_syncretic_proles
 		}
 		modifier = {
 			factor = 50
@@ -207,6 +216,10 @@ slavery_indentured = {
 				has_trait = trait_natural_sociologists
 				has_trait = trait_intelligent
 			}
+		}
+		modifier = {
+			factor = 0
+			has_trait = trait_syncretic_proles
 		}
 	}
 }

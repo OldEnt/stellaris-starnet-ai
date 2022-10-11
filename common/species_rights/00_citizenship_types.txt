@@ -634,13 +634,12 @@ citizenship_purge = {
 	potential = {
 		exists = from
 		NOT = { from = { has_authority = auth_machine_intelligence } }
-		if = {
-			limit = { is_robotic_species = yes }
-			from = {
-				OR = {
-					has_policy_flag = robots_outlawed
-					has_authority = auth_hive_mind
-				}
+		OR = {
+			NOT = { has_trait = trait_mechanical }
+			from = { has_policy_flag = robots_outlawed }
+			AND = {
+				from = { has_authority = auth_hive_mind }
+				is_robotic_species = yes
 			}
 		}
 	}

@@ -505,13 +505,15 @@ col_nexus = {
 	icon = GFX_colony_type_urban
 
 	potential = {
-		exists = owner
-		owner = { is_ai = no }
-		owner = { is_machine_empire = yes }
 		NOR = {
 			uses_district_set = machine_world
 			uses_district_set = ring_world
 			uses_district_set = habitat
+		}
+		exists = owner
+		owner = {
+			is_ai = no
+			is_machine_empire = yes
 		}
 		is_special_colony_type = no
 	}
@@ -1010,6 +1012,7 @@ col_factory = {
 		}
 	}
 
+	# Used by AI to estimate the current effects of this designation
 	ai_resource_current_conversion = {
 		alloys = -0.5
 		consumer_goods = 1

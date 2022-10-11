@@ -62,3 +62,8 @@ on_terraforming_begun = {
 		str_economy_plan.4
 	}
 }
+on_megastructure_built = {
+	events = {
+		starnet.400
+	}
+}

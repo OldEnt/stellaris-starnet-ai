@@ -1,5 +1,5 @@
 str_is_allowed_to_build_outposts = {
-	or = {
+	OR = {
 		years_passed < @str_years_of_guaranteed_truce
 		years_passed > @str_ai_will_not_declare_war_until_aggressive
 		has_ethic = ethic_pacifist
@@ -12,10 +12,10 @@ str_is_allowed_to_build_outposts = {
 	}
 }
 
-is_allowed_to_make_claims = {
-	or = {
+str_is_allowed_to_make_claims = {
+	OR = {
 		has_country_flag = str_just_built_a_hab
-		not = {
+		NOT = {
 			has_technology = tech_habitat_1
 		}
 		years_passed < 50
@@ -24,12 +24,15 @@ is_allowed_to_make_claims = {
 			value > 250
 		}
 	}
-	or = {
-		prepare_for_war = yes
+	OR = {
+		str_prepare_for_war = yes
 		any_neighbor_country = {
-			or = {
+			OR = {
 				is_at_war_with = prev
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					merg_is_default_empire = yes
+				}
 				prev = {
 					opinion = {
 						who = prev
@@ -44,10 +47,14 @@ is_allowed_to_make_claims = {
 			}
 		}
 	}
-	or = {
-		not = { has_ascension_perk = ap_executive_vigor }
-		not = { has_technology = tech_power_hub_1 }
-		and = {
+	OR = {
+		NOT = {
+			has_ascension_perk = ap_executive_vigor
+		}
+		NOT = {
+			has_technology = tech_power_hub_1
+		}
+		AND = {
 			has_edict = capacity_subsidies
 			calc_true_if = {
 				amount > 2
@@ -61,10 +68,17 @@ is_allowed_to_make_claims = {
 			value > 220
 		}
 	}
-	or = {
-		not = { has_technology = tech_power_hub_1 }
+	OR = {
+		NOT = {
+			has_technology = tech_power_hub_1
+		}
 		has_edict = capacity_subsidies
-		and = { has_edict = fortify_the_border not = { has_ascension_perk = ap_executive_vigor } }
+		AND = {
+			has_edict = fortify_the_border
+			not = {
+				has_ascension_perk = ap_executive_vigor
+			}
+		}
 	}
 }
 

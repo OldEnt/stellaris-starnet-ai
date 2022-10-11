@@ -31,17 +31,6 @@ sshipyard = {
 			mult = 100
 		}
 		modifier = {
-			add = 500
-			owner = { needs_shipyard = yes }
-			not = { has_starbase_module = anchorage }
-		}
-		modifier = {
-			add = 200
-			owner = { needs_shipyard = yes }
-			has_starbase_module = anchorage 
-		}
-
-		modifier = {
 			add = 1000
 			owner = {
 				NOT = {
@@ -50,6 +39,11 @@ sshipyard = {
 					}
 				}
 			}
+		}
+		modifier = {
+			add = 500
+			owner = { needs_shipyard = yes }
+			not = { has_starbase_module = anchorage }
 		}
 	}
 
@@ -175,10 +169,10 @@ sanchorage = {
 			fleet_academy = {
 				base = 0.05
 			}
+			
 			hydroponics_bay = {
 				base = 1.00
 			}
-
 
 			naval_logistics_office = {
 				base = 6.5
@@ -201,7 +195,12 @@ sanchorage = {
 				base = 1.00
 			}
 			shipyard = {
-				base = 0.5
+				base = 0
+				modifier = {
+					add = 0.5
+					owner = { needs_shipyard = yes }
+					not = { has_starbase_module = shipyard }
+				}
 			}
 		}
 	}
