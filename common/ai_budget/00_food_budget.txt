@@ -162,7 +162,7 @@ food_upkeep_ships = {
 	}
 
 	weight = {
-		weight = 5
+		weight = 0.5
 	}
 }
 

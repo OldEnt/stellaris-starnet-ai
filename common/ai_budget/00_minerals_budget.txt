@@ -417,3 +417,17 @@ minerals_upkeep_ships = {
 		weight = 0.3
 	}
 }
+
+minerals_upkeep_country = {
+	resource = minerals
+	type = upkeep
+	category = country
+
+	potential = {
+		always = yes
+	}
+	
+	weight = {
+		weight = 0.1
+	}
+}

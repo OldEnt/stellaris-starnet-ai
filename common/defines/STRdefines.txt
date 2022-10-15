@@ -17,11 +17,6 @@
 		DEFAULT_SHIELD_RATIO = 0.4
 	}
 
-	NPop = {
-		SAME_STRATA_EMPLOYMENT_BONUS		= 25.0 # How much score will be added to an unemployed pop when considering it for a job in the same strata
-		FAVORITE_JOB_EMPLOYMENT_BONUS		= 1000 # How much will be added to a jobs weight if it's favorited
-	}
-
 	NAI = {
 		AI_FREE_JOBS_DISTRICT_BUILD_CAP = 6			# AI will not build new districts on a planet with more than this many free jobs
 		AI_FREE_JOBS_BUILDING_BUILD_CAP = 6			# AI will not build new buildings on a planet with more than this many free jobs
@@ -275,8 +270,8 @@
 		CLAIM_COLONY_FACTOR = 500				# How much will AI prioritize colonies when making claims
 		CLAIM_BORDERING_FACTOR = 10				# How much will AI prioritize bordering systems when making claims
 
-		AI_ALLOWED_TO_BUY = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "volatile_motes" "rare_crystals"}
-		AI_ALLOWED_TO_SELL = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "sr_dark_matter" "sr_zro" "rare_crystals" "volatile_motes" "sr_living_metal" }
+		AI_ALLOWED_TO_BUY = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "rare_crystals" "volatile_motes"}
+		AI_ALLOWED_TO_SELL = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "rare_crystals" "volatile_motes" "sr_living_metal" "sr_dark_matter" "sr_zro"}
 		AI_MIN_CURRENCY_TO_SELL = 1300.0			# If the AI has less currency (energy) than this it will consider selling resources
 		AI_MIN_CURRENCY_INCOME_TO_SELL = 5.0	# If the AI has less currency (energy) gain last month than this it will consider selling resources
 
