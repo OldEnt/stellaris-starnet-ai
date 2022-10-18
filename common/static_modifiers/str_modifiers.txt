@@ -1,41 +1,52 @@
 ai_mdrone_neg1 = {
-    job_maintenance_drone_add = -1
+	job_maintenance_drone_add = -1
 }
 
 ai_mdrone_neg2 = {
-    job_maintenance_drone_add = -2
+	job_maintenance_drone_add = -2
 }
 
 ai_mdrone_neg4 = {
-    job_maintenance_drone_add = -4
+	job_maintenance_drone_add = -4
 }
 
 ai_mdrone_neg8 = {
-    job_maintenance_drone_add = -8
+	job_maintenance_drone_add = -8
 }
 
 ai_mdrone_neg16 = {
-    job_maintenance_drone_add = -16
+	job_maintenance_drone_add = -16
 }
+
+str_planet_audit_job_enforcer_add = {
+    job_enforcer_add = 1
+}
+
+# str_planet_audit_job_enforcer_per_pop = {
+#     job_enforcer_per_pop = 1
+# }
+
+# str_planet_audit_job_enforcer_per_crime = {
+#     job_enforcer_per_crime = 1
+# }
 
 # This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in patch. Can be removed in Stellaris 3.5. see event starnet.101
 ai_disable_popular_amenity_jobs_save_fix_1 = {
-    job_maintenance_drone_add = -1000
-    job_entertainer_add = -1000
-    job_duelist_add = -1000
-    planet_amenities_add = 1000
+	job_maintenance_drone_add = -1000
+	job_entertainer_add = -1000
+	job_duelist_add = -1000
+	planet_amenities_add = 1000
 }
 
 ai_disable_popular_amenity_jobs_save_fix_2 = {
-    planet_stability_add = 100
+	planet_stability_add = 100
 }
 
 str_fleet_pseudorepair = {
-    ship_armor_regen_add_perc = 100000
-    #AI sometimes will get its wounded ships be near the starbase instead of being on a starbase
-    #This causes them to "wait" for a repair that never comes and they get stuck forever
-    #Since as far as I know there is no way to issue an orbit order via a script I can't fix this
-
-    #The workaround I implemented is an event that will check if there any stuck ships and if they are it will heal them artificially using this modifier
-    #These ships couldn't have been healed by a starbase if they were orbitting it, but since ships are just on a starbase without orbitting this workaround is needed.
+	ship_armor_regen_add_perc = 100000
+	#AI sometimes will get its wounded ships be near the starbase instead of being on a starbase
+	#This causes them to "wait" for a repair that never comes and they get stuck forever
+	#Since as far as I know there is no way to issue an orbit order via a script I can't fix this
+	#The workaround I implemented is an event that will check if there any stuck ships and if they are it will heal them artificially using this modifier
+	#These ships couldn't have been healed by a starbase if they were orbitting it, but since ships are just on a starbase without orbitting this workaround is needed.
 }

@@ -169,7 +169,7 @@ decision_enact_population_control = {
 				is_ai = no
 				and = {
 					prev = { free_jobs < -3 }
-					years_passed > 150
+					years_passed > 100
 					not = { has_country_flag = str_has_room_to_grow }
 				}
 			}

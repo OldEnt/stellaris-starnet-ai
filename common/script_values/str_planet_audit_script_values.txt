@@ -1,0 +1,4 @@
+str_planet_audit_job_enforcer_add_value = {
+	add = modifier:job_enforcer_add
+	mult = -1
+}
