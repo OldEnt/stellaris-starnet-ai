@@ -126,7 +126,7 @@ minerals_expenditure_armies = {
 			factor = 10
 			NOT = {
 				count_owned_army = {
-					count >= @armies_for_declaring_war
+					count >= 6
 					limit = {
 						is_defensive_army = no
 					}
