@@ -1,0 +1,62 @@
+ferocious_rusher = {
+	aggressiveness = 20.0
+	trade_willingness = 0.5
+	bravery = 0.8
+	combat_bravery = 1.0
+
+	military_spending = 1.2
+	colony_spending = 1.2
+
+	federation_acceptance = -50
+
+	advanced_start_chance = 0
+
+	weapon_preferences = weapon_type_explosive
+	armor_ratio = 0.1
+	shields_ratio = 0.2
+	hull_ratio = 0.7
+
+	threat_modifier = 0.75
+	threat_others_modifier = 0.5
+	friction_modifier = 4
+	claims_modifier = 2.0
+
+	behaviour = {
+		conqueror = yes
+		subjugator = no
+		liberator = no
+		opportunist = yes
+		slaver = no
+		uplifter = no
+		purger = no
+		displacer = no
+		dominator = yes
+		infiltrator = no
+		robot_exploiter = no
+		robot_liberator = yes
+		propagator = yes
+		multispecies = no
+		crisis_fighter = yes
+	}
+
+	allow = {
+		has_country_flag = ferocious_rusher
+		any_neighbor_country = {
+			is_subject = no
+			not = { has_truce = prev }
+			root = {
+				or = {
+				has_claim = prev.capital_scope.solar_system
+				resource_stockpile_compare = {
+					resource = influence
+					value > 200
+				}
+			}
+		}
+		}
+	}
+
+	weight_modifier = {
+		weight = 10000
+	}
+}

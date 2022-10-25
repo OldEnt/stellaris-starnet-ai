@@ -19,7 +19,7 @@ building_commercial_zone = {
 		}
 		NOT = { has_modifier = slave_colony }
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -49,8 +49,6 @@ building_commercial_zone = {
 			}
 		}
 	}
-
-
 
 	resources = {
 		category = planet_buildings
@@ -243,6 +241,20 @@ building_galactic_stock_exchange = {
 				OR = {
 					is_ai = no
 					is_megacorp = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = orbital_defence
+			}
+			orbital_defence = {
+				exists = starbase
+				starbase = {
+					NOR = {
+						has_starbase_building = ring_galactic_stock_exchange
+						is_starbase_building_building = ring_galactic_stock_exchange
+					}
 				}
 			}
 		}

@@ -13,8 +13,8 @@ tr_versatility_adopt = {
 }
 
 tr_versatility_finish = {
+	custom_tooltip = tr_versatility_finish_desc
 	modifier = {
-		planet_building_refund_mult = 0.5
 		ascension_perks_add = 1
 	}
 }

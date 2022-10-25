@@ -69,6 +69,13 @@ str_on_game_start_register_vanilla_ship_sizes = {
 		# REFRESH = yes	# Use this parameter only if you want to clear all parameters (including MOD_NAME) inside already registered unit without killing it. Do not forget to provide new values (also see str_deregister_ship_size effect).
 	}
 	str_register_ship_size = {
+		SHIP_SIZE = frigate
+		MOD_NAME = vanilla
+		AI_SHIP_DATA_FACTOR = 25
+		SIZE_MULTIPLIER = 1
+		# REFRESH = yes	# Use this parameter only if you want to clear all parameters (including MOD_NAME) inside already registered unit without killing it. Do not forget to provide new values (also see str_deregister_ship_size effect).
+	}
+	str_register_ship_size = {
 		SHIP_SIZE = destroyer
 		MOD_NAME = vanilla
 		AI_SHIP_DATA_FACTOR = 25

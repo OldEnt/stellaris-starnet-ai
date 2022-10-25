@@ -1642,6 +1642,61 @@ tech_consumer_good_refinement_2 = {
 	}
 }
 
+tech_neuro_quantum_links = {
+	area = physics
+	tier = 3
+	cost = @tier3cost1
+	category = { computing }
+	prerequisites = { "tech_basic_science_lab_2" "tech_integrated_cybernetics" }
+	weight = @tier3weight1
+
+	modifier = {
+		planet_jobs_specialist_produces_mult = 0.05
+	}
+
+	potential = {
+		is_machine_empire = no
+	}
+
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0
+			host_has_dlc = "Utopia"
+		}
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_expertise_computing"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_curator"
+				}
+			}
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1000
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
 ### ENCRYPTION / DECRYPTION
 
 tech_encryption_1 = {
@@ -2433,6 +2488,66 @@ tech_shield_rechargers_1 = {
 			factor = 1000
 			has_technology= tech_battleships
 		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_shield_hardeners_1 = {
+	area = physics
+	cost = @tier2cost3
+	tier = 2
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_shield_rechargers_1" "tech_exotic_gases" }
+	weight = @tier2weight3
+
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+}
+
+tech_shield_hardeners_2 = {
+	area = physics
+	cost = @tier5cost3
+	tier = 5
+	category = { field_manipulation }
+	ai_update_type = all
+	prerequisites = { "tech_shield_hardeners_1" "tech_mine_zro" }
+	weight = @tier5weight3
+
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+
+	ai_weight = {
 		modifier = {
 			factor = 1.25
 			research_leader = {

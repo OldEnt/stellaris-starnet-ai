@@ -7,12 +7,12 @@ tr_prosperity_adopt = {
 tr_prosperity_finish = {
 	modifier = {
 		planet_jobs_produces_mult = 0.05
-		planet_stability_add = 5
 		ascension_perks_add = 1
 	}
 }
 
 tr_prosperity_sct = {
+	custom_tooltip = tr_prosperity_sct_desc
 	modifier = {
 		planet_structures_cost_mult = -0.10
 		planet_building_build_speed_mult = 0.25
@@ -78,9 +78,11 @@ tr_prosperity_public_works = {
 	possible = {
 		has_tradition = tr_prosperity_sct
 	}
+	custom_tooltip = tr_prosperity_public_works_desc
 
 	tradition_swap = {
 		name = tr_prosperity_extended_hives
+		custom_tooltip = tr_prosperity_extended_hives_desc
 		inherit_icon = yes
 		trigger = {
 			is_hive_empire = yes
@@ -92,6 +94,7 @@ tr_prosperity_public_works = {
 
 	tradition_swap = {
 		name = tr_prosperity_optimized_nexus
+		custom_tooltip = tr_prosperity_optimized_nexus_desc
 		trigger = {
 			is_machine_empire = yes
 		}
@@ -103,6 +106,7 @@ tr_prosperity_public_works = {
 	tradition_swap = {
 		name = tr_prosperity_void_works
 		inherit_icon = yes
+		custom_tooltip = tr_prosperity_void_works_desc
 
 		# Effects are implemented in 00_capital_buildings.txt
 
@@ -124,7 +128,9 @@ tr_prosperity_interstellar_franchising = {
 		has_tradition = tr_prosperity_administrative_operations
 	}
 
-	# implementation done in districts file
+	modifier = {
+		planet_jobs_upkeep_mult = -0.05
+	}
 
 	tradition_swap = {
 		name = tr_prosperity_efficiency_algorithms
@@ -132,7 +138,7 @@ tr_prosperity_interstellar_franchising = {
 			is_machine_empire = yes
 		}
 		modifier = {
-			country_energy_produces_mult = 0.05
+			planet_jobs_upkeep_mult = -0.05
 		}
 		weight = {
 			factor = 1
@@ -145,7 +151,7 @@ tr_prosperity_interstellar_franchising = {
 			is_hive_empire = yes
 		}
 		modifier = {
-			country_energy_produces_mult = 0.05
+			planet_jobs_upkeep_mult = -0.05
 		}
 		weight = {
 			factor = 1

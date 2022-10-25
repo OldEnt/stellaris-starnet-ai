@@ -14,6 +14,7 @@ tr_adaptability_adopt = {
 }
 
 tr_adaptability_finish = {
+	custom_tooltip_with_modifiers = tr_adaptability_finish_desc
 	modifier = {
 		ascension_perks_add = 1
 	}
@@ -25,6 +26,7 @@ tr_adaptability_finish = {
 		trigger = {
 			has_origin = origin_void_dwellers
 		}
+		custom_tooltip_with_modifiers = tr_adaptability_void_finish_desc
 		modifier = {
 			ascension_perks_add = 1
 		}
@@ -35,22 +37,15 @@ tr_adaptability_finish = {
 }
 
 
-tr_adaptability_dietary_enrichment = {
+tr_adaptability_recycling = {
+	custom_tooltip = tr_adaptability_recycling_desc
 	modifier = {
-		country_food_produces_mult = 0.10
-	}
-
-	tradition_swap = {
-		name = tr_adaptability_recycling
-		trigger = {
-			is_lithoid_empire = yes
-		}
-		modifier = {
-			planet_building_refund_mult = 0.15
-		}
-		weight = {
-			factor = 1
-		}
+		planet_structures_volatile_motes_upkeep_mult = -0.10
+		planet_structures_exotic_gases_upkeep_mult = -0.10
+		planet_structures_rare_crystals_upkeep_mult = -0.10
+		planet_structures_volatile_motes_cost_mult = -0.10
+		planet_structures_exotic_gases_cost_mult = -0.10
+		planet_structures_rare_crystals_cost_mult = -0.10
 	}
 
 	ai_weight = {
@@ -60,7 +55,7 @@ tr_adaptability_dietary_enrichment = {
 
 tr_adaptability_survival_fittest = {
 	possible = {
-		has_tradition = tr_adaptability_dietary_enrichment
+		has_tradition = tr_adaptability_recycling
 	}
 
 	modifier = {

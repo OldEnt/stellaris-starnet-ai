@@ -45,6 +45,14 @@ hydroponics_bay = {
 		owner = { has_technology = "tech_hydroponics" }
 	}
 
+	possible = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			owner = { country_uses_food = yes }
+		}
+	}
+
 	resources = {
 		category = starbase_buildings
 		cost = {
@@ -1242,7 +1250,7 @@ disruption_field = {
 	abort_construction_trigger = {
 		solar_system = {
 			count_starbase_buildings = {
-				type = disruption_field
+				type = communications_jammer
 				count > 1
 				include_being_constructed = yes
 			}
@@ -1830,5 +1838,49 @@ mercenary_garrison = {
 	ai_build_outside_chokepoint = no
 	ai_weight = {
 		weight = 50
+	}
+}
+
+cordyceptic_reanimation_facility = {
+	icon = "GFX_cordyceptic_reanimation_facility"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_hive_cordyceptic_drones }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_tiyanki_spawning_system"
+			star.solar_system = { 
+				OR = {
+					has_star_flag = tiyanki_graveyard_system
+					has_star_flag = tiyanki_spawn_system
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		upkeep = {
+			food = 10
+		}
+	}
+
+	custom_tooltip = sm_cordyceptic_reanimation_facility_desc_modifier
+	on_finished = {
+		starbase_event = { id = necroids.305 days = 1800 }
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }

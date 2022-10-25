@@ -1,4 +1,5 @@
 tr_diplomacy_adopt = {
+	custom_tooltip = tr_diplomacy_adopt_desc
 	modifier = {
 		diplomacy_upkeep_mult = -0.5
 	}
@@ -23,6 +24,7 @@ tr_diplomacy_finish = {
 }
 
 tr_diplomacy_the_federation = {
+	custom_tooltip = tr_diplomacy_the_federation_desc
 
 	#unlocks federation mechanic
 	modifier = {
@@ -49,7 +51,7 @@ tr_diplomacy_entente_coordination = {
 }
 
 tr_diplomacy_diplomatic_networking = {
-
+	custom_tooltip = tr_diplomacy_diplomatic_networking_desc
 	#Effects in diplomacy_economy
 
 	tradition_swap = {
@@ -89,6 +91,8 @@ tr_diplomacy_eminent_diplomats = {
 	possible = {
 		has_tradition = tr_diplomacy_diplomatic_networking
 	}
+
+	custom_tooltip = tr_diplomacy_eminent_diplomats_desc
 
 	modifier = {
 		diplo_action_acceptance_add = 5

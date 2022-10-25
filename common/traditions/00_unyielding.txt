@@ -24,6 +24,7 @@ tr_unyielding_finish = {
 		name = tr_unyielding_federations_finish
 		inherit_icon = yes
 		inherit_name = yes
+		custom_tooltip = tr_unyielding_federations_finish_desc
 		trigger = {
 			has_federations_dlc = yes
 		}
@@ -42,6 +43,7 @@ tr_unyielding_resistance_is_frugal = {
 	modifier = {
 		army_defense_health_mult = 0.25
 	}
+	custom_tooltip = tr_unyielding_resistance_is_frugal_desc
 
 	tradition_swap = {
 		name = tr_unyielding_resistance_is_frugal_hive
@@ -107,6 +109,7 @@ tr_unyielding_bulwark_of_harmony = {
 	possible = {
 		has_tradition = tr_unyielding_never_surrender
 	}
+	custom_tooltip = tr_unyielding_bulwark_of_harmony_desc
 
 	modifier = {
 		starbase_defensive_war_ship_build_speed_mult = 0.33
@@ -152,6 +155,7 @@ tr_unyielding_bulwark_of_harmony = {
 }
 
 tr_unyielding_defensive_zeal = {
+	custom_tooltip = tr_unyielding_defensive_zeal_desc
 	modifier = {
 		shipclass_starbase_damage_mult = 0.33
 		shipclass_starbase_hull_mult = 0.33
@@ -173,7 +177,7 @@ tr_unyielding_fortress_doctrine = {
 		country_starbase_capacity_add = 2
 		starbase_upgrade_cost_mult = -0.50
 	}
-	
+
 	tradition_swap = {
 		name = tr_unyielding_fortress_doctrine_nemesis
 		inherit_icon = yes

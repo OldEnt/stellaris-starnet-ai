@@ -557,6 +557,102 @@ crystal_focus = {
 	}
 }
 
+sight_beyond_sight = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		upkeep = {
+			sr_zro = 0.5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		has_active_tradition = tr_psionics_mind_readers
+	}
+
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_windup_mult = -0.15
+		ship_winddown_mult = -0.15
+		ship_jumpdrive_cooldown_mult = -0.15
+		catapult_spread_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+zro_catalysis_utopia = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		upkeep = {
+			sr_zro = 0.5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		exists = federation
+		federation = {
+			has_federation_perk = zro_catalysis_1
+		}
+		has_utopia = yes
+		OR = {
+			has_resource = { type = sr_zro amount > 0 }
+			has_edict = zro_catalysis_utopia
+		}
+	}
+
+	modifier = {
+		planet_psionic_jobs_produces_mult = 0.15
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			species = { has_trait = trait_psionic }
+		}
+	}
+}
+
+zro_catalysis_non_utopia = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		upkeep = {
+			sr_zro = 0.5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		exists = federation
+		federation = {
+			has_federation_perk = zro_catalysis_1
+		}
+		has_utopia = no
+		OR = {
+			has_resource = { type = sr_zro amount > 0 }
+			has_edict = zro_catalysis_non_utopia
+		}
+	}
+
+	modifier = {
+		planet_jobs_organics_produces_mult = 0.1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
 living_metal_construction = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"

@@ -745,7 +745,7 @@ tech_energy_torpedoes_1 = {
 	tier = 3
 	category = { particles }
 	ai_update_type = military
-	prerequisites = { "tech_lasers_4" }
+	prerequisites = { "tech_torpedoes_1" "tech_lasers_4" }
 	weight = @tier3weight3
 
 	weight_modifier = {

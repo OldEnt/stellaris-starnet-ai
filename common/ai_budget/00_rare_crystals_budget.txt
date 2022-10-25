@@ -73,6 +73,21 @@ rare_crystals_expenditure_hyper_relays = {
 	potential = {
 		str_ai_budget_potential_rare_crystals_expenditure_hyper_relays = yes
 		has_technology = tech_hyper_relays
+		any_system_within_border = {
+			NOR = {
+				has_megastructure = hyper_relay
+				has_megastructure = hyper_relay_restored
+			}
+			OR = {
+				is_capital_system = yes
+				any_neighbor_system = {
+					OR = {
+						has_megastructure = hyper_relay
+						has_megastructure = hyper_relay_restored
+					}
+				}
+			}
+		}
 	}
 
 	weight = {

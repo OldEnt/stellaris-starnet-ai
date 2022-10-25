@@ -205,11 +205,11 @@ building_paradise_dome = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			owner = { is_ai = yes }
 			owner = { is_regular_empire = no }
 			owner = { has_valid_civic = civic_shared_burden }
 			buildings_no_crystals = yes
 			has_modifier = slave_colony
-			owner = { is_ai = yes }
 		}
 	}
 
@@ -842,6 +842,15 @@ building_holo_theatres = {
 	potential = {
 		NOT = {	has_modifier = slave_colony	}
 		owner = { is_regular_empire = yes }
+		OR = {
+			owner = {
+				NOT = { is_ai = yes }
+			}
+			AND = {
+				NOT = { has_available_jobs = entertainer }
+				NOT = { has_forbidden_jobs = entertainer }
+			}
+		}
 	}
 
 	allow = {
@@ -1080,7 +1089,6 @@ building_clinic = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			owner = { is_ai = yes }
-			
 		}
 	}
 
@@ -1401,6 +1409,7 @@ building_ranger_lodge = {
 		}
 	}
 }
+
 building_toxic_bath = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1

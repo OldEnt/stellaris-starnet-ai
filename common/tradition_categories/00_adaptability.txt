@@ -3,7 +3,7 @@ tradition_adaptability = {
 	adoption_bonus = "tr_adaptability_adopt"
 	finish_bonus = "tr_adaptability_finish"
 	traditions = {
-		"tr_adaptability_dietary_enrichment"
+		"tr_adaptability_recycling"
 		"tr_adaptability_survival_fittest"
 		"tr_adaptability_environmental_diversification"
 		"tr_adaptability_adaptive_ecology"

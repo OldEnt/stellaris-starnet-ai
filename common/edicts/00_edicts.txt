@@ -768,6 +768,7 @@ farming_subsidies = {
 		modifier = {
 			factor = 0
 			or = {
+				country_uses_food = no
 				not = {
 					has_edict = capacity_subsidies
 				}

@@ -34,20 +34,6 @@ district_generator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			str_force_district_generator = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
 	planet_modifier = {
 		planet_housing_add = 2
 	}
@@ -108,6 +94,20 @@ district_generator = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_district_generator = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -158,6 +158,7 @@ district_generator = {
 		trigger = { has_designation = col_generator }
 	}
 }
+
 district_mining = {
 	base_buildtime = 240
 
@@ -197,20 +198,6 @@ district_mining = {
 		}
 		upkeep = {
 			energy = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			str_force_district_mining = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -271,6 +258,20 @@ district_mining = {
 		}
 		modifier = {
 			job_fe_acolyte_mine_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_district_mining = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -390,21 +391,6 @@ district_farming = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			str_force_district_farming = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
-
 	planet_modifier = {
 		planet_housing_add = 2
 	}
@@ -495,6 +481,20 @@ district_farming = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_district_farming = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -542,6 +542,14 @@ district_farming = {
 
 	prerequisites = {
 		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
 	}
 
 	ai_resource_production = {
@@ -992,6 +1000,17 @@ district_farming_uncapped = {
 				exists = owner
 				owner = { is_anglers_empire = yes }
 				planet = { is_planet_class = pc_ocean }
+			}
+		}
+		NOT = {
+			AND = {
+				owner = {
+					is_ai = yes
+					NOT = {
+						has_country_flag = str_recently_human
+					}
+				}
+				owner = { country_uses_food = no }
 			}
 		}
 	}

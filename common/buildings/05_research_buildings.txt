@@ -9,14 +9,18 @@ building_research_lab_1 = {
 	category = research
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 	}
 
 	destroy_trigger = {
 		OR = {
-			has_modifier = slave_colony
 			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			str_research_destroy = yes
 		}
 	}
@@ -135,8 +139,9 @@ building_research_lab_2 = {
 
 	destroy_trigger = {
 		OR = {
-			has_modifier = slave_colony
 			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				buildings_no_exotic_gases = yes
 				has_planet_flag = str_supervisor
@@ -250,8 +255,9 @@ building_research_lab_3 = {
 
 	destroy_trigger = {
 		OR = {
-			has_modifier = slave_colony
 			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				buildings_no_exotic_gases = yes
 				has_planet_flag = str_supervisor
@@ -380,8 +386,11 @@ building_institute = {
 	category = research
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 		exists = owner
 		owner = { is_regular_empire = yes }
 		owner = {
@@ -397,6 +406,7 @@ building_institute = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			owner = { is_regular_empire = no }
 			buildings_no_exotic_gases = yes
 			str_research_destroy = yes
@@ -557,6 +567,7 @@ building_supercomputer = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			owner = { is_regular_empire = yes }
 			str_research_destroy = yes
 		}

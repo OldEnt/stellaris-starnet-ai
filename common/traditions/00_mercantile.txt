@@ -30,6 +30,7 @@ tr_mercantile_finish = {
 		name = tr_mercantile_federations_finish
 		inherit_icon = yes
 		inherit_name = yes
+		custom_tooltip = tr_mercantile_federations_finish_desc
 		trigger = {
 			has_federations_dlc = yes
 		}
@@ -45,7 +46,7 @@ tr_mercantile_finish = {
 
 tr_mercantile_trickle_up_economics = {
 	#clerks +1 trade value
-
+	custom_tooltip = tr_mercantile_trickle_up_economics_desc
 	ai_weight = {
 		factor = 1000
 	}
@@ -55,7 +56,7 @@ tr_mercantile_commercial_enterprise = {
 	possible = {
 		has_tradition = tr_mercantile_trickle_up_economics
 	}
-
+	custom_tooltip = tr_mercantile_commercial_enterprise_desc
 	#commercial zone 1 merchant job
 
 	ai_weight = {
@@ -65,10 +66,12 @@ tr_mercantile_commercial_enterprise = {
 
 tr_mercantile_adaptive_economic_policies = {
 	#gain access to trade policies
+	custom_tooltip = tr_mercantile_adaptive_economic_policies_desc
 
 	tradition_swap = {
 		name = tr_mercantile_trade_fleets
 		inherit_icon = yes
+		custom_tooltip = tr_mercantile_trade_fleets_desc
 		trigger = {
 			has_federation = yes
 			federation = { has_federation_perk = trade_federation_passive }

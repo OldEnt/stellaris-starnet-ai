@@ -14,6 +14,7 @@ tr_subterfuge_adopt = {
 
 tr_subterfuge_finish = {
 	#the refund effect is implemented elesewhere
+	custom_tooltip = tr_subterfuge_finish_desc
 	modifier = {
 		ascension_perks_add = 1
 	}

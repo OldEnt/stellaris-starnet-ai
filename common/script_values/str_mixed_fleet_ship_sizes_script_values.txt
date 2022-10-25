@@ -15,6 +15,16 @@ str_mixed_fleet_value_ai_ship_data_corvette = {
 	}
 }
 
+str_mixed_fleet_value_ai_ship_data_frigate = {
+	base = 0
+	modifier = {
+		add = 20
+		has_technology = tech_corvettes
+		has_technology = tech_torpedoes_1
+		has_technology = tech_cruisers
+	}
+}
+
 str_mixed_fleet_value_ai_ship_data_destroyer = {
 	base = 0
 	modifier = {
@@ -37,6 +47,12 @@ str_mixed_fleet_value_ai_ship_data_cruiser = {
 	modifier = {
 		add = -40
 		has_technology = tech_battleships
+	}
+	modifier = {
+		add = -20
+		has_technology = tech_corvettes
+		has_technology = tech_torpedoes_1
+		has_technology = tech_cruisers
 	}
 }
 

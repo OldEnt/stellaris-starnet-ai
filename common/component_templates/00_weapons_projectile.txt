@@ -25,7 +25,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_1"
 	projectile_gfx = "mass_driver_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "SMALL_MASS_DRIVER_2"
 	resources = {
 		category = ship_components
@@ -52,7 +52,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_1"
 	projectile_gfx = "mass_driver_m"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "MEDIUM_MASS_DRIVER_2"
 	resources = {
 		category = ship_components
@@ -75,11 +75,13 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_1"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_mass_drivers_1" }
 	component_set = "MASS_DRIVER_1"
 	projectile_gfx = "mass_driver_l"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "LARGE_MASS_DRIVER_2"
 	resources = {
 		category = ship_components
@@ -107,7 +109,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_2"
 	projectile_gfx = "coilgun_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "SMALL_MASS_DRIVER_3"
 	resources = {
 		category = ship_components
@@ -134,7 +136,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_2"
 	projectile_gfx = "coilgun_m"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "MEDIUM_MASS_DRIVER_3"
 	resources = {
 		category = ship_components
@@ -157,11 +159,13 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_2"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_mass_drivers_2" }
 	component_set = "MASS_DRIVER_2"
 	projectile_gfx = "coilgun_l"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "LARGE_MASS_DRIVER_3"
 	resources = {
 		category = ship_components
@@ -189,7 +193,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_3"
 	projectile_gfx = "railgun_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "SMALL_MASS_DRIVER_4"
 	resources = {
 		category = ship_components
@@ -222,7 +226,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_3"
 	projectile_gfx = "railgun_m"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "MEDIUM_MASS_DRIVER_4"
 	resources = {
 		category = ship_components
@@ -252,11 +256,13 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_3"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_mass_drivers_3" }
 	component_set = "MASS_DRIVER_3"
 	projectile_gfx = "railgun_l"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "LARGE_MASS_DRIVER_4"
 	resources = {
 		category = ship_components
@@ -290,7 +296,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_4"
 	projectile_gfx = "advanced_railgun_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "SMALL_MASS_DRIVER_5"
 	resources = {
 		category = ship_components
@@ -334,7 +340,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_4"
 	projectile_gfx = "advanced_railgun_m"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "MEDIUM_MASS_DRIVER_5"
 	resources = {
 		category = ship_components
@@ -374,11 +380,13 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_4"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_mass_drivers_4" }
 	component_set = "MASS_DRIVER_4"
 	projectile_gfx = "advanced_railgun_l"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	upgrades_to = "LARGE_MASS_DRIVER_5"
 	resources = {
 		category = ship_components
@@ -423,7 +431,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_5"
 	projectile_gfx = "gauss_cannon_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield brawler gunship }
 	resources = {
 		category = ship_components
 		cost = {
@@ -466,7 +474,7 @@ weapon_component_template = {
 	component_set = "MASS_DRIVER_5"
 	projectile_gfx = "gauss_cannon_m"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship}
 	resources = {
 		category = ship_components
 		cost = {
@@ -505,11 +513,13 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_5"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_mass_drivers_5" }
 	component_set = "MASS_DRIVER_5"
 	projectile_gfx = "gauss_cannon_l"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield gunship }
 	resources = {
 		category = ship_components
 		cost = {
@@ -553,11 +563,14 @@ weapon_component_template = {
 	icon = "GFX_ship_part_kinetic_artillery_1"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_kinetic_artillery_1" }
 	component_set = "KINETIC_ARTILLERY_1"
 	projectile_gfx = "kinetic_artillery"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_artillery }
+	ai_tags = { weapon_role_artillery artillery }
+	ai_tag_weight = 0
 	upgrades_to = "KINETIC_ARTILLERY_2"
 	resources = {
 		category = ship_components
@@ -603,11 +616,14 @@ weapon_component_template = {
 	icon = "GFX_ship_part_kinetic_artillery_2"
 	icon_frame = 1
 
+	min_range = 45.0
+
 	prerequisites = { "tech_kinetic_artillery_2" }
 	component_set = "KINETIC_ARTILLERY_2"
 	projectile_gfx = "adv_kinetic_artillery"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_artillery }
+	ai_tags = { weapon_role_artillery artillery }
+	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
@@ -651,7 +667,7 @@ weapon_component_template = {
 weapon_component_template = {
 	type = instant
 
-	key = "AUTOCANNON_1"
+	key = "SMALL_AUTOCANNON_1"
 	size = small
 
 	icon = "GFX_ship_part_autocannon_1"
@@ -661,8 +677,8 @@ weapon_component_template = {
 	component_set = "AUTOCANNON_1"
 	projectile_gfx = "auto_cannons_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
-	upgrades_to = "AUTOCANNON_2"
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "SMALL_AUTOCANNON_2"
 	resources = {
 		category = ship_components
 		cost = {
@@ -673,8 +689,59 @@ weapon_component_template = {
 			alloys = @s_t3_upkeep_alloys
 		}
 	}
-	ai_weight = {
-		weight = 3
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "MEDIUM_AUTOCANNON_1"
+	size = medium
+
+	icon = "GFX_ship_part_autocannon_1"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_1" }
+	component_set = "AUTOCANNON_1"
+	projectile_gfx = "auto_cannons_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "MEDIUM_AUTOCANNON_2"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t3_cost
+		}
+		upkeep = {
+			energy = @m_t3_upkeep_energy
+			alloys = @m_t3_upkeep_alloys
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "LARGE_AUTOCANNON_1"
+	size = large
+
+	icon = "GFX_ship_part_autocannon_1"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_1" }
+	component_set = "AUTOCANNON_1"
+	projectile_gfx = "auto_cannons_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "LARGE_AUTOCANNON_2"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t3_cost
+		}
+		upkeep = {
+			energy = @l_t3_upkeep_energy
+			alloys = @l_t3_upkeep_alloys
+		}
 	}
 }
 
@@ -682,7 +749,7 @@ weapon_component_template = {
 weapon_component_template = {
 	type = instant
 
-	key = "AUTOCANNON_2"
+	key = "SMALL_AUTOCANNON_2"
 	size = small
 
 	icon = "GFX_ship_part_autocannon_2"
@@ -692,8 +759,8 @@ weapon_component_template = {
 	component_set = "AUTOCANNON_2"
 	projectile_gfx = "ripper_auto_cannons_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
-	upgrades_to = "AUTOCANNON_3"
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "SMALL_AUTOCANNON_3"
 	resources = {
 		category = ship_components
 		cost = {
@@ -707,7 +774,79 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 10
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "MEDIUM_AUTOCANNON_2"
+	size = medium
+
+	icon = "GFX_ship_part_autocannon_2"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_2" }
+	component_set = "AUTOCANNON_2"
+	projectile_gfx = "ripper_auto_cannons_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "MEDIUM_AUTOCANNON_3"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t4_cost
+			volatile_motes = @m_t4_rare
+		}
+		upkeep = {
+			energy = @m_t4_upkeep_energy
+			alloys = @m_t4_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "LARGE_AUTOCANNON_2"
+	size = large
+
+	icon = "GFX_ship_part_autocannon_2"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_2" }
+	component_set = "AUTOCANNON_2"
+	projectile_gfx = "ripper_auto_cannons_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "LARGE_AUTOCANNON_3"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t4_cost
+			volatile_motes = @l_t4_rare
+		}
+		upkeep = {
+			energy = @l_t4_upkeep_energy
+			alloys = @l_t4_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
 		modifier = {
 			factor = 0
 			is_country_type = default
@@ -723,7 +862,7 @@ weapon_component_template = {
 weapon_component_template = {
 	type = instant
 
-	key = "AUTOCANNON_3"
+	key = "SMALL_AUTOCANNON_3"
 	size = small
 
 	icon = "GFX_ship_part_autocannon_3"
@@ -733,7 +872,8 @@ weapon_component_template = {
 	component_set = "AUTOCANNON_3"
 	projectile_gfx = "stormfire_auto_cannons_s"
 	tags = { weapon_type_kinetic }
-	ai_tags = { weapon_role_anti_shield }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "SMALL_AUTOCANNON_4"
 	resources = {
 		category = ship_components
 		cost = {
@@ -747,14 +887,200 @@ weapon_component_template = {
 	}
 
 	ai_weight = {
-		weight = 15
+		weight = 1
 		modifier = {
-			factor = 0
-			is_country_type = default
-			resource_stockpile_compare = {
-				resource = volatile_motes
-				value < 10
-			}
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "MEDIUM_AUTOCANNON_3"
+	size = medium
+
+	icon = "GFX_ship_part_autocannon_3"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_3" }
+	component_set = "AUTOCANNON_3"
+	projectile_gfx = "stormfire_auto_cannons_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "MEDIUM_AUTOCANNON_4"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t5_cost
+			volatile_motes = @m_t5_rare
+		}
+		upkeep = {
+			energy = @m_t5_upkeep_energy
+			alloys = @m_t5_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "LARGE_AUTOCANNON_3"
+	size = large
+
+	icon = "GFX_ship_part_autocannon_3"
+	icon_frame = 1
+
+	prerequisites = { "tech_autocannons_3" }
+	component_set = "AUTOCANNON_3"
+	projectile_gfx = "stormfire_auto_cannons_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	upgrades_to = "LARGE_AUTOCANNON_4"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t5_cost
+			volatile_motes = @l_t5_rare
+		}
+		upkeep = {
+			energy = @l_t5_upkeep_energy
+			alloys = @l_t5_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+# ## Autocannons 4
+weapon_component_template = {
+	type = instant
+
+	key = "SMALL_AUTOCANNON_4"
+	size = small
+
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_autocannon" }
+	component_set = "AUTOCANNON_4"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+			nanites = @s_t6_rare
+		}
+		upkeep = {
+			energy = @s_t6_upkeep_energy
+			alloys = @s_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "MEDIUM_AUTOCANNON_4"
+	size = medium
+
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_autocannon" }
+	component_set = "AUTOCANNON_4"
+	projectile_gfx = "stormfire_auto_cannons_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			nanites = @m_t6_rare
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "LARGE_AUTOCANNON_4"
+	size = large
+
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_autocannon" }
+	component_set = "AUTOCANNON_4"
+	projectile_gfx = "stormfire_auto_cannons_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost
+			nanites = @l_t6_rare
+		}
+		upkeep = {
+			energy = @l_t6_upkeep_energy
+			alloys = @l_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = nanites }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
 		}
 	}
 }

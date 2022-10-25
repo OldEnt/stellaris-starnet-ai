@@ -12,7 +12,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_1S
+		ship_armor_add = @armor_S1
 	}
 
 	prerequisites = { "tech_ship_armor_1" }
@@ -48,7 +48,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_1M
+		ship_armor_add = @armor_M1
 	}
 
 	prerequisites = { "tech_ship_armor_1" }
@@ -84,7 +84,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_1L
+		ship_armor_add = @armor_L1
 	}
 
 	prerequisites = { "tech_ship_armor_1" }
@@ -121,7 +121,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_2S
+		ship_armor_add = @armor_S2
 	}
 
 	prerequisites = { "tech_ship_armor_2" }
@@ -157,7 +157,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_2M
+		ship_armor_add = @armor_M2
 	}
 
 	prerequisites = { "tech_ship_armor_2" }
@@ -193,7 +193,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_2L
+		ship_armor_add = @armor_L2
 	}
 
 	prerequisites = { "tech_ship_armor_2" }
@@ -230,7 +230,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_3S
+		ship_armor_add = @armor_S3
 	}
 
 	prerequisites = { "tech_ship_armor_3" }
@@ -266,7 +266,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_3M
+		ship_armor_add = @armor_M3
 	}
 
 	prerequisites = { "tech_ship_armor_3" }
@@ -302,7 +302,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_3L
+		ship_armor_add = @armor_L3
 	}
 
 	prerequisites = { "tech_ship_armor_3" }
@@ -339,7 +339,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_4S
+		ship_armor_add = @armor_S4
 	}
 
 	prerequisites = { "tech_ship_armor_4" }
@@ -375,7 +375,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_4M
+		ship_armor_add = @armor_M4
 	}
 
 	prerequisites = { "tech_ship_armor_4" }
@@ -411,7 +411,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_4L
+		ship_armor_add = @armor_L4
 	}
 
 	prerequisites = { "tech_ship_armor_4" }
@@ -448,7 +448,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_5S
+		ship_armor_add = @armor_S5
 	}
 
 	prerequisites = { "tech_ship_armor_5" }
@@ -484,7 +484,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_5M
+		ship_armor_add = @armor_M5
 	}
 
 	prerequisites = { "tech_ship_armor_5" }
@@ -520,7 +520,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_5L
+		ship_armor_add = @armor_L5
 	}
 
 	prerequisites = { "tech_ship_armor_5" }
@@ -561,7 +561,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_6S
+		ship_armor_add = @armor_S6
 	}
 
 	prerequisites = { "tech_dragon_armor" }
@@ -585,7 +585,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_6M
+		ship_armor_add = @armor_M6
 	}
 
 	prerequisites = { "tech_dragon_armor" }
@@ -609,7 +609,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	modifier = {
-		ship_armor_add = @armor_6L
+		ship_armor_add = @armor_L6
 	}
 
 	prerequisites = { "tech_dragon_armor" }
@@ -649,7 +649,7 @@ utility_component_template = {
 	upgrades_to = "SMALL_CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_4S
+		ship_hull_add = @hull_S2
 	}
 
 	ai_weight = {
@@ -683,7 +683,7 @@ utility_component_template = {
 	upgrades_to = "MEDIUM_CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_4M
+		ship_hull_add =@hull_M2
 	}
 
 	ai_weight = {
@@ -717,7 +717,7 @@ utility_component_template = {
 	upgrades_to = "LARGE_CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_4L
+		ship_hull_add = @hull_L2
 	}
 
 	ai_weight = {
@@ -750,7 +750,7 @@ utility_component_template = {
 	component_set = "CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_6S
+		ship_hull_add =@hull_S4
 	}
 
 	ai_weight = {
@@ -783,7 +783,7 @@ utility_component_template = {
 	component_set = "CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_6M
+		ship_hull_add = @hull_M4
 	}
 
 	ai_weight = {
@@ -812,7 +812,7 @@ utility_component_template = {
 	component_set = "CRYSTAL_ARMOR_2"
 
 	modifier = {
-		ship_hull_add = @armor_6L
+		ship_hull_add = @hull_L4
 	}
 
 	ai_weight = {
@@ -842,7 +842,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6S
+		ship_armor_add = @armor_S6
 	}
 
 	component_set = "TIYANKI_ARMOR"
@@ -867,7 +867,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6M
+		ship_armor_add = @armor_M6
 	}
 
 	component_set = "TIYANKI_ARMOR"
@@ -892,7 +892,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6L
+		ship_armor_add = @armor_L6
 	}
 
 	component_set = "TIYANKI_ARMOR"

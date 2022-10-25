@@ -7,8 +7,17 @@ building_foundry_1 = {
 	category = manufacturing
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			has_any_industry_district = yes
+		}
 	}
 
 	allow = {
@@ -19,6 +28,7 @@ building_foundry_1 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				is_capital = yes
 				owner = {
@@ -101,16 +111,6 @@ building_foundry_1 = {
 		}
 	}
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -122,6 +122,16 @@ building_foundry_1 = {
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
 			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
 		}
 	}
 
@@ -240,6 +250,7 @@ building_foundry_2 = {
 			NOT = { exists = owner }
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				buildings_no_motes = yes
@@ -276,19 +287,6 @@ building_foundry_2 = {
 
 	planet_modifier = {
 		planet_metallurgists_alloys_produces_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			str_force_building_foundry_upgrade = yes
-			NOT = { has_building = building_foundry_2 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -367,6 +365,19 @@ building_foundry_2 = {
 		modifier = {
 			planet_metallurgists_food_upkeep_add = 3
 			job_catalytic_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_force_building_foundry_upgrade = yes
+			NOT = { has_building = building_foundry_2 }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -466,6 +477,7 @@ building_foundry_3 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				buildings_no_motes = yes
@@ -483,12 +495,32 @@ building_foundry_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				is_ringworld = no
+			}
 			minerals = @b3_minerals
 			volatile_motes = @b4_rare_cost
 		}
+		cost = {
+			trigger = {
+				is_ringworld = yes
+			}
+			minerals = 1500
+			volatile_motes = 600
+		}
 		upkeep = {
+			trigger = {
+				is_ringworld = no
+			}
 			energy = @b3_upkeep
 			volatile_motes = @b4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				is_ringworld = yes
+			}
+			energy = 15
+			volatile_motes = 8
 		}
 	}
 
@@ -503,25 +535,40 @@ building_foundry_3 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_ai = yes }
-			str_force_building_foundry_upgrade = yes
-			NOT = { has_building = building_foundry_3 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_catalytic_empire = no
 			}
 		}
 		modifier = {
 			planet_metallurgists_minerals_upkeep_add = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_ringworld = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1
+			planet_metallurgists_minerals_upkeep_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_ringworld = yes
+			exists = owner
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 1
+			planet_metallurgists_food_upkeep_add = 3
 		}
 	}
 
@@ -589,6 +636,19 @@ building_foundry_3 = {
 		modifier = {
 			planet_metallurgists_food_upkeep_add = 6
 			job_catalytic_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_force_building_foundry_upgrade = yes
+			NOT = { has_building = building_foundry_3 }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -683,8 +743,11 @@ building_factory_1 = {
 			country_uses_consumer_goods = yes
 		}
 		str_factory_allow = yes
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 		OR = {
 			owner = {
 				is_ai = no
@@ -697,6 +760,7 @@ building_factory_1 = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 
 			AND = {
 				num_unemployed < 1
@@ -707,11 +771,11 @@ building_factory_1 = {
 					is_ai = yes
 					resource_income_compare = {
 						resource = consumer_goods
-						value > 10
+						value > 100
 					}
 					resource_stockpile_compare = {
 						resource = consumer_goods
-						value > 300
+						value > 1000
 					}
 				}
 			}
@@ -722,18 +786,6 @@ building_factory_1 = {
 					country_uses_consumer_goods = no
 				}
 			}
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			str_force_building_factory = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -770,6 +822,18 @@ building_factory_1 = {
 		}
 		modifier = {
 			job_artisan_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_force_building_factory = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -863,14 +927,18 @@ building_factory_2 = {
 		owner = {
 			country_uses_consumer_goods = yes
 		}
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOT = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 	}
 
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 			AND = {
 				exists = owner
 				OR = {
@@ -890,19 +958,6 @@ building_factory_2 = {
 	planet_modifier = {
 		planet_artisans_consumer_goods_produces_add = 1
 		planet_artisans_minerals_upkeep_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			str_force_building_factory_upgrade = yes
-			NOT = { has_building = building_factory_2 }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -938,6 +993,19 @@ building_factory_2 = {
 		}
 		modifier = {
 			job_artisan_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_force_building_factory_upgrade = yes
+			NOT = { has_building = building_factory_2 }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -1034,14 +1102,18 @@ building_factory_3 = {
 		owner = {
 			country_uses_consumer_goods = yes
 		}
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOT = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 	}
 
 	destroy_trigger = {
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 
 			AND = {
 				exists = owner
@@ -1067,14 +1139,11 @@ building_factory_3 = {
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			str_force_building_factory_upgrade = yes
-			NOT = { has_building = building_factory_2 }
+			is_ringworld = yes
 		}
 		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
+			planet_artisans_consumer_goods_produces_add = 1
+			planet_artisans_minerals_upkeep_add = 2
 		}
 	}
 
@@ -1114,15 +1183,48 @@ building_factory_3 = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			str_force_building_factory_upgrade = yes
+			NOT = { has_building = building_factory_2 }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
+			trigger = {
+				is_ringworld = no
+			}
 			minerals = @b3_minerals
 			rare_crystals = @b4_rare_cost
 		}
+		cost = {
+			trigger = {
+				is_ringworld = yes
+			}
+			minerals = 1500
+			rare_crystals = 600
+		}
 		upkeep = {
+			trigger = {
+				is_ringworld = no
+			}
 			energy = @b3_upkeep
 			rare_crystals = @b4_rare_upkeep
+		}
+		upkeep = {
+			trigger = {
+				is_ringworld = yes
+			}
+			energy = 15
+			rare_crystals = 8
 		}
 	}
 
@@ -1193,45 +1295,12 @@ building_refinery = {
 	category = manufacturing
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 		building_basic_income_check = yes
-	}
-
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = exotic_gases
-				value > 11
-			}
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_gases = yes
-			}
-			NOT = { has_building = building_refinery }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-
-	on_queued = {
-		owner = {
-			set_timed_country_flag = {
-				flag = str_is_building_gases
-				days = 720
-			}
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -1251,6 +1320,42 @@ building_refinery = {
 		}
 		modifier = {
 			job_gas_refiner_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+				str_force_gases = yes
+			}
+			NOT = { has_building = building_refinery }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 2
+			job_starnet_spice_melange_antifarmer_add = -2
+		}
+	}
+
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = exotic_gases
+				value > 11
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			set_timed_country_flag = {
+				flag = str_is_building_gases
+				days = 720
+			}
 		}
 	}
 
@@ -1299,45 +1404,12 @@ building_chemical_plant = {
 	category = manufacturing
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 		building_basic_income_check = yes
-	}
-
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = volatile_motes
-				value > 9
-			}
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_motes = yes
-			}
-			NOT = { has_building = building_chemical_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-
-	on_queued = {
-		owner = {
-			set_timed_country_flag = {
-				flag = str_is_building_motes
-				days = 720
-			}
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -1357,6 +1429,42 @@ building_chemical_plant = {
 		}
 		modifier = {
 			job_chemist_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+				str_force_motes = yes
+			}
+			NOT = { has_building = building_chemical_plant }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 2
+			job_starnet_spice_melange_antifarmer_add = -2
+		}
+	}
+
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = volatile_motes
+				value > 9
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			set_timed_country_flag = {
+				flag = str_is_building_motes
+				days = 720
+			}
 		}
 	}
 
@@ -1405,45 +1513,12 @@ building_crystal_plant = {
 	category = manufacturing
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = crucible_colony
+		}
 		building_basic_income_check = yes
-	}
-
-	destroy_trigger = {
-		free_building_slots = 0
-		exists = owner
-		owner = {
-			is_ai = yes
-			has_monthly_income = {
-				resource = rare_crystals
-				value > 9
-			}
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-				str_force_crystals = yes
-			}
-			NOT = { has_building = building_crystal_plant }
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 2
-			job_starnet_spice_melange_antifarmer_add = -2
-		}
-	}
-
-	on_queued = {
-		owner = {
-			set_timed_country_flag = {
-				flag = str_is_building_crystals
-				days = 720
-			}
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -1463,6 +1538,42 @@ building_crystal_plant = {
 		}
 		modifier = {
 			job_translucer_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+				str_force_crystals = yes
+			}
+			NOT = { has_building = building_crystal_plant }
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 2
+			job_starnet_spice_melange_antifarmer_add = -2
+		}
+	}
+
+	destroy_trigger = {
+		free_building_slots = 0
+		exists = owner
+		owner = {
+			is_ai = yes
+			has_monthly_income = {
+				resource = rare_crystals
+				value > 9
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			set_timed_country_flag = {
+				flag = str_is_building_crystals
+				days = 720
+			}
 		}
 	}
 
@@ -1533,6 +1644,7 @@ building_nanite_transmuter = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 		}
 		building_basic_income_check = yes
 	}
@@ -1629,18 +1741,6 @@ building_ministry_production = {
 		planet_artisans_produces_mult = 0.15
 	}
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			volatile_motes = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			volatile_motes = @b2_rare_upkeep
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1655,6 +1755,18 @@ building_ministry_production = {
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
 			job_starnet_spice_melange_antifarmer_add = -1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			volatile_motes = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			volatile_motes = @b2_rare_upkeep
 		}
 	}
 
@@ -1710,6 +1822,11 @@ building_production_center = {
 	potential = {
 		exists = owner
 		owner = { is_gestalt = yes }
+		OR = {
+			owner = { is_ai = no }
+			has_any_industry_district = yes
+		}
+		NOT = { has_modifier = crucible_colony }
 	}
 
 	destroy_trigger = {
@@ -1717,6 +1834,11 @@ building_production_center = {
 		OR = {
 			owner = { is_gestalt = no }
 			buildings_no_motes = yes
+			AND = {
+				owner = { is_ai = yes }
+				has_any_industry_district = no
+			}
+			has_modifier = crucible_colony
 		}
 	}
 

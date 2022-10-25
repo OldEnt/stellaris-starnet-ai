@@ -9,11 +9,12 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_bow_M1S2_entity"
 	icon = "GFX_ship_part_core_bow"
+	ai_tags = { gunship }
 
 	ai_weight = {
 		modifier = {
 			factor = 10.0
-			OR = {
+			NOR = {
 				has_ai_personality = peaceful_traders
 				has_ai_personality = slaving_despots
 				has_ai_personality = migrating_flock
@@ -58,6 +59,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_bow_S3_entity"
 	icon = "GFX_ship_part_core_bow"
+	ai_tags = { screen }
 
 	ai_weight = {
 		factor = 0
@@ -108,6 +110,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_bow_L1_entity"
 	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
 
 	ai_weight = {
 		modifier = {
@@ -151,10 +154,12 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_stern_S2_entity"
 	icon = "GFX_ship_part_core_stern"
+	ai_tags = { screen }
 
 	ai_weight = {
 		factor = 100
 	}
+
 
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -185,6 +190,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_stern_S2_entity"
 	icon = "GFX_ship_part_core_stern"
+	ai_tags = { gunship }
 
 	ai_weight = {
 		factor = 100
@@ -206,7 +212,7 @@ ship_section_template = {
 		locatorname = "small_gun_02"
 	}
 
-	aux_utility_slots = 1
+	aux_utility_slots = 2
 
 	resources = {
 		category = ship_sections
@@ -223,6 +229,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_stern_M1_entity"
 	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
 
 	component_slot = {
 		name = "MEDIUM_GUN_01"

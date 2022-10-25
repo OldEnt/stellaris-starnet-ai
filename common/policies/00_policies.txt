@@ -500,7 +500,7 @@ diplomatic_stance = {
 					used_naval_capacity_percent > 0.95
 					and = {
 						used_naval_capacity_percent > 0.5
-						has_policy_flag = diplo_stance_supremacist
+						has_tradition = tr_supremacy_finish
 					}
 				}
 				nor = {
@@ -576,7 +576,7 @@ diplomatic_stance = {
 				factor = 0
 				any_relation = {
 					has_communications = root
-					has_policy_flag = diplo_stance_supremacist
+					has_tradition = tr_supremacy_finish
 					is_country_type = default
 					is_subject = no
 					relative_power = {
@@ -910,6 +910,7 @@ war_doctrine = {
 
 		policy_flags = {}
 		modifier = {
+			ship_disengage_opportunities_add = 2
 			ship_disengage_chance_mult = 0.33
 			ship_emergency_ftl_mult = -0.25
 		}
@@ -1781,7 +1782,7 @@ appropriation = {
 			modifier = {
 				factor = 10
 				NOT = { has_ai_personality_behaviour = multispecies }
-				or = { is_pacifist = yes }
+				is_pacifist = yes
 			}
 		}
 	}
@@ -1817,6 +1818,7 @@ leader_enhancement = {
 		}
 
 		modifier = {}
+
 	}
 
 	option = {
@@ -2119,7 +2121,6 @@ food_policy = {
 	}
 }
 
-
 food_policy_gestalt = {
 	potential = {
 		always = no
@@ -2356,7 +2357,12 @@ trade_policy = {
 				has_federation = no
 				AND = {
 					has_federation = yes
-					federation = { NOT = { has_federation_perk = trade_federation_passive } }
+					federation = {
+						NOR = {
+							has_federation_perk = trade_federation_passive
+							has_federation_perk = unity_trade_1
+						}
+					}
 				}
 			}
 			has_tradition = tr_mercantile_adaptive_economic_policies
@@ -2404,8 +2410,26 @@ trade_policy = {
 			factor = 10
 		}
 	}
-}
 
+	option = {
+		name = "trade_policy_holy_covenant"
+		potential = {
+			has_federation = yes
+			federation = { has_federation_perk = unity_trade_1 }
+		}
+
+		policy_flags = {
+			trade_conversion_holy_covenant
+		}
+
+		modifier = {
+		}
+
+		AI_weight = {
+			factor = 1000
+		}
+	}
+}
 
 drone_policy = {
 	potential = {
@@ -2436,12 +2460,9 @@ drone_policy = {
 				factor = 0
 				is_ai = yes
 				years_passed > 5
-				or = {
-					resource_income_compare = {
-						resource = minerals
-						value > 40
-					}
-					has_policy_flag = gestalt_economic_thinker
+				resource_income_compare = {
+					resource = minerals
+					value > 40
 				}
 			}
 		}
@@ -2453,10 +2474,6 @@ drone_policy = {
 		modifier = {
 			planet_jobs_simple_drone_produces_mult = -0.2
 			planet_jobs_complex_drone_produces_mult = 0.2
-		}
-
-		policy_flags = {
-			gestalt_economic_thinker
 		}
 
 		AI_weight = {
@@ -3014,6 +3031,10 @@ population_controls = {
 					has_ethic = ethic_fanatic_xenophile
 				}
 			}
+			modifier = {
+				add = 1000
+				years_passed > 100
+			}
 		}
 	}
 }
@@ -3151,6 +3172,11 @@ purge = {
 
 		AI_weight = {
 			factor = 0.1
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = multispecies
+			}
 		}
 	}
 
@@ -3206,6 +3232,10 @@ purge = {
 				NOR = {
 					has_ai_personality_behaviour = purger
 					has_ethic = ethic_gestalt_consciousness
+					AND = {
+						has_origin = origin_necrophage
+						is_xenophobe = yes
+					}
 				}
 			}
 			modifier = {
@@ -3368,6 +3398,34 @@ relentless_industrialists_policy = {
 				factor = 5
 				has_country_flag = relentless_industrialists_cleanup
 			}
+		}
+	}
+}
+
+roboticist_output = {
+	potential = {
+		has_tradition = tr_cybernetics_assembly_standards
+		is_regular_empire = yes
+	}
+
+	option = {
+		name = build_robots
+
+		policy_flags = {
+			roboticist_output_build_robots
+		}
+
+	}
+
+	option = {
+		name = build_cyborgs
+
+		policy_flags = {
+			roboticist_output_build_cyborgs
+		}
+
+		AI_weight = {
+			factor = 2
 		}
 	}
 }

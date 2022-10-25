@@ -129,7 +129,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_FUSION_REACTOR"
 
 	ai_weight = {
@@ -328,7 +328,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -527,7 +527,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -726,7 +726,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -925,7 +925,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 	upgrades_to = "CORVETTE_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -1163,7 +1163,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
+	size_restriction = { corvette frigate colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette offspring_corvette }
 
 	ai_weight = {
 		weight = 6

@@ -1,0 +1,1 @@
+weaken = $STR$#$VANILLA$

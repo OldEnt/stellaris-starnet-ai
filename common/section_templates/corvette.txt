@@ -1,14 +1,13 @@
 @section_cost = 30
 
 ship_section_template = {
-	key = "CORVETTE_MID_M1S1"
-	ship_size = corvette
+	key = "CORVETTE_MID_M1S1" # Used by the Frigate, not the Corvette
+	ship_size = frigate
 	fits_on_slot = mid
 	should_draw_components = yes
 	entity = "corvette_M1S1_entity"
 	icon = "GFX_ship_part_core_mid"
-
-	prerequisites = { tech_missiles_1 }
+	ai_tags = { explosive }
 
 	ai_weight = {
 		weight = 2
@@ -42,7 +41,7 @@ ship_section_template = {
 		locatorname = "medium_gun_01"
 	}
 
-	small_utility_slots = 3
+	small_utility_slots = 4
 	aux_utility_slots = 1
 
 	resources = {
@@ -60,6 +59,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "corvette_S3_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { gunship artillery brawler }
 
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -117,6 +117,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "corvette_S3_entity"
 	icon = "GFX_ship_part_core_mid"
+	ai_tags = { screen }
 
 	ai_weight = {
 		factor = 2

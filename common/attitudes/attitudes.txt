@@ -10,8 +10,8 @@ neutral = {
 	type = neutral
 	behaviour = {
 		trade = yes
-		vassalize = yes
-		weaken = yes
+		inline_script = { script = "str_attitudes/str_attitudes_neutral_vassalize" VANILLA = no STR = yes }
+		inline_script = { script = "str_attitudes/str_attitudes_neutral_weaken" VANILLA = no STR = yes }
 	}
 }
 
@@ -19,8 +19,8 @@ wary = {
 	type = wary
 	behaviour = {
 		trade = yes
-		weaken = yes
-		vassalize = yes
+		inline_script = { script = "str_attitudes/str_attitudes_wary_vassalize" VANILLA = no STR = yes }
+		inline_script = { script = "str_attitudes/str_attitudes_wary_weaken" VANILLA = no STR = yes }
 	}
 }
 
@@ -36,8 +36,8 @@ unfriendly = {
 	type = unfriendly
 	behaviour = {
 		weaken = yes
-		vassalize = yes
-		attack = yes
+		inline_script = { script = "str_attitudes/str_attitudes_unfriendly_vassalize" VANILLA = no STR = yes }
+		inline_script = { script = "str_attitudes/str_attitudes_unfriendly_attack" VANILLA = no STR = yes }
 	}
 }
 
@@ -45,8 +45,8 @@ rival = {
 	type = rival
 	behaviour = {
 		weaken = yes
-		attack = yes
-		vassalize = yes
+		inline_script = { script = "str_attitudes/str_attitudes_rival_attack" VANILLA = no STR = yes }
+		inline_script = { script = "str_attitudes/str_attitudes_rival_vassalize" VANILLA = no STR = yes }
 	}
 }
 
@@ -54,8 +54,8 @@ hostile = {
 	type = hostile
 	behaviour = {
 		attack = yes
-		weaken = yes
-		vassalize = yes
+		inline_script = { script = "str_attitudes/str_attitudes_hostile_weaken" VANILLA = no STR = yes }
+		inline_script = { script = "str_attitudes/str_attitudes_hostile_vassalize" VANILLA = no STR = yes }
 	}
 }
 

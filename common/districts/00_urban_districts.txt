@@ -18,11 +18,16 @@ district_city = {
 	}
 
 	potential = {
-		exists = owner
-		owner = {
-			OR = {
-				is_regular_empire = yes
-				is_country_type = primitive
+		OR = {
+			NOT = { exists = owner } #this condition is needed for galaxy generation
+			AND = {
+				exists = owner
+				owner = {
+					OR = {
+						is_regular_empire = yes
+						is_country_type = primitive
+					}
+				}
 			}
 		}
 		OR = {
@@ -77,6 +82,9 @@ district_city = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
 			str_enable_clerks = yes
 		}
 		modifier = {
@@ -122,6 +130,17 @@ district_city = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
+			str_enable_clerks = yes
+		}
+		modifier = {
+			job_clerk_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = {
 				is_ai = yes
 			}
@@ -130,17 +149,6 @@ district_city = {
 		modifier = {
 			job_starnet_spice_melange_farmer_add = 1
 			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
-			str_enable_clerks = yes 
-		}
-		modifier = {
-			job_clerk_add = 1
 		}
 	}
 
@@ -320,20 +328,6 @@ district_hive = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			str_force_city_district = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
 	planet_modifier = {
 		planet_housing_add = 6
 		job_maintenance_drone_add = 3
@@ -378,6 +372,20 @@ district_hive = {
 		}
 		modifier = {
 			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_city_district = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -587,21 +595,6 @@ district_industrial = {
 			planet_max_buildings_add = 0.34
 		}
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-			str_force_district_industrial = yes
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
 
 	triggered_planet_modifier = {
 		potential = {
@@ -839,6 +832,20 @@ district_industrial = {
 		modifier = {
 			job_artisan_drone_add = 1
 			job_catalytic_drone_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			str_force_district_industrial = yes
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 
@@ -1092,7 +1099,7 @@ district_srw_commercial = {
 	triggered_desc = {
 		text = job_clerk_effect_desc
 	}
-	
+
 	triggered_desc = {
 		text = job_merchant_effect_desc
 		trigger = {

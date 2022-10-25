@@ -109,7 +109,7 @@ district_rw_city = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
+			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
 		}
 		modifier = {
 			job_clerk_add = 3
@@ -562,22 +562,6 @@ district_rw_science = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_ai = yes }
-			years_passed > 6
-			num_districts = {
-				type = district_rw_science
-				value < 1
-			}
-		}
-		modifier = {
-			job_starnet_spice_melange_farmer_add = 1
-			job_starnet_spice_melange_antifarmer_add = -1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
@@ -592,6 +576,22 @@ district_rw_science = {
 		}
 		modifier = {
 			job_calculator_add = 10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			years_passed > 6
+			num_districts = {
+				type = district_rw_science
+				value < 1
+			}
+		}
+		modifier = {
+			job_starnet_spice_melange_farmer_add = 1
+			job_starnet_spice_melange_antifarmer_add = -1
 		}
 	}
 

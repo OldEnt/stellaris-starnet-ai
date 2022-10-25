@@ -460,7 +460,7 @@ tech_mine_zro = {
 	tier = 3
 	category = { psionics }
 	is_rare = yes
-	prerequisites = { "tech_sensors_3" "tech_psionic_theory" }
+	prerequisites = { "tech_sensors_3" }
 	is_reverse_engineerable = no
 	weight = @tier3weight2
 
@@ -493,6 +493,29 @@ tech_mine_zro = {
 			}
 		}
 		modifier = {
+			factor = 2
+			any_owned_pop = {
+				pop_has_trait = trait_psionic
+			}
+		}
+		modifier = {
+			factor = 1.25
+			any_owned_pop = {
+				pop_has_trait = trait_latent_psionic
+			}
+			NOT = {
+				any_owned_pop = {
+					pop_has_trait = trait_psionic
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				has_modifier = pm_shroudwalker_teacher
+			}
+		}
+		modifier = {
 			factor = 10
 			research_leader = {
 				area = society
@@ -513,7 +536,7 @@ tech_mine_zro = {
 		}
 		modifier = {
 			factor = 5
-			has_ascension_perk = ap_transcendence
+			has_tradition = tr_psionics_finish
 		}
 	}
 }
