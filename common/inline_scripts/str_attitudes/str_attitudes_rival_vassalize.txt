@@ -1,1 +1,0 @@
-vassalize = $STR$#$VANILLA$
