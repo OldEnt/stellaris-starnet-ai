@@ -26,14 +26,14 @@ opinion_in_war = {
 # Ally opinion
 opinion_alliance = {
 	opinion = {
-		base = 100
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 25 STR = 100 }
 	}
 }
 
 # Defensive pact opinion
 opinion_defensive_pact = {
 	opinion = {
-		base = 50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 20 STR = 50 }
 	}
 }
 
@@ -47,7 +47,7 @@ opinion_federation_associate = {
 # Federation member opinion
 opinion_federation = {
 	opinion = {
-		base = 150
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 50 STR = 150 }
 	}
 }
 
@@ -508,10 +508,12 @@ opinion_voted_down_proposal = {
 		base = -50
 	}
 
+	min = -150
+
 	accumulative = yes
 
 	decay = {
-		base = 3
+		base = 2
 	}
 }
 
@@ -670,7 +672,7 @@ opinion_subject_released = {
 # They refused our offer of Status Quo
 opinion_status_quo_not_accepted = {
 	opinion = {
-		base = -30
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -30 }
 	}
 
 	decay = {
@@ -681,15 +683,15 @@ opinion_status_quo_not_accepted = {
 # Favorable trade deal
 opinion_trade_gift = {
 	opinion = {
-		base = 0.1
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 1 STR = 0.1 }
 	}
 
 	accumulative = yes
 
-	max = 1000
+	inline_script = { script = "str_weights/str_weights" WEIGHT = max VANILLA = 100 STR = 1000 }
 
 	decay = {
-		base = 5
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 2 STR = 5 }
 	}
 }
 
@@ -720,7 +722,7 @@ opinion_subject_broke_free = {
 # Opinions of an empire we have just opened communications with (event action.19)
 opinion_new_contact = {
 	opinion = {
-		base = -50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -50 }
 	}
 
 	decay = {
@@ -780,7 +782,7 @@ opinion_relative_power = {
 # Friction opinion modifier
 opinion_friction = {
 	opinion = {
-		base = -3
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -1 STR = -3 }
 	}
 
 	unique = yes
@@ -839,7 +841,7 @@ opinion_declared_rival = {
 # Ally of ally
 opinion_ally_of_ally = {
 	opinion = {
-		base = 60
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 25 STR = 60 }
 	}
 
 	unique = yes
@@ -858,7 +860,7 @@ opinion_mutual_rival = {
 # Mutual threat opinion modifier
 opinion_mutual_threat = {
 	opinion = {
-		base = 1.6
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 1 STR = 1.6 }
 	}
 
 	unique = yes
@@ -867,7 +869,7 @@ opinion_mutual_threat = {
 # Allied to rival opinion modifier
 opinion_allied_to_rival = {
 	opinion = {
-		base = -150
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -100 STR = -150 }
 	}
 
 	unique = yes
@@ -898,15 +900,15 @@ opinion_insult = {
 # They refused our demand to become our subjects
 opinion_demanded_subjectization = {
 	opinion = {
-		base = -50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -50 }
 		modifier = {
-			factor = 2
+			inline_script = { script = "str_weights/str_weights" WEIGHT = factor VANILLA = 10 STR = 2 }
 			is_country_type = awakened_fallen_empire
 		}
 	}
 
 	decay = {
-		base = 5
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 1 STR = 5 }
 	}
 
 	accumulative = yes
@@ -915,13 +917,13 @@ opinion_demanded_subjectization = {
 # Ally voted against our proposed war
 opinion_decline_war = {
 	opinion = {
-		base = -250
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -50 STR = -250 }
 	}
 
 	decay = {
-		base = 70
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 1 STR = 70 }
 	}
-	months = 48
+	inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = months OPERATOR = "=" VALUE = 48 }
 
 	accumulative = yes
 }
@@ -929,7 +931,7 @@ opinion_decline_war = {
 # An AI warns a player ally that they are not helping in the war
 opinion_inactive_in_war = {
 	opinion = {
-		base = -300
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -300 }
 	}
 
 	months = 12
@@ -977,7 +979,7 @@ opinion_we_liberated = {
 
 opinion_liberated_us = {
 	opinion = {
-		base = 250
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 200 STR = 250 }
 	}
 
 	accumulative = yes
@@ -1823,7 +1825,7 @@ opinion_machine_uprising_victorious = {
 # Robots respect the victorious Machine Uprising
 opinion_machine_uprising_machine_comrades_victorious = {
 	opinion = {
-		base = 500
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 80 STR = 500 }
 	}
 	decay = {
 		base = 1
@@ -2115,7 +2117,7 @@ opinion_swept_a_primitive_world = {
 
 opinion_swept_a_primitive_world_phile = {
 	opinion = {
-		base = -50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -60 STR = -50 }
 	}
 
 	accumulative = yes
@@ -2307,7 +2309,6 @@ opinion_zarqlans_chosen = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_overlord_ai_opinion = {
 	opinion = {
 		base = 150
@@ -2318,7 +2319,6 @@ opinion_imperial_overlord_ai_opinion = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_vassal_ai_opinion = {
 	opinion = {
 		base = 120
@@ -2329,7 +2329,6 @@ opinion_imperial_vassal_ai_opinion = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_vassal_new_overlord = {
 	opinion = {
 		base = 150
@@ -2339,7 +2338,6 @@ opinion_imperial_vassal_new_overlord = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_vassal_refused_overlordship = {
 	opinion = {
 		base = -80
@@ -2349,7 +2347,6 @@ opinion_imperial_vassal_refused_overlordship = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_vassal_harsh_response_overlord_opinion = {
 	opinion = {
 		base = -20
@@ -2360,7 +2357,6 @@ opinion_imperial_vassal_harsh_response_overlord_opinion = {
 	}
 }
 
-#TODO: AI
 opinion_imperial_vassal_grateful_response_overlord_opinion = {
 	opinion = {
 		base = 20
@@ -2491,7 +2487,7 @@ triggered_opinion_both_hive_mind = {
 	}
 
 	opinion = {
-		base = 20
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 30 STR = 20 }
 	}
 }
 
@@ -2536,7 +2532,7 @@ triggered_opinion_cyborgs_fanatic = {
 	}
 
 	opinion = {
-		base = -30
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -40 STR = -30 }
 	}
 }
 
@@ -2551,7 +2547,7 @@ triggered_opinion_cyborgs_normal = {
 	}
 
 	opinion = {
-		base = -15
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -15 }
 	}
 }
 
@@ -2564,7 +2560,7 @@ triggered_opinion_synthetics_normal = {
 	}
 
 	opinion = {
-		base = -30
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -40 STR = -30 }
 	}
 }
 
@@ -2577,7 +2573,7 @@ triggered_opinion_synthetics_fanatic = {
 	}
 
 	opinion = {
-		base = -50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -60 STR = -50 }
 	}
 }
 
@@ -2623,7 +2619,7 @@ triggered_opinion_both_machine_intelligence = {
 	}
 
 	opinion = {
-		base = 50
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 30 STR = 50 }
 	}
 }
 
@@ -2939,7 +2935,7 @@ triggered_opinion_xenophilia = {
 	opinion = {
 		base = 0
 		modifier = {
-			add = 10
+			add = 20
 			has_ethic = "ethic_xenophile"
 			NOT = { is_same_species_class = FROM }
 			FROM = {
@@ -2950,7 +2946,7 @@ triggered_opinion_xenophilia = {
 			}
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_xenophile"
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
@@ -2977,7 +2973,7 @@ triggered_opinion_xenophilia = {
 		}
 
 		modifier = {
-			add = 20
+			add = 40
 			has_ethic = "ethic_fanatic_xenophile"
 			NOT = { is_same_species_class = FROM }
 			FROM = {
@@ -2988,7 +2984,7 @@ triggered_opinion_xenophilia = {
 			}
 		}
 		modifier = {
-			add = 10
+			add = 20
 			has_ethic = "ethic_fanatic_xenophile"
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
@@ -3001,7 +2997,7 @@ triggered_opinion_xenophilia = {
 			}
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_fanatic_xenophile"
 			is_same_species_class = FROM
 			NOT = { is_same_species = FROM }
@@ -3013,6 +3009,7 @@ triggered_opinion_xenophilia = {
 				}
 			}
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3030,7 +3027,7 @@ triggered_opinion_of_materialist = {
 			FROM = { has_ethic = "ethic_materialist" }
 		}
 		modifier = {
-			add = -40
+			add = -20
 			has_ethic = "ethic_spiritualist"
 			FROM = { has_ethic = "ethic_fanatic_materialist" }
 		}
@@ -3044,6 +3041,7 @@ triggered_opinion_of_materialist = {
 			has_ethic = "ethic_fanatic_spiritualist"
 			FROM = { has_ethic = "ethic_fanatic_materialist" }
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ add = -15 has_ethic = "ethic_spiritualist" FROM = { has_ethic = "ethic_fanatic_materialist" } }" }
 	}
 }
 
@@ -3056,25 +3054,26 @@ triggered_opinion_of_materialist_pos = {
 		base = 0
 
 		modifier = {
-			add = 15
+			add = 25
 			has_ethic = "ethic_fanatic_materialist"
 			FROM = { has_ethic = "ethic_fanatic_materialist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_fanatic_materialist"
 			FROM = { has_ethic = "ethic_materialist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_materialist"
 			FROM = { has_ethic = "ethic_fanatic_materialist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_materialist"
 			FROM = { has_ethic = "ethic_materialist" }
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3118,25 +3117,26 @@ triggered_opinion_of_spiritualist_pos = {
 		base = 0
 
 		modifier = {
-			add = 15
+			add = 25
 			has_ethic = "ethic_fanatic_spiritualist"
 			FROM = { has_ethic = "ethic_fanatic_spiritualist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_fanatic_spiritualist"
 			FROM = { has_ethic = "ethic_spiritualist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_spiritualist"
 			FROM = { has_ethic = "ethic_fanatic_spiritualist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_spiritualist"
 			FROM = { has_ethic = "ethic_spiritualist" }
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3179,25 +3179,26 @@ triggered_opinion_of_egalitarian_pos = {
 		base = 0
 
 		modifier = {
-			add = 15
+			add = 25
 			has_ethic = "ethic_fanatic_egalitarian"
 			FROM = { has_ethic = "ethic_fanatic_egalitarian" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_fanatic_egalitarian"
 			FROM = { has_ethic = "ethic_egalitarian" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_egalitarian"
 			FROM = { has_ethic = "ethic_fanatic_egalitarian" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_egalitarian"
 			FROM = { has_ethic = "ethic_egalitarian" }
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3210,25 +3211,26 @@ triggered_opinion_of_pacifist_pos = {
 		base = 0
 
 		modifier = {
-			add = 15
+			add = 25
 			has_ethic = "ethic_fanatic_pacifist"
 			FROM = { has_ethic = "ethic_fanatic_pacifist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_fanatic_pacifist"
 			FROM = { has_ethic = "ethic_pacifist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_pacifist"
 			FROM = { has_ethic = "ethic_fanatic_pacifist" }
 		}
 		modifier = {
-			add = 5
+			add = 10
 			has_ethic = "ethic_pacifist"
 			FROM = { has_ethic = "ethic_pacifist" }
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3299,19 +3301,20 @@ triggered_opinion_xenophage = {
 	opinion = {
 		base = 0
 		modifier = {
-			add = -45
+			add = -25
 			NOR = {
 				has_ethic = "ethic_authoritarian"
 				has_ethic = "ethic_fanatic_authoritarian"
 			}
 		}
 		modifier = {
-			add = -45
+			add = -25
 			OR = {
 				has_ethic = "ethic_xenophile"
 				has_ethic = "ethic_fanatic_xenophile"
 			}
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 }
 
@@ -3328,7 +3331,7 @@ triggered_materialist_opinion_of_machine_empires = {
 		}
 	}
 	opinion = {
-		base = 20
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 10 STR = 20 }
 	}
 }
 
@@ -3344,7 +3347,7 @@ triggered_fanatic_materialist_opinion_of_machine_empires = {
 		}
 	}
 	opinion = {
-		base = 30
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 20 STR = 30 }
 	}
 }
 
@@ -3546,7 +3549,7 @@ triggered_opinion_both_terminators = {
 		FROM = { has_civic = civic_machine_terminator }
 	}
 	opinion = {
-		base = 500
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 200 STR = 500 }
 	}
 }
 
@@ -3594,7 +3597,7 @@ triggered_exterminators_opinion_of_machines = {
 		}
 	}
 	opinion = {
-		base = 200
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 100 STR = 200 }
 	}
 }
 

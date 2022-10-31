@@ -1,0 +1,1 @@
+$PROPERTY$ $OPERATOR$ $VALUE$# This inline is erased when Friendship patch is present.
