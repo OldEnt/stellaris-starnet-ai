@@ -1,0 +1,1 @@
+# This defines file is erased when Friendship patch is present.
