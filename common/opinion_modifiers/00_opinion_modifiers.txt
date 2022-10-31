@@ -902,9 +902,10 @@ opinion_demanded_subjectization = {
 	opinion = {
 		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -20 STR = -50 }
 		modifier = {
-			inline_script = { script = "str_weights/str_weights" WEIGHT = factor VANILLA = 10 STR = 2 }
+			factor = 10
 			is_country_type = awakened_fallen_empire
 		}
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ divide = 2 }" }
 	}
 
 	decay = {
