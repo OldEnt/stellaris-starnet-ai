@@ -1,1 +1,99 @@
 # This defines file is erased when Friendship patch is present.
+	NGameplay = {
+		ENVOY_IMPROVE_RELATION_BASE			= 1.0	# Monthly effect on opinion when an envoy is improving relations
+		ENVOY_IMPROVE_RELATION_MAX			= 75.0	# Maximum value from using envoys to improve relations
+		ENVOY_HARM_RELATION_BASE			= -2.0	# Monthly effect on opinion when an envoy is harming relations
+		ENVOY_HARM_RELATION_MIN				= -150.0	# Lowest possible value from using envoys to harm relations
+		ENVOY_RELATION_EFFECT_DECAY			= 5.0	# Every month that there is no envoy effecting opinion it moves towards 0 with this/month
+	}
+
+	NAI = {
+		MIN_GIFT_SIZE = 15							# in opinion impact
+		MAX_GIFT_SIZE = 30
+
+		MAX_TRUST = 150								# trust can never be more than this
+		MAX_TRUST_DEFENSIVE_PACT = 100				# trust can tick up to this if defensive pact
+		MAX_TRUST_ASSOCIATE = 50					# trust can tick up to this if federation associate
+		MAX_TRUST_NAP = 25							# trust can tick up to this if non-aggression pact
+		MAX_TRUST_MIN = 25							# trust can always tick up to at least this
+
+		THREAT_PLANET_MULT = 20.0					# Base threat multiplier for planet
+		THREAT_STARBASE_MULT = 3.0					# Base threat multiplier for system with upgraded starbase
+		THREAT_SYSTEM_MULT = 2.0					# Base threat multiplier for system
+
+		HIGH_THREAT_THRESHOLD = 60					# Must have at least this much threat to become fearful
+		SHARED_THREAT_MULT = 1.4					# How much does having a shared threat boost opinion?
+		THREAT_SHARED_THREAT_REDUCTION = 5			# Each point of threat will also eliminate this much shared threat
+		SHARED_THREAT_MAX = 350
+		THREAT_DECAY = -2.5							# Each month
+		THREAT_DISTANCE_FACTOR = 0.015				# The higher this is the larger the threat reduction from being far away
+		THREAT_SIZE_FACTOR = 3						# How much does the relative power of the aggressive empire affect threat?
+
+		AI_AGGRESSIVENESS_LOW_MULT = 0.8
+		AI_AGGRESSIVENESS_HIGH_MULT = 3.0
+		AI_AGGRESSIVENESS_BASE = 500			# Base chance AI will declare a war (multiplied by personality aggressiveness score)
+		AI_AGGRESSIVENESS_PROPAGATOR_BOXED_IN_MULT = 60	# When a warlike 'propagator' personality is boxed in aggression is multiplied by this value
+		AI_AGGRESSIVENESS_BOXED_IN_MULT = 50	# When an AI can no longer peacefully expand aggression is multiplied by this value
+		AI_AGGRESSIVENESS_NO_COLONY_TARGET_MULT = 20 # When an AI has no immediate colony targets and at least MAX_PLANETS_FOR_BUDGET_FACTOR planets (but is not boxed in) aggression is multiplied by this value
+		FEDERATION_ACCEPTANCE_SHARED_RIVAL = 150 # per rival
+		FEDERATION_ACCEPTANCE_SHARED_RIVAL_IN_FEDERATION = 15 # extra per rival in alliance
+		FEDERATION_ACCEPTANCE_CRISIS_FACTOR = 50
+		FEDERATION_ACCEPTANCE_OPINION_FACTOR = 0.5
+		FEDERATION_ACCEPTANCE_VOTED_DOWN_PROPOSAL = -50
+		FEDERATION_ACCEPTANCE_ATTITUDE_ALLIANCE = 60
+		FEDERATION_ACCEPTANCE_ATTITUDE_COEXIST = 0
+
+		DIPLO_BREAK_THRESHOLD = -150
+
+		FEDERATION_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 15 # For each 1x we are stronger than them
+		FEDERATION_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 200
+
+		DEFENSIVE_PACT_ACCEPTANCE_OPINION_FACTOR = 0.4
+		DEFENSIVE_PACT_ACCEPTANCE_NUM_PACTS = -70	# per existing defensive pact
+		DEFENSIVE_PACT_ACCEPTANCE_SHARED_RIVAL = 150 # per rival
+		DEFENSIVE_PACT_ACCEPTANCE_SHARED_ALLY = 100 # per shared ally
+		DEFENSIVE_PACT_ACCEPTANCE_SHARED_THREAT = 0.5	# scales with actual threat
+		DEFENSIVE_PACT_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 30 # For each 1x we are stronger than them
+		DEFENSIVE_PACT_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 250
+		DEFENSIVE_PACT_ACCEPTANCE_DISTANCE_MULT = -0.2 # per 1 border distance
+		NON_AGGRESSION_PACT_ACCEPTANCE_OPINION_FACTOR = 0.2
+		NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 30
+		NON_AGGRESSION_PACT_ACCEPTANCE_ATTITUDE_COEXIST = 10
+		NON_AGGRESSION_PACT_ACCEPTANCE_OTHER_ATTITUDE = -50
+		NON_AGGRESSION_PACT_ACCEPTANCE_NUM_PACTS = -10	# per existing non-aggression pact
+		NON_AGGRESSION_PACT_ACCEPTANCE_SHARED_RIVAL = 150 # per rival
+		NON_AGGRESSION_PACT_ACCEPTANCE_SHARED_THREAT = 0.4	# scales with actual threat
+		NON_AGGRESSION_PACT_ACCEPTANCE_RELATIVE_STRENGTH_FACTOR = 40 # For each 1x we are stronger than them
+		NON_AGGRESSION_PACT_ACCEPTANCE_RELATIVE_STRENGTH_MAX = 300
+
+		RESEARCH_AGREEMENT_ACCEPTANCE_OPINION_FACTOR = 1.2
+
+		COMMERCIAL_PACT_ACCEPTANCE_OPINION_FACTOR = 1
+		COMMERCIAL_PACT_ACCEPTANCE_ATTITUDE_ALLIANCE = 100
+		COMMERCIAL_PACT_ACCEPTANCE_ATTITUDE_COEXIST = 50
+		COMMERCIAL_PACT_ACCEPTANCE_OTHER_ATTITUDE = -250
+		COMMERCIAL_PACT_ACCEPTANCE_NUM_PACTS = -10	# per existing commercial pact
+		COMMERCIAL_PACT_ACCEPTANCE_DISTANCE_MULT = -0.3 # per 1 border distance
+		COMMERCIAL_PACT_ACCEPTANCE_GIVEN_VALUE = -0.5 # Per collected trade value
+		COMMERCIAL_PACT_ACCEPTANCE_GIVEN_VALUE_MIN = -200
+		COMMERCIAL_PACT_ACCEPTANCE_GIVEN_VALUE_MAX = 0
+		COMMERCIAL_PACT_ACCEPTANCE_TAKEN_VALUE = 1 # Per collected trade value
+		COMMERCIAL_PACT_ACCEPTANCE_TAKEN_VALUE_MIN = 0
+		COMMERCIAL_PACT_ACCEPTANCE_TAKEN_VALUE_MAX = 200
+
+		VASSALIZATION_ACCEPTANCE_PROTECTORATE_MULT = 0.1		# multiplied by number of techs potential overlord is ahead in
+		VASSALIZATION_ACCEPTANCE_PROTECTORATE_MAX = 10
+		VASSALIZATION_ACCEPTANCE_NUM_POPS = -0.25			# per pop
+		VASSALIZATION_ACCEPTANCE_POWER_DIFFERENCE_MIN = 3
+		VASSALIZATION_ACCEPTANCE_POWER_DIFFERENCE_MULT = 30	# for each 1x over min
+		VASSALIZATION_ACCEPTANCE_POWER_DIFFERENCE_MAX = 300
+		VASSALIZATION_ACCEPTANCE_ATTITUDE_ALLIANCE = 50
+		VASSALIZATION_ACCEPTANCE_ATTITUDE_COEXIST = 0
+		VASSALIZATION_ACCEPTANCE_ATTITUDE_ATTACK = -1000
+		VASSALIZATION_ACCEPTANCE_OTHER_ATTITUDE = -20
+		VASSALIZATION_ACCEPTANCE_OTHER_THREAT_MULT = 0.1
+		VASSALIZATION_ACCEPTANCE_OTHER_THREAT_MAX = 50
+		VASSALIZATION_ACCEPTANCE_DISTANCE_MULT = -1.5 # per 1 border distance
+
+		DIPLO_ACTION_FAVOR_AI_ACCEPTANCE_VALUE = 1
+	}
