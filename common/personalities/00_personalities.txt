@@ -48,13 +48,13 @@
 honorbound_warriors = {
 	aggressiveness = 1.75
 	trade_willingness = 0.7
-	bravery = 1.0
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.5" STR = "1.0"}
 	combat_bravery = 2.0	# rarely ever retreat in battle
 
 	military_spending = 1.2
 	colony_spending = 0.9
 
-	federation_acceptance = -10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-10"}
 	nap_acceptance = -100
 	commercial_pact_acceptance = -20
 	research_agreement_acceptance = 0
@@ -75,7 +75,7 @@ honorbound_warriors = {
 
 	behaviour = {
 		conqueror = yes
-		subjugator = no
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "subjugator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
 		liberator = no
 		opportunist = no
 		slaver = no
@@ -89,7 +89,7 @@ honorbound_warriors = {
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -116,7 +116,7 @@ honorbound_warriors = {
 }
 
 evangelising_zealots = {
-	aggressiveness = 1.55
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "1.25" STR = "1.55"}
 	trade_willingness = 0.75
 	bravery = 1.0
 	combat_bravery = 1.0
@@ -124,8 +124,8 @@ evangelising_zealots = {
 	military_spending = 1.1
 	colony_spending = 1.1
 
-	federation_acceptance = -20
-	nap_acceptance = -20
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-20"}
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "nap_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-20"}
 	commercial_pact_acceptance = -20
 	research_agreement_acceptance = -20
 	defensive_pact_acceptance = 0
@@ -159,7 +159,7 @@ evangelising_zealots = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -208,9 +208,9 @@ evangelising_zealots = {
 }
 
 erudite_explorers = {
-	aggressiveness = 1.15
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.75" STR = "1.15"}
 	trade_willingness = 0.9
-	bravery = 0.7
+	bravery = 0.75
 	combat_bravery = 1.0
 
 	military_spending = 0.9
@@ -244,14 +244,14 @@ erudite_explorers = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		infiltrator = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -307,15 +307,15 @@ erudite_explorers = {
 }
 
 spiritual_seekers = {
-	aggressiveness = 0.4
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.25" STR = "0.4"}
 	trade_willingness = 0.9
-	bravery = 1
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.75" STR = "1.0"}
 	combat_bravery = 1.0
 
 	military_spending = 0.8
 	colony_spending = 1.0
 
-	federation_acceptance = 10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "10"}
 	nap_acceptance = 20
 	commercial_pact_acceptance = 10
 	research_agreement_acceptance = 10
@@ -335,7 +335,7 @@ spiritual_seekers = {
 	claims_modifier = 1.0
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = yes
 		opportunist = no
@@ -343,14 +343,14 @@ spiritual_seekers = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		infiltrator = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		robot_exploiter = yes
 		robot_liberator = no
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -405,15 +405,15 @@ spiritual_seekers = {
 }
 
 ruthless_capitalists = {
-	aggressiveness = 1.3
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "1.0" STR = "1.3"}
 	trade_willingness = 1.0
-	bravery = 1
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.5" STR = "1"}
 	combat_bravery = 1.0
 
 	military_spending = 1.0
 	colony_spending = 1.1
 
-	federation_acceptance = -10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-10"}
 	nap_acceptance = -10
 	commercial_pact_acceptance = 20
 	research_agreement_acceptance = 10
@@ -441,8 +441,8 @@ ruthless_capitalists = {
 		uplifter = no
 		purger = no
 		displacer = no
-		infiltrator = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		robot_exploiter = yes
 		robot_liberator = no
 		propagator = no
@@ -477,15 +477,15 @@ ruthless_capitalists = {
 }
 
 peaceful_traders = {
-	aggressiveness = 0.4
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.5" STR = "0.4"}
 	trade_willingness = 1.0
-	bravery = 0.9
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.5" STR = "0.9"}
 	combat_bravery = 1.0
 
 	military_spending = 0.9
 	colony_spending = 1.1
 
-	federation_acceptance = 10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "10"}
 	nap_acceptance = 20
 	commercial_pact_acceptance = 20
 	research_agreement_acceptance = 10
@@ -505,7 +505,7 @@ peaceful_traders = {
 	claims_modifier = 1.0
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = yes
 		opportunist = yes
@@ -513,8 +513,8 @@ peaceful_traders = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		infiltrator = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
@@ -559,7 +559,7 @@ hegemonic_imperialists = {
 	military_spending = 1.1
 	colony_spending = 1.0
 
-	federation_acceptance = -20
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-20"}
 	nap_acceptance = -10
 	commercial_pact_acceptance = -10
 	research_agreement_acceptance = -10
@@ -594,7 +594,7 @@ hegemonic_imperialists = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 
@@ -626,13 +626,13 @@ hegemonic_imperialists = {
 slaving_despots = {
 	aggressiveness = 1.5
 	trade_willingness = 0.8
-	bravery = 1
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.5" STR = "1"}
 	combat_bravery = 1.0
 
 	military_spending = 1.1
 	colony_spending = 0.9
 
-	federation_acceptance = -10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-10"}
 	nap_acceptance = -20
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
@@ -667,8 +667,8 @@ slaving_despots = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
-		attack_neutrals = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = attack_neutrals OPERATOR = "=" VALUE = "yes" }
 	}
 
 
@@ -689,15 +689,15 @@ slaving_despots = {
 }
 
 decadent_hierarchy = {
-	aggressiveness = 0.7
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.5" STR = "0.7"}
 	trade_willingness = 0.9
-	bravery = 1.1
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.5" STR = "1.1"}
 	combat_bravery = 1.0
 
 	military_spending = 1.1
 	colony_spending = 0.9
 
-	federation_acceptance = -30
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-30"}
 	nap_acceptance = 20
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
@@ -717,7 +717,7 @@ decadent_hierarchy = {
 	claims_modifier = 1.5
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = no
 		opportunist = yes
@@ -725,14 +725,14 @@ decadent_hierarchy = {
 		uplifter = no
 		purger = no
 		displacer = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = yes
 		robot_liberator = no
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 
@@ -753,15 +753,15 @@ decadent_hierarchy = {
 }
 
 democratic_crusaders = {
-	aggressiveness = 1.5
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "1.0" STR = "1.5"}
 	trade_willingness = 0.9
-	bravery = 1.1
+	bravery = 1.25
 	combat_bravery = 1.0
 
 	military_spending = 1.2
 	colony_spending = 1.0
 
-	federation_acceptance = 10
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "10"}
 	nap_acceptance = 0
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
@@ -788,14 +788,14 @@ democratic_crusaders = {
 		uplifter = no
 		purger = no
 		displacer = no
-		dominator = yes
-		infiltrator = no
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 
@@ -822,9 +822,9 @@ democratic_crusaders = {
 }
 
 harmonious_hierarchy = {
-	aggressiveness = 1.2
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.5" STR = "1.2"}
 	trade_willingness = 0.9
-	bravery = 1.25
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.75" STR = "1.25"}
 	combat_bravery = 1.0
 
 	military_spending = 0.8
@@ -850,7 +850,7 @@ harmonious_hierarchy = {
 	claims_modifier = 0.75
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = no
 		opportunist = no
@@ -858,14 +858,14 @@ harmonious_hierarchy = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = yes
 		robot_liberator = no
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -902,15 +902,15 @@ harmonious_hierarchy = {
 }
 
 federation_builders = {
-	aggressiveness = 1.00
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.75" STR = "1.00"}
 	trade_willingness = 0.95
-	bravery = 0.9
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.25" STR = "0.9"}
 	combat_bravery = 1.0
 
 	military_spending = 1.0
 	colony_spending = 1.0
 
-	federation_acceptance = 20
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "20"}
 	nap_acceptance = 25
 	commercial_pact_acceptance = 15
 	research_agreement_acceptance = 15
@@ -930,7 +930,7 @@ federation_builders = {
 	claims_modifier = 0.75
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = yes
 		opportunist = yes
@@ -938,14 +938,14 @@ federation_builders = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -1010,15 +1010,15 @@ federation_builders = {
 }
 
 xenophobic_isolationists = {
-	aggressiveness = 0.02
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.5" STR = "0.02"}
 	trade_willingness = 0.5
-	bravery = 0.6
+	bravery = 0.75
 	combat_bravery = 1.0
 
 	military_spending = 1.2
 	colony_spending = 1.0
 
-	federation_acceptance = -50
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-50"}
 	nap_acceptance = 20
 	commercial_pact_acceptance = -20
 	research_agreement_acceptance = -20
@@ -1038,7 +1038,7 @@ xenophobic_isolationists = {
 	claims_modifier = 5.0
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = no
 		opportunist = yes
@@ -1046,7 +1046,7 @@ xenophobic_isolationists = {
 		uplifter = no
 		purger = no
 		displacer = yes
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = yes
 		robot_liberator = no
@@ -1054,7 +1054,7 @@ xenophobic_isolationists = {
 		multispecies = no
 		isolationist = yes
 		crisis_fighter = yes
-		wants_tribute = no
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "wants_tribute" OPERATOR = "=" VANILLA = "yes" STR = "no"}
 	}
 
 	allow = {
@@ -1111,7 +1111,7 @@ xenophobic_isolationists = {
 fanatic_purifiers = {
 	aggressiveness = 2.0
 	trade_willingness = 0.5
-	bravery = 1.5
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.0" STR = "1.5"}
 	combat_bravery = 1.25
 
 	military_spending = 1.2
@@ -1174,13 +1174,13 @@ fanatic_purifiers = {
 hive_mind = {
 	aggressiveness = 2.0	# only attack if they can't expand peacefully
 	trade_willingness = 0.7
-	bravery = 1.4
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.0" STR = "1.4"}
 	combat_bravery = 1.0
 
 	military_spending = 1.0
 	colony_spending = 1.2
 
-	federation_acceptance = -50
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-50"}
 	nap_acceptance = -10
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
@@ -1231,7 +1231,7 @@ hive_mind = {
 devouring_swarm = {
 	aggressiveness = 3.0
 	trade_willingness = 0.0
-	bravery = 1.4
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.1" STR = "1.4"}
 	combat_bravery = 1.25
 
 	military_spending = 1.2
@@ -1287,7 +1287,7 @@ devouring_swarm = {
 }
 
 migrating_flock = {
-	aggressiveness = 0.15
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "0.25" STR = "0.15"}
 	trade_willingness = 1.1
 	bravery = 0.5
 	combat_bravery = 1.0
@@ -1295,7 +1295,7 @@ migrating_flock = {
 	military_spending = 0.8
 	colony_spending = 1.2
 
-	federation_acceptance = 20
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "20"}
 
 	advanced_start_chance = 10
 	nap_acceptance = 20
@@ -1315,7 +1315,7 @@ migrating_flock = {
 	claims_modifier = 0.5
 
 	behaviour = {
-		conqueror = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "conqueror" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		subjugator = no
 		liberator = no
 		opportunist = no
@@ -1323,8 +1323,8 @@ migrating_flock = {
 		uplifter = no
 		purger = no
 		displacer = no
-		dominator = yes
-		infiltrator = no
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
@@ -1417,15 +1417,15 @@ metalhead = {
 
 
 machine_intelligence = {
-	aggressiveness = 1.5
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "aggressiveness" OPERATOR = "=" VANILLA = "1.0" STR = "1.5"}
 	trade_willingness = 0.8
-	bravery = 1.5
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.0" STR = "1.5"}
 	combat_bravery = 1.0
 
 	military_spending = 1.0
 	colony_spending = 1.2
 
-	federation_acceptance = -30
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-30"}
 	nap_acceptance = 0
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
@@ -1452,14 +1452,14 @@ machine_intelligence = {
 		uplifter = no
 		purger = no
 		displacer = yes
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -1480,13 +1480,13 @@ machine_intelligence = {
 assimilators = {
 	aggressiveness = 2.0	# only attack if they can't expand peacefully
 	trade_willingness = 0.5
-	bravery = 1.4
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "0.8" STR = "1.4"}
 	combat_bravery = 1.0
 
 	military_spending = 1.2
 	colony_spending = 1.2
 
-	federation_acceptance = -50
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "-50"}
 
 	advanced_start_chance = 400
 
@@ -1534,7 +1534,7 @@ assimilators = {
 exterminators = {
 	aggressiveness = 2.0
 	trade_willingness = 1.0	# But only with fellow machines
-	bravery = 1.5
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "bravery" OPERATOR = "=" VANILLA = "1.0" STR = "1.5"}
 	combat_bravery = 1.5
 
 	military_spending = 1.2
@@ -1620,14 +1620,14 @@ servitors = {
 		uplifter = yes
 		purger = no
 		displacer = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = yes
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -1652,7 +1652,7 @@ fanatic_befrienders = {
 	military_spending = 1.2
 	colony_spending = 1.0
 
-	federation_acceptance = 50
+	inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "federation_acceptance" OPERATOR = "=" VANILLA = "0" STR = "50"}
 	nap_acceptance = 50
 	commercial_pact_acceptance = 50
 	research_agreement_acceptance = 50
@@ -1673,21 +1673,21 @@ fanatic_befrienders = {
 
 	behaviour = {
 		conqueror = yes
-		subjugator = no
+		subjugator = yes
 		liberator = no
 		opportunist = yes
 		slaver = no
 		uplifter = yes
 		purger = no
 		displacer = no
-		dominator = yes
-		infiltrator = no
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "infiltrator" OPERATOR = "=" VANILLA = "yes" STR = "no"}
 		robot_exploiter = no
 		robot_liberator = no
 		propagator = no
 		multispecies = yes
 		crisis_fighter = yes
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {
@@ -1808,7 +1808,7 @@ imperial_origin_overlord_ai = {
 		uplifter = no
 		purger = no
 		displacer = no
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = no
 		robot_liberator = no
@@ -1817,7 +1817,7 @@ imperial_origin_overlord_ai = {
 		crisis_fighter = yes
 		crisis_leader = no
 		attack_neutrals = no
-		wants_tribute = yes
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = wants_tribute OPERATOR = "=" VALUE = "yes" }
 	}
 
 	allow = {

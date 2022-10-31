@@ -3041,7 +3041,7 @@ triggered_opinion_of_materialist = {
 			has_ethic = "ethic_fanatic_spiritualist"
 			FROM = { has_ethic = "ethic_fanatic_materialist" }
 		}
-		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ add = -15 has_ethic = "ethic_spiritualist" FROM = { has_ethic = "ethic_fanatic_materialist" } }" }
+		inline_script = { script = "str_universal/str_universal_insert_operation" PROPERTY = modifier OPERATOR = "=" VALUE = "{ add = -15 has_ethic = \"ethic_spiritualist\" FROM = { has_ethic = \"ethic_fanatic_materialist\" } }" }
 	}
 }
 
