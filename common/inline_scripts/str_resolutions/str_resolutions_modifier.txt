@@ -1,0 +1,43 @@
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_notbad
+		factor = $NOTBAD$
+		NOT = {
+			has_country_flag = str_has_bad_$SCORE_CAT$_score
+		}
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_bad
+		factor = $BAD$
+		has_country_flag = str_has_bad_$SCORE_CAT$_score
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_terrible
+		factor = $TERRIBLE$
+		has_country_flag = str_has_terrible_$SCORE_CAT$_score
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_turtler
+		factor = $TURTLER$
+		turtler = yes
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_turtler2
+		factor = $TURTLER2$
+		turtler2 = yes
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_rusher
+		factor = $RUSHER$
+		rusher = yes
+	}
+
+	modifier = {
+		desc = $DESC$_$SCORE_CAT$_rusher2
+		factor = $RUSHER2$
+		rusher2 = yes
+	}

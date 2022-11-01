@@ -379,7 +379,6 @@ influence_expenditure_starbases = {
 				}
 			}
 		}
-
 		modifier = {
 			factor = 0.1
 			is_at_war = yes

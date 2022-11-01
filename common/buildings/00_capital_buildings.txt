@@ -59,7 +59,6 @@ building_colony_shelter = {
 			owner = { has_active_tradition = tr_synthetics_finish }
 		}
 		job_roboticist_add = 1
-		# job_colonist_add = 1
 	}
 
 	triggered_planet_modifier = {

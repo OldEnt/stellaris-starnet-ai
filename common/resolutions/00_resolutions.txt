@@ -81,44 +81,24 @@ resolution_ecology_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 2
+			BAD = 0.75
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
+		}
+
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_environmentalist
 			desc = civic_environmentalist
 		}
-
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.75
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
-
 
 		modifier = {
 			factor = 0.25
@@ -194,36 +174,17 @@ resolution_ecology_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.75
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 2
+			BAD = 0.75
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -231,7 +192,7 @@ resolution_ecology_repeal_2 = {
 			has_valid_civic = civic_environmentalist
 			desc = civic_environmentalist
 		}
-
+		
 		modifier = {
 			factor = 0.25
 			has_valid_civic = civic_agrarian_idyll
@@ -308,37 +269,19 @@ resolution_ecology_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 2
+			BAD = 0.75
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.75
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_environmentalist
@@ -423,37 +366,19 @@ resolution_ecology_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 2
+			BAD = 0.75
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.75
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			has_valid_civic = civic_environmentalist
@@ -545,36 +470,17 @@ resolution_ecology_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.75
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 2
+			BAD = 0.75
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -665,42 +571,23 @@ resolution_ecology_recycling_initiatives = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
-
 		modifier = {
 			factor = 2
 			has_valid_civic = civic_environmentalist
 			desc = civic_environmentalist
+		}
+
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -770,37 +657,19 @@ resolution_ecology_natural_sanctuaries = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			has_valid_civic = civic_environmentalist
@@ -882,37 +751,19 @@ resolution_ecology_integrated_gardens = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			has_valid_civic = civic_environmentalist
@@ -1005,36 +856,17 @@ resolution_ecology_environmental_control_board = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -1130,36 +962,17 @@ resolution_ecology_paradise_initiative = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -1242,36 +1055,17 @@ resolution_galacticstudies_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -1333,37 +1127,19 @@ resolution_galacticstudies_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			is_materialist = yes
@@ -1426,37 +1202,19 @@ resolution_galacticstudies_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			is_materialist = yes
@@ -1533,36 +1291,17 @@ resolution_galacticstudies_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -1640,36 +1379,17 @@ resolution_galacticstudies_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.5
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 1.2
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 2
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.5
+			BAD = 1.2
+			TERRIBLE = 2
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -1739,36 +1459,17 @@ resolution_galacticstudies_cooperative_research_channels = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 2
+			BAD = 0.8
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -1829,37 +1530,19 @@ resolution_galacticstudies_astral_studies_network = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 2
+			BAD = 0.8
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			is_materialist = yes
@@ -1952,37 +1635,19 @@ resolution_galacticstudies_advanced_xenostudies = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 2
+			BAD = 0.8
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			is_materialist = yes
@@ -2089,48 +1754,19 @@ resolution_galacticstudies_ethical_guideline_refactoring = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 2
+			BAD = 0.8
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
-
-		modifier = {
-			factor = 1.5
-			is_materialist = yes
-			desc = ethic_materialist
-		}
-		modifier = {
-			factor = 0.75
-			is_spiritualist = yes
-			desc = ethic_spiritualist
-		}
 		modifier = {
 			factor = 0.5
 			is_egalitarian = yes
@@ -2201,47 +1837,17 @@ resolution_galacticstudies_extradimensional_experimentation = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 2
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_tech_score
-		}
-		modifier = {
-			factor = 0.5
-			has_country_flag = str_has_terrible_tech_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
-
-		modifier = {
-			factor = 1.5
-			is_materialist = yes
-			desc = ethic_materialist
-		}
-		modifier = {
-			factor = 0.75
-			is_spiritualist = yes
-			desc = ethic_spiritualist
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 2
+			BAD = 0.8
+			TERRIBLE = 0.5
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 	}
 }
@@ -2291,36 +1897,17 @@ resolution_commerce_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -2398,36 +1985,17 @@ resolution_commerce_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -2506,36 +2074,17 @@ resolution_commerce_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -2618,36 +2167,17 @@ resolution_commerce_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -2729,36 +2259,17 @@ resolution_commerce_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -2843,36 +2354,17 @@ resolution_commerce_buzzword_standardization = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -2948,36 +2440,17 @@ resolution_commerce_leveraged_privateering = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -3053,36 +2526,17 @@ resolution_commerce_underdeveloped_system_utilization = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -3162,36 +2616,17 @@ resolution_commerce_holistic_asset_coordination = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -3266,36 +2701,17 @@ resolution_commerce_profit_maximization_engines = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -3374,36 +2790,17 @@ resolution_industry_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 
@@ -3478,36 +2875,17 @@ resolution_industry_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 		modifier = {
 			factor = 0.8
@@ -3581,37 +2959,19 @@ resolution_industry_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.8
 			is_authoritarian = yes
@@ -3688,37 +3048,19 @@ resolution_industry_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.8
 			is_authoritarian = yes
@@ -3795,36 +3137,17 @@ resolution_industry_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -3906,36 +3229,17 @@ resolution_industry_regulatory_facilitation = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -4008,37 +3312,19 @@ resolution_industry_collective_waste_management = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
@@ -4110,37 +3396,19 @@ resolution_industry_building_a_better_tomorrow = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
@@ -4218,37 +3486,19 @@ resolution_industry_environmental_ordinance_waivers = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
@@ -4331,37 +3581,19 @@ resolution_industry_project_cornucopia = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = economy
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_economy_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_economy_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.2
 			is_authoritarian = yes
@@ -5793,43 +5025,18 @@ resolution_mutualdefense_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
-
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_economy_score }
-		}
-
 
 		modifier = {
 			factor = 0
@@ -5890,36 +5097,17 @@ resolution_mutualdefense_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -5990,36 +5178,17 @@ resolution_mutualdefense_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -6085,36 +5254,17 @@ resolution_mutualdefense_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -6180,36 +5330,17 @@ resolution_mutualdefense_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -6279,36 +5410,17 @@ resolution_mutualdefense_the_readied_shield = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -6392,37 +5504,19 @@ resolution_mutualdefense_military_readiness_act = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -6509,37 +5603,19 @@ resolution_mutualdefense_enemy_of_my_enemy = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -6618,37 +5694,19 @@ resolution_mutualdefense_castigation_proclamation = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -6736,37 +5794,19 @@ resolution_mutualdefense_renegade_containment = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -7030,36 +6070,17 @@ resolution_rulesofwar_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -7121,37 +6142,19 @@ resolution_rulesofwar_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -7219,37 +6222,19 @@ resolution_rulesofwar_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -7321,37 +6306,19 @@ resolution_rulesofwar_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -7422,37 +6389,19 @@ resolution_rulesofwar_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 2
 			is_militarist = yes
@@ -7526,36 +6475,17 @@ resolution_rulesofwar_guardian_angels = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -7639,37 +6569,19 @@ resolution_rulesofwar_reverence_for_life = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			is_militarist = yes
@@ -7771,37 +6683,19 @@ resolution_rulesofwar_independent_tribunals = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0
 			is_militarist = yes
@@ -7885,36 +6779,17 @@ resolution_rulesofwar_last_resort_doctrine = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -8014,36 +6889,17 @@ resolution_rulesofwar_demobilization_initiative = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_fleet_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = fleet
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -8122,36 +6978,17 @@ resolution_divinity_repeal_1 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
 		modifier = {
@@ -8251,37 +7088,19 @@ resolution_divinity_repeal_2 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -8372,37 +7191,19 @@ resolution_divinity_repeal_3 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -8493,37 +7294,19 @@ resolution_divinity_repeal_4 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -8615,37 +7398,19 @@ resolution_divinity_repeal_5 = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 1.4
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 1.4
+			BAD = 0.8
+			TERRIBLE = 0.625
+			TURTLER = 1.1
+			TURTLER2 = 1.1
+			RUSHER = 0.9
+			RUSHER2 = 0.9
 		}
 
-		modifier = {
-			factor = 0.8
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 0.625
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 1.1
-			turtler = yes
-		}
-		modifier = {
-			factor = 1.1
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher = yes
-		}
-		modifier = {
-			factor = 0.9
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 1.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -8754,36 +7519,17 @@ resolution_divinity_comfort_the_fallen = {
 	ai_weight = {
 		base = @resolution_weight_loved
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_tech_score }
-		}
-
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
 		modifier = {
@@ -8882,37 +7628,19 @@ resolution_divinity_tithe_on_the_soulless = {
 	ai_weight = {
 		base = @resolution_weight_popular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -9001,37 +7729,19 @@ resolution_divinity_right_to_work = {
 	ai_weight = {
 		base = @resolution_weight_normal
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -9139,37 +7849,19 @@ resolution_divinity_silence_the_soulless = {
 	ai_weight = {
 		base = @resolution_weight_unpopular
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.5
 			has_ai_personality_behaviour = robot_exploiter
@@ -9284,37 +7976,19 @@ resolution_divinity_a_defined_purpose = {
 	ai_weight = {
 		base = @resolution_weight_disliked
 
-		#TODO: AI - add descriptions
-		modifier = {
-			factor = 0.625
-			not = { has_country_flag = str_has_bad_tech_score }
+		inline_script = {
+			script = "str_resolutions/str_resolutions_modifier"
+			DESC = str_resolution_modifier
+			SCORE_CAT = tech
+			NOTBAD = 0.625
+			BAD = 1.25
+			TERRIBLE = 1.4
+			TURTLER = 0.9
+			TURTLER2 = 0.9
+			RUSHER = 1.1
+			RUSHER2 = 1.1
 		}
 
-		modifier = {
-			factor = 1.25
-			has_country_flag = str_has_bad_fleet_score
-		}
-		modifier = {
-			factor = 1.4
-			has_country_flag = str_has_terrible_fleet_score
-		}
-
-		modifier = {
-			factor = 0.9
-			turtler = yes
-		}
-		modifier = {
-			factor = 0.9
-			turtler2 = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher = yes
-		}
-		modifier = {
-			factor = 1.1
-			rusher2 = yes
-		}
 		modifier = {
 			factor = 0.5
 			has_ai_personality_behaviour = robot_exploiter

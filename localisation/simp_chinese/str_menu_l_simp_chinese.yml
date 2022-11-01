@@ -2686,3 +2686,28 @@
  str_register_ship_size_250_button_limits_base: "[str_register_ship_size_250.str_var_limits_base]"
  str_register_ship_size_250_button_limits_max: "[str_register_ship_size_250.str_var_limits_max]"
  str_register_ship_size_250_button_limits_naval_cap_fraction: "[str_register_ship_size_250.str_var_limits_naval_cap_fraction]"
+
+ # Resolutions------------------------------------
+ str_resolution_modifier_economy_notbad: "$str_menu_name$: $ECONOMY$ $IS_STRING$ $PLANT_CHR_Green$"
+ str_resolution_modifier_economy_bad: "$str_menu_name$: $ECONOMY$ $IS_STRING$ $PLANT_CHR_Yellow$"
+ str_resolution_modifier_economy_terrible: "$str_menu_name$: $ECONOMY$ $IS_STRING$ $PLANT_CHR_Red$"
+ str_resolution_modifier_economy_turtler: "$str_menu_name$: $ECONOMY$ Turtler"
+ str_resolution_modifier_economy_turtler2: "$str_menu_name$: $ECONOMY$ Turtler 2"
+ str_resolution_modifier_economy_rusher: "$str_menu_name$: $ECONOMY$ Rusher"
+ str_resolution_modifier_economy_rusher2: "$str_menu_name$: $ECONOMY$ Rusher 2"
+
+ str_resolution_modifier_fleet_notbad: "$str_menu_name$: $FLEET_POWER$ $IS_STRING$ $PLANT_CHR_Green$"
+ str_resolution_modifier_fleet_bad: "$str_menu_name$: $FLEET_POWER$ $IS_STRING$ $PLANT_CHR_Yellow$"
+ str_resolution_modifier_fleet_terrible: "$str_menu_name$: $FLEET_POWER$ $IS_STRING$ $PLANT_CHR_Red$"
+ str_resolution_modifier_fleet_turtler: "$str_menu_name$: $FLEET_POWER$ Turtler"
+ str_resolution_modifier_fleet_turtler2: "$str_menu_name$: $FLEET_POWER$ Turtler 2"
+ str_resolution_modifier_fleet_rusher: "$str_menu_name$: $FLEET_POWER$ Rusher"
+ str_resolution_modifier_fleet_rusher2: "$str_menu_name$: $FLEET_POWER$ Rusher 2"
+
+ str_resolution_modifier_tech_notbad: "$str_menu_name$: $TECHNOLOGY$ $IS_STRING$ $PLANT_CHR_Green$"
+ str_resolution_modifier_tech_bad: "$str_menu_name$: $TECHNOLOGY$ $IS_STRING$ $PLANT_CHR_Yellow$"
+ str_resolution_modifier_tech_terrible: "$str_menu_name$: $TECHNOLOGY$ $IS_STRING$ $PLANT_CHR_Red$"
+ str_resolution_modifier_tech_turtler: "$str_menu_name$: $TECHNOLOGY$ Turtler"
+ str_resolution_modifier_tech_turtler2: "$str_menu_name$: $TECHNOLOGY$ Turtler 2"
+ str_resolution_modifier_tech_rusher: "$str_menu_name$: $TECHNOLOGY$ Rusher"
+ str_resolution_modifier_tech_rusher2: "$str_menu_name$: $TECHNOLOGY$ Rusher 2"
