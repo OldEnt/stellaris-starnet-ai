@@ -192,7 +192,7 @@ resolution_ecology_repeal_2 = {
 			has_valid_civic = civic_environmentalist
 			desc = civic_environmentalist
 		}
-		
+
 		modifier = {
 			factor = 0.25
 			has_valid_civic = civic_agrarian_idyll
@@ -1768,6 +1768,16 @@ resolution_galacticstudies_ethical_guideline_refactoring = {
 		}
 
 		modifier = {
+			factor = 1.5
+			is_materialist = yes
+			desc = ethic_materialist
+		}
+		modifier = {
+			factor = 0.75
+			is_spiritualist = yes
+			desc = ethic_spiritualist
+		}
+		modifier = {
 			factor = 0.5
 			is_egalitarian = yes
 			desc = ethic_egalitarian
@@ -1848,6 +1858,17 @@ resolution_galacticstudies_extradimensional_experimentation = {
 			TURTLER2 = 0.9
 			RUSHER = 1.1
 			RUSHER2 = 1.1
+		}
+
+		modifier = {
+			factor = 1.5
+			is_materialist = yes
+			desc = ethic_materialist
+		}
+		modifier = {
+			factor = 0.75
+			is_spiritualist = yes
+			desc = ethic_spiritualist
 		}
 	}
 }
