@@ -1857,6 +1857,7 @@ cordyceptic_reanimation_facility = {
 				OR = {
 					has_star_flag = tiyanki_graveyard_system
 					has_star_flag = tiyanki_spawn_system
+					has_star_flag = amoeba_home_system
 				}
 			}
 		}

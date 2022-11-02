@@ -535,6 +535,7 @@ building_supercomputer = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 		}
 	}
 

@@ -521,6 +521,16 @@ building_spawning_pool = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+		}
+		modifier = {
+			job_cyber_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = {
 				is_ai = yes
 				str_raw_ecocrisis_level_0 = no
@@ -570,6 +580,17 @@ building_spawning_pool = {
 		}
 		text = job_spawning_drone_necrophage_effect_desc
 	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+			}
+		}
+		text = job_cyber_drone_effect_desc
+	}
+
 	triggered_desc = {
 		text = spawning_pool_tooltip
 	}
@@ -605,6 +626,16 @@ building_offspring_nest = {
 		building_spawning_pool
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+		}
+		modifier = {
+			job_cyber_drone_add = 2
+		}
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -625,6 +656,17 @@ building_offspring_nest = {
 		}
 		text = job_offspring_drone_effect_desc
 	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+			}
+		}
+		text = job_cyber_drone_effect_desc
+	}
+
 	triggered_desc = {
 		text = offspring_nest_tooltip
 	}

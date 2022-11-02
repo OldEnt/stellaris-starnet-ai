@@ -380,6 +380,11 @@ weapon_component_template = {
 		}
 	}
 
+	target_weights = {
+		titan = 3
+		battleship = 2
+	}
+
 	ai_weight = {
 		weight = 1
 		modifier = {

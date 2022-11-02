@@ -330,3 +330,81 @@ tech_repeatable_improved_starbase_capacity = {
 		country_starbase_capacity_add = 1
 	}
 }
+
+tech_repeatable_weapon_type_strike_craft_fire_damage = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { military_theory }
+	ai_update_type = military
+	levels = -1
+	prerequisites = { "tech_strike_craft_3" }
+	weight = @repeatableTechWeight
+
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+
+	ai_weight = {
+		factor = 1.0
+		modifier = {
+			factor = @favored_weapon_ai_tech_factor
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = @disfavored_weapon_ai_tech_factor
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+
+	modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.10
+	}
+}
+
+tech_repeatable_weapon_type_strike_craft_fire_rate = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { military_theory }
+	ai_update_type = military
+	levels = -1
+	prerequisites = { "tech_strike_craft_3" }
+	weight = @repeatableTechWeight
+
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+
+	ai_weight = {
+		factor = 1.0
+		modifier = {
+			factor = @favored_weapon_ai_tech_factor
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = @disfavored_weapon_ai_tech_factor
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+
+	modifier = {
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.10
+	}
+}

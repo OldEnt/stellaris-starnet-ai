@@ -151,6 +151,8 @@ missile_battery = {
 	construction_days = 180
 
 	potential = {
+		exists = owner
+		owner = { has_technology = tech_torpedoes_1 }
 		is_orbital_ring = no
 	}
 
@@ -184,7 +186,7 @@ missile_battery = {
 		}
 	}
 
-	show_in_tech = "tech_missiles_1"
+	show_in_tech = "tech_torpedoes_1"
 }
 
 hangar_bay = {

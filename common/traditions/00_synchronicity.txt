@@ -14,7 +14,7 @@ tr_synchronicity_adopt = {
 
 tr_synchronicity_finish = {
 	modifier = {
-		empire_size_pops_mult = -0.10
+		planetary_ascension_effect_mult = 0.25
 		ascension_perks_add = 1
 	}
 
@@ -27,7 +27,7 @@ tr_synchronicity_finish = {
 			is_machine_empire = yes
 		}
 		modifier = { #also gain access to an edict
-			empire_size_pops_mult = -0.10
+			planetary_ascension_effect_mult = 0.25
 			ascension_perks_add = 1
 		}
 		weight = {
@@ -61,6 +61,7 @@ tr_synchronicity_integrated_preservation = {
 tr_synchronicity_kinship_gestalt = {
 	modifier = {
 		leaders_upkeep_mult = -0.20
+		empire_size_pops_mult = -0.10
 	}
 
 	ai_weight = {

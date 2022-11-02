@@ -1428,7 +1428,7 @@ wg_humiliation = {
 				from = {
 					add_modifier = { modifier = humiliated days = 3600 }
 					if = {
-						limit = { has_tradition = tr_supremacy_finish }
+						limit = { has_policy_flag = diplo_stance_supremacist }
 						set_policy = {
 							policy = diplomatic_stance
 							option = diplo_stance_belligerent

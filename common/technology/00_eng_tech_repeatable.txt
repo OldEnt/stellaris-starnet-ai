@@ -279,68 +279,6 @@ tech_repeatable_weapon_type_kinetic_fire_rate = {
 	}
 }
 
-tech_repeatable_weapon_type_strike_craft_fire_damage = {
-	area = engineering
-	cost = @repeatableTechBaseCost
-	cost_per_level = @repeatableTechLevelCost
-	tier = @repeatableTechTier
-	category = { voidcraft }
-	ai_update_type = military
-	levels = -1
-	prerequisites = { "tech_strike_craft_3" }
-	weight = @repeatableTechWeight
-
-	weight_modifier = {
-		factor = @repatableTechFactor
-	}
-
-	ai_weight = {
-		weight = 0
-	}
-
-	weight_groups = {
-		repeatable
-	}
-	mod_weight_if_group_picked = {
-		repeatable = 0.01
-	}
-
-	modifier = {
-		weapon_type_strike_craft_weapon_damage_mult = 0.10
-	}
-}
-
-tech_repeatable_weapon_type_strike_craft_fire_rate = {
-	area = engineering
-	cost = @repeatableTechBaseCost
-	cost_per_level = @repeatableTechLevelCost
-	tier = @repeatableTechTier
-	category = { voidcraft }
-	ai_update_type = military
-	levels = -1
-	prerequisites = { "tech_strike_craft_3" }
-	weight = @repeatableTechWeight
-
-	weight_modifier = {
-		factor = @repatableTechFactor
-	}
-
-	ai_weight = {
-		weight = 0
-	}
-
-	weight_groups = {
-		repeatable
-	}
-	mod_weight_if_group_picked = {
-		repeatable = 0.01
-	}
-
-	modifier = {
-		weapon_type_strike_craft_weapon_fire_rate_mult = 0.10
-	}
-}
-
 tech_repeatable_reduced_building_time = {
 	area = engineering
 	cost = @repeatableTechBaseCost

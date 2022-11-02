@@ -2572,6 +2572,13 @@ tech_epigenetic_triggers = {
 		}
 	}
 
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EPIGENETICS_TITLE"
+			desc = "TECH_UNLOCK_EPIGENETICS_DESC"
+		}
+	}
+
 	weight_modifier = {
 		modifier = {
 			factor = 0.5

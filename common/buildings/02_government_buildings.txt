@@ -382,6 +382,13 @@ building_order_keep = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+		planet_stability_add = 15
+	}
+
 
 	resources = {
 		cost = {

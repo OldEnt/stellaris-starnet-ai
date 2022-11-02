@@ -64,8 +64,12 @@ building_colony_shelter = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_synthetics_finish }
-			resettlement_cheesy_disable = no
+			OR = {
+				owner = {
+					is_ai = no
+				}
+				resettlement_cheesy_disable = no
+			}
 		}
 		job_colonist_add = 1
 	}

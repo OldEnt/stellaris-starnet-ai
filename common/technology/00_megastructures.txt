@@ -647,6 +647,10 @@ tech_gateway_activation = {
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = no #auto-research
+		}
 	}
 }
 
@@ -726,6 +730,10 @@ tech_gateway_construction = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = no #auto-research
 		}
 	}
 }

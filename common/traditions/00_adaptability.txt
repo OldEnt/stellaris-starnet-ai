@@ -26,7 +26,7 @@ tr_adaptability_finish = {
 		trigger = {
 			has_origin = origin_void_dwellers
 		}
-		custom_tooltip_with_modifiers = tr_adaptability_void_finish_desc
+		custom_tooltip = tr_adaptability_void_finish_desc
 		modifier = {
 			ascension_perks_add = 1
 		}
