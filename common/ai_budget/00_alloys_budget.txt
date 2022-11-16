@@ -214,10 +214,10 @@ alloys_expenditure_starbases_expand = {
 		str_ai_budget_potential_alloys_expenditure_starbases_expand = yes
 		has_ai_expansion_plan = yes
 		# highest_threat < 50
-		NOT = {
+		NOR = {
 			is_country_type = fallen_empire
 			is_country_type = awakened_fallen_empire
-			ai_colonize_plans > 0
+			# ai_colonize_plans > 0
 		}
 		# has_resource = { type = influence amount > 75 }
 	}
