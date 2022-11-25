@@ -338,3 +338,17 @@ energy_upkeep_country = { # Covers most other things. Note: each category opts i
 		}
 	}
 }
+
+energy_upkeep_armies = {
+	resource = energy
+	type = upkeep
+	category = armies
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.05
+	}
+}

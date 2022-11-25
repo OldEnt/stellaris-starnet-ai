@@ -476,9 +476,9 @@ building_communal_housing_large = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			owner = { is_ai = yes }
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
-			owner = { is_ai = yes }
 		}
 	}
 

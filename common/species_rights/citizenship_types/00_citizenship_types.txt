@@ -161,20 +161,26 @@ citizenship_assimilation = {
 						is_robotic_species = yes
 					}
 				}
-				AND = { # non-devouring hive mind
-					has_authority = auth_hive_mind
-					NOT = { has_civic = civic_hive_devouring_swarm }
-					ROOT = { is_robotic_species = no }
-				}
 				AND = {
-					has_tradition = tr_genetics_creation
-					NOT = { has_ethic = ethic_gestalt_consciousness }
+					OR = {
+						AND = {
+							# non-devouring hive mind
+							has_authority = auth_hive_mind
+							NOT = { has_civic = civic_hive_devouring_swarm }
+						}
+						# Regular empire
+						NOT = { has_ethic = ethic_gestalt_consciousness }
+					}
+					OR = {
+						has_tradition = tr_genetics_creation	# genetic assimilation
+						has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
+					}
+					ROOT = { is_robotic_species = no }
 				}
 				AND = {
 					has_country_flag = synth_assimilation # synth assimilation
 					NOT = { has_authority = auth_machine_intelligence }
 				}
-				has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
 				has_tradition = tr_psionics_psionic_assimilation # psionic assimilation
 			}
 		}
@@ -218,16 +224,13 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_authority = auth_hive_mind }
+				from = {
+					has_authority = auth_hive_mind
+					has_active_tradition = tr_genetics_creation
+				}
 			}
 			custom_tooltip = { # non-devouring hive mind
 				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
-				from = {
-					OR = {
-						has_tradition = tr_genetics_creation
-						has_tradition = tr_cybernetics_transubstantiation_synthesis
-					}
-				}
 				NOR = {
 					has_trait = trait_hive_mind
 					has_trait = trait_mechanical
@@ -237,14 +240,50 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
+				from = {
+					has_authority = auth_hive_mind
+					has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+				}
 			}
-			custom_tooltip = { # cyborg empire
-				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
+			custom_tooltip = { # non-devouring hive mind
+				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
 				NOR = {
 					has_trait = trait_mechanical
 					has_trait = trait_machine_unit
-					has_trait = trait_cybernetic
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOT = { has_authority = auth_hive_mind }
+					has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+				}
+			}
+			custom_tooltip = { # cyborg empire
+				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
+				OR = {
+					AND = {
+						has_trait = trait_hive_mind
+						from = {
+							NOT = {
+								has_authority = auth_hive_mind
+							}
+						}
+					}
+					AND = {
+						NOT = {
+							has_trait = trait_hive_mind
+						}
+						from = {
+							has_authority = auth_hive_mind
+						}
+					}
+					NOR = {
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+						has_trait = trait_cybernetic
+					}
 				}
 			}
 		}

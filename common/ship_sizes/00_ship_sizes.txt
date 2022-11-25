@@ -71,7 +71,7 @@ corvette = {
 	required_component_set = "combat_computers"
 
 	resources = {
-		category = ship_corvette
+		category = ships
 		upkeep = {
 			energy = @corvette_upkeep_energy
 			alloys = @corvette_upkeep_alloys
@@ -145,7 +145,7 @@ frigate = {
 	required_component_set = "combat_computers"
 
 	resources = {
-		category = ship_corvette
+		category = ships
 		upkeep = {
 			energy = @corvette_upkeep_energy
 			alloys = @corvette_upkeep_alloys
@@ -203,7 +203,7 @@ destroyer = {
 	required_component_set = "combat_computers"
 
 	resources = {
-		category = ship_destroyer
+		category = ships
 		upkeep = {
 			energy = @destroyer_upkeep_energy
 			alloys = @destroyer_upkeep_alloys
@@ -273,7 +273,7 @@ cruiser = {
 	required_component_set = "combat_computers"
 
 	resources = {
-		category = ship_cruiser
+		category = ships
 		upkeep = {
 			energy = @cruiser_upkeep_energy
 			alloys = @cruiser_upkeep_alloys
@@ -331,7 +331,7 @@ battleship = {
 	required_component_set = "combat_computers"
 
 	resources = {
-		category = ship_battleship
+		category = ships
 		upkeep = {
 			energy = @battleship_upkeep_energy
 			alloys = @battleship_upkeep_alloys

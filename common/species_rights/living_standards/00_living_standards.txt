@@ -53,6 +53,8 @@ living_standard_ego_assimilation = {
 		NOR = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
 		}
 		exists = from
 		from = {
@@ -97,6 +99,10 @@ living_standard_ego_assimilation_psionic = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
 		}
+		NOR = {
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
+		}
 		exists = from
 		from = {
 			has_authority = auth_hive_mind
@@ -139,6 +145,8 @@ living_standard_cyborg_ego_assimilation = {
 		NOR = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
 		}
 		exists = from
 		from = {
@@ -152,9 +160,7 @@ living_standard_cyborg_ego_assimilation = {
 					has_authority = auth_machine_intelligence
 					has_valid_civic = civic_machine_assimilator
 					prev = {
-						NOR = {
-							has_trait = trait_mechanical
-							has_trait = trait_machine_unit
+						NOT = {
 							has_trait = trait_cybernetic
 						}
 					}
@@ -198,6 +204,10 @@ living_standard_cyborg_ego_assimilation_psionic = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
 		}
+		NOR = {
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
+		}
 		exists = from
 		from = {
 			OR = {
@@ -210,9 +220,7 @@ living_standard_cyborg_ego_assimilation_psionic = {
 					has_authority = auth_machine_intelligence
 					has_valid_civic = civic_machine_assimilator
 					prev = {
-						NOR = {
-							has_trait = trait_mechanical
-							has_trait = trait_machine_unit
+						NOT = {
 							has_trait = trait_cybernetic
 						}
 					}
@@ -294,6 +302,8 @@ living_standard_cyborg_assimilation = {
 		NOR = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
 		}
 		exists = from
 		from = {
@@ -331,6 +341,10 @@ living_standard_cyborg_assimilation_psionic = {
 		OR = {
 			has_trait = trait_latent_psionic
 			has_trait = trait_psionic
+		}
+		NOR = {
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
 		}
 		exists = from
 		from = {

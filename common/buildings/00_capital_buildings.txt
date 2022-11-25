@@ -282,19 +282,6 @@ building_capital = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			nor = {
-				owner = { is_ai = no }
-				num_pops > 20
-				has_branch_office = yes
-				has_modifier = criminal_underworld
-			}
-		}
-		job_enforcer_add = -1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				has_active_tradition = tr_domination_imperious_architecture
 			}
@@ -403,6 +390,19 @@ building_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			nor = {
+				owner = { is_ai = no }
+				num_pops > 20
+				has_branch_office = yes
+				has_modifier = criminal_underworld
+			}
+		}
+		job_enforcer_add = -1
 	}
 	
 	triggered_planet_modifier = {

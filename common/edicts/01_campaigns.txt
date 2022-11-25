@@ -322,6 +322,8 @@ terraforming_gas = {
 fuel_gases = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
+	is_wartime_edict = yes
+	
 	resources = {
 		category = ship_edicts
 		upkeep = {
@@ -346,6 +348,7 @@ fuel_gases = {
 		modifier = {
 			weight = @EdictMedPrio
 			is_at_war = yes
+			has_resource = { type = exotic_gases amount > 100 }
 		}
 	}
 }
@@ -353,6 +356,8 @@ fuel_gases = {
 shield_gases = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
+	is_wartime_edict = yes
+
 	resources = {
 		category = ship_edicts
 		upkeep = {
@@ -377,6 +382,7 @@ shield_gases = {
 		modifier = {
 			weight = @EdictMedPrio
 			is_at_war = yes
+			has_resource = { type = exotic_gases amount > 100 }
 		}
 	}
 }
@@ -412,6 +418,8 @@ clearing_motes = {
 motes_kinetic = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
+	is_wartime_edict = yes
+
 	resources = {
 		category = ship_edicts
 		upkeep = {
@@ -436,6 +444,7 @@ motes_kinetic = {
 		modifier = {
 			weight = @EdictHighPrio
 			is_at_war = yes
+			has_resource = { type = volatile_motes amount > 100 }
 		}
 	}
 }
@@ -470,6 +479,8 @@ motes_explosives = {
 motes_armor = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
+	is_wartime_edict = yes
+
 	resources = {
 		category = ship_edicts
 		upkeep = {
@@ -494,6 +505,7 @@ motes_armor = {
 		modifier = {
 			weight = @EdictMedPrio
 			is_at_war = yes
+			has_resource = { type = volatile_motes amount > 100 }
 		}
 	}
 }
@@ -529,6 +541,7 @@ crystalline_sensors = {
 crystal_focus = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
+	is_wartime_edict = yes
 	resources = {
 		category = ship_edicts
 		upkeep = {
@@ -551,8 +564,9 @@ crystal_focus = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = @EdictLowPrio
+			weight = @EdictHighPrio
 			is_at_war = yes
+			has_resource = { type = rare_crystals amount > 100 }
 		}
 	}
 }
