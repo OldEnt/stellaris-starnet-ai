@@ -1,6 +1,6 @@
 juggernaut = {
 	formation_priority = @juggernaut_formation_priority
-	max_speed = @speed_very_slow
+	max_speed = @speed_slow
 	acceleration = 0.2
 	rotation_speed = 0.15
 	collision_radius = @juggernaut_collision_radius
@@ -88,6 +88,7 @@ juggernaut = {
 	selectable = { host_has_dlc = "Federations" }
 
 	default_behavior = carrier
+	ship_roles = { carrier artillery }
 
 	prerequisites = { "tech_juggernaut" }
 	class = shipclass_starbase

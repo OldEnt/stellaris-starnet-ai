@@ -207,7 +207,12 @@ citizenship_assimilation = {
 		}
 		custom_tooltip = {
 			fail_text = "disconnected_machine_pops_collapse_citizenship"
-			is_disconnected_machine_pop = no
+			OR = {
+				from = {
+					has_country_flag = synth_assimilation 
+				}
+				is_disconnected_machine_pop = no
+			}
 		}
 		if = {
 			limit = {
@@ -250,6 +255,10 @@ citizenship_assimilation = {
 				NOR = {
 					has_trait = trait_mechanical
 					has_trait = trait_machine_unit
+					AND = {
+						has_trait = trait_hive_mind
+						has_trait = trait_cybernetic
+					}
 				}
 			}
 		}
