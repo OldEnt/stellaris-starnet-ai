@@ -283,11 +283,7 @@ diplomatic_stance = {
 		}
 
 		ai_weight = {
-			weight = 2
-			modifier = {
-				factor = 2
-				is_pacifist = yes
-			}
+			weight = 10
 
 			modifier = {
 				factor = 0.01
@@ -295,27 +291,16 @@ diplomatic_stance = {
 			}
 
 			modifier = {
-				factor = 0
-				NOT = { has_country_flag = has_encountered_other_empire }
-			}
-			
-			modifier = {
 				factor = 0.25 # Let the isolationists start in this if they want
 				NOT = { has_country_flag = has_encountered_other_empire }
 			}
 
 			modifier = {
 				factor = 0
-				is_ai = no
 				OR = {
 					has_ai_personality = federation_builders
 					has_ai_personality = fanatic_befrienders
 				}
-			}
-			modifier = {
-				factor = 1000
-				num_ascension_perks < 1
-				is_ai = yes
 			}
 
 			modifier = {
@@ -333,6 +318,11 @@ diplomatic_stance = {
 				is_xenophobe = yes
 				is_militarist = no
 				is_authoritarian = no
+			}
+			
+			modifier = {
+				factor = 0
+				is_ai = yes
 			}
 		}
 	}
@@ -365,10 +355,10 @@ diplomatic_stance = {
 		ai_weight = {
 			weight = 10
 			modifier = {
-				factor = 5
+				factor = 100
 				or = {
 					used_naval_capacity_percent < 0.7
-					years_passed < 21
+					years_passed < @str_years_of_extended_truce
 				}
 			}
 
