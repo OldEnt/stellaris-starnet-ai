@@ -243,7 +243,7 @@ mega_art_installation_4 = {
 	resources = {
 		category = megastructures
 		cost = {
-			minor_artifacts = 100
+			minor_artifacts = 2000
 			unity = 2500
 		}
 
@@ -270,7 +270,7 @@ mega_art_installation_4 = {
 				limit = { is_ai = yes }
 				resource_stockpile_compare = {
 					resource = minor_artifacts
-					value >= 100
+					value >= 2000
 				}
 			}
 		}
@@ -393,7 +393,7 @@ mega_art_installation_restored_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			minor_artifacts = 100
+			minor_artifacts = 2000
 			unity = 3200
 		}
 
@@ -424,7 +424,7 @@ mega_art_installation_restored_2 = {
 				limit = { is_ai = yes }
 				resource_stockpile_compare = {
 					resource = minor_artifacts
-					value >= 100
+					value >= 2000
 				}
 			}
 		}

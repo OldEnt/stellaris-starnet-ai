@@ -657,7 +657,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "battleship_stern_M2_entity"
 	icon = "GFX_ship_part_core_stern"
-	ai_tags = { gunship }
+	ai_tags = { gunship carrier }
 
 	component_slot = {
 		name = "MEDIUM_GUN_01"

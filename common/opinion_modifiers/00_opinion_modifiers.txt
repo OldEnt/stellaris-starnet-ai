@@ -87,7 +87,7 @@ opinion_policy_interference = {
 			add = -5
 			has_ethic = "ethic_xenophobe"
 			FROM = {
-				has_policy_flag = interference_passive
+				has_policy_flag = interference_not_allowed
 			}
 		}
 
@@ -95,15 +95,15 @@ opinion_policy_interference = {
 			add = -10
 			has_ethic = "ethic_fanatic_xenophobe"
 			FROM = {
-				has_policy_flag = interference_passive
+				has_policy_flag = interference_not_allowed
 			}
 		}
 
 		modifier = {
 			add = 10
-			has_policy_flag = interference_passive
+			has_policy_flag = interference_not_allowed
 			FROM = {
-				has_policy_flag = interference_passive
+				has_policy_flag = interference_not_allowed
 			}
 		}
 	}
@@ -1888,6 +1888,26 @@ opinion_not_ceded_starbase = {
 	}
 }
 
+opinion_respect_independence = {
+	opinion = {
+		base = 100
+	}
+
+	decay = {
+		base = -1
+	}
+}
+
+opinion_disrespect_independence = {
+	opinion = {
+		base = -100
+	}
+
+	decay = {
+		base = 1
+	}
+}
+
 # War of the Diadochi
 opinion_war_diadochi = {
 	opinion = {
@@ -2119,6 +2139,63 @@ opinion_swept_a_primitive_world = {
 opinion_swept_a_primitive_world_phile = {
 	opinion = {
 		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = -60 STR = -50 }
+	}
+
+	accumulative = yes
+
+	min = -300
+
+	decay = {
+		base = 1
+	}
+}
+
+# Devolved My Planet (victim Empire's opinion of devolving beam)
+opinion_devolved_a_world = {
+	opinion = {
+		base = -80
+	}
+
+	accumulative = yes
+
+	min = -400
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_devolved_my_world = {
+	opinion = {
+		base = -800
+	}
+
+	accumulative = yes
+
+	min = -4000
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_devolved_a_primitive_world = {
+	opinion = {
+		base = -40
+	}
+
+	accumulative = yes
+
+	min = -200
+
+	decay = {
+		base = 1
+	}
+}
+
+opinion_devolved_a_primitive_world_phile = {
+	opinion = {
+		base = -60
 	}
 
 	accumulative = yes
@@ -2414,7 +2491,7 @@ triggered_opinion_ap_defender_of_the_galaxy = {
 	}
 
 	opinion = {
-		base = 20 # remember to update the ascension perk's tooltip
+		base = 200 # remember to update the ascension perk's tooltip
 	}
 }
 
@@ -2580,6 +2657,7 @@ triggered_opinion_synthetics_fanatic = {
 
 triggered_opinion_synthetics_small = {
 	trigger = {
+		from = { is_mechanical_empire = yes }
 		is_cyborg_empire = no
 		is_mechanical_empire = no
 		NOR = {
@@ -2589,7 +2667,6 @@ triggered_opinion_synthetics_small = {
 			has_ethic = ethic_materialist
 			has_ethic = ethic_fanatic_materialist
 		}
-		from = { is_mechanical_empire = yes }
 	}
 
 	opinion = {
@@ -2627,6 +2704,13 @@ triggered_opinion_both_machine_intelligence = {
 triggered_organic_opinion_of_machine_empires = {
 	trigger = {
 		is_country_type = default
+		FROM = {
+			has_authority = auth_machine_intelligence
+			NOR = {
+				has_civic = civic_machine_terminator
+				has_civic = civic_machine_assimilator
+			}
+		}
 		is_mechanical_empire = no
 		is_cyborg_empire = no
 		NOT = {
@@ -2635,13 +2719,6 @@ triggered_organic_opinion_of_machine_empires = {
 			has_ethic = ethic_fanatic_materialist
 			has_ethic = ethic_spiritualist
 			has_ethic = ethic_fanatic_spiritualist
-		}
-		FROM = {
-			has_authority = auth_machine_intelligence
-			NOR = {
-				has_civic = civic_machine_terminator
-				has_civic = civic_machine_assimilator
-			}
 		}
 		AND = {
 			NOR = {
@@ -3279,6 +3356,13 @@ triggered_opinion_xenophage = {
 				is_sapient = yes
 				OR = {
 					AND = {
+						has_citizenship_type = { country = from type = citizenship_slavery }
+						OR = {
+							has_slavery_type = { country = from type = slavery_livestock }
+							has_slavery_type = { country = from type = slavery_matrix }
+						}
+					}
+					AND = {
 						OR = {
 							has_citizenship_type = { country = from type = citizenship_purge_machine }
 							has_citizenship_type = { country = from type = citizenship_purge }
@@ -3286,13 +3370,6 @@ triggered_opinion_xenophage = {
 						OR = {
 							has_purge_type = { country = from type = purge_processing }
 							has_purge_type = { country = from type = purge_matrix }
-						}
-					}
-					AND = {
-						has_citizenship_type = { country = from type = citizenship_slavery }
-						OR = {
-							has_slavery_type = { country = from type = slavery_livestock }
-							has_slavery_type = { country = from type = slavery_matrix }
 						}
 					}
 				}
@@ -3513,6 +3590,7 @@ triggered_negative_opinion_of_exterminators_fe = {
 triggered_negative_opinion_of_exterminators = {
 	trigger = {
 		is_country_type = default
+		FROM = { has_civic = civic_machine_terminator }
 		is_mechanical_empire = no
 		NOR = {
 			has_authority = auth_machine_intelligence
@@ -3525,7 +3603,6 @@ triggered_negative_opinion_of_exterminators = {
 				has_trait = trait_mechanical
 			}
 		}
-		FROM = { has_civic = civic_machine_terminator }
 	}
 	opinion = {
 		base = -1000
@@ -3721,11 +3798,11 @@ opinion_crime_corp_branch_offices = {
 	block_triggered = yes # stops modifier from automatically triggering when trigger evaluates to true
 
 	trigger = {
-		is_gestalt = no
-		is_megacorp = no
 		FROM = {
 			is_criminal_syndicate = yes
 		}
+		is_gestalt = no
+		is_megacorp = no
 	}
 
 	opinion = {
@@ -3819,3 +3896,16 @@ triggered_opinion_relic_omnicodex = {
 		base = 25
 	}
 }
+
+contact_with_MSI_01 = {
+	opinion = {
+		base = -200
+	}
+}
+
+contact_with_MSI_02 = {
+	opinion = {
+		base = -100
+	}
+}
+

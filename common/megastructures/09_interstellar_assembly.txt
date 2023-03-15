@@ -54,6 +54,10 @@ interstellar_assembly_0 = {
 			fail_text = "requires_no_existing_interstellar_assembly_two"
 			from = { NOT = { has_country_flag = built_interstellar_assembly_site_contingency } }
 		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_interstellar_assembly_two"
+			from = { NOT = { has_country_flag = built_interstellar_assembly_site_contingency } }
+		}
 		#custom_tooltip = {
 		#	fail_text = "requires_capital_system"
 		#	from.capital_scope.solar_system = { is_same_value = root }
@@ -101,7 +105,16 @@ interstellar_assembly_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		from = { set_country_flag = built_interstellar_assembly_site }
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_mega_shipyard_site
+				}
+				set_country_flag = built_interstellar_assembly_site_contingency
+			}
+			set_country_flag = built_interstellar_assembly_site
+		}
 	}
 }
 

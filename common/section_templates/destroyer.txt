@@ -9,7 +9,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_bow_M1S2_entity"
 	icon = "GFX_ship_part_core_bow"
-	ai_tags = { gunship }
+	ai_tags = { gunship brawler }
 
 	ai_weight = {
 		modifier = {
@@ -110,7 +110,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_bow_L1_entity"
 	icon = "GFX_ship_part_core_bow"
-	ai_tags = { artillery }
+	ai_tags = { artillery artillery_stealth }
 
 	ai_weight = {
 		modifier = {
@@ -190,7 +190,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_stern_S2_entity"
 	icon = "GFX_ship_part_core_stern"
-	ai_tags = { gunship }
+	ai_tags = { gunship brawler }
 
 	ai_weight = {
 		factor = 100
@@ -229,7 +229,7 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "destroyer_stern_M1_entity"
 	icon = "GFX_ship_part_core_stern"
-	ai_tags = { artillery }
+	ai_tags = { artillery artillery_stealth }
 
 	component_slot = {
 		name = "MEDIUM_GUN_01"

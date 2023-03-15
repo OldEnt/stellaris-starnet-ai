@@ -28,6 +28,7 @@ utility_component_template = {
 			alloys = @s_t1_upkeep_alloys
 		}
 	}
+
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -64,6 +65,7 @@ utility_component_template = {
 			alloys = @m_t1_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -100,6 +102,7 @@ utility_component_template = {
 			alloys = @l_t1_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -137,6 +140,7 @@ utility_component_template = {
 			alloys = @s_t2_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -173,6 +177,7 @@ utility_component_template = {
 			alloys = @m_t2_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -209,6 +214,7 @@ utility_component_template = {
 			alloys = @l_t2_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -246,6 +252,7 @@ utility_component_template = {
 			alloys = @s_t3_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -282,6 +289,7 @@ utility_component_template = {
 			alloys = @m_t3_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -318,6 +326,7 @@ utility_component_template = {
 			alloys = @l_t3_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -355,6 +364,7 @@ utility_component_template = {
 			alloys = @s_t4_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -391,6 +401,7 @@ utility_component_template = {
 			alloys = @m_t4_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -427,6 +438,7 @@ utility_component_template = {
 			alloys = @l_t4_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -464,6 +476,7 @@ utility_component_template = {
 			alloys = @s_t5_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -500,6 +513,7 @@ utility_component_template = {
 			alloys = @m_t5_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -536,6 +550,7 @@ utility_component_template = {
 			alloys = @l_t5_upkeep_alloys
 		}
 	}
+	
 	ai_weight = {
 		modifier = {
 			factor = 0.0
@@ -908,6 +923,10 @@ utility_component_template = {
 	}
 }
 
+############
+# Bulwark
+############
+
 utility_component_template = {
 	key = "bulwark_3_battlewright"
 	size = medium
@@ -921,5 +940,215 @@ utility_component_template = {
 	ship_modifier = {
 		ship_hull_mult = 0.5
 		ship_armor_mult = 0.5
+	}
+}
+
+#######################
+# Archaeotech Armor
+#######################
+
+utility_component_template = { # Small
+	key = "SMALL_ARCHAEO_ARMOR"
+	size = small
+	icon = "GFX_ship_part_archaeo_armor"
+	icon_frame = 1
+	power = @power_S3
+	modifier = {
+		ship_armor_add = @armor_S3
+		ship_shield_add = @shield_S1
+		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
+	}
+	custom_tooltip = tt_SMALL_ARCHAEO_ARMOR_AP
+	triggered_ship_modifier = {
+		potential = {
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		ship_shield_add = @shield_S1
+	}
+
+
+	prerequisites = { "tech_archaeoarmor" }
+	component_set = "ARCHAEO_ARMOR"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t5_cost
+			minor_artifacts = @minor_artifacts_cost_s
+		}
+		upkeep = {
+			energy = @s_t5_upkeep_energy
+			alloys = @s_t5_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = @T4_weight
+			owner = { NOT = { has_ascension_perk = ap_archaeoengineers } }
+		}
+		modifier = {
+			add = @T5_weight
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				has_monthly_income = {
+					resource = minor_artifacts
+					value < 3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				resource_stockpile_compare = {
+					resource = minor_artifacts
+					value > 250
+				}
+			}
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 1.5
+		}
+	}
+}
+
+utility_component_template = { # Medium
+	key = "MEDIUM_ARCHAEO_ARMOR"
+	size = medium
+	icon = "GFX_ship_part_archaeo_armor"
+	icon_frame = 1
+	power = @power_M3
+	modifier = {
+		ship_armor_add = @armor_M3
+		ship_shield_add = @shield_M1
+		ship_shield_regen_add_static = @regen_M3
+	}
+	custom_tooltip = tt_MEDIUM_ARCHAEO_ARMOR_AP
+	triggered_ship_modifier = {
+		potential = {
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		ship_shield_add = @shield_M1
+	}
+
+
+	prerequisites = { "tech_archaeoarmor" }
+	component_set = "ARCHAEO_ARMOR"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t5_cost
+			minor_artifacts = @minor_artifacts_cost_m
+		}
+		upkeep = {
+			energy = @m_t5_upkeep_energy
+			alloys = @m_t5_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = @T4_weight
+			owner = { NOT = { has_ascension_perk = ap_archaeoengineers } }
+		}
+		modifier = {
+			add = @T5_weight
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				has_monthly_income = {
+					resource = minor_artifacts
+					value < 3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				resource_stockpile_compare = {
+					resource = minor_artifacts
+					value > 250
+				}
+			}
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 1.5
+		}
+	}
+}
+
+utility_component_template = { # Large
+	key = "LARGE_ARCHAEO_ARMOR"
+	size = large
+	icon = "GFX_ship_part_archaeo_armor"
+	icon_frame = 1
+	power = @power_L3
+	modifier = {
+		ship_armor_add = @armor_L3
+		ship_shield_add = @shield_L1
+		ship_shield_regen_add_static = @regen_L3
+	}
+	custom_tooltip = tt_LARGE_ARCHAEO_ARMOR_AP
+	triggered_ship_modifier = {
+		potential = {
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		ship_shield_add = @shield_L1
+	}
+
+	prerequisites = { "tech_archaeoarmor" }
+	component_set = "ARCHAEO_ARMOR"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t5_cost
+			minor_artifacts = @minor_artifacts_cost_l
+		}
+		upkeep = {
+			energy = @l_t5_upkeep_energy
+			alloys = @l_t5_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = @T4_weight
+			owner = { NOT = { has_ascension_perk = ap_archaeoengineers } }
+		}
+		modifier = {
+			add = @T5_weight
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				has_monthly_income = {
+					resource = minor_artifacts
+					value < 3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				resource_stockpile_compare = {
+					resource = minor_artifacts
+					value > 250
+				}
+			}
+		}
+		inline_script = {
+			script = ship_components/weights/roles_stealth
+			MULT = 1.5
+		}
 	}
 }

@@ -25,10 +25,7 @@ energy_expenditure_planets_gaia_seeder = {
 
 	potential = {
 		str_ai_budget_potential_energy_expenditure_planets_gaia_seeder = yes
-		OR = {
-			has_valid_civic = civic_idyllic_bloom
-			has_valid_civic = civic_hive_idyllic_bloom
-		}
+		is_idyllic_bloom_empire = yes
 		resource_stockpile_compare = { resource = energy value > 2000 }
 
 		any_owned_planet = {

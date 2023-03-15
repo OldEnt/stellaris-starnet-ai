@@ -277,7 +277,7 @@ decision_slave_colony = {
 		custom_tooltip = {
 			fail_text = decision_slave_colony_must_have_slave
 			any_owned_pop = {
-				has_citizenship_type = { type = citizenship_slavery }
+				has_citizenship_type = { type = citizenship_slavery country = owner }
 			}
 		}
 		custom_tooltip = {
@@ -2156,7 +2156,10 @@ decision_upgrade_habitat = {
 
 	potential = {
 		is_planet_class = pc_habitat
-		NOT = { has_planet_flag = advanced_habitat }
+		NOR = {
+			has_planet_flag = advanced_habitat
+			has_planet_flag = payback_habitat
+		}
 		exists = owner
 		owner = {
 			has_technology = tech_habitat_2
@@ -2228,7 +2231,10 @@ decision_upgrade_habitat_2 = {
 	potential = {
 		is_planet_class = pc_habitat
 		has_planet_flag = advanced_habitat
-		NOT = { has_planet_flag = advanced_habitat_2 }
+		NOR = {
+			has_planet_flag = advanced_habitat_2
+			has_planet_flag = payback_habitat
+		}
 		exists = owner
 		owner = {
 			has_technology = tech_habitat_3

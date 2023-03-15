@@ -716,6 +716,22 @@ tech_food_processing_1 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+
+		modifier = {
+			factor = 0
+			country_uses_food = no
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_valid_civic = civic_agrarian_idyll
+				is_anglers_empire = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			is_catalytic_empire = yes
+		}
 	}
 }
 
@@ -1003,11 +1019,24 @@ tech_alien_life_studies = {
 	weight_modifier = {
 		modifier = {
 			factor = 2
-			has_ethic = ethic_xenophile
+			OR = {
+				has_ethic = ethic_xenophile
+				AND = {
+					has_ethic = ethic_xenophobe
+					NOT = { has_ai_personality = xenophobic_isolationists }
+				}
+			}
+
 		}
 		modifier = {
 			factor = 3
-			has_ethic = ethic_fanatic_xenophile
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				AND = {
+					has_ethic = ethic_fanatic_xenophobe
+					NOT = { has_ai_personality = xenophobic_isolationists }
+				}
+			}
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -1020,7 +1049,15 @@ tech_alien_life_studies = {
 			factor = 0
 			NOT = {
 				any_owned_planet = {
-					has_deposit = d_alien_pets_deposit
+					OR = {
+						has_deposit = d_alien_pets_deposit
+						any_owned_pop = {
+							OR = {
+								is_sapient = no
+								is_livestock = yes
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1037,11 +1074,23 @@ tech_alien_life_studies = {
 		}
 		modifier = {
 			factor = 1.25
-			has_ethic = ethic_xenophile
+			OR = {
+				has_ethic = ethic_xenophile
+				AND = {
+					has_ethic = ethic_xenophobe
+					NOT = { has_ai_personality = xenophobic_isolationists }
+				}
+			}
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_fanatic_xenophile
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				AND = {
+					has_ethic = ethic_fanatic_xenophobe
+					NOT = { has_ai_personality = xenophobic_isolationists }
+				}
+			}
 		}
 		modifier = {
 			factor = 1.25
@@ -1057,56 +1106,9 @@ tech_alien_life_studies = {
 	}
 }
 
-# Acane Deciphering
-tech_arcane_deciphering = {
-	cost = @tier2cost3
-	area = society
-	tier = 2
-	category = { statecraft }
-	prerequisites = { tech_society_2 }
-	weight = @tier2weight3
-	is_rare = yes
-
-	feature_flags = {
-		unlock_arcane_deciphering
-	}
-
-	weight_modifier = {
-		factor = 0.50
-		modifier = {
-			factor = 0
-			NOT = {
-				has_resource = { type = minor_artifacts amount > 0 }
-			}
-		}
-		modifier = {
-			factor = 0
-			has_ancrel = no
-		}
-		modifier = {
-			factor = 2
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
-	}
-
-	ai_weight = {
-		factor = 500 #important resource
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
-	}
-}
-
 #New Worlds Protocol
 tech_colonization_1 = {
-	cost = @tier0cost1
+	cost = 0
 	area = society
 	tier = 0
 	category = { new_worlds }
@@ -1437,6 +1439,10 @@ tech_frontier_health = {
 		modifier = {
 			factor = 2
 			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			has_country_flag = payback_researching_gene_clinics 
 		}
 	}
 }
@@ -4574,6 +4580,19 @@ tech_psionic_theory = {
 			}
 		}
 		modifier = {
+			factor = 2
+			research_leader = {
+				area = society
+				OR = {
+					has_trait = "leader_trait_scientist_psionic"
+					has_trait = "leader_trait_scientist_chosen"
+					has_trait = "leader_trait_scientist_composer_chosen"
+					has_trait = "leader_trait_scientist_instrument_chosen"
+					has_trait = "leader_trait_scientist_whisperers_chosen"
+				}
+			}
+		}
+		modifier = {
 			factor = 8
 			research_leader = {
 				area = society
@@ -4622,7 +4641,14 @@ tech_psionic_theory = {
 				NOR = {
 					research_leader = {
 						area = society
-						has_trait = "leader_trait_expertise_psionics"
+						OR = {
+							has_trait = "leader_trait_expertise_psionics"
+							has_trait = "leader_trait_scientist_psionic"
+							has_trait = "leader_trait_scientist_chosen"
+							has_trait = "leader_trait_scientist_composer_chosen"
+							has_trait = "leader_trait_scientist_instrument_chosen"
+							has_trait = "leader_trait_scientist_whisperers_chosen"
+						}
 					}
 					any_owned_pop = {
 						OR = {
@@ -5031,6 +5057,14 @@ tech_psi_jump_drive_1 = {
 			has_ascension_perk = ap_grasp_the_void
 		}
 		modifier = {
+			factor = @eager_explorer_effect
+			is_eager_explorer_empire = yes
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_country_flag = jaunted_traveler_secret_revealed
+		}
+		modifier = {
 			factor = @federation_perk_factor
 			has_federation = yes
 			federation = {
@@ -5317,13 +5351,17 @@ tech_galactic_campaigns = {
 # ##################
 
 tech_planetary_government = {
-	cost = 0
+	cost = @tier0cost1
 	area = society
 	tier = 0
 	category = { statecraft }
 	start_tech = yes
 
 	# unlocks Planetary Outpost
+
+	starting_potential = {
+		is_low_tech_start = no # So Broken Shackles origin players don't start with it
+	}
 }
 
 #Planetary Unification

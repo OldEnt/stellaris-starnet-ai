@@ -26,6 +26,7 @@ tech_space_exploration = {
 	#allow auto-explore on science ships
 	feature_flags = {
 		tech_automated_exploration
+		unlocks_auto_research
 	}
 
 	prereqfor_desc = {
@@ -57,6 +58,10 @@ tech_corvettes = {
 
 	ai_weight = {
 		weight = 10000
+	}
+
+	starting_potential = {
+		is_low_tech_start = no # So Broken Shackles origin players don't start with it
 	}
 }
 
@@ -844,7 +849,7 @@ tech_cruiser_hull_2 = {
 	modifier = {
 		custom_tooltip = tech_cruiser_hull_effect
 		shipsize_cruiser_hull_mult = 0.1
-		shipsize_offspring_cruiser_hull_add = 0.1
+		shipsize_offspring_cruiser_hull_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -959,8 +964,8 @@ tech_battleship_hull_1 = {
 
 	modifier = {
 		custom_tooltip = tech_battleship_hull_effect
-		shipsize_battleship_hull_add = 800
-		shipsize_offspring_battleship_hull_add = 800
+		shipsize_battleship_hull_mult = 0.1
+		shipsize_offspring_battleship_hull_mult = 0.1
 	}
 
 	weight_modifier = {
@@ -2256,14 +2261,14 @@ tech_armor_hardeners_1 = {
 	tier = 2
 	category = { materials }
 	ai_update_type = all
-	prerequisites = { "tech_advanced_metallurgy_1" "tech_exotic_gases" }
+	prerequisites = { "tech_advanced_metallurgy_1" "tech_rare_crystals" }
 	weight = @tier2weight3
 
 	weight_modifier = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
@@ -2273,7 +2278,7 @@ tech_armor_hardeners_1 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
@@ -2293,7 +2298,7 @@ tech_armor_hardeners_2 = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
@@ -2303,7 +2308,7 @@ tech_armor_hardeners_2 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
@@ -2529,7 +2534,7 @@ tech_defense_platform_hull_1 = {
 	}
 
 	modifier = {
-		shipsize_military_station_small_hull_add = 500
+		shipsize_military_station_small_hull_mult = 0.1
 	}
 }
 

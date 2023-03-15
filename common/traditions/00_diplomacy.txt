@@ -1,7 +1,7 @@
 tr_diplomacy_adopt = {
 	custom_tooltip = tr_diplomacy_adopt_desc
 	modifier = {
-		diplomacy_upkeep_mult = -0.5
+		diplomacy_influence_upkeep_mult = -0.5
 	}
 	possible = {
 		hidden_trigger = {

@@ -178,6 +178,10 @@ utility_component_template = {
 	}
 }
 
+############
+# HARDENERS
+############
+
 utility_component_template = {
 	key = "SHIELD_HARDENER_1"
 	size = aux

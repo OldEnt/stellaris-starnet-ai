@@ -985,12 +985,12 @@ tech_swarmer_missiles_2 = {
 #Space Torpedoes
 tech_torpedoes_1 = {
 	area = engineering
-	cost = @tier2cost2
-	tier = 2
+	cost = @tier1cost2
+	tier = 1
 	category = { propulsion }
 	ai_update_type = military
-	prerequisites = { "tech_missiles_1" }
-	weight = @tier2weight2
+	prerequisites = { "tech_missiles_2" }
+	weight = @tier1weight2
 
 	weight_modifier = {
 		modifier = {

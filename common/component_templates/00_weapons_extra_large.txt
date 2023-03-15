@@ -367,7 +367,7 @@ weapon_component_template = {
 	prerequisites = { "tech_titans" }
 	component_set = "PERDITION_BEAM"
 	projectile_gfx = "perdition_beam"
-	size_restriction = { titan }
+	size_restriction = { titan ion_cannon }
 	resources = {
 		category = ship_components
 		cost = {
@@ -399,52 +399,6 @@ weapon_component_template = {
 				resource = rare_crystals
 				value < 10
 			}
-		}
-	}
-}
-
-# ## Perdition Beam
-weapon_component_template = {
-	key = "PERDITION_BEAM_ION"
-	size = titanic
-	type = instant
-	prio_projectile = yes
-
-	icon = "GFX_ship_part_perdition_beam"
-	icon_frame = 1
-
-	firing_arc = 10.0
-	use_ship_kill_target = no
-
-	tags = { weapon_type_energy }
-
-	prerequisites = { "tech_titans" }
-	component_set = "PERDITION_BEAM"
-	projectile_gfx = "ion_cannon"
-	size_restriction = { ion_cannon }
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = @titanic_t6_cost
-			rare_crystals = @titanic_t6_rare
-		}
-		upkeep = {
-			energy = @titanic_t6_upkeep_energy
-			alloys = @titanic_t6_upkeep_alloys
-		}
-	}
-
-	target_weights = {
-		titan = 3
-		battleship = 2
-	}
-
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = rare_crystals value <= 0 }
 		}
 	}
 }
@@ -489,7 +443,6 @@ weapon_component_template = {
 		weight = 1
 		modifier = {
 			factor = 0.0
-			is_country_type = default
 			resource_stockpile_compare = { resource = rare_crystals value <= 100 }
 		}
 	}

@@ -30,6 +30,10 @@ shipyard = {
 	station_modifier = {
 		starbase_shipyard_capacity_add = 1
 	}
+	triggered_station_modifier = {
+		potential = { has_starbase_building = irassian_naval_yards }
+		starbase_shipyard_capacity_add = 1
+	}
 
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
@@ -330,4 +334,114 @@ trading_hub = {
 	ai_weight = {
 		weight = 0
 	}
+}
+
+detection_array = {
+	icon = "GFX_spaceport_module_detecton_array"
+	section = "SCIENCE_STARBASE_SECTION"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_detection_array }
+		is_orbital_ring = no
+	}
+
+	possible = {
+		NOT = {
+			has_starbase_building = dark_matter_listening_post
+		}
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 100
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	station_modifier = {
+		ship_cloaking_detection_add = 1
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			add = 1000
+			owner = {
+				NOT = {
+					any_owned_starbase = {
+						has_starbase_module = detection_array
+					}
+				}
+			}
+		}
+	}
+
+	show_in_tech = "tech_detection_array"
+}
+
+archaeo_rampart = {
+	section = "ANCHORAGE_STARBASE_SECTION"
+	icon = GFX_starbase_archaeo_rampart
+	construction_days = 180
+
+	potential = {
+		is_orbital_ring = no
+		owner = { has_technology = tech_archaeo_rampart }
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+			minor_artifacts = @minor_artifacts_cost_xl
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			owner = {
+				NOT = { has_ascension_perk = ap_archaeoengineers }
+			}
+		}
+		ship_hull_mult = 0.15
+		ship_armor_mult = 0.15
+		starbase_defense_platform_capacity_add = 2
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			owner = {
+				has_ascension_perk = ap_archaeoengineers 
+			}
+		}
+		ship_hull_mult = 0.15
+		ship_armor_mult = 0.20
+		ship_armor_hardening_add = 0.10
+		starbase_defense_platform_capacity_add = 2
+	}
+
+	custom_tooltip = sm_archaeo_rampart_desc_modifier
+
+	defense_platform_modifier = {
+		ship_weapon_damage = 0.05
+		ship_hull_mult = 0.05
+	}
+
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+
+	show_in_tech = "tech_archaeo_rampart"
 }

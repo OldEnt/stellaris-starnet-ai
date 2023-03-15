@@ -198,4 +198,23 @@ utility_component_template = {
 			ship_shield_hardening_add = 0.50
 		}
 	}
+
+	modifier = {
+		ship_cloaking_detection_add = 10
+	}
+}
+
+###################################
+# Contingency Core Cloaking Detectors
+###################################
+utility_component_template = {
+	key = "AI_CORE_DETECTOR"
+	size = medium
+	icon = "GFX_bulwark_array"
+	icon_frame = 1
+	power = 0
+
+	modifier = {
+		ship_cloaking_detection_add = 8
+	}
 }

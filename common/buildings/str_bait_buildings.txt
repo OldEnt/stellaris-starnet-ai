@@ -59,6 +59,8 @@ building_str_ai_stronghold = {
 	base_buildtime = 240
 	icon = building_stronghold
 
+	category = army
+
 	potential = {
 		owner = { is_ai = yes }
 		str_force_ai_stronghold = yes
@@ -101,6 +103,8 @@ building_str_ai_holo_theatres = {
 	base_buildtime = 240
 	icon = building_holo_theatres
 
+	category = unity
+
 	potential = {
 		owner = { is_ai = yes }
 		str_force_holotheatre = yes
@@ -141,6 +145,8 @@ building_str_ai_holo_theatres = {
 building_str_ai_commercial_zone = {
 	base_buildtime = 240
 	icon = building_commercial_zone
+
+	category = trade
 
 	potential = {
 		owner = { is_ai = yes }

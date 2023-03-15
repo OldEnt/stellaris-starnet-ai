@@ -18,6 +18,7 @@ building_commercial_zone = {
 			}
 		}
 		NOT = { has_modifier = slave_colony }
+		NOT = { has_building = building_low_tech_capital }
 	}
 
 	destroy_trigger = {

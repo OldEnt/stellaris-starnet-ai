@@ -28,38 +28,6 @@ tech_repeatable_improved_tile_food_output = {
 	}
 }
 
-#tech_repeatable_improved_sector_cap = {
-#	area = society
-#	cost = @repeatableTechBaseCost
-#	cost_per_level = @repeatableTechLevelCost
-#	tier = @repeatableTechTier
-#	category = { new_worlds }
-#	levels = -1
-#	prerequisites = { "tech_adaptive_bureaucracy" }
-#	weight = @repeatableTechWeight
-#
-#	weight_modifier = {
-#		factor = @repatableTechFactor
-#	}
-#
-#	ai_weight = {
-#		factor = 1.0
-#	}
-#
-#	weight_groups = {
-#		repeatable
-#	}
-#	mod_weight_if_group_picked = {
-#		repeatable = 0.01
-#	}
-#
-#	modifier = {
-#		# TODO: Fix
-#		#country_sector_cap_add = 1
-#	}
-#}
-#
-
 tech_repeatable_improved_core_system_cap = {
 	area = society
 	cost = @repeatableTechBaseCost

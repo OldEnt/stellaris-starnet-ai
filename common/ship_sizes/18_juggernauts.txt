@@ -30,7 +30,9 @@ juggernaut = {
 		OR = {
 			AND = {
 				is_scope_type = starbase
-				NOT = { has_starbase_size = juggernaut }
+				NOT = {
+					has_starbase_size = juggernaut
+				}
 			}
 			AND = {
 				is_scope_type = megastructure

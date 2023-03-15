@@ -16,6 +16,17 @@ building_military_academy = {
 	allow = {
 		exists = owner
 		owner = { is_ai = no }
+		has_upgraded_capital = yes
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_ai = yes }
+			}
+			OR = {
+				has_building = building_stronghold
+				has_building = building_fortress
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -30,10 +41,6 @@ building_military_academy = {
 
 	convert_to = {
 		building_dread_encampment
-	}
-
-	allow = {
-		has_upgraded_capital = yes
 	}
 
 	army_modifier = {
@@ -144,6 +151,7 @@ building_stronghold = {
 	position_priority = 100
 
 	category = army
+	exempt_from_ai_planet_specialization = no
 
 	potential = {
 		buildings_simple_allow = yes

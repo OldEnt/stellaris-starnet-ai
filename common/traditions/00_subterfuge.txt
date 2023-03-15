@@ -2,6 +2,7 @@ tr_subterfuge_adopt = {
 	modifier = {
 		intel_decryption_add = 1
 	}
+	custom_tooltip_with_modifiers = tr_subterfuge_adopt_desc
 	possible = {
 		hidden_trigger = {
 			or = {
@@ -13,10 +14,28 @@ tr_subterfuge_adopt = {
 }
 
 tr_subterfuge_finish = {
-	#the refund effect is implemented elesewhere
+	# the refund effect is implemented elsewhere
 	custom_tooltip = tr_subterfuge_finish_desc
 	modifier = {
 		ascension_perks_add = 1
+	}
+
+	tradition_swap = {
+		name = tr_subterfuge_cloaking_finish
+		inherit_effects = no
+		inherit_icon = yes
+		trigger = {
+			has_first_contact_dlc = yes
+		}
+		custom_tooltip = tr_subterfuge_cloaking_finish_desc
+		modifier = {
+			ship_cloaking_strength_add = 1
+			ascension_perks_add = 1
+		}
+
+		weight = {
+			factor = 1
+		}
 	}
 }
 
