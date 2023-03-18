@@ -421,7 +421,7 @@ str_ai_budget_potential_alloys_expenditure_planets = {
 }
 
 str_ai_budget_potential_alloys_expenditure_starbases = {
-	years_passed > 4	# Rush alloys_expenditure_ships instead (science ships).
+	years_passed > 3	# Rush alloys_expenditure_ships instead (science ships).
 }
 
 str_ai_budget_potential_alloys_expenditure_starbases_fallen_empires = {
@@ -466,7 +466,7 @@ str_ai_budget_potential_unity_expenditure_edicts = {
 }
 
 str_ai_budget_potential_unity_expenditure_traditions = {
-	years_passed > 5	# Rush unity_expenditure_leaders instead (science ships).
+	years_passed > 4	# Rush unity_expenditure_leaders instead (science ships).
 }
 
 str_ai_budget_potential_unity_expenditure_megastructures = {
@@ -482,7 +482,20 @@ str_ai_budget_potential_unity_expenditure_missing_scientist = {
 }
 
 str_ai_budget_potential_unity_expenditure_leaders = {
-	always = yes
+	OR = {
+		years_passed > 19
+		NOT = {
+			any_owned_leader = { is_researching_area = physics }
+			any_owned_leader = { is_researching_area = society }
+			any_owned_leader = { is_researching_area = engineering }
+		}
+		any_owned_fleet = {
+			is_ship_class = shipclass_science_ship
+			NOT = {
+				exists = leader
+			}
+		}
+	}
 }
 
 str_ai_budget_potential_unity_upkeep_country = {

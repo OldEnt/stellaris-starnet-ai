@@ -128,13 +128,14 @@ unity_expenditure_leaders = {
 	weight = {
 		weight = 0.4
 		modifier = {
-			add = 15
-			years_passed < 50	# Important for scientists
+			add = 10
+			years_passed < 5	# Important for scientists
 		}
 	}
 
-	desired_min = {
-		base = 200
+	desired_max = {
+		base = 0
+		add = value:leader_cost
 	}
 }
 
