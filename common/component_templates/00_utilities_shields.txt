@@ -810,8 +810,12 @@ utility_component_template = { # Small
 	modifier = {
 		ship_shield_add = @shield_S3
 		ship_shield_regen_add_static = @regen_S6 #Regeneration per day
+	}
+
+	ship_modifier = {
 		ship_shield_hardening_add = 0.15
 	}
+
 	custom_tooltip = tt_SMALL_ARCHAEO_SHIELD_AP
 	triggered_ship_modifier = {
 		potential = {
@@ -877,8 +881,12 @@ utility_component_template = { # Medium
 	modifier = {
 		ship_shield_add = @shield_M3
 		ship_shield_regen_add_static = @regen_M6 #Regeneration per day
+	}
+
+	ship_modifier = {
 		ship_shield_hardening_add = 0.15
 	}
+
 	custom_tooltip = tt_MEDIUM_ARCHAEO_SHIELD_AP
 	triggered_ship_modifier = {
 		potential = {
@@ -944,8 +952,13 @@ utility_component_template = { # Large
 	modifier = {
 		ship_shield_add = @shield_L3
 		ship_shield_regen_add_static = @regen_L6 #Regeneration per day
+	}
+
+	ship_modifier = {
 		ship_shield_hardening_add = 0.15
 	}
+
+
 	custom_tooltip = tt_LARGE_ARCHAEO_SHIELD_AP
 	triggered_ship_modifier = {
 		potential = {

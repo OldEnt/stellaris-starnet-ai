@@ -149,7 +149,7 @@ frigate = {
 			trigger = { has_technology = tech_energy_torpedoes_1 }
 		}
 	} 
-	prerequisites = { "tech_corvettes" "tech_torpedoes_1" }
+	prerequisites = { "tech_torpedoes_1" }
 
 	combat_disengage_chance = 1.00
 

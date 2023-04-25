@@ -787,6 +787,7 @@ building_factory_1 = {
 				owner = {
 					is_ai = yes
 					country_uses_consumer_goods = no
+					NOT = { has_origin = origin_fear_of_the_dark }
 				}
 			}
 		}

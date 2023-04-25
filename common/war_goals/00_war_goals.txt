@@ -1170,13 +1170,8 @@ wg_force_ideology = {
 			from = { is_galactic_community_member = yes }
 		}
 		# Payback empires with the Payback CB should use that version to avoid soft-locking the event chain
-		NOT = {
+		NAND = {
 			has_origin = origin_payback
-			has_event_chain = payback_make_them_pay_words_chain
-			OR = {
-				is_pacifist = yes
-				is_xenophile = yes
-			}
 			from = {
 				has_origin = origin_slavers
 			}
