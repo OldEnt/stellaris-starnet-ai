@@ -407,33 +407,70 @@ opinion_nuker = {
 	opinion = {
 		base = 0
 		modifier = {
-			add = -5
-			NOT = { has_ethic = "ethic_militarist" }
-			NOT = { has_ethic = "ethic_fanatic_militarist" }
+			add = -1
+			OR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_robot_empire = yes
+			}
 			is_country_type = default
 		}
 		modifier = {
-			add = -5
-			has_ethic = "ethic_pacifist"
+			add = -3
+			NOR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_robot_empire = yes
+			}
 			is_country_type = default
 		}
 		modifier = {
-			add = -10
-			has_ethic = "ethic_fanatic_pacifist"
+			add = -3
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_xenophile
+				has_civic = civic_hive_empath
+			}
 			is_country_type = default
 		}
 		modifier = {
-			add = -5
+			add = -6
+			OR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophile
+				has_civic = civic_machine_servitor
+			}
+			is_country_type = default
+		}
+		modifier = {
+			add = -6
 			has_ai_personality = awakened_fallen_empire_xenophile
+		}
+		modifier = {
+			add = -6
+			is_at_war_with = root.from
+			is_country_type = default
 		}
 	}
 
-	min = -100
+	min = -250
 
 	accumulative = yes
 
 	decay = {
 		base = 1
+		modifier = {
+			add = 1
+			OR = {
+				has_defensive_pact = from
+				is_in_federation_with = from
+				is_improving_relations_with = from
+			}
+		}
+		modifier = {
+			add = 1
+			from = { is_improving_relations_with = prev }
+		}
 	}
 }
 
@@ -624,7 +661,7 @@ opinion_broke_guarantee = {
 # We asked to become their subject and they agreed
 opinion_subject_protection = {
 	opinion = {
-		base = 30
+		inline_script = { script = "str_weights/str_weights" WEIGHT = base VANILLA = 150 STR = 30 }
 	}
 
 	decay = {
@@ -3697,6 +3734,30 @@ triggered_opinion_barbaric_despoilers = {
 	}
 }
 
+triggered_opinion_crusader_spirit = {
+	trigger = {
+		is_country_type = default
+		has_civic = civic_crusader_spirit
+		FROM = {
+			NOT = { has_same_ethos = PREV }
+		}
+	}
+	opinion = {
+		base = -80
+	}
+}
+
+triggered_opinion_crusader_spirit_pos = {
+	trigger = {
+		is_country_type = default
+		has_civic = civic_crusader_spirit
+		FROM = { has_same_ethos = PREV }
+	}
+	opinion = {
+		base = 20
+	}
+}
+
 triggered_authoritarian_opinion_barbaric_despoilers = {
 	trigger = {
 		is_country_type = default
@@ -3909,3 +3970,11 @@ contact_with_MSI_02 = {
 	}
 }
 
+opinion_has_sensitive_information_about_us = {
+	opinion = {
+		base = -25
+	}
+	decay = {
+		base = 1
+	}
+}

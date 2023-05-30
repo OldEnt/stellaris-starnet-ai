@@ -476,14 +476,16 @@ district_arcology_leisure = {
 		uses_district_set = city_world
 		from = {
 			is_regular_empire = yes
+			NOT = { has_civic = civic_dystopian_society }
 		}
 	}
 
 	potential = {
 		uses_district_set = city_world
-		exists = owner
 		owner = {
+			exists = owner
 			is_regular_empire = yes
+			NOT = { has_civic = civic_dystopian_society }
 		}
 	}
 
@@ -572,8 +574,8 @@ district_arcology_organic_housing = {
 
 	potential = {
 		uses_district_set = city_world
-		exists = owner
 		owner = {
+			exists = owner
 			has_valid_civic = civic_machine_servitor
 		}
 	}

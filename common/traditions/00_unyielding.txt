@@ -1,4 +1,5 @@
 tr_unyielding_adopt = {
+	unlocks_agenda = agenda_impenetrable_border
 	modifier = {
 		country_starbase_capacity_add = 2
 		starbase_upgrade_speed_mult = 0.50
@@ -42,8 +43,10 @@ tr_unyielding_finish = {
 tr_unyielding_resistance_is_frugal = {
 	modifier = {
 		army_defense_health_mult = 0.25
+		leader_generals_cost_mult = -0.1
+		leader_generals_upkeep_mult = -0.1
 	}
-	custom_tooltip = tr_unyielding_resistance_is_frugal_desc
+	custom_tooltip_with_modifiers = tr_unyielding_resistance_is_frugal_desc
 
 	tradition_swap = {
 		name = tr_unyielding_resistance_is_frugal_hive

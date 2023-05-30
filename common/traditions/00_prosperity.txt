@@ -1,4 +1,5 @@
 tr_prosperity_adopt = {
+	unlocks_agenda = agenda_favored_society
 	modifier = {
 		station_gatherers_produces_mult = 0.20
 	}

@@ -44,10 +44,15 @@
 
 ### System Resources
 
-#allow_deficit = no #default yes // only implemented for tech resources
+# allow_deficit = no				# default yes // only implemented for tech resources
+# market_amount = 100			# default -1, if non-positive, resource cannot be traded in the Market
+# market_price = 100				# default -1, if non-positive, resource cannot be traded in the Market
+# fixed_max_amount = yes/no		# default no, if yes maximum storage capacity of the resource is fixed to the amount specified in max = INT
+# special_max_amount = yes/no	# default no, if yes maximum storage capacity of the resource is fixed to the amount specified in max = INT + country_resource_max_RESOURCE_NAME_add modifiers
+#								This explicitly ignores MOD_COUNTRY_RESOURCE_MAX_ADD modifiers.
 
 time = {
-#	deficit_situation = total_panic		#TODO TODO: avoid at all costs
+	# Must be present here, but really: do not add a Deficit situation for Time.
 }
 
 
@@ -845,7 +850,11 @@ sr_living_metal = {
 	deficit_modifier = sr_living_metal_deficit
 
 	ai_weight = {
-		weight = 25
+		weight = 100
+	}
+
+	ai_wants = {
+		base = 5
 	}
 }
 
@@ -862,7 +871,11 @@ sr_zro = {
 	deficit_modifier = sr_zro_deficit
 
 	ai_weight = {
-		weight = 25
+		weight = 100
+	}
+
+	ai_wants = {
+		base = 5
 	}
 }
 
@@ -881,6 +894,10 @@ sr_dark_matter = {
 		weight = 100
 	}
 	deficit_modifier = dark_matter_deficit #found in static modifiers
+
+	ai_wants = {
+		base = 5
+	}
 }
 
 # Nanites
@@ -897,13 +914,25 @@ nanites = {
 	}
 }
 
+#############################
+### Exceptional Materials ###
+#############################
+
 # Minor Artifacts
 minor_artifacts = {
-	tradable = no
-	category = other
+	tradable = yes
+	category = rare
+	max = 2000
+	special_max_amount = yes
+
+	visibility_prerequisite = { has_ancrel = yes }
 
 	ai_weight = {
-		weight = 1
+		weight = 100
+	}
+
+	ai_wants = {
+		base = 5
 	}
 }
 

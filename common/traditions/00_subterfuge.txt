@@ -1,4 +1,5 @@
 tr_subterfuge_adopt = {
+	unlocks_agenda = agenda_uncover_secrets
 	modifier = {
 		intel_decryption_add = 1
 	}

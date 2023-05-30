@@ -1,5 +1,5 @@
 tr_expansion_adopt = {
-
+	unlocks_agenda = agenda_superior_colonies
 	modifier = {
 		planet_colony_development_speed_mult = 0.25
 	}

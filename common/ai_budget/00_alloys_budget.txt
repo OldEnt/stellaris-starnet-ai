@@ -154,9 +154,19 @@ alloys_expenditure_starbases = {
 
 		# Reduce spending on claiming new systems if we have unclaimed planets
 		modifier = {
-			factor = 0.25
+			is_machine_empire = yes
+			has_country_resource = { type = alloys amount < 450 }
+			factor = 0.25 # more aggresive saving for robots since their colony ships cost more
 			ai_colonize_plans > 0
 		}
+		# Reduce spending on claiming new systems if we have unclaimed planets
+		modifier = {
+			is_machine_empire = no
+			has_country_resource = { type = alloys amount < 250 }
+			factor = 0.50
+			ai_colonize_plans > 0
+		}
+
 		modifier = {
 			factor = 1.5
 			used_starbase_capacity_percent < 1

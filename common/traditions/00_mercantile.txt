@@ -1,4 +1,5 @@
 tr_mercantile_adopt = {
+	unlocks_agenda = agenda_open_markets
 	modifier = {
 		local_trade_protection_add = 5
 		starbase_trade_collection_range_add = 1

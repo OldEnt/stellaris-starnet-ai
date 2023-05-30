@@ -27,7 +27,7 @@ district_generator = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_generator
 		cost = {
 			minerals = @base_cost
 		}
@@ -196,7 +196,7 @@ district_mining = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_mining
 		cost = {
 			minerals = @base_cost
 		}
@@ -376,7 +376,7 @@ district_farming = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_farming
 		cost = {
 			minerals = @base_cost
 		}
@@ -629,7 +629,7 @@ district_generator_uncapped = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_generator
 		cost = {
 			minerals = @base_cost
 		}
@@ -789,7 +789,7 @@ district_mining_uncapped = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_mining
 		cost = {
 			minerals = @base_cost
 		}
@@ -1032,7 +1032,7 @@ district_farming_uncapped = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_farming
 		cost = {
 			minerals = @base_cost
 		}

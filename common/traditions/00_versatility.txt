@@ -1,4 +1,5 @@
 tr_versatility_adopt = {
+	unlocks_agenda = agenda_self_maintenance
 	modifier = {
 		planet_pop_assemblers_upkeep_mult = -0.10
 	}

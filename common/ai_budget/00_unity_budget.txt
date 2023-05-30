@@ -78,44 +78,6 @@ unity_expenditure_decisions = {
 	}
 }
 
-unity_expenditure_missing_scientist = {
-	resource = unity
-	type = expenditure
-	category = leaders
-
-	potential = {
-		str_ai_budget_potential_unity_expenditure_missing_scientist = yes
-		OR = {
-			scientist_count < 4
-
-			NOT = {
-				research_leader = {
-					area = physics
-				}
-			}
-			NOT = {
-				research_leader = {
-					area = society
-				}
-			}
-			NOT = {
-				research_leader = {
-					area = engineering
-				}
-			}
-		}
-	}
-
-	weight = {
-		weight = 1.6
-	}
-
-	desired_max = {
-		base = 1.25
-		mult = value:leader_cost #will cap at 25% more than it costs to buy a leader
-	}
-}
-
 unity_expenditure_leaders = {
 	resource = unity
 	type = expenditure

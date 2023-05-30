@@ -1,4 +1,5 @@
 tr_supremacy_adopt = {
+	unlocks_agenda = agenda_military_buildup
 	modifier = {
 		country_naval_cap_add = 20
 		army_damage_mult = 0.20
@@ -92,8 +93,9 @@ tr_supremacy_war_games = {
 		has_tradition = tr_supremacy_fleet_logistical_corps
 	}
 	modifier = {
-		country_command_limit_add = 20
-		admiral_skill_levels = 2
+		command_limit_add = 20
+		leader_admirals_cost_mult = -0.1
+		leader_admirals_upkeep_mult = -0.1
 	}
 
 	tradition_swap = {

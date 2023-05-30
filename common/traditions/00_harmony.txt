@@ -1,4 +1,5 @@
 tr_harmony_adopt = {
+	unlocks_agenda = agenda_inner_stability
 	modifier = {
 		planet_pops_upkeep_mult = -0.10
 	}
@@ -109,8 +110,8 @@ tr_harmony_harmonious_directives = {
 tr_harmony_mind_and_body = {
 
 	modifier = {
-		leader_age = 20
-		leader_skill_levels = 1
+		leader_age = 10
+		negative_traits_country = -1
 	}
 
 	tradition_swap = {

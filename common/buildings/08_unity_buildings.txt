@@ -18,12 +18,8 @@ building_autochthon_monument = {
 				is_memorialist_empire = yes
 			}
 		}
-	}
-
-	allow = {
-		hidden_trigger = {
-			exists = owner
-			owner = { is_ai = no }
+		owner = {
+			is_ai = no
 		}
 	}
 
@@ -38,14 +34,6 @@ building_autochthon_monument = {
 					is_memorialist_empire = yes
 				}
 			}
-		}
-		AND = {
-			owner = {
-				is_ai = yes
-				NOT = { has_country_flag = str_recently_human }
-			}
-			is_capital = yes
-			free_building_slots < 1
 		}
 	}
 
