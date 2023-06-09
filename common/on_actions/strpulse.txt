@@ -42,7 +42,7 @@ on_five_year_pulse = {
 
 on_five_year_pulse_country = {
 	events = {
-		starnet.300
+		# starnet.300
 	}
 }
 
