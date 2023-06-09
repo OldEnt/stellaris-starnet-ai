@@ -482,20 +482,7 @@ str_ai_budget_potential_unity_expenditure_missing_scientist = {
 }
 
 str_ai_budget_potential_unity_expenditure_leaders = {
-	OR = {
-		years_passed > 19
-		NOT = {
-			any_owned_leader = { is_researching_area = physics }
-			any_owned_leader = { is_researching_area = society }
-			any_owned_leader = { is_researching_area = engineering }
-		}
-		any_owned_fleet = {
-			is_ship_class = shipclass_science_ship
-			NOT = {
-				exists = leader
-			}
-		}
-	}
+	always = yes
 }
 
 str_ai_budget_potential_unity_upkeep_country = {

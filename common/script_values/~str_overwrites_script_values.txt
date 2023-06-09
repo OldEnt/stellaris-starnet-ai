@@ -1,41 +1,42 @@
-desired_science_ships = {
-	modifier = {
-		set = 2
-		is_country_type = default
-	}
-	modifier = {
-		add = 2
-		years_passed < 80
-	}
-	modifier = {
-		add = 2
-		years_passed < 30
-	}
-	complex_trigger_modifier = {
-		trigger = count_owned_fleet
-		parameters = {
-			limit = {
-				has_fleet_order = excavate_archaeological_site_fleet_order
-			}
-		}
-		potential = {
-			years_passed < 80
-		}
-		mode = add
-	}
-	modifier = { #they shouldn't ever need it, but just in case
-		set = 1
-		is_country_type = awakened_fallen_empire
-	}
-}
+# Removed overwrites due to 3.8 Leader changes. Hotfix for AI unity bankrupcy.
+# desired_science_ships = {
+# 	modifier = {
+# 		set = 2
+# 		is_country_type = default
+# 	}
+# 	modifier = {
+# 		add = 2
+# 		years_passed < 80
+# 	}
+# 	modifier = {
+# 		add = 2
+# 		years_passed < 30
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_owned_fleet
+# 		parameters = {
+# 			limit = {
+# 				has_fleet_order = excavate_archaeological_site_fleet_order
+# 			}
+# 		}
+# 		potential = {
+# 			years_passed < 80
+# 		}
+# 		mode = add
+# 	}
+# 	modifier = { #they shouldn't ever need it, but just in case
+# 		set = 1
+# 		is_country_type = awakened_fallen_empire
+# 	}
+# }
 
-desired_science_ships_system_mult = { #this is mainly to allow for assisting research and the like. And also so they can scramble stuff if they have need and are a large empire. The early game rush is handled in desired_science_ships
-	modifier = {
-		set = 0.1
-		years_passed < 80
-		OR = {
-			is_country_type = default
-			merg_is_default_empire = yes
-		}
-	}
-}
+# desired_science_ships_system_mult = { #this is mainly to allow for assisting research and the like. And also so they can scramble stuff if they have need and are a large empire. The early game rush is handled in desired_science_ships
+# 	modifier = {
+# 		set = 0.1
+# 		years_passed < 80
+# 		OR = {
+# 			is_country_type = default
+# 			merg_is_default_empire = yes
+# 		}
+# 	}
+# }

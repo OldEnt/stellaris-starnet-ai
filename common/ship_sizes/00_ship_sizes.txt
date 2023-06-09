@@ -903,7 +903,8 @@ science = {
 	ai_ship_data = {
 		min = value:desired_science_ships
 		system_mult = value:desired_science_ships_system_mult
-		max = 10
+		max = 5
+		# max = 10	# Removed overwrites due to 3.8 Leader changes. Hotfix for AI unity bankrupcy.
 	}
 }
 
