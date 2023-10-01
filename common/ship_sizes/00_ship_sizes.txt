@@ -4,13 +4,13 @@
 ####################
 # NOTE FOR MODDERS #
 ####################
-# modifier = { } only takes the following modifiers
-# hull, shield & armor add/mult and regen add perc/static
-# evasion add/mult
-# speed/base speed mult
-# weapon damage mult
-# upkeep mult
-# for other modifiers, use ship_modifier = { }
+# modifier = { } For non-starbase ships, only takes the following modifiers:
+#	hull, shield & armor add/mult and regen add perc/static
+#	evasion add/mult
+#	speed/base speed mult
+#	weapon damage mult
+#	upkeep mult
+#	For other modifiers, use ship_modifier = { }
 # use_shipnames_from = other_size # allows a ship size to use names from another size
 # icon = ship_size_military_1
 		#ship_size_military_1 is default. The following sprite keys are generated from it:
@@ -148,7 +148,7 @@ frigate = {
 			name = energy_torpedoes
 			trigger = { has_technology = tech_energy_torpedoes_1 }
 		}
-	} 
+	}
 	prerequisites = { "tech_torpedoes_1" }
 
 	combat_disengage_chance = 1.00
@@ -644,7 +644,6 @@ colonizer = {
 				from = {
 					is_hive_empire = yes
 					is_lithoid_empire = no
-					NOT = { has_origin = origin_tree_of_life }
 				}
 			}
 			alloys = 200
@@ -654,31 +653,7 @@ colonizer = {
 			trigger = {
 				from = {
 					is_hive_empire = yes
-					is_lithoid_empire = no
-					has_origin = origin_tree_of_life
-				}
-			}
-			alloys = 50
-			food = 1000
-		}
-		cost = {
-			trigger = {
-				from = {
-					is_hive_empire = yes
 					is_lithoid_empire = yes
-					has_origin = origin_tree_of_life
-				}
-			}
-			alloys = 50
-			food = 500
-			minerals = 500
-		}
-		cost = {
-			trigger = {
-				from = {
-					is_hive_empire = yes
-					is_lithoid_empire = yes
-					NOT = { has_origin = origin_tree_of_life }
 				}
 			}
 			alloys = 200
@@ -1155,7 +1130,14 @@ mining_station = {
 		cost = {
 			minerals = 100
 		}
-
+		cost = {
+			trigger = {
+				from = {
+					has_valid_civic = civic_void_hive
+				}
+			}
+			unity = 10
+		}
 		upkeep = {
 			energy = 1
 		}
@@ -1191,6 +1173,14 @@ research_station = {
 		category = station_researchers
 		cost = {
 			minerals = 100
+		}
+		cost = {
+			trigger = {
+				from = {
+					has_valid_civic = civic_void_hive
+				}
+			}
+			unity = 10
 		}
 
 		upkeep = {

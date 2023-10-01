@@ -15,7 +15,10 @@ tradition_expansion = {
 		text =  tradition_expansion_machine_desc
 	}
 	desc = {
-		trigger = { has_origin = origin_void_dwellers }
+		trigger = {
+			is_hive_empire = no
+			has_origin = origin_void_dwellers
+		}
 		text =  tradition_expansion_void_desc
 	}
 	tree_template = "tree_12_11"
@@ -33,7 +36,11 @@ tradition_expansion = {
 		factor = 10
 		modifier = {
 			factor = 5
-			years_passed < 10
+			years_passed < 20
+		}
+		modifier = {
+			factor = 5
+			has_origin = origin_void_dwellers
 		}
 	}
 }

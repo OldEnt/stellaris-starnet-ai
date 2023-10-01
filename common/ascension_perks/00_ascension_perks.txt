@@ -28,10 +28,10 @@ ap_archaeoengineers = {
 				is_owned_by = root
 				has_modifier = zroni_storm
 				starbase = {
-					count_starbase_buildings = { 
-						type = zroni_storm_caster 
-						include_being_constructed = no 
-						count = 1 
+					count_starbase_buildings = {
+						type = zroni_storm_caster
+						include_being_constructed = no
+						count = 1
 					}
 				}
 				any_ship_in_system = {
@@ -47,6 +47,7 @@ ap_archaeoengineers = {
 
 	modifier = {
 		weapon_archaeotech_weapon_damage_mult = 0.33
+		starbase_shipyard_build_minor_artifacts_cost_mult = -0.10
 	}
 
 	ai_weight = {
@@ -63,7 +64,7 @@ ap_archaeoengineers = {
 			factor = 5
 			count_archaeological_site = {
 				count > 3
-				limit = { 
+				limit = {
 					is_owned_by = root
 					is_site_completed = yes
 				}
@@ -259,13 +260,8 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			count_playable_country = {
-				count > 1
-				limit = {
-					has_ascension_perk = ap_become_the_crisis
-				}
-			}
 			num_ascension_perks < 4
+			blocks_disruptive_gameplay = yes
 		}
 	}
 }
@@ -1114,8 +1110,9 @@ ap_shared_destiny = {
 ap_voidborn = {
 	potential = {
 		host_has_dlc = "Utopia"
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_voidborn
+			has_origin = origin_void_dwellers
 		}
 	}
 
@@ -1145,7 +1142,10 @@ ap_voidborn = {
 	}
 
 	modifier = {
-		pc_habitat_habitability = 0.2
+		megastructures_habitat_cost_mult = -0.20
+		habitat_districts_building_slots_add = 0.25
+		habitat_max_districts_add = 2
+		habitat_district_jobs_add = 1
 	}
 
 	ai_weight = {
@@ -1168,7 +1168,11 @@ ap_voidborn = {
 		}
 		modifier = {
 			factor = 1000
-			has_origin = origin_void_dwellers
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = payback_habitat
+				has_valid_civic = civic_void_hive
+			}
 		}
 	}
 }
@@ -1664,5 +1668,68 @@ ap_detox = {
 
 	ai_weight = {
 		factor = 20
+	}
+}
+
+#################
+# MECHROMANCY ASCENSION PERK
+#################
+
+ap_mechromancy = {
+	potential = {
+		has_necroids = yes
+		has_authority = auth_machine_intelligence
+		NOT = {
+			has_ascension_perk = ap_mechromancy
+		}
+	}
+
+	modifier = {
+		l_slot_weapon_damage_mult = 0.15
+		x_slot_weapon_damage_mult = 0.15
+		t_slot_weapon_damage_mult = 0.15
+	}
+
+	on_enabled = {
+		custom_tooltip = "ap_mechromancy_tt"
+		hidden_effect = {
+			country_event = { id = necroids.20 }
+		}
+	}
+
+	ai_weight = {
+		factor = 4
+		modifier = {
+			factor = 0
+			has_valid_civic = civic_machine_servitor
+		}
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_machine_assimilator
+		}
+		modifier = {
+			factor = 0
+			has_ai_personality = exterminators
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				is_regular_empire = yes
+				OR = {
+					has_origin = origin_here_be_dragons
+					any_system_within_border = {
+						any_ship_in_system = {
+							OR = {
+								is_ship_size = space_dragon_blue
+								is_ship_size = space_dragon_red
+								is_ship_size = leviathan_01_elder_tiyanki
+								is_ship_size = leviathan_01_voidspawn
+							}
+						}
+					}
+				}
+
+			}
+		}
 	}
 }

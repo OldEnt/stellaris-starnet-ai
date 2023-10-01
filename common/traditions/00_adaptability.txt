@@ -29,6 +29,9 @@ tr_adaptability_finish = {
 		}
 		custom_tooltip = tr_adaptability_void_finish_desc
 		modifier = {
+			hab_deposits_produces_mult = 0.50
+			hab_mining_deposits_produces_mult = 0.50
+			hab_research_deposits_produces_mult = 0.50
 			ascension_perks_add = 1
 		}
 		weight = {

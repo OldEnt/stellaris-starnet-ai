@@ -46,7 +46,7 @@ tr_mercantile_finish = {
 }
 
 tr_mercantile_trickle_up_economics = {
-	#clerks +1 trade value
+	# Clerks gain +1 TV and +1 Amenities
 	custom_tooltip = tr_mercantile_trickle_up_economics_desc
 	ai_weight = {
 		factor = 1000
@@ -58,7 +58,8 @@ tr_mercantile_commercial_enterprise = {
 		has_tradition = tr_mercantile_trickle_up_economics
 	}
 	custom_tooltip = tr_mercantile_commercial_enterprise_desc
-	#commercial zone 1 merchant job
+	# Commericial Buildings and Districts provide additional trader jobs.
+	# Traders produce amenities.
 
 	ai_weight = {
 		factor = 5000
@@ -68,6 +69,24 @@ tr_mercantile_commercial_enterprise = {
 tr_mercantile_adaptive_economic_policies = {
 	#gain access to trade policies
 	custom_tooltip = tr_mercantile_adaptive_economic_policies_desc
+
+	tradition_swap = {
+		name = tr_mercantile_worker_coop_improved_ownership
+		inherit_icon = yes
+		trigger = {
+			is_worker_coop_empire = yes
+		}
+
+		custom_tooltip = tr_mercantile_worker_coop_improved_ownership_desc
+
+		modifier = {
+			planet_worker_ownership_jobs_produces_mult = 0.05
+		}
+
+		weight = {
+			factor = 1
+		}
+	}
 
 	tradition_swap = {
 		name = tr_mercantile_trade_fleets

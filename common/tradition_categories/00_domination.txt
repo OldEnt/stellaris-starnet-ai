@@ -24,5 +24,13 @@ tradition_domination = {
 
 	ai_weight = {
 		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
 	}
 }

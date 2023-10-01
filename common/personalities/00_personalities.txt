@@ -435,6 +435,7 @@ ruthless_capitalists = {
 	research_agreement_acceptance = 10
 	defensive_pact_acceptance = 0
 	migration_pact_acceptance = 0
+	loyalty_acceptance = 0.5
 
 	advanced_start_chance = 20
 
@@ -489,6 +490,7 @@ ruthless_capitalists = {
 		OR = {
 			has_authority = auth_corporate
 			has_valid_civic = civic_corporate_dominion
+			has_trait = "trait_thrifty"
 		}
 	}
 
@@ -564,6 +566,7 @@ peaceful_traders = {
 		OR = {
 			has_authority = auth_corporate
 			has_valid_civic = civic_corporate_dominion
+			has_trait = "trait_thrifty"
 		}
 	}
 
@@ -819,7 +822,7 @@ democratic_crusaders = {
 		liberator = yes
 		opportunist = no
 		slaver = no
-		uplifter = no
+		uplifter = yes
 		purger = no
 		displacer = no
 		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
@@ -894,7 +897,7 @@ harmonious_hierarchy = {
 		purger = no
 		displacer = no
 		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
-		infiltrator = no
+		infiltrator = yes
 		robot_exploiter = yes
 		robot_liberator = no
 		propagator = no
@@ -1252,7 +1255,7 @@ hive_mind = {
 		uplifter = no
 		purger = no
 		displacer = yes
-		dominator = yes
+		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
 		infiltrator = no
 		robot_exploiter = no
 		robot_liberator = no
@@ -1366,7 +1369,7 @@ migrating_flock = {
 		liberator = no
 		opportunist = no
 		slaver = no
-		uplifter = no
+		uplifter = yes
 		purger = no
 		displacer = no
 		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
@@ -1506,7 +1509,7 @@ machine_intelligence = {
 		purger = no
 		displacer = yes
 		inline_script = { script = "str_universal/str_universal_change_operation" PROPERTY = "dominator" OPERATOR = "=" VANILLA = "no" STR = "yes"}
-		infiltrator = no
+		infiltrator = yes
 		robot_exploiter = no
 		robot_liberator = yes
 		propagator = no

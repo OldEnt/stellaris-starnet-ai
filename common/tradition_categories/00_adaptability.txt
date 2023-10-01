@@ -32,5 +32,9 @@ tradition_adaptability = {
 			factor = 2.5
 			is_hive_empire = yes
 		}
+		modifier = {
+			factor = 0.1
+			has_origin = origin_void_dwellers
+		}
 	}
 }

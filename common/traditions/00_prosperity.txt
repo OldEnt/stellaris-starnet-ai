@@ -87,6 +87,9 @@ tr_prosperity_public_works = {
 		inherit_icon = yes
 		trigger = {
 			is_hive_empire = yes
+			NOT = {
+				has_origin = origin_void_dwellers
+			}
 		}
 		weight = {
 			factor = 1
@@ -98,6 +101,9 @@ tr_prosperity_public_works = {
 		custom_tooltip = tr_prosperity_optimized_nexus_desc
 		trigger = {
 			is_machine_empire = yes
+			NOT = {
+				has_origin = origin_void_dwellers
+			}
 		}
 		weight = {
 			factor = 1
@@ -109,7 +115,11 @@ tr_prosperity_public_works = {
 		inherit_icon = yes
 		custom_tooltip = tr_prosperity_void_works_desc
 
-		# Effects are implemented in 00_capital_buildings.txt
+		# Effects are implemented in 03_habitat_districts.txt
+
+		modifier = {
+			habitat_max_districts_mult = 0.10
+		}
 
 		trigger = {
 			has_origin = origin_void_dwellers

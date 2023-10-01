@@ -826,8 +826,8 @@ resolution_ecology_environmental_control_board = {
 	}
 
 	breach = {
-		has_country_flag = resolution_breached_terraformed
 		NOT = { has_country_flag = constitutional_immunity }
+		has_country_flag = resolution_breached_terraformed
 	}
 
 	ai_weight = {
@@ -934,6 +934,11 @@ resolution_ecology_paradise_initiative = {
 
 	allow = {
 		is_active_resolution = "resolution_ecology_environmental_control_board"
+	}
+
+	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
+		has_country_flag = resolution_breached_terraformed
 	}
 
 	ai_weight = {
@@ -1595,6 +1600,7 @@ resolution_galacticstudies_advanced_xenostudies = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
 			AND = {
 				can_set_ai_policy = yes
@@ -1606,7 +1612,6 @@ resolution_galacticstudies_advanced_xenostudies = {
 				has_policy_flag = interference_not_allowed
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -1714,18 +1719,25 @@ resolution_galacticstudies_ethical_guideline_refactoring = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
+			AND = {
+				can_set_ai_policy = yes
+				has_policy_flag = ai_outlawed
+			}
+			AND = {
+				has_met_primitives = yes
+				has_policy_flag = interference_not_allowed
+			}
 			AND = {
 				has_technology = tech_selected_lineages
 				has_policy_flag = leader_enhancement_natural_selection
 			}
-
 			AND = {
 				has_technology = tech_capacity_boosters
 				NOT = { has_policy_flag = leader_enhancement_capacity_boosters }
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -1819,6 +1831,28 @@ resolution_galacticstudies_extradimensional_experimentation = {
 
 	allow = {
 		is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+	}
+
+	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
+		OR = {
+			AND = {
+				can_set_ai_policy = yes
+				has_policy_flag = ai_outlawed
+			}
+			AND = {
+				has_met_primitives = yes
+				has_policy_flag = interference_not_allowed
+			}
+			AND = {
+				has_technology = tech_selected_lineages
+				has_policy_flag = leader_enhancement_natural_selection
+			}
+			AND = {
+				has_technology = tech_capacity_boosters
+				NOT = { has_policy_flag = leader_enhancement_capacity_boosters }
+			}
+		}
 	}
 
 	ai_weight = {
@@ -4263,6 +4297,7 @@ resolution_greatergood_workers_rights = {
 		modifier = {
 			factor = 0.5
 			is_megacorp = yes
+			is_worker_coop_empire = no
 			desc = gov_megacorporation
 		}
 
@@ -4278,6 +4313,7 @@ resolution_greatergood_workers_rights = {
 				has_valid_civic = civic_shared_burden
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_machine_exploration_protocol
+				is_worker_coop_empire = yes
 			}
 			desc = gal_com_supporting_civics
 		}
@@ -4371,12 +4407,12 @@ resolution_greatergood_five_year_plans = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		is_gestalt = no
 		any_owned_species = {
 			is_sapient = yes
 			has_living_standard = { type = living_standard_subsistence country = prev }
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -4403,6 +4439,7 @@ resolution_greatergood_five_year_plans = {
 		modifier = {
 			factor = 0.5
 			is_megacorp = yes
+			is_worker_coop_empire = no
 			desc = gov_megacorporation
 		}
 
@@ -4418,6 +4455,7 @@ resolution_greatergood_five_year_plans = {
 				has_valid_civic = civic_shared_burden
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_machine_exploration_protocol
+				is_worker_coop_empire = yes
 			}
 			desc = gal_com_supporting_civics
 		}
@@ -4557,6 +4595,7 @@ resolution_greatergood_greater_than_ourselves = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
 			any_enslaved_species = {
 				is_sapient = yes
@@ -4578,7 +4617,6 @@ resolution_greatergood_greater_than_ourselves = {
 				}
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -4605,6 +4643,7 @@ resolution_greatergood_greater_than_ourselves = {
 		modifier = {
 			factor = 0.5
 			is_megacorp = yes
+			is_worker_coop_empire = no
 			desc = gov_megacorporation
 		}
 
@@ -4620,6 +4659,7 @@ resolution_greatergood_greater_than_ourselves = {
 				has_valid_civic = civic_shared_burden
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_machine_exploration_protocol
+				is_worker_coop_empire = yes
 			}
 			desc = gal_com_supporting_civics
 		}
@@ -4762,6 +4802,7 @@ resolution_greatergood_balance_in_the_middle = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
 			has_valid_civic = civic_indentured_assets
 			has_valid_civic = civic_slaver_guilds
@@ -4783,7 +4824,6 @@ resolution_greatergood_balance_in_the_middle = {
 				}
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -4810,6 +4850,7 @@ resolution_greatergood_balance_in_the_middle = {
 		modifier = {
 			factor = 0.5
 			is_megacorp = yes
+			is_worker_coop_empire = no
 			desc = gov_megacorporation
 		}
 
@@ -4825,6 +4866,7 @@ resolution_greatergood_balance_in_the_middle = {
 				has_valid_civic = civic_shared_burden
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_machine_exploration_protocol
+				is_worker_coop_empire = yes
 			}
 			desc = gal_com_supporting_civics
 		}
@@ -4970,6 +5012,7 @@ resolution_greatergood_universal_prosperity_mandate = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
 			has_valid_civic = civic_indentured_assets
 			has_valid_civic = civic_slaver_guilds
@@ -5005,7 +5048,6 @@ resolution_greatergood_universal_prosperity_mandate = {
 				}
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -5032,6 +5074,7 @@ resolution_greatergood_universal_prosperity_mandate = {
 		modifier = {
 			factor = 0.5
 			is_megacorp = yes
+			is_worker_coop_empire = no
 			desc = gov_megacorporation
 		}
 
@@ -5053,6 +5096,7 @@ resolution_greatergood_universal_prosperity_mandate = {
 				has_valid_civic = civic_shared_burden
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_machine_exploration_protocol
+				is_worker_coop_empire = yes
 			}
 			desc = gal_com_supporting_civics
 		}
@@ -5586,9 +5630,9 @@ resolution_mutualdefense_military_readiness_act = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		used_naval_capacity_percent < 0.5
 		is_subject = no
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -5690,6 +5734,12 @@ resolution_mutualdefense_enemy_of_my_enemy = {
 		is_active_resolution = "resolution_mutualdefense_military_readiness_act"
 	}
 
+	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
+		used_naval_capacity_percent < 0.5
+		is_subject = no
+	}
+
 	ai_weight = {
 		base = @resolution_weight_normal
 
@@ -5779,6 +5829,12 @@ resolution_mutualdefense_castigation_proclamation = {
 
 	allow = {
 		is_active_resolution = "resolution_mutualdefense_enemy_of_my_enemy"
+	}
+
+	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
+		used_naval_capacity_percent < 0.5
+		is_subject = no
 	}
 
 	ai_weight = {
@@ -5879,6 +5935,12 @@ resolution_mutualdefense_renegade_containment = {
 
 	allow = {
 		is_active_resolution = "resolution_mutualdefense_castigation_proclamation"
+	}
+
+	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
+		used_naval_capacity_percent < 0.5
+		is_subject = no
 	}
 
 	ai_weight = {
@@ -6646,11 +6708,11 @@ resolution_rulesofwar_reverence_for_life = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
 			has_policy_flag = purge_allowed
 			has_country_flag = resolution_breached_fired_cracker
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -6762,7 +6824,10 @@ resolution_rulesofwar_independent_tribunals = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
+			has_policy_flag = purge_allowed
+			has_country_flag = resolution_breached_fired_cracker
 			has_policy_flag = orbital_bombardment_armageddon
 			has_policy_flag = orbital_bombardment_indiscriminate
 			has_country_flag = resolution_breached_fired_neutron
@@ -6770,7 +6835,6 @@ resolution_rulesofwar_independent_tribunals = {
 			has_country_flag = resolution_breached_fired_assimilator
 			has_country_flag = resolution_breached_fired_deluge
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -6865,8 +6929,18 @@ resolution_rulesofwar_last_resort_doctrine = {
 	}
 
 	breach = {
-		has_policy_flag = unrestricted_wars
 		NOT = { has_country_flag = constitutional_immunity }
+		OR = {
+			has_policy_flag = unrestricted_wars
+			has_policy_flag = purge_allowed
+			has_country_flag = resolution_breached_fired_cracker
+			has_policy_flag = orbital_bombardment_armageddon
+			has_policy_flag = orbital_bombardment_indiscriminate
+			has_country_flag = resolution_breached_fired_neutron
+			has_country_flag = resolution_breached_fired_godray
+			has_country_flag = resolution_breached_fired_assimilator
+			has_country_flag = resolution_breached_fired_deluge
+		}
 	}
 
 	ai_weight = {
@@ -6975,8 +7049,19 @@ resolution_rulesofwar_demobilization_initiative = {
 	}
 
 	breach = {
-		has_policy_flag = economic_policy_military
 		NOT = { has_country_flag = constitutional_immunity }
+		OR = {
+			has_policy_flag = unrestricted_wars
+			has_policy_flag = purge_allowed
+			has_policy_flag = economic_policy_military
+			has_policy_flag = orbital_bombardment_armageddon
+			has_policy_flag = orbital_bombardment_indiscriminate
+			has_country_flag = resolution_breached_fired_cracker
+			has_country_flag = resolution_breached_fired_neutron
+			has_country_flag = resolution_breached_fired_godray
+			has_country_flag = resolution_breached_fired_assimilator
+			has_country_flag = resolution_breached_fired_deluge
+		}
 	}
 
 	ai_weight = {
@@ -7132,6 +7217,12 @@ resolution_divinity_repeal_1 = {
 			factor = 0
 			has_valid_civic = civic_shared_burden
 			desc = civic_shared_burden
+		}
+
+		modifier = {
+			factor = 0
+			is_worker_coop_empire = yes
+			desc = civic_worker_coop
 		}
 	}
 }
@@ -7674,6 +7765,12 @@ resolution_divinity_comfort_the_fallen = {
 			has_valid_civic = civic_shared_burden
 			desc = civic_shared_burden
 		}
+
+		modifier = {
+			factor = 2
+			is_worker_coop_empire = yes
+			desc = civic_worker_coop
+		}
 	}
 }
 
@@ -7935,8 +8032,8 @@ resolution_divinity_silence_the_soulless = {
 	}
 
 	breach = {
-		has_country_flag = resolution_breached_synthetic_evolution
 		NOT = { has_country_flag = constitutional_immunity }
+		has_country_flag = resolution_breached_synthetic_evolution
 	}
 
 	ai_weight = {
@@ -8053,7 +8150,9 @@ resolution_divinity_a_defined_purpose = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		OR = {
+			has_country_flag = resolution_breached_synthetic_evolution
 			AND = {
 				is_machine_empire = no
 				has_policy_flag = ai_full_rights
@@ -8063,7 +8162,6 @@ resolution_divinity_a_defined_purpose = {
 				NOT = { has_valid_civic = civic_machine_servitor }
 			}
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -8362,6 +8460,12 @@ resolution_galacticreforms_form_council = {
 			factor = 0.5
 			has_valid_civic = civic_shared_burden
 			desc = civic_shared_burden
+		}
+
+		modifier = {
+			factor = 0.5
+			is_worker_coop_empire = yes
+			desc = civic_worker_coop
 		}
 
 		modifier = {
@@ -12703,11 +12807,11 @@ resolution_galactic_focus_war_in_heaven_support_side_1 = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		NAND = {
 			exists = overlord
 			has_overlord = event_target:FirstSleeper
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -12779,11 +12883,11 @@ resolution_galactic_focus_war_in_heaven_support_side_2 = {
 	}
 
 	breach = {
+		NOT = { has_country_flag = constitutional_immunity }
 		NAND = {
 			exists = overlord
 			has_overlord = event_target:SecondSleeper
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -12873,12 +12977,12 @@ resolution_galactic_focus_war_in_heaven_denounce_both = {
 
 	breach = {
 		has_global_flag = war_in_heaven_ongoing
+		NOT = { has_country_flag = constitutional_immunity }
 		exists = overlord
 		OR = {
 			has_overlord = event_target:FirstSleeper
 			has_overlord = event_target:SecondSleeper
 		}
-		NOT = { has_country_flag = constitutional_immunity }
 	}
 
 	ai_weight = {
@@ -12956,12 +13060,18 @@ resolution_tiyanki_conservation_act = {
 	}
 
 	breach = {
-		has_country_flag = resolution_breached_killed_tiyanki
 		NOT = { has_country_flag = constitutional_immunity }
+		has_country_flag = resolution_breached_killed_tiyanki
 	}
 
 	ai_weight = {
 		base = @resolution_weight_disliked
+
+		modifier = {
+			factor = 2
+			has_origin = origin_fruitful
+			desc = gal_com_supporting_origin
+		}
 
 		modifier = {
 			factor = 2
@@ -13085,6 +13195,12 @@ resolution_repeal_tiyanki_conservation_act = {
 		}
 
 		modifier = {
+			factor = 0
+			has_origin = origin_fruitful
+			desc = gal_com_opposing_origin
+		}
+
+		modifier = {
 			factor = 10
 			in_breach_of = resolution_tiyanki_conservation_act
 			desc = gal_com_in_breach_of_proposed_resolution
@@ -13150,8 +13266,8 @@ resolution_tiyanki_pest_control = {
 	}
 
 	breach = {
-		has_country_flag = resolution_breached_tiyanki_inside_borders
 		NOT = { has_country_flag = constitutional_immunity }
+		has_country_flag = resolution_breached_tiyanki_inside_borders
 	}
 
 	ai_weight = {
@@ -13194,6 +13310,12 @@ resolution_tiyanki_pest_control = {
 			factor = 0
 			is_xenophile = yes
 			desc = ethic_xenophile
+		}
+
+		modifier = {
+			factor = 0
+			has_origin = origin_fruitful
+			desc = gal_com_opposing_origin
 		}
 	}
 }
@@ -13239,6 +13361,12 @@ resolution_repeal_tiyanki_pest_control = {
 
 	ai_weight = {
 		base = @resolution_weight_disliked
+
+		modifier = {
+			factor = 2
+			has_origin = origin_fruitful
+			desc = gal_com_supporting_origin
+		}
 
 		modifier = {
 			factor = 1.5
@@ -13340,12 +13468,18 @@ resolution_amoeba_conservation_act = {
 	}
 
 	breach = {
-		NOT = { has_modifier = pacified_amoebas }
 		NOT = { has_country_flag = constitutional_immunity }
+		NOT = { has_modifier = pacified_amoebas }
 	}
 
 	ai_weight = {
 		base = @resolution_weight_disliked
+
+		modifier = {
+			factor = 2
+			has_origin = origin_fruitful
+			desc = gal_com_supporting_origin
+		}
 
 		modifier = {
 			factor = 1.5
@@ -13473,6 +13607,12 @@ resolution_repeal_amoeba_conservation_act = {
 			factor = 10
 			in_breach_of = resolution_amoeba_conservation_act
 			desc = gal_com_in_breach_of_proposed_resolution
+		}
+
+		modifier = {
+			factor = 0
+			has_origin = origin_fruitful
+			desc = gal_com_opposing_origin
 		}
 	}
 }

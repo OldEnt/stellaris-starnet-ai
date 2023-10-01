@@ -1083,7 +1083,7 @@ building_clone_vats = {
 			planet_pop_assembly_organic_add = 1.5
 		}
 	}
-	
+
 	resources = {
 		category = planet_buildings
 
