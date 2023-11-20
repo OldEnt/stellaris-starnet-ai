@@ -94,8 +94,8 @@ tr_supremacy_war_games = {
 	}
 	modifier = {
 		command_limit_add = 20
-		leader_admirals_cost_mult = -0.1
-		leader_admirals_upkeep_mult = -0.1
+		country_commander_cap_add = 1
+		commander_initial_skill = 1
 	}
 
 	tradition_swap = {

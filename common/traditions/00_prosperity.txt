@@ -118,7 +118,7 @@ tr_prosperity_public_works = {
 		# Effects are implemented in 03_habitat_districts.txt
 
 		modifier = {
-			habitat_max_districts_mult = 0.10
+			habitat_max_districts_add = 1
 		}
 
 		trigger = {

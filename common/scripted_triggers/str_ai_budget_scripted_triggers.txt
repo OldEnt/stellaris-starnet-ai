@@ -171,6 +171,10 @@ str_ai_budget_potential_influence_expenditure_edicts = {
 	always = yes
 }
 
+str_ai_budget_potential_influence_upkeep_edicts = {
+	always = yes
+}
+
 str_ai_budget_potential_influence_expenditure_stations = {
 	always = yes
 }

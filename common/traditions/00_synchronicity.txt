@@ -120,7 +120,7 @@ tr_synchronicity_harmonious_directives = {
 
 tr_synchronicity_cloned_organs = {
 	modifier = {
-		leader_age = 10
+		leader_lifespan_add = 10
 		negative_traits_country = -1
 	}
 

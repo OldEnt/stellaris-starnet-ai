@@ -83,6 +83,10 @@ mega_art_installation_0 = {
 				is_star = no
 			}
 			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {
 				fail_text = "requires_not_ring_world"
 				is_ringworld = no
 			}
