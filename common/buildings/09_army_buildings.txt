@@ -9,12 +9,6 @@ building_military_academy = {
 	can_be_ruined = no
 	category = army
 
-	potential = {
-		buildings_simple_allow = yes
-		exists = owner
-		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
-	}
-
 	allow = {
 		exists = owner
 		owner = { is_ai = no }
@@ -29,20 +23,6 @@ building_military_academy = {
 				has_building = building_fortress
 			}
 		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_ai = yes
-				has_valid_civic = civic_reanimated_armies
-			}
-		}
-	}
-
-	convert_to = {
-		building_dread_encampment
 	}
 
 	country_modifier = {

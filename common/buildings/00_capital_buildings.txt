@@ -47,6 +47,7 @@ building_colony_shelter = {
 		planet_housing_add = 3
 		planet_amenities_add = 7
 		planet_max_buildings_add = @buildings_t1
+		job_colonist_add = 2
 	}
 
 	inline_script = {
@@ -56,9 +57,10 @@ building_colony_shelter = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { NOT = { has_active_tradition = tr_synthetics_finish } }
+			owner = { has_valid_civic = civic_dystopian_society }
 		}
-		job_colonist_add = 2
+		job_enforcer_add = 1
+		job_colonist_add = -1
 	}
 
 	triggered_planet_modifier = {
@@ -67,19 +69,7 @@ building_colony_shelter = {
 			owner = { has_active_tradition = tr_synthetics_finish }
 		}
 		job_roboticist_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			OR = {
-				owner = {
-					is_ai = no
-				}
-				resettlement_cheesy_disable = no
-			}
-		}
-		job_colonist_add = 1
+		job_colonist_add = -1
 	}
 
 	triggered_planet_modifier = {
@@ -90,130 +80,6 @@ building_colony_shelter = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			is_capital = yes
-			owner = {
-				has_councilor = { COUNCILOR = "councilor_feudal_realm" }
-			}
-		}
-		country_naval_cap_add = 1
-		mult = value:naval_cap_vassals_councilor_feudal_realm
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_mining
-				value > 0
-			}
-			str_force_district_mining = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_mining
-				value > 2
-			}
-			str_force_district_mining = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_mining
-				value > 4
-			}
-			str_force_district_mining = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_mining
-				value > 6
-			}
-			str_force_district_mining = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_city
-				value > 0
-			}
-			str_force_city_district = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_city
-				value > 2
-			}
-			str_force_city_district = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_city
-				value > 4
-			}
-			str_force_city_district = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_ai = yes }
-			num_districts = {
-				type = district_city
-				value > 6
-			}
-			str_force_city_district = yes
-		}
-		job_starnet_spice_melange_farmer_add = -2
-		job_starnet_spice_melange_antifarmer_add = 2
 	}
 
 	resources = {
@@ -228,7 +94,24 @@ building_colony_shelter = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NAND = {
+					has_valid_civic = civic_dystopian_society
+					has_active_tradition = tr_synthetics_finish
+				}
+			}
+		}
 		text = job_colonist_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_valid_civic = civic_dystopian_society }
+		}
+		text = job_enforcer_effect_desc
 	}
 
 	triggered_desc = {
@@ -246,6 +129,130 @@ building_colony_shelter = {
 		text = job_unifier_effect_desc
 	}
 }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_ai = yes
+			}
+			resettlement_cheesy_disable = yes
+		}
+		job_colonist_add = -1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 0
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 2
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 4
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_mining
+				value > 6
+			}
+			str_force_district_mining = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 0
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 2
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 4
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_ai = yes }
+			num_districts = {
+				type = district_city
+				value > 6
+			}
+			str_force_city_district = yes
+		}
+		job_starnet_spice_melange_farmer_add = -2
+		job_starnet_spice_melange_antifarmer_add = 2
+	}
 
 # Planetary Administration
 building_capital = {
@@ -282,7 +289,7 @@ building_capital = {
 	}
 
 	allow = {
-		num_pops >= 10
+		num_sapient_pops >= 10
 	}
 
 	upgrades = {
@@ -445,17 +452,6 @@ building_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			is_capital = yes
-			owner = {
-				has_councilor = { COUNCILOR = "councilor_feudal_realm" }
-			}
-		}
-		country_naval_cap_add = 1
-		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	triggered_planet_modifier = {
@@ -732,7 +728,7 @@ building_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 25
+		num_sapient_pops >= 25
 	}
 
 	convert_to = {
@@ -922,17 +918,6 @@ building_major_capital = {
 		pop_growth_speed = 0.10
 	}
 
-	triggered_country_modifier = {
-		potential = {
-			is_capital = yes
-			owner = {
-				has_councilor = { COUNCILOR = "councilor_feudal_realm" }
-			}
-		}
-		country_naval_cap_add = 1
-		mult = value:naval_cap_vassals_councilor_feudal_realm
-	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1208,7 +1193,7 @@ building_system_capital = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 
 	prerequisites = {
@@ -1398,17 +1383,6 @@ building_system_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			is_capital = yes
-			owner = {
-				has_councilor = { COUNCILOR = "councilor_feudal_realm" }
-			}
-		}
-		country_naval_cap_add = 1
-		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	triggered_planet_modifier = {
@@ -1795,7 +1769,7 @@ building_machine_capital = {
 	}
 
 	allow = {
-		num_pops >= 10
+		num_sapient_pops >= 10
 	}
 
 	prerequisites = {
@@ -1930,7 +1904,7 @@ building_machine_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 25
+		num_sapient_pops >= 25
 	}
 
 	prerequisites = {
@@ -2073,7 +2047,7 @@ building_machine_system_capital = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 
 	prerequisites = {
@@ -2100,7 +2074,7 @@ building_machine_system_capital = {
 
 	triggered_planet_modifier = {
 		potential = {
-			num_pops >= 10
+			num_sapient_pops >= 10
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -2108,7 +2082,7 @@ building_machine_system_capital = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			num_pops >= 40
+			num_sapient_pops >= 40
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -2405,7 +2379,7 @@ building_hive_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 25
+		num_sapient_pops >= 25
 	}
 
 	prerequisites = {
@@ -2859,7 +2833,7 @@ building_hab_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 10
+		num_sapient_pops >= 10
 	}
 
 	resources = {
@@ -3357,7 +3331,7 @@ building_hab_system_capital = {
 	}
 
 	allow = {
-		num_pops >= 25
+		num_sapient_pops >= 25
 	}
 
 	resources = {
@@ -4029,7 +4003,7 @@ building_resort_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 20
+		num_sapient_pops >= 20
 	}
 
 	resources = {
@@ -4340,7 +4314,7 @@ building_slave_major_capital = {
 	}
 
 	allow = {
-		num_pops >= 20
+		num_sapient_pops >= 20
 	}
 
 	convert_to = {
@@ -4501,7 +4475,7 @@ building_imperial_capital = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 
 	prerequisites = {
@@ -4821,7 +4795,7 @@ building_imperial_machine_capital = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 
 	prerequisites = {
@@ -4851,7 +4825,7 @@ building_imperial_machine_capital = {
 
 	triggered_planet_modifier = {
 		potential = {
-			num_pops >= 10
+			num_sapient_pops >= 10
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -4859,7 +4833,7 @@ building_imperial_machine_capital = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			num_pops >= 40
+			num_sapient_pops >= 40
 		}
 		modifier = {
 			job_replicator_add = 1
@@ -4989,7 +4963,7 @@ building_imperial_hive_capital = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_sapient_pops >= 50
 	}
 
 	prerequisites = {

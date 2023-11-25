@@ -443,19 +443,22 @@ building_supercomputer = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
 		}
 		upkeep = {
 			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
 		}
 	}
 
-	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
+	country_modifier = {
+		country_scientist_cap_add = 1
+		all_technology_research_speed = 0.05
 	}
 
 	inline_script = {
 		script = jobs/researchers_add
-		AMOUNT = 1
+		AMOUNT = 2
 	}
 
 	prerequisites = {
