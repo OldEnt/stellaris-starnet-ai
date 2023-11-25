@@ -16,7 +16,10 @@
 @str_ai_prioritise_research_until = 10
 @str_ai_prioritise_energy_for_fleet_after = 10
 
-# The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Always trigger check with equal.
+# The following scripted variable can be used to determine if either StarNet or StarTech is loaded.
+@has_starnet_or_startech = 1
+
+# The following variable can be used to determine whether StarNet (1) or StarTech (2) is loaded. Trigger check with equal to 1, equal to 2, or more than 0.
 @str_or_tech_fork_switch = 1
 
 # Base income for str_early_default_plan economic plan. Differs between StarNet and StarTech. When overwriting these values use FIOS overwrite instead of full file overwrite, otherwise StarNet may not detect properly whether StarNet or StarTech is running.
