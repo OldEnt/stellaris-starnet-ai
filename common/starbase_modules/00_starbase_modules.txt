@@ -430,8 +430,8 @@ archaeo_rampart = {
 				NOT = { has_ascension_perk = ap_archaeoengineers }
 			}
 		}
-		ship_hull_mult = 0.15
-		ship_armor_mult = 0.15
+		shipclass_starbase_hull_mult = 0.15
+		shipclass_starbase_armor_mult = 0.15
 		starbase_defense_platform_capacity_add = 2
 	}
 
@@ -441,17 +441,17 @@ archaeo_rampart = {
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		ship_hull_mult = 0.15
-		ship_armor_mult = 0.20
-		ship_armor_hardening_add = 0.10
+		shipclass_starbase_hull_mult = 0.15
+		shipclass_starbase_armor_mult = 0.20
+		shipclass_starbase_armor_hardening_add = 0.10
 		starbase_defense_platform_capacity_add = 2
 	}
 
 	custom_tooltip = sm_archaeo_rampart_desc_modifier
 
 	defense_platform_modifier = {
-		ship_weapon_damage = 0.05
-		ship_hull_mult = 0.05
+		shipclass_military_station_damage_mult = 0.05
+		shipclass_military_station_hull_mult = 0.05
 	}
 
 	ai_weight = {

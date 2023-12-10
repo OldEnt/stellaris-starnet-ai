@@ -12,6 +12,7 @@ on_single_player_save_game_load = {
 		str_mod_flag.1
 		starnet.101	# This fixes deprioritisation of amenity jobs by the game engine in saves made prior to the adjustments in patch. Can be removed in Stellaris 3.5.
 		starnet.200	# Register ship_size for fleet composition settings.
+		starnet.300	# Staffs science ships if other mods break scientist hiring.
 	}
 }
 
@@ -40,9 +41,15 @@ on_five_year_pulse = {
 	}
 }
 
+on_monthly_pulse_country = {
+	events = {
+		starnet.299	# Staffs science ships if other mods break scientist hiring.
+	}
+}
+
 on_five_year_pulse_country = {
 	events = {
-		starnet.300
+		starnet.300	# Staffs science ships if other mods break scientist hiring.
 	}
 }
 

@@ -128,7 +128,6 @@ building_colony_shelter = {
 		}
 		text = job_unifier_effect_desc
 	}
-}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -253,6 +252,7 @@ building_colony_shelter = {
 		job_starnet_spice_melange_farmer_add = -2
 		job_starnet_spice_melange_antifarmer_add = 2
 	}
+}
 
 # Planetary Administration
 building_capital = {
