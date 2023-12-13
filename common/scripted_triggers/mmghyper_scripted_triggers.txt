@@ -1,0 +1,41 @@
+mmghyper_has_hyper_relay = {
+	OR = {
+		has_megastructure = hyper_relay
+		has_megastructure = hyper_relay_restored
+	}
+}
+
+mmghyper_has_wormhole_gate_or_catapult = {
+	OR = {
+		has_natural_wormhole = yes
+		has_megastructure = lgate_base
+		has_megastructure = gateway_final
+		has_megastructure = gateway_restored
+		has_megastructure = quantum_catapult_1
+		has_megastructure = quantum_catapult_2
+		has_megastructure = quantum_catapult_3
+		has_megastructure = quantum_catapult_restored
+		has_megastructure = quantum_catapult_restored_slingshot
+		has_megastructure = quantum_catapult_improved_slingshot
+	}
+}
+
+mmghyper_has_fortress_bordering_rival = {
+	exists = owner
+	exists = starbase
+	starbase = {
+		OR = {
+			has_starbase_size = starbase_starfortress
+			has_starbase_size = starbase_citadel
+		}
+		OR = {
+			has_starbase_module = gun_battery
+			has_starbase_module = missile_battery
+			has_starbase_module = hangar_bay
+		}
+	}
+	any_neighbor_system = {
+		exists = owner
+		prev.owner = { is_rival = prev.owner }
+	}
+}
