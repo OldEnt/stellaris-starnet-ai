@@ -401,8 +401,37 @@ sfortress = {
 				base = 0.90
 			}
 
-			warp_fluctuator = {
-				base = 0.90
+			ice_mining_station = {
+				base = 3.00
+			}
+
+			dragon_hatchery = {
+				base = 3.00
+			}
+
+			hydroponics_bay = {
+				base = 0.25
+			}
+
+			reloading_bay = {
+				base = 2.00
+			}
+
+			zroni_storm_caster = {
+				base = 1.5
+				modifier = {
+					factor = 0
+					exists = owner
+					owner = {
+						has_monthly_income = { 
+							resource = sr_zro 
+							value < 2
+						}
+					}
+				}
+			}
+			offspring_outlook = {
+				base = 10
 			}
 		}
 
@@ -975,6 +1004,10 @@ sorbital_anchorage = {
 			}
 
 			hydroponics_bay = {
+				base = 1.00
+			}
+
+			mining_bay = {
 				base = 1.00
 			}
 		}

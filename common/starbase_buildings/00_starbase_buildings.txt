@@ -2103,9 +2103,12 @@ ice_mining_station = {
 		custom_tooltip = {
 			fail_text = requires_ice_source
 			solar_system = {
-				OR = {
-					has_planet_class = pc_ice_asteroid
-					has_planet_class = pc_frozen
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_ice_asteroid
+						is_planet_class = pc_frozen
+					}
+					NOT = { has_planet_flag = mercenary_enclave_planet }
 				}
 			}
 		}

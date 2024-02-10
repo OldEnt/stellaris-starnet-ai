@@ -426,8 +426,7 @@ district_arcology_civilian_industry = {
 		trigger = {
 			exists = owner
 			owner = {
-				is_machine_empire = yes
-				has_valid_civic = civic_machine_servitor
+				is_gestalt = yes
 			}
 		}
 		text = job_artisan_drone_effect_desc
