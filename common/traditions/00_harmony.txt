@@ -52,7 +52,7 @@ tr_harmony_kinship = {
 
 	modifier = {
 		pop_demotion_time_mult = -0.75
-		empire_size_pops_mult = -0.10
+		empire_size_pops_mult = -0.15
 	}
 
 	tradition_swap = {
@@ -68,7 +68,7 @@ tr_harmony_kinship = {
 		}
 		modifier = {
 			leaders_upkeep_mult = -0.20
-			empire_size_pops_mult = -0.10
+			empire_size_pops_mult = -0.15
 		}
 		weight = {
 			factor = 1
@@ -88,6 +88,7 @@ tr_harmony_utopian_dream = {
 
 	modifier = {
 		planet_stability_add = 5
+		planetary_ascension_cost_mult = -0.1
 	}
 
 	ai_weight = {

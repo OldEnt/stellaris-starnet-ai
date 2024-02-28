@@ -643,6 +643,7 @@ district_rw_farming = {
 
 	potential = {
 		uses_district_set = ring_world
+		exists = owner
 		NOT = {
 			AND = {
 				exists = owner

@@ -9,20 +9,16 @@ building_military_academy = {
 	can_be_ruined = no
 	category = army
 
+	potential = {
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+		NOT = { has_modifier = resort_colony }
+	}
+
 	allow = {
+		has_major_upgraded_capital = yes
 		exists = owner
 		owner = { is_ai = no }
-		has_upgraded_capital = yes
-		if = {
-			limit = {
-				exists = owner
-				owner = { is_ai = yes }
-			}
-			OR = {
-				has_building = building_stronghold
-				has_building = building_fortress
-			}
-		}
 	}
 
 	country_modifier = {
@@ -128,40 +124,8 @@ building_stronghold = {
 	exempt_from_ai_planet_specialization = no
 
 	potential = {
+		NOT = { has_modifier = resort_colony }
 		buildings_simple_allow = yes
-	}
-
-	allow = {
-		OR = {
-			owner = { is_ai = no }
-			AND = {
-				NOR = {
-					has_building = building_stronghold
-					has_building = building_fortress
-				}
-				is_capital = no
-				num_buildings = {
-					type = any
-					value > 5
-				}
-			}
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		owner = { is_ai = yes }
-		AND = {
-			OR = {
-				num_buildings = { type = building_stronghold value > 1 }
-				has_building = building_fortress
-			}
-			free_building_slots = 0
-			owner = {
-				used_naval_capacity_percent < 0.6
-				is_at_war = no # don't destroy while at war
-			}
-		}
 	}
 
 	triggered_planet_modifier = {

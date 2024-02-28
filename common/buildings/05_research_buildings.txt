@@ -331,13 +331,6 @@ building_institute = {
 	}
 
 	ai_resource_production = {
-		trigger = { always = yes }
-		physics_research = 5
-		society_research = 5
-		engineering_research = 5
-	}
-	
-	ai_resource_production = {
 		trigger = {
 			OR = {
 				num_buildings = {
@@ -470,12 +463,6 @@ building_supercomputer = {
 	}
 
 	ai_resource_production = {
-		trigger = { always = yes }
-		physics_research = 3
-		society_research = 3
-		engineering_research = 3
-	}
-	ai_resource_production = {
 		trigger = {
 			OR = {
 				num_buildings = {
@@ -568,7 +555,7 @@ building_archaeostudies_faculty = {
 	}
 
 	country_modifier = {
-		category_archaeostudies_research_speed_mult = 1.0
+		category_archaeostudies_research_speed_mult = 0.5
 		country_resource_max_minor_artifacts_add = 1000
 	}
 

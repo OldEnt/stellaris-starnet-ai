@@ -444,28 +444,26 @@ building_factory_1 = {
 			has_modifier = crucible_colony
 
 			AND = {
-				num_unemployed < 1
-				is_capital = yes
-				years_passed > 10
 				exists = owner
-				owner = {
-					is_ai = yes
-					resource_income_compare = {
-						resource = consumer_goods
-						value > 100
+				OR = {
+					owner = {
+						AND = {
+							country_uses_consumer_goods = no
+							NOT = { has_origin = origin_fear_of_the_dark }
+						}
 					}
-					resource_stockpile_compare = {
-						resource = consumer_goods
-						value > 1000
+					AND = {
+						owner = {
+							is_ai = yes
+						}
+						has_any_industry_district = no
 					}
-				}
-			}
-			AND = {
-				exists = owner
-				owner = {
-					is_ai = yes
-					country_uses_consumer_goods = no
-					NOT = { has_origin = origin_fear_of_the_dark }
+					AND = {
+						owner = {
+							should_ai_focus_on_trade = yes
+							has_monthly_income = { resource = consumer_goods value > 30 }
+						}
+					}
 				}
 			}
 		}

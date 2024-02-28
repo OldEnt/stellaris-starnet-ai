@@ -1373,7 +1373,7 @@ wg_force_ideology = {
 					}
 					impose_ideology_effect = yes
 				}
-	
+
 				every_subject = {
 					limit = {
 						is_gestalt = no
@@ -1726,6 +1726,11 @@ wg_expel_corp = {
 		}
 	}
 	on_status_quo = {
+		hidden_effect = {
+			from = {
+				save_event_target_as = defender
+			}
+		}
 		if = {
 			limit = {
 				is_overlord = no
@@ -1733,7 +1738,7 @@ wg_expel_corp = {
 			custom_tooltip = wg_expel_corp_status_quo_effects
 			hidden_effect = {
 				every_owned_planet = {
-					limit = { has_branch_office = from }
+					limit = { has_branch_office = event_target:defender }
 					branch_office_owner = { add_resource = { energy = 1000 } }
 					close_branch_office = yes
 				}
@@ -1743,21 +1748,55 @@ wg_expel_corp = {
 			custom_tooltip = wg_expel_corp_subject_status_quo_effects
 			hidden_effect = {
 				every_owned_planet = {
-					limit = { has_branch_office = from }
+					limit = { has_branch_office = event_target:defender }
 					branch_office_owner = { add_resource = { energy = 1000 } }
 					close_branch_office = yes
 				}
 				every_subject = {
 					every_owned_planet = {
-						limit = { has_branch_office = from }
+						limit = { has_branch_office = event_target:defender }
 						branch_office_owner = { add_resource = { energy = 1000 } }
 						close_branch_office = yes
 					}
 				}
 			}
 		}
+		hidden_effect = {
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						prev = {
+							using_war_goal = {
+								type = wg_expel_corp
+								owner = prev
+							}
+						}
+					}
+					every_owned_planet = {
+						limit = { has_branch_office = event_target:defender }
+						branch_office_owner = { add_resource = { energy = 1000 } }
+						close_branch_office = yes
+					}
+					if = {
+						limit = { is_overlord = yes }
+						every_subject = {
+							every_owned_planet = {
+								limit = { has_branch_office = event_target:defender }
+								branch_office_owner = { add_resource = { energy = 1000 } }
+								close_branch_office = yes
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	on_accept = {
+		hidden_effect = {
+			from = {
+				save_event_target_as = defender
+			}
+		}
 		if = {
 			limit = {
 				is_overlord = no
@@ -1765,7 +1804,7 @@ wg_expel_corp = {
 			custom_tooltip = wg_expel_corp_effects
 			hidden_effect = {
 				every_owned_planet = {
-					limit = { has_branch_office = from }
+					limit = { has_branch_office = event_target:defender }
 					close_branch_office = yes
 					owner = { add_resource = { energy = 1000 } }
 				}
@@ -1775,15 +1814,45 @@ wg_expel_corp = {
 			custom_tooltip = wg_expel_corp_subject_effects
 			hidden_effect = {
 				every_owned_planet = {
-					limit = { has_branch_office = from }
+					limit = { has_branch_office = event_target:defender }
 					close_branch_office = yes
 					owner = { add_resource = { energy = 1000 } }
 				}
 				every_subject = {
 					every_owned_planet = {
-						limit = { has_branch_office = from }
+						limit = { has_branch_office = event_target:defender }
 						close_branch_office = yes
 						owner = { add_resource = { energy = 1000 } }
+					}
+				}
+			}
+		}
+		# ... and their allies, if applicable.
+		hidden_effect = {
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						prev = {
+							using_war_goal = {
+								type = wg_expel_corp
+								owner = prev
+							}
+						}
+					}
+					every_owned_planet = {
+						limit = { has_branch_office = event_target:defender }
+						close_branch_office = yes
+						owner = { add_resource = { energy = 1000 } }
+					}
+					if = {
+						limit = { is_overlord = yes }
+						every_subject = {
+							every_owned_planet = {
+								limit = { has_branch_office = event_target:defender }
+								close_branch_office = yes
+								owner = { add_resource = { energy = 1000 } }
+							}
+						}
 					}
 				}
 			}
@@ -2072,7 +2141,7 @@ wg_scion = {
 					preset = preset_scion
 				}
 			}
-			
+
 			if = {
 				limit = {
 					root = { has_authority = auth_corporate }

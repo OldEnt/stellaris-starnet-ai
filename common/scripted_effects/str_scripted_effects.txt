@@ -1,3 +1,7 @@
+str_set_power = {
+	inline_script = { script = "test" ARG = 9001 }
+}
+
 # StarNet uses it for localisations only but it will be accurate.
 str_calculate_real_truce_years = {
 	optimize_memory
@@ -242,7 +246,7 @@ str_register_ship_size = {
 					}
 				}
 				create_leader = {
-					class = general
+					class = commander
 					name = $SHIP_SIZE$
 					species = event_target:str_register_global_species
 					immortal = yes
@@ -2819,7 +2823,7 @@ str_register_create_if_needed = {
 		}
 		event_target:global_event_country = {
 			create_leader = {
-				class = general
+				class = commander
 				name = str_menu_name
 				species = event_target:str_register_global_species
 				immortal = yes

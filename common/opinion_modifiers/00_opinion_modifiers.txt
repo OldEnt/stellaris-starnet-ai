@@ -278,6 +278,7 @@ opinion_genocidal = {
 			NOR = {
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
+				is_homicidal = yes
 			}
 		}
 		modifier = {
@@ -300,7 +301,7 @@ opinion_genocidal = {
 		}
 		modifier = {
 			add = -5
-			has_ethic = "ethic_xenophile"
+			values_others = yes
 			allows_purge = no
 			NOR = {
 				is_country_type = fallen_empire
@@ -328,6 +329,14 @@ opinion_genocidal = {
 
 	decay = {
 		base = 1
+		modifier = {
+			add = 1
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			add = 3
+			has_ethic = ethic_fanatic_xenophobe
+		}
 	}
 }
 
@@ -352,11 +361,19 @@ opinion_necrophage = {
 		base = -1
 		modifier = {
 			add = -1
-			has_ethic = ethic_xenophile
+			OR = {
+				has_ethic = ethic_xenophile
+				has_valid_civic = civic_hive_empath
+				has_valid_civic = civic_machine_exploration_protocol
+			}
 		}
 		modifier = {
-			add = -2
-			has_ethic = ethic_fanatic_xenophile
+			add = -3
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_origin = origin_fruitful
+				has_valid_civic = civic_machine_servitor
+			}
 		}
 	}
 
@@ -685,18 +702,18 @@ opinion_cede_planet = {
 # We were forcibly subjectized by them
 opinion_forced_subjectized = {
 	opinion = {
-		base = -30
+		base = -100
 	}
 
 	decay = {
-		base = 5
+		base = 1
 	}
 }
 
 # They released us from subjectage
 opinion_subject_released = {
 	opinion = {
-		base = 30
+		base = 100
 	}
 
 	decay = {

@@ -105,6 +105,10 @@ tr_mercantile_adaptive_economic_policies = {
 			factor = 1
 		}
 	}
+
+	ai_weight = {
+		factor = 1000
+	}
 }
 
 tr_mercantile_marketplace_of_better_ideas = {

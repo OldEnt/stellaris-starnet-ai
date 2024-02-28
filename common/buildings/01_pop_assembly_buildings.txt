@@ -42,7 +42,10 @@ building_robot_assembly_plant = {
 				is_materialist = yes
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOR = { 
+			has_modifier = slave_colony
+			has_modifier = resort_colony  
+		}
 	}
 
 	convert_to = {

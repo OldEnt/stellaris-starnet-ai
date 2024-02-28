@@ -1,32 +1,21 @@
 tr_domination_adopt = {
 	unlocks_agenda = agenda_civil_exclusion
 	modifier = {
-		deposit_blockers_cost_mult = -0.33
+		planet_jobs_slave_produces_mult = 0.1
+		pop_cat_slave_political_power = -0.25
 	}
 
 	tradition_swap = {
-		name = tr_domination_adopt_void
-		inherit_name = yes
 		inherit_icon = yes
-		custom_tooltip = tr_domination_adopt_void_desc
+		inherit_name = yes
 		trigger = {
-			has_origin = origin_void_dwellers
+			is_gestalt = yes
 		}
 		modifier = {
-			megastructures_habitat_alloys_upkeep_mult = -0.20
-			planet_districts_hab_alloys_upkeep_mult = -0.20
+			pop_amenities_usage_no_happiness_mult = -0.15
 		}
-		# Effects are implemented in 00_capital_buildings.txt
 		weight = {
 			factor = 1
-		}
-	}
-	possible = {
-		hidden_trigger = {
-			or = {
-				is_ai = no
-				num_ascension_perks > 3
-			}
 		}
 	}
 }
@@ -46,7 +35,7 @@ tr_domination_finish = {
 			has_federations_dlc = yes
 		}
 		modifier = {
-			empire_size_pops_mult = -0.10
+			empire_size_pops_mult = -0.15
 			ascension_perks_add = 1
 		}
 		weight = {

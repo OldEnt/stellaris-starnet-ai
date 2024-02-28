@@ -7,7 +7,7 @@ tr_prosperity_adopt = {
 
 tr_prosperity_finish = {
 	modifier = {
-		planet_jobs_produces_mult = 0.05
+		stations_upkeep_mult = -0.10
 		ascension_perks_add = 1
 	}
 }
@@ -180,7 +180,7 @@ tr_prosperity_pursuit_of_profit = {
 	}
 
 	modifier = {
-		planet_jobs_specialist_produces_mult = 0.05
+		planet_jobs_produces_mult = 0.05
 	}
 
 	tradition_swap = {

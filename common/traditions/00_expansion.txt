@@ -2,7 +2,10 @@ tr_expansion_adopt = {
 	unlocks_agenda = agenda_superior_colonies
 	modifier = {
 		planet_colony_development_speed_mult = 0.25
+		megastructures_habitat_alloys_upkeep_mult = -0.20
+		planet_districts_hab_alloys_upkeep_mult = -0.20
 	}
+	# Additional effects are implemented in 00_capital_buildings.txt
 	possible = {
 		hidden_trigger = {
 			or = {

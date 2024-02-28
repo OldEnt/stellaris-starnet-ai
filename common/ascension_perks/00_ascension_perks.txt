@@ -192,9 +192,11 @@ ap_become_the_crisis = {
 		factor = 7.5
 		modifier = {
 			factor = 0
-			is_militarist = no
-			is_xenophobe = no
-			is_gestalt = no
+			NOR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_gestalt = yes
+			}
 		}
 		modifier = {
 			factor = 10
@@ -233,11 +235,11 @@ ap_become_the_crisis = {
 
 		modifier = {
 			factor = 0
-			galaxy_percentage < 0.05
+			galaxy_percentage < 0.1
 			minilategame = no
 		}
 		modifier = {
-			factor = 5
+			factor = 2
 			galaxy_percentage > 0.2
 		}
 		modifier = {
@@ -253,7 +255,7 @@ ap_become_the_crisis = {
 		modifier = {
 			factor = 0
 			count_playable_country = {
-				count > 2
+				count > 1
 				limit = {
 					has_ascension_perk = ap_become_the_crisis
 				}
@@ -261,7 +263,6 @@ ap_become_the_crisis = {
 		}
 		modifier = {
 			factor = 0
-			num_ascension_perks < 4
 			blocks_disruptive_gameplay = yes
 		}
 	}
@@ -379,6 +380,10 @@ ap_enigmatic_engineering = {
 		# 	factor = 2
 		# 	is_materialist = yes
 		# 	is_xenophobe = yes
+		# }
+		# modifier = {
+		# 	factor = 10
+		# 	has_origin = origin_slavers
 		# }
 	}
 }
@@ -548,18 +553,30 @@ ap_world_shaper = {
 		factor = 10000
 		modifier = {
 			factor = 0
-			or = {
-				has_ascension_perk = ap_machine_worlds
-				has_ascension_perk = ap_hive_worlds
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+				has_trait = trait_aquatic
+				has_ethic = ethic_gestalt_consciousness
 			}
 		}
 		modifier = {
-			factor = 5
-			or = {
-				has_ascension_perk = ap_transcendence
-				has_ascension_perk = ap_synthetic_evolution
-				has_ascension_perk = ap_evolutionary_mastery
+			factor = 2
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_xenophobe
 			}
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		modifier = { #only way to get more nice planets
+			factor = 100
+			has_origin = origin_life_seeded
 		}
 	}
 }
@@ -585,7 +602,15 @@ ap_galactic_force_projection = {
 	}
 
 	ai_weight = {
-		factor = 2
+		factor = 10
+		modifier = {
+			factor = 1.5
+			num_owned_planets < 10
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets < 20
+		}
 		modifier = {
 			factor = 2
 			has_ethic = ethic_militarist
@@ -659,13 +684,8 @@ ap_defender_of_the_galaxy = {
 		factor = 5
 		modifier = {
 			factor = 5
-			has_global_flag = galactic_crisis_happened
-		}
-		modifier = {
-			factor = 0
-			NOR = {
-				has_global_flag = galactic_crisis_happened
-				has_global_flag = gray_goo_crisis_active
+			OR = {
+				has_crisis = yes
 				any_country = {
 					relative_power = {
 						who = prev
@@ -677,8 +697,15 @@ ap_defender_of_the_galaxy = {
 		}
 		modifier = {
 			factor = 100
-			has_global_flag = galactic_crisis_happened
-			fleet_power < 200000
+			NOR = {
+				is_xenophile = yes
+				is_galactic_custodian = yes
+				is_galactic_emperor = yes
+				any_country = {
+					has_crisis_level = crisis_level_5
+					is_crisis_faction = yes
+				}
+			}
 		}
 		modifier = {
 			factor = 100
@@ -1101,7 +1128,14 @@ ap_shared_destiny = {
 	}
 
 	ai_weight = {
-		factor = 0
+		factor = 5
+		modifier = {
+			factor = 0
+			subjects < 2
+			count_envoy = {
+				count < 3
+			}
+		}
 	}
 }
 
@@ -1203,17 +1237,10 @@ ap_master_builders = {
 	}
 
 	ai_weight = {
-		factor = 10
+		factor = 1
 		modifier = {
-			factor = 0
-			nand = {
-				has_ascension_perk = ap_executive_vigor
-				or = {
-					has_ascension_perk = ap_galactic_wonders_megacorp
-					has_ascension_perk = ap_galactic_wonders_utopia
-					has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
-				}
-			}
+			factor = 0.5
+			has_galactic_wonders = no
 		}
 		modifier = {
 			factor = 2
@@ -1672,6 +1699,21 @@ ap_detox = {
 
 	ai_weight = {
 		factor = 20
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = {
+					has_modifier = toxic_terraforming_candidate
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			count_planet_within_border = {
+				count > 2
+				limit = { has_modifier = toxic_terraforming_candidate }
+			}
+		}
 	}
 }
 
